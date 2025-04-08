@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - AvoidMerge
+  - Terrain
+  - DEMO_INACTIVE
+  - 2DObstacle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Tile
+  - Viewmodel
+  - Temporary
+  - Trash
+  - NPC
+  - WorldGrid
+  - Overlay
+  - WaterPipe
+  - Vehicle
+  - Pallet
+  - StoredItem
+  - Door
+  - Invisible
+  - IconGeneration
+  - VehicleObstacle
+  - Grass
+  - VehicleBlocker
+  - Terrain
+  - LightSource
+  - Task
+  - Glass
+  - Skateboard
+  - PlayerBlocker
+  - LOD
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

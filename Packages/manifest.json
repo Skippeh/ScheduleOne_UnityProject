@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "com.unity.addressables": "1.21.21",
+    "com.unity.modules.assetbundle": "1.0.0"
+  }
+}
