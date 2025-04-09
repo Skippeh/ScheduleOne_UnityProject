@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Shop
 {
-	public class ShopInterface : global::UnityEngine.MonoBehaviour
+	public class ShopInterface : global::UnityEngine.MonoBehaviour, global::ScheduleOne.Persistence.ISaveable
 	{
 		public enum EPaymentType
 		{
@@ -10,10 +10,14 @@ namespace ScheduleOne.UI.Shop
 			PreferOnline = 3
 		}
 
+		public static global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopInterface> AllShops;
+
 		public const int MAX_ITEM_QUANTITY = 999;
 
 		[global::UnityEngine.Header("Settings")]
 		public string ShopName;
+
+		public string ShopCode;
 
 		public global::ScheduleOne.UI.Shop.ShopInterface.EPaymentType PaymentType;
 
@@ -70,7 +74,23 @@ namespace ScheduleOne.UI.Shop
 
 		private bool dropdownMouseUp;
 
+		private global::ScheduleOne.Persistence.Loaders.ShopLoader loader;
+
 		public bool IsOpen { get; protected set; }
+
+		public string SaveFolderName => null;
+
+		public string SaveFileName => null;
+
+		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+
+		public bool ShouldSaveUnderFolder => false;
+
+		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+
+		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+
+		public bool HasChanged { get; set; }
 
 		protected virtual void Awake()
 		{
@@ -80,11 +100,32 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
+		public virtual void InitializeSaveable()
+		{
+		}
+
+		private void OnDestroy()
+		{
+		}
+
 		private void OnValidate()
 		{
 		}
 
 		protected virtual void Update()
+		{
+		}
+
+		protected void OnDayPass()
+		{
+		}
+
+		protected void OnWeekPass()
+		{
+		}
+
+		[global::EasyButtons.Button]
+		public void Open()
 		{
 		}
 
@@ -188,6 +229,25 @@ namespace ScheduleOne.UI.Shop
 
 		private void EntryUnhovered()
 		{
+		}
+
+		public void Load(global::ScheduleOne.Persistence.Datas.ShopData data)
+		{
+		}
+
+		public bool ShouldSave()
+		{
+			return false;
+		}
+
+		public global::ScheduleOne.UI.Shop.ShopListing GetListing(string itemID)
+		{
+			return null;
+		}
+
+		public virtual string GetSaveString()
+		{
+			return null;
 		}
 	}
 }

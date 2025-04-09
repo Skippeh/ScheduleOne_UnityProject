@@ -54,6 +54,11 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
+		public int GetCartCount(global::ScheduleOne.UI.Shop.ShopListing listing)
+		{
+			return 0;
+		}
+
 		public void BopCartIcon()
 		{
 		}

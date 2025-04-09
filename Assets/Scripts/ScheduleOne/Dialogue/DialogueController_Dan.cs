@@ -4,6 +4,10 @@ namespace ScheduleOne.Dialogue
 	{
 		public global::ScheduleOne.ItemFramework.ItemDefinition ItemToGive;
 
+		protected override void Start()
+		{
+		}
+
 		public override string ModifyDialogueText(string dialogueLabel, string dialogueText)
 		{
 			return null;

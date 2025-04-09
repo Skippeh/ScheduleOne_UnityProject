@@ -56,6 +56,10 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
+		protected virtual void Start()
+		{
+		}
+
 		public void InitializeDialogue(global::ScheduleOne.Dialogue.DialogueContainer container)
 		{
 		}

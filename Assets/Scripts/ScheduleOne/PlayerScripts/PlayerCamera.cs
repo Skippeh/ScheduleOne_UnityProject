@@ -10,7 +10,7 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CILerpCamera_003Ed__114 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CILerpCamera_003Ed__115 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -55,7 +55,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CILerpCamera_003Ed__114(int _003C_003E1__state)
+			public _003CILerpCamera_003Ed__115(int _003C_003E1__state)
 			{
 			}
 
@@ -82,7 +82,7 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CILerpFOV_003Ed__125 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CILerpFOV_003Ed__126 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -117,7 +117,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CILerpFOV_003Ed__125(int _003C_003E1__state)
+			public _003CILerpFOV_003Ed__126(int _003C_003E1__state)
 			{
 			}
 
@@ -144,7 +144,7 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpDoF_003Ed__122 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CLerpDoF_003Ed__123 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -181,7 +181,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CLerpDoF_003Ed__122(int _003C_003E1__state)
+			public _003CLerpDoF_003Ed__123(int _003C_003E1__state)
 			{
 			}
 
@@ -242,6 +242,8 @@ namespace ScheduleOne.PlayerScripts
 		public global::UnityEngine.Transform CameraContainer;
 
 		public global::UnityEngine.Camera Camera;
+
+		public global::UnityEngine.Camera OverlayCamera;
 
 		public global::UnityEngine.Animator Animator;
 
@@ -429,7 +431,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpCamera_003Ed__114))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpCamera_003Ed__115))]
 		protected global::System.Collections.IEnumerator ILerpCamera(global::UnityEngine.Vector3 endPos, global::UnityEngine.Quaternion endRot, float lerpTime, bool worldSpace, bool returnToRestingPosition = false, bool reenableLook = false)
 		{
 			return null;
@@ -455,7 +457,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CLerpDoF_003Ed__122))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CLerpDoF_003Ed__123))]
 		private global::System.Collections.IEnumerator LerpDoF(bool active, float lerpTime)
 		{
 			return null;
@@ -465,7 +467,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpFOV_003Ed__125))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpFOV_003Ed__126))]
 		protected global::System.Collections.IEnumerator ILerpFOV(float endFov, float lerpTime)
 		{
 			return null;

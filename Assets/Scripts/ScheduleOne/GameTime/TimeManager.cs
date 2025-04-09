@@ -408,6 +408,16 @@ namespace ScheduleOne.GameTime
 			return false;
 		}
 
+		[global::FishNet.Object.ObserversRpc]
+		private void InvokeDayPassClientSide()
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc]
+		private void InvokeWeekPassClientSide()
+		{
+		}
+
 		public void FastForwardToWakeTime()
 		{
 		}
@@ -529,6 +539,30 @@ namespace ScheduleOne.GameTime
 		}
 
 		private void RpcReader___Observers_SetHostSleepDone_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_InvokeDayPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcLogic___InvokeDayPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_InvokeDayPassClientSide_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_InvokeWeekPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcLogic___InvokeWeekPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_InvokeWeekPassClientSide_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
