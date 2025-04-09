@@ -1,8 +1,19 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Dialogue;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Police;
+using ScheduleOne.Product.Packaging;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class BodySearchBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class BodySearchBehaviour : Behaviour
 	{
-		public const global::ScheduleOne.Product.Packaging.EStealthLevel MAX_STEALTH_LEVEL = global::ScheduleOne.Product.Packaging.EStealthLevel.None;
+		public const EStealthLevel MAX_STEALTH_LEVEL = EStealthLevel.None;
 
 		public const float BODY_SEARCH_RANGE = 2f;
 
@@ -16,17 +27,17 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public const float BODY_SEARCH_COOLDOWN = 30f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ArrestCircle_MaxVisibleDistance;
 
 		public float ArrestCircle_MaxOpacity;
 
 		public bool ShowPostSearchDialogue;
 
-		[global::UnityEngine.Header("Item of interest settings")]
-		public global::ScheduleOne.Product.Packaging.EStealthLevel MaxStealthLevel;
+		[Header("Item of interest settings")]
+		public EStealthLevel MaxStealthLevel;
 
-		private global::ScheduleOne.Police.PoliceOfficer officer;
+		private PoliceOfficer officer;
 
 		private float targetDistanceOnStart;
 
@@ -40,10 +51,10 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private float timeSinceCantReach;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onSearchComplete_Clear;
+		[Header("Events")]
+		public UnityEvent onSearchComplete_Clear;
 
-		public global::UnityEngine.Events.UnityEvent onSearchComplete_ItemsFound;
+		public UnityEvent onSearchComplete_ItemsFound;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EBodySearchBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
@@ -51,9 +62,9 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public static float BODY_SEARCH_TIME => 0f;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; protected set; }
+		public Player TargetPlayer { get; protected set; }
 
-		private global::ScheduleOne.Dialogue.DialogueDatabase dialogueDatabase => null;
+		private DialogueDatabase dialogueDatabase => null;
 
 		public override void Awake()
 		{
@@ -111,26 +122,26 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void SetArrestCircleColor(global::UnityEngine.Color col)
+		private void SetArrestCircleColor(Color col)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetNewDestination()
+		private Vector3 GetNewDestination()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private void ClearSpeedControls()
 		{
 		}
 
-		private bool IsTargetValid(global::ScheduleOne.PlayerScripts.Player player)
+		private bool IsTargetValid(Player player)
 		{
 			return false;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void AssignTarget(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		[ObserversRpc(RunLocally = true)]
+		public virtual void AssignTarget(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
@@ -163,15 +174,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcWriter___Observers_AssignTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		private void RpcWriter___Observers_AssignTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		public virtual void RpcLogic___AssignTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		public virtual void RpcLogic___AssignTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		private void RpcReader___Observers_AssignTarget_1824087381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AssignTarget_1824087381(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

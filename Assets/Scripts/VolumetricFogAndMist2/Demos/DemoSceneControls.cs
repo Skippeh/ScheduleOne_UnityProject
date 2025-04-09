@@ -1,12 +1,15 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace VolumetricFogAndMist2.Demos
 {
-	public class DemoSceneControls : global::UnityEngine.MonoBehaviour
+	public class DemoSceneControls : MonoBehaviour
 	{
-		public global::VolumetricFogAndMist2.VolumetricFogProfile[] profiles;
+		public VolumetricFogProfile[] profiles;
 
-		public global::VolumetricFogAndMist2.VolumetricFog fogVolume;
+		public VolumetricFog fogVolume;
 
-		public global::UnityEngine.UI.Text presetNameDisplay;
+		public Text presetNameDisplay;
 
 		private int index;
 

@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	public class PivotDoor : global::UnityEngine.MonoBehaviour
+	public class PivotDoor : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Transform DoorTransform;
+		[Header("Settings")]
+		public Transform DoorTransform;
 
 		public bool FlipSide;
 
@@ -23,7 +25,7 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		public virtual void Opened(global::ScheduleOne.Doors.EDoorSide openSide)
+		public virtual void Opened(EDoorSide openSide)
 		{
 		}
 

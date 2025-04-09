@@ -1,6 +1,6 @@
 namespace ScheduleOne.Storage
 {
-	public class DisposalStorageEntity : global::ScheduleOne.Storage.StorageEntity
+	public class DisposalStorageEntity : StorageEntity
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EDisposalStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 

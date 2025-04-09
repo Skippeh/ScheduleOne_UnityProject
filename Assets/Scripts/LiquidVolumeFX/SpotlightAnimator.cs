@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class SpotlightAnimator : global::UnityEngine.MonoBehaviour
+	public class SpotlightAnimator : MonoBehaviour
 	{
 		public float lightOnDelay;
 
@@ -14,15 +16,15 @@ namespace LiquidVolumeFX
 
 		public float colorChangeDuration;
 
-		private global::UnityEngine.Light spotLight;
+		private Light spotLight;
 
 		private float lastColorChange;
 
 		private float colorChangeStarted;
 
-		private global::UnityEngine.Color currentColor;
+		private Color currentColor;
 
-		private global::UnityEngine.Color nextColor;
+		private Color nextColor;
 
 		private bool changingColor;
 

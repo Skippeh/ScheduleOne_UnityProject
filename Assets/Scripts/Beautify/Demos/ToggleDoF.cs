@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Beautify.Demos
 {
-	public class ToggleDoF : global::UnityEngine.MonoBehaviour
+	public class ToggleDoF : MonoBehaviour
 	{
 		private void Update()
 		{

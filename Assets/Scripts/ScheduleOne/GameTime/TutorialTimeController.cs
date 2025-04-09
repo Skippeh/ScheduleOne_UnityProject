@@ -1,8 +1,12 @@
+using System;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.GameTime
 {
-	public class TutorialTimeController : global::UnityEngine.MonoBehaviour
+	public class TutorialTimeController : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public struct KeyFrame
 		{
 			public int Time;
@@ -12,11 +16,11 @@ namespace ScheduleOne.GameTime
 			public string Note;
 		}
 
-		public global::UnityEngine.AnimationCurve TimeProgressionCurve;
+		public AnimationCurve TimeProgressionCurve;
 
-		public global::ScheduleOne.GameTime.TutorialTimeController.KeyFrame[] KeyFrames;
+		public KeyFrame[] KeyFrames;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int currentKeyFrameIndex;
 
 		private bool disabled;
@@ -38,7 +42,7 @@ namespace ScheduleOne.GameTime
 			return 0;
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void IncrementKeyframe()
 		{
 		}

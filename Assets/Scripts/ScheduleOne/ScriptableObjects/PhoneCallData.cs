@@ -1,18 +1,23 @@
+using System;
+using ScheduleOne.Quests;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ScriptableObjects
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "PhoneCallData", menuName = "ScriptableObjects/PhoneCallData", order = 1)]
-	public class PhoneCallData : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "PhoneCallData", menuName = "ScriptableObjects/PhoneCallData", order = 1)]
+	public class PhoneCallData : ScriptableObject
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Stage
 		{
-			[global::UnityEngine.TextArea(3, 10)]
+			[TextArea(3, 10)]
 			public string Text;
 
-			public global::ScheduleOne.Quests.SystemTrigger[] OnStartTriggers;
+			public SystemTrigger[] OnStartTriggers;
 
-			public global::ScheduleOne.Quests.SystemTrigger[] OnDoneTriggers;
+			public SystemTrigger[] OnDoneTriggers;
 
 			public void OnStageStart()
 			{
@@ -23,11 +28,11 @@ namespace ScheduleOne.ScriptableObjects
 			}
 		}
 
-		public global::ScheduleOne.ScriptableObjects.CallerID CallerID;
+		public CallerID CallerID;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData.Stage[] Stages;
+		public Stage[] Stages;
 
-		public global::UnityEngine.Events.UnityEvent onCallCompleted;
+		public UnityEvent onCallCompleted;
 
 		public void Completed()
 		{

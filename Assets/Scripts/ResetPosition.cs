@@ -1,8 +1,10 @@
-public class ResetPosition : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class ResetPosition : MonoBehaviour
 {
 	public float distanceToReset;
 
-	private global::UnityEngine.Vector3 startPosition;
+	private Vector3 startPosition;
 
 	private void Start()
 	{

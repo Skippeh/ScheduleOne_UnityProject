@@ -1,43 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class Handgun : global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon
+	public class Handgun : AvatarRangedWeapon
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFlash_003Ed__7 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CFlash_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.AvatarFramework.Equipping.Handgun _003C_003E4__this;
+			public Handgun _003C_003E4__this;
 
-			public global::UnityEngine.Vector3 endPoint;
+			public Vector3 endPoint;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CFlash_003Ed__7(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -46,38 +53,38 @@ namespace ScheduleOne.AvatarFramework.Equipping
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animation Anim;
+		[Header("References")]
+		public UnityEngine.Animation Anim;
 
-		public global::UnityEngine.ParticleSystem ShellParticles;
+		public ParticleSystem ShellParticles;
 
-		public global::UnityEngine.ParticleSystem SmokeParticles;
+		public ParticleSystem SmokeParticles;
 
-		public global::UnityEngine.Transform FlashObject;
+		public Transform FlashObject;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject RayPrefab;
+		[Header("Prefabs")]
+		public GameObject RayPrefab;
 
-		private global::UnityEngine.Coroutine flashRoutine;
+		private Coroutine flashRoutine;
 
-		public override void Shoot(global::UnityEngine.Vector3 endPoint)
+		public override void Shoot(Vector3 endPoint)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.Handgun._003CFlash_003Ed__7))]
-		private global::System.Collections.IEnumerator Flash(global::UnityEngine.Vector3 endPoint)
+		[IteratorStateMachine(typeof(_003CFlash_003Ed__7))]
+		private IEnumerator Flash(Vector3 endPoint)
 		{
 			return null;
 		}

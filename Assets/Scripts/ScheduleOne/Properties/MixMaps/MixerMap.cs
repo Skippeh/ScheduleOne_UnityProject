@@ -1,18 +1,22 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Properties.MixMaps
 {
-	[global::System.Serializable]
-	public class MixerMap : global::UnityEngine.ScriptableObject
+	[Serializable]
+	public class MixerMap : ScriptableObject
 	{
 		public float MapRadius;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.MixMaps.MixerMapEffect> Effects;
+		public List<MixerMapEffect> Effects;
 
-		public global::ScheduleOne.Properties.MixMaps.MixerMapEffect GetEffectAtPoint(global::UnityEngine.Vector2 point)
+		public MixerMapEffect GetEffectAtPoint(Vector2 point)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Properties.MixMaps.MixerMapEffect GetEffect(global::ScheduleOne.Properties.Property property)
+		public MixerMapEffect GetEffect(Property property)
 		{
 			return null;
 		}

@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public static class GlobalMeshHD
 	{
-		private static global::UnityEngine.Mesh ms_Mesh;
+		private static Mesh ms_Mesh;
 
-		public static global::UnityEngine.Mesh Get()
+		public static Mesh Get()
 		{
 			return null;
 		}

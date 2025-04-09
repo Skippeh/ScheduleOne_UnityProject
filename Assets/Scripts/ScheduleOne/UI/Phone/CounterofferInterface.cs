@@ -1,6 +1,14 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Messaging;
+using ScheduleOne.Product;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class CounterofferInterface : global::UnityEngine.MonoBehaviour
+	public class CounterofferInterface : MonoBehaviour
 	{
 		public const int COUNTEROFFER_SUCCESS_XP = 5;
 
@@ -14,40 +22,40 @@ namespace ScheduleOne.UI.Phone
 
 		public float IconAlignment;
 
-		public global::UnityEngine.GameObject ProductEntryPrefab;
+		public GameObject ProductEntryPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject Container;
+		[Header("References")]
+		public GameObject Container;
 
-		public global::UnityEngine.UI.Text TitleLabel;
+		public Text TitleLabel;
 
-		public global::UnityEngine.UI.Button ConfirmButton;
+		public Button ConfirmButton;
 
-		public global::UnityEngine.UI.Image ProductIcon;
+		public Image ProductIcon;
 
-		public global::UnityEngine.UI.Text ProductLabel;
+		public Text ProductLabel;
 
-		public global::UnityEngine.RectTransform ProductLabelRect;
+		public RectTransform ProductLabelRect;
 
-		public global::UnityEngine.UI.InputField PriceInput;
+		public InputField PriceInput;
 
-		public global::UnityEngine.UI.Text FairPriceLabel;
+		public Text FairPriceLabel;
 
-		public global::UnityEngine.RectTransform EntryContainer;
+		public CounterOfferProductSelector ProductSelector;
 
-		private global::System.Action<global::ScheduleOne.Product.ProductDefinition, int, float> orderConfirmedCallback;
+		private Action<ProductDefinition, int, float> orderConfirmedCallback;
 
-		private global::ScheduleOne.Product.ProductDefinition product;
+		private ProductDefinition selectedProduct;
 
 		private int quantity;
 
 		private float price;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Product.ProductDefinition, global::UnityEngine.RectTransform> productEntries;
+		private Dictionary<ProductDefinition, RectTransform> productEntries;
 
 		private bool mouseUp;
 
-		private global::ScheduleOne.Messaging.MSGConversation conversation;
+		private MSGConversation conversation;
 
 		public bool IsOpen { get; private set; }
 
@@ -63,11 +71,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void Open(global::ScheduleOne.Product.ProductDefinition product, int quantity, float price, global::ScheduleOne.Messaging.MSGConversation _conversation, global::System.Action<global::ScheduleOne.Product.ProductDefinition, int, float> _orderConfirmedCallback)
-		{
-		}
-
-		private void CreateProductEntry(global::ScheduleOne.Product.ProductDefinition product)
+		public void Open(ProductDefinition product, int quantity, float price, MSGConversation _conversation, Action<ProductDefinition, int, float> _orderConfirmedCallback)
 		{
 		}
 
@@ -75,7 +79,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		public void Exit(ExitAction action)
 		{
 		}
 
@@ -87,11 +91,11 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		private void SetProduct(global::ScheduleOne.Product.ProductDefinition newProduct)
+		private void SetProduct(ProductDefinition newProduct)
 		{
 		}
 
-		private void DisplayProduct(global::ScheduleOne.Product.ProductDefinition tempProduct)
+		private void DisplayProduct(ProductDefinition tempProduct)
 		{
 		}
 
@@ -111,7 +115,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void ProductClicked()
+		public void OpenProductSelector()
 		{
 		}
 	}

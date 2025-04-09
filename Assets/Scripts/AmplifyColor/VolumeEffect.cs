@@ -1,27 +1,31 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VolumeEffect
 	{
 		public AmplifyColorEffect gameObject;
 
-		public global::System.Collections.Generic.List<global::AmplifyColor.VolumeEffectComponent> components;
+		public List<VolumeEffectComponent> components;
 
 		public VolumeEffect(AmplifyColorEffect effect)
 		{
 		}
 
-		public static global::AmplifyColor.VolumeEffect BlendValuesToVolumeEffect(global::AmplifyColor.VolumeEffectFlags flags, global::AmplifyColor.VolumeEffect volume1, global::AmplifyColor.VolumeEffect volume2, float blend)
+		public static VolumeEffect BlendValuesToVolumeEffect(VolumeEffectFlags flags, VolumeEffect volume1, VolumeEffect volume2, float blend)
 		{
 			return null;
 		}
 
-		public global::AmplifyColor.VolumeEffectComponent AddComponent(global::UnityEngine.Component c, global::AmplifyColor.VolumeEffectComponentFlags compFlags)
+		public VolumeEffectComponent AddComponent(Component c, VolumeEffectComponentFlags compFlags)
 		{
 			return null;
 		}
 
-		public void RemoveEffectComponent(global::AmplifyColor.VolumeEffectComponent comp)
+		public void RemoveEffectComponent(VolumeEffectComponent comp)
 		{
 		}
 
@@ -33,16 +37,16 @@ namespace AmplifyColor
 		{
 		}
 
-		public void BlendValues(AmplifyColorEffect targetColor, global::AmplifyColor.VolumeEffect other, float blendAmount)
+		public void BlendValues(AmplifyColorEffect targetColor, VolumeEffect other, float blendAmount)
 		{
 		}
 
-		public global::AmplifyColor.VolumeEffectComponent FindEffectComponent(string compName)
+		public VolumeEffectComponent FindEffectComponent(string compName)
 		{
 			return null;
 		}
 
-		public static global::UnityEngine.Component[] ListAcceptableComponents(AmplifyColorEffect go)
+		public static Component[] ListAcceptableComponents(AmplifyColorEffect go)
 		{
 			return null;
 		}

@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace ScheduleOne.Properties.MixMaps
 {
-	public class Effect : global::UnityEngine.MonoBehaviour
+	public class Effect : MonoBehaviour
 	{
-		public global::ScheduleOne.Properties.Property Property;
+		public Property Property;
 
-		[global::UnityEngine.Range(0.05f, 3f)]
+		[Range(0.05f, 3f)]
 		public float Radius;
 
-		public global::UnityEngine.Vector2 Position => default(global::UnityEngine.Vector2);
+		public Vector2 Position => default(Vector2);
 
 		public void OnValidate()
 		{

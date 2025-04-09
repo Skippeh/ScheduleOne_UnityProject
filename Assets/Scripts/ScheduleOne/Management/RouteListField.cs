@@ -1,19 +1,23 @@
+using System.Collections.Generic;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class RouteListField : global::ScheduleOne.Management.ConfigField
+	public class RouteListField : ConfigField
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.AdvancedTransitRoute> Routes;
+		public List<AdvancedTransitRoute> Routes;
 
 		public int MaxRoutes;
 
-		public global::UnityEngine.Events.UnityEvent<global::System.Collections.Generic.List<global::ScheduleOne.Management.AdvancedTransitRoute>> onListChanged;
+		public UnityEvent<List<AdvancedTransitRoute>> onListChanged;
 
-		public RouteListField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public RouteListField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetList(global::System.Collections.Generic.List<global::ScheduleOne.Management.AdvancedTransitRoute> list, bool network, bool bypassSequenceCheck = false)
+		public void SetList(List<AdvancedTransitRoute> list, bool network, bool bypassSequenceCheck = false)
 		{
 		}
 
@@ -21,11 +25,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public void AddItem(global::ScheduleOne.Management.AdvancedTransitRoute item)
+		public void AddItem(AdvancedTransitRoute item)
 		{
 		}
 
-		public void RemoveItem(global::ScheduleOne.Management.AdvancedTransitRoute item)
+		public void RemoveItem(AdvancedTransitRoute item)
 		{
 		}
 
@@ -34,12 +38,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.RouteListData GetData()
+		public RouteListData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.RouteListData data)
+		public void Load(RouteListData data)
 		{
 		}
 	}

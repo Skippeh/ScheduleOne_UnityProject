@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MinMaxColor
 	{
-		public global::System.Collections.Generic.List<global::UnityEngine.Color> minColors;
+		public List<Color> minColors;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Color> maxColors;
+		public List<Color> maxColors;
 
-		public global::UnityEngine.Color GetRandom()
+		public Color GetRandom()
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

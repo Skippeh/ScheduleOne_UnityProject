@@ -1,24 +1,26 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class WeatherController : global::UnityEngine.MonoBehaviour
+	public class WeatherController : MonoBehaviour
 	{
-		private global::Funly.SkyStudio.WeatherEnclosure m_Enclosure;
+		private WeatherEnclosure m_Enclosure;
 
-		private global::UnityEngine.MeshRenderer m_EnclosureMeshRenderer;
+		private MeshRenderer m_EnclosureMeshRenderer;
 
-		private global::Funly.SkyStudio.WeatherEnclosureDetector detector;
+		private WeatherEnclosureDetector detector;
 
-		private global::Funly.SkyStudio.SkyProfile m_Profile;
+		private SkyProfile m_Profile;
 
 		private float m_TimeOfDay;
 
-		public global::Funly.SkyStudio.RainDownfallController rainDownfallController { get; protected set; }
+		public RainDownfallController rainDownfallController { get; protected set; }
 
-		public global::Funly.SkyStudio.RainSplashController rainSplashController { get; protected set; }
+		public RainSplashController rainSplashController { get; protected set; }
 
-		public global::Funly.SkyStudio.LightningController lightningController { get; protected set; }
+		public LightningController lightningController { get; protected set; }
 
-		public global::Funly.SkyStudio.WeatherDepthCamera weatherDepthCamera { get; protected set; }
+		public WeatherDepthCamera weatherDepthCamera { get; protected set; }
 
 		private void Awake()
 		{
@@ -40,7 +42,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public void UpdateForTimeOfDay(global::Funly.SkyStudio.SkyProfile skyProfile, float timeOfDay)
+		public void UpdateForTimeOfDay(SkyProfile skyProfile, float timeOfDay)
 		{
 		}
 
@@ -48,7 +50,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private void OnEnclosureDidChange(global::Funly.SkyStudio.WeatherEnclosure enclosure)
+		private void OnEnclosureDidChange(WeatherEnclosure enclosure)
 		{
 		}
 	}

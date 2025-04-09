@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Interaction
 {
-	public class InteractableObject : global::UnityEngine.MonoBehaviour
+	public class InteractableObject : MonoBehaviour
 	{
 		public enum EInteractionType
 		{
@@ -16,15 +19,15 @@ namespace ScheduleOne.Interaction
 			Label = 3
 		}
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected string message;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject.EInteractionType interactionType;
+		[SerializeField]
+		protected EInteractionType interactionType;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject.EInteractableState interactionState;
+		[SerializeField]
+		protected EInteractableState interactionState;
 
 		public float MaxInteractionRange;
 
@@ -32,32 +35,32 @@ namespace ScheduleOne.Interaction
 
 		public int Priority;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Collider displayLocationCollider;
+		[SerializeField]
+		protected Collider displayLocationCollider;
 
-		public global::UnityEngine.Transform displayLocationPoint;
+		public Transform displayLocationPoint;
 
-		[global::UnityEngine.Header("Angle Limits")]
+		[Header("Angle Limits")]
 		public bool LimitInteractionAngle;
 
 		public float AngleLimit;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onHovered;
+		[Header("Events")]
+		public UnityEvent onHovered;
 
-		public global::UnityEngine.Events.UnityEvent onInteractStart;
+		public UnityEvent onInteractStart;
 
-		public global::UnityEngine.Events.UnityEvent onInteractEnd;
+		public UnityEvent onInteractEnd;
 
-		public global::ScheduleOne.Interaction.InteractableObject.EInteractionType _interactionType => default(global::ScheduleOne.Interaction.InteractableObject.EInteractionType);
+		public EInteractionType _interactionType => default(EInteractionType);
 
-		public global::ScheduleOne.Interaction.InteractableObject.EInteractableState _interactionState => default(global::ScheduleOne.Interaction.InteractableObject.EInteractableState);
+		public EInteractableState _interactionState => default(EInteractableState);
 
-		public void SetInteractionType(global::ScheduleOne.Interaction.InteractableObject.EInteractionType type)
+		public void SetInteractionType(EInteractionType type)
 		{
 		}
 
-		public void SetInteractableState(global::ScheduleOne.Interaction.InteractableObject.EInteractableState state)
+		public void SetInteractableState(EInteractableState state)
 		{
 		}
 
@@ -81,7 +84,7 @@ namespace ScheduleOne.Interaction
 		{
 		}
 
-		public bool CheckAngleLimit(global::UnityEngine.Vector3 interactionSource)
+		public bool CheckAngleLimit(Vector3 interactionSource)
 		{
 			return false;
 		}

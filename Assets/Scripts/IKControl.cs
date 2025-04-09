@@ -1,13 +1,15 @@
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Animator))]
-public class IKControl : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+[RequireComponent(typeof(Animator))]
+public class IKControl : MonoBehaviour
 {
-	protected global::UnityEngine.Animator animator;
+	protected Animator animator;
 
 	public bool ikActive;
 
-	public global::UnityEngine.Transform rightHandObj;
+	public Transform rightHandObj;
 
-	public global::UnityEngine.Transform lookObj;
+	public Transform lookObj;
 
 	private void Start()
 	{

@@ -1,62 +1,69 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class RebindActionUI : global::UnityEngine.MonoBehaviour
+	public class RebindActionUI : MonoBehaviour
 	{
-		[global::System.Serializable]
-		public class UpdateBindingUIEvent : global::UnityEngine.Events.UnityEvent<global::ScheduleOne.DevUtilities.RebindActionUI, string, string, string>
+		[Serializable]
+		public class UpdateBindingUIEvent : UnityEvent<RebindActionUI, string, string, string>
 		{
 		}
 
-		[global::System.Serializable]
-		public class InteractiveRebindEvent : global::UnityEngine.Events.UnityEvent<global::ScheduleOne.DevUtilities.RebindActionUI, global::UnityEngine.InputSystem.InputActionRebindingExtensions.RebindingOperation>
+		[Serializable]
+		public class InteractiveRebindEvent : UnityEvent<RebindActionUI, InputActionRebindingExtensions.RebindingOperation>
 		{
 		}
 
-		public global::System.Action onRebind;
+		public Action onRebind;
 
-		[global::UnityEngine.Tooltip("Reference to action that is to be rebound from the UI.")]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.InputSystem.InputActionReference m_Action;
+		[Tooltip("Reference to action that is to be rebound from the UI.")]
+		[SerializeField]
+		private InputActionReference m_Action;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private string m_BindingId;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.InputSystem.InputBinding.DisplayStringOptions m_DisplayStringOptions;
+		[SerializeField]
+		private InputBinding.DisplayStringOptions m_DisplayStringOptions;
 
-		[global::UnityEngine.Tooltip("Text label that will receive the name of the action. Optional. Set to None to have the rebind UI not show a label for the action.")]
-		[global::UnityEngine.SerializeField]
-		private global::TMPro.TextMeshProUGUI m_ActionLabel;
+		[Tooltip("Text label that will receive the name of the action. Optional. Set to None to have the rebind UI not show a label for the action.")]
+		[SerializeField]
+		private TextMeshProUGUI m_ActionLabel;
 
-		[global::UnityEngine.Tooltip("Text label that will receive the current, formatted binding string.")]
-		[global::UnityEngine.SerializeField]
-		private global::TMPro.TextMeshProUGUI m_BindingText;
+		[Tooltip("Text label that will receive the current, formatted binding string.")]
+		[SerializeField]
+		private TextMeshProUGUI m_BindingText;
 
-		[global::UnityEngine.Tooltip("Optional UI that will be shown while a rebind is in progress.")]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.GameObject m_RebindOverlay;
+		[Tooltip("Optional UI that will be shown while a rebind is in progress.")]
+		[SerializeField]
+		private GameObject m_RebindOverlay;
 
-		[global::UnityEngine.Tooltip("Optional text label that will be updated with prompt for user input.")]
-		[global::UnityEngine.SerializeField]
-		private global::TMPro.TextMeshProUGUI m_RebindText;
+		[Tooltip("Optional text label that will be updated with prompt for user input.")]
+		[SerializeField]
+		private TextMeshProUGUI m_RebindText;
 
-		[global::UnityEngine.Tooltip("Event that is triggered when the way the binding is display should be updated. This allows displaying bindings in custom ways, e.g. using images instead of text.")]
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.DevUtilities.RebindActionUI.UpdateBindingUIEvent m_UpdateBindingUIEvent;
+		[Tooltip("Event that is triggered when the way the binding is display should be updated. This allows displaying bindings in custom ways, e.g. using images instead of text.")]
+		[SerializeField]
+		private UpdateBindingUIEvent m_UpdateBindingUIEvent;
 
-		[global::UnityEngine.Tooltip("Event that is triggered when an interactive rebind is being initiated. This can be used, for example, to implement custom UI behavior while a rebind is in progress. It can also be used to further customize the rebind.")]
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.DevUtilities.RebindActionUI.InteractiveRebindEvent m_RebindStartEvent;
+		[Tooltip("Event that is triggered when an interactive rebind is being initiated. This can be used, for example, to implement custom UI behavior while a rebind is in progress. It can also be used to further customize the rebind.")]
+		[SerializeField]
+		private InteractiveRebindEvent m_RebindStartEvent;
 
-		[global::UnityEngine.Tooltip("Event that is triggered when an interactive rebind is complete or has been aborted.")]
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.DevUtilities.RebindActionUI.InteractiveRebindEvent m_RebindStopEvent;
+		[Tooltip("Event that is triggered when an interactive rebind is complete or has been aborted.")]
+		[SerializeField]
+		private InteractiveRebindEvent m_RebindStopEvent;
 
-		private global::UnityEngine.InputSystem.InputActionRebindingExtensions.RebindingOperation m_RebindOperation;
+		private InputActionRebindingExtensions.RebindingOperation m_RebindOperation;
 
-		private static global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.RebindActionUI> s_RebindActionUIs;
+		private static List<RebindActionUI> s_RebindActionUIs;
 
-		public global::UnityEngine.InputSystem.InputActionReference actionReference
+		public InputActionReference actionReference
 		{
 			get
 			{
@@ -78,29 +85,18 @@ namespace ScheduleOne.DevUtilities
 			}
 		}
 
-		public global::UnityEngine.InputSystem.InputBinding.DisplayStringOptions displayStringOptions
+		public InputBinding.DisplayStringOptions displayStringOptions
 		{
 			get
 			{
-				return default(global::UnityEngine.InputSystem.InputBinding.DisplayStringOptions);
+				return default(InputBinding.DisplayStringOptions);
 			}
 			set
 			{
 			}
 		}
 
-		public global::TMPro.TextMeshProUGUI actionLabel
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
-
-		public global::TMPro.TextMeshProUGUI bindingText
+		public TextMeshProUGUI actionLabel
 		{
 			get
 			{
@@ -111,7 +107,7 @@ namespace ScheduleOne.DevUtilities
 			}
 		}
 
-		public global::TMPro.TextMeshProUGUI rebindPrompt
+		public TextMeshProUGUI bindingText
 		{
 			get
 			{
@@ -122,7 +118,7 @@ namespace ScheduleOne.DevUtilities
 			}
 		}
 
-		public global::UnityEngine.GameObject rebindOverlay
+		public TextMeshProUGUI rebindPrompt
 		{
 			get
 			{
@@ -133,15 +129,26 @@ namespace ScheduleOne.DevUtilities
 			}
 		}
 
-		public global::ScheduleOne.DevUtilities.RebindActionUI.UpdateBindingUIEvent updateBindingUIEvent => null;
+		public GameObject rebindOverlay
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
 
-		public global::ScheduleOne.DevUtilities.RebindActionUI.InteractiveRebindEvent startRebindEvent => null;
+		public UpdateBindingUIEvent updateBindingUIEvent => null;
 
-		public global::ScheduleOne.DevUtilities.RebindActionUI.InteractiveRebindEvent stopRebindEvent => null;
+		public InteractiveRebindEvent startRebindEvent => null;
 
-		public global::UnityEngine.InputSystem.InputActionRebindingExtensions.RebindingOperation ongoingRebind => null;
+		public InteractiveRebindEvent stopRebindEvent => null;
 
-		public bool ResolveActionAndBinding(out global::UnityEngine.InputSystem.InputAction action, out int bindingIndex)
+		public InputActionRebindingExtensions.RebindingOperation ongoingRebind => null;
+
+		public bool ResolveActionAndBinding(out InputAction action, out int bindingIndex)
 		{
 			action = null;
 			bindingIndex = default(int);
@@ -160,7 +167,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private void PerformInteractiveRebind(global::UnityEngine.InputSystem.InputAction action, int bindingIndex, bool allCompositeParts = false)
+		private void PerformInteractiveRebind(InputAction action, int bindingIndex, bool allCompositeParts = false)
 		{
 		}
 
@@ -172,7 +179,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private static void OnActionChange(object obj, global::UnityEngine.InputSystem.InputActionChange change)
+		private static void OnActionChange(object obj, InputActionChange change)
 		{
 		}
 

@@ -1,6 +1,12 @@
+using System;
+using EasyButtons;
+using FishNet.Managing;
+using ScheduleOne.DevUtilities;
+using Steamworks;
+
 namespace ScheduleOne.Networking
 {
-	public class Lobby : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Networking.Lobby>
+	public class Lobby : PersistentSingleton<Lobby>
 	{
 		public const bool ENABLED = true;
 
@@ -12,21 +18,21 @@ namespace ScheduleOne.Networking
 
 		public const string HOST_LOADING = "host_loading";
 
-		public global::FishNet.Managing.NetworkManager NetworkManager;
+		public NetworkManager NetworkManager;
 
-		public global::Steamworks.CSteamID[] Players;
+		public CSteamID[] Players;
 
-		public global::System.Action onLobbyChange;
+		public Action onLobbyChange;
 
-		private global::Steamworks.Callback<global::Steamworks.LobbyCreated_t> LobbyCreatedCallback;
+		private Callback<LobbyCreated_t> LobbyCreatedCallback;
 
-		private global::Steamworks.Callback<global::Steamworks.LobbyEnter_t> LobbyEnteredCallback;
+		private Callback<LobbyEnter_t> LobbyEnteredCallback;
 
-		private global::Steamworks.Callback<global::Steamworks.LobbyChatUpdate_t> ChatUpdateCallback;
+		private Callback<LobbyChatUpdate_t> ChatUpdateCallback;
 
-		private global::Steamworks.Callback<global::Steamworks.GameLobbyJoinRequested_t> GameLobbyJoinRequestedCallback;
+		private Callback<GameLobbyJoinRequested_t> GameLobbyJoinRequestedCallback;
 
-		private global::Steamworks.Callback<global::Steamworks.LobbyChatMsg_t> LobbyChatMessageCallback;
+		private Callback<LobbyChatMsg_t> LobbyChatMessageCallback;
 
 		public string DebugSteamId64;
 
@@ -34,13 +40,13 @@ namespace ScheduleOne.Networking
 
 		public ulong LobbyID { get; private set; }
 
-		public global::Steamworks.CSteamID LobbySteamID => default(global::Steamworks.CSteamID);
+		public CSteamID LobbySteamID => default(CSteamID);
 
 		public bool IsInLobby => false;
 
 		public int PlayerCount => 0;
 
-		public global::Steamworks.CSteamID LocalPlayerID { get; private set; }
+		public CSteamID LocalPlayerID { get; private set; }
 
 		protected override void Awake()
 		{
@@ -75,7 +81,7 @@ namespace ScheduleOne.Networking
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void DebugJoin()
 		{
 		}
@@ -92,23 +98,23 @@ namespace ScheduleOne.Networking
 		{
 		}
 
-		private void OnLobbyCreated(global::Steamworks.LobbyCreated_t result)
+		private void OnLobbyCreated(LobbyCreated_t result)
 		{
 		}
 
-		private void OnLobbyEntered(global::Steamworks.LobbyEnter_t result)
+		private void OnLobbyEntered(LobbyEnter_t result)
 		{
 		}
 
-		private void PlayerEnterOrLeave(global::Steamworks.LobbyChatUpdate_t result)
+		private void PlayerEnterOrLeave(LobbyChatUpdate_t result)
 		{
 		}
 
-		private void LobbyJoinRequested(global::Steamworks.GameLobbyJoinRequested_t result)
+		private void LobbyJoinRequested(GameLobbyJoinRequested_t result)
 		{
 		}
 
-		private void OnLobbyChatMessage(global::Steamworks.LobbyChatMsg_t result)
+		private void OnLobbyChatMessage(LobbyChatMsg_t result)
 		{
 		}
 	}

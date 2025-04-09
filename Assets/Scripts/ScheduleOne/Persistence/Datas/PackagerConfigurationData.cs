@@ -1,15 +1,17 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class PackagerConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class PackagerConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Bed;
+		public ObjectFieldData Bed;
 
-		public global::ScheduleOne.Persistence.Datas.ObjectListFieldData Stations;
+		public ObjectListFieldData Stations;
 
-		public global::ScheduleOne.Persistence.Datas.RouteListData Routes;
+		public RouteListData Routes;
 
-		public PackagerConfigurationData(global::ScheduleOne.Persistence.Datas.ObjectFieldData bed, global::ScheduleOne.Persistence.Datas.ObjectListFieldData stations, global::ScheduleOne.Persistence.Datas.RouteListData routes)
+		public PackagerConfigurationData(ObjectFieldData bed, ObjectListFieldData stations, RouteListData routes)
 		{
 		}
 	}

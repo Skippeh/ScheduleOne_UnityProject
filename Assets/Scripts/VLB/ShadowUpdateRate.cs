@@ -1,6 +1,8 @@
+using System;
+
 namespace VLB
 {
-	[global::System.Flags]
+	[Flags]
 	public enum ShadowUpdateRate
 	{
 		Never = 1,

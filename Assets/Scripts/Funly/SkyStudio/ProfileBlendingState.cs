@@ -2,11 +2,11 @@ namespace Funly.SkyStudio
 {
 	public struct ProfileBlendingState
 	{
-		public global::Funly.SkyStudio.SkyProfile blendedProfile;
+		public SkyProfile blendedProfile;
 
-		public global::Funly.SkyStudio.SkyProfile fromProfile;
+		public SkyProfile fromProfile;
 
-		public global::Funly.SkyStudio.SkyProfile toProfile;
+		public SkyProfile toProfile;
 
 		public float progress;
 
@@ -16,15 +16,15 @@ namespace Funly.SkyStudio
 
 		public float timeOfDay;
 
-		public ProfileBlendingState(global::Funly.SkyStudio.SkyProfile blendedProfile, global::Funly.SkyStudio.SkyProfile fromProfile, global::Funly.SkyStudio.SkyProfile toProfile, float progress, float outProgress, float inProgress, float timeOfDay)
+		public ProfileBlendingState(SkyProfile blendedProfile, SkyProfile fromProfile, SkyProfile toProfile, float progress, float outProgress, float inProgress, float timeOfDay)
 		{
-			this.blendedProfile = null;
-			this.fromProfile = null;
-			this.toProfile = null;
-			this.progress = 0f;
-			this.outProgress = 0f;
-			this.inProgress = 0f;
-			this.timeOfDay = 0f;
+			this.blendedProfile = blendedProfile;
+			this.fromProfile = fromProfile;
+			this.toProfile = toProfile;
+			this.progress = progress;
+			this.inProgress = inProgress;
+			this.outProgress = outProgress;
+			this.timeOfDay = timeOfDay;
 		}
 	}
 }

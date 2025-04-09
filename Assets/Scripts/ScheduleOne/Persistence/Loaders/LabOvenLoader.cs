@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class LabOvenLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class LabOvenLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

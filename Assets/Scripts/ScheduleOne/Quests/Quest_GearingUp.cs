@@ -1,12 +1,14 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_GearingUp : global::ScheduleOne.Quests.Quest
+	public class Quest_GearingUp : Quest
 	{
-		public global::ScheduleOne.Quests.QuestEntry WaitForDropEntry;
+		public QuestEntry WaitForDropEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry CollectDropEntry;
+		public QuestEntry CollectDropEntry;
 
-		public global::ScheduleOne.Economy.Supplier Supplier;
+		public Supplier Supplier;
 
 		private bool setCollectionPosition;
 

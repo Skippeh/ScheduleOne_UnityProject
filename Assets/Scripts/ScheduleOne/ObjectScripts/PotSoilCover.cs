@@ -1,41 +1,49 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class PotSoilCover : global::UnityEngine.MonoBehaviour
+	public class PotSoilCover : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CCheckQueue_003Ed__25 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CCheckQueue_003Ed__25 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.ObjectScripts.PotSoilCover _003C_003E4__this;
+			public PotSoilCover _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CCheckQueue_003Ed__25(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,14 +52,14 @@ namespace ScheduleOne.ObjectScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -72,29 +80,29 @@ namespace ScheduleOne.ObjectScripts
 
 		public float CurrentCoverage;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float Radius;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.MeshRenderer MeshRenderer;
+		[Header("References")]
+		public MeshRenderer MeshRenderer;
 
-		public global::UnityEngine.Texture2D PourMask;
+		public Texture2D PourMask;
 
-		public global::UnityEngine.Events.UnityEvent onSufficientCoverage;
+		public UnityEvent onSufficientCoverage;
 
 		private bool queued;
 
-		private global::UnityEngine.Vector3 queuedWorldPos;
+		private Vector3 queuedWorldPos;
 
-		private global::UnityEngine.Texture2D mainTex;
+		private Texture2D mainTex;
 
-		private global::UnityEngine.Vector3 relative;
+		private Vector3 relative;
 
-		private global::UnityEngine.Vector2 vector2;
+		private Vector2 vector2;
 
-		private global::UnityEngine.Vector2 normalizedOffset;
+		private Vector2 normalizedOffset;
 
-		private global::UnityEngine.Vector2 originPixel;
+		private Vector2 originPixel;
 
 		private void Awake()
 		{
@@ -104,7 +112,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ConfigureAppearance(global::UnityEngine.Color col, float transparency)
+		public void ConfigureAppearance(Color col, float transparency)
 		{
 		}
 
@@ -112,7 +120,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void QueuePour(global::UnityEngine.Vector3 worldSpacePosition)
+		public void QueuePour(Vector3 worldSpacePosition)
 		{
 		}
 
@@ -121,8 +129,8 @@ namespace ScheduleOne.ObjectScripts
 			return 0f;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.ObjectScripts.PotSoilCover._003CCheckQueue_003Ed__25))]
-		private global::System.Collections.IEnumerator CheckQueue()
+		[IteratorStateMachine(typeof(_003CCheckQueue_003Ed__25))]
+		private IEnumerator CheckQueue()
 		{
 			return null;
 		}
@@ -131,11 +139,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void DelayedApplyPour(global::UnityEngine.Vector3 worldSpace)
+		private void DelayedApplyPour(Vector3 worldSpace)
 		{
 		}
 
-		private void ApplyPour(global::UnityEngine.Vector3 worldSpace)
+		private void ApplyPour(Vector3 worldSpace)
 		{
 		}
 

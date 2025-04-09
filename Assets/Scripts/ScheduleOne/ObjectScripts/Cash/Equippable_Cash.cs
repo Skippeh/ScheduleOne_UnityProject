@@ -1,21 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts.Cash
 {
-	public class Equippable_Cash : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_Cash : Equippable_Viewmodel
 	{
 		private int amountIndex;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Container_Under100;
+		[Header("References")]
+		public Transform Container_Under100;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> SingleNotes;
+		public List<Transform> SingleNotes;
 
-		public global::UnityEngine.Transform Container_100_300;
+		public Transform Container_100_300;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> Under300Stacks;
+		public List<Transform> Under300Stacks;
 
-		public global::UnityEngine.Transform Container_300Plus;
+		public Transform Container_300Plus;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> PlusStacks;
+		public List<Transform> PlusStacks;
 
 		protected override void Update()
 		{
@@ -29,7 +34,7 @@ namespace ScheduleOne.ObjectScripts.Cash
 		{
 		}
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

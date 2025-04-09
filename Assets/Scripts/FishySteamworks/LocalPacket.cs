@@ -1,3 +1,6 @@
+using System;
+using FishNet.Utility.Performance;
+
 namespace FishySteamworks
 {
 	internal struct LocalPacket
@@ -8,11 +11,12 @@ namespace FishySteamworks
 
 		public byte Channel;
 
-		public LocalPacket(global::System.ArraySegment<byte> data, byte channel)
+		public LocalPacket(ArraySegment<byte> data, byte channel)
 		{
-			Data = null;
-			Length = 0;
-			Channel = 0;
+			Data = ByteArrayPool.Retrieve(data.Count);
+			Length = data.Count;
+			Buffer.BlockCopy(data.Array, data.Offset, Data, 0, Length);
+			Channel = channel;
 		}
 	}
 }

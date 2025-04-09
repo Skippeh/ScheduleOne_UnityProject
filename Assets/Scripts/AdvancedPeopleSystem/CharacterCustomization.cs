@@ -1,33 +1,36 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.AddComponentMenu("Advanced People Pack/Character Customizable", -1)]
-	public class CharacterCustomization : global::UnityEngine.MonoBehaviour
+	[DisallowMultipleComponent]
+	[AddComponentMenu("Advanced People Pack/Character Customizable", -1)]
+	public class CharacterCustomization : MonoBehaviour
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public bool isSettingsExpanded;
 
-		public global::AdvancedPeopleSystem.CharacterSettings selectedsettings;
+		public CharacterSettings selectedsettings;
 
-		[global::UnityEngine.SerializeField]
-		private global::AdvancedPeopleSystem.CharacterSettings _settings;
+		[SerializeField]
+		private CharacterSettings _settings;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterPart> characterParts;
+		public List<CharacterPart> characterParts;
 
 		public string prefabPath;
 
-		[global::UnityEngine.SerializeField]
-		public global::AdvancedPeopleSystem.CharacterInstanceStatus instanceStatus;
+		[SerializeField]
+		public CharacterInstanceStatus instanceStatus;
 
-		public global::UnityEngine.Transform originHip;
+		public Transform originHip;
 
-		public global::UnityEngine.Transform headHip;
+		public Transform headHip;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.ClothesAnchor> clothesAnchors;
+		public List<ClothesAnchor> clothesAnchors;
 
-		public global::UnityEngine.Animator animator;
+		public Animator animator;
 
-		public global::AdvancedPeopleSystem.CharacterSelectedElements characterSelectedElements;
+		public CharacterSelectedElements characterSelectedElements;
 
 		public float heightValue;
 
@@ -35,51 +38,51 @@ namespace AdvancedPeopleSystem
 
 		public float feetOffset;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterBlendshapeData> characterBlendshapeDatas;
+		public List<CharacterBlendshapeData> characterBlendshapeDatas;
 
-		public global::UnityEngine.Color Skin;
+		public Color Skin;
 
-		public global::UnityEngine.Color Eye;
+		public Color Eye;
 
-		public global::UnityEngine.Color Hair;
+		public Color Hair;
 
-		public global::UnityEngine.Color Underpants;
+		public Color Underpants;
 
-		public global::UnityEngine.Color OralCavity;
+		public Color OralCavity;
 
-		public global::UnityEngine.Color Teeth;
+		public Color Teeth;
 
-		public global::UnityEngine.MaterialPropertyBlock bodyPropertyBlock;
+		public MaterialPropertyBlock bodyPropertyBlock;
 
-		public global::AdvancedPeopleSystem.CurrentBlendshapeAnimation currentBlendshapeAnimation;
+		public CurrentBlendshapeAnimation currentBlendshapeAnimation;
 
-		public global::AdvancedPeopleSystem.CombinerState CurrentCombinerState;
+		public CombinerState CurrentCombinerState;
 
-		public global::AdvancedPeopleSystem.CharacterPreBuilt combinedCharacter;
+		public CharacterPreBuilt combinedCharacter;
 
-		public global::UnityEngine.Transform ProbesAnchorOverride;
+		public Transform ProbesAnchorOverride;
 
-		public global::AdvancedPeopleSystem.CharacterGeneratorSettings CharacterGenerator_settings;
+		public CharacterGeneratorSettings CharacterGenerator_settings;
 
 		public bool UpdateWhenOffscreenMeshes;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public int MinLODLevels;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public int MaxLODLevels;
 
-		private global::UnityEngine.LODGroup _lodGroup;
+		private LODGroup _lodGroup;
 
-		public global::UnityEngine.Transform _transform;
+		public Transform _transform;
 
 		public bool applyFeetOffset;
 
 		public bool notAPP2Shader;
 
-		private global::UnityEngine.GameObject prebuiltPrefab;
+		private GameObject prebuiltPrefab;
 
-		public global::AdvancedPeopleSystem.CharacterSettings Settings => null;
+		public CharacterSettings Settings => null;
 
 		private void Awake()
 		{
@@ -105,7 +108,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void InitializeMeshes(global::AdvancedPeopleSystem.CharacterSettings newSettings = null, bool resetAll = true)
+		public void InitializeMeshes(CharacterSettings newSettings = null, bool resetAll = true)
 		{
 		}
 
@@ -113,7 +116,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterSettingsSelector> GetCharacterSettingsSelectors()
+		public List<CharacterSettingsSelector> GetCharacterSettingsSelectors()
 		{
 			return null;
 		}
@@ -130,7 +133,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void SetBlendshapeValue(global::AdvancedPeopleSystem.CharacterBlendShapeType type, float weight, string[] forPart = null, global::AdvancedPeopleSystem.CharacterElementType[] forClothPart = null)
+		public void SetBlendshapeValue(CharacterBlendShapeType type, float weight, string[] forPart = null, CharacterElementType[] forClothPart = null)
 		{
 		}
 
@@ -138,11 +141,11 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void SetElementByIndex(global::AdvancedPeopleSystem.CharacterElementType type, int index)
+		public void SetElementByIndex(CharacterElementType type, int index)
 		{
 		}
 
-		public void ClearElement(global::AdvancedPeopleSystem.CharacterElementType type)
+		public void ClearElement(CharacterElementType type)
 		{
 		}
 
@@ -154,7 +157,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void SetFeetOffset(global::UnityEngine.Vector3 offset)
+		public void SetFeetOffset(Vector3 offset)
 		{
 		}
 
@@ -166,27 +169,27 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public global::AdvancedPeopleSystem.ClothesAnchor GetClothesAnchor(global::AdvancedPeopleSystem.CharacterElementType type)
+		public ClothesAnchor GetClothesAnchor(CharacterElementType type)
 		{
 			return null;
 		}
 
-		public global::AdvancedPeopleSystem.CharacterPart GetCharacterPart(string name)
+		public CharacterPart GetCharacterPart(string name)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::UnityEngine.SkinnedMeshRenderer> GetAllMeshesByLod(int lod)
+		public List<SkinnedMeshRenderer> GetAllMeshesByLod(int lod)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::UnityEngine.SkinnedMeshRenderer> GetAllMeshes()
+		public List<SkinnedMeshRenderer> GetAllMeshes()
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::UnityEngine.SkinnedMeshRenderer> GetAllMeshes(bool onlyBodyMeshes = false, string[] excludeNames = null)
+		public List<SkinnedMeshRenderer> GetAllMeshes(bool onlyBodyMeshes = false, string[] excludeNames = null)
 		{
 			return null;
 		}
@@ -195,29 +198,29 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void UnHideParts(string[] parts, global::AdvancedPeopleSystem.CharacterElementType hidePartsForElement)
+		public void UnHideParts(string[] parts, CharacterElementType hidePartsForElement)
 		{
 		}
 
-		public void SetBodyColor(global::AdvancedPeopleSystem.BodyColorPart bodyColorPart, global::UnityEngine.Color color)
+		public void SetBodyColor(BodyColorPart bodyColorPart, Color color)
 		{
 		}
 
-		public global::UnityEngine.Color GetBodyColor(global::AdvancedPeopleSystem.BodyColorPart bodyColorPart)
+		public Color GetBodyColor(BodyColorPart bodyColorPart)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		public void SetCharacterSetup(global::AdvancedPeopleSystem.CharacterCustomizationSetup characterCustomizationSetup)
+		public void SetCharacterSetup(CharacterCustomizationSetup characterCustomizationSetup)
 		{
 		}
 
-		public global::AdvancedPeopleSystem.CharacterCustomizationSetup GetSetup()
+		public CharacterCustomizationSetup GetSetup()
 		{
 			return null;
 		}
 
-		public void ApplySavedCharacterData(global::AdvancedPeopleSystem.SavedCharacterData data)
+		public void ApplySavedCharacterData(SavedCharacterData data)
 		{
 		}
 
@@ -225,12 +228,12 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.SavedCharacterData> GetSavedCharacterDatas(string path = "")
+		public List<SavedCharacterData> GetSavedCharacterDatas(string path = "")
 		{
 			return null;
 		}
 
-		public void ClearSavedData(global::AdvancedPeopleSystem.SavedCharacterData data)
+		public void ClearSavedData(SavedCharacterData data)
 		{
 		}
 
@@ -238,7 +241,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public void SaveCharacterToFile(global::AdvancedPeopleSystem.CharacterCustomizationSetup.CharacterFileSaveFormat format, string path = "", string name = "")
+		public void SaveCharacterToFile(CharacterCustomizationSetup.CharacterFileSaveFormat format, string path = "", string name = "")
 		{
 		}
 
@@ -271,17 +274,17 @@ namespace AdvancedPeopleSystem
 			return false;
 		}
 
-		public global::AdvancedPeopleSystem.CharacterElementsPreset GetElementsPreset(global::AdvancedPeopleSystem.CharacterElementType type, int index)
+		public CharacterElementsPreset GetElementsPreset(CharacterElementType type, int index)
 		{
 			return null;
 		}
 
-		public global::AdvancedPeopleSystem.CharacterElementsPreset GetElementsPreset(global::AdvancedPeopleSystem.CharacterElementType type, string name)
+		public CharacterElementsPreset GetElementsPreset(CharacterElementType type, string name)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> GetElementsPresets(global::AdvancedPeopleSystem.CharacterElementType type)
+		public List<CharacterElementsPreset> GetElementsPresets(CharacterElementType type)
 		{
 			return null;
 		}
@@ -302,7 +305,7 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public global::UnityEngine.Animator GetAnimator()
+		public Animator GetAnimator()
 		{
 			return null;
 		}
@@ -331,31 +334,31 @@ namespace AdvancedPeopleSystem
 		{
 		}
 
-		public global::AdvancedPeopleSystem.CharacterInstanceStatus GetCharacterInstanceStatus()
+		public CharacterInstanceStatus GetCharacterInstanceStatus()
 		{
-			return default(global::AdvancedPeopleSystem.CharacterInstanceStatus);
+			return default(CharacterInstanceStatus);
 		}
 
-		public void SetNewCharacterInstanceStatus(global::AdvancedPeopleSystem.CharacterInstanceStatus characterInstanceStatus)
+		public void SetNewCharacterInstanceStatus(CharacterInstanceStatus characterInstanceStatus)
 		{
 		}
 
-		public global::AdvancedPeopleSystem.CharacterBlendshapeData GetBlendshapeData(global::AdvancedPeopleSystem.CharacterBlendShapeType type)
-		{
-			return null;
-		}
-
-		public global::AdvancedPeopleSystem.CharacterBlendshapeData GetBlendshapeData(string name)
+		public CharacterBlendshapeData GetBlendshapeData(CharacterBlendShapeType type)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterBlendshapeData> GetBlendshapeDatasByGroup(global::AdvancedPeopleSystem.CharacterBlendShapeGroup group)
+		public CharacterBlendshapeData GetBlendshapeData(string name)
 		{
 			return null;
 		}
 
-		private void DestroyObjects(global::UnityEngine.Object[] objects)
+		public List<CharacterBlendshapeData> GetBlendshapeDatasByGroup(CharacterBlendShapeGroup group)
+		{
+			return null;
+		}
+
+		private void DestroyObjects(Object[] objects)
 		{
 		}
 	}

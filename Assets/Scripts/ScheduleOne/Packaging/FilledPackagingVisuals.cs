@@ -1,50 +1,53 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Packaging
 {
-	public class FilledPackagingVisuals : global::UnityEngine.MonoBehaviour
+	public class FilledPackagingVisuals : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class MeshIndexPair
 		{
-			public global::UnityEngine.MeshRenderer Mesh;
+			public MeshRenderer Mesh;
 
 			public int MaterialIndex;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class BaseVisuals
 		{
-			public global::UnityEngine.Transform Container;
+			public Transform Container;
 		}
 
-		[global::System.Serializable]
-		public class WeedVisuals : global::ScheduleOne.Packaging.FilledPackagingVisuals.BaseVisuals
+		[Serializable]
+		public class WeedVisuals : BaseVisuals
 		{
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals.MeshIndexPair[] MainMeshes;
+			public MeshIndexPair[] MainMeshes;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals.MeshIndexPair[] SecondaryMeshes;
+			public MeshIndexPair[] SecondaryMeshes;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals.MeshIndexPair[] LeafMeshes;
+			public MeshIndexPair[] LeafMeshes;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals.MeshIndexPair[] StemMeshes;
+			public MeshIndexPair[] StemMeshes;
 		}
 
-		[global::System.Serializable]
-		public class MethVisuals : global::ScheduleOne.Packaging.FilledPackagingVisuals.BaseVisuals
+		[Serializable]
+		public class MethVisuals : BaseVisuals
 		{
-			public global::UnityEngine.MeshRenderer[] CrystalMeshes;
+			public MeshRenderer[] CrystalMeshes;
 		}
 
-		[global::System.Serializable]
-		public class CocaineVisuals : global::ScheduleOne.Packaging.FilledPackagingVisuals.BaseVisuals
+		[Serializable]
+		public class CocaineVisuals : BaseVisuals
 		{
-			public global::UnityEngine.MeshRenderer[] RockMeshes;
+			public MeshRenderer[] RockMeshes;
 		}
 
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals.WeedVisuals weedVisuals;
+		public WeedVisuals weedVisuals;
 
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals.MethVisuals methVisuals;
+		public MethVisuals methVisuals;
 
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals.CocaineVisuals cocaineVisuals;
+		public CocaineVisuals cocaineVisuals;
 
 		public void ResetVisuals()
 		{

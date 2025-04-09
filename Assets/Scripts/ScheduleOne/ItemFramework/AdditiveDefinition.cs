@@ -1,9 +1,13 @@
+using System;
+using ScheduleOne.Growing;
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "AdditiveDefinition", menuName = "ScriptableObjects/Item Definitions/AdditiveDefinition", order = 1)]
-	public class AdditiveDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "AdditiveDefinition", menuName = "ScriptableObjects/Item Definitions/AdditiveDefinition", order = 1)]
+	public class AdditiveDefinition : StorableItemDefinition
 	{
-		public global::ScheduleOne.Growing.Additive AdditivePrefab;
+		public Additive AdditivePrefab;
 	}
 }

@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleCollisionDetector : global::UnityEngine.MonoBehaviour
+	public class VehicleCollisionDetector : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collision> onCollisionEnter;
+		public UnityEvent<Collision> onCollisionEnter;
 
-		public void OnCollisionEnter(global::UnityEngine.Collision collision)
+		public void OnCollisionEnter(Collision collision)
 		{
 		}
 	}

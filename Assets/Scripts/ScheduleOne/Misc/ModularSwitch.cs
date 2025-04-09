@@ -1,31 +1,41 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.Interaction;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Misc
 {
-	public class ModularSwitch : global::FishNet.Object.NetworkBehaviour
+	public class ModularSwitch : NetworkBehaviour
 	{
 		public delegate void ButtonChange(bool isOn);
 
 		public bool isOn;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform button;
+		[SerializeField]
+		protected Transform button;
 
-		public global::ScheduleOne.Audio.AudioSourceController OnAudio;
+		public AudioSourceController OnAudio;
 
-		public global::ScheduleOne.Audio.AudioSourceController OffAudio;
+		public AudioSourceController OffAudio;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Misc.ModularSwitch> SwitchesToSyncWith;
+		[Header("Settings")]
+		[SerializeField]
+		protected List<ModularSwitch> SwitchesToSyncWith;
 
-		public global::ScheduleOne.Misc.ModularSwitch.ButtonChange onToggled;
+		public ButtonChange onToggled;
 
-		public global::UnityEngine.Events.UnityEvent switchedOn;
+		public UnityEvent switchedOn;
 
-		public global::UnityEngine.Events.UnityEvent switchedOff;
+		public UnityEvent switchedOff;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EMisc_002EModularSwitchAssembly_002DCSharp_002Edll_Excuted;
 
@@ -35,7 +45,7 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -51,14 +61,14 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		private void SendIsOn(bool isOn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void SetIsOn(global::FishNet.Connection.NetworkConnection conn, bool isOn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void SetIsOn(NetworkConnection conn, bool isOn)
 		{
 		}
 
@@ -90,27 +100,27 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		private void RpcReader___Server_SendIsOn_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendIsOn_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetIsOn_214505783(global::FishNet.Connection.NetworkConnection conn, bool isOn)
+		private void RpcWriter___Observers_SetIsOn_214505783(NetworkConnection conn, bool isOn)
 		{
 		}
 
-		private void RpcLogic___SetIsOn_214505783(global::FishNet.Connection.NetworkConnection conn, bool isOn)
+		private void RpcLogic___SetIsOn_214505783(NetworkConnection conn, bool isOn)
 		{
 		}
 
-		private void RpcReader___Observers_SetIsOn_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetIsOn_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetIsOn_214505783(global::FishNet.Connection.NetworkConnection conn, bool isOn)
+		private void RpcWriter___Target_SetIsOn_214505783(NetworkConnection conn, bool isOn)
 		{
 		}
 
-		private void RpcReader___Target_SetIsOn_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetIsOn_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

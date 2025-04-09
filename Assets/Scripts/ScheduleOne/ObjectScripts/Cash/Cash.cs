@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts.Cash
 {
-	public class Cash : global::UnityEngine.MonoBehaviour
+	public class Cash : MonoBehaviour
 	{
 		public static float stackSize;
 

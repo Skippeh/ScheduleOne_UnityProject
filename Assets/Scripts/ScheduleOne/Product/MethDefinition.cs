@@ -1,23 +1,28 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "MethDefinition", menuName = "ScriptableObjects/Item Definitions/MethDefinition", order = 1)]
-	public class MethDefinition : global::ScheduleOne.Product.ProductDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "MethDefinition", menuName = "ScriptableObjects/Item Definitions/MethDefinition", order = 1)]
+	public class MethDefinition : ProductDefinition
 	{
-		public global::UnityEngine.Material CrystalMaterial;
+		public Material CrystalMaterial;
 
-		[global::UnityEngine.ColorUsage(true, true)]
-		[global::UnityEngine.SerializeField]
-		public global::UnityEngine.Color TintColor;
+		[ColorUsage(true, true)]
+		[SerializeField]
+		public Color TintColor;
 
-		public global::ScheduleOne.Product.MethAppearanceSettings AppearanceSettings { get; private set; }
+		public MethAppearanceSettings AppearanceSettings { get; private set; }
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public override ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes, global::ScheduleOne.Product.MethAppearanceSettings _appearance)
+		public void Initialize(List<ScheduleOne.Properties.Property> properties, List<EDrugType> drugTypes, MethAppearanceSettings _appearance)
 		{
 		}
 
@@ -26,7 +31,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.MethAppearanceSettings GetAppearanceSettings(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static MethAppearanceSettings GetAppearanceSettings(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}

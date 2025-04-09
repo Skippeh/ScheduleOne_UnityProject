@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class CoweringBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class CoweringBehaviour : Behaviour
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002ECoweringBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

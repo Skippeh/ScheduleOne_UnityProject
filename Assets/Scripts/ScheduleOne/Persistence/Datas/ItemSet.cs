@@ -1,11 +1,15 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ItemSet
 	{
 		public string[] Items;
 
-		public ItemSet(global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.ItemData> items)
+		public ItemSet(List<ItemData> items)
 		{
 		}
 
@@ -14,19 +18,19 @@ namespace ScheduleOne.Persistence.Datas
 			return null;
 		}
 
-		public ItemSet(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
+		public ItemSet(List<ItemInstance> items)
 		{
 		}
 
-		public ItemSet(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> itemSlots)
+		public ItemSet(List<ItemSlot> itemSlots)
 		{
 		}
 
-		public ItemSet(global::ScheduleOne.ItemFramework.ItemSlot[] itemSlots)
+		public ItemSet(ItemSlot[] itemSlots)
 		{
 		}
 
-		public static global::ScheduleOne.ItemFramework.ItemInstance[] Deserialize(string json)
+		public static ItemInstance[] Deserialize(string json)
 		{
 			return null;
 		}

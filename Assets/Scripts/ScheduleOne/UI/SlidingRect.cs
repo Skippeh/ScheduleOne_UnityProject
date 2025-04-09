@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class SlidingRect : global::UnityEngine.MonoBehaviour
+	public class SlidingRect : MonoBehaviour
 	{
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
-		public global::UnityEngine.Vector2 Start;
+		public Vector2 Start;
 
-		public global::UnityEngine.Vector2 End;
+		public Vector2 End;
 
 		public float Duration;
 

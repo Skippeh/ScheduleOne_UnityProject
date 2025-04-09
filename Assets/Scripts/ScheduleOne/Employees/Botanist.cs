@@ -1,6 +1,20 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Dialogue;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.UI.Management;
+using UnityEngine;
+
 namespace ScheduleOne.Employees
 {
-	public class Botanist : global::ScheduleOne.Employees.Employee, global::ScheduleOne.Management.IConfigurable
+	public class Botanist : Employee, IConfigurable
 	{
 		public float CRITICAL_WATERING_THRESHOLD;
 
@@ -20,76 +34,66 @@ namespace ScheduleOne.Employees
 
 		public float HARVEST_TIME;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Sprite typeIcon;
+		[Header("References")]
+		public Sprite typeIcon;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
+		[SerializeField]
+		protected ConfigurationReplicator configReplicator;
 
-		public global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour PotActionBehaviour;
+		public PotActionBehaviour PotActionBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.StartDryingRackBehaviour StartDryingRackBehaviour;
+		public StartDryingRackBehaviour StartDryingRackBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.StopDryingRackBehaviour StopDryingRackBehaviour;
+		public StopDryingRackBehaviour StopDryingRackBehaviour;
 
-		[global::UnityEngine.Header("UI")]
-		public global::ScheduleOne.UI.Management.BotanistUIElement WorldspaceUIPrefab;
+		[Header("UI")]
+		public BotanistUIElement WorldspaceUIPrefab;
 
-		public global::UnityEngine.Transform uiPoint;
+		public Transform uiPoint;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public int MaxAssignedPots;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer NoAssignedStationsDialogue;
+		public DialogueContainer NoAssignedStationsDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer UnspecifiedPotsDialogue;
+		public DialogueContainer UnspecifiedPotsDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer NullDestinationPotsDialogue;
+		public DialogueContainer NullDestinationPotsDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer MissingMaterialsDialogue;
+		public DialogueContainer MissingMaterialsDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer NoPotsRequireWorkDialogue;
+		public DialogueContainer NoPotsRequireWorkDialogue;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEmployees_002EBotanistAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEmployees_002EBotanistAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Management.EntityConfiguration Configuration => null;
+		public EntityConfiguration Configuration => null;
 
-		protected global::ScheduleOne.Management.BotanistConfiguration configuration { get; set; }
+		protected BotanistConfiguration configuration { get; set; }
 
-		public global::ScheduleOne.Management.ConfigurationReplicator ConfigReplicator => null;
+		public ConfigurationReplicator ConfigReplicator => null;
 
-		public global::ScheduleOne.Management.EConfigurableType ConfigurableType => default(global::ScheduleOne.Management.EConfigurableType);
+		public EConfigurableType ConfigurableType => default(EConfigurableType);
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement WorldspaceUI { get; set; }
+		public WorldspaceUIElement WorldspaceUI { get; set; }
 
-		public global::FishNet.Object.NetworkObject CurrentPlayerConfigurer
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar]
+		public NetworkObject CurrentPlayerConfigurer { get; set; }
 
-		public global::UnityEngine.Sprite TypeIcon => null;
+		public Sprite TypeIcon => null;
 
-		public global::UnityEngine.Transform Transform => null;
+		public Transform Transform => null;
 
-		public global::UnityEngine.Transform UIPoint => null;
+		public Transform UIPoint => null;
 
 		public bool CanBeSelected => false;
 
-		public global::ScheduleOne.Property.Property ParentProperty => null;
+		public ScheduleOne.Property.Property ParentProperty => null;
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
 		{
 			get
 			{
@@ -100,8 +104,8 @@ namespace ScheduleOne.Employees
 			}
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetConfigurer(global::FishNet.Object.NetworkObject player)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetConfigurer(NetworkObject player)
 		{
 		}
 
@@ -113,32 +117,32 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private bool IsEntityAccessible(global::ScheduleOne.Management.ITransitEntity entity)
+		private bool IsEntityAccessible(ITransitEntity entity)
 		{
 			return false;
 		}
 
-		private void StartAction(global::ScheduleOne.ObjectScripts.Pot pot, global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		private void StartAction(Pot pot, PotActionBehaviour.EActionType actionType)
 		{
 		}
 
-		private void StartDryingRack(global::ScheduleOne.ObjectScripts.DryingRack rack)
+		private void StartDryingRack(DryingRack rack)
 		{
 		}
 
-		private void StopDryingRack(global::ScheduleOne.ObjectScripts.DryingRack rack)
+		private void StopDryingRack(DryingRack rack)
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SendConfigurationToClient(global::FishNet.Connection.NetworkConnection conn)
+		public void SendConfigurationToClient(NetworkConnection conn)
 		{
 		}
 
-		protected override void AssignProperty(global::ScheduleOne.Property.Property prop)
+		protected override void AssignProperty(ScheduleOne.Property.Property prop)
 		{
 		}
 
@@ -146,7 +150,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private bool CanMoveDryableToRack(out global::ScheduleOne.ItemFramework.QualityItemInstance dryable, out global::ScheduleOne.ObjectScripts.DryingRack destinationRack, out int moveQuantity)
+		private bool CanMoveDryableToRack(out QualityItemInstance dryable, out DryingRack destinationRack, out int moveQuantity)
 		{
 			dryable = null;
 			destinationRack = null;
@@ -154,23 +158,23 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		public global::ScheduleOne.ItemFramework.QualityItemInstance GetDryableInSupplies()
+		public QualityItemInstance GetDryableInSupplies()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ObjectScripts.DryingRack GetAssignedDryingRackFor(global::ScheduleOne.ItemFramework.QualityItemInstance dryable, out int rackInputCapacity)
+		private DryingRack GetAssignedDryingRackFor(QualityItemInstance dryable, out int rackInputCapacity)
 		{
 			rackInputCapacity = default(int);
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemInstance GetItemInSupplies(string id)
+		public ItemInstance GetItemInSupplies(string id)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemInstance GetSeedInSupplies()
+		public ItemInstance GetSeedInSupplies()
 		{
 			return null;
 		}
@@ -180,7 +184,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		public override global::ScheduleOne.ObjectScripts.BedItem GetBed()
+		public override BedItem GetBed()
 		{
 			return null;
 		}
@@ -200,63 +204,63 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForWatering(float threshold, bool excludeFullyGrowm)
+		private Pot GetPotForWatering(float threshold, bool excludeFullyGrowm)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForSoilSour()
+		private Pot GetPotForSoilSour()
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> GetPotsReadyForSeed()
+		private List<Pot> GetPotsReadyForSeed()
 		{
 			return null;
 		}
 
-		private T GetAccessableEntity<T>(T entity) where T : global::ScheduleOne.Management.ITransitEntity
+		private T GetAccessableEntity<T>(T entity) where T : ITransitEntity
 		{
 			return default(T);
 		}
 
-		private global::System.Collections.Generic.List<T> GetAccessableEntities<T>(global::System.Collections.Generic.List<T> list) where T : global::ScheduleOne.Management.ITransitEntity
+		private List<T> GetAccessableEntities<T>(List<T> list) where T : ITransitEntity
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> FilterPotsForSpecifiedSeed(global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> pots)
+		private List<Pot> FilterPotsForSpecifiedSeed(List<Pot> pots)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForAdditives(out int additiveNumber)
+		private Pot GetPotForAdditives(out int additiveNumber)
 		{
 			additiveNumber = default(int);
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> GetPotsForHarvest()
+		private List<Pot> GetPotsForHarvest()
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.DryingRack> GetRacksToStart()
+		private List<DryingRack> GetRacksToStart()
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.DryingRack> GetRacksToStop()
+		private List<DryingRack> GetRacksToStop()
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.DryingRack> GetRacksReadyToMove()
+		private List<DryingRack> GetRacksReadyToMove()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement CreateWorldspaceUI()
+		public WorldspaceUIElement CreateWorldspaceUI()
 		{
 			return null;
 		}
@@ -270,7 +274,7 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		public override global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public override List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -287,19 +291,19 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcWriter___Server_SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Server_SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		public void RpcLogic___SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		public void RpcLogic___SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Server_SetConfigurer_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetConfigurer_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002EBotanist(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002EBotanist(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

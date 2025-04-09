@@ -1,45 +1,53 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class CrimeStatusUI : global::UnityEngine.MonoBehaviour
+	public class CrimeStatusUI : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRoutine_003Ed__14 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CRoutine_003Ed__14 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.CrimeStatusUI _003C_003E4__this;
+			public CrimeStatusUI _003C_003E4__this;
 
 			private float _003ClerpTime_003E5__2;
 
 			private float _003Ct_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CRoutine_003Ed__14(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -48,14 +56,14 @@ namespace ScheduleOne.UI
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -64,26 +72,26 @@ namespace ScheduleOne.UI
 
 		public const float LargeTextSize = 1f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform CrimeStatusContainer;
+		[Header("References")]
+		public RectTransform CrimeStatusContainer;
 
-		public global::UnityEngine.CanvasGroup CrimeStatusGroup;
+		public CanvasGroup CrimeStatusGroup;
 
-		public global::UnityEngine.GameObject BodysearchLabel;
+		public GameObject BodysearchLabel;
 
-		public global::UnityEngine.UI.Image InvestigatingMask;
+		public Image InvestigatingMask;
 
-		public global::UnityEngine.UI.Image UnderArrestMask;
+		public Image UnderArrestMask;
 
-		public global::UnityEngine.UI.Image WantedMask;
+		public Image WantedMask;
 
-		public global::UnityEngine.UI.Image WantedDeadMask;
+		public Image WantedDeadMask;
 
-		public global::UnityEngine.GameObject ArrestProgressContainer;
+		public GameObject ArrestProgressContainer;
 
 		private bool animateText;
 
-		private global::UnityEngine.Coroutine routine;
+		private Coroutine routine;
 
 		public void UpdateStatus()
 		{
@@ -93,8 +101,8 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.CrimeStatusUI._003CRoutine_003Ed__14))]
-		private global::System.Collections.IEnumerator Routine()
+		[IteratorStateMachine(typeof(_003CRoutine_003Ed__14))]
+		private IEnumerator Routine()
 		{
 			return null;
 		}

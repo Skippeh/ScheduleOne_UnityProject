@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class Flipboard : global::UnityEngine.MonoBehaviour
+	public class Flipboard : MonoBehaviour
 	{
-		public global::UnityEngine.Sprite[] Sprites;
+		public Sprite[] Sprites;
 
-		public global::UnityEngine.UI.Image Image;
+		public Image Image;
 
 		public float FlipTime;
 

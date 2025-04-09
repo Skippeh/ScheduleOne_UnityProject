@@ -1,41 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class FeedbackForm : global::AeLa.EasyFeedback.FeedbackForm
+	public class FeedbackForm : AeLa.EasyFeedback.FeedbackForm
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CScreenshotAndOpenForm_003Ed__18 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CScreenshotAndOpenForm_003Ed__18 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.FeedbackForm _003C_003E4__this;
+			public FeedbackForm _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CScreenshotAndOpenForm_003Ed__18(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,33 +53,33 @@ namespace ScheduleOne.UI
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		private global::UnityEngine.Coroutine ssCoroutine;
+		private Coroutine ssCoroutine;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		public global::UnityEngine.UI.Toggle ScreenshotToggle;
+		public Toggle ScreenshotToggle;
 
-		public global::UnityEngine.UI.Toggle SaveFileToggle;
+		public Toggle SaveFileToggle;
 
-		public global::TMPro.TMP_InputField SummaryField;
+		public TMP_InputField SummaryField;
 
-		public global::TMPro.TMP_InputField DescriptionField;
+		public TMP_InputField DescriptionField;
 
-		public global::UnityEngine.RectTransform Cog;
+		public RectTransform Cog;
 
-		public global::TMPro.TMP_Dropdown CategoryDropdown;
+		public TMP_Dropdown CategoryDropdown;
 
 		public override void Awake()
 		{
@@ -113,8 +122,8 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.FeedbackForm._003CScreenshotAndOpenForm_003Ed__18))]
-		private global::System.Collections.IEnumerator ScreenshotAndOpenForm()
+		[IteratorStateMachine(typeof(_003CScreenshotAndOpenForm_003Ed__18))]
+		private IEnumerator ScreenshotAndOpenForm()
 		{
 			return null;
 		}

@@ -1,18 +1,21 @@
+using ScheduleOne.Economy;
+using ScheduleOne.NPCs.CharacterClasses;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_GettingStarted : global::ScheduleOne.Quests.Quest
+	public class Quest_GettingStarted : Quest
 	{
 		public float CashAmount;
 
-		public global::ScheduleOne.Economy.DeadDrop CashDrop;
+		public DeadDrop CashDrop;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.UncleNelson Nelson;
+		public UncleNelson Nelson;
 
 		protected override void MinPass()
 		{
 		}
 
-		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public override void SetQuestState(EQuestState state, bool network = true)
 		{
 		}
 	}

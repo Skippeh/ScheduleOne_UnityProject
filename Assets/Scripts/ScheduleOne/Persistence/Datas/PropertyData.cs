@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class PropertyData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class PropertyData : SaveData
 	{
 		public string PropertyCode;
 

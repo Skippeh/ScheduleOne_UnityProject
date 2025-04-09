@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class IdleBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class IdleBehaviour : Behaviour
 	{
-		public global::UnityEngine.Transform IdlePoint;
+		public Transform IdlePoint;
 
 		private bool facingDir;
 

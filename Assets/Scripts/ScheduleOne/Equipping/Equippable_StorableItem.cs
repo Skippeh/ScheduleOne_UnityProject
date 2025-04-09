@@ -1,6 +1,6 @@
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_StorableItem : global::ScheduleOne.Equipping.Equippable
+	public class Equippable_StorableItem : Equippable
 	{
 		protected bool isBuildingStoredItem;
 

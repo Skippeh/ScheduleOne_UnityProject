@@ -1,15 +1,19 @@
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class ArrestScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.ArrestScreen>
+	public class ArrestScreen : Singleton<ArrestScreen>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::UnityEngine.CanvasGroup group;
+		public CanvasGroup group;
 
-		public global::ScheduleOne.Audio.AudioSourceController Sound;
+		public AudioSourceController Sound;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
 		public bool isOpen { get; protected set; }
 

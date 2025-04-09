@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.Trash
 {
-	public class TrashSpawnVolume : global::UnityEngine.MonoBehaviour
+	public class TrashSpawnVolume : MonoBehaviour
 	{
-		public global::UnityEngine.BoxCollider CreatonVolume;
+		public BoxCollider CreatonVolume;
 
-		public global::UnityEngine.BoxCollider DetectionVolume;
+		public BoxCollider DetectionVolume;
 
 		public int TrashLimit;
 

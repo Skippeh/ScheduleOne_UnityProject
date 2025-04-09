@@ -1,16 +1,19 @@
+using System.Collections.Generic;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Casino
 {
 	public class CasinoGamePlayerData
 	{
-		protected global::System.Collections.Generic.Dictionary<string, bool> bools;
+		protected Dictionary<string, bool> bools;
 
-		protected global::System.Collections.Generic.Dictionary<string, float> floats;
+		protected Dictionary<string, float> floats;
 
-		public global::ScheduleOne.Casino.CasinoGamePlayers Parent { get; private set; }
+		public CasinoGamePlayers Parent { get; private set; }
 
-		public global::ScheduleOne.PlayerScripts.Player Player { get; private set; }
+		public Player Player { get; private set; }
 
-		public CasinoGamePlayerData(global::ScheduleOne.Casino.CasinoGamePlayers parent, global::ScheduleOne.PlayerScripts.Player player)
+		public CasinoGamePlayerData(CasinoGamePlayers parent, Player player)
 		{
 		}
 

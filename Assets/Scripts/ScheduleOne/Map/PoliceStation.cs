@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Police;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class PoliceStation : global::ScheduleOne.Map.NPCEnterableBuilding
+	public class PoliceStation : NPCEnterableBuilding
 	{
 		public enum EDispatchType
 		{
@@ -9,24 +16,24 @@ namespace ScheduleOne.Map
 			OnFoot = 2
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Map.PoliceStation> PoliceStations;
+		public static List<PoliceStation> PoliceStations;
 
 		public int VehicleLimit;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform SpawnPoint;
+		[Header("References")]
+		public Transform SpawnPoint;
 
-		public global::UnityEngine.Transform[] VehicleSpawnPoints;
+		public Transform[] VehicleSpawnPoints;
 
-		public global::UnityEngine.Transform[] PossessedVehicleSpawnPoints;
+		public Transform[] PossessedVehicleSpawnPoints;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.Vehicles.LandVehicle[] PoliceVehiclePrefabs;
+		[Header("Prefabs")]
+		public LandVehicle[] PoliceVehiclePrefabs;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> OfficerPool;
+		public List<PoliceOfficer> OfficerPool;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> deployedVehicles;
+		[SerializeField]
+		private List<LandVehicle> deployedVehicles;
 
 		public float TimeSinceLastDispatch { get; private set; }
 
@@ -48,29 +55,29 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public void Dispatch(int requestedOfficerCount, global::ScheduleOne.PlayerScripts.Player targetPlayer, global::ScheduleOne.Map.PoliceStation.EDispatchType type = global::ScheduleOne.Map.PoliceStation.EDispatchType.Auto, bool beginAsSighted = false)
+		public void Dispatch(int requestedOfficerCount, Player targetPlayer, EDispatchType type = EDispatchType.Auto, bool beginAsSighted = false)
 		{
 		}
 
-		public global::ScheduleOne.Police.PoliceOfficer PullOfficer()
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.Vehicles.LandVehicle CreateVehicle()
+		public PoliceOfficer PullOfficer()
 		{
 			return null;
 		}
 
-		public override void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public LandVehicle CreateVehicle()
+		{
+			return null;
+		}
+
+		public override void NPCEnteredBuilding(NPC npc)
 		{
 		}
 
-		public override void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public override void NPCExitedBuilding(NPC npc)
 		{
 		}
 
-		public static global::ScheduleOne.Map.PoliceStation GetClosestPoliceStation(global::UnityEngine.Vector3 point)
+		public static PoliceStation GetClosestPoliceStation(Vector3 point)
 		{
 			return null;
 		}

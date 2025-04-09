@@ -1,22 +1,29 @@
+using ScheduleOne.Audio;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Storage;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_RangedWeapon : global::ScheduleOne.Equipping.Equippable_AvatarViewmodel
+	public class Equippable_RangedWeapon : Equippable_AvatarViewmodel
 	{
 		public const float NPC_AIM_DETECTION_RANGE = 10f;
 
 		public int MagazineSize;
 
-		[global::UnityEngine.Header("Aim Settings")]
+		[Header("Aim Settings")]
 		public float AimDuration;
 
 		public float AimFOVReduction;
 
 		public float FOVChangeDuration;
 
-		[global::UnityEngine.Header("Firing")]
-		public global::ScheduleOne.Audio.AudioSourceController FireSound;
+		[Header("Firing")]
+		public AudioSourceController FireSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController EmptySound;
+		public AudioSourceController EmptySound;
 
 		public float FireCooldown;
 
@@ -24,27 +31,27 @@ namespace ScheduleOne.Equipping
 
 		public float AccuracyChangeDuration;
 
-		[global::UnityEngine.Header("Raycasting")]
+		[Header("Raycasting")]
 		public float Range;
 
 		public float RayRadius;
 
-		[global::UnityEngine.Header("Spread")]
+		[Header("Spread")]
 		public float MinSpread;
 
 		public float MaxSpread;
 
-		[global::UnityEngine.Header("Damage")]
+		[Header("Damage")]
 		public float Damage;
 
 		public float ImpactForce;
 
-		[global::UnityEngine.Header("Reloading")]
+		[Header("Reloading")]
 		public bool CanReload;
 
 		public bool IncrementalReload;
 
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Magazine;
+		public StorableItemDefinition Magazine;
 
 		public float ReloadStartTime;
 
@@ -58,35 +65,35 @@ namespace ScheduleOne.Equipping
 
 		public string ReloadEndAnimTrigger;
 
-		public global::ScheduleOne.Trash.TrashItem ReloadTrash;
+		public TrashItem ReloadTrash;
 
-		[global::UnityEngine.Header("Cocking")]
+		[Header("Cocking")]
 		public bool MustBeCocked;
 
 		public float CockTime;
 
 		public string CockAnimTrigger;
 
-		[global::UnityEngine.Header("Effects")]
+		[Header("Effects")]
 		public float TracerSpeed;
 
-		public global::UnityEngine.Events.UnityEvent onFire;
+		public UnityEvent onFire;
 
-		public global::UnityEngine.Events.UnityEvent onReloadStart;
+		public UnityEvent onReloadStart;
 
-		public global::UnityEngine.Events.UnityEvent onReloadIndividual;
+		public UnityEvent onReloadIndividual;
 
-		public global::UnityEngine.Events.UnityEvent onReloadEnd;
+		public UnityEvent onReloadEnd;
 
-		public global::UnityEngine.Events.UnityEvent onCockStart;
+		public UnityEvent onCockStart;
 
-		protected global::ScheduleOne.ItemFramework.IntegerItemInstance weaponItem;
+		protected IntegerItemInstance weaponItem;
 
 		private bool fovOverridden;
 
 		private float aimVelocity;
 
-		private global::UnityEngine.Coroutine reloadRoutine;
+		private Coroutine reloadRoutine;
 
 		private bool shotQueued;
 
@@ -110,7 +117,7 @@ namespace ScheduleOne.Equipping
 
 		private float aimFov => 0f;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
@@ -152,7 +159,7 @@ namespace ScheduleOne.Equipping
 			return false;
 		}
 
-		protected virtual bool GetMagazine(out global::ScheduleOne.Storage.StorableItemInstance mag)
+		protected virtual bool GetMagazine(out StorableItemInstance mag)
 		{
 			mag = null;
 			return false;

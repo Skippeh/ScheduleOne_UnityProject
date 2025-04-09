@@ -1,13 +1,16 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MethAppearanceSettings
 	{
-		public global::UnityEngine.Color32 MainColor;
+		public Color32 MainColor;
 
-		public global::UnityEngine.Color32 SecondaryColor;
+		public Color32 SecondaryColor;
 
-		public MethAppearanceSettings(global::UnityEngine.Color32 mainColor, global::UnityEngine.Color32 secondaryColor)
+		public MethAppearanceSettings(Color32 mainColor, Color32 secondaryColor)
 		{
 		}
 

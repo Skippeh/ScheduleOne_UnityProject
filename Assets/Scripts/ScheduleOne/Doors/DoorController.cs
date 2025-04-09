@@ -1,55 +1,63 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Interaction;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Doors
 {
-	public class DoorController : global::FishNet.Object.NetworkBehaviour
+	public class DoorController : NetworkBehaviour
 	{
 		public const float DISTANT_PLAYER_THRESHOLD = 40f;
 
-		public global::ScheduleOne.Doors.EDoorAccess PlayerAccess;
+		public EDoorAccess PlayerAccess;
 
 		public bool AutoOpenForPlayer;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject[] InteriorIntObjs;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject[] InteriorIntObjs;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject[] ExteriorIntObjs;
+		[SerializeField]
+		protected InteractableObject[] ExteriorIntObjs;
 
-		[global::UnityEngine.Tooltip("Used to block player from entering when the door is open for an NPC, but player isn't permitted access.")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.BoxCollider PlayerBlocker;
+		[Tooltip("Used to block player from entering when the door is open for an NPC, but player isn't permitted access.")]
+		[SerializeField]
+		protected BoxCollider PlayerBlocker;
 
-		[global::UnityEngine.Header("Animation")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Animation InteriorDoorHandleAnimation;
+		[Header("Animation")]
+		[SerializeField]
+		protected Animation InteriorDoorHandleAnimation;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Animation ExteriorDoorHandleAnimation;
+		[SerializeField]
+		protected Animation ExteriorDoorHandleAnimation;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected bool AutoCloseOnSleep;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected bool AutoCloseOnDistantPlayer;
 
-		[global::UnityEngine.Header("NPC Access")]
-		[global::UnityEngine.SerializeField]
+		[Header("NPC Access")]
+		[SerializeField]
 		protected bool OpenableByNPCs;
 
-		[global::UnityEngine.Tooltip("How many seconds to wait after NPC passes through to return to original state")]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("How many seconds to wait after NPC passes through to return to original state")]
+		[SerializeField]
 		protected float ReturnToOriginalTime;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Doors.EDoorSide> onDoorOpened;
+		public UnityEvent<EDoorSide> onDoorOpened;
 
-		public global::UnityEngine.Events.UnityEvent onDoorClosed;
+		public UnityEvent onDoorClosed;
 
-		private global::ScheduleOne.Doors.EDoorSide lastOpenSide;
+		private EDoorSide lastOpenSide;
 
 		private bool autoOpenedForPlayer;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public string noAccessErrorMessage;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDoors_002EDoorControllerAssembly_002DCSharp_002Edll_Excuted;
@@ -80,7 +88,7 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -100,37 +108,37 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		public bool CanPlayerAccess(global::ScheduleOne.Doors.EDoorSide side)
+		public bool CanPlayerAccess(EDoorSide side)
 		{
 			return false;
 		}
 
-		protected virtual bool CanPlayerAccess(global::ScheduleOne.Doors.EDoorSide side, out string reason)
+		protected virtual bool CanPlayerAccess(EDoorSide side, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public virtual void NPCVicinityDetected(global::ScheduleOne.Doors.EDoorSide side)
+		public virtual void NPCVicinityDetected(EDoorSide side)
 		{
 		}
 
-		public virtual void PlayerVicinityDetected(global::ScheduleOne.Doors.EDoorSide side)
+		public virtual void PlayerVicinityDetected(EDoorSide side)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetIsOpen_Server(bool open, global::ScheduleOne.Doors.EDoorSide accessSide, bool openedForPlayer)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetIsOpen_Server(bool open, EDoorSide accessSide, bool openedForPlayer)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetIsOpen(global::FishNet.Connection.NetworkConnection conn, bool open, global::ScheduleOne.Doors.EDoorSide openSide)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetIsOpen(NetworkConnection conn, bool open, EDoorSide openSide)
 		{
 		}
 
-		public virtual void SetIsOpen(bool open, global::ScheduleOne.Doors.EDoorSide openSide)
+		public virtual void SetIsOpen(bool open, EDoorSide openSide)
 		{
 		}
 
@@ -150,35 +158,35 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		private void RpcWriter___Server_SetIsOpen_Server_1319291243(bool open, global::ScheduleOne.Doors.EDoorSide accessSide, bool openedForPlayer)
+		private void RpcWriter___Server_SetIsOpen_Server_1319291243(bool open, EDoorSide accessSide, bool openedForPlayer)
 		{
 		}
 
-		public void RpcLogic___SetIsOpen_Server_1319291243(bool open, global::ScheduleOne.Doors.EDoorSide accessSide, bool openedForPlayer)
+		public void RpcLogic___SetIsOpen_Server_1319291243(bool open, EDoorSide accessSide, bool openedForPlayer)
 		{
 		}
 
-		private void RpcReader___Server_SetIsOpen_Server_1319291243(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetIsOpen_Server_1319291243(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetIsOpen_3381113727(global::FishNet.Connection.NetworkConnection conn, bool open, global::ScheduleOne.Doors.EDoorSide openSide)
+		private void RpcWriter___Observers_SetIsOpen_3381113727(NetworkConnection conn, bool open, EDoorSide openSide)
 		{
 		}
 
-		public void RpcLogic___SetIsOpen_3381113727(global::FishNet.Connection.NetworkConnection conn, bool open, global::ScheduleOne.Doors.EDoorSide openSide)
+		public void RpcLogic___SetIsOpen_3381113727(NetworkConnection conn, bool open, EDoorSide openSide)
 		{
 		}
 
-		private void RpcReader___Observers_SetIsOpen_3381113727(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetIsOpen_3381113727(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetIsOpen_3381113727(global::FishNet.Connection.NetworkConnection conn, bool open, global::ScheduleOne.Doors.EDoorSide openSide)
+		private void RpcWriter___Target_SetIsOpen_3381113727(NetworkConnection conn, bool open, EDoorSide openSide)
 		{
 		}
 
-		private void RpcReader___Target_SetIsOpen_3381113727(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetIsOpen_3381113727(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,52 +1,55 @@
-[global::UnityEngine.ExecuteInEditMode]
-public class WarehouseModular : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class WarehouseModular : MonoBehaviour
 {
-	[global::UnityEngine.HideInInspector]
-	public global::System.Collections.Generic.List<global::UnityEngine.GameObject> itemsList;
+	[HideInInspector]
+	public List<GameObject> itemsList;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject largeWall;
+	[HideInInspector]
+	public GameObject largeWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject mediumWall;
+	[HideInInspector]
+	public GameObject mediumWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject smallWall;
+	[HideInInspector]
+	public GameObject smallWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject miniWall;
+	[HideInInspector]
+	public GameObject miniWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject tinyWall;
+	[HideInInspector]
+	public GameObject tinyWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject windowWall;
+	[HideInInspector]
+	public GameObject windowWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject smallWindowWall;
+	[HideInInspector]
+	public GameObject smallWindowWall;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject innerCorner;
+	[HideInInspector]
+	public GameObject innerCorner;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject outerCorner;
+	[HideInInspector]
+	public GameObject outerCorner;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject garageFrame;
+	[HideInInspector]
+	public GameObject garageFrame;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject doorFrame;
+	[HideInInspector]
+	public GameObject doorFrame;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject doubleDoorFrame;
+	[HideInInspector]
+	public GameObject doubleDoorFrame;
 
-	private global::UnityEngine.MeshFilter myMeshFilter;
+	private MeshFilter myMeshFilter;
 
 	private void Start()
 	{
 	}
 
-	public void BuildNextItem(global::UnityEngine.GameObject item)
+	public void BuildNextItem(GameObject item)
 	{
 	}
 

@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class GetSetAttribute : global::UnityEngine.PropertyAttribute
+	public sealed class GetSetAttribute : PropertyAttribute
 	{
 		public readonly string name;
 

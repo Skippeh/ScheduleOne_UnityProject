@@ -1,41 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public class NearbyStarRenderer : BaseStarDataRenderer
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CComputeStarData_003Ed__7 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CComputeStarData_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::Funly.SkyStudio.NearbyStarRenderer _003C_003E4__this;
+			public NearbyStarRenderer _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CComputeStarData_003Ed__7(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,14 +51,14 @@ namespace Funly.SkyStudio
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -62,33 +69,33 @@ namespace Funly.SkyStudio
 
 		private const float kStarPaddingRadiusMultipler = 2.1f;
 
-		private global::UnityEngine.RenderTexture CreateRenderTexture(string name, int renderTextureSize, global::UnityEngine.RenderTextureFormat format)
+		private RenderTexture CreateRenderTexture(string name, int renderTextureSize, RenderTextureFormat format)
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Material GetNearbyStarMaterial(global::UnityEngine.Vector4 randomSeed, int starCount)
+		private Material GetNearbyStarMaterial(Vector4 randomSeed, int starCount)
 		{
 			return null;
 		}
 
-		private void WriteDebugTexture(global::UnityEngine.RenderTexture rt, string path)
+		private void WriteDebugTexture(RenderTexture rt, string path)
 		{
 		}
 
-		private global::UnityEngine.Texture2D GetStarListTexture(string starTexKey, out int validStarPixelCount)
+		private Texture2D GetStarListTexture(string starTexKey, out int validStarPixelCount)
 		{
 			validStarPixelCount = default(int);
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::Funly.SkyStudio.NearbyStarRenderer._003CComputeStarData_003Ed__7))]
-		public override global::System.Collections.IEnumerator ComputeStarData()
+		[IteratorStateMachine(typeof(_003CComputeStarData_003Ed__7))]
+		public override IEnumerator ComputeStarData()
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Texture2D ConvertToTexture2D(global::UnityEngine.RenderTexture rt)
+		private Texture2D ConvertToTexture2D(RenderTexture rt)
 		{
 			return null;
 		}

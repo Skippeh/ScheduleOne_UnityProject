@@ -1,19 +1,22 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCustomization
 {
-	public class BarbershopUI : global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationUI
+	public class BarbershopUI : CharacterCustomizationUI
 	{
-		public global::HSVPicker.ColorPicker ColorPicker;
+		public HSVPicker.ColorPicker ColorPicker;
 
-		public global::UnityEngine.UI.Button ApplyColorButton;
+		public Button ApplyColorButton;
 
-		private global::UnityEngine.Color appliedColor;
+		private Color appliedColor;
 
-		public override bool IsOptionCurrentlyApplied(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public override bool IsOptionCurrentlyApplied(CharacterCustomizationOption option)
 		{
 			return false;
 		}
 
-		public override void OptionSelected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public override void OptionSelected(CharacterCustomizationOption option)
 		{
 		}
 
@@ -25,7 +28,7 @@ namespace ScheduleOne.UI.CharacterCustomization
 		{
 		}
 
-		public void ColorFieldChanged(global::UnityEngine.Color color)
+		public void ColorFieldChanged(Color color)
 		{
 		}
 

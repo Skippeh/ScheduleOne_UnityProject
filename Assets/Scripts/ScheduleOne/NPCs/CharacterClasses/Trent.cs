@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Trent : global::ScheduleOne.NPCs.NPC
+	public class Trent : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ETrentAssembly_002DCSharp_002Edll_Excuted;
 

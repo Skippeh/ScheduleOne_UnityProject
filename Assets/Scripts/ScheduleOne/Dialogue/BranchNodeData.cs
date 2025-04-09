@@ -1,14 +1,17 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class BranchNodeData
 	{
 		public string Guid;
 
 		public string BranchLabel;
 
-		public global::UnityEngine.Vector2 Position;
+		public Vector2 Position;
 
-		public global::ScheduleOne.Dialogue.BranchOptionData[] options;
+		public BranchOptionData[] options;
 	}
 }

@@ -1,20 +1,23 @@
+using ScheduleOne.Management.Presets;
+using UnityEngine;
+
 namespace ScheduleOne.Management.Objects
 {
-	public abstract class ManageableObject : global::UnityEngine.MonoBehaviour
+	public abstract class ManageableObject : MonoBehaviour
 	{
-		public abstract global::ScheduleOne.Management.ManageableObjectType GetObjectType();
+		public abstract ManageableObjectType GetObjectType();
 
-		public abstract global::ScheduleOne.Management.Presets.Preset GetCurrentPreset();
+		public abstract Preset GetCurrentPreset();
 
-		public void SetPreset(global::ScheduleOne.Management.Presets.Preset newPreset)
+		public void SetPreset(Preset newPreset)
 		{
 		}
 
-		protected virtual void SetPreset_Internal(global::ScheduleOne.Management.Presets.Preset preset)
+		protected virtual void SetPreset_Internal(Preset preset)
 		{
 		}
 
-		public void ExistingPresetDeleted(global::ScheduleOne.Management.Presets.Preset replacement)
+		public void ExistingPresetDeleted(Preset replacement)
 		{
 		}
 	}

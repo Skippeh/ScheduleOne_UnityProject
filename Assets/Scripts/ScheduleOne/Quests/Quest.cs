@@ -1,34 +1,46 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.GameTime;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.UI;
+using ScheduleOne.UI.Compass;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Quests
 {
-	[global::System.Serializable]
-	public class Quest : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
+	[Serializable]
+	public class Quest : MonoBehaviour, IGUIDRegisterable, ISaveable
 	{
 		public const int MAX_HUD_ENTRY_LABELS = 10;
 
 		public const int CriticalExpiryThreshold = 120;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Quests.Quest> Quests;
+		public static List<Quest> Quests;
 
-		public static global::ScheduleOne.Quests.Quest HoveredQuest;
+		public static Quest HoveredQuest;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Quests.Quest> ActiveQuests;
+		public static List<Quest> ActiveQuests;
 
-		[global::UnityEngine.Header("Basic Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Basic Settings")]
+		[SerializeField]
 		protected string title;
 
 		public string Subtitle;
 
-		public global::System.Action onSubtitleChanged;
+		public Action onSubtitleChanged;
 
-		[global::UnityEngine.TextArea(3, 10)]
+		[TextArea(3, 10)]
 		public string Description;
 
 		public string StaticGUID;
 
 		public bool TrackOnBegin;
 
-		public global::ScheduleOne.Quests.EExpiryVisibility ExpiryVisibility;
+		public EExpiryVisibility ExpiryVisibility;
 
 		public bool AutoCompleteOnAllEntriesComplete;
 
@@ -36,58 +48,58 @@ namespace ScheduleOne.Quests
 
 		public int CompletionXP;
 
-		[global::UnityEngine.Header("Entries")]
+		[Header("Entries")]
 		public bool AutoStartFirstEntry;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Quests.QuestEntry> Entries;
+		public List<QuestEntry> Entries;
 
-		[global::UnityEngine.Header("UI")]
-		public global::UnityEngine.RectTransform IconPrefab;
+		[Header("UI")]
+		public RectTransform IconPrefab;
 
-		[global::UnityEngine.Header("PoI Settings")]
-		public global::UnityEngine.GameObject PoIPrefab;
+		[Header("PoI Settings")]
+		public GameObject PoIPrefab;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onQuestBegin;
+		[Header("Events")]
+		public UnityEvent onQuestBegin;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Quests.EQuestState> onQuestEnd;
+		public UnityEvent<EQuestState> onQuestEnd;
 
-		public global::UnityEngine.Events.UnityEvent onActiveState;
+		public UnityEvent onActiveState;
 
-		public global::UnityEngine.Events.UnityEvent<bool> onTrackChange;
+		public UnityEvent<bool> onTrackChange;
 
-		public global::UnityEngine.Events.UnityEvent onComplete;
+		public UnityEvent onComplete;
 
-		public global::UnityEngine.Events.UnityEvent onInitialComplete;
+		public UnityEvent onInitialComplete;
 
-		[global::UnityEngine.Header("Reminders")]
+		[Header("Reminders")]
 		public bool ShouldSendExpiryReminder;
 
 		public bool ShouldSendExpiredNotification;
 
-		protected global::UnityEngine.RectTransform journalEntry;
+		protected RectTransform journalEntry;
 
-		protected global::UnityEngine.RectTransform entryTitleRect;
+		protected RectTransform entryTitleRect;
 
-		protected global::UnityEngine.RectTransform trackedRect;
+		protected RectTransform trackedRect;
 
-		protected global::UnityEngine.UI.Text entryTimeLabel;
+		protected Text entryTimeLabel;
 
-		protected global::UnityEngine.UI.Image criticalTimeBackground;
+		protected Image criticalTimeBackground;
 
-		protected global::UnityEngine.RectTransform detailPanel;
+		protected RectTransform detailPanel;
 
-		public global::System.Action onHudUICreated;
+		public Action onHudUICreated;
 
 		private bool expiryReminderSent;
 
-		private global::ScheduleOne.UI.Compass.CompassManager.Element compassElement;
+		private CompassManager.Element compassElement;
 
 		protected bool autoInitialize;
 
-		public global::ScheduleOne.Quests.EQuestState QuestState { get; protected set; }
+		public EQuestState QuestState { get; protected set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		public bool IsTracked { get; protected set; }
 
@@ -97,23 +109,23 @@ namespace ScheduleOne.Quests
 
 		public bool Expires { get; protected set; }
 
-		public global::ScheduleOne.GameTime.GameDateTime Expiry { get; protected set; }
+		public GameDateTime Expiry { get; protected set; }
 
 		public bool hudUIExists => false;
 
-		public global::ScheduleOne.UI.QuestHUDUI hudUI { get; private set; }
+		public QuestHUDUI hudUI { get; private set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -125,7 +137,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public virtual void InitializeQuest(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid)
+		public virtual void InitializeQuest(string title, string description, QuestEntryData[] entries, string guid)
 		{
 		}
 
@@ -133,7 +145,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public void ConfigureExpiry(bool expires, global::ScheduleOne.GameTime.GameDateTime expiry)
+		public void ConfigureExpiry(bool expires, GameDateTime expiry)
 		{
 		}
 
@@ -161,7 +173,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public virtual void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public virtual void SetQuestState(EQuestState state, bool network = true)
 		{
 		}
 
@@ -170,7 +182,7 @@ namespace ScheduleOne.Quests
 			return false;
 		}
 
-		public virtual void SetQuestEntryState(int entryIndex, global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public virtual void SetQuestEntryState(int entryIndex, EQuestState state, bool network = true)
 		{
 		}
 
@@ -199,7 +211,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -237,7 +249,7 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public virtual global::ScheduleOne.UI.QuestHUDUI SetupHudUI()
+		public virtual QuestHUDUI SetupHudUI()
 		{
 			return null;
 		}
@@ -255,7 +267,7 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public global::ScheduleOne.Quests.QuestEntry GetFirstActiveEntry()
+		public QuestEntry GetFirstActiveEntry()
 		{
 			return null;
 		}
@@ -264,7 +276,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public virtual global::UnityEngine.RectTransform CreateDetailDisplay(global::UnityEngine.RectTransform parent)
+		public virtual RectTransform CreateDetailDisplay(RectTransform parent)
 		{
 			return null;
 		}
@@ -278,11 +290,11 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.QuestData data)
+		public virtual void Load(QuestData data)
 		{
 		}
 
-		public static global::ScheduleOne.Quests.Quest GetQuest(string questName)
+		public static Quest GetQuest(string questName)
 		{
 			return null;
 		}

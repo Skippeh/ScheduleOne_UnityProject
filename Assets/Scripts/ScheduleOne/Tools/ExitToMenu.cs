@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class ExitToMenu : global::UnityEngine.MonoBehaviour
+	public class ExitToMenu : MonoBehaviour
 	{
 		public void Exit()
 		{

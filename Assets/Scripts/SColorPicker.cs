@@ -1,14 +1,17 @@
-public class SColorPicker : global::HSVPicker.ColorPicker
+using UnityEngine;
+using UnityEngine.Events;
+
+public class SColorPicker : HSVPicker.ColorPicker
 {
 	public int PropertyIndex;
 
-	public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Color, int> onValueChangeWithIndex;
+	public UnityEvent<Color, int> onValueChangeWithIndex;
 
 	private void Start()
 	{
 	}
 
-	private void ValueChanged(global::UnityEngine.Color col)
+	private void ValueChanged(Color col)
 	{
 	}
 }

@@ -1,27 +1,34 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.NPCs;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class NPCFieldUI : global::UnityEngine.MonoBehaviour
+	public class NPCFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		[Header("References")]
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.UI.Image IconImg;
+		public Image IconImg;
 
-		public global::TMPro.TextMeshProUGUI SelectionLabel;
+		public TextMeshProUGUI SelectionLabel;
 
-		public global::UnityEngine.GameObject NoneSelected;
+		public GameObject NoneSelected;
 
-		public global::UnityEngine.GameObject MultipleSelected;
+		public GameObject MultipleSelected;
 
-		public global::UnityEngine.RectTransform ClearButton;
+		public RectTransform ClearButton;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.NPCField> Fields { get; protected set; }
+		public List<NPCField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.NPCField> field)
+		public void Bind(List<NPCField> field)
 		{
 		}
 
-		private void Refresh(global::ScheduleOne.NPCs.NPC newVal)
+		private void Refresh(NPC newVal)
 		{
 		}
 
@@ -34,7 +41,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		public void NPCSelected(global::ScheduleOne.NPCs.NPC npc)
+		public void NPCSelected(NPC npc)
 		{
 		}
 

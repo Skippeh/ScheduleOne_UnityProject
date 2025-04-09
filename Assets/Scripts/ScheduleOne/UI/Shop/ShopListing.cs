@@ -1,44 +1,84 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Shop
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ShopListing
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class CategoryInstance
 		{
-			public global::ScheduleOne.UI.Shop.EShopCategory Category;
+			public EShopCategory Category;
+		}
+
+		public enum ERestockRate
+		{
+			Daily = 0,
+			Weekly = 1,
+			Never = 2
 		}
 
 		public string name;
 
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Item;
+		public StorableItemDefinition Item;
 
-		[global::UnityEngine.Header("Pricing")]
-		[global::UnityEngine.SerializeField]
+		[Header("Pricing")]
+		[SerializeField]
 		protected bool OverridePrice;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float OverriddenPrice;
 
-		[global::UnityEngine.Header("Stock")]
-		public int StockQuantity;
+		[Header("Stock")]
+		public bool LimitedStock;
 
-		[global::UnityEngine.Header("Settings")]
+		public int DefaultStock;
+
+		public ERestockRate RestockRate;
+
+		[Header("Settings")]
 		public bool EnforceMinimumGameCreationVersion;
 
 		public float MinimumGameCreationVersion;
 
 		public bool CanBeDelivered;
 
-		public global::System.Action onQuantityChanged;
+		[Header("Color")]
+		public bool UseIconTint;
+
+		public Color IconTint;
+
+		public Action onStockChanged;
 
 		public bool IsInStock => false;
 
 		public float Price => 0f;
 
-		public int CurrentQuantity { get; protected set; }
+		public bool IsUnlimitedStock => false;
 
-		public void Restock()
+		public ShopInterface Shop { get; private set; }
+
+		public int CurrentStock { get; protected set; }
+
+		public int QuantityInCart { get; private set; }
+
+		public int CurrentStockMinusCart => 0;
+
+		public void Initialize(ShopInterface shop)
+		{
+		}
+
+		public void Restock(bool network)
+		{
+		}
+
+		public void RemoveStock(int quantity)
+		{
+		}
+
+		public void SetStock(int quantity, bool network = true)
 		{
 		}
 
@@ -47,7 +87,7 @@ namespace ScheduleOne.UI.Shop
 			return false;
 		}
 
-		public virtual bool DoesListingMatchCategoryFilter(global::ScheduleOne.UI.Shop.EShopCategory category)
+		public virtual bool DoesListingMatchCategoryFilter(EShopCategory category)
 		{
 			return false;
 		}
@@ -55,6 +95,10 @@ namespace ScheduleOne.UI.Shop
 		public virtual bool DoesListingMatchSearchTerm(string searchTerm)
 		{
 			return false;
+		}
+
+		public void SetQuantityInCart(int quantity)
+		{
 		}
 	}
 }

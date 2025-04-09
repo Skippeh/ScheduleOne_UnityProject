@@ -1,14 +1,22 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.Product;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Packaging
 {
-	public class PackagingTool : global::UnityEngine.MonoBehaviour
+	public class PackagingTool : MonoBehaviour
 	{
 		public class PackagingInstance
 		{
-			public global::UnityEngine.Transform Container;
+			public Transform Container;
 
-			public global::UnityEngine.Rigidbody ContainerRb;
+			public Rigidbody ContainerRb;
 
-			public global::ScheduleOne.Packaging.FunctionalPackaging Packaging;
+			public FunctionalPackaging Packaging;
 
 			public float AnglePosition;
 
@@ -21,7 +29,7 @@ namespace ScheduleOne.Packaging
 
 		private const float FinalizeRange_Max = 270f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ConveyorSpeed;
 
 		public float ConveyorAcceleration;
@@ -40,72 +48,72 @@ namespace ScheduleOne.Packaging
 
 		public float DropCooldown;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.ObjectScripts.PackagingStation Station;
+		[Header("References")]
+		public PackagingStation Station;
 
-		public global::UnityEngine.Transform ConveyorModel;
+		public Transform ConveyorModel;
 
-		public global::UnityEngine.Animation DoorAnim;
+		public Animation DoorAnim;
 
-		public global::UnityEngine.Animation CapAnim;
+		public Animation CapAnim;
 
-		public global::UnityEngine.Animation SealAnim;
+		public Animation SealAnim;
 
-		public global::UnityEngine.Animation KickAnim;
+		public Animation KickAnim;
 
-		public global::ScheduleOne.PlayerTasks.Clickable LeftButton;
+		public Clickable LeftButton;
 
-		public global::ScheduleOne.PlayerTasks.Clickable RightButton;
+		public Clickable RightButton;
 
-		public global::ScheduleOne.PlayerTasks.Clickable DropButton;
+		public Clickable DropButton;
 
-		public global::UnityEngine.Transform PackagingContainer;
+		public Transform PackagingContainer;
 
-		public global::TMPro.TextMeshPro ProductCountText;
+		public TextMeshPro ProductCountText;
 
-		public global::UnityEngine.Transform HopperDropPoint;
+		public Transform HopperDropPoint;
 
-		public global::UnityEngine.Transform BaggieStartPoint;
+		public Transform BaggieStartPoint;
 
-		public global::UnityEngine.Transform JarStartPoint;
+		public Transform JarStartPoint;
 
-		public global::UnityEngine.Transform ProductContainer;
+		public Transform ProductContainer;
 
-		public global::UnityEngine.Transform KickOrigin;
+		public Transform KickOrigin;
 
-		public global::UnityEngine.SphereCollider HopperInputCollider;
+		public SphereCollider HopperInputCollider;
 
-		public global::ScheduleOne.Audio.AudioSourceController KickSound;
+		public AudioSourceController KickSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController MotorSound;
+		public AudioSourceController MotorSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController DropSound;
+		public AudioSourceController DropSound;
 
-		private global::ScheduleOne.Packaging.FunctionalPackaging PackagingPrefab;
+		private FunctionalPackaging PackagingPrefab;
 
 		private int ConcealedPackaging;
 
-		private global::ScheduleOne.Product.ProductItemInstance ProductItem;
+		private ProductItemInstance ProductItem;
 
-		private global::ScheduleOne.Packaging.FunctionalProduct ProductPrefab;
+		private FunctionalProduct ProductPrefab;
 
 		private int ProductInHopper;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.PackagingTool.PackagingInstance> PackagingInstances;
+		private List<PackagingInstance> PackagingInstances;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> ProductInstances;
+		private List<FunctionalProduct> ProductInstances;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalPackaging> FinalizedPackaging;
+		private List<FunctionalPackaging> FinalizedPackaging;
 
 		private float conveyorVelocity;
 
 		private int directionInput;
 
-		private global::ScheduleOne.PlayerTasks.Task task;
+		private Task task;
 
-		private global::ScheduleOne.Packaging.PackagingTool.PackagingInstance finalizeInstance;
+		private PackagingInstance finalizeInstance;
 
-		private global::UnityEngine.Coroutine finalizeCoroutine;
+		private Coroutine finalizeCoroutine;
 
 		private bool leftDown;
 
@@ -117,7 +125,7 @@ namespace ScheduleOne.Packaging
 
 		public bool ReceiveInput { get; private set; }
 
-		public void Initialize(global::ScheduleOne.PlayerTasks.Task _task, global::ScheduleOne.Packaging.FunctionalPackaging packaging, int packagingQuantity, global::ScheduleOne.Product.ProductItemInstance product, int productQuantity)
+		public void Initialize(Task _task, FunctionalPackaging packaging, int packagingQuantity, ProductItemInstance product, int productQuantity)
 		{
 		}
 
@@ -125,7 +133,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		private void LoadPackaging(global::ScheduleOne.Packaging.FunctionalPackaging prefab, int quantity)
+		private void LoadPackaging(FunctionalPackaging prefab, int quantity)
 		{
 		}
 
@@ -133,7 +141,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		private void LoadProduct(global::ScheduleOne.Product.ProductItemInstance product, int quantity)
+		private void LoadProduct(ProductItemInstance product, int quantity)
 		{
 		}
 
@@ -169,7 +177,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		private void Finalize(global::ScheduleOne.Packaging.PackagingTool.PackagingInstance instance)
+		private void Finalize(PackagingInstance instance)
 		{
 		}
 
@@ -181,7 +189,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		private void InsertIntoHopper(global::ScheduleOne.Packaging.FunctionalProduct product)
+		private void InsertIntoHopper(FunctionalProduct product)
 		{
 		}
 

@@ -1,19 +1,21 @@
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class Moveable : global::ScheduleOne.PlayerTasks.Clickable
+	public class Moveable : Clickable
 	{
-		protected global::UnityEngine.Vector3 clickOffset;
+		protected Vector3 clickOffset;
 
 		protected float clickDist;
 
-		[global::UnityEngine.Header("Bounds")]
-		[global::UnityEngine.SerializeField]
+		[Header("Bounds")]
+		[SerializeField]
 		protected float yMax;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float yMin;
 
-		public override void StartClick(global::UnityEngine.RaycastHit hit)
+		public override void StartClick(RaycastHit hit)
 		{
 		}
 

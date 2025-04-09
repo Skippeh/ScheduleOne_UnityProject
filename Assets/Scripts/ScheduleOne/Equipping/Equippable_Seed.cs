@@ -1,14 +1,17 @@
+using ScheduleOne.Growing;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Seed : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_Seed : Equippable_Viewmodel
 	{
-		public global::ScheduleOne.Growing.SeedDefinition Seed;
+		public SeedDefinition Seed;
 
 		protected override void Update()
 		{
 		}
 
-		protected virtual void StartSowSeedTask(global::ScheduleOne.ObjectScripts.Pot pot)
+		protected virtual void StartSowSeedTask(Pot pot)
 		{
 		}
 	}

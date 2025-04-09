@@ -1,10 +1,13 @@
+using ScheduleOne.AvatarFramework.Equipping;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Other
 {
-	public class HoldItem : global::UnityEngine.MonoBehaviour
+	public class HoldItem : MonoBehaviour
 	{
-		public global::ScheduleOne.NPCs.NPC Npc;
+		public NPC Npc;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable Equippable;
+		public AvatarEquippable Equippable;
 
 		public bool active { get; protected set; }
 

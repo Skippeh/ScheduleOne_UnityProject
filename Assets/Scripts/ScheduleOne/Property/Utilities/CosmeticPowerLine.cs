@@ -1,16 +1,20 @@
+using System.Collections.Generic;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities
 {
-	public class CosmeticPowerLine : global::UnityEngine.MonoBehaviour
+	public class CosmeticPowerLine : MonoBehaviour
 	{
-		public global::UnityEngine.Transform startPoint;
+		public Transform startPoint;
 
-		public global::UnityEngine.Transform endPoint;
+		public Transform endPoint;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> segments;
+		public List<Transform> segments;
 
 		public float LengthFactor;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Draw()
 		{
 		}

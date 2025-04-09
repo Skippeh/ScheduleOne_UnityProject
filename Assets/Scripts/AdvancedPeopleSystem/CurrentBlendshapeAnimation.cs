@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+
 namespace AdvancedPeopleSystem
 {
 	public class CurrentBlendshapeAnimation
 	{
-		public global::AdvancedPeopleSystem.CharacterAnimationPreset preset;
+		public CharacterAnimationPreset preset;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.BlendshapeEmotionValue> blendShapesTemp;
+		public List<BlendshapeEmotionValue> blendShapesTemp;
 
 		public float timer;
 	}

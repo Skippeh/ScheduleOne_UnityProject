@@ -1,8 +1,10 @@
+using ScheduleOne.Police;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_Police : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_Police : DialogueController
 	{
-		private global::ScheduleOne.Police.PoliceOfficer officer;
+		private PoliceOfficer officer;
 
 		protected override void Start()
 		{

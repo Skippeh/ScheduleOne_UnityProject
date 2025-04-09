@@ -1,69 +1,73 @@
-public class MeleeWeaponTrail : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MeleeWeaponTrail : MonoBehaviour
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Point
 	{
 		public float timeCreated;
 
-		public global::UnityEngine.Vector3 basePosition;
+		public Vector3 basePosition;
 
-		public global::UnityEngine.Vector3 tipPosition;
+		public Vector3 tipPosition;
 	}
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private bool _emit;
 
 	private bool _use;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _emitTime;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _material;
+	[SerializeField]
+	private Material _material;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _lifeTime;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Color[] _colors;
+	[SerializeField]
+	private Color[] _colors;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float[] _sizes;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _minVertexDistance;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _maxVertexDistance;
 
 	private float _minVertexDistanceSqr;
 
 	private float _maxVertexDistanceSqr;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _maxAngle;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private bool _autoDestruct;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private int subdivisions;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Transform _base;
+	[SerializeField]
+	private Transform _base;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Transform _tip;
+	[SerializeField]
+	private Transform _tip;
 
-	private global::System.Collections.Generic.List<MeleeWeaponTrail.Point> _points;
+	private List<Point> _points;
 
-	private global::System.Collections.Generic.List<MeleeWeaponTrail.Point> _smoothedPoints;
+	private List<Point> _smoothedPoints;
 
-	private global::UnityEngine.GameObject _trailObject;
+	private GameObject _trailObject;
 
-	private global::UnityEngine.Mesh _trailMesh;
+	private Mesh _trailMesh;
 
-	private global::UnityEngine.Vector3 _lastPosition;
+	private Vector3 _lastPosition;
 
 	public bool Emit
 	{
@@ -91,7 +95,7 @@ public class MeleeWeaponTrail : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private void RemoveOldPoints(global::System.Collections.Generic.List<MeleeWeaponTrail.Point> pointList)
+	private void RemoveOldPoints(List<Point> pointList)
 	{
 	}
 }

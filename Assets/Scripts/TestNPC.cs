@@ -1,11 +1,15 @@
-public class TestNPC : global::UnityEngine.MonoBehaviour
-{
-	[global::UnityEngine.Header("References")]
-	[global::UnityEngine.SerializeField]
-	protected global::ScheduleOne.Interaction.InteractableObject intObj;
+using ScheduleOne.Dialogue;
+using ScheduleOne.Interaction;
+using UnityEngine;
 
-	[global::UnityEngine.SerializeField]
-	protected global::ScheduleOne.Dialogue.DialogueHandler handler;
+public class TestNPC : MonoBehaviour
+{
+	[Header("References")]
+	[SerializeField]
+	protected InteractableObject intObj;
+
+	[SerializeField]
+	protected DialogueHandler handler;
 
 	public void Hovered()
 	{

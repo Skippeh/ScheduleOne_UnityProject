@@ -1,16 +1,23 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.NPCs.Schedules;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.Handover;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Thomas : global::ScheduleOne.NPCs.NPC
+	public class Thomas : NPC
 	{
 		public const int CARTEL_CONTRACT_QUANTITY = 15;
 
 		public const float CARTEL_CONTRACT_PAYMENT = 100f;
 
-		public global::ScheduleOne.NPCs.Schedules.NPCEvent_LocationDialogue FirstMeetingEvent;
+		public NPCEvent_LocationDialogue FirstMeetingEvent;
 
-		public global::ScheduleOne.NPCs.Schedules.NPCEvent_LocationDialogue HandoverEvent;
+		public NPCEvent_LocationDialogue HandoverEvent;
 
-		public global::UnityEngine.Events.UnityEvent onCartelContractReceived;
+		public UnityEvent onCartelContractReceived;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EThomasAssembly_002DCSharp_002Edll_Excuted;
 
@@ -48,7 +55,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		private void ProcessItemHandover(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, float price)
+		private void ProcessItemHandover(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, float price)
 		{
 		}
 
@@ -57,7 +64,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 			return null;
 		}
 
-		public override void Load(global::ScheduleOne.Persistence.Datas.NPCData data, string containerPath)
+		public override void Load(NPCData data, string containerPath)
 		{
 		}
 

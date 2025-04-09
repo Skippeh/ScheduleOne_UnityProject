@@ -1,18 +1,22 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.UI.Button))]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.EventSystems.EventTrigger))]
-	public class ButtonScaler : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Button))]
+	[RequireComponent(typeof(EventTrigger))]
+	public class ButtonScaler : MonoBehaviour
 	{
-		public global::UnityEngine.RectTransform ScaleTarget;
+		public RectTransform ScaleTarget;
 
 		public float HoverScale;
 
 		public float ScaleTime;
 
-		private global::UnityEngine.Coroutine scaleCoroutine;
+		private Coroutine scaleCoroutine;
 
-		private global::UnityEngine.UI.Button button;
+		private Button button;
 
 		private void Awake()
 		{

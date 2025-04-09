@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.MeshRenderer))]
-	public class WeatherEnclosure : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(MeshRenderer))]
+	public class WeatherEnclosure : MonoBehaviour
 	{
-		public global::UnityEngine.Vector2 nearTextureTiling;
+		public Vector2 nearTextureTiling;
 
-		public global::UnityEngine.Vector2 farTextureTiling;
+		public Vector2 farTextureTiling;
 	}
 }

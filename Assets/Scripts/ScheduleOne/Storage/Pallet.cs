@@ -1,27 +1,39 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Component.Transforming;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Employees;
+using ScheduleOne.Tiles;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class Pallet : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Storage.IStorageEntity
+	public class Pallet : NetworkBehaviour, IStorageEntity
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Storage.Pallet> palletsOwnedByLocalPlayer;
+		public static List<Pallet> palletsOwnedByLocalPlayer;
 
 		public static int sizeX;
 
 		public static int sizeY;
 
-		[global::UnityEngine.Header("Reference")]
-		public global::UnityEngine.Transform _storedItemContainer;
+		[Header("Reference")]
+		public Transform _storedItemContainer;
 
-		public global::UnityEngine.Rigidbody rb;
+		public Rigidbody rb;
 
-		public global::ScheduleOne.Storage.StorageGrid storageGrid;
+		public StorageGrid storageGrid;
 
-		public global::FishNet.Component.Transforming.NetworkTransform networkTransform;
+		public NetworkTransform networkTransform;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Forklift> forkliftsInContact;
+		protected List<Forklift> forkliftsInContact;
 
-		public global::System.Guid currentSlotGUID;
+		public Guid currentSlotGUID;
 
-		private global::ScheduleOne.Storage.PalletSlot currentSlot;
+		private PalletSlot currentSlot;
 
 		private float timeSinceSlotCheck;
 
@@ -33,9 +45,9 @@ namespace ScheduleOne.Storage
 
 		private float rb_AngularDrag;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> _reservedItems;
+		protected Dictionary<StoredItem, Employee> _reservedItems;
 
-		private global::System.Collections.Generic.List<string> completedJobs;
+		private List<string> completedJobs;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EPalletAssembly_002DCSharp_002Edll_Excuted;
 
@@ -45,9 +57,9 @@ namespace ScheduleOne.Storage
 
 		protected bool carriedByForklift => false;
 
-		public global::UnityEngine.Transform storedItemContainer => null;
+		public Transform storedItemContainer => null;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> reservedItems => null;
+		public Dictionary<StoredItem, Employee> reservedItems => null;
 
 		public virtual void Awake()
 		{
@@ -57,20 +69,20 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		protected virtual void SetOwner(global::FishNet.Connection.NetworkConnection conn)
+		[ServerRpc(RequireOwnership = false)]
+		protected virtual void SetOwner(NetworkConnection conn)
 		{
 		}
 
-		public override void OnOwnershipClient(global::FishNet.Connection.NetworkConnection prevOwner)
+		public override void OnOwnershipClient(NetworkConnection prevOwner)
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		private void SendItemsToClient(global::FishNet.Connection.NetworkConnection connection)
+		private void SendItemsToClient(NetworkConnection connection)
 		{
 		}
 
@@ -86,7 +98,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void SetPosition(global::UnityEngine.Vector3 position)
+		private void SetPosition(Vector3 position)
 		{
 		}
 
@@ -94,59 +106,59 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void BindToSlot_Server(global::System.Guid slotGuid)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void BindToSlot_Server(Guid slotGuid)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		private void BindToSlot(global::FishNet.Connection.NetworkConnection conn, global::System.Guid slotGuid)
+		[ObserversRpc]
+		[TargetRpc]
+		private void BindToSlot(NetworkConnection conn, Guid slotGuid)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void ExitSlot_Server()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ExitSlot()
 		{
 		}
 
-		public void TriggerStay(global::UnityEngine.Collider other)
+		public void TriggerStay(Collider other)
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetStoredItems()
-		{
-			return null;
-		}
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> GetStorageGrids()
+		public List<StoredItem> GetStoredItems()
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void CreateStoredItem(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Storage.StorableItemInstance item, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID = "", bool network = true)
+		public List<StorageGrid> GetStorageGrids()
+		{
+			return null;
+		}
+
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void CreateStoredItem(NetworkConnection conn, StorableItemInstance item, int gridIndex, Vector2 originCoord, float rotation, string jobID = "", bool network = true)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void CreateStoredItem_Server(global::ScheduleOne.Storage.StorableItemInstance data, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID)
+		[ServerRpc(RequireOwnership = false)]
+		private void CreateStoredItem_Server(StorableItemInstance data, int gridIndex, Vector2 originCoord, float rotation, string jobID)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void DestroyStoredItem(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
+		[ObserversRpc(RunLocally = true)]
+		public void DestroyStoredItem(int gridIndex, Coordinate coord, string jobID = "", bool network = true)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void DestroyStoredItem_Server(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
+		[ServerRpc(RequireOwnership = false)]
+		private void DestroyStoredItem_Server(int gridIndex, Coordinate coord, string jobID)
 		{
 		}
 
@@ -162,47 +174,47 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcWriter___Server_SetOwner_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Server_SetOwner_328543758(NetworkConnection conn)
 		{
 		}
 
-		protected virtual void RpcLogic___SetOwner_328543758(global::FishNet.Connection.NetworkConnection conn)
+		protected virtual void RpcLogic___SetOwner_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Server_SetOwner_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetOwner_328543758(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_BindToSlot_Server_1272046255(global::System.Guid slotGuid)
+		private void RpcWriter___Server_BindToSlot_Server_1272046255(Guid slotGuid)
 		{
 		}
 
-		public void RpcLogic___BindToSlot_Server_1272046255(global::System.Guid slotGuid)
+		public void RpcLogic___BindToSlot_Server_1272046255(Guid slotGuid)
 		{
 		}
 
-		private void RpcReader___Server_BindToSlot_Server_1272046255(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_BindToSlot_Server_1272046255(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_BindToSlot_454078614(global::FishNet.Connection.NetworkConnection conn, global::System.Guid slotGuid)
+		private void RpcWriter___Observers_BindToSlot_454078614(NetworkConnection conn, Guid slotGuid)
 		{
 		}
 
-		private void RpcLogic___BindToSlot_454078614(global::FishNet.Connection.NetworkConnection conn, global::System.Guid slotGuid)
+		private void RpcLogic___BindToSlot_454078614(NetworkConnection conn, Guid slotGuid)
 		{
 		}
 
-		private void RpcReader___Observers_BindToSlot_454078614(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BindToSlot_454078614(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_BindToSlot_454078614(global::FishNet.Connection.NetworkConnection conn, global::System.Guid slotGuid)
+		private void RpcWriter___Target_BindToSlot_454078614(NetworkConnection conn, Guid slotGuid)
 		{
 		}
 
-		private void RpcReader___Target_BindToSlot_454078614(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_BindToSlot_454078614(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -214,7 +226,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcReader___Server_ExitSlot_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ExitSlot_Server_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -226,63 +238,63 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcReader___Observers_ExitSlot_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ExitSlot_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateStoredItem_913707843(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Storage.StorableItemInstance item, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID = "", bool network = true)
+		private void RpcWriter___Observers_CreateStoredItem_913707843(NetworkConnection conn, StorableItemInstance item, int gridIndex, Vector2 originCoord, float rotation, string jobID = "", bool network = true)
 		{
 		}
 
-		public void RpcLogic___CreateStoredItem_913707843(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Storage.StorableItemInstance item, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID = "", bool network = true)
+		public void RpcLogic___CreateStoredItem_913707843(NetworkConnection conn, StorableItemInstance item, int gridIndex, Vector2 originCoord, float rotation, string jobID = "", bool network = true)
 		{
 		}
 
-		private void RpcReader___Observers_CreateStoredItem_913707843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateStoredItem_913707843(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_CreateStoredItem_913707843(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Storage.StorableItemInstance item, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID = "", bool network = true)
+		private void RpcWriter___Target_CreateStoredItem_913707843(NetworkConnection conn, StorableItemInstance item, int gridIndex, Vector2 originCoord, float rotation, string jobID = "", bool network = true)
 		{
 		}
 
-		private void RpcReader___Target_CreateStoredItem_913707843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateStoredItem_913707843(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_CreateStoredItem_Server_1890711751(global::ScheduleOne.Storage.StorableItemInstance data, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID)
+		private void RpcWriter___Server_CreateStoredItem_Server_1890711751(StorableItemInstance data, int gridIndex, Vector2 originCoord, float rotation, string jobID)
 		{
 		}
 
-		private void RpcLogic___CreateStoredItem_Server_1890711751(global::ScheduleOne.Storage.StorableItemInstance data, int gridIndex, global::UnityEngine.Vector2 originCoord, float rotation, string jobID)
+		private void RpcLogic___CreateStoredItem_Server_1890711751(StorableItemInstance data, int gridIndex, Vector2 originCoord, float rotation, string jobID)
 		{
 		}
 
-		private void RpcReader___Server_CreateStoredItem_Server_1890711751(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateStoredItem_Server_1890711751(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
+		private void RpcWriter___Observers_DestroyStoredItem_3261517793(int gridIndex, Coordinate coord, string jobID = "", bool network = true)
 		{
 		}
 
-		public void RpcLogic___DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
+		public void RpcLogic___DestroyStoredItem_3261517793(int gridIndex, Coordinate coord, string jobID = "", bool network = true)
 		{
 		}
 
-		private void RpcReader___Observers_DestroyStoredItem_3261517793(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_DestroyStoredItem_3261517793(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
+		private void RpcWriter___Server_DestroyStoredItem_Server_3952619116(int gridIndex, Coordinate coord, string jobID)
 		{
 		}
 
-		private void RpcLogic___DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
+		private void RpcLogic___DestroyStoredItem_Server_3952619116(int gridIndex, Coordinate coord, string jobID)
 		{
 		}
 
-		private void RpcReader___Server_DestroyStoredItem_Server_3952619116(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_DestroyStoredItem_Server_3952619116(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

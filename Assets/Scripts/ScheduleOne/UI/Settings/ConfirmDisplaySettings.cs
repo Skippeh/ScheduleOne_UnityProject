@@ -1,16 +1,20 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class ConfirmDisplaySettings : global::UnityEngine.MonoBehaviour
+	public class ConfirmDisplaySettings : MonoBehaviour
 	{
 		public const float RevertTime = 15f;
 
-		public global::TMPro.TextMeshProUGUI SubtitleLabel;
+		public TextMeshProUGUI SubtitleLabel;
 
 		private float timeUntilRevert;
 
-		private global::ScheduleOne.DevUtilities.DisplaySettings oldSettings;
+		private DisplaySettings oldSettings;
 
-		private global::ScheduleOne.DevUtilities.DisplaySettings newSettings;
+		private DisplaySettings newSettings;
 
 		public bool IsOpen => false;
 
@@ -18,11 +22,11 @@ namespace ScheduleOne.UI.Settings
 		{
 		}
 
-		public void Open(global::ScheduleOne.DevUtilities.DisplaySettings _oldSettings, global::ScheduleOne.DevUtilities.DisplaySettings _newSettings)
+		public void Open(DisplaySettings _oldSettings, DisplaySettings _newSettings)
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		public void Exit(ExitAction action)
 		{
 		}
 

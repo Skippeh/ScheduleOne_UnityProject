@@ -1,12 +1,16 @@
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class MainMenuRig : global::UnityEngine.MonoBehaviour
+	public class MainMenuRig : MonoBehaviour
 	{
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings DefaultSettings;
+		public BasicAvatarSettings DefaultSettings;
 
-		public global::ScheduleOne.Tools.CashPile[] CashPiles;
+		public CashPile[] CashPiles;
 
 		public void Awake()
 		{

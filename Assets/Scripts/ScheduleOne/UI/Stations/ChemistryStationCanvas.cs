@@ -1,48 +1,57 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class ChemistryStationCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.ChemistryStationCanvas>
+	public class ChemistryStationCanvas : Singleton<ChemistryStationCanvas>
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> Recipes;
+		public List<StationRecipe> Recipes;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Stations.StationRecipeEntry RecipeEntryPrefab;
+		[Header("Prefabs")]
+		public StationRecipeEntry RecipeEntryPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform InputSlotsContainer;
+		public RectTransform InputSlotsContainer;
 
-		public global::ScheduleOne.UI.ItemSlotUI[] InputSlotUIs;
+		public ItemSlotUI[] InputSlotUIs;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::UnityEngine.RectTransform RecipeSelectionContainer;
+		public RectTransform RecipeSelectionContainer;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::UnityEngine.RectTransform RecipeContainer;
+		public RectTransform RecipeContainer;
 
-		public global::UnityEngine.RectTransform CookingInProgressContainer;
+		public RectTransform CookingInProgressContainer;
 
-		public global::ScheduleOne.UI.Stations.StationRecipeEntry InProgressRecipeEntry;
+		public StationRecipeEntry InProgressRecipeEntry;
 
-		public global::TMPro.TextMeshProUGUI InProgressLabel;
+		public TextMeshProUGUI InProgressLabel;
 
-		public global::TMPro.TextMeshProUGUI ErrorLabel;
+		public TextMeshProUGUI ErrorLabel;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Stations.StationRecipeEntry> recipeEntries;
+		private List<StationRecipeEntry> recipeEntries;
 
-		private global::ScheduleOne.UI.Stations.StationRecipeEntry selectedRecipe;
+		private StationRecipeEntry selectedRecipe;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.ChemistryStation ChemistryStation { get; protected set; }
+		public ChemistryStation ChemistryStation { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -68,7 +77,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void Open(global::ScheduleOne.ObjectScripts.ChemistryStation station)
+		public void Open(ChemistryStation station)
 		{
 		}
 
@@ -84,11 +93,11 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		private void SortRecipes(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> ingredients)
+		private void SortRecipes(List<ItemInstance> ingredients)
 		{
 		}
 
-		private void SetSelectedRecipe(global::ScheduleOne.UI.Stations.StationRecipeEntry entry)
+		private void SetSelectedRecipe(StationRecipeEntry entry)
 		{
 		}
 	}

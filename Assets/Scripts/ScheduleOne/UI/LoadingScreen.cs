@@ -1,6 +1,12 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ScriptableObjects;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class LoadingScreen : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.UI.LoadingScreen>
+	public class LoadingScreen : PersistentSingleton<LoadingScreen>
 	{
 		public const float FADE_TIME = 0.25f;
 
@@ -8,44 +14,44 @@ namespace ScheduleOne.UI
 
 		public const float BACKGROUND_IMAGE_FADE_TIME = 1f;
 
-		public global::ScheduleOne.ScriptableObjects.StringDatabase LoadingMessagesDatabase;
+		public StringDatabase LoadingMessagesDatabase;
 
-		public global::UnityEngine.Sprite[] BackgroundImages;
+		public Sprite[] BackgroundImages;
 
-		public global::UnityEngine.Sprite[] TutorialBackgroundImages;
+		public Sprite[] TutorialBackgroundImages;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::TMPro.TextMeshProUGUI LoadStatusLabel;
+		public TextMeshProUGUI LoadStatusLabel;
 
-		public global::TMPro.TextMeshProUGUI LoadingMessageLabel;
+		public TextMeshProUGUI LoadingMessageLabel;
 
-		public global::UnityEngine.UI.Image BackgroundImage1;
+		public Image BackgroundImage1;
 
-		public global::UnityEngine.UI.Image BackgroundImage2;
+		public Image BackgroundImage2;
 
-		public global::UnityEngine.RectTransform TutorialContainer;
+		public RectTransform TutorialContainer;
 
-		public global::UnityEngine.RectTransform CoopTutorialHint;
+		public RectTransform CoopTutorialHint;
 
 		private string[] loadingMessages;
 
 		private int currentBackgroundImageIndex;
 
-		private global::UnityEngine.Coroutine fadeRoutine;
+		private Coroutine fadeRoutine;
 
-		private global::UnityEngine.Coroutine animateBackgroundRoutine;
+		private Coroutine animateBackgroundRoutine;
 
-		private global::UnityEngine.Coroutine scaleBackgroundRoutine;
+		private Coroutine scaleBackgroundRoutine;
 
 		private bool isLoadingTutorial;
 
 		public bool IsOpen { get; protected set; }
 
-		public global::UnityEngine.Sprite[] ContextualBackgroundImages => null;
+		public Sprite[] ContextualBackgroundImages => null;
 
 		protected override void Awake()
 		{

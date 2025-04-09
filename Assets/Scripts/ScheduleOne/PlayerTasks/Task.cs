@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
 	public class Task
@@ -19,33 +23,33 @@ namespace ScheduleOne.PlayerTasks
 
 		public bool ClickDetectionEnabled;
 
-		public global::ScheduleOne.PlayerTasks.Task.EOutcome Outcome;
+		public EOutcome Outcome;
 
-		public global::System.Action onTaskSuccess;
+		public Action onTaskSuccess;
 
-		public global::System.Action onTaskFail;
+		public Action onTaskFail;
 
-		public global::System.Action onTaskStop;
+		public Action onTaskStop;
 
-		protected global::ScheduleOne.PlayerTasks.Clickable clickable;
+		protected Clickable clickable;
 
-		protected global::ScheduleOne.PlayerTasks.Draggable draggable;
+		protected Draggable draggable;
 
-		protected global::ScheduleOne.PlayerTasks.DraggableConstraint constraint;
+		protected DraggableConstraint constraint;
 
 		protected float hitDistance;
 
-		protected global::UnityEngine.Vector3 relativeHitOffset;
+		protected Vector3 relativeHitOffset;
 
 		private bool multiDraggingEnabled;
 
-		private global::UnityEngine.Transform multiGrabProjectionPlane;
+		private Transform multiGrabProjectionPlane;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerTasks.Draggable> multiDragTargets;
+		private List<Draggable> multiDragTargets;
 
 		private bool isMultiDragging;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerTasks.Clickable> forcedClickables;
+		private List<Clickable> forcedClickables;
 
 		public virtual string TaskName { get; protected set; }
 
@@ -77,20 +81,20 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetMultiDragOrigin()
+		private Vector3 GetMultiDragOrigin()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public virtual void FixedUpdate()
 		{
 		}
 
-		public void ForceStartClick(global::ScheduleOne.PlayerTasks.Clickable _clickable)
+		public void ForceStartClick(Clickable _clickable)
 		{
 		}
 
-		public void ForceEndClick(global::ScheduleOne.PlayerTasks.Clickable _clickable)
+		public void ForceEndClick(Clickable _clickable)
 		{
 		}
 
@@ -98,13 +102,13 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		protected virtual global::ScheduleOne.PlayerTasks.Clickable GetClickable(out global::UnityEngine.RaycastHit hit)
+		protected virtual Clickable GetClickable(out RaycastHit hit)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return null;
 		}
 
-		protected void EnableMultiDragging(global::UnityEngine.Transform projectionPlane, float radius = 0.08f)
+		protected void EnableMultiDragging(Transform projectionPlane, float radius = 0.08f)
 		{
 		}
 	}

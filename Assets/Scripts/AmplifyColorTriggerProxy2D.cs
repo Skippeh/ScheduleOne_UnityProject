@@ -1,11 +1,13 @@
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody2D))]
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.CircleCollider2D))]
-[global::UnityEngine.AddComponentMenu("")]
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CircleCollider2D))]
+[AddComponentMenu("")]
 public class AmplifyColorTriggerProxy2D : AmplifyColorTriggerProxyBase
 {
-	private global::UnityEngine.CircleCollider2D circleCollider;
+	private CircleCollider2D circleCollider;
 
-	private global::UnityEngine.Rigidbody2D rigidBody;
+	private Rigidbody2D rigidBody;
 
 	private void Start()
 	{

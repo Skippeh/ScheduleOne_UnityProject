@@ -1,31 +1,38 @@
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ObjectFieldUI : global::UnityEngine.MonoBehaviour
+	public class ObjectFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
+		[Header("References")]
 		public string InstructionText;
 
 		public string ExtendedInstructionText;
 
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.UI.Image IconImg;
+		public Image IconImg;
 
-		public global::TMPro.TextMeshProUGUI SelectionLabel;
+		public TextMeshProUGUI SelectionLabel;
 
-		public global::UnityEngine.GameObject NoneSelected;
+		public GameObject NoneSelected;
 
-		public global::UnityEngine.GameObject MultipleSelected;
+		public GameObject MultipleSelected;
 
-		public global::UnityEngine.RectTransform ClearButton;
+		public RectTransform ClearButton;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.ObjectField> Fields { get; protected set; }
+		public List<ObjectField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.ObjectField> field)
+		public void Bind(List<ObjectField> field)
 		{
 		}
 
-		private void Refresh(global::ScheduleOne.EntityFramework.BuildableItem newVal)
+		private void Refresh(BuildableItem newVal)
 		{
 		}
 
@@ -38,17 +45,17 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private bool ObjectValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool ObjectValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void ObjectsSelected(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objs)
+		public void ObjectsSelected(List<BuildableItem> objs)
 		{
 		}
 
-		private void ObjectSelected(global::ScheduleOne.EntityFramework.BuildableItem obj)
+		private void ObjectSelected(BuildableItem obj)
 		{
 		}
 

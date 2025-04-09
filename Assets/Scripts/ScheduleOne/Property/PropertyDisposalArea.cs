@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.Property
 {
-	public class PropertyDisposalArea : global::UnityEngine.MonoBehaviour
+	public class PropertyDisposalArea : MonoBehaviour
 	{
-		public global::UnityEngine.Transform StandPoint;
+		public Transform StandPoint;
 
-		public global::UnityEngine.Transform TrashDropPoint;
+		public Transform TrashDropPoint;
 	}
 }

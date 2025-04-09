@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class Hair : global::ScheduleOne.AvatarFramework.Accessory
+	public class Hair : Accessory
 	{
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.GameObject[] hairToHide;
+		[SerializeField]
+		private GameObject[] hairToHide;
 
 		public bool BlockedByHat { get; protected set; }
 

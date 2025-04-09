@@ -1,10 +1,13 @@
+using System;
+using ScheduleOne.Tiles;
+
 namespace ScheduleOne.Storage
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct CoordinateStorageTilePair
 	{
-		public global::ScheduleOne.Tiles.Coordinate coord;
+		public Coordinate coord;
 
-		public global::ScheduleOne.Storage.StorageTile tile;
+		public StorageTile tile;
 	}
 }

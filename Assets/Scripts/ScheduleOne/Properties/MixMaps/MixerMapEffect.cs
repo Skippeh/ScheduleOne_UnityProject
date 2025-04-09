@@ -1,15 +1,18 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Properties.MixMaps
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MixerMapEffect
 	{
-		public global::UnityEngine.Vector2 Position;
+		public Vector2 Position;
 
 		public float Radius;
 
-		public global::ScheduleOne.Properties.Property Property;
+		public Property Property;
 
-		public bool IsPointInEffect(global::UnityEngine.Vector2 point)
+		public bool IsPointInEffect(Vector2 point)
 		{
 			return false;
 		}

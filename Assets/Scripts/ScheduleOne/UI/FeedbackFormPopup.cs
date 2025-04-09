@@ -1,8 +1,11 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class FeedbackFormPopup : global::UnityEngine.MonoBehaviour
+	public class FeedbackFormPopup : MonoBehaviour
 	{
-		public global::TMPro.TextMeshProUGUI Label;
+		public TextMeshProUGUI Label;
 
 		public bool AutoClose;
 

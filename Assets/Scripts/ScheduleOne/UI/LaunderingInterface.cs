@@ -1,6 +1,15 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Interaction;
+using ScheduleOne.ObjectScripts.Cash;
+using ScheduleOne.Property;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class LaunderingInterface : global::UnityEngine.MonoBehaviour
+	public class LaunderingInterface : MonoBehaviour
 	{
 		protected const float fovOverride = 65f;
 
@@ -8,73 +17,73 @@ namespace ScheduleOne.UI
 
 		protected const int minLaunderAmount = 10;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform cameraPosition;
+		[Header("References")]
+		[SerializeField]
+		protected Transform cameraPosition;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button launderButton;
+		[SerializeField]
+		protected Button launderButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject amountSelectorScreen;
+		[SerializeField]
+		protected GameObject amountSelectorScreen;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Slider amountSlider;
+		[SerializeField]
+		protected Slider amountSlider;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TMP_InputField amountInputField;
+		[SerializeField]
+		protected TMP_InputField amountInputField;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform notchContainer;
+		[SerializeField]
+		protected RectTransform notchContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI currentTotalAmountLabel;
+		[SerializeField]
+		protected TextMeshProUGUI currentTotalAmountLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI launderCapacityLabel;
+		[SerializeField]
+		protected TextMeshProUGUI launderCapacityLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI insufficientCashLabel;
+		[SerializeField]
+		protected TextMeshProUGUI insufficientCashLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform entryContainer;
+		[SerializeField]
+		protected RectTransform entryContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform noEntries;
+		[SerializeField]
+		protected RectTransform noEntries;
 
-		public global::ScheduleOne.ObjectScripts.Cash.CashStackVisuals[] CashStacks;
+		public CashStackVisuals[] CashStacks;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject timelineNotchPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject timelineNotchPrefab;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject entryPrefab;
+		[SerializeField]
+		protected GameObject entryPrefab;
 
-		[global::UnityEngine.Header("UI references")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Canvas canvas;
+		[Header("UI references")]
+		[SerializeField]
+		protected Canvas canvas;
 
 		private int selectedAmountToLaunder;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Property.LaunderingOperation, global::UnityEngine.RectTransform> operationToNotch;
+		private Dictionary<LaunderingOperation, RectTransform> operationToNotch;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> notches;
+		private List<RectTransform> notches;
 
 		private bool ignoreSliderChange;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Property.LaunderingOperation, global::UnityEngine.RectTransform> operationToEntry;
+		private Dictionary<LaunderingOperation, RectTransform> operationToEntry;
 
 		protected int maxLaunderAmount => 0;
 
-		public global::ScheduleOne.Property.Business business { get; private set; }
+		public Business business { get; private set; }
 
 		public bool isOpen => false;
 
-		public void Initialize(global::ScheduleOne.Property.Business bus)
+		public void Initialize(Business bus)
 		{
 		}
 
@@ -86,7 +95,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		protected void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		protected void Exit(ExitAction exit)
 		{
 		}
 
@@ -98,11 +107,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void CreateEntry(global::ScheduleOne.Property.LaunderingOperation op)
+		private void CreateEntry(LaunderingOperation op)
 		{
 		}
 
-		private void RemoveEntry(global::ScheduleOne.Property.LaunderingOperation op)
+		private void RemoveEntry(LaunderingOperation op)
 		{
 		}
 
@@ -110,7 +119,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void UpdateCashStacks(global::ScheduleOne.Property.LaunderingOperation op)
+		private void UpdateCashStacks(LaunderingOperation op)
 		{
 		}
 

@@ -1,58 +1,65 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemUIManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Items.ItemUIManager>
+	public class ItemUIManager : Singleton<ItemUIManager>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.UI.GraphicRaycaster[] Raycasters;
+		public GraphicRaycaster[] Raycasters;
 
-		public global::UnityEngine.RectTransform CashDragAmountContainer;
+		public RectTransform CashDragAmountContainer;
 
-		public global::UnityEngine.RectTransform InputsContainer;
+		public RectTransform InputsContainer;
 
-		public global::ScheduleOne.UI.Items.ItemInfoPanel InfoPanel;
+		public ItemInfoPanel InfoPanel;
 
-		public global::UnityEngine.RectTransform ItemQuantityPrompt;
+		public RectTransform ItemQuantityPrompt;
 
-		public global::UnityEngine.Animation CashSlotHintAnim;
+		public Animation CashSlotHintAnim;
 
-		public global::UnityEngine.CanvasGroup CashSlotHintAnimCanvasGroup;
+		public CanvasGroup CashSlotHintAnimCanvasGroup;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.ItemSlotUI ItemSlotUIPrefab;
+		[Header("Prefabs")]
+		public ItemSlotUI ItemSlotUIPrefab;
 
-		public global::ScheduleOne.UI.Items.ItemUI DefaultItemUIPrefab;
+		public ItemUI DefaultItemUIPrefab;
 
-		public global::ScheduleOne.UI.ItemSlotUI HotbarSlotUIPrefab;
+		public ItemSlotUI HotbarSlotUIPrefab;
 
-		private global::ScheduleOne.UI.ItemSlotUI draggedSlot;
+		private ItemSlotUI draggedSlot;
 
-		private global::UnityEngine.Vector2 mouseOffset;
+		private Vector2 mouseOffset;
 
 		private int draggedAmount;
 
-		private global::UnityEngine.RectTransform tempIcon;
+		private RectTransform tempIcon;
 
 		private bool isDraggingCash;
 
 		private float draggedCashAmount;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> PrimarySlots;
+		private List<ItemSlot> PrimarySlots;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> SecondarySlots;
+		private List<ItemSlot> SecondarySlots;
 
 		private bool customDragAmount;
 
-		private global::UnityEngine.Coroutine quantityChangePopRoutine;
+		private Coroutine quantityChangePopRoutine;
 
-		public global::UnityEngine.Events.UnityEvent onDragStart;
+		public UnityEvent onDragStart;
 
-		public global::UnityEngine.Events.UnityEvent onItemMoved;
+		public UnityEvent onItemMoved;
 
 		public bool DraggingEnabled { get; protected set; }
 
-		public global::ScheduleOne.UI.ItemSlotUI HoveredSlot { get; protected set; }
+		public ItemSlotUI HoveredSlot { get; protected set; }
 
 		public bool QuickMoveEnabled { get; protected set; }
 
@@ -72,7 +79,7 @@ namespace ScheduleOne.UI.Items
 		{
 		}
 
-		private void UpdateCashDragAmount(global::ScheduleOne.ItemFramework.CashInstance instance)
+		private void UpdateCashDragAmount(CashInstance instance)
 		{
 		}
 
@@ -80,11 +87,11 @@ namespace ScheduleOne.UI.Items
 		{
 		}
 
-		public void EnableQuickMove(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> primarySlots, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> secondarySlots)
+		public void EnableQuickMove(List<ItemSlot> primarySlots, List<ItemSlot> secondarySlots)
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> GetQuickMoveSlots(global::ScheduleOne.ItemFramework.ItemSlot sourceSlot)
+		private List<ItemSlot> GetQuickMoveSlots(ItemSlot sourceSlot)
 		{
 			return null;
 		}
@@ -93,17 +100,17 @@ namespace ScheduleOne.UI.Items
 		{
 		}
 
-		private global::ScheduleOne.UI.ItemSlotUI GetHoveredItemSlot()
+		private ItemSlotUI GetHoveredItemSlot()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.UI.Items.ItemDefinitionInfoHoverable GetHoveredItemInfo()
+		private ItemDefinitionInfoHoverable GetHoveredItemInfo()
 		{
 			return null;
 		}
 
-		private void SlotClicked(global::ScheduleOne.UI.ItemSlotUI ui)
+		private void SlotClicked(ItemSlotUI ui)
 		{
 		}
 
@@ -123,12 +130,12 @@ namespace ScheduleOne.UI.Items
 		{
 		}
 
-		public bool CanDragFromSlot(global::ScheduleOne.UI.ItemSlotUI slotUI)
+		public bool CanDragFromSlot(ItemSlotUI slotUI)
 		{
 			return false;
 		}
 
-		public bool CanCashBeDraggedIntoSlot(global::ScheduleOne.UI.ItemSlotUI ui)
+		public bool CanCashBeDraggedIntoSlot(ItemSlotUI ui)
 		{
 			return false;
 		}

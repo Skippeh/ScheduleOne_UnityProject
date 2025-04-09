@@ -1,6 +1,6 @@
 namespace ScheduleOne.Storage
 {
-	public class Safe : global::ScheduleOne.Storage.StorageEntity
+	public class Safe : StorageEntity
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002ESafeAssembly_002DCSharp_002Edll_Excuted;
 

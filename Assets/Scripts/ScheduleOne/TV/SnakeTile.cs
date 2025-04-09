@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.TV
 {
-	public class SnakeTile : global::UnityEngine.MonoBehaviour
+	public class SnakeTile : MonoBehaviour
 	{
 		public enum TileType
 		{
@@ -9,23 +12,23 @@ namespace ScheduleOne.TV
 			Food = 2
 		}
 
-		public global::UnityEngine.Vector2 Position;
+		public Vector2 Position;
 
-		public global::UnityEngine.Color SnakeColor;
+		public Color SnakeColor;
 
-		public global::UnityEngine.Color FoodColor;
+		public Color FoodColor;
 
-		public global::UnityEngine.RectTransform RectTransform;
+		public RectTransform RectTransform;
 
-		public global::UnityEngine.UI.Image Image;
+		public Image Image;
 
-		public global::ScheduleOne.TV.SnakeTile.TileType Type { get; private set; }
+		public TileType Type { get; private set; }
 
-		public void SetType(global::ScheduleOne.TV.SnakeTile.TileType type, int index = 0)
+		public void SetType(TileType type, int index = 0)
 		{
 		}
 
-		public void SetPosition(global::UnityEngine.Vector2 position, float tileSize)
+		public void SetPosition(Vector2 position, float tileSize)
 		{
 		}
 	}

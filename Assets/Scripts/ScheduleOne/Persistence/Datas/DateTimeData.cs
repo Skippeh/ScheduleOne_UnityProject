@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class DateTimeData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class DateTimeData : SaveData
 	{
 		public int Year;
 
@@ -15,13 +17,13 @@ namespace ScheduleOne.Persistence.Datas
 
 		public int Second;
 
-		public DateTimeData(global::System.DateTime date)
+		public DateTimeData(DateTime date)
 		{
 		}
 
-		public global::System.DateTime GetDateTime()
+		public DateTime GetDateTime()
 		{
-			return default(global::System.DateTime);
+			return default(DateTime);
 		}
 	}
 }

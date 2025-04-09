@@ -1,30 +1,33 @@
+using LiquidVolumeFX;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class LiquidContainer : global::UnityEngine.MonoBehaviour
+	public class LiquidContainer : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Settings")]
+		[Range(0f, 1f)]
 		public float Viscosity;
 
 		public bool AdjustMurkiness;
 
-		[global::UnityEngine.Header("References")]
-		public global::LiquidVolumeFX.LiquidVolume LiquidVolume;
+		[Header("References")]
+		public LiquidVolume LiquidVolume;
 
-		public global::ScheduleOne.StationFramework.LiquidVolumeCollider Collider;
+		public LiquidVolumeCollider Collider;
 
-		public global::UnityEngine.Transform ColliderTransform_Min;
+		public Transform ColliderTransform_Min;
 
-		public global::UnityEngine.Transform ColliderTransform_Max;
+		public Transform ColliderTransform_Max;
 
-		[global::UnityEngine.Header("Visuals Settings")]
+		[Header("Visuals Settings")]
 		public float MaxLevel;
 
-		private global::UnityEngine.MeshRenderer liquidMesh;
+		private MeshRenderer liquidMesh;
 
 		public float CurrentLiquidLevel { get; private set; }
 
-		public global::UnityEngine.Color LiquidColor { get; private set; }
+		public Color LiquidColor { get; private set; }
 
 		private void Awake()
 		{
@@ -50,7 +53,7 @@ namespace ScheduleOne.StationFramework
 		{
 		}
 
-		public void SetLiquidColor(global::UnityEngine.Color color, bool setColorVariable = true, bool updateLigting = true)
+		public void SetLiquidColor(Color color, bool setColorVariable = true, bool updateLigting = true)
 		{
 		}
 	}

@@ -1,28 +1,30 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class BloomModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class BloomModel : PostProcessingModel
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public struct BloomSettings
 		{
-			[global::UnityEngine.PostProcessing.Min(0f)]
-			[global::UnityEngine.Tooltip("Strength of the bloom filter.")]
+			[Min(0f)]
+			[Tooltip("Strength of the bloom filter.")]
 			public float intensity;
 
-			[global::UnityEngine.PostProcessing.Min(0f)]
-			[global::UnityEngine.Tooltip("Filters out pixels under this level of brightness.")]
+			[Min(0f)]
+			[Tooltip("Filters out pixels under this level of brightness.")]
 			public float threshold;
 
-			[global::UnityEngine.Range(0f, 1f)]
-			[global::UnityEngine.Tooltip("Makes transition between under/over-threshold gradual (0 = hard threshold, 1 = soft threshold).")]
+			[Range(0f, 1f)]
+			[Tooltip("Makes transition between under/over-threshold gradual (0 = hard threshold, 1 = soft threshold).")]
 			public float softKnee;
 
-			[global::UnityEngine.Range(1f, 7f)]
-			[global::UnityEngine.Tooltip("Changes extent of veiling effects in a screen resolution-independent fashion.")]
+			[Range(1f, 7f)]
+			[Tooltip("Changes extent of veiling effects in a screen resolution-independent fashion.")]
 			public float radius;
 
-			[global::UnityEngine.Tooltip("Reduces flashing noise with an additional filter.")]
+			[Tooltip("Reduces flashing noise with an additional filter.")]
 			public bool antiFlicker;
 
 			public float thresholdLinear
@@ -36,40 +38,40 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			public static global::UnityEngine.PostProcessing.BloomModel.BloomSettings defaultSettings => default(global::UnityEngine.PostProcessing.BloomModel.BloomSettings);
+			public static BloomSettings defaultSettings => default(BloomSettings);
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public struct LensDirtSettings
 		{
-			[global::UnityEngine.Tooltip("Dirtiness texture to add smudges or dust to the lens.")]
-			public global::UnityEngine.Texture texture;
+			[Tooltip("Dirtiness texture to add smudges or dust to the lens.")]
+			public Texture texture;
 
-			[global::UnityEngine.PostProcessing.Min(0f)]
-			[global::UnityEngine.Tooltip("Amount of lens dirtiness.")]
+			[Min(0f)]
+			[Tooltip("Amount of lens dirtiness.")]
 			public float intensity;
 
-			public static global::UnityEngine.PostProcessing.BloomModel.LensDirtSettings defaultSettings => default(global::UnityEngine.PostProcessing.BloomModel.LensDirtSettings);
+			public static LensDirtSettings defaultSettings => default(LensDirtSettings);
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public struct Settings
 		{
-			public global::UnityEngine.PostProcessing.BloomModel.BloomSettings bloom;
+			public BloomSettings bloom;
 
-			public global::UnityEngine.PostProcessing.BloomModel.LensDirtSettings lensDirt;
+			public LensDirtSettings lensDirt;
 
-			public static global::UnityEngine.PostProcessing.BloomModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.BloomModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.BloomModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.BloomModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.BloomModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

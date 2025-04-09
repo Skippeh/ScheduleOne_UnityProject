@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Mac : global::ScheduleOne.NPCs.NPC
+	public class Mac : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EMacAssembly_002DCSharp_002Edll_Excuted;
 

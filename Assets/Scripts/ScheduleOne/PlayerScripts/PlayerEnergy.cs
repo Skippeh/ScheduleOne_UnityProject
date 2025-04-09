@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerEnergy : global::UnityEngine.MonoBehaviour
+	public class PlayerEnergy : MonoBehaviour
 	{
 		public const float CRITICAL_THRESHOLD = 20f;
 
@@ -10,14 +13,14 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool DEBUG_DISABLE_ENERGY;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float EnergyDuration_Hours;
 
 		public float EnergyRechargeTime_Hours;
 
-		public global::UnityEngine.Events.UnityEvent onEnergyChanged;
+		public UnityEvent onEnergyChanged;
 
-		public global::UnityEngine.Events.UnityEvent onEnergyDepleted;
+		public UnityEvent onEnergyDepleted;
 
 		public float CurrentEnergy { get; protected set; }
 

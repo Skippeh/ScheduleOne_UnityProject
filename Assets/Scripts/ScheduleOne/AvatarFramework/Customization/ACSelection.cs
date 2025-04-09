@@ -1,26 +1,30 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public abstract class ACSelection<T> : global::UnityEngine.MonoBehaviour where T : global::UnityEngine.Object
+	public abstract class ACSelection<T> : MonoBehaviour where T : Object
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject ButtonPrefab;
+		[Header("References")]
+		public GameObject ButtonPrefab;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public int PropertyIndex;
 
-		public global::System.Collections.Generic.List<T> Options;
+		public List<T> Options;
 
 		public bool Nullable;
 
 		public int DefaultOptionIndex;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> buttons;
+		protected List<GameObject> buttons;
 
 		protected int SelectedOptionIndex;
 
-		public global::UnityEngine.Events.UnityEvent<T> onValueChange;
+		public UnityEvent<T> onValueChange;
 
-		public global::UnityEngine.Events.UnityEvent<T, int> onValueChangeWithIndex;
+		public UnityEvent<T, int> onValueChangeWithIndex;
 
 		protected virtual void Awake()
 		{

@@ -1,6 +1,8 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Molly : global::ScheduleOne.Economy.Dealer
+	public class Molly : Dealer
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EMollyAssembly_002DCSharp_002Edll_Excuted;
 

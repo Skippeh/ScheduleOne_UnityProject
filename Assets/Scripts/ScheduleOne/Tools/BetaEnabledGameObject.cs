@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class BetaEnabledGameObject : global::UnityEngine.MonoBehaviour
+	public class BetaEnabledGameObject : MonoBehaviour
 	{
 		private void Start()
 		{

@@ -1,23 +1,30 @@
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Misc;
+using ScheduleOne.UI.Management;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class ManagementClipboard_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class ManagementClipboard_Equippable : Equippable_Viewmodel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Clipboard;
+		[Header("References")]
+		public Transform Clipboard;
 
-		public global::UnityEngine.Transform LoweredPosition;
+		public Transform LoweredPosition;
 
-		public global::UnityEngine.Transform RaisedPosition;
+		public Transform RaisedPosition;
 
-		public global::ScheduleOne.Misc.ToggleableLight Light;
+		public ToggleableLight Light;
 
-		public global::ScheduleOne.UI.Management.SelectionInfoUI SelectionInfo;
+		public SelectionInfoUI SelectionInfo;
 
-		public global::TMPro.TextMeshProUGUI OverrideText;
+		public TextMeshProUGUI OverrideText;
 
-		private global::UnityEngine.Coroutine moveRoutine;
+		private Coroutine moveRoutine;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

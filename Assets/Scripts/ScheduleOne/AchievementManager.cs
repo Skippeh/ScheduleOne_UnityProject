@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+
 namespace ScheduleOne
 {
-	public class AchievementManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.AchievementManager>
+	public class AchievementManager : PersistentSingleton<AchievementManager>
 	{
 		public enum EAchievement
 		{
@@ -17,9 +20,9 @@ namespace ScheduleOne
 			INDIAN_DEALER = 10
 		}
 
-		private global::ScheduleOne.AchievementManager.EAchievement[] achievements;
+		private EAchievement[] achievements;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.AchievementManager.EAchievement, bool> achievementUnlocked;
+		private Dictionary<EAchievement, bool> achievementUnlocked;
 
 		protected override void Awake()
 		{
@@ -33,7 +36,7 @@ namespace ScheduleOne
 		{
 		}
 
-		public void UnlockAchievement(global::ScheduleOne.AchievementManager.EAchievement achievement)
+		public void UnlockAchievement(EAchievement achievement)
 		{
 		}
 	}

@@ -1,13 +1,16 @@
+using RootMotion.FinalIK;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarIKController : global::UnityEngine.MonoBehaviour
+	public class AvatarIKController : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::RootMotion.FinalIK.BipedIK BodyIK;
+		[Header("References")]
+		public BipedIK BodyIK;
 
-		private global::UnityEngine.Transform defaultLeftLegBendTarget;
+		private Transform defaultLeftLegBendTarget;
 
-		private global::UnityEngine.Transform defaultRightLegBendTarget;
+		private Transform defaultRightLegBendTarget;
 
 		private void Awake()
 		{
@@ -21,7 +24,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		public void OverrideLegBendTargets(global::UnityEngine.Transform leftLegTarget, global::UnityEngine.Transform rightLegTarget)
+		public void OverrideLegBendTargets(Transform leftLegTarget, Transform rightLegTarget)
 		{
 		}
 

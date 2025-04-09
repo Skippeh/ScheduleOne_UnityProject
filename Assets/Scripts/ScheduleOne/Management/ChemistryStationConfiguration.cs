@@ -1,18 +1,21 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class ChemistryStationConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class ChemistryStationConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.NPCField AssignedChemist;
+		public NPCField AssignedChemist;
 
-		public global::ScheduleOne.Management.StationRecipeField Recipe;
+		public StationRecipeField Recipe;
 
-		public global::ScheduleOne.Management.ObjectField Destination;
+		public ObjectField Destination;
 
-		public global::ScheduleOne.ObjectScripts.ChemistryStation Station { get; protected set; }
+		public ChemistryStation Station { get; protected set; }
 
-		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
+		public TransitRoute DestinationRoute { get; protected set; }
 
-		public ChemistryStationConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.ChemistryStation station)
+		public ChemistryStationConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, ChemistryStation station)
 			: base(null, null)
 		{
 		}
@@ -21,11 +24,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void DestinationChanged(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void DestinationChanged(BuildableItem item)
 		{
 		}
 
-		public bool DestinationFilter(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public bool DestinationFilter(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

@@ -1,29 +1,33 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class HDRColorSmoother
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Override
 		{
-			public global::UnityEngine.Color Value;
+			public Color Value;
 
 			public int Priority;
 
 			public string Label;
 		}
 
-		[global::UnityEngine.ColorUsage(true, true)]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color DefaultValue;
+		[ColorUsage(true, true)]
+		[SerializeField]
+		private Color DefaultValue;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float SmoothingSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Tools.HDRColorSmoother.Override> overrides;
+		[SerializeField]
+		private List<Override> overrides;
 
-		public global::UnityEngine.Color CurrentValue { get; private set; }
+		public Color CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }
 
@@ -35,7 +39,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		public void SetDefault(global::UnityEngine.Color value)
+		public void SetDefault(Color value)
 		{
 		}
 
@@ -43,7 +47,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		public void AddOverride(global::UnityEngine.Color value, int priority, string label)
+		public void AddOverride(Color value, int priority, string label)
 		{
 		}
 

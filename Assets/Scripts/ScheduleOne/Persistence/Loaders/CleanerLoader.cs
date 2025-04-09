@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class CleanerLoader : global::ScheduleOne.Persistence.Loaders.EmployeeLoader
+	public class CleanerLoader : EmployeeLoader
 	{
 		public override string NPCType => null;
 

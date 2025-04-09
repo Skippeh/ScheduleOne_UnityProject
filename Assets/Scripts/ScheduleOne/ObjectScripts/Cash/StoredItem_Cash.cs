@@ -1,13 +1,17 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts.Cash
 {
-	public class StoredItem_Cash : global::ScheduleOne.Storage.StoredItem
+	public class StoredItem_Cash : StoredItem
 	{
-		protected global::ScheduleOne.ItemFramework.CashInstance cashInstance;
+		protected CashInstance cashInstance;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.ObjectScripts.Cash.CashStackVisuals Visuals;
+		[Header("References")]
+		public CashStackVisuals Visuals;
 
-		public override void InitializeStoredItem(global::ScheduleOne.Storage.StorableItemInstance _item, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 _originCoordinate, float _rotation)
+		public override void InitializeStoredItem(StorableItemInstance _item, StorageGrid grid, Vector2 _originCoordinate, float _rotation)
 		{
 		}
 

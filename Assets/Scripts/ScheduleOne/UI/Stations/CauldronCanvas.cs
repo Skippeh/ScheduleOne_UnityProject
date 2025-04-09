@@ -1,25 +1,32 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class CauldronCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.CauldronCanvas>
+	public class CauldronCanvas : Singleton<CauldronCanvas>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.ItemSlotUI> IngredientSlotUIs;
+		public List<ItemSlotUI> IngredientSlotUIs;
 
-		public global::ScheduleOne.UI.ItemSlotUI LiquidSlotUI;
+		public ItemSlotUI LiquidSlotUI;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.Cauldron Cauldron { get; protected set; }
+		public Cauldron Cauldron { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -33,7 +40,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void SetIsOpen(global::ScheduleOne.ObjectScripts.Cauldron cauldron, bool open, bool removeUI = true)
+		public void SetIsOpen(Cauldron cauldron, bool open, bool removeUI = true)
 		{
 		}
 

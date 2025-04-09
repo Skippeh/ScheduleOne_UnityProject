@@ -1,6 +1,19 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Tools;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Skating
 {
-	public class Skateboard : global::FishNet.Object.NetworkBehaviour
+	public class Skateboard : NetworkBehaviour
 	{
 		public const float GroundedRaycastDistance = 0.1f;
 
@@ -18,33 +31,33 @@ namespace ScheduleOne.Skating
 
 		public const float RollLimit = 20f;
 
-		[global::UnityEngine.Header("Info - Readonly")]
+		[Header("Info - Readonly")]
 		public float CurrentSpeed_Kmh;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rigidbody Rb;
+		[Header("References")]
+		public Rigidbody Rb;
 
-		public global::UnityEngine.Transform CoM;
+		public Transform CoM;
 
-		public global::UnityEngine.Transform[] HoverPoints;
+		public Transform[] HoverPoints;
 
-		public global::UnityEngine.Transform FrontAxlePosition;
+		public Transform FrontAxlePosition;
 
-		public global::UnityEngine.Transform RearAxlePosition;
+		public Transform RearAxlePosition;
 
-		public global::UnityEngine.Transform PlayerContainer;
+		public Transform PlayerContainer;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation Animation;
+		public SkateboardAnimation Animation;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
+		public SmoothedVelocityCalculator VelocityCalculator;
 
-		public global::ScheduleOne.DevUtilities.AverageAcceleration Accelerometer;
+		public AverageAcceleration Accelerometer;
 
-		public global::ScheduleOne.Skating.Skateboard_Equippable Equippable;
+		public Skateboard_Equippable Equippable;
 
-		public global::UnityEngine.Transform IKAlignmentsContainer;
+		public Transform IKAlignmentsContainer;
 
-		[global::UnityEngine.Header("Turn Settings")]
+		[Header("Turn Settings")]
 		public float TurnForce;
 
 		public float TurnChangeRate;
@@ -53,46 +66,46 @@ namespace ScheduleOne.Skating
 
 		public float TurnSpeedBoost;
 
-		public global::UnityEngine.AnimationCurve TurnForceMap;
+		public AnimationCurve TurnForceMap;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float Gravity;
 
 		public float BrakeForce;
 
 		public float ReverseTopSpeed_Kmh;
 
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		public LayerMask GroundDetectionMask;
 
-		public global::UnityEngine.Collider[] MainColliders;
+		public Collider[] MainColliders;
 
 		public float RotationClampForce;
 
-		[global::UnityEngine.Header("Friction Settings")]
+		[Header("Friction Settings")]
 		public bool FrictionEnabled;
 
-		public global::UnityEngine.AnimationCurve LongitudinalFrictionCurve;
+		public AnimationCurve LongitudinalFrictionCurve;
 
 		public float LongitudinalFrictionMultiplier;
 
 		public float LateralFrictionForceMultiplier;
 
-		[global::UnityEngine.Header("Jump Settings")]
+		[Header("Jump Settings")]
 		public float JumpForce;
 
 		public float JumpDuration_Min;
 
 		public float JumpDuration_Max;
 
-		public global::UnityEngine.AnimationCurve FrontAxleJumpCurve;
+		public AnimationCurve FrontAxleJumpCurve;
 
-		public global::UnityEngine.AnimationCurve RearAxleJumpCurve;
+		public AnimationCurve RearAxleJumpCurve;
 
-		public global::UnityEngine.AnimationCurve JumpForwardForceCurve;
+		public AnimationCurve JumpForwardForceCurve;
 
 		public float JumpForwardBoost;
 
-		[global::UnityEngine.Header("Hover Settings")]
+		[Header("Hover Settings")]
 		public float HoverForce;
 
 		public float HoverRayLength;
@@ -105,35 +118,35 @@ namespace ScheduleOne.Skating
 
 		public float Hover_D;
 
-		[global::UnityEngine.Header("Pushing Setings")]
-		[global::UnityEngine.Tooltip("Top speed in m/s")]
+		[Header("Pushing Setings")]
+		[Tooltip("Top speed in m/s")]
 		public float TopSpeed_Kmh;
 
 		public float PushForceMultiplier;
 
-		public global::UnityEngine.AnimationCurve PushForceMultiplierMap;
+		public AnimationCurve PushForceMultiplierMap;
 
 		public float PushForceDuration;
 
 		public float PushDelay;
 
-		public global::UnityEngine.AnimationCurve PushForceCurve;
+		public AnimationCurve PushForceCurve;
 
-		[global::UnityEngine.Header("Air Movement")]
+		[Header("Air Movement")]
 		public bool AirMovementEnabled;
 
 		public float AirMovementForce;
 
 		public float AirMovementJumpReductionDuration;
 
-		public global::UnityEngine.AnimationCurve AirMovementJumpReductionCurve;
+		public AnimationCurve AirMovementJumpReductionCurve;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent OnPushStart;
+		[Header("Events")]
+		public UnityEvent OnPushStart;
 
-		public global::UnityEngine.Events.UnityEvent<float> OnJump;
+		public UnityEvent<float> OnJump;
 
-		public global::UnityEngine.Events.UnityEvent OnLand;
+		public UnityEvent OnLand;
 
 		private int horizontalInput;
 
@@ -153,7 +166,7 @@ namespace ScheduleOne.Skating
 
 		private float jumpForwardForce;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.PID> hoverPIDs;
+		private List<PID> hoverPIDs;
 
 		private bool pushQueued;
 
@@ -165,7 +178,7 @@ namespace ScheduleOne.Skating
 
 		private bool braking;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CJumpBuildAmount_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CJumpBuildAmount_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ESkating_002ESkateboardAssembly_002DCSharp_002Edll_Excuted;
 
@@ -181,21 +194,14 @@ namespace ScheduleOne.Skating
 
 		public float AirTime => 0f;
 
+		[field: SyncVar(Channel = Channel.Unreliable)]
 		public float JumpBuildAmount
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc]
-			set
-			{
-			}
+			get; [ServerRpc]
+			set;
 		}
 
-		public global::ScheduleOne.PlayerScripts.Player Rider { get; private set; }
+		public Player Rider { get; private set; }
 
 		public float TopSpeed_Ms => 0f;
 
@@ -258,12 +264,12 @@ namespace ScheduleOne.Skating
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		private void SendJump(float jumpHeldTime)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ReceiveJump(float _jumpHeldTime)
 		{
 		}
@@ -281,13 +287,13 @@ namespace ScheduleOne.Skating
 			return false;
 		}
 
-		public bool IsGrounded(out global::UnityEngine.RaycastHit hit)
+		public bool IsGrounded(out RaycastHit hit)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		public void SetVelocity(global::UnityEngine.Vector3 velocity)
+		public void SetVelocity(Vector3 velocity)
 		{
 		}
 
@@ -320,12 +326,12 @@ namespace ScheduleOne.Skating
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
+		[SpecialName]
 		public void RpcLogic___set_JumpBuildAmount_431000436(float value)
 		{
 		}
 
-		private void RpcReader___Server_set_JumpBuildAmount_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_JumpBuildAmount_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -337,7 +343,7 @@ namespace ScheduleOne.Skating
 		{
 		}
 
-		private void RpcReader___Server_SendJump_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendJump_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -349,11 +355,11 @@ namespace ScheduleOne.Skating
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveJump_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveJump_431000436(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002ESkating_002ESkateboard(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002ESkating_002ESkateboard(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,7 +1,9 @@
+using ScheduleOne.Clothing;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ClothingShopListing : global::ScheduleOne.UI.Shop.ShopListing
+	public class ClothingShopListing : ShopListing
 	{
-		public global::ScheduleOne.Clothing.EClothingColor Color;
+		public EClothingColor Color;
 	}
 }

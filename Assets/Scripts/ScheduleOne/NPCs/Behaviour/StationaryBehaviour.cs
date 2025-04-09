@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class StationaryBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class StationaryBehaviour : Behaviour
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EStationaryBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

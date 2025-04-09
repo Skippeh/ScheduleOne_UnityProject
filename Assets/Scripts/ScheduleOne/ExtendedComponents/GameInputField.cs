@@ -1,6 +1,8 @@
+using TMPro;
+
 namespace ScheduleOne.ExtendedComponents
 {
-	public class GameInputField : global::TMPro.TMP_InputField
+	public class GameInputField : TMP_InputField
 	{
 		protected override void Awake()
 		{

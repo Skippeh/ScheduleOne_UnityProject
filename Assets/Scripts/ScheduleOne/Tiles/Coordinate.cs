@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Tiles
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Coordinate
 	{
 		public int x;
 
 		public int y;
 
-		public static implicit operator global::UnityEngine.Vector2(global::ScheduleOne.Tiles.Coordinate c)
+		public static implicit operator Vector2(Coordinate c)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		public Coordinate()
@@ -20,7 +24,7 @@ namespace ScheduleOne.Tiles
 		{
 		}
 
-		public Coordinate(global::UnityEngine.Vector2 vector)
+		public Coordinate(Vector2 vector)
 		{
 		}
 
@@ -34,12 +38,12 @@ namespace ScheduleOne.Tiles
 			return false;
 		}
 
-		public static global::ScheduleOne.Tiles.Coordinate operator +(global::ScheduleOne.Tiles.Coordinate a, global::ScheduleOne.Tiles.Coordinate b)
+		public static Coordinate operator +(Coordinate a, Coordinate b)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.Tiles.Coordinate operator -(global::ScheduleOne.Tiles.Coordinate a, global::ScheduleOne.Tiles.Coordinate b)
+		public static Coordinate operator -(Coordinate a, Coordinate b)
 		{
 			return null;
 		}
@@ -59,12 +63,12 @@ namespace ScheduleOne.Tiles
 			return null;
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinatePair> BuildCoordinateMatches(global::ScheduleOne.Tiles.Coordinate originCoord, int sizeX, int sizeY, float rot)
+		public static List<CoordinatePair> BuildCoordinateMatches(Coordinate originCoord, int sizeX, int sizeY, float rot)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.Tiles.Coordinate RotateCoordinates(global::ScheduleOne.Tiles.Coordinate coord, float angle)
+		public static Coordinate RotateCoordinates(Coordinate coord, float angle)
 		{
 			return null;
 		}

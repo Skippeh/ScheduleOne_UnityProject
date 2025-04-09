@@ -1,19 +1,24 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class CauldronData : global::ScheduleOne.Persistence.Datas.GridItemData
+	public class CauldronData : GridItemData
 	{
-		public global::ScheduleOne.Persistence.Datas.ItemSet Ingredients;
+		public ItemSet Ingredients;
 
-		public global::ScheduleOne.Persistence.Datas.ItemSet Liquid;
+		public ItemSet Liquid;
 
-		public global::ScheduleOne.Persistence.Datas.ItemSet Output;
+		public ItemSet Output;
 
 		public int RemainingCookTime;
 
-		public global::ScheduleOne.ItemFramework.EQuality InputQuality;
+		public EQuality InputQuality;
 
-		public CauldronData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, global::ScheduleOne.Persistence.Datas.ItemSet ingredients, global::ScheduleOne.Persistence.Datas.ItemSet liquid, global::ScheduleOne.Persistence.Datas.ItemSet output, int remainingCookTime, global::ScheduleOne.ItemFramework.EQuality inputQuality)
-			: base(default(global::System.Guid), null, 0, null, default(global::UnityEngine.Vector2), 0)
+		public CauldronData(Guid guid, ItemInstance item, int loadOrder, Grid grid, Vector2 originCoordinate, int rotation, ItemSet ingredients, ItemSet liquid, ItemSet output, int remainingCookTime, EQuality inputQuality)
+			: base(default(Guid), null, 0, null, default(Vector2), 0)
 		{
 		}
 	}

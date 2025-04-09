@@ -1,18 +1,24 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.UI;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LaunderingStation : global::ScheduleOne.EntityFramework.GridItem
+	public class LaunderingStation : GridItem
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.LaunderingInterface Interface;
+		[Header("References")]
+		public LaunderingInterface Interface;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.ObjectScripts.CashCounter CashCounter;
+		[SerializeField]
+		protected CashCounter CashCounter;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ELaunderingStationAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002ELaunderingStationAssembly_002DCSharp_002Edll_Excuted;
 
-		public override void InitializeGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public override void InitializeGridItem(ItemInstance instance, Grid grid, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 

@@ -1,10 +1,13 @@
+using ScheduleOne.Doors;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Building.Doors
 {
-	public class PropertyDoorController : global::ScheduleOne.Doors.DoorController
+	public class PropertyDoorController : DoorController
 	{
 		public const float WANTED_PLAYER_CLOSE_DISTANCE = 20f;
 
-		public global::ScheduleOne.Property.Property Property;
+		public ScheduleOne.Property.Property Property;
 
 		private bool IsUnlocked;
 
@@ -24,13 +27,13 @@ namespace ScheduleOne.Building.Doors
 		{
 		}
 
-		protected override bool CanPlayerAccess(global::ScheduleOne.Doors.EDoorSide side, out string reason)
+		protected override bool CanPlayerAccess(EDoorSide side, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		private global::ScheduleOne.PlayerScripts.Player GetNearestWantedPlayer()
+		private Player GetNearestWantedPlayer()
 		{
 			return null;
 		}

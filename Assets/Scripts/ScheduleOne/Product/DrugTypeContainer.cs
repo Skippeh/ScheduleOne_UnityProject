@@ -1,8 +1,10 @@
+using System;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DrugTypeContainer
 	{
-		public global::ScheduleOne.Product.EDrugType DrugType;
+		public EDrugType DrugType;
 	}
 }

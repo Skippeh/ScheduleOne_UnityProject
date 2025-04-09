@@ -1,18 +1,21 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_Botanists : global::ScheduleOne.Quests.Quest_Employees
+	public class Quest_Botanists : Quest_Employees
 	{
-		public global::ScheduleOne.Quests.QuestEntry AssignSuppliesEntry;
+		public QuestEntry AssignSuppliesEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry AssignWorkEntry;
+		public QuestEntry AssignWorkEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry AssignDestinationEntry;
+		public QuestEntry AssignDestinationEntry;
 
 		protected override void MinPass()
 		{
 		}
 
-		public override global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> GetEmployees()
+		public override List<Employee> GetEmployees()
 		{
 			return null;
 		}

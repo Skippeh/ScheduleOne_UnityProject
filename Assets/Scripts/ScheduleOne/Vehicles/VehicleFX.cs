@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleFX : global::UnityEngine.MonoBehaviour
+	public class VehicleFX : MonoBehaviour
 	{
-		public global::UnityEngine.ParticleSystem[] exhaustFX;
+		public ParticleSystem[] exhaustFX;
 
 		public virtual void OnVehicleStart()
 		{

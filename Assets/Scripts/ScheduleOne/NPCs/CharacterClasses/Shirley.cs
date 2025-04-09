@@ -1,12 +1,16 @@
+using System.Collections.Generic;
+using ScheduleOne.Economy;
+using ScheduleOne.UI.Phone;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Shirley : global::ScheduleOne.Economy.Supplier
+	public class Shirley : Supplier
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EShirleyAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ECharacterClasses_002EShirleyAssembly_002DCSharp_002Edll_Excuted;
 
-		protected override void DeaddropConfirmed(global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.CartEntry> cart, float totalPrice)
+		protected override void DeaddropConfirmed(List<PhoneShopInterface.CartEntry> cart, float totalPrice)
 		{
 		}
 

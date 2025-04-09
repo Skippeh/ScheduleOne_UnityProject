@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class LoanSharkCarVisuals : global::UnityEngine.MonoBehaviour
+	public class LoanSharkCarVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.GameObject Note;
+		public GameObject Note;
 
-		public global::UnityEngine.GameObject BulletHoleDecals;
+		public GameObject BulletHoleDecals;
 
 		private void Awake()
 		{

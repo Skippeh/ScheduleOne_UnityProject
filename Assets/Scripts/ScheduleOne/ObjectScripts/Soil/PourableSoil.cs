@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts.Soil
 {
-	public class PourableSoil : global::ScheduleOne.PlayerTasks.Pourable
+	public class PourableSoil : Pourable
 	{
 		public const float TEAR_ANGLE = 10f;
 
@@ -8,26 +15,26 @@ namespace ScheduleOne.ObjectScripts.Soil
 
 		public bool IsOpen;
 
-		public global::ScheduleOne.ItemFramework.SoilDefinition SoilDefinition;
+		public SoilDefinition SoilDefinition;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform SoilBag;
+		[Header("References")]
+		public Transform SoilBag;
 
-		public global::UnityEngine.Transform[] Bones;
+		public Transform[] Bones;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Collider> TopColliders;
+		public List<Collider> TopColliders;
 
-		public global::UnityEngine.MeshRenderer[] Highlights;
+		public MeshRenderer[] Highlights;
 
-		public global::UnityEngine.Transform TopParent;
+		public Transform TopParent;
 
-		public global::ScheduleOne.Audio.AudioSourceController SnipSound;
+		public AudioSourceController SnipSound;
 
-		public global::UnityEngine.SkinnedMeshRenderer TopMesh;
+		public SkinnedMeshRenderer TopMesh;
 
-		public global::UnityEngine.Events.UnityEvent onOpened;
+		public UnityEvent onOpened;
 
-		private global::UnityEngine.Vector3 highlightScale;
+		private Vector3 highlightScale;
 
 		private float timeSinceStart;
 

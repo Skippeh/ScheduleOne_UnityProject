@@ -1,56 +1,68 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Property.Utilities.Power;
+using ScheduleOne.Tiles;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.ConstructableScripts
 {
-	public class Constructable_GridBased : global::ScheduleOne.ConstructableScripts.Constructable
+	public class Constructable_GridBased : Constructable
 	{
-		[global::UnityEngine.Header("Grid Based Constructable References")]
-		public global::UnityEngine.Transform buildPoint;
+		[Header("Grid Based Constructable References")]
+		public Transform buildPoint;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
+		public List<CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
 
-		public global::UnityEngine.Transform ContentContainer;
+		public Transform ContentContainer;
 
-		public global::ScheduleOne.Tiles.Grid[] Grids;
+		public Grid[] Grids;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.GameObject> roofObjectsForVisibility;
+		public List<GameObject> roofObjectsForVisibility;
 
-		[global::UnityEngine.Header("Power")]
-		[global::UnityEngine.SerializeField]
+		[Header("Power")]
+		[SerializeField]
 		protected bool AlwaysPowered;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode powerNode;
+		[SerializeField]
+		protected PowerNode powerNode;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool isGhost;
 
 		protected bool dataChangedThisFrame;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		public global::System.Guid OwnerGridGUID;
+		[SyncVar]
+		public Guid OwnerGridGUID;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		public global::UnityEngine.Vector2 OriginCoordinate;
+		[SyncVar]
+		public Vector2 OriginCoordinate;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
+		[SyncVar]
 		public float Rotation;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinatePair> coordinatePairs;
+		public List<CoordinatePair> coordinatePairs;
 
-		private global::System.Collections.Generic.Dictionary<global::UnityEngine.GameObject, global::UnityEngine.LayerMask> originalRoofLayers;
+		private Dictionary<GameObject, LayerMask> originalRoofLayers;
 
 		protected bool roofVisible;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::System.Guid> syncVar___OwnerGridGUID;
+		public SyncVar<Guid> syncVar___OwnerGridGUID;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::UnityEngine.Vector2> syncVar___OriginCoordinate;
+		public SyncVar<Vector2> syncVar___OriginCoordinate;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___Rotation;
+		public SyncVar<float> syncVar___Rotation;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstructableScripts_002EConstructable_GridBasedAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EConstructableScripts_002EConstructable_GridBasedAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Tiles.FootprintTile OriginFootprint => null;
+		public FootprintTile OriginFootprint => null;
 
 		public int FootprintX => 0;
 
@@ -58,28 +70,28 @@ namespace ScheduleOne.ConstructableScripts
 
 		public bool hasWaterSupply => false;
 
-		public global::ScheduleOne.Property.Utilities.Power.PowerNode PowerNode => null;
+		public PowerNode PowerNode => null;
 
 		public bool isPowered => false;
 
-		public global::ScheduleOne.Tiles.Grid OwnerGrid { get; protected set; }
+		public Grid OwnerGrid { get; protected set; }
 
-		public global::System.Guid SyncAccessor_OwnerGridGUID
+		public Guid SyncAccessor_OwnerGridGUID
 		{
 			get
 			{
-				return default(global::System.Guid);
+				return default(Guid);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Vector2 SyncAccessor_OriginCoordinate
+		public Vector2 SyncAccessor_OriginCoordinate
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
@@ -105,7 +117,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -113,7 +125,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public virtual void InitializeConstructable_GridBased(global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		public virtual void InitializeConstructable_GridBased(Grid grid, Vector2 originCoordinate, float rotation)
 		{
 		}
 
@@ -121,16 +133,16 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		private void SetParent(global::UnityEngine.Transform parent)
+		private void SetParent(Transform parent)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		protected virtual void SetData(global::System.Guid gridGUID, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		protected virtual void SetData(Guid gridGUID, Vector2 originCoordinate, float rotation)
 		{
 		}
 
-		public virtual void RepositionConstructable(global::System.Guid gridGUID, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		public virtual void RepositionConstructable(Guid gridGUID, Vector2 originCoordinate, float rotation)
 		{
 		}
 
@@ -155,9 +167,9 @@ namespace ScheduleOne.ConstructableScripts
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		protected void SetGridGUIDs(global::FishNet.Connection.NetworkConnection target, string[] guids)
+		[ObserversRpc]
+		[TargetRpc]
+		protected void SetGridGUIDs(NetworkConnection target, string[] guids)
 		{
 		}
 
@@ -181,12 +193,12 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public global::ScheduleOne.Tiles.FootprintTile GetFootprintTile(global::ScheduleOne.Tiles.Coordinate coord)
+		public FootprintTile GetFootprintTile(Coordinate coord)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.FootprintTile> GetFootprintTiles()
+		public List<FootprintTile> GetFootprintTiles()
 		{
 			return null;
 		}
@@ -203,39 +215,39 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		private void RpcWriter___Server_SetData_810381718(global::System.Guid gridGUID, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		private void RpcWriter___Server_SetData_810381718(Guid gridGUID, Vector2 originCoordinate, float rotation)
 		{
 		}
 
-		protected virtual void RpcLogic___SetData_810381718(global::System.Guid gridGUID, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		protected virtual void RpcLogic___SetData_810381718(Guid gridGUID, Vector2 originCoordinate, float rotation)
 		{
 		}
 
-		private void RpcReader___Server_SetData_810381718(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetData_810381718(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetGridGUIDs_2890081366(global::FishNet.Connection.NetworkConnection target, string[] guids)
+		private void RpcWriter___Observers_SetGridGUIDs_2890081366(NetworkConnection target, string[] guids)
 		{
 		}
 
-		protected void RpcLogic___SetGridGUIDs_2890081366(global::FishNet.Connection.NetworkConnection target, string[] guids)
+		protected void RpcLogic___SetGridGUIDs_2890081366(NetworkConnection target, string[] guids)
 		{
 		}
 
-		private void RpcReader___Observers_SetGridGUIDs_2890081366(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetGridGUIDs_2890081366(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetGridGUIDs_2890081366(global::FishNet.Connection.NetworkConnection target, string[] guids)
+		private void RpcWriter___Target_SetGridGUIDs_2890081366(NetworkConnection target, string[] guids)
 		{
 		}
 
-		private void RpcReader___Target_SetGridGUIDs_2890081366(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetGridGUIDs_2890081366(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EConstructableScripts_002EConstructable_GridBased(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EConstructableScripts_002EConstructable_GridBased(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,13 +1,17 @@
+using ScheduleOne.Employees;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ChemistUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class ChemistUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image[] StationsIcons;
+		[Header("References")]
+		public Image[] StationsIcons;
 
-		public global::ScheduleOne.Employees.Chemist AssignedChemist { get; protected set; }
+		public Chemist AssignedChemist { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.Employees.Chemist chemist)
+		public void Initialize(Chemist chemist)
 		{
 		}
 

@@ -1,80 +1,85 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Vehicles.AI;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleLights : global::FishNet.Object.NetworkBehaviour
+	public class VehicleLights : NetworkBehaviour
 	{
-		public global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		public LandVehicle vehicle;
 
-		[global::UnityEngine.Header("Headlights")]
+		[Header("Headlights")]
 		public bool hasHeadLights;
 
-		public global::UnityEngine.MeshRenderer[] headLightMeshes;
+		public MeshRenderer[] headLightMeshes;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight[] headLightSources;
+		public OptimizedLight[] headLightSources;
 
-		public global::UnityEngine.Material headlightMat_On;
+		public Material headlightMat_On;
 
-		public global::UnityEngine.Material headLightMat_Off;
+		public Material headLightMat_Off;
 
 		protected bool headLightsApplied;
 
-		[global::UnityEngine.Header("Brake lights")]
+		[Header("Brake lights")]
 		public bool hasBrakeLights;
 
-		public global::UnityEngine.MeshRenderer[] brakeLightMeshes;
+		public MeshRenderer[] brakeLightMeshes;
 
-		public global::UnityEngine.Light[] brakeLightSources;
+		public Light[] brakeLightSources;
 
-		public global::UnityEngine.Material brakeLightMat_On;
+		public Material brakeLightMat_On;
 
-		public global::UnityEngine.Material brakeLightMat_Off;
+		public Material brakeLightMat_Off;
 
-		public global::UnityEngine.Material brakeLightMat_Ambient;
+		public Material brakeLightMat_Ambient;
 
 		protected bool brakeLightsOn;
 
 		protected bool brakeLightsApplied;
 
-		[global::UnityEngine.Header("Reverse lights")]
+		[Header("Reverse lights")]
 		public bool hasReverseLights;
 
-		public global::UnityEngine.MeshRenderer[] reverseLightMeshes;
+		public MeshRenderer[] reverseLightMeshes;
 
-		public global::UnityEngine.Light[] reverseLightSources;
+		public Light[] reverseLightSources;
 
-		public global::UnityEngine.Material reverseLightMat_On;
+		public Material reverseLightMat_On;
 
-		public global::UnityEngine.Material reverseLightMat_Off;
+		public Material reverseLightMat_Off;
 
 		protected bool reverseLightsOn;
 
 		protected bool reverseLightsApplied;
 
-		public global::UnityEngine.Events.UnityEvent onHeadlightsOn;
+		public UnityEvent onHeadlightsOn;
 
-		public global::UnityEngine.Events.UnityEvent onHeadlightsOff;
+		public UnityEvent onHeadlightsOff;
 
-		private global::System.Collections.Generic.List<bool> brakesAppliedHistory;
+		private List<bool> brakesAppliedHistory;
 
-		private global::ScheduleOne.Vehicles.AI.VehicleAgent agent;
+		private VehicleAgent agent;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CheadLightsOn_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CheadLightsOn_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002EVehicleLightsAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EVehicles_002EVehicleLightsAssembly_002DCSharp_002Edll_Excuted;
 
+		[field: SyncVar(Channel = Channel.Unreliable, SendRate = 0.25f, WritePermissions = WritePermission.ClientUnsynchronized)]
 		public bool headLightsOn
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-			set
-			{
-			}
+			get; [ServerRpc(RunLocally = true, RequireOwnership = false)]
+			set;
 		}
 
 		public bool SyncAccessor__003CheadLightsOn_003Ek__BackingField
@@ -120,16 +125,16 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
+		[SpecialName]
 		public void RpcLogic___set_headLightsOn_1140765316(bool value)
 		{
 		}
 
-		private void RpcReader___Server_set_headLightsOn_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_headLightsOn_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002EVehicleLights(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002EVehicleLights(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,40 +1,45 @@
+using System;
+using ScheduleOne.Equipping;
+using ScheduleOne.UI.Items;
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "ItemDefinition", menuName = "ScriptableObjects/ItemDefinition", order = 1)]
-	public class ItemDefinition : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "ItemDefinition", menuName = "ScriptableObjects/ItemDefinition", order = 1)]
+	public class ItemDefinition : ScriptableObject
 	{
 		public const int DEFAULT_STACK_LIMIT = 10;
 
 		public string Name;
 
-		[global::UnityEngine.TextArea(3, 10)]
+		[TextArea(3, 10)]
 		public string Description;
 
 		public string ID;
 
-		public global::UnityEngine.Sprite Icon;
+		public Sprite Icon;
 
-		public global::ScheduleOne.ItemFramework.EItemCategory Category;
+		public EItemCategory Category;
 
 		public string[] Keywords;
 
 		public bool AvailableInDemo;
 
-		public global::UnityEngine.Color LabelDisplayColor;
+		public Color LabelDisplayColor;
 
 		public int StackLimit;
 
-		public global::ScheduleOne.Equipping.Equippable Equippable;
+		public Equippable Equippable;
 
-		public global::ScheduleOne.UI.Items.ItemUI CustomItemUI;
+		public ItemUI CustomItemUI;
 
-		public global::ScheduleOne.UI.Items.ItemInfoContent CustomInfoContent;
+		public ItemInfoContent CustomInfoContent;
 
-		[global::UnityEngine.Header("Legal Status")]
-		public global::ScheduleOne.ItemFramework.ELegalStatus legalStatus;
+		[Header("Legal Status")]
+		public ELegalStatus legalStatus;
 
-		public virtual global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public virtual ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}

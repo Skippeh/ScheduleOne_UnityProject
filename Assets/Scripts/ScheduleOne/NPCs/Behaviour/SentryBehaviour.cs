@@ -1,6 +1,10 @@
+using ScheduleOne.Law;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class SentryBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class SentryBehaviour : Behaviour
 	{
 		public const float BODY_SEARCH_CHANCE = 0.75f;
 
@@ -14,15 +18,15 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool flashlightEquipped;
 
-		private global::ScheduleOne.Police.PoliceOfficer officer;
+		private PoliceOfficer officer;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002ESentryBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002ESentryBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Law.SentryLocation AssignedLocation { get; private set; }
+		public SentryLocation AssignedLocation { get; private set; }
 
-		private global::UnityEngine.Transform standPoint => null;
+		private Transform standPoint => null;
 
 		public override void Awake()
 		{
@@ -48,7 +52,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void AssignLocation(global::ScheduleOne.Law.SentryLocation loc)
+		public void AssignLocation(SentryLocation loc)
 		{
 		}
 

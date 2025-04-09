@@ -1,13 +1,17 @@
+using System;
+using FishNet.Object;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Vision
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VisionEventReceipt
 	{
-		public global::FishNet.Object.NetworkObject TargetPlayer;
+		public NetworkObject TargetPlayer;
 
-		public global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState State;
+		public PlayerVisualState.EVisualState State;
 
-		public VisionEventReceipt(global::FishNet.Object.NetworkObject targetPlayer, global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state)
+		public VisionEventReceipt(NetworkObject targetPlayer, PlayerVisualState.EVisualState state)
 		{
 		}
 

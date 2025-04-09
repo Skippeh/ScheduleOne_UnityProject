@@ -1,8 +1,11 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class CleanNodeLinks : global::UnityEngine.MonoBehaviour
+	public class CleanNodeLinks : MonoBehaviour
 	{
-		[global::EasyButtons.Button]
+		[Button]
 		public void Clean()
 		{
 		}

@@ -1,26 +1,31 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "WeedDefinition", menuName = "ScriptableObjects/Item Definitions/WeedDefinition", order = 1)]
-	public class WeedDefinition : global::ScheduleOne.Product.ProductDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "WeedDefinition", menuName = "ScriptableObjects/Item Definitions/WeedDefinition", order = 1)]
+	public class WeedDefinition : ProductDefinition
 	{
-		[global::UnityEngine.Header("Weed Materials")]
-		public global::UnityEngine.Material MainMat;
+		[Header("Weed Materials")]
+		public Material MainMat;
 
-		public global::UnityEngine.Material SecondaryMat;
+		public Material SecondaryMat;
 
-		public global::UnityEngine.Material LeafMat;
+		public Material LeafMat;
 
-		public global::UnityEngine.Material StemMat;
+		public Material StemMat;
 
-		private global::ScheduleOne.Product.WeedAppearanceSettings appearance;
+		private WeedAppearanceSettings appearance;
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public override ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes, global::ScheduleOne.Product.WeedAppearanceSettings _appearance)
+		public void Initialize(List<ScheduleOne.Properties.Property> properties, List<EDrugType> drugTypes, WeedAppearanceSettings _appearance)
 		{
 		}
 
@@ -29,7 +34,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.WeedAppearanceSettings GetAppearanceSettings(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static WeedAppearanceSettings GetAppearanceSettings(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}

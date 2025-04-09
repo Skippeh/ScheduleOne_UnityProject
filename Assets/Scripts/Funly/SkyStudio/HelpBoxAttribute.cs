@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class HelpBoxAttribute : global::UnityEngine.PropertyAttribute
+	public class HelpBoxAttribute : PropertyAttribute
 	{
 		public string text;
 
-		public global::Funly.SkyStudio.HelpBoxMessageType messageType;
+		public HelpBoxMessageType messageType;
 
-		public HelpBoxAttribute(string text, global::Funly.SkyStudio.HelpBoxMessageType messageType = global::Funly.SkyStudio.HelpBoxMessageType.None)
+		public HelpBoxAttribute(string text, HelpBoxMessageType messageType = HelpBoxMessageType.None)
 		{
 		}
 	}

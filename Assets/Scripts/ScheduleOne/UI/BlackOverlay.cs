@@ -1,15 +1,23 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class BlackOverlay : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.BlackOverlay>
+	public class BlackOverlay : Singleton<BlackOverlay>
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFade_003Ed__10 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CFade_003Ed__10 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.BlackOverlay _003C_003E4__this;
+			public BlackOverlay _003C_003E4__this;
 
 			public float endOpacity;
 
@@ -19,31 +27,31 @@ namespace ScheduleOne.UI
 
 			private float _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CFade_003Ed__10(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -52,24 +60,24 @@ namespace ScheduleOne.UI
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::UnityEngine.CanvasGroup group;
+		public CanvasGroup group;
 
-		private global::UnityEngine.Coroutine fadeRoutine;
+		private Coroutine fadeRoutine;
 
 		public bool isShown { get; protected set; }
 
@@ -85,8 +93,8 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.BlackOverlay._003CFade_003Ed__10))]
-		private global::System.Collections.IEnumerator Fade(float endOpacity, float fadeTime)
+		[IteratorStateMachine(typeof(_003CFade_003Ed__10))]
+		private IEnumerator Fade(float endOpacity, float fadeTime)
 		{
 			return null;
 		}

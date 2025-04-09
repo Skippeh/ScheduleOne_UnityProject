@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public abstract class BuildUpdate_Base : global::UnityEngine.MonoBehaviour
+	public abstract class BuildUpdate_Base : MonoBehaviour
 	{
 		public virtual void Stop()
 		{

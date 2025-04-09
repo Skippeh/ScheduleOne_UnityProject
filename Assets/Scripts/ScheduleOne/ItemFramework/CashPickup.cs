@@ -1,6 +1,6 @@
 namespace ScheduleOne.ItemFramework
 {
-	public class CashPickup : global::ScheduleOne.ItemFramework.ItemPickup
+	public class CashPickup : ItemPickup
 	{
 		public float Value;
 

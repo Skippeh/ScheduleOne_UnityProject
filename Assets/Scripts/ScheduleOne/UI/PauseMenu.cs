@@ -1,14 +1,19 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.MainMenu;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class PauseMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.PauseMenu>
+	public class PauseMenu : Singleton<PauseMenu>
 	{
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::ScheduleOne.UI.MainMenu.MainMenuScreen Screen;
+		public MainMenuScreen Screen;
 
-		public global::ScheduleOne.UI.FeedbackForm FeedbackForm;
+		public FeedbackForm FeedbackForm;
 
 		private bool noActiveUIElements;
 
@@ -24,9 +29,9 @@ namespace ScheduleOne.UI
 
 		private bool hudVisible;
 
-		public global::UnityEngine.Events.UnityEvent onPause;
+		public UnityEvent onPause;
 
-		public global::UnityEngine.Events.UnityEvent onResume;
+		public UnityEvent onResume;
 
 		public bool IsPaused { get; protected set; }
 
@@ -38,7 +43,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

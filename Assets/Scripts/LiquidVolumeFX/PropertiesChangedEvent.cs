@@ -1,4 +1,4 @@
 namespace LiquidVolumeFX
 {
-	public delegate void PropertiesChangedEvent(global::LiquidVolumeFX.LiquidVolume lv);
+	public delegate void PropertiesChangedEvent(LiquidVolume lv);
 }

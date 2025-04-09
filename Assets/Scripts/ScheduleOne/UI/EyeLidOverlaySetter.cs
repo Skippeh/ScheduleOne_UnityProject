@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class EyeLidOverlaySetter : global::UnityEngine.MonoBehaviour
+	public class EyeLidOverlaySetter : MonoBehaviour
 	{
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float OpenOverride;
 
 		private void OnEnable()

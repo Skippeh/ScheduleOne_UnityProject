@@ -1,18 +1,20 @@
+using System;
+
 namespace ScheduleOne.Management
 {
 	public class TransitRoute
 	{
-		protected global::ScheduleOne.Management.TransitLineVisuals visuals;
+		protected TransitLineVisuals visuals;
 
-		public global::System.Action<global::ScheduleOne.Management.ITransitEntity> onSourceChange;
+		public Action<ITransitEntity> onSourceChange;
 
-		public global::System.Action<global::ScheduleOne.Management.ITransitEntity> onDestinationChange;
+		public Action<ITransitEntity> onDestinationChange;
 
-		public global::ScheduleOne.Management.ITransitEntity Source { get; protected set; }
+		public ITransitEntity Source { get; protected set; }
 
-		public global::ScheduleOne.Management.ITransitEntity Destination { get; protected set; }
+		public ITransitEntity Destination { get; protected set; }
 
-		public TransitRoute(global::ScheduleOne.Management.ITransitEntity source, global::ScheduleOne.Management.ITransitEntity destination)
+		public TransitRoute(ITransitEntity source, ITransitEntity destination)
 		{
 		}
 
@@ -28,7 +30,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public virtual void SetSource(global::ScheduleOne.Management.ITransitEntity source)
+		public virtual void SetSource(ITransitEntity source)
 		{
 		}
 
@@ -37,7 +39,7 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public virtual void SetDestination(global::ScheduleOne.Management.ITransitEntity destination)
+		public virtual void SetDestination(ITransitEntity destination)
 		{
 		}
 

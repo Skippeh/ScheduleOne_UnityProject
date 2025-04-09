@@ -8,7 +8,7 @@ namespace ScheduleOne.Management.Presets.Options
 		{
 		}
 
-		public virtual void CopyTo(global::ScheduleOne.Management.Presets.Options.Option other)
+		public virtual void CopyTo(Option other)
 		{
 		}
 

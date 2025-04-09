@@ -1,28 +1,34 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.StationFramework;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class RecipeSelector : global::ScheduleOne.UI.Management.ClipboardScreen
+	public class RecipeSelector : ClipboardScreen
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform OptionContainer;
+		[Header("References")]
+		public RectTransform OptionContainer;
 
-		public global::TMPro.TextMeshProUGUI TitleLabel;
+		public TextMeshProUGUI TitleLabel;
 
-		public global::UnityEngine.GameObject OptionPrefab;
+		public GameObject OptionPrefab;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Sprite EmptyOptionSprite;
+		[Header("Settings")]
+		public Sprite EmptyOptionSprite;
 
-		private global::UnityEngine.Coroutine lerpRoutine;
+		private Coroutine lerpRoutine;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> options;
+		private List<StationRecipe> options;
 
-		private global::ScheduleOne.StationFramework.StationRecipe selectedOption;
+		private StationRecipe selectedOption;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> optionButtons;
+		private List<RectTransform> optionButtons;
 
-		private global::System.Action<global::ScheduleOne.StationFramework.StationRecipe> optionCallback;
+		private Action<StationRecipe> optionCallback;
 
-		public void Initialize(string selectionTitle, global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> _options, global::ScheduleOne.StationFramework.StationRecipe _selectedOption = null, global::System.Action<global::ScheduleOne.StationFramework.StationRecipe> _optionCallback = null)
+		public void Initialize(string selectionTitle, List<StationRecipe> _options, StationRecipe _selectedOption = null, Action<StationRecipe> _optionCallback = null)
 		{
 		}
 
@@ -34,11 +40,11 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void ButtonClicked(global::ScheduleOne.StationFramework.StationRecipe option)
+		private void ButtonClicked(StationRecipe option)
 		{
 		}
 
-		private void CreateOptions(global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> options)
+		private void CreateOptions(List<StationRecipe> options)
 		{
 		}
 

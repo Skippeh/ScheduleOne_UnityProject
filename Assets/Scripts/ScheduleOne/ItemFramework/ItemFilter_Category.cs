@@ -1,14 +1,16 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemFilter_Category : global::ScheduleOne.ItemFramework.ItemFilter
+	public class ItemFilter_Category : ItemFilter
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.EItemCategory> AcceptedCategories;
+		public List<EItemCategory> AcceptedCategories;
 
-		public ItemFilter_Category(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.EItemCategory> acceptedCategories)
+		public ItemFilter_Category(List<EItemCategory> acceptedCategories)
 		{
 		}
 
-		public override bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}

@@ -1,21 +1,23 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.AudioSource))]
-	public class RainDownfallController : global::UnityEngine.MonoBehaviour, global::Funly.SkyStudio.ISkyModule
+	[RequireComponent(typeof(AudioSource))]
+	public class RainDownfallController : MonoBehaviour, ISkyModule
 	{
-		public global::UnityEngine.MeshRenderer rainMeshRenderer;
+		public MeshRenderer rainMeshRenderer;
 
-		public global::UnityEngine.Material rainMaterial;
+		public Material rainMaterial;
 
-		private global::UnityEngine.MaterialPropertyBlock m_PropertyBlock;
+		private MaterialPropertyBlock m_PropertyBlock;
 
-		private global::UnityEngine.AudioSource m_RainAudioSource;
+		private AudioSource m_RainAudioSource;
 
 		private float m_TimeOfDay;
 
-		private global::Funly.SkyStudio.SkyProfile m_SkyProfile;
+		private SkyProfile m_SkyProfile;
 
-		public void SetWeatherEnclosure(global::Funly.SkyStudio.WeatherEnclosure enclosure)
+		public void SetWeatherEnclosure(WeatherEnclosure enclosure)
 		{
 		}
 
@@ -23,7 +25,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public void UpdateForTimeOfDay(global::Funly.SkyStudio.SkyProfile skyProfile, float timeOfDay)
+		public void UpdateForTimeOfDay(SkyProfile skyProfile, float timeOfDay)
 		{
 		}
 	}

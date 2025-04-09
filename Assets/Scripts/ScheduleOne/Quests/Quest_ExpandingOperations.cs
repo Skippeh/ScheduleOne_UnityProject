@@ -1,10 +1,10 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_ExpandingOperations : global::ScheduleOne.Quests.Quest
+	public class Quest_ExpandingOperations : Quest
 	{
-		public global::ScheduleOne.Quests.QuestEntry SetUpGrowTentsEntry;
+		public QuestEntry SetUpGrowTentsEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry ReachCustomersEntry;
+		public QuestEntry ReachCustomersEntry;
 
 		protected override void MinPass()
 		{

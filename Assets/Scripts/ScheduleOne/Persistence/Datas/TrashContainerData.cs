@@ -1,11 +1,16 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class TrashContainerData : global::ScheduleOne.Persistence.Datas.GridItemData
+	public class TrashContainerData : GridItemData
 	{
-		public global::ScheduleOne.Persistence.TrashContentData ContentData;
+		public TrashContentData ContentData;
 
-		public TrashContainerData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, global::ScheduleOne.Persistence.TrashContentData contentData)
-			: base(default(global::System.Guid), null, 0, null, default(global::UnityEngine.Vector2), 0)
+		public TrashContainerData(Guid guid, ItemInstance item, int loadOrder, Grid grid, Vector2 originCoordinate, int rotation, TrashContentData contentData)
+			: base(default(Guid), null, 0, null, default(Vector2), 0)
 		{
 		}
 	}

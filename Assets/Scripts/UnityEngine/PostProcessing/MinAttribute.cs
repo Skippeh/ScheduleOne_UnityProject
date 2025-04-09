@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class MinAttribute : global::UnityEngine.PropertyAttribute
+	public sealed class MinAttribute : PropertyAttribute
 	{
 		public readonly float min;
 

@@ -1,25 +1,27 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.Management.Presets.Options
 {
-	public class ItemList : global::ScheduleOne.Management.Presets.Options.Option
+	public class ItemList : Option
 	{
 		public bool All;
 
 		public bool None;
 
-		public global::System.Collections.Generic.List<string> Selection;
+		public List<string> Selection;
 
 		public bool CanBeAll { get; protected set; }
 
 		public bool CanBeNone { get; protected set; }
 
-		public global::System.Collections.Generic.List<string> OptionList { get; protected set; }
+		public List<string> OptionList { get; protected set; }
 
-		public ItemList(string name, global::System.Collections.Generic.List<string> optionList, bool canBeAll, bool canBeNone)
+		public ItemList(string name, List<string> optionList, bool canBeAll, bool canBeNone)
 			: base(null)
 		{
 		}
 
-		public override void CopyTo(global::ScheduleOne.Management.Presets.Options.Option other)
+		public override void CopyTo(Option other)
 		{
 		}
 

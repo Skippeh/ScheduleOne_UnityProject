@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	public class PathPoint : global::UnityEngine.MonoBehaviour
+	public class PathPoint : MonoBehaviour
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.AI.PathPoint> connections;
+		public List<PathPoint> connections;
 
 		public bool unique;
 	}

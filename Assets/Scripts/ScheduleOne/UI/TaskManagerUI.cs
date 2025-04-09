@@ -1,16 +1,20 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class TaskManagerUI : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.TaskManagerUI>
+	public class TaskManagerUI : Singleton<TaskManagerUI>
 	{
 		private bool textShown;
 
-		public global::ScheduleOne.UI.GenericUIScreen inputPromptUI;
+		public GenericUIScreen inputPromptUI;
 
-		public global::UnityEngine.Canvas canvas;
+		public Canvas canvas;
 
-		public global::UnityEngine.RectTransform multiGrabIndicator;
+		public RectTransform multiGrabIndicator;
 
-		public global::ScheduleOne.UI.GenericUIScreen PackagingStationMK2TutorialDone;
+		public GenericUIScreen PackagingStationMK2TutorialDone;
 
 		protected virtual void Update()
 		{
@@ -24,7 +28,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void TaskStarted(global::ScheduleOne.PlayerTasks.Task task)
+		private void TaskStarted(Task task)
 		{
 		}
 	}

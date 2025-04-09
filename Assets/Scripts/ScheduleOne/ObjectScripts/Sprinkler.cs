@@ -1,22 +1,33 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Interaction;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class Sprinkler : global::ScheduleOne.EntityFramework.GridItem
+	public class Sprinkler : GridItem
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.ParticleSystem[] WaterParticles;
+		public ParticleSystem[] WaterParticles;
 
-		public global::ScheduleOne.Audio.AudioSourceController ClickSound;
+		public AudioSourceController ClickSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController WaterSound;
+		public AudioSourceController WaterSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ApplyWaterDelay;
 
 		public float ParticleStopDelay;
 
-		public global::UnityEngine.Events.UnityEvent onSprinklerStart;
+		public UnityEvent onSprinklerStart;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ESprinklerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -37,12 +48,12 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendWater()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void Water()
 		{
 		}
@@ -51,7 +62,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		protected virtual global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> GetPots()
+		protected virtual List<Pot> GetPots()
 		{
 			return null;
 		}
@@ -76,7 +87,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendWater_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendWater_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -88,7 +99,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_Water_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Water_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,6 +1,9 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class Wheel : global::UnityEngine.MonoBehaviour
+	public class Wheel : MonoBehaviour
 	{
 		public const float SIDEWAY_SLIP_THRESHOLD = 0.2f;
 
@@ -14,46 +17,46 @@ namespace ScheduleOne.Vehicles
 
 		public bool DEBUG_MODE;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform wheelModel;
+		[Header("References")]
+		public Transform wheelModel;
 
-		public global::UnityEngine.Transform modelContainer;
+		public Transform modelContainer;
 
-		public global::UnityEngine.WheelCollider wheelCollider;
+		public WheelCollider wheelCollider;
 
-		public global::UnityEngine.Transform axleConnectionPoint;
+		public Transform axleConnectionPoint;
 
-		public global::UnityEngine.Collider staticCollider;
+		public Collider staticCollider;
 
-		public global::UnityEngine.ParticleSystem DriftParticles;
+		public ParticleSystem DriftParticles;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DriftParticlesEnabled;
 
 		public float ForwardStiffnessMultiplier_Handbrake;
 
 		public float SidewayStiffnessMultiplier_Handbrake;
 
-		[global::UnityEngine.Header("Drift Audio")]
+		[Header("Drift Audio")]
 		public bool DriftAudioEnabled;
 
-		public global::ScheduleOne.Audio.AudioSourceController DriftAudioSource;
+		public AudioSourceController DriftAudioSource;
 
 		private float defaultForwardStiffness;
 
 		private float defaultSidewaysStiffness;
 
-		private global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		private LandVehicle vehicle;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private Vector3 lastFramePosition;
 
-		private global::UnityEngine.WheelHit wheelData;
+		private WheelHit wheelData;
 
-		private global::UnityEngine.WheelFrictionCurve forwardCurve;
+		private WheelFrictionCurve forwardCurve;
 
-		private global::UnityEngine.WheelFrictionCurve sidewaysCurve;
+		private WheelFrictionCurve sidewaysCurve;
 
-		private global::UnityEngine.Transform wheelTransform;
+		private Transform wheelTransform;
 
 		public bool isStatic { get; protected set; }
 

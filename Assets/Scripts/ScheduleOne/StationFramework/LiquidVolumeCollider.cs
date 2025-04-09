@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class LiquidVolumeCollider : global::UnityEngine.MonoBehaviour
+	public class LiquidVolumeCollider : MonoBehaviour
 	{
-		public global::ScheduleOne.StationFramework.LiquidContainer LiquidContainer;
+		public LiquidContainer LiquidContainer;
 
 		private void Awake()
 		{

@@ -1,17 +1,17 @@
 namespace ScheduleOne.UI.CharacterCustomization
 {
-	public class TattooShopUI : global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationUI
+	public class TattooShopUI : CharacterCustomizationUI
 	{
-		public override bool IsOptionCurrentlyApplied(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public override bool IsOptionCurrentlyApplied(CharacterCustomizationOption option)
 		{
 			return false;
 		}
 
-		public override void OptionSelected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public override void OptionSelected(CharacterCustomizationOption option)
 		{
 		}
 
-		public override void OptionDeselected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public override void OptionDeselected(CharacterCustomizationOption option)
 		{
 		}
 	}

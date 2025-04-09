@@ -1,59 +1,62 @@
+using System;
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamAbstractBase))]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-dustparticles/")]
-	public class VolumetricDustParticles : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(VolumetricLightBeamAbstractBase))]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-dustparticles/")]
+	public class VolumetricDustParticles : MonoBehaviour
 	{
 		public const string ClassName = "VolumetricDustParticles";
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float alpha;
 
-		[global::UnityEngine.Range(0.0001f, 0.1f)]
+		[Range(0.0001f, 0.1f)]
 		public float size;
 
-		public global::VLB.ParticlesDirection direction;
+		public ParticlesDirection direction;
 
-		public global::UnityEngine.Vector3 velocity;
+		public Vector3 velocity;
 
-		[global::System.Obsolete("Use 'velocity' instead")]
+		[Obsolete("Use 'velocity' instead")]
 		public float speed;
 
 		public float density;
 
-		[global::VLB.MinMaxRange(0f, 1f)]
-		public global::VLB.MinMaxRangeFloat spawnDistanceRange;
+		[MinMaxRange(0f, 1f)]
+		public MinMaxRangeFloat spawnDistanceRange;
 
-		[global::System.Obsolete("Use 'spawnDistanceRange' instead")]
+		[Obsolete("Use 'spawnDistanceRange' instead")]
 		public float spawnMinDistance;
 
-		[global::System.Obsolete("Use 'spawnDistanceRange' instead")]
+		[Obsolete("Use 'spawnDistanceRange' instead")]
 		public float spawnMaxDistance;
 
 		public bool cullingEnabled;
 
 		public float cullingMaxDistance;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_AlphaAdditionalRuntime;
 
-		private global::UnityEngine.ParticleSystem m_Particles;
+		private ParticleSystem m_Particles;
 
-		private global::UnityEngine.ParticleSystemRenderer m_Renderer;
+		private ParticleSystemRenderer m_Renderer;
 
-		private global::UnityEngine.Material m_Material;
+		private Material m_Material;
 
-		private global::UnityEngine.Gradient m_GradientCached;
+		private Gradient m_GradientCached;
 
 		private bool m_RuntimePropertiesDirty;
 
 		private static bool ms_NoMainCameraLogged;
 
-		private static global::UnityEngine.Camera ms_MainCamera;
+		private static Camera ms_MainCamera;
 
-		private global::VLB.VolumetricLightBeamAbstractBase m_Master;
+		private VolumetricLightBeamAbstractBase m_Master;
 
 		public bool isCulled { get; private set; }
 
@@ -74,7 +77,7 @@ namespace VLB
 
 		public int particlesMaxCount => 0;
 
-		public global::UnityEngine.Camera mainCamera => null;
+		public Camera mainCamera => null;
 
 		private void Start()
 		{

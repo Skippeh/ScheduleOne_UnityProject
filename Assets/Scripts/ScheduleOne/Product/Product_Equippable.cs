@@ -1,13 +1,19 @@
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Packaging;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Product
 {
-	public class Product_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Product_Equippable : Equippable_Viewmodel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		[Header("References")]
+		public FilledPackagingVisuals Visuals;
 
-		public global::UnityEngine.Transform ModelContainer;
+		public Transform ModelContainer;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool Consumable;
 
 		public string ConsumeDescription;
@@ -22,24 +28,24 @@ namespace ScheduleOne.Product
 
 		public string ConsumeEquippableAssetPath;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onConsumeInputStart;
+		[Header("Events")]
+		public UnityEvent onConsumeInputStart;
 
-		public global::UnityEngine.Events.UnityEvent onConsumeInputComplete;
+		public UnityEvent onConsumeInputComplete;
 
-		public global::UnityEngine.Events.UnityEvent onConsumeInputCancel;
+		public UnityEvent onConsumeInputCancel;
 
 		private float consumeTime;
 
 		private bool consumingInProgress;
 
-		private global::UnityEngine.Vector3 defaultModelPosition;
+		private Vector3 defaultModelPosition;
 
 		private int productAmount;
 
-		private global::UnityEngine.Coroutine consumeRoutine;
+		private Coroutine consumeRoutine;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

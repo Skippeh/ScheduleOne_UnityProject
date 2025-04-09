@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+using ScheduleOne.Tiles;
+
 namespace ScheduleOne.EntityFramework
 {
 	public interface IProceduralTileContainer
 	{
-		global::System.Collections.Generic.List<global::ScheduleOne.Tiles.ProceduralTile> ProceduralTiles { get; }
+		List<ProceduralTile> ProceduralTiles { get; }
 	}
 }

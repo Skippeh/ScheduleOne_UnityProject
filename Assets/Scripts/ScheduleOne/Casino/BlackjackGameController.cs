@@ -1,6 +1,16 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Casino
 {
-	public class BlackjackGameController : global::ScheduleOne.Casino.CasinoGameController
+	public class BlackjackGameController : CasinoGameController
 	{
 		public enum EStage
 		{
@@ -27,70 +37,70 @@ namespace ScheduleOne.Casino
 
 		public const float BLACKJACK_PAYOUT_RATIO = 1.5f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Casino.PlayingCard[] Cards;
+		[Header("References")]
+		public PlayingCard[] Cards;
 
-		public global::UnityEngine.Transform[] DefaultCardPositions;
+		public Transform[] DefaultCardPositions;
 
-		public global::UnityEngine.Transform[] FocusedCameraTransforms;
+		public Transform[] FocusedCameraTransforms;
 
-		public global::UnityEngine.Transform[] FinalCameraTransforms;
+		public Transform[] FinalCameraTransforms;
 
-		public global::UnityEngine.Transform[] Player1CardPositions;
+		public Transform[] Player1CardPositions;
 
-		public global::UnityEngine.Transform[] Player2CardPositions;
+		public Transform[] Player2CardPositions;
 
-		public global::UnityEngine.Transform[] Player3CardPositions;
+		public Transform[] Player3CardPositions;
 
-		public global::UnityEngine.Transform[] Player4CardPositions;
+		public Transform[] Player4CardPositions;
 
-		public global::UnityEngine.Transform[] DealerCardPositions;
+		public Transform[] DealerCardPositions;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> playersInCurrentRound;
+		private List<Player> playersInCurrentRound;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> playStack;
+		private List<PlayingCard> playStack;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> player1Hand;
+		private List<PlayingCard> player1Hand;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> player2Hand;
+		private List<PlayingCard> player2Hand;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> player3Hand;
+		private List<PlayingCard> player3Hand;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> player4Hand;
+		private List<PlayingCard> player4Hand;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> dealerHand;
+		private List<PlayingCard> dealerHand;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard.CardData> cardValuesInDeck;
+		private List<PlayingCard.CardData> cardValuesInDeck;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard.CardData> drawnCardsValues;
+		private List<PlayingCard.CardData> drawnCardsValues;
 
-		protected global::UnityEngine.Transform localFocusCameraTransform;
+		protected Transform localFocusCameraTransform;
 
-		protected global::UnityEngine.Transform localFinalCameraTransform;
+		protected Transform localFinalCameraTransform;
 
-		public global::System.Action onLocalPlayerBetChange;
+		public Action onLocalPlayerBetChange;
 
-		public global::System.Action onLocalPlayerExitRound;
+		public Action onLocalPlayerExitRound;
 
-		public global::System.Action onInitialCardsDealt;
+		public Action onInitialCardsDealt;
 
-		public global::System.Action onLocalPlayerReadyForInput;
+		public Action onLocalPlayerReadyForInput;
 
-		public global::System.Action onLocalPlayerBust;
+		public Action onLocalPlayerBust;
 
-		public global::System.Action<global::ScheduleOne.Casino.BlackjackGameController.EPayoutType> onLocalPlayerRoundCompleted;
+		public Action<EPayoutType> onLocalPlayerRoundCompleted;
 
 		private bool roundEnded;
 
-		private global::UnityEngine.Coroutine gameRoutine;
+		private Coroutine gameRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ECasino_002EBlackjackGameControllerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ECasino_002EBlackjackGameControllerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Casino.BlackjackGameController.EStage CurrentStage { get; private set; }
+		public EStage CurrentStage { get; private set; }
 
-		public global::ScheduleOne.PlayerScripts.Player PlayerTurn { get; private set; }
+		public Player PlayerTurn { get; private set; }
 
 		public float LocalPlayerBet { get; private set; }
 
@@ -116,7 +126,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		protected override void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		protected override void Exit(ExitAction action)
 		{
 		}
 
@@ -124,61 +134,61 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> GetClockwisePlayers()
+		private List<Player> GetClockwisePlayers()
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void StartGame()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void NotifyPlayerScore(global::FishNet.Object.NetworkObject player, int score, bool blackjack)
+		[ObserversRpc(RunLocally = true)]
+		private void NotifyPlayerScore(NetworkObject player, int score, bool blackjack)
 		{
 		}
 
-		private global::UnityEngine.Transform[] GetPlayerCardPositions(int playerIndex)
+		private Transform[] GetPlayerCardPositions(int playerIndex)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetRoundEnded(bool ended)
 		{
 		}
 
-		private void AddCardToPlayerHand(int playerIndex, global::ScheduleOne.Casino.PlayingCard card)
+		private void AddCardToPlayerHand(int playerIndex, PlayingCard card)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void AddCardToPlayerHand(int playerindex, string cardID)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void AddCardToDealerHand(string cardID)
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> GetPlayerCards(int playerIndex)
+		private List<PlayingCard> GetPlayerCards(int playerIndex)
 		{
 			return null;
 		}
 
-		private int GetHandScore(global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> cards, bool countFaceDown = true)
+		private int GetHandScore(List<PlayingCard> cards, bool countFaceDown = true)
 		{
 			return 0;
 		}
 
-		private int GetCardValue(global::ScheduleOne.Casino.PlayingCard card, bool aceAsEleven = true)
+		private int GetCardValue(PlayingCard card, bool aceAsEleven = true)
 		{
 			return 0;
 		}
 
-		private global::ScheduleOne.Casino.PlayingCard DrawCard()
+		private PlayingCard DrawCard()
 		{
 			return null;
 		}
@@ -187,16 +197,16 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void EndGame()
 		{
 		}
 
-		public void RemoveLocalPlayerFromGame(global::ScheduleOne.Casino.BlackjackGameController.EPayoutType payout, float cameraDelay = 0f)
+		public void RemoveLocalPlayerFromGame(EPayoutType payout, float cameraDelay = 0f)
 		{
 		}
 
-		public float GetPayout(float bet, global::ScheduleOne.Casino.BlackjackGameController.EPayoutType payout)
+		public float GetPayout(float bet, EPayoutType payout)
 		{
 			return 0f;
 		}
@@ -206,18 +216,18 @@ namespace ScheduleOne.Casino
 			return false;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void AddPlayerToCurrentRound(global::FishNet.Object.NetworkObject player)
+		[ObserversRpc(RunLocally = true)]
+		private void AddPlayerToCurrentRound(NetworkObject player)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void RequestRemovePlayerFromCurrentRound(global::FishNet.Object.NetworkObject player)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void RequestRemovePlayerFromCurrentRound(NetworkObject player)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void RemovePlayerFromCurrentRound(global::FishNet.Object.NetworkObject player)
+		[ObserversRpc(RunLocally = true)]
+		private void RemovePlayerFromCurrentRound(NetworkObject player)
 		{
 		}
 
@@ -259,19 +269,19 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_StartGame_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartGame_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_NotifyPlayerScore_2864061566(global::FishNet.Object.NetworkObject player, int score, bool blackjack)
+		private void RpcWriter___Observers_NotifyPlayerScore_2864061566(NetworkObject player, int score, bool blackjack)
 		{
 		}
 
-		private void RpcLogic___NotifyPlayerScore_2864061566(global::FishNet.Object.NetworkObject player, int score, bool blackjack)
+		private void RpcLogic___NotifyPlayerScore_2864061566(NetworkObject player, int score, bool blackjack)
 		{
 		}
 
-		private void RpcReader___Observers_NotifyPlayerScore_2864061566(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_NotifyPlayerScore_2864061566(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -283,7 +293,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_SetRoundEnded_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetRoundEnded_1140765316(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -295,7 +305,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_AddCardToPlayerHand_2801973956(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddCardToPlayerHand_2801973956(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -307,7 +317,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_AddCardToDealerHand_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddCardToDealerHand_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -319,43 +329,43 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_EndGame_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EndGame_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_AddPlayerToCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Observers_AddPlayerToCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcLogic___AddPlayerToCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcLogic___AddPlayerToCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Observers_AddPlayerToCurrentRound_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddPlayerToCurrentRound_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_RequestRemovePlayerFromCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Server_RequestRemovePlayerFromCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcLogic___RequestRemovePlayerFromCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcLogic___RequestRemovePlayerFromCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Server_RequestRemovePlayerFromCurrentRound_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RequestRemovePlayerFromCurrentRound_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_RemovePlayerFromCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Observers_RemovePlayerFromCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcLogic___RemovePlayerFromCurrentRound_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcLogic___RemovePlayerFromCurrentRound_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Observers_RemovePlayerFromCurrentRound_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_RemovePlayerFromCurrentRound_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,20 +1,23 @@
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.Market
 {
-	public class Merchant : global::UnityEngine.MonoBehaviour
+	public class Merchant : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected string shopName;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int openTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int closeTime;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject intObj;
 
 		protected virtual void Start()
 		{

@@ -1,6 +1,8 @@
-public class FanRotator : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class FanRotator : MonoBehaviour
 {
-	private global::UnityEngine.Transform thisTransform;
+	private Transform thisTransform;
 
 	public float speed;
 

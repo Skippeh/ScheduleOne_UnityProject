@@ -1,21 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class ItemField : global::ScheduleOne.Management.ConfigField
+	public class ItemField : ConfigField
 	{
 		public bool CanSelectNone;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemDefinition> Options;
+		public List<ItemDefinition> Options;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.ItemFramework.ItemDefinition> onItemChanged;
+		public UnityEvent<ItemDefinition> onItemChanged;
 
-		public global::ScheduleOne.ItemFramework.ItemDefinition SelectedItem { get; protected set; }
+		public ItemDefinition SelectedItem { get; protected set; }
 
-		public ItemField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public ItemField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetItem(global::ScheduleOne.ItemFramework.ItemDefinition item, bool network)
+		public void SetItem(ItemDefinition item, bool network)
 		{
 		}
 
@@ -24,12 +29,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.ItemFieldData GetData()
+		public ItemFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.ItemFieldData data)
+		public void Load(ItemFieldData data)
 		{
 		}
 	}

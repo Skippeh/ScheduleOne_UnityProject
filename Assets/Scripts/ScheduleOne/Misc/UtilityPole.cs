@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class UtilityPole : global::UnityEngine.MonoBehaviour
+	public class UtilityPole : MonoBehaviour
 	{
 		public const float CABLE_CULL_DISTANCE = 100f;
 
 		public const float CABLE_CULL_DISTANCE_SQR = 10000f;
 
-		public global::ScheduleOne.Misc.UtilityPole previousPole;
+		public UtilityPole previousPole;
 
-		public global::ScheduleOne.Misc.UtilityPole nextPole;
+		public UtilityPole nextPole;
 
 		public bool Connection1Enabled;
 
@@ -16,24 +20,24 @@ namespace ScheduleOne.Misc
 
 		public float LengthFactor;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform cable1Connection;
+		[Header("References")]
+		public Transform cable1Connection;
 
-		public global::UnityEngine.Transform cable2Connection;
+		public Transform cable2Connection;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> cable1Segments;
+		public List<Transform> cable1Segments;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> cable2Segments;
+		public List<Transform> cable2Segments;
 
-		public global::UnityEngine.Transform Cable1Container;
+		public Transform Cable1Container;
 
-		public global::UnityEngine.Transform Cable2Container;
+		public Transform Cable2Container;
 
-		private global::UnityEngine.Vector3 cableStart;
+		private Vector3 cableStart;
 
-		private global::UnityEngine.Vector3 cableEnd;
+		private Vector3 cableEnd;
 
-		private global::UnityEngine.Vector3 cableMid;
+		private Vector3 cableMid;
 
 		private void Awake()
 		{
@@ -47,12 +51,12 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Orient()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void DrawLines()
 		{
 		}

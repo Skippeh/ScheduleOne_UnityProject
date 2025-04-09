@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Trash;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class StationItem : global::UnityEngine.MonoBehaviour
+	public class StationItem : MonoBehaviour
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.ItemModule> Modules;
+		public List<ItemModule> Modules;
 
-		public global::ScheduleOne.Trash.TrashItem TrashPrefab;
+		public TrashItem TrashPrefab;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.ItemModule> ActiveModules { get; protected set; }
+		public List<ItemModule> ActiveModules { get; protected set; }
 
 		protected virtual void Awake()
 		{
 		}
 
-		public virtual void Initialize(global::ScheduleOne.ItemFramework.StorableItemDefinition itemDefinition)
+		public virtual void Initialize(StorableItemDefinition itemDefinition)
 		{
 		}
 
-		public void ActivateModule<T>() where T : global::ScheduleOne.StationFramework.ItemModule
+		public void ActivateModule<T>() where T : ItemModule
 		{
 		}
 
@@ -24,12 +29,12 @@ namespace ScheduleOne.StationFramework
 		{
 		}
 
-		public bool HasModule<T>() where T : global::ScheduleOne.StationFramework.ItemModule
+		public bool HasModule<T>() where T : ItemModule
 		{
 			return false;
 		}
 
-		public T GetModule<T>() where T : global::ScheduleOne.StationFramework.ItemModule
+		public T GetModule<T>() where T : ItemModule
 		{
 			return null;
 		}

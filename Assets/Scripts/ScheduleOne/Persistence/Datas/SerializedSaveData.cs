@@ -1,14 +1,16 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class SerializedSaveData
 	{
-		[global::System.NonSerialized]
+		[NonSerialized]
 		public static string _DataType;
 
 		public string DataType;
 
-		[global::System.NonSerialized]
+		[NonSerialized]
 		public static int _DataVersion;
 
 		public int DataVersion;

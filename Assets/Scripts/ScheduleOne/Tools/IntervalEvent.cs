@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class IntervalEvent : global::UnityEngine.MonoBehaviour
+	public class IntervalEvent : MonoBehaviour
 	{
 		public float Interval;
 
-		public global::UnityEngine.Events.UnityEvent Event;
+		public UnityEvent Event;
 
 		public void Start()
 		{

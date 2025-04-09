@@ -1,9 +1,13 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.EventSystems.EventTrigger))]
-	public class PropagateDrag : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(EventTrigger))]
+	public class PropagateDrag : MonoBehaviour
 	{
-		public global::UnityEngine.UI.ScrollRect ScrollView;
+		public ScrollRect ScrollView;
 
 		private void Start()
 		{

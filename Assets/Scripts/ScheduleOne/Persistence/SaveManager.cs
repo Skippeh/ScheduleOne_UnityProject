@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Persistence
 {
-	public class SaveManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Persistence.SaveManager>
+	public class SaveManager : PersistentSingleton<SaveManager>
 	{
 		public const string MAIN_SCENE_NAME = "Main";
 
@@ -22,24 +27,24 @@ namespace ScheduleOne.Persistence
 
 		public static bool SaveError;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.ISaveable> Saveables;
+		public List<ISaveable> Saveables;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.IBaseSaveable> BaseSaveables;
+		public List<IBaseSaveable> BaseSaveables;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<string> ApprovedBaseLevelPaths;
+		[HideInInspector]
+		public List<string> ApprovedBaseLevelPaths;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.ISaveable> CompletedSaveables;
+		protected List<ISaveable> CompletedSaveables;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.SaveRequest> QueuedSaveRequests;
+		protected List<SaveRequest> QueuedSaveRequests;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform WriteIssueDisplay;
+		[Header("References")]
+		public RectTransform WriteIssueDisplay;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onSaveStart;
+		[Header("Events")]
+		public UnityEvent onSaveStart;
 
-		public global::UnityEngine.Events.UnityEvent onSaveComplete;
+		public UnityEvent onSaveComplete;
 
 		private bool saveFolderInitialized;
 
@@ -96,23 +101,23 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void CompleteSaveable(global::ScheduleOne.Persistence.ISaveable saveable)
+		public void CompleteSaveable(ISaveable saveable)
 		{
 		}
 
-		public void ClearCompletedSaveable(global::ScheduleOne.Persistence.ISaveable saveable)
+		public void ClearCompletedSaveable(ISaveable saveable)
 		{
 		}
 
-		public void RegisterSaveable(global::ScheduleOne.Persistence.ISaveable saveable)
+		public void RegisterSaveable(ISaveable saveable)
 		{
 		}
 
-		public void QueueSaveRequest(global::ScheduleOne.Persistence.SaveRequest request)
+		public void QueueSaveRequest(SaveRequest request)
 		{
 		}
 
-		public void DequeueSaveRequest(global::ScheduleOne.Persistence.SaveRequest request)
+		public void DequeueSaveRequest(SaveRequest request)
 		{
 		}
 
@@ -135,7 +140,7 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void DisablePlayTutorial(global::ScheduleOne.Persistence.SaveInfo info)
+		public void DisablePlayTutorial(SaveInfo info)
 		{
 		}
 

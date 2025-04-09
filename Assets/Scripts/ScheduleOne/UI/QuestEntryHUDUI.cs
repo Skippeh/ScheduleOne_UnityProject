@@ -1,15 +1,19 @@
+using ScheduleOne.Quests;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class QuestEntryHUDUI : global::UnityEngine.MonoBehaviour
+	public class QuestEntryHUDUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI MainLabel;
+		[Header("References")]
+		public TextMeshProUGUI MainLabel;
 
-		public global::UnityEngine.Animation Animation;
+		public Animation Animation;
 
-		public global::ScheduleOne.Quests.QuestEntry QuestEntry { get; private set; }
+		public QuestEntry QuestEntry { get; private set; }
 
-		public void Initialize(global::ScheduleOne.Quests.QuestEntry entry)
+		public void Initialize(QuestEntry entry)
 		{
 		}
 

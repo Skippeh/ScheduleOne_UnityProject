@@ -1,17 +1,20 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class StaminaBar : global::UnityEngine.MonoBehaviour
+	public class StaminaBar : MonoBehaviour
 	{
 		public const float StaminaShowTime = 1.5f;
 
 		public const float StaminaFadeTime = 0.5f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Slider[] Sliders;
+		[Header("References")]
+		public Slider[] Sliders;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		private global::UnityEngine.Coroutine routine;
+		private Coroutine routine;
 
 		private void Awake()
 		{

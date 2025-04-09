@@ -1,30 +1,35 @@
+using System;
+using ScheduleOne.Audio;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Casino
 {
-	public class SlotReel : global::UnityEngine.MonoBehaviour
+	public class SlotReel : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class SymbolRotation
 		{
-			public global::ScheduleOne.Casino.SlotMachine.ESymbol Symbol;
+			public SlotMachine.ESymbol Symbol;
 
 			public float Rotation;
 		}
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Casino.SlotReel.SymbolRotation[] SymbolRotations;
+		[Header("Settings")]
+		public SymbolRotation[] SymbolRotations;
 
 		public float SpinSpeed;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController StopSound;
+		[Header("References")]
+		public AudioSourceController StopSound;
 
-		public global::UnityEngine.Events.UnityEvent onStart;
+		public UnityEvent onStart;
 
-		public global::UnityEngine.Events.UnityEvent onStop;
+		public UnityEvent onStop;
 
 		public bool IsSpinning { get; private set; }
 
-		public global::ScheduleOne.Casino.SlotMachine.ESymbol CurrentSymbol { get; private set; }
+		public SlotMachine.ESymbol CurrentSymbol { get; private set; }
 
 		public float CurrentRotation { get; private set; }
 
@@ -40,11 +45,11 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		public void Stop(global::ScheduleOne.Casino.SlotMachine.ESymbol endSymbol)
+		public void Stop(SlotMachine.ESymbol endSymbol)
 		{
 		}
 
-		public void SetSymbol(global::ScheduleOne.Casino.SlotMachine.ESymbol symbol)
+		public void SetSymbol(SlotMachine.ESymbol symbol)
 		{
 		}
 
@@ -52,7 +57,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private float GetSymbolRotation(global::ScheduleOne.Casino.SlotMachine.ESymbol symbol)
+		private float GetSymbolRotation(SlotMachine.ESymbol symbol)
 		{
 			return 0f;
 		}

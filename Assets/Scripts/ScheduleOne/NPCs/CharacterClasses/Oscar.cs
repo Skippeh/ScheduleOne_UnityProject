@@ -1,13 +1,17 @@
+using ScheduleOne.Dialogue;
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Oscar : global::ScheduleOne.NPCs.NPC
+	public class Oscar : NPC
 	{
-		public global::ScheduleOne.UI.Shop.ShopInterface ShopInterface;
+		public ShopInterface ShopInterface;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string[] OrderCompletedLines;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 

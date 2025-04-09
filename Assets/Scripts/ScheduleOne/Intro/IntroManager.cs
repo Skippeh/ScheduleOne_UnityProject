@@ -1,36 +1,46 @@
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.Clothing;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Property;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Intro
 {
-	public class IntroManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Intro.IntroManager>
+	public class IntroManager : Singleton<IntroManager>
 	{
 		public const float SKIP_TIME = 0.5f;
 
 		public int CurrentStep;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public int TimeOfDayOverride;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject Container;
+		[Header("References")]
+		public GameObject Container;
 
-		public global::UnityEngine.Transform PlayerInitialPosition;
+		public Transform PlayerInitialPosition;
 
-		public global::UnityEngine.Transform PlayerInitialPosition_AfterRVExplosion;
+		public Transform PlayerInitialPosition_AfterRVExplosion;
 
-		public global::UnityEngine.Transform CameraContainer;
+		public Transform CameraContainer;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::UnityEngine.GameObject SkipContainer;
+		public GameObject SkipContainer;
 
-		public global::UnityEngine.UI.Image SkipDial;
+		public Image SkipDial;
 
-		public global::UnityEngine.GameObject[] DisableDuringIntro;
+		public GameObject[] DisableDuringIntro;
 
-		public global::ScheduleOne.Property.RV rv;
+		public RV rv;
 
-		public global::UnityEngine.Events.UnityEvent onIntroDone;
+		public UnityEvent onIntroDone;
 
-		public global::UnityEngine.Events.UnityEvent onIntroDoneAsServer;
+		public UnityEvent onIntroDoneAsServer;
 
 		public string MusicName;
 
@@ -48,7 +58,7 @@ namespace ScheduleOne.Intro
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Play()
 		{
 		}
@@ -57,7 +67,7 @@ namespace ScheduleOne.Intro
 		{
 		}
 
-		public void CharacterCreationDone(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings avatar, global::System.Collections.Generic.List<global::ScheduleOne.Clothing.ClothingInstance> clothes)
+		public void CharacterCreationDone(BasicAvatarSettings avatar, List<ClothingInstance> clothes)
 		{
 		}
 

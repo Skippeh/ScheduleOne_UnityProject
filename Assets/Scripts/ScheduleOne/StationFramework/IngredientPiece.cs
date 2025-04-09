@@ -1,30 +1,33 @@
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.PlayerTasks.Draggable))]
-	public class IngredientPiece : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Draggable))]
+	public class IngredientPiece : MonoBehaviour
 	{
 		public const float LIQUID_FRICTION = 100f;
 
-		public global::ScheduleOne.StationFramework.LiquidContainer CurrentLiquidContainer;
+		public LiquidContainer CurrentLiquidContainer;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform ModelContainer;
+		[Header("References")]
+		public Transform ModelContainer;
 
-		public global::UnityEngine.ParticleSystem DissolveParticles;
+		public ParticleSystem DissolveParticles;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DetectLiquid;
 
 		public bool DisableInteractionInLiquid;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float LiquidFrictionMultiplier;
 
-		private global::ScheduleOne.PlayerTasks.Draggable draggable;
+		private Draggable draggable;
 
 		private float defaultDrag;
 
-		private global::UnityEngine.Coroutine dissolveParticleRoutine;
+		private Coroutine dissolveParticleRoutine;
 
 		public float CurrentDissolveAmount { get; private set; }
 

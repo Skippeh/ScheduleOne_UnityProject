@@ -1,10 +1,12 @@
+using ScheduleOne.Delivery;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class DeliveriesData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class DeliveriesData : SaveData
 	{
-		public global::ScheduleOne.Delivery.DeliveryInstance[] ActiveDeliveries;
+		public DeliveryInstance[] ActiveDeliveries;
 
-		public DeliveriesData(global::ScheduleOne.Delivery.DeliveryInstance[] deliveries)
+		public DeliveriesData(DeliveryInstance[] deliveries)
 		{
 		}
 	}

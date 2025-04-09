@@ -1,36 +1,41 @@
+using FishNet.Connection;
+using FishNet.Object;
+using ScheduleOne.UI.Management;
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
 	public interface IConfigurable
 	{
-		global::ScheduleOne.Management.EntityConfiguration Configuration { get; }
+		EntityConfiguration Configuration { get; }
 
-		global::ScheduleOne.Management.ConfigurationReplicator ConfigReplicator { get; }
+		ConfigurationReplicator ConfigReplicator { get; }
 
-		global::ScheduleOne.Management.EConfigurableType ConfigurableType { get; }
+		EConfigurableType ConfigurableType { get; }
 
-		global::ScheduleOne.UI.Management.WorldspaceUIElement WorldspaceUI { get; set; }
+		WorldspaceUIElement WorldspaceUI { get; set; }
 
-		global::FishNet.Object.NetworkObject CurrentPlayerConfigurer { get; set; }
+		NetworkObject CurrentPlayerConfigurer { get; set; }
 
 		bool IsBeingConfiguredByOtherPlayer => false;
 
-		global::UnityEngine.Sprite TypeIcon { get; }
+		Sprite TypeIcon { get; }
 
-		global::UnityEngine.Transform Transform { get; }
+		Transform Transform { get; }
 
-		global::UnityEngine.Transform UIPoint { get; }
+		Transform UIPoint { get; }
 
 		bool IsDestroyed => false;
 
 		bool CanBeSelected { get; }
 
-		global::ScheduleOne.Property.Property ParentProperty { get; }
+		ScheduleOne.Property.Property ParentProperty { get; }
 
-		global::ScheduleOne.UI.Management.WorldspaceUIElement CreateWorldspaceUI();
+		WorldspaceUIElement CreateWorldspaceUI();
 
 		void DestroyWorldspaceUI();
 
-		void ShowOutline(global::UnityEngine.Color color);
+		void ShowOutline(Color color);
 
 		void HideOutline();
 
@@ -42,8 +47,8 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		void SetConfigurer(global::FishNet.Object.NetworkObject player);
+		void SetConfigurer(NetworkObject player);
 
-		void SendConfigurationToClient(global::FishNet.Connection.NetworkConnection conn);
+		void SendConfigurationToClient(NetworkConnection conn);
 	}
 }

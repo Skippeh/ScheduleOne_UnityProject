@@ -1,22 +1,25 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class WheelRotator : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class WheelRotator : MonoBehaviour
 	{
 		public float Radius;
 
-		public global::UnityEngine.Transform Wheel;
+		public Transform Wheel;
 
 		public bool Flip;
 
-		public global::ScheduleOne.Audio.AudioSourceController Controller;
+		public AudioSourceController Controller;
 
 		public float AudioVolumeDivisor;
 
-		public global::UnityEngine.Vector3 RotationAxis;
+		public Vector3 RotationAxis;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 lastFramePosition;
+		[SerializeField]
+		private Vector3 lastFramePosition;
 
 		private void Start()
 		{

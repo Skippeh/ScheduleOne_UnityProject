@@ -1,6 +1,17 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Money;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageEntity : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.ItemFramework.IItemSlotOwner
+	public class StorageEntity : NetworkBehaviour, IItemSlotOwner
 	{
 		public enum EAccessSettings
 		{
@@ -11,37 +22,37 @@ namespace ScheduleOne.Storage
 
 		public const int MAX_SLOTS = 20;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string StorageEntityName;
 
 		public string StorageEntitySubtitle;
 
-		[global::UnityEngine.Range(1f, 20f)]
+		[Range(1f, 20f)]
 		public int SlotCount;
 
 		public bool EmptyOnSleep;
 
-		[global::UnityEngine.Header("Display Settings")]
-		[global::UnityEngine.Tooltip("How many rows to enforce when display contents in StorageMenu")]
-		[global::UnityEngine.Range(1f, 5f)]
+		[Header("Display Settings")]
+		[Tooltip("How many rows to enforce when display contents in StorageMenu")]
+		[Range(1f, 5f)]
 		public int DisplayRowCount;
 
-		[global::UnityEngine.Header("Access Settings")]
-		public global::ScheduleOne.Storage.StorageEntity.EAccessSettings AccessSettings;
+		[Header("Access Settings")]
+		public EAccessSettings AccessSettings;
 
-		[global::UnityEngine.Tooltip("If the distance between this StorageEntity and the player is greater than this, the StorageMenu will be closed.")]
-		[global::UnityEngine.Range(0f, 10f)]
+		[Tooltip("If the distance between this StorageEntity and the player is greater than this, the StorageMenu will be closed.")]
+		[Range(0f, 10f)]
 		public float MaxAccessDistance;
 
-		[global::UnityEngine.Header("Events")]
-		[global::UnityEngine.Tooltip("Invoked when this StorageEntity is accessed in the StorageMenu")]
-		public global::UnityEngine.Events.UnityEvent onOpened;
+		[Header("Events")]
+		[Tooltip("Invoked when this StorageEntity is accessed in the StorageMenu")]
+		public UnityEvent onOpened;
 
-		[global::UnityEngine.Tooltip("Invoked when the StorageMenu is closed.")]
-		public global::UnityEngine.Events.UnityEvent onClosed;
+		[Tooltip("Invoked when the StorageMenu is closed.")]
+		public UnityEvent onClosed;
 
-		[global::UnityEngine.Tooltip("Invoked when the contents change in any way. i.e. an item is added, removed, or the quantity of an item changes.")]
-		public global::UnityEngine.Events.UnityEvent onContentsChanged;
+		[Tooltip("Invoked when the contents change in any way. i.e. an item is added, removed, or the quantity of an item changes.")]
+		public UnityEvent onContentsChanged;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
@@ -49,11 +60,11 @@ namespace ScheduleOne.Storage
 
 		public bool IsOpened => false;
 
-		public global::ScheduleOne.PlayerScripts.Player CurrentAccessor { get; protected set; }
+		public Player CurrentAccessor { get; protected set; }
 
 		public int ItemCount => 0;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> ItemSlots { get; set; }
+		public List<ItemSlot> ItemSlots { get; set; }
 
 		public virtual void Awake()
 		{
@@ -67,11 +78,11 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void GetNetworth(global::ScheduleOne.Money.MoneyManager.FloatContainer container)
+		private void GetNetworth(MoneyManager.FloatContainer container)
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -79,22 +90,22 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StorableItemInstance, int> GetContentsDictionary()
+		public Dictionary<StorableItemInstance, int> GetContentsDictionary()
 		{
 			return null;
 		}
 
-		public bool CanItemFit(global::ScheduleOne.ItemFramework.ItemInstance item, int quantity = 1)
+		public bool CanItemFit(ItemInstance item, int quantity = 1)
 		{
 			return false;
 		}
 
-		public int HowManyCanFit(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public int HowManyCanFit(ItemInstance item)
 		{
 			return 0;
 		}
 
-		public void InsertItem(global::ScheduleOne.ItemFramework.ItemInstance item, bool network = true)
+		public void InsertItem(ItemInstance item, bool network = true)
 		{
 		}
 
@@ -102,12 +113,12 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> GetAllItems()
+		public List<ItemInstance> GetAllItems()
 		{
 			return null;
 		}
 
-		public void LoadFromItemSet(global::ScheduleOne.ItemFramework.ItemInstance[] items)
+		public void LoadFromItemSet(ItemInstance[] items)
 		{
 		}
 
@@ -136,45 +147,45 @@ namespace ScheduleOne.Storage
 			return false;
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		private void SendAccessor(global::FishNet.Object.NetworkObject accessor)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		private void SendAccessor(NetworkObject accessor)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetAccessor(global::FishNet.Object.NetworkObject accessor)
+		[ObserversRpc(RunLocally = true)]
+		private void SetAccessor(NetworkObject accessor)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public void SetStoredInstance(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public void SetStoredInstance(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
-		private void SetStoredInstance_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc(RunLocally = true)]
+		private void SetStoredInstance_Internal(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetItemSlotQuantity(int itemSlotIndex, int quantity)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetItemSlotQuantity_Internal(int itemSlotIndex, int quantity)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public void SetSlotLocked(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public void SetSlotLocked(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetSlotLocked_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		[TargetRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
+		private void SetSlotLocked_Internal(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
@@ -190,59 +201,59 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcWriter___Server_SendAccessor_3323014238(global::FishNet.Object.NetworkObject accessor)
+		private void RpcWriter___Server_SendAccessor_3323014238(NetworkObject accessor)
 		{
 		}
 
-		private void RpcLogic___SendAccessor_3323014238(global::FishNet.Object.NetworkObject accessor)
+		private void RpcLogic___SendAccessor_3323014238(NetworkObject accessor)
 		{
 		}
 
-		private void RpcReader___Server_SendAccessor_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAccessor_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetAccessor_3323014238(global::FishNet.Object.NetworkObject accessor)
+		private void RpcWriter___Observers_SetAccessor_3323014238(NetworkObject accessor)
 		{
 		}
 
-		private void RpcLogic___SetAccessor_3323014238(global::FishNet.Object.NetworkObject accessor)
+		private void RpcLogic___SetAccessor_3323014238(NetworkObject accessor)
 		{
 		}
 
-		private void RpcReader___Observers_SetAccessor_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetAccessor_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetStoredInstance_2652194801(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		private void RpcWriter___Server_SetStoredInstance_2652194801(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		public void RpcLogic___SetStoredInstance_2652194801(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public void RpcLogic___SetStoredInstance_2652194801(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		private void RpcReader___Server_SetStoredInstance_2652194801(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetStoredInstance_2652194801(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetStoredInstance_Internal_2652194801(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		private void RpcWriter___Observers_SetStoredInstance_Internal_2652194801(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		private void RpcLogic___SetStoredInstance_Internal_2652194801(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		private void RpcLogic___SetStoredInstance_Internal_2652194801(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		private void RpcReader___Observers_SetStoredInstance_Internal_2652194801(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetStoredInstance_Internal_2652194801(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetStoredInstance_Internal_2652194801(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
+		private void RpcWriter___Target_SetStoredInstance_Internal_2652194801(NetworkConnection conn, int itemSlotIndex, ItemInstance instance)
 		{
 		}
 
-		private void RpcReader___Target_SetStoredInstance_Internal_2652194801(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetStoredInstance_Internal_2652194801(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -254,7 +265,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcReader___Server_SetItemSlotQuantity_1692629761(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetItemSlotQuantity_1692629761(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -266,39 +277,39 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void RpcReader___Observers_SetItemSlotQuantity_Internal_1692629761(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetItemSlotQuantity_Internal_1692629761(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetSlotLocked_3170825843(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		private void RpcWriter___Server_SetSlotLocked_3170825843(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		public void RpcLogic___SetSlotLocked_3170825843(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		public void RpcLogic___SetSlotLocked_3170825843(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		private void RpcReader___Server_SetSlotLocked_3170825843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetSlotLocked_3170825843(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_SetSlotLocked_Internal_3170825843(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		private void RpcWriter___Target_SetSlotLocked_Internal_3170825843(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		private void RpcLogic___SetSlotLocked_Internal_3170825843(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		private void RpcLogic___SetSlotLocked_Internal_3170825843(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		private void RpcReader___Target_SetSlotLocked_Internal_3170825843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetSlotLocked_Internal_3170825843(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetSlotLocked_Internal_3170825843(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
+		private void RpcWriter___Observers_SetSlotLocked_Internal_3170825843(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason)
 		{
 		}
 
-		private void RpcReader___Observers_SetSlotLocked_Internal_3170825843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetSlotLocked_Internal_3170825843(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

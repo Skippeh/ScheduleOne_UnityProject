@@ -1,28 +1,30 @@
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LabOvenWireTray : global::UnityEngine.MonoBehaviour
+	public class LabOvenWireTray : MonoBehaviour
 	{
 		public const float HIT_OFFSET_MAX = 0.24f;
 
 		public const float HIT_OFFSET_MIN = -0.25f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Tray;
+		[Header("References")]
+		public Transform Tray;
 
-		public global::UnityEngine.Transform PlaneNormal;
+		public Transform PlaneNormal;
 
-		public global::UnityEngine.Transform ClosedPosition;
+		public Transform ClosedPosition;
 
-		public global::UnityEngine.Transform OpenPosition;
+		public Transform OpenPosition;
 
-		public global::ScheduleOne.ObjectScripts.LabOvenDoor OvenDoor;
+		public LabOvenDoor OvenDoor;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MoveSpeed;
 
-		public global::UnityEngine.AnimationCurve DoorClampCurve;
+		public AnimationCurve DoorClampCurve;
 
-		private global::UnityEngine.Vector3 clickOffset;
+		private Vector3 clickOffset;
 
 		private bool isMoving;
 
@@ -56,13 +58,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlaneHit()
+		private Vector3 GetPlaneHit()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void ClickEnd()

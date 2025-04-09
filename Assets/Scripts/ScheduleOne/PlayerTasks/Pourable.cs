@@ -1,11 +1,19 @@
+using System;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 namespace ScheduleOne.PlayerTasks
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.InputSystem.Accelerometer))]
-	public class Pourable : global::ScheduleOne.PlayerTasks.Draggable
+	[RequireComponent(typeof(Accelerometer))]
+	public class Pourable : Draggable
 	{
-		public global::System.Action onInitialPour;
+		public Action onInitialPour;
 
-		[global::UnityEngine.Header("Pourable settings")]
+		[Header("Pourable settings")]
 		public bool Unlimited;
 
 		public float StartQuantity;
@@ -14,28 +22,28 @@ namespace ScheduleOne.PlayerTasks
 
 		public float AngleFromUpToPour;
 
-		[global::UnityEngine.Tooltip("Multiplier for pour rate when pourable is shaken up and down")]
+		[Tooltip("Multiplier for pour rate when pourable is shaken up and down")]
 		public float ShakeBoostRate;
 
 		public bool AffectsCoverage;
 
-		[global::UnityEngine.Header("Particles")]
+		[Header("Particles")]
 		public float ParticleMinMultiplier;
 
 		public float ParticleMaxMultiplier;
 
-		[global::UnityEngine.Header("Pourable References")]
-		public global::UnityEngine.ParticleSystem[] PourParticles;
+		[Header("Pourable References")]
+		public ParticleSystem[] PourParticles;
 
-		public global::UnityEngine.Transform PourPoint;
+		public Transform PourPoint;
 
-		public global::ScheduleOne.Audio.AudioSourceController PourLoop;
+		public AudioSourceController PourLoop;
 
-		[global::UnityEngine.Header("Trash")]
-		public global::ScheduleOne.Trash.TrashItem TrashItem;
+		[Header("Trash")]
+		public TrashItem TrashItem;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.ObjectScripts.Pot TargetPot;
+		[HideInInspector]
+		public Pot TargetPot;
 
 		public float currentQuantity;
 
@@ -47,7 +55,7 @@ namespace ScheduleOne.PlayerTasks
 
 		private float[] particleMaxSizes;
 
-		private global::ScheduleOne.DevUtilities.AverageAcceleration accelerometer;
+		private AverageAcceleration accelerometer;
 
 		public bool IsPouring { get; protected set; }
 

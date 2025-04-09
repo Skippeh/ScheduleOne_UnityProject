@@ -1,44 +1,51 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace ItemIconCreator
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class MaterialIconCreator : global::ItemIconCreator.IconCreator
+	[ExecuteInEditMode]
+	public class MaterialIconCreator : IconCreator
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CBuildIconsRotine_003Ed__4 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CBuildIconsRotine_003Ed__4 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ItemIconCreator.MaterialIconCreator _003C_003E4__this;
+			public MaterialIconCreator _003C_003E4__this;
 
 			private int _003Ci_003E5__2;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CBuildIconsRotine_003Ed__4(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -47,21 +54,21 @@ namespace ItemIconCreator
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		public global::UnityEngine.Renderer targetRenderer;
+		public Renderer targetRenderer;
 
-		public global::UnityEngine.Material[] materials;
+		public Material[] materials;
 
 		public override void BuildIcons()
 		{
@@ -72,8 +79,8 @@ namespace ItemIconCreator
 			return false;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ItemIconCreator.MaterialIconCreator._003CBuildIconsRotine_003Ed__4))]
-		private global::System.Collections.IEnumerator BuildIconsRotine()
+		[IteratorStateMachine(typeof(_003CBuildIconsRotine_003Ed__4))]
+		private IEnumerator BuildIconsRotine()
 		{
 			return null;
 		}

@@ -1,30 +1,34 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Combat
 {
-	public class PhysicsDamageable : global::UnityEngine.MonoBehaviour, global::ScheduleOne.Combat.IDamageable
+	public class PhysicsDamageable : MonoBehaviour, IDamageable
 	{
 		public const int VELOCITY_HISTORY_LENGTH = 4;
 
-		public global::UnityEngine.Rigidbody Rb;
+		public Rigidbody Rb;
 
 		public float ForceMultiplier;
 
-		private global::System.Collections.Generic.List<int> impactHistory;
+		private List<int> impactHistory;
 
-		public global::System.Action<global::ScheduleOne.Combat.Impact> onImpacted;
+		public Action<Impact> onImpacted;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Vector3> velocityHistory;
+		private List<Vector3> velocityHistory;
 
-		public global::UnityEngine.Vector3 averageVelocity { get; private set; }
+		public Vector3 averageVelocity { get; private set; }
 
 		public void OnValidate()
 		{
 		}
 
-		public virtual void SendImpact(global::ScheduleOne.Combat.Impact impact)
+		public virtual void SendImpact(Impact impact)
 		{
 		}
 
-		public virtual void ReceiveImpact(global::ScheduleOne.Combat.Impact impact)
+		public virtual void ReceiveImpact(Impact impact)
 		{
 		}
 	}

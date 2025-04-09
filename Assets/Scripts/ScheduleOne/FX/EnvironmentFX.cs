@@ -1,95 +1,102 @@
+using AtmosphericHeightFog;
+using Funly.SkyStudio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Tools;
+using UnityEngine;
+using VolumetricFogAndMist2;
+
 namespace ScheduleOne.FX
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class EnvironmentFX : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.FX.EnvironmentFX>
+	[ExecuteInEditMode]
+	public class EnvironmentFX : Singleton<EnvironmentFX>
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.WindZone windZone;
+		[Header("References")]
+		[SerializeField]
+		protected WindZone windZone;
 
-		[global::UnityEngine.SerializeField]
-		protected global::Funly.SkyStudio.TimeOfDayController timeOfDayController;
+		[SerializeField]
+		protected TimeOfDayController timeOfDayController;
 
-		public global::AtmosphericHeightFog.HeightFogGlobal HeightFog;
+		public HeightFogGlobal HeightFog;
 
-		public global::VolumetricFogAndMist2.VolumetricFog VolumetricFog;
+		public VolumetricFog VolumetricFog;
 
-		public global::UnityEngine.Light SunLight;
+		public Light SunLight;
 
-		public global::UnityEngine.Light MoonLight;
+		public Light MoonLight;
 
-		[global::UnityEngine.Header("Fog")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient fogColorGradient;
+		[Header("Fog")]
+		[SerializeField]
+		protected Gradient fogColorGradient;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve fogEndDistanceCurve;
+		[SerializeField]
+		protected AnimationCurve fogEndDistanceCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float fogEndDistanceMultiplier;
 
-		[global::UnityEngine.Header("Height Fog")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient HeightFogColor;
+		[Header("Height Fog")]
+		[SerializeField]
+		protected Gradient HeightFogColor;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve HeightFogIntensityCurve;
+		[SerializeField]
+		protected AnimationCurve HeightFogIntensityCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float HeightFogIntensityMultiplier;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve HeightFogDirectionalIntensityCurve;
+		[SerializeField]
+		protected AnimationCurve HeightFogDirectionalIntensityCurve;
 
-		[global::UnityEngine.Header("Volumetric Fog")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient VolumetricFogColor;
+		[Header("Volumetric Fog")]
+		[SerializeField]
+		protected Gradient VolumetricFogColor;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve VolumetricFogIntensityCurve;
+		[SerializeField]
+		protected AnimationCurve VolumetricFogIntensityCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float VolumetricFogIntensityMultiplier;
 
-		[global::UnityEngine.Header("God rays")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve godRayIntensityCurve;
+		[Header("God rays")]
+		[SerializeField]
+		protected AnimationCurve godRayIntensityCurve;
 
-		[global::UnityEngine.Header("Contrast")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve contrastCurve;
+		[Header("Contrast")]
+		[SerializeField]
+		protected AnimationCurve contrastCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float contractMultiplier;
 
-		[global::UnityEngine.Header("Saturation")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve saturationCurve;
+		[Header("Saturation")]
+		[SerializeField]
+		protected AnimationCurve saturationCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float saturationMultiplier;
 
-		[global::UnityEngine.Header("Grass")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material grassMat;
+		[Header("Grass")]
+		[SerializeField]
+		protected Material grassMat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient grassColorGradient;
+		[SerializeField]
+		protected Gradient grassColorGradient;
 
-		[global::UnityEngine.Header("Trees")]
-		public global::UnityEngine.Material distanceTreeMat;
+		[Header("Trees")]
+		public Material distanceTreeMat;
 
-		public global::UnityEngine.AnimationCurve distanceTreeColorCurve;
+		public AnimationCurve distanceTreeColorCurve;
 
-		[global::UnityEngine.Header("Stealth settings")]
-		public global::UnityEngine.AnimationCurve environmentalBrightnessCurve;
+		[Header("Stealth settings")]
+		public AnimationCurve environmentalBrightnessCurve;
 
-		[global::UnityEngine.Header("Bloom")]
-		public global::UnityEngine.AnimationCurve bloomThreshholdCurve;
+		[Header("Bloom")]
+		public AnimationCurve bloomThreshholdCurve;
 
 		private bool started;
 
-		public global::ScheduleOne.Tools.FloatSmoother FogEndDistanceController;
+		public FloatSmoother FogEndDistanceController;
 
 		public float normalizedEnvironmentalBrightness => 0f;
 

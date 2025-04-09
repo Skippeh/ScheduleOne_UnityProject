@@ -1,11 +1,14 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class VMSBoard : global::UnityEngine.MonoBehaviour
+	public class VMSBoard : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI Label;
+		[Header("References")]
+		public TextMeshProUGUI Label;
 
-		public void SetText(string text, global::UnityEngine.Color col)
+		public void SetText(string text, Color col)
 		{
 		}
 

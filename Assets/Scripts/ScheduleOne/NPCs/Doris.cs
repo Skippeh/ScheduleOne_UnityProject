@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs
 {
-	public class Doris : global::ScheduleOne.NPCs.NPC
+	public class Doris : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EDorisAssembly_002DCSharp_002Edll_Excuted;
 

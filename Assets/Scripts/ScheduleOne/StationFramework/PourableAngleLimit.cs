@@ -1,12 +1,15 @@
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class PourableAngleLimit : global::UnityEngine.MonoBehaviour
+	public class PourableAngleLimit : MonoBehaviour
 	{
-		public global::ScheduleOne.StationFramework.PourableModule Pourable;
+		public PourableModule Pourable;
 
-		public global::ScheduleOne.PlayerTasks.DraggableConstraint Constraint;
+		public DraggableConstraint Constraint;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float AngleAtMaxFill;
 
 		public float AngleAtMinFill;

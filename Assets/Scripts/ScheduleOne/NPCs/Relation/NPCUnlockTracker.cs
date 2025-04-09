@@ -1,16 +1,19 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Relation
 {
-	public class NPCUnlockTracker : global::UnityEngine.MonoBehaviour
+	public class NPCUnlockTracker : MonoBehaviour
 	{
-		public global::ScheduleOne.NPCs.NPC Npc;
+		public NPC Npc;
 
-		public global::UnityEngine.Events.UnityEvent onUnlocked;
+		public UnityEvent onUnlocked;
 
 		private void Awake()
 		{
 		}
 
-		private void Invoke(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType type, bool t)
+		private void Invoke(NPCRelationData.EUnlockType type, bool t)
 		{
 		}
 	}

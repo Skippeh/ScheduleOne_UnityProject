@@ -1,10 +1,12 @@
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Persistence.ItemLoaders
 {
-	public class CocaineLoader : global::ScheduleOne.Persistence.ItemLoaders.ItemLoader
+	public class CocaineLoader : ItemLoader
 	{
 		public override string ItemType => null;
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance LoadItem(string itemString)
+		public override ItemInstance LoadItem(string itemString)
 		{
 			return null;
 		}

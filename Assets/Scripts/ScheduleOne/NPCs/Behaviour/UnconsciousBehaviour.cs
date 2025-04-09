@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class UnconsciousBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class UnconsciousBehaviour : Behaviour
 	{
 		public const float SnoreInterval = 6f;
 
-		public global::UnityEngine.ParticleSystem Particles;
+		public ParticleSystem Particles;
 
 		public bool PlaySnoreSounds;
 

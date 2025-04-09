@@ -1,17 +1,23 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Economy;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class CustomerSelector : global::UnityEngine.MonoBehaviour
+	public class CustomerSelector : MonoBehaviour
 	{
-		public global::UnityEngine.GameObject ButtonPrefab;
+		public GameObject ButtonPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform EntriesContainer;
+		[Header("References")]
+		public RectTransform EntriesContainer;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Economy.Customer> onCustomerSelected;
+		public UnityEvent<Customer> onCustomerSelected;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> customerEntries;
+		private List<RectTransform> customerEntries;
 
-		private global::System.Collections.Generic.Dictionary<global::UnityEngine.RectTransform, global::ScheduleOne.Economy.Customer> entryToCustomer;
+		private Dictionary<RectTransform, Customer> entryToCustomer;
 
 		public void Awake()
 		{
@@ -25,7 +31,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -37,11 +43,11 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		private void CreateEntry(global::ScheduleOne.Economy.Customer customer)
+		private void CreateEntry(Customer customer)
 		{
 		}
 
-		private void CustomerSelected(global::ScheduleOne.Economy.Customer customer)
+		private void CustomerSelected(Customer customer)
 		{
 		}
 	}

@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Management.UI
 {
-	public class ConfigPanel : global::UnityEngine.MonoBehaviour
+	public class ConfigPanel : MonoBehaviour
 	{
-		public virtual void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		public virtual void Bind(List<EntityConfiguration> configs)
 		{
 		}
 	}

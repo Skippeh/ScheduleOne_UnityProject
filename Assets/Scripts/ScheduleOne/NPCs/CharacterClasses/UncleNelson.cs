@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class UncleNelson : global::ScheduleOne.NPCs.NPC
+	public class UncleNelson : NPC
 	{
 		public string InitialMessage_Demo;
 

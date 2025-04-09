@@ -1,12 +1,15 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	public class Peephole : global::UnityEngine.MonoBehaviour
+	public class Peephole : MonoBehaviour
 	{
-		public global::UnityEngine.Animation DoorAnim;
+		public Animation DoorAnim;
 
-		public global::ScheduleOne.Audio.AudioSourceController OpenSound;
+		public AudioSourceController OpenSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController CloseSound;
+		public AudioSourceController CloseSound;
 
 		public void Open()
 		{

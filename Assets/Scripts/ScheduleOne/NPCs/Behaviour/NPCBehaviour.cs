@@ -1,56 +1,65 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Combat;
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class NPCBehaviour : global::FishNet.Object.NetworkBehaviour
+	public class NPCBehaviour : NetworkBehaviour
 	{
 		public bool DEBUG_MODE;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.NPCScheduleManager ScheduleManager;
+		[Header("References")]
+		public NPCScheduleManager ScheduleManager;
 
-		[global::UnityEngine.Header("Default Behaviours")]
-		public global::ScheduleOne.NPCs.Behaviour.CoweringBehaviour CoweringBehaviour;
+		[Header("Default Behaviours")]
+		public CoweringBehaviour CoweringBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.RagdollBehaviour RagdollBehaviour;
+		public RagdollBehaviour RagdollBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.CallPoliceBehaviour CallPoliceBehaviour;
+		public CallPoliceBehaviour CallPoliceBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.GenericDialogueBehaviour GenericDialogueBehaviour;
+		public GenericDialogueBehaviour GenericDialogueBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.HeavyFlinchBehaviour HeavyFlinchBehaviour;
+		public HeavyFlinchBehaviour HeavyFlinchBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.FacePlayerBehaviour FacePlayerBehaviour;
+		public FacePlayerBehaviour FacePlayerBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.DeadBehaviour DeadBehaviour;
+		public DeadBehaviour DeadBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.UnconsciousBehaviour UnconsciousBehaviour;
+		public UnconsciousBehaviour UnconsciousBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.Behaviour SummonBehaviour;
+		public Behaviour SummonBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.ConsumeProductBehaviour ConsumeProductBehaviour;
+		public ConsumeProductBehaviour ConsumeProductBehaviour;
 
-		public global::ScheduleOne.Combat.CombatBehaviour CombatBehaviour;
+		public CombatBehaviour CombatBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.FleeBehaviour FleeBehaviour;
+		public FleeBehaviour FleeBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.StationaryBehaviour StationaryBehaviour;
+		public StationaryBehaviour StationaryBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.RequestProductBehaviour RequestProductBehaviour;
+		public RequestProductBehaviour RequestProductBehaviour;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Behaviour.Behaviour> behaviourStack;
+		[SerializeField]
+		protected List<Behaviour> behaviourStack;
 
-		private global::UnityEngine.Coroutine summonRoutine;
+		private Coroutine summonRoutine;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Behaviour.Behaviour> enabledBehaviours;
+		[SerializeField]
+		private List<Behaviour> enabledBehaviours;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002ENPCBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002ENPCBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.NPCs.Behaviour.Behaviour activeBehaviour { get; set; }
+		public Behaviour activeBehaviour { get; set; }
 
-		public global::ScheduleOne.NPCs.NPC Npc { get; private set; }
+		public NPC Npc { get; private set; }
 
 		public virtual void Awake()
 		{
@@ -68,17 +77,17 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void Summon(string buildingGUID, int doorIndex, float duration)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void ConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product)
+		[ServerRpc(RequireOwnership = false)]
+		public void ConsumeProduct(ProductItemInstance product)
 		{
 		}
 
@@ -90,7 +99,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public global::ScheduleOne.NPCs.Behaviour.Behaviour GetBehaviour(string BehaviourName)
+		public Behaviour GetBehaviour(string BehaviourName)
 		{
 			return null;
 		}
@@ -111,16 +120,16 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private global::ScheduleOne.NPCs.Behaviour.Behaviour GetEnabledBehaviour()
+		private Behaviour GetEnabledBehaviour()
 		{
 			return null;
 		}
 
-		private void AddEnabledBehaviour(global::ScheduleOne.NPCs.Behaviour.Behaviour b)
+		private void AddEnabledBehaviour(Behaviour b)
 		{
 		}
 
-		private void RemoveEnabledBehaviour(global::ScheduleOne.NPCs.Behaviour.Behaviour b)
+		private void RemoveEnabledBehaviour(Behaviour b)
 		{
 		}
 
@@ -144,19 +153,19 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_Summon_900355577(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_Summon_900355577(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_ConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcWriter___Server_ConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		public void RpcLogic___ConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		public void RpcLogic___ConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		private void RpcReader___Server_ConsumeProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ConsumeProduct_2622925554(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

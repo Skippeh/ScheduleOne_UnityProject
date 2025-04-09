@@ -1,16 +1,19 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class ColorKeyframe : global::Funly.SkyStudio.BaseKeyframe
+	[Serializable]
+	public class ColorKeyframe : BaseKeyframe
 	{
-		public global::UnityEngine.Color color;
+		public Color color;
 
-		public ColorKeyframe(global::UnityEngine.Color c, float time)
+		public ColorKeyframe(Color c, float time)
 			: base(0f)
 		{
 		}
 
-		public ColorKeyframe(global::Funly.SkyStudio.ColorKeyframe keyframe)
+		public ColorKeyframe(ColorKeyframe keyframe)
 			: base(0f)
 		{
 		}

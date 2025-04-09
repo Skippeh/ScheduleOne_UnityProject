@@ -1,12 +1,15 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class QualityItemUI : global::ScheduleOne.UI.Items.ItemUI
+	public class QualityItemUI : ItemUI
 	{
-		public global::UnityEngine.UI.Image QualityIcon;
+		public Image QualityIcon;
 
-		protected global::ScheduleOne.ItemFramework.QualityItemInstance qualityItemInstance;
+		protected QualityItemInstance qualityItemInstance;
 
-		public override void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Setup(ItemInstance item)
 		{
 		}
 

@@ -1,16 +1,20 @@
+using System.Collections.Generic;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageGrid : global::UnityEngine.MonoBehaviour
+	public class StorageGrid : MonoBehaviour
 	{
 		public static float gridSize;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> storageTiles;
+		public List<StorageTile> storageTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> freeTiles;
+		public List<StorageTile> freeTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.CoordinateStorageTilePair> coordinateStorageTilePairs;
+		public List<CoordinateStorageTilePair> coordinateStorageTilePairs;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Tiles.Coordinate, global::ScheduleOne.Storage.StorageTile> coordinateToTile;
+		protected Dictionary<Coordinate, StorageTile> coordinateToTile;
 
 		protected virtual void Awake()
 		{
@@ -20,30 +24,30 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public void RegisterTile(global::ScheduleOne.Storage.StorageTile tile)
+		public void RegisterTile(StorageTile tile)
 		{
 		}
 
-		public void DeregisterTile(global::ScheduleOne.Storage.StorageTile tile)
+		public void DeregisterTile(StorageTile tile)
 		{
 		}
 
-		public bool IsItemPositionValid(global::ScheduleOne.Storage.StorageTile primaryTile, global::ScheduleOne.Tiles.FootprintTile primaryFootprintTile, global::ScheduleOne.Storage.StoredItem item)
+		public bool IsItemPositionValid(StorageTile primaryTile, FootprintTile primaryFootprintTile, StoredItem item)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.Tiles.Coordinate GetMatchedCoordinate(global::ScheduleOne.Tiles.FootprintTile tileToMatch)
+		public Coordinate GetMatchedCoordinate(FootprintTile tileToMatch)
 		{
 			return null;
 		}
 
-		public bool IsGridPositionValid(global::ScheduleOne.Tiles.Coordinate gridCoord, global::ScheduleOne.Tiles.FootprintTile tile)
+		public bool IsGridPositionValid(Coordinate gridCoord, FootprintTile tile)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.Storage.StorageTile GetTile(global::ScheduleOne.Tiles.Coordinate coord)
+		public StorageTile GetTile(Coordinate coord)
 		{
 			return null;
 		}
@@ -68,7 +72,7 @@ namespace ScheduleOne.Storage
 			return 0;
 		}
 
-		public bool TryFitItem(int sizeX, int sizeY, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Coordinate> lockedCoordinates, out global::ScheduleOne.Tiles.Coordinate originCoordinate, out float rotation)
+		public bool TryFitItem(int sizeX, int sizeY, List<Coordinate> lockedCoordinates, out Coordinate originCoordinate, out float rotation)
 		{
 			originCoordinate = null;
 			rotation = default(float);

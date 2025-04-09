@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class SpherePointGroupDictionary : global::Funly.SkyStudio.SerializableDictionary<string, global::Funly.SkyStudio.SpherePointKeyframeGroup>
+	[Serializable]
+	public class SpherePointGroupDictionary : SerializableDictionary<string, SpherePointKeyframeGroup>
 	{
 	}
 }

@@ -1,16 +1,20 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+
 namespace ScheduleOne.ItemFramework
 {
 	public interface IItemSlotOwner
 	{
-		global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> ItemSlots { get; set; }
+		List<ItemSlot> ItemSlots { get; set; }
 
-		void SetStoredInstance(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance);
+		void SetStoredInstance(NetworkConnection conn, int itemSlotIndex, ItemInstance instance);
 
 		void SetItemSlotQuantity(int itemSlotIndex, int quantity);
 
-		void SetSlotLocked(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason);
+		void SetSlotLocked(NetworkConnection conn, int itemSlotIndex, bool locked, NetworkObject lockOwner, string lockReason);
 
-		void SendItemsToClient(global::FishNet.Connection.NetworkConnection conn)
+		void SendItemsToClient(NetworkConnection conn)
 		{
 		}
 

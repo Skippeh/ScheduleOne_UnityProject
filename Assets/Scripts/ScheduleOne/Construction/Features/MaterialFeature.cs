@@ -1,25 +1,30 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.UI.Construction.Features;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.Features
 {
-	public class MaterialFeature : global::ScheduleOne.Construction.Features.OptionListFeature
+	public class MaterialFeature : OptionListFeature
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class NamedMaterial
 		{
 			public string matName;
 
-			public global::UnityEngine.Color buttonColor;
+			public Color buttonColor;
 
-			public global::UnityEngine.Material mat;
+			public Material mat;
 
 			public float price;
 		}
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.MeshRenderer> materialTargets;
+		[Header("References")]
+		[SerializeField]
+		protected List<MeshRenderer> materialTargets;
 
-		[global::UnityEngine.Header("Material settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Construction.Features.MaterialFeature.NamedMaterial> materials;
+		[Header("Material settings")]
+		public List<NamedMaterial> materials;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstruction_002EFeatures_002EMaterialFeatureAssembly_002DCSharp_002Edll_Excuted;
 
@@ -29,11 +34,11 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		private void ApplyMaterial(global::ScheduleOne.Construction.Features.MaterialFeature.NamedMaterial mat)
+		private void ApplyMaterial(NamedMaterial mat)
 		{
 		}
 
-		protected override global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.Features.FI_OptionList.Option> GetOptions()
+		protected override List<FI_OptionList.Option> GetOptions()
 		{
 			return null;
 		}

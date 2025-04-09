@@ -1,33 +1,39 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.Packaging
 {
-	public class FunctionalProduct : global::ScheduleOne.PlayerTasks.Draggable
+	public class FunctionalProduct : Draggable
 	{
 		public bool ClampZ;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform AlignmentPoint;
+		[Header("References")]
+		public Transform AlignmentPoint;
 
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public FilledPackagingVisuals Visuals;
 
-		private global::UnityEngine.Vector3 startLocalPos;
+		private Vector3 startLocalPos;
 
 		private float lowestMaxZ;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator { get; private set; }
+		public SmoothedVelocityCalculator VelocityCalculator { get; private set; }
 
-		public virtual void Initialize(global::ScheduleOne.ObjectScripts.PackagingStation station, global::ScheduleOne.ItemFramework.ItemInstance item, global::UnityEngine.Transform alignment, bool align = true)
+		public virtual void Initialize(PackagingStation station, ItemInstance item, Transform alignment, bool align = true)
 		{
 		}
 
-		public virtual void Initialize(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual void Initialize(ItemInstance item)
 		{
 		}
 
-		public virtual void InitializeVisuals(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual void InitializeVisuals(ItemInstance item)
 		{
 		}
 
-		public void AlignTo(global::UnityEngine.Transform alignment)
+		public void AlignTo(Transform alignment)
 		{
 		}
 

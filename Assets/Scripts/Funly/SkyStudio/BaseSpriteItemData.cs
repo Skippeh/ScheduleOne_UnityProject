@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public class BaseSpriteItemData
@@ -10,21 +12,21 @@ namespace Funly.SkyStudio
 			Complete = 3
 		}
 
-		public global::Funly.SkyStudio.SpriteSheetData spriteSheetData;
+		public SpriteSheetData spriteSheetData;
 
 		public float delay;
 
-		public global::UnityEngine.Matrix4x4 modelMatrix { get; protected set; }
+		public Matrix4x4 modelMatrix { get; protected set; }
 
-		public global::Funly.SkyStudio.BaseSpriteItemData.SpriteState state { get; protected set; }
+		public SpriteState state { get; protected set; }
 
-		public global::UnityEngine.Vector3 spritePosition { get; set; }
+		public Vector3 spritePosition { get; set; }
 
 		public float startTime { get; protected set; }
 
 		public float endTime { get; protected set; }
 
-		public void SetTRSMatrix(global::UnityEngine.Vector3 worldPosition, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 scale)
+		public void SetTRSMatrix(Vector3 worldPosition, Quaternion rotation, Vector3 scale)
 		{
 		}
 

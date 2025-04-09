@@ -1,15 +1,20 @@
+using System;
+using ScheduleOne.Interaction;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Casino
 {
-	public class CasinoGameInteraction : global::UnityEngine.MonoBehaviour
+	public class CasinoGameInteraction : MonoBehaviour
 	{
 		public string GameName;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Casino.CasinoGamePlayers Players;
+		[Header("References")]
+		public CasinoGamePlayers Players;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::System.Action<global::ScheduleOne.PlayerScripts.Player> onLocalPlayerRequestJoin;
+		public Action<Player> onLocalPlayerRequestJoin;
 
 		private void Awake()
 		{

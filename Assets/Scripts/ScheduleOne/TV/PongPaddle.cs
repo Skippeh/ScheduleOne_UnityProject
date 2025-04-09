@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.TV
 {
-	public class PongPaddle : global::UnityEngine.MonoBehaviour
+	public class PongPaddle : MonoBehaviour
 	{
 		public const float BOUND_Y = 160f;
 
@@ -8,7 +10,7 @@ namespace ScheduleOne.TV
 
 		public float SpeedMultiplier;
 
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
 		public float TargetY { get; set; }
 

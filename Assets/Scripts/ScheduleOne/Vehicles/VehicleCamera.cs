@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleCamera : global::UnityEngine.MonoBehaviour
+	public class VehicleCamera : MonoBehaviour
 	{
 		private const float followDelta = 10f;
 
@@ -16,17 +18,17 @@ namespace ScheduleOne.Vehicles
 
 		private const float yMaxLimit = 89f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		[Header("References")]
+		public LandVehicle vehicle;
 
-		[global::UnityEngine.Header("Camera Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform cameraOrigin;
+		[Header("Camera Settings")]
+		[SerializeField]
+		protected Transform cameraOrigin;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float lateralOffset;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float verticalOffset;
 
 		protected bool cameraReversed;
@@ -35,19 +37,19 @@ namespace ScheduleOne.Vehicles
 
 		protected float orbitDistance;
 
-		protected global::UnityEngine.Vector3 lastFrameCameraOffset;
+		protected Vector3 lastFrameCameraOffset;
 
-		protected global::UnityEngine.Vector3 lastManualOffset;
+		protected Vector3 lastManualOffset;
 
-		private global::UnityEngine.Transform targetTransform;
+		private Transform targetTransform;
 
-		private global::UnityEngine.Transform cameraDolly;
+		private Transform cameraDolly;
 
 		private float x;
 
 		private float y;
 
-		private global::UnityEngine.Transform cam => null;
+		private Transform cam => null;
 
 		protected virtual void Start()
 		{
@@ -61,7 +63,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void PlayerEnteredVehicle(global::ScheduleOne.Vehicles.LandVehicle veh)
+		private void PlayerEnteredVehicle(LandVehicle veh)
 		{
 		}
 
@@ -78,14 +80,14 @@ namespace ScheduleOne.Vehicles
 			return 0f;
 		}
 
-		private global::UnityEngine.Vector3 GetTargetCameraPosition()
+		private Vector3 GetTargetCameraPosition()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::UnityEngine.Vector3 LimitCameraPosition(global::UnityEngine.Vector3 targetPosition)
+		private Vector3 LimitCameraPosition(Vector3 targetPosition)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 	}
 }

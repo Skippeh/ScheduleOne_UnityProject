@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_ArmsDealer : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_ArmsDealer : DialogueController
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class WeaponOption
 		{
 			public string Name;
@@ -13,18 +17,18 @@ namespace ScheduleOne.Dialogue
 
 			public string NotAvailableReason;
 
-			public global::ScheduleOne.ItemFramework.StorableItemDefinition Item;
+			public StorableItemDefinition Item;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> MeleeWeapons;
+		public List<WeaponOption> MeleeWeapons;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> RangedWeapons;
+		public List<WeaponOption> RangedWeapons;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> Ammo;
+		public List<WeaponOption> Ammo;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> allWeapons;
+		private List<WeaponOption> allWeapons;
 
-		private global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption chosenWeapon;
+		private WeaponOption chosenWeapon;
 
 		private void Awake()
 		{
@@ -34,11 +38,11 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		public override void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		public override void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> GetWeaponChoices(global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> options)
+		private List<DialogueChoiceData> GetWeaponChoices(List<WeaponOption> options)
 		{
 			return null;
 		}

@@ -1,23 +1,29 @@
+using System;
+using ScheduleOne.Economy;
+using ScheduleOne.Levelling;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MapRegionData
 	{
-		public global::ScheduleOne.Map.EMapRegion Region;
+		public EMapRegion Region;
 
 		public string Name;
 
-		public global::ScheduleOne.Levelling.FullRank RankRequirement;
+		public FullRank RankRequirement;
 
-		public global::ScheduleOne.NPCs.NPC[] StartingNPCs;
+		public NPC[] StartingNPCs;
 
-		public global::UnityEngine.Sprite RegionSprite;
+		public Sprite RegionSprite;
 
-		public global::ScheduleOne.Economy.DeliveryLocation[] RegionDeliveryLocations;
+		public DeliveryLocation[] RegionDeliveryLocations;
 
 		public bool IsUnlocked => false;
 
-		public global::ScheduleOne.Economy.DeliveryLocation GetRandomUnscheduledDeliveryLocation()
+		public DeliveryLocation GetRandomUnscheduledDeliveryLocation()
 		{
 			return null;
 		}

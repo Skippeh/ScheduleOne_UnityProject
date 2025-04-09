@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
 	public class MapHeightSampler
@@ -6,7 +8,7 @@ namespace ScheduleOne.DevUtilities
 
 		private static float SampleDistance;
 
-		public static global::UnityEngine.Vector3 ResetPosition;
+		public static Vector3 ResetPosition;
 
 		public static bool Sample(float x, out float y, float z)
 		{

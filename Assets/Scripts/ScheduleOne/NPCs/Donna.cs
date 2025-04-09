@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs
 {
-	public class Donna : global::ScheduleOne.NPCs.NPC
+	public class Donna : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EDonnaAssembly_002DCSharp_002Edll_Excuted;
 

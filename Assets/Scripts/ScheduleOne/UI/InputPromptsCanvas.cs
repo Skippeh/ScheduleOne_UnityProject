@@ -1,23 +1,28 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class InputPromptsCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.InputPromptsCanvas>
+	public class InputPromptsCanvas : Singleton<InputPromptsCanvas>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Module
 		{
 			public string key;
 
-			public global::UnityEngine.GameObject module;
+			public GameObject module;
 		}
 
-		public global::UnityEngine.RectTransform InputPromptsContainer;
+		public RectTransform InputPromptsContainer;
 
-		[global::UnityEngine.Header("Input prompt modules")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.InputPromptsCanvas.Module> Modules;
+		[Header("Input prompt modules")]
+		public List<Module> Modules;
 
 		public string currentModuleLabel { get; protected set; }
 
-		public global::UnityEngine.RectTransform currentModule { get; private set; }
+		public RectTransform currentModule { get; private set; }
 
 		public void LoadModule(string key)
 		{

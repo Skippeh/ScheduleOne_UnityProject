@@ -1,51 +1,60 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Misc;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LabOvenButton : global::UnityEngine.MonoBehaviour
+	public class LabOvenButton : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CMoveButton_003Ed__14 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CMoveButton_003Ed__14 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.ObjectScripts.LabOvenButton _003C_003E4__this;
+			public LabOvenButton _003C_003E4__this;
 
-			public global::UnityEngine.Transform destination;
+			public Transform destination;
 
-			private global::UnityEngine.Vector3 _003CstartPos_003E5__2;
+			private Vector3 _003CstartPos_003E5__2;
 
-			private global::UnityEngine.Vector3 _003CendPos_003E5__3;
+			private Vector3 _003CendPos_003E5__3;
 
 			private float _003ClerpTime_003E5__4;
 
 			private float _003Ct_003E5__5;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CMoveButton_003Ed__14(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -54,29 +63,29 @@ namespace ScheduleOne.ObjectScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		public global::UnityEngine.Transform Button;
+		public Transform Button;
 
-		public global::UnityEngine.Transform PressedTransform;
+		public Transform PressedTransform;
 
-		public global::UnityEngine.Transform DepressedTransform;
+		public Transform DepressedTransform;
 
-		public global::ScheduleOne.Misc.ToggleableLight Light;
+		public ToggleableLight Light;
 
-		public global::ScheduleOne.PlayerTasks.Clickable Clickable;
+		public Clickable Clickable;
 
-		private global::UnityEngine.Coroutine pressCoroutine;
+		private Coroutine pressCoroutine;
 
 		public bool Pressed { get; private set; }
 
@@ -88,7 +97,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void Press(global::UnityEngine.RaycastHit hit)
+		public void Press(RaycastHit hit)
 		{
 		}
 
@@ -96,8 +105,8 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.ObjectScripts.LabOvenButton._003CMoveButton_003Ed__14))]
-		private global::System.Collections.IEnumerator MoveButton(global::UnityEngine.Transform destination)
+		[IteratorStateMachine(typeof(_003CMoveButton_003Ed__14))]
+		private IEnumerator MoveButton(Transform destination)
 		{
 			return null;
 		}

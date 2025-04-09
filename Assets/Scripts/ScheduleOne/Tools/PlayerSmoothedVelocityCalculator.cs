@@ -1,8 +1,10 @@
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Tools
 {
-	public class PlayerSmoothedVelocityCalculator : global::ScheduleOne.Tools.SmoothedVelocityCalculator
+	public class PlayerSmoothedVelocityCalculator : SmoothedVelocityCalculator
 	{
-		public global::ScheduleOne.PlayerScripts.Player Player;
+		public Player Player;
 
 		protected override void FixedUpdate()
 		{

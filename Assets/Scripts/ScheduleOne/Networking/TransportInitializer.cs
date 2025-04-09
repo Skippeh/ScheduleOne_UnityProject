@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Networking
 {
-	public class TransportInitializer : global::UnityEngine.MonoBehaviour
+	public class TransportInitializer : MonoBehaviour
 	{
 		public void Awake()
 		{

@@ -1,15 +1,17 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public abstract class ColorHelper
 	{
-		public static global::UnityEngine.Color ColorWithHex(uint hex)
+		public static Color ColorWithHex(uint hex)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		public static global::UnityEngine.Color ColorWithHexAlpha(uint hex)
+		public static Color ColorWithHexAlpha(uint hex)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

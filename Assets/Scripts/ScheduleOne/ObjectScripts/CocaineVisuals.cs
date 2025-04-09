@@ -1,10 +1,13 @@
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class CocaineVisuals : global::UnityEngine.MonoBehaviour
+	public class CocaineVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer[] Meshes;
+		public MeshRenderer[] Meshes;
 
-		public void Setup(global::ScheduleOne.Product.CocaineDefinition definition)
+		public void Setup(CocaineDefinition definition)
 		{
 		}
 	}

@@ -1,12 +1,15 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class RunnerGameCharacter : global::UnityEngine.MonoBehaviour
+	public class RunnerGameCharacter : MonoBehaviour
 	{
-		public global::ScheduleOne.TV.RunnerGame Game;
+		public RunnerGame Game;
 
-		public global::UnityEngine.Events.UnityEvent onHit;
+		public UnityEvent onHit;
 
-		public void OnTriggerEnter(global::UnityEngine.Collider other)
+		public void OnTriggerEnter(Collider other)
 		{
 		}
 	}

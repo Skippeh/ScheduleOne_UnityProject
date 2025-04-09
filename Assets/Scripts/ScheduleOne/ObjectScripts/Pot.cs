@@ -1,6 +1,25 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Growing;
+using ScheduleOne.Interaction;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Lighting;
+using ScheduleOne.Management;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.Management;
+using UnityEngine;
+using UnityEngine.UI;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class Pot : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.Management.IUsable, global::ScheduleOne.Management.IConfigurable, global::ScheduleOne.Management.ITransitEntity
+	public class Pot : GridItem, IUsable, IConfigurable, ITransitEntity
 	{
 		public enum ECameraPosition
 		{
@@ -27,271 +46,207 @@ namespace ScheduleOne.ObjectScripts
 
 		public const float MIN_CAMERA_DISTANCE = 0.5f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform ModelTransform;
+		[Header("References")]
+		public Transform ModelTransform;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform PourableStartPoint;
+		public Transform PourableStartPoint;
 
-		public global::UnityEngine.Transform SeedStartPoint;
+		public Transform SeedStartPoint;
 
-		public global::UnityEngine.Transform SeedRestingPoint;
+		public Transform SeedRestingPoint;
 
-		public global::UnityEngine.GameObject WaterLoggedVisuals;
+		public GameObject WaterLoggedVisuals;
 
-		public global::UnityEngine.Transform LookAtPoint;
+		public Transform LookAtPoint;
 
-		public global::UnityEngine.Transform AdditivesContainer;
+		public Transform AdditivesContainer;
 
-		public global::UnityEngine.Transform PlantContainer;
+		public Transform PlantContainer;
 
-		public global::UnityEngine.Transform IntObjLabel_Low;
+		public Transform IntObjLabel_Low;
 
-		public global::UnityEngine.Transform IntObjLabel_High;
+		public Transform IntObjLabel_High;
 
-		public global::UnityEngine.Transform uiPoint;
+		public Transform uiPoint;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
+		[SerializeField]
+		protected ConfigurationReplicator configReplicator;
 
-		public global::UnityEngine.Transform[] accessPoints;
+		public Transform[] accessPoints;
 
-		public global::UnityEngine.Transform TaskBounds;
+		public Transform TaskBounds;
 
-		public global::ScheduleOne.ObjectScripts.PotSoilCover SoilCover;
+		public PotSoilCover SoilCover;
 
-		public global::UnityEngine.Transform LeafDropPoint;
+		public Transform LeafDropPoint;
 
-		public global::UnityEngine.ParticleSystem PoofParticles;
+		public ParticleSystem PoofParticles;
 
-		public global::ScheduleOne.Audio.AudioSourceController PoofSound;
+		public AudioSourceController PoofSound;
 
-		[global::UnityEngine.Header("UI")]
-		public global::UnityEngine.Transform WaterCanvasContainer;
+		[Header("UI")]
+		public Transform WaterCanvasContainer;
 
-		public global::UnityEngine.Canvas WaterLevelCanvas;
+		public Canvas WaterLevelCanvas;
 
-		public global::UnityEngine.CanvasGroup WaterLevelCanvasGroup;
+		public CanvasGroup WaterLevelCanvasGroup;
 
-		public global::UnityEngine.UI.Slider WaterLevelSlider;
+		public Slider WaterLevelSlider;
 
-		public global::UnityEngine.GameObject NoWaterIcon;
+		public GameObject NoWaterIcon;
 
-		public global::ScheduleOne.UI.Management.PotUIElement WorldspaceUIPrefab;
+		public PotUIElement WorldspaceUIPrefab;
 
-		public global::UnityEngine.Sprite typeIcon;
+		public Sprite typeIcon;
 
-		[global::UnityEngine.Header("Camera References")]
-		public global::UnityEngine.Transform CameraContainer;
+		[Header("Camera References")]
+		public Transform CameraContainer;
 
-		public global::UnityEngine.Transform MidshotPosition;
+		public Transform MidshotPosition;
 
-		public global::UnityEngine.Transform CloseupPosition;
+		public Transform CloseupPosition;
 
-		public global::UnityEngine.Transform FullshotPosition;
+		public Transform FullshotPosition;
 
-		public global::UnityEngine.Transform BirdsEyePosition;
+		public Transform BirdsEyePosition;
 
 		public bool AutoRotateCameraContainer;
 
-		[global::UnityEngine.Header("Dirt references")]
-		public global::UnityEngine.Transform Dirt_Flat;
+		[Header("Dirt references")]
+		public Transform Dirt_Flat;
 
-		public global::UnityEngine.Transform Dirt_Parted;
+		public Transform Dirt_Parted;
 
-		public global::ScheduleOne.Growing.SoilChunk[] SoilChunks;
+		public SoilChunk[] SoilChunks;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.MeshRenderer> DirtRenderers;
+		public List<MeshRenderer> DirtRenderers;
 
-		[global::UnityEngine.Header("Pot Settings")]
+		[Header("Pot Settings")]
 		public float PotRadius;
 
-		[global::UnityEngine.Range(0.2f, 2f)]
+		[Range(0.2f, 2f)]
 		public float YieldMultiplier;
 
-		[global::UnityEngine.Range(0.2f, 2f)]
+		[Range(0.2f, 2f)]
 		public float GrowSpeedMultiplier;
 
-		[global::UnityEngine.Range(0.2f, 2f)]
+		[Range(0.2f, 2f)]
 		public float MoistureDrainMultiplier;
 
 		public bool AlignLeafDropToPlayer;
 
-		[global::UnityEngine.Header("Capacity Settings")]
+		[Header("Capacity Settings")]
 		public float SoilCapacity;
 
 		public float WaterCapacity;
 
 		public float WaterDrainPerHour;
 
-		[global::UnityEngine.Header("Dirt Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Vector3 DirtMinScale;
+		[Header("Dirt Settings")]
+		[SerializeField]
+		protected Vector3 DirtMinScale;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Vector3 DirtMaxScale;
+		[SerializeField]
+		protected Vector3 DirtMaxScale;
 
-		[global::UnityEngine.Header("Pour Target")]
-		public global::UnityEngine.Transform Target;
+		[Header("Pour Target")]
+		public Transform Target;
 
-		[global::UnityEngine.Header("Lighting")]
-		public global::ScheduleOne.Lighting.UsableLightSource LightSourceOverride;
+		[Header("Lighting")]
+		public UsableLightSource LightSourceOverride;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.Additive> AppliedAdditives;
+		public List<Additive> AppliedAdditives;
 
 		private bool intObjSetThisFrame;
 
-		private global::ScheduleOne.ItemFramework.ItemSlot outputSlot;
+		private ItemSlot outputSlot;
 
 		private float rotation;
 
 		private bool rotationOverridden;
 
-		private global::ScheduleOne.ItemFramework.SoilDefinition appliedSoilDefinition;
+		private SoilDefinition appliedSoilDefinition;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CSoilLevel_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CSoilLevel_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<string> syncVar____003CSoilID_003Ek__BackingField;
+		public SyncVar<string> syncVar____003CSoilID_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<int> syncVar____003CRemainingSoilUses_003Ek__BackingField;
+		public SyncVar<int> syncVar____003CRemainingSoilUses_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CWaterLevel_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CWaterLevel_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EPotAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EPotAssembly_002DCSharp_002Edll_Excuted;
 
-		public float SoilLevel
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized, OnChange = "SoilLevelChanged")]
+		public float SoilLevel { get; protected set; }
 
-		public string SoilID
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public string SoilID { get; protected set; }
 
-		public int RemainingSoilUses
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public int RemainingSoilUses { get; protected set; }
 
-		public float WaterLevel
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized, OnChange = "WaterLevelChanged")]
+		public float WaterLevel { get; protected set; }
 
 		public float NormalizedWaterLevel => 0f;
 
 		public bool IsFilledWithSoil => false;
 
-		public global::ScheduleOne.Growing.Plant Plant { get; protected set; }
+		public Plant Plant { get; protected set; }
 
-		public global::FishNet.Object.NetworkObject NPCUserObject
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public NetworkObject NPCUserObject { get; set; }
 
-		public global::FishNet.Object.NetworkObject PlayerUserObject
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: HideInInspector]
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public NetworkObject PlayerUserObject { get; set; }
 
-		public global::ScheduleOne.Management.EntityConfiguration Configuration => null;
+		public EntityConfiguration Configuration => null;
 
-		protected global::ScheduleOne.Management.PotConfiguration potConfiguration { get; set; }
+		protected PotConfiguration potConfiguration { get; set; }
 
-		public global::ScheduleOne.Management.ConfigurationReplicator ConfigReplicator => null;
+		public ConfigurationReplicator ConfigReplicator => null;
 
-		public global::ScheduleOne.Management.EConfigurableType ConfigurableType => default(global::ScheduleOne.Management.EConfigurableType);
+		public EConfigurableType ConfigurableType => default(EConfigurableType);
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement WorldspaceUI { get; set; }
+		public WorldspaceUIElement WorldspaceUI { get; set; }
 
-		public global::FishNet.Object.NetworkObject CurrentPlayerConfigurer
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar]
+		public NetworkObject CurrentPlayerConfigurer { get; set; }
 
-		public global::UnityEngine.Sprite TypeIcon => null;
+		public Sprite TypeIcon => null;
 
-		public global::UnityEngine.Transform Transform => null;
+		public Transform Transform => null;
 
-		public global::UnityEngine.Transform UIPoint => null;
+		public Transform UIPoint => null;
 
 		public bool CanBeSelected => false;
 
 		public string Name => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> InputSlots { get; set; }
+		public List<ItemSlot> InputSlots { get; set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> OutputSlots { get; set; }
+		public List<ItemSlot> OutputSlots { get; set; }
 
-		public global::UnityEngine.Transform LinkOrigin => null;
+		public Transform LinkOrigin => null;
 
-		public global::UnityEngine.Transform[] AccessPoints => null;
+		public Transform[] AccessPoints => null;
 
 		public bool Selectable { get; }
 
@@ -341,7 +296,7 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CNPCUserObject_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CNPCUserObject_003Ek__BackingField
 		{
 			get
 			{
@@ -352,7 +307,7 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CPlayerUserObject_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CPlayerUserObject_003Ek__BackingField
 		{
 			get
 			{
@@ -363,7 +318,7 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
 		{
 			get
 			{
@@ -374,8 +329,8 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetConfigurer(global::FishNet.Object.NetworkObject player)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetConfigurer(NetworkObject player)
 		{
 		}
 
@@ -387,15 +342,15 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SendConfigurationToClient(global::FishNet.Connection.NetworkConnection conn)
+		public void SendConfigurationToClient(NetworkConnection conn)
 		{
 		}
 
-		public override void InitializeGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public override void InitializeGridItem(ItemInstance instance, Grid grid, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
@@ -419,7 +374,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ConfigureInteraction(string message, global::ScheduleOne.Interaction.InteractableObject.EInteractableState state, bool useHighLabelPos = false)
+		public void ConfigureInteraction(string message, InteractableObject.EInteractableState state, bool useHighLabelPos = false)
 		{
 		}
 
@@ -427,17 +382,17 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetPlayerUser(global::FishNet.Object.NetworkObject playerObject)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetPlayerUser(NetworkObject playerObject)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetNPCUser(global::FishNet.Object.NetworkObject npcObject)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetNPCUser(NetworkObject npcObject)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public virtual void ResetPot()
 		{
 		}
@@ -470,7 +425,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::UnityEngine.Transform GetCameraPosition(global::ScheduleOne.ObjectScripts.Pot.ECameraPosition pos)
+		public Transform GetCameraPosition(ECameraPosition pos)
 		{
 			return null;
 		}
@@ -499,12 +454,12 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SendSoilData(string soilID, float soilLevel, int soilUses)
 		{
 		}
 
-		public void SetSoilState(global::ScheduleOne.ObjectScripts.Pot.ESoilState state)
+		public void SetSoilState(ESoilState state)
 		{
 		}
 
@@ -520,7 +475,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SendWaterData(float waterLevel)
 		{
 		}
@@ -537,14 +492,14 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendAdditive(string additiveAssetPath, bool initial)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void ApplyAdditive(global::FishNet.Connection.NetworkConnection conn, string additiveAssetPath, bool initial)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void ApplyAdditive(NetworkConnection conn, string additiveAssetPath, bool initial)
 		{
 		}
 
@@ -563,28 +518,28 @@ namespace ScheduleOne.ObjectScripts
 			return 0f;
 		}
 
-		public global::ScheduleOne.Growing.Additive GetAdditive(string additiveName)
+		public Additive GetAdditive(string additiveName)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void FullyGrowPlant()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendPlantSeed(string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void PlantSeed(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void PlantSeed(NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void SetGrowProgress(float progress)
 		{
 		}
@@ -593,9 +548,9 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetHarvestableActive(global::FishNet.Connection.NetworkConnection conn, int harvestableIndex, bool active)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetHarvestableActive(NetworkConnection conn, int harvestableIndex, bool active)
 		{
 		}
 
@@ -603,7 +558,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendHarvestableActive(int harvestableIndex, bool active)
 		{
 		}
@@ -612,7 +567,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement CreateWorldspaceUI()
+		public WorldspaceUIElement CreateWorldspaceUI()
 		{
 			return null;
 		}
@@ -626,12 +581,12 @@ namespace ScheduleOne.ObjectScripts
 			return null;
 		}
 
-		public override global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public override List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public virtual void LoadPlant(global::ScheduleOne.Persistence.Datas.PlantData data)
+		public virtual void LoadPlant(PlantData data)
 		{
 		}
 
@@ -647,39 +602,39 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcWriter___Server_SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Server_SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		public void RpcLogic___SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		public void RpcLogic___SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Server_SetConfigurer_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetConfigurer_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SetPlayerUser_3323014238(global::FishNet.Object.NetworkObject playerObject)
+		private void RpcWriter___Server_SetPlayerUser_3323014238(NetworkObject playerObject)
 		{
 		}
 
-		public void RpcLogic___SetPlayerUser_3323014238(global::FishNet.Object.NetworkObject playerObject)
+		public void RpcLogic___SetPlayerUser_3323014238(NetworkObject playerObject)
 		{
 		}
 
-		private void RpcReader___Server_SetPlayerUser_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetPlayerUser_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SetNPCUser_3323014238(global::FishNet.Object.NetworkObject npcObject)
+		private void RpcWriter___Server_SetNPCUser_3323014238(NetworkObject npcObject)
 		{
 		}
 
-		public void RpcLogic___SetNPCUser_3323014238(global::FishNet.Object.NetworkObject npcObject)
+		public void RpcLogic___SetNPCUser_3323014238(NetworkObject npcObject)
 		{
 		}
 
-		private void RpcReader___Server_SetNPCUser_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetNPCUser_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -691,7 +646,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_ResetPot_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ResetPot_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -703,7 +658,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendSoilData_3104499779(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendSoilData_3104499779(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -715,7 +670,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendWaterData_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendWaterData_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -727,27 +682,27 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendAdditive_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAdditive_310431262(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ApplyAdditive_619441887(global::FishNet.Connection.NetworkConnection conn, string additiveAssetPath, bool initial)
+		private void RpcWriter___Observers_ApplyAdditive_619441887(NetworkConnection conn, string additiveAssetPath, bool initial)
 		{
 		}
 
-		public void RpcLogic___ApplyAdditive_619441887(global::FishNet.Connection.NetworkConnection conn, string additiveAssetPath, bool initial)
+		public void RpcLogic___ApplyAdditive_619441887(NetworkConnection conn, string additiveAssetPath, bool initial)
 		{
 		}
 
-		private void RpcReader___Observers_ApplyAdditive_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ApplyAdditive_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ApplyAdditive_619441887(global::FishNet.Connection.NetworkConnection conn, string additiveAssetPath, bool initial)
+		private void RpcWriter___Target_ApplyAdditive_619441887(NetworkConnection conn, string additiveAssetPath, bool initial)
 		{
 		}
 
-		private void RpcReader___Target_ApplyAdditive_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ApplyAdditive_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -759,7 +714,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_FullyGrowPlant_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_FullyGrowPlant_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -771,27 +726,27 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPlantSeed_2530605204(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPlantSeed_2530605204(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_PlantSeed_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcWriter___Observers_PlantSeed_709433087(NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
 		{
 		}
 
-		public void RpcLogic___PlantSeed_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		public void RpcLogic___PlantSeed_709433087(NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
 		{
 		}
 
-		private void RpcReader___Observers_PlantSeed_709433087(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlantSeed_709433087(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_PlantSeed_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcWriter___Target_PlantSeed_709433087(NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
 		{
 		}
 
-		private void RpcReader___Target_PlantSeed_709433087(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_PlantSeed_709433087(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -803,27 +758,27 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetGrowProgress_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetGrowProgress_431000436(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetHarvestableActive_338960014(global::FishNet.Connection.NetworkConnection conn, int harvestableIndex, bool active)
+		private void RpcWriter___Observers_SetHarvestableActive_338960014(NetworkConnection conn, int harvestableIndex, bool active)
 		{
 		}
 
-		public void RpcLogic___SetHarvestableActive_338960014(global::FishNet.Connection.NetworkConnection conn, int harvestableIndex, bool active)
+		public void RpcLogic___SetHarvestableActive_338960014(NetworkConnection conn, int harvestableIndex, bool active)
 		{
 		}
 
-		private void RpcReader___Observers_SetHarvestableActive_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetHarvestableActive_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetHarvestableActive_338960014(global::FishNet.Connection.NetworkConnection conn, int harvestableIndex, bool active)
+		private void RpcWriter___Target_SetHarvestableActive_338960014(NetworkConnection conn, int harvestableIndex, bool active)
 		{
 		}
 
-		private void RpcReader___Target_SetHarvestableActive_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetHarvestableActive_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -835,11 +790,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendHarvestableActive_3658436649(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendHarvestableActive_3658436649(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EObjectScripts_002EPot(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EObjectScripts_002EPot(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

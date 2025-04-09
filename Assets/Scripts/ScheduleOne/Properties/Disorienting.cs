@@ -1,21 +1,25 @@
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Properties
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "Disorienting", menuName = "Properties/Disorienting Property")]
-	public class Disorienting : global::ScheduleOne.Properties.Property
+	[CreateAssetMenu(fileName = "Disorienting", menuName = "Properties/Disorienting Property")]
+	public class Disorienting : Property
 	{
-		public override void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ApplyToNPC(NPC npc)
 		{
 		}
 
-		public override void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ApplyToPlayer(Player player)
 		{
 		}
 
-		public override void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ClearFromNPC(NPC npc)
 		{
 		}
 
-		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ClearFromPlayer(Player player)
 		{
 		}
 	}

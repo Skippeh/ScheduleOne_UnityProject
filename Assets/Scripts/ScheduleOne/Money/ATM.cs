@@ -1,6 +1,21 @@
+using System;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Combat;
+using ScheduleOne.Interaction;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.ATM;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Money
 {
-	public class ATM : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.IGenericSaveable
+	public class ATM : NetworkBehaviour, IGUIDRegisterable, IGenericSaveable
 	{
 		public const bool DepositLimitEnabled = true;
 
@@ -16,33 +31,33 @@ namespace ScheduleOne.Money
 
 		public static float WeeklyDepositSum;
 
-		public global::ScheduleOne.ItemFramework.CashPickup CashPrefab;
+		public CashPickup CashPrefab;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform camPos;
+		[SerializeField]
+		protected Transform camPos;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.UI.ATM.ATMInterface interfaceATM;
+		[SerializeField]
+		protected ATMInterface interfaceATM;
 
-		public global::UnityEngine.Transform AccessPoint;
+		public Transform AccessPoint;
 
-		public global::UnityEngine.Transform CashSpawnPoint;
+		public Transform CashSpawnPoint;
 
-		public global::ScheduleOne.Combat.PhysicsDamageable Damageable;
+		public PhysicsDamageable Damageable;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public static float viewLerpTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		public global::UnityEngine.Events.UnityEvent onBreak;
+		public UnityEvent onBreak;
 
-		public global::UnityEngine.Events.UnityEvent onRepair;
+		public UnityEvent onRepair;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EMoney_002EATMAssembly_002DCSharp_002Edll_Excuted;
 
@@ -54,9 +69,9 @@ namespace ScheduleOne.Money
 
 		public bool isInUse { get; protected set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -69,11 +84,11 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -101,36 +116,36 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void Impacted(global::ScheduleOne.Combat.Impact impact)
+		private void Impacted(Impact impact)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendBreak()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void Break(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void Break(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void Repair()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void DropCash()
 		{
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.GenericSaveData data)
+		public void Load(GenericSaveData data)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.GenericSaveData GetSaveData()
+		public GenericSaveData GetSaveData()
 		{
 			return null;
 		}
@@ -155,27 +170,27 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Server_SendBreak_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendBreak_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcLogic___Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Break_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Break_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Break_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Break_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -187,7 +202,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Observers_Repair_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Repair_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -199,7 +214,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Server_DropCash_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_DropCash_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

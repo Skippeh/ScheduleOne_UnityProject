@@ -1,54 +1,64 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerMovement : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerMovement>
+	public class PlayerMovement : PlayerSingleton<PlayerMovement>
 	{
 		public class MovementEvent
 		{
-			public global::System.Collections.Generic.List<global::System.Action> actions;
+			public List<Action> actions;
 
-			public global::UnityEngine.Vector3 LastUpdatedDistance;
+			public Vector3 LastUpdatedDistance;
 
-			public void Update(global::UnityEngine.Vector3 newPosition)
+			public void Update(Vector3 newPosition)
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CJump_003Ed__114 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CJump_003Ed__114 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerScripts.PlayerMovement _003C_003E4__this;
+			public PlayerMovement _003C_003E4__this;
 
 			private float _003CsavedSlopeLimit_003E5__2;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CJump_003Ed__114(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -57,60 +67,60 @@ namespace ScheduleOne.PlayerScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpPlayerRotation_Process_003Ed__122 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CLerpPlayerRotation_Process_003Ed__122 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerScripts.PlayerMovement _003C_003E4__this;
+			public PlayerMovement _003C_003E4__this;
 
-			public global::UnityEngine.Quaternion endRotation;
+			public Quaternion endRotation;
 
 			public float lerpTime;
 
-			private global::UnityEngine.Quaternion _003CstartRot_003E5__2;
+			private Quaternion _003CstartRot_003E5__2;
 
 			private float _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CLerpPlayerRotation_Process_003Ed__122(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -119,14 +129,14 @@ namespace ScheduleOne.PlayerScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -163,16 +173,16 @@ namespace ScheduleOne.PlayerScripts
 
 		public const float SprintChangeRate = 4f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerScripts.Player Player;
+		[Header("References")]
+		public Player Player;
 
-		public global::UnityEngine.CharacterController Controller;
+		public CharacterController Controller;
 
-		[global::UnityEngine.Header("Move settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Move settings")]
+		[SerializeField]
 		protected float sensitivity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float dead;
 
 		public bool canMove;
@@ -185,58 +195,58 @@ namespace ScheduleOne.PlayerScripts
 
 		public float SlipperyMovementMultiplier;
 
-		[global::UnityEngine.Header("Jump/fall settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Jump/fall settings")]
+		[SerializeField]
 		protected float jumpForce;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float gravityMultiplier;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.LayerMask groundDetectionMask;
+		[SerializeField]
+		protected LayerMask groundDetectionMask;
 
-		[global::UnityEngine.Header("Slope Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Slope Settings")]
+		[SerializeField]
 		protected float slopeForce;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float slopeForceRayLength;
 
-		[global::UnityEngine.Header("Crouch Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Crouch Settings")]
+		[SerializeField]
 		protected float crouchSpeedMultipler;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float Crouched_VigIntensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float Crouched_VigSmoothness;
 
-		[global::UnityEngine.Header("Visibility Points")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> visibilityPointsToScale;
+		[Header("Visibility Points")]
+		[SerializeField]
+		protected List<Transform> visibilityPointsToScale;
 
-		private global::System.Collections.Generic.Dictionary<global::UnityEngine.Transform, float> originalVisibilityPointOffsets;
+		private Dictionary<Transform, float> originalVisibilityPointOffsets;
 
-		protected global::UnityEngine.Vector3 movement;
+		protected Vector3 movement;
 
 		protected float movementY;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> recentlyDrivenVehicles;
+		public List<LandVehicle> recentlyDrivenVehicles;
 
 		private bool isJumping;
 
 		public float CurrentStaminaReserve;
 
-		public global::System.Action<float> onStaminaReserveChanged;
+		public Action<float> onStaminaReserveChanged;
 
-		public global::System.Action onJump;
+		public Action onJump;
 
-		public global::System.Action onLand;
+		public Action onLand;
 
-		public global::UnityEngine.Events.UnityEvent onCrouch;
+		public UnityEvent onCrouch;
 
-		public global::UnityEngine.Events.UnityEvent onUncrouch;
+		public UnityEvent onUncrouch;
 
 		protected float horizontalAxis;
 
@@ -244,7 +254,7 @@ namespace ScheduleOne.PlayerScripts
 
 		protected float timeGrounded;
 
-		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.PlayerScripts.PlayerMovement.MovementEvent> movementEvents;
+		private Dictionary<int, MovementEvent> movementEvents;
 
 		private float timeSinceStaminaDrain;
 
@@ -252,7 +262,7 @@ namespace ScheduleOne.PlayerScripts
 
 		private bool sprintReleased;
 
-		private global::UnityEngine.Vector3 residualVelocityDirection;
+		private Vector3 residualVelocityDirection;
 
 		private float residualVelocityForce;
 
@@ -262,21 +272,21 @@ namespace ScheduleOne.PlayerScripts
 
 		private bool teleport;
 
-		private global::UnityEngine.Vector3 teleportPosition;
+		private Vector3 teleportPosition;
 
-		private global::System.Collections.Generic.List<string> sprintBlockers;
+		private List<string> sprintBlockers;
 
-		private global::UnityEngine.Vector3 lastFrameMovement;
+		private Vector3 lastFrameMovement;
 
-		private global::UnityEngine.Coroutine playerRotCoroutine;
+		private Coroutine playerRotCoroutine;
 
 		public static float GravityMultiplier { get; set; }
 
 		public float playerHeight { get; protected set; }
 
-		public global::UnityEngine.Vector3 Movement => default(global::UnityEngine.Vector3);
+		public Vector3 Movement => default(Vector3);
 
-		public global::ScheduleOne.Vehicles.LandVehicle currentVehicle { get; protected set; }
+		public LandVehicle currentVehicle { get; protected set; }
 
 		public float airTime { get; protected set; }
 
@@ -338,8 +348,8 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CJump_003Ed__114))]
-		private global::System.Collections.IEnumerator Jump()
+		[IteratorStateMachine(typeof(_003CJump_003Ed__114))]
+		private IEnumerator Jump()
 		{
 			return null;
 		}
@@ -365,29 +375,29 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void LerpPlayerRotation(global::UnityEngine.Quaternion rotation, float lerpTime)
+		public void LerpPlayerRotation(Quaternion rotation, float lerpTime)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CLerpPlayerRotation_Process_003Ed__122))]
-		private global::System.Collections.IEnumerator LerpPlayerRotation_Process(global::UnityEngine.Quaternion endRotation, float lerpTime)
+		[IteratorStateMachine(typeof(_003CLerpPlayerRotation_Process_003Ed__122))]
+		private IEnumerator LerpPlayerRotation_Process(Quaternion endRotation, float lerpTime)
 		{
 			return null;
 		}
 
-		private void EnterVehicle(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		private void EnterVehicle(LandVehicle vehicle)
 		{
 		}
 
-		private void ExitVehicle(global::ScheduleOne.Vehicles.LandVehicle veh, global::UnityEngine.Transform exitPoint)
+		private void ExitVehicle(LandVehicle veh, Transform exitPoint)
 		{
 		}
 
-		public void Teleport(global::UnityEngine.Vector3 position)
+		public void Teleport(Vector3 position)
 		{
 		}
 
-		public void SetResidualVelocity(global::UnityEngine.Vector3 dir, float force, float time)
+		public void SetResidualVelocity(Vector3 dir, float force, float time)
 		{
 		}
 
@@ -395,11 +405,11 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void RegisterMovementEvent(int threshold, global::System.Action action)
+		public void RegisterMovementEvent(int threshold, Action action)
 		{
 		}
 
-		public void DeregisterMovementEvent(global::System.Action action)
+		public void DeregisterMovementEvent(Action action)
 		{
 		}
 

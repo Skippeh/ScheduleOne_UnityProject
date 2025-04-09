@@ -1,20 +1,23 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class PalletSlot : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class PalletSlot : MonoBehaviour, IGUIDRegisterable
 	{
-		public global::System.Action onPalletAdded;
+		public Action onPalletAdded;
 
-		public global::System.Action onPalletRemoved;
+		public Action onPalletRemoved;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		public global::ScheduleOne.Storage.Pallet occupant { get; protected set; }
+		public Pallet occupant { get; protected set; }
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
-		public void SetOccupant(global::ScheduleOne.Storage.Pallet _occupant)
+		public void SetOccupant(Pallet _occupant)
 		{
 		}
 	}

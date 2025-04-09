@@ -1,25 +1,31 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class GenericSelectionModule : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.GenericSelectionModule>
+	public class GenericSelectionModule : Singleton<GenericSelectionModule>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::TMPro.TextMeshProUGUI TitleText;
+		public TextMeshProUGUI TitleText;
 
-		public global::UnityEngine.RectTransform OptionContainer;
+		public RectTransform OptionContainer;
 
-		public global::UnityEngine.UI.Button CloseButton;
+		public Button CloseButton;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject ListOptionPrefab;
+		[Header("Prefabs")]
+		public GameObject ListOptionPrefab;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool OptionChosen;
 
 		public bool isOpen { get; protected set; }
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public int ChosenOptionIndex { get; protected set; }
 
 		protected override void Awake()
@@ -30,11 +36,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
-		public void Open(string title, global::System.Collections.Generic.List<string> options)
+		public void Open(string title, List<string> options)
 		{
 		}
 

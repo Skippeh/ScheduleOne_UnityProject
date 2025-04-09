@@ -1,23 +1,28 @@
+using System;
+using ScheduleOne.NPCs;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class NPCField : global::ScheduleOne.Management.ConfigField
+	public class NPCField : ConfigField
 	{
-		public global::System.Type TypeRequirement;
+		public Type TypeRequirement;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.NPCs.NPC> onNPCChanged;
+		public UnityEvent<NPC> onNPCChanged;
 
-		public global::ScheduleOne.NPCs.NPC SelectedNPC { get; protected set; }
+		public NPC SelectedNPC { get; protected set; }
 
-		public NPCField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public NPCField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetNPC(global::ScheduleOne.NPCs.NPC npc, bool network)
+		public void SetNPC(NPC npc, bool network)
 		{
 		}
 
-		public bool DoesNPCMatchRequirement(global::ScheduleOne.NPCs.NPC npc)
+		public bool DoesNPCMatchRequirement(NPC npc)
 		{
 			return false;
 		}
@@ -27,12 +32,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.NPCFieldData GetData()
+		public NPCFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.NPCFieldData data)
+		public void Load(NPCFieldData data)
 		{
 		}
 	}

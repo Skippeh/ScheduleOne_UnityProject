@@ -1,8 +1,12 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Trash;
+using UnityEngine;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Cuke : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_Cuke : Equippable_Viewmodel
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float BaseEnergyGain;
 
 		public float MinEnergyGain;
@@ -15,16 +19,16 @@ namespace ScheduleOne.Equipping
 
 		public bool ClearDrugEffects;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animation OpenAnim;
+		[Header("References")]
+		public Animation OpenAnim;
 
-		public global::UnityEngine.Animation DrinkAnim;
+		public Animation DrinkAnim;
 
-		public global::ScheduleOne.Audio.AudioSourceController OpenSound;
+		public AudioSourceController OpenSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController SlurpSound;
+		public AudioSourceController SlurpSound;
 
-		public global::ScheduleOne.Trash.TrashItem TrashPrefab;
+		public TrashItem TrashPrefab;
 
 		public bool IsDrinking { get; protected set; }
 

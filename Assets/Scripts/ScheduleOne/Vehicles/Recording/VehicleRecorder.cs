@@ -1,14 +1,17 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.Recording
 {
-	public class VehicleRecorder : global::UnityEngine.MonoBehaviour
+	public class VehicleRecorder : MonoBehaviour
 	{
 		public static int frameRate;
 
 		public bool IS_RECORDING;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Recording.VehicleKeyFrame> keyFrames;
+		public List<VehicleKeyFrame> keyFrames;
 
-		private global::ScheduleOne.Vehicles.LandVehicle vehicleToRecord;
+		private LandVehicle vehicleToRecord;
 
 		private float timeSinceKeyFrame;
 
@@ -16,12 +19,12 @@ namespace ScheduleOne.Vehicles.Recording
 		{
 		}
 
-		private global::ScheduleOne.Vehicles.Recording.VehicleKeyFrame Capture()
+		private VehicleKeyFrame Capture()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.Vehicles.Recording.VehicleKeyFrame.WheelTransform CaptureWheel(global::ScheduleOne.Vehicles.Wheel wheel)
+		private VehicleKeyFrame.WheelTransform CaptureWheel(Wheel wheel)
 		{
 			return null;
 		}

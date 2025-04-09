@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace ScheduleOne.Trash
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Trash.TrashContainer))]
-	public class TrashContainerContents : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(TrashContainer))]
+	public class TrashContainerContents : MonoBehaviour
 	{
-		public global::ScheduleOne.Trash.TrashContainer TrashContainer;
+		public TrashContainer TrashContainer;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform ContentsTransform;
+		[Header("References")]
+		public Transform ContentsTransform;
 
-		public global::UnityEngine.Transform VisualsContainer;
+		public Transform VisualsContainer;
 
-		public global::UnityEngine.Transform VisualsMinTransform;
+		public Transform VisualsMinTransform;
 
-		public global::UnityEngine.Transform VisualsMaxTransform;
+		public Transform VisualsMaxTransform;
 
-		public global::UnityEngine.Collider Collider;
+		public Collider Collider;
 
 		protected void Start()
 		{

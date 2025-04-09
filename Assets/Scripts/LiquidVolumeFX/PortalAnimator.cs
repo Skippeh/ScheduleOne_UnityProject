@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class PortalAnimator : global::UnityEngine.MonoBehaviour
+	public class PortalAnimator : MonoBehaviour
 	{
 		public float delay;
 
@@ -8,7 +10,7 @@ namespace LiquidVolumeFX
 
 		public float delayFadeOut;
 
-		private global::UnityEngine.Vector3 scale;
+		private Vector3 scale;
 
 		private void Start()
 		{

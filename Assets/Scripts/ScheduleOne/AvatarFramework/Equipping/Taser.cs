@@ -1,43 +1,51 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class Taser : global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon
+	public class Taser : AvatarRangedWeapon
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFlash_003Ed__9 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CFlash_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.AvatarFramework.Equipping.Taser _003C_003E4__this;
+			public Taser _003C_003E4__this;
 
-			public global::UnityEngine.Vector3 endPoint;
+			public Vector3 endPoint;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CFlash_003Ed__9(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -46,14 +54,14 @@ namespace ScheduleOne.AvatarFramework.Equipping
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -62,21 +70,21 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public const float TaseMoveSpeedMultiplier = 0.5f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject FlashObject;
+		[Header("References")]
+		public GameObject FlashObject;
 
-		public global::ScheduleOne.Audio.AudioSourceController ChargeSound;
+		public AudioSourceController ChargeSound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject RayPrefab;
+		[Header("Prefabs")]
+		public GameObject RayPrefab;
 
-		private global::UnityEngine.Coroutine flashRoutine;
+		private Coroutine flashRoutine;
 
-		public override void Equip(global::ScheduleOne.AvatarFramework.Avatar _avatar)
+		public override void Equip(Avatar _avatar)
 		{
 		}
 
-		public override void Shoot(global::UnityEngine.Vector3 endPoint)
+		public override void Shoot(Vector3 endPoint)
 		{
 		}
 
@@ -84,8 +92,8 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.Taser._003CFlash_003Ed__9))]
-		private global::System.Collections.IEnumerator Flash(global::UnityEngine.Vector3 endPoint)
+		[IteratorStateMachine(typeof(_003CFlash_003Ed__9))]
+		private IEnumerator Flash(Vector3 endPoint)
 		{
 			return null;
 		}

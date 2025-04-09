@@ -1,6 +1,10 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI;
+using UnityEngine;
+
 namespace ScheduleOne.TV
 {
-	public class TVApp : global::UnityEngine.MonoBehaviour
+	public class TVApp : MonoBehaviour
 	{
 		public const float SCALE_MIN = 0.67f;
 
@@ -8,26 +12,26 @@ namespace ScheduleOne.TV
 
 		public const float LERP_TIME = 0.12f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool CanClose;
 
 		public string AppName;
 
-		public global::UnityEngine.Sprite Icon;
+		public Sprite Icon;
 
 		public bool Pauseable;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.TV.TVApp PreviousScreen;
+		[HideInInspector]
+		public TVApp PreviousScreen;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		public global::ScheduleOne.UI.TVPauseScreen PauseScreen;
+		public TVPauseScreen PauseScreen;
 
-		private global::UnityEngine.Coroutine lerpCoroutine;
+		private Coroutine lerpCoroutine;
 
 		public bool IsOpen { get; private set; }
 
@@ -61,7 +65,7 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

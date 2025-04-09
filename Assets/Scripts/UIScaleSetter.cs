@@ -1,4 +1,6 @@
-public class UIScaleSetter : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class UIScaleSetter : MonoBehaviour
 {
 	private void Awake()
 	{

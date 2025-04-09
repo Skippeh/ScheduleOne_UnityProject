@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class FishAnimator : global::UnityEngine.MonoBehaviour
+	public class FishAnimator : MonoBehaviour
 	{
 		private void Update()
 		{

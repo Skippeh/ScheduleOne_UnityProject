@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class RigidbodyEventBroadcaster : global::UnityEngine.MonoBehaviour
+	public class RigidbodyEventBroadcaster : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collider> onTriggerEnter;
+		public UnityEvent<Collider> onTriggerEnter;
 
-		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(Collider other)
 		{
 		}
 	}

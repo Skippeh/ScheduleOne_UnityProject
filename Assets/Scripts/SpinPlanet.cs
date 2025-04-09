@@ -1,4 +1,6 @@
-public class SpinPlanet : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class SpinPlanet : MonoBehaviour
 {
 	public float speed;
 

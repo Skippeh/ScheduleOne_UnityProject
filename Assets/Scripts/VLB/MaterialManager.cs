@@ -1,3 +1,7 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace VLB
 {
 	public static class MaterialManager
@@ -88,26 +92,26 @@ namespace VLB
 
 			int GetMaterialID();
 
-			void ApplyToMaterial(global::UnityEngine.Material mat);
+			void ApplyToMaterial(Material mat);
 
-			global::VLB.ShaderMode GetShaderMode();
+			ShaderMode GetShaderMode();
 		}
 
-		public struct StaticPropertiesSD : global::VLB.MaterialManager.IStaticProperties
+		public struct StaticPropertiesSD : IStaticProperties
 		{
-			public global::VLB.MaterialManager.BlendingMode blendingMode;
+			public BlendingMode blendingMode;
 
-			public global::VLB.MaterialManager.Noise3D noise3D;
+			public Noise3D noise3D;
 
-			public global::VLB.MaterialManager.SD.DepthBlend depthBlend;
+			public SD.DepthBlend depthBlend;
 
-			public global::VLB.MaterialManager.ColorGradient colorGradient;
+			public ColorGradient colorGradient;
 
-			public global::VLB.MaterialManager.SD.DynamicOcclusion dynamicOcclusion;
+			public SD.DynamicOcclusion dynamicOcclusion;
 
-			public global::VLB.MaterialManager.SD.MeshSkewing meshSkewing;
+			public SD.MeshSkewing meshSkewing;
 
-			public global::VLB.MaterialManager.SD.ShaderAccuracy shaderAccuracy;
+			public SD.ShaderAccuracy shaderAccuracy;
 
 			public static int staticPropertiesCount => 0;
 
@@ -125,9 +129,9 @@ namespace VLB
 
 			private int shaderAccuracyID => 0;
 
-			public global::VLB.ShaderMode GetShaderMode()
+			public ShaderMode GetShaderMode()
 			{
-				return default(global::VLB.ShaderMode);
+				return default(ShaderMode);
 			}
 
 			public int GetPropertiesCount()
@@ -140,24 +144,24 @@ namespace VLB
 				return 0;
 			}
 
-			public void ApplyToMaterial(global::UnityEngine.Material mat)
+			public void ApplyToMaterial(Material mat)
 			{
 			}
 		}
 
-		public struct StaticPropertiesHD : global::VLB.MaterialManager.IStaticProperties
+		public struct StaticPropertiesHD : IStaticProperties
 		{
-			public global::VLB.MaterialManager.BlendingMode blendingMode;
+			public BlendingMode blendingMode;
 
-			public global::VLB.MaterialManager.HD.Attenuation attenuation;
+			public HD.Attenuation attenuation;
 
-			public global::VLB.MaterialManager.Noise3D noise3D;
+			public Noise3D noise3D;
 
-			public global::VLB.MaterialManager.ColorGradient colorGradient;
+			public ColorGradient colorGradient;
 
-			public global::VLB.MaterialManager.HD.Shadow shadow;
+			public HD.Shadow shadow;
 
-			public global::VLB.MaterialManager.HD.Cookie cookie;
+			public HD.Cookie cookie;
 
 			public int raymarchingQualityIndex;
 
@@ -177,9 +181,9 @@ namespace VLB
 
 			private int raymarchingQualityID => 0;
 
-			public global::VLB.ShaderMode GetShaderMode()
+			public ShaderMode GetShaderMode()
 			{
-				return default(global::VLB.ShaderMode);
+				return default(ShaderMode);
 			}
 
 			public int GetPropertiesCount()
@@ -192,14 +196,14 @@ namespace VLB
 				return 0;
 			}
 
-			public void ApplyToMaterial(global::UnityEngine.Material mat)
+			public void ApplyToMaterial(Material mat)
 			{
 			}
 		}
 
 		private class MaterialsGroup
 		{
-			public global::UnityEngine.Material[] materials;
+			public Material[] materials;
 
 			public MaterialsGroup(int count)
 			{
@@ -212,63 +216,63 @@ namespace VLB
 			On = 1
 		}
 
-		public static global::UnityEngine.MaterialPropertyBlock materialPropertyBlock;
+		public static MaterialPropertyBlock materialPropertyBlock;
 
-		private static readonly global::UnityEngine.Rendering.BlendMode[] BlendingMode_SrcFactor;
+		private static readonly BlendMode[] BlendingMode_SrcFactor;
 
-		private static readonly global::UnityEngine.Rendering.BlendMode[] BlendingMode_DstFactor;
+		private static readonly BlendMode[] BlendingMode_DstFactor;
 
 		private static readonly bool[] BlendingMode_AlphaAsBlack;
 
-		private static global::System.Collections.Hashtable ms_MaterialsGroupSD;
+		private static Hashtable ms_MaterialsGroupSD;
 
-		private static global::System.Collections.Hashtable ms_MaterialsGroupHD;
+		private static Hashtable ms_MaterialsGroupHD;
 
-		public static global::UnityEngine.Material NewMaterialPersistent(global::UnityEngine.Shader shader, bool gpuInstanced)
+		public static Material NewMaterialPersistent(Shader shader, bool gpuInstanced)
 		{
 			return null;
 		}
 
-		public static global::UnityEngine.Material GetInstancedMaterial(uint groupID, ref global::VLB.MaterialManager.StaticPropertiesSD staticProps)
+		public static Material GetInstancedMaterial(uint groupID, ref StaticPropertiesSD staticProps)
 		{
 			return null;
 		}
 
-		public static global::UnityEngine.Material GetInstancedMaterial(uint groupID, ref global::VLB.MaterialManager.StaticPropertiesHD staticProps)
+		public static Material GetInstancedMaterial(uint groupID, ref StaticPropertiesHD staticProps)
 		{
 			return null;
 		}
 
-		private static global::UnityEngine.Material GetInstancedMaterial(global::System.Collections.Hashtable groups, uint groupID, ref global::VLB.MaterialManager.IStaticProperties staticProps)
+		private static Material GetInstancedMaterial(Hashtable groups, uint groupID, ref IStaticProperties staticProps)
 		{
 			return null;
 		}
 
-		private static void SetBlendingMode(this global::UnityEngine.Material mat, int nameID, global::UnityEngine.Rendering.BlendMode value)
+		private static void SetBlendingMode(this Material mat, int nameID, BlendMode value)
 		{
 		}
 
-		private static void SetStencilRef(this global::UnityEngine.Material mat, int nameID, int value)
+		private static void SetStencilRef(this Material mat, int nameID, int value)
 		{
 		}
 
-		private static void SetStencilComp(this global::UnityEngine.Material mat, int nameID, global::UnityEngine.Rendering.CompareFunction value)
+		private static void SetStencilComp(this Material mat, int nameID, CompareFunction value)
 		{
 		}
 
-		private static void SetStencilOp(this global::UnityEngine.Material mat, int nameID, global::UnityEngine.Rendering.StencilOp value)
+		private static void SetStencilOp(this Material mat, int nameID, StencilOp value)
 		{
 		}
 
-		private static void SetCull(this global::UnityEngine.Material mat, int nameID, global::UnityEngine.Rendering.CullMode value)
+		private static void SetCull(this Material mat, int nameID, CullMode value)
 		{
 		}
 
-		private static void SetZWrite(this global::UnityEngine.Material mat, int nameID, global::VLB.MaterialManager.ZWrite value)
+		private static void SetZWrite(this Material mat, int nameID, ZWrite value)
 		{
 		}
 
-		private static void SetZTest(this global::UnityEngine.Material mat, int nameID, global::UnityEngine.Rendering.CompareFunction value)
+		private static void SetZTest(this Material mat, int nameID, CompareFunction value)
 		{
 		}
 	}

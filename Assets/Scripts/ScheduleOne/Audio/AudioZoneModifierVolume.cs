@@ -1,12 +1,15 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class AudioZoneModifierVolume : global::UnityEngine.MonoBehaviour
+	public class AudioZoneModifierVolume : MonoBehaviour
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioZone> Zones;
+		public List<AudioZone> Zones;
 
 		public float VolumeMultiplier;
 
-		private global::UnityEngine.BoxCollider[] colliders;
+		private BoxCollider[] colliders;
 
 		private void Start()
 		{

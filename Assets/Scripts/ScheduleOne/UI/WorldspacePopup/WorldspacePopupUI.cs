@@ -1,16 +1,20 @@
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.WorldspacePopup
 {
-	public class WorldspacePopupUI : global::UnityEngine.MonoBehaviour
+	public class WorldspacePopupUI : MonoBehaviour
 	{
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopup Popup;
+		[HideInInspector]
+		public WorldspacePopup Popup;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Rect;
+		[Header("References")]
+		public RectTransform Rect;
 
-		public global::UnityEngine.UI.Image FillImage;
+		public Image FillImage;
 
-		public global::UnityEngine.Events.UnityEvent onDestroyed;
+		public UnityEvent onDestroyed;
 
 		public void SetFill(float fill)
 		{

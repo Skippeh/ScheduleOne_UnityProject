@@ -1,10 +1,12 @@
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.UI.Management
 {
-	public class LabOvenUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class LabOvenUIElement : WorldspaceUIElement
 	{
-		public global::ScheduleOne.ObjectScripts.LabOven AssignedOven { get; protected set; }
+		public LabOven AssignedOven { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.LabOven oven)
+		public void Initialize(LabOven oven)
 		{
 		}
 

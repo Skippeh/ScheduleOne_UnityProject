@@ -1,35 +1,42 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.Management;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class ObjectListField : global::ScheduleOne.Management.ConfigField
+	public class ObjectListField : ConfigField
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> SelectedObjects;
+		public List<BuildableItem> SelectedObjects;
 
 		public int MaxItems;
 
-		public global::ScheduleOne.UI.Management.ObjectSelector.ObjectFilter objectFilter;
+		public ObjectSelector.ObjectFilter objectFilter;
 
-		public global::System.Collections.Generic.List<global::System.Type> TypeRequirements;
+		public List<Type> TypeRequirements;
 
-		public global::UnityEngine.Events.UnityEvent<global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem>> onListChanged;
+		public UnityEvent<List<BuildableItem>> onListChanged;
 
-		public ObjectListField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public ObjectListField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetList(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> list, bool network)
+		public void SetList(List<BuildableItem> list, bool network)
 		{
 		}
 
-		public void AddItem(global::ScheduleOne.EntityFramework.BuildableItem item)
+		public void AddItem(BuildableItem item)
 		{
 		}
 
-		public void RemoveItem(global::ScheduleOne.EntityFramework.BuildableItem item)
+		public void RemoveItem(BuildableItem item)
 		{
 		}
 
-		private void SelectedObjectDestroyed(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void SelectedObjectDestroyed(BuildableItem item)
 		{
 		}
 
@@ -38,12 +45,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.ObjectListFieldData GetData()
+		public ObjectListFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.ObjectListFieldData data)
+		public void Load(ObjectListFieldData data)
 		{
 		}
 	}

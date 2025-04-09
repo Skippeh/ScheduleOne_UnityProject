@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class TrashLoader : global::ScheduleOne.Persistence.Loaders.Loader
+	public class TrashLoader : Loader
 	{
 		public override void Load(string mainPath)
 		{

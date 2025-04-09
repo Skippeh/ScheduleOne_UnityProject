@@ -1,15 +1,17 @@
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
 	public static class DrugTypeMethods
 	{
-		public static string GetName(this global::ScheduleOne.Product.EDrugType property)
+		public static string GetName(this EDrugType property)
 		{
 			return null;
 		}
 
-		public static global::UnityEngine.Color GetColor(this global::ScheduleOne.Product.EDrugType property)
+		public static Color GetColor(this EDrugType property)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

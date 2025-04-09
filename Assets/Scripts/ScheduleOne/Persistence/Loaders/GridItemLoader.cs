@@ -1,6 +1,8 @@
+using ScheduleOne.EntityFramework;
+
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class GridItemLoader : global::ScheduleOne.Persistence.Loaders.BuildableItemLoader
+	public class GridItemLoader : BuildableItemLoader
 	{
 		public override string ItemType => null;
 
@@ -8,7 +10,7 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
-		protected global::ScheduleOne.EntityFramework.GridItem LoadAndCreate(string mainPath)
+		protected GridItem LoadAndCreate(string mainPath)
 		{
 			return null;
 		}

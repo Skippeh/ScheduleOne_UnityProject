@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACAssetPathReplicator<T> : global::ScheduleOne.AvatarFramework.Customization.ACReplicator where T : global::UnityEngine.Object
+	public class ACAssetPathReplicator<T> : ACReplicator where T : Object
 	{
-		private global::ScheduleOne.AvatarFramework.Customization.ACSelection<T> selection;
+		private ACSelection<T> selection;
 
 		protected virtual void Awake()
 		{
 		}
 
-		protected override void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings newSettings)
+		protected override void AvatarSettingsChanged(AvatarSettings newSettings)
 		{
 		}
 	}

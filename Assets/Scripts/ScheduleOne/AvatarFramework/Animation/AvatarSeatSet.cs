@@ -1,15 +1,17 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarSeatSet : global::UnityEngine.MonoBehaviour
+	public class AvatarSeatSet : MonoBehaviour
 	{
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarSeat[] Seats;
+		public AvatarSeat[] Seats;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarSeat GetFirstFreeSeat()
+		public AvatarSeat GetFirstFreeSeat()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarSeat GetRandomFreeSeat()
+		public AvatarSeat GetRandomFreeSeat()
 		{
 			return null;
 		}

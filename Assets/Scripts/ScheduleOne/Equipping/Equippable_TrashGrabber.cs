@@ -1,40 +1,47 @@
+using ScheduleOne.Audio;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts.WateringCan;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_TrashGrabber : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_TrashGrabber : Equippable_Viewmodel
 	{
 		public const float TrashDropSpacing = 0.15f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform TrashContent;
+		[Header("References")]
+		public Transform TrashContent;
 
-		public global::UnityEngine.Transform TrashContent_Min;
+		public Transform TrashContent_Min;
 
-		public global::UnityEngine.Transform TrashContent_Max;
+		public Transform TrashContent_Max;
 
-		public global::UnityEngine.Animation GrabAnim;
+		public Animation GrabAnim;
 
-		public global::UnityEngine.Transform Bin;
+		public Transform Bin;
 
-		public global::UnityEngine.Transform BinRaisedPosition;
+		public Transform BinRaisedPosition;
 
-		public global::ScheduleOne.Audio.AudioSourceController TrashDropSound;
+		public AudioSourceController TrashDropSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float DropTime;
 
 		public float DropForce;
 
-		public global::UnityEngine.Vector3 TrashDropOffset;
+		public Vector3 TrashDropOffset;
 
-		public global::UnityEngine.Events.UnityEvent onPickup;
+		public UnityEvent onPickup;
 
-		private global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance trashGrabberInstance;
+		private TrashGrabberInstance trashGrabberInstance;
 
-		private global::UnityEngine.Pose defaultBinPosition;
+		private Pose defaultBinPosition;
 
-		private global::UnityEngine.Vector3 defaultBinScale;
+		private Vector3 defaultBinScale;
 
-		public static global::ScheduleOne.Equipping.Equippable_TrashGrabber Instance { get; private set; }
+		public static Equippable_TrashGrabber Instance { get; private set; }
 
 		public static bool IsEquipped => false;
 
@@ -42,7 +49,7 @@ namespace ScheduleOne.Equipping
 
 		private float timeSinceLastDrop { get; set; }
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
@@ -62,7 +69,7 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		public void PickupTrash(global::ScheduleOne.Trash.TrashItem item)
+		public void PickupTrash(TrashItem item)
 		{
 		}
 

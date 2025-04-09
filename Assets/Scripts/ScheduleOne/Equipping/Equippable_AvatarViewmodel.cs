@@ -1,12 +1,15 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_AvatarViewmodel : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_AvatarViewmodel : Equippable_Viewmodel
 	{
-		public global::UnityEngine.RuntimeAnimatorController AnimatorController;
+		public RuntimeAnimatorController AnimatorController;
 
-		public global::UnityEngine.Vector3 ViewmodelAvatarOffset;
+		public Vector3 ViewmodelAvatarOffset;
 
-		[global::UnityEngine.Header("Equipping")]
+		[Header("Equipping")]
 		public float EquipTime;
 
 		public string EquipTrigger;
@@ -15,7 +18,7 @@ namespace ScheduleOne.Equipping
 
 		protected bool equipAnimDone => false;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

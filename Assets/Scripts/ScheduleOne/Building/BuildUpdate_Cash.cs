@@ -1,12 +1,16 @@
+using System.Collections.Generic;
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class BuildUpdate_Cash : global::ScheduleOne.Building.BuildUpdate_StoredItem
+	public class BuildUpdate_Cash : BuildUpdate_StoredItem
 	{
 		public int amountIndex;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> bills;
+		protected List<Transform> bills;
 
-		private global::ScheduleOne.Interaction.WorldSpaceLabel amountLabel;
+		private WorldSpaceLabel amountLabel;
 
 		private float placeAmount => 0f;
 

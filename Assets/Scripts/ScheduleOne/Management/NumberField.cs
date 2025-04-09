@@ -1,8 +1,11 @@
+using ScheduleOne.Persistence.Datas;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class NumberField : global::ScheduleOne.Management.ConfigField
+	public class NumberField : ConfigField
 	{
-		public global::UnityEngine.Events.UnityEvent<float> onItemChanged;
+		public UnityEvent<float> onItemChanged;
 
 		public float Value { get; protected set; }
 
@@ -12,7 +15,7 @@ namespace ScheduleOne.Management
 
 		public bool WholeNumbers { get; protected set; }
 
-		public NumberField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public NumberField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
@@ -30,12 +33,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.NumberFieldData GetData()
+		public NumberFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.NumberFieldData data)
+		public void Load(NumberFieldData data)
 		{
 		}
 	}

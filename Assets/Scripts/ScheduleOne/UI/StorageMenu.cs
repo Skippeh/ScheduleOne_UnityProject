@@ -1,43 +1,51 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Storage;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class StorageMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.StorageMenu>
+	public class StorageMenu : Singleton<StorageMenu>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::TMPro.TextMeshProUGUI TitleLabel;
+		public TextMeshProUGUI TitleLabel;
 
-		public global::TMPro.TextMeshProUGUI SubtitleLabel;
+		public TextMeshProUGUI SubtitleLabel;
 
-		public global::UnityEngine.RectTransform SlotContainer;
+		public RectTransform SlotContainer;
 
-		public global::ScheduleOne.UI.ItemSlotUI[] SlotsUIs;
+		public ItemSlotUI[] SlotsUIs;
 
-		public global::UnityEngine.UI.GridLayoutGroup SlotGridLayout;
+		public GridLayoutGroup SlotGridLayout;
 
-		public global::UnityEngine.RectTransform CloseButton;
+		public RectTransform CloseButton;
 
-		public global::UnityEngine.Events.UnityEvent onClosed;
+		public UnityEvent onClosed;
 
 		public bool IsOpen { get; protected set; }
 
-		public global::ScheduleOne.Storage.StorageEntity OpenedStorageEntity { get; protected set; }
+		public StorageEntity OpenedStorageEntity { get; protected set; }
 
 		protected override void Awake()
 		{
 		}
 
-		public virtual void Open(global::ScheduleOne.ItemFramework.IItemSlotOwner owner, string title, string subtitle)
+		public virtual void Open(IItemSlotOwner owner, string title, string subtitle)
 		{
 		}
 
-		public virtual void Open(global::ScheduleOne.Storage.StorageEntity entity)
+		public virtual void Open(StorageEntity entity)
 		{
 		}
 
-		private void Open(string title, string subtitle, global::ScheduleOne.ItemFramework.IItemSlotOwner owner)
+		private void Open(string title, string subtitle, IItemSlotOwner owner)
 		{
 		}
 
@@ -49,7 +57,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 	}

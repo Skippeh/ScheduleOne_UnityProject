@@ -1,38 +1,43 @@
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class Cart : global::UnityEngine.MonoBehaviour
+	public class Cart : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Shop.ShopInterface Shop;
+		[Header("References")]
+		public ShopInterface Shop;
 
-		public global::UnityEngine.UI.Image CartIcon;
+		public Image CartIcon;
 
-		public global::TMPro.TextMeshProUGUI ViewCartText;
+		public TextMeshProUGUI ViewCartText;
 
-		public global::UnityEngine.RectTransform CartEntryContainer;
+		public RectTransform CartEntryContainer;
 
-		public global::TMPro.TextMeshProUGUI ProblemText;
+		public TextMeshProUGUI ProblemText;
 
-		public global::TMPro.TextMeshProUGUI WarningText;
+		public TextMeshProUGUI WarningText;
 
-		public global::UnityEngine.UI.Button BuyButton;
+		public Button BuyButton;
 
-		public global::UnityEngine.RectTransform CartContainer;
+		public RectTransform CartContainer;
 
-		public global::UnityEngine.UI.Image CartArea;
+		public Image CartArea;
 
-		public global::TMPro.TextMeshProUGUI TotalText;
+		public TextMeshProUGUI TotalText;
 
-		public global::UnityEngine.UI.Toggle LoadVehicleToggle;
+		public Toggle LoadVehicleToggle;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Shop.CartEntry EntryPrefab;
+		[Header("Prefabs")]
+		public CartEntry EntryPrefab;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.UI.Shop.ShopListing, int> cartDictionary;
+		public Dictionary<ShopListing, int> cartDictionary;
 
-		private global::UnityEngine.Coroutine cartIconBop;
+		private Coroutine cartIconBop;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.CartEntry> cartEntries;
+		private List<CartEntry> cartEntries;
 
 		protected virtual void Start()
 		{
@@ -42,16 +47,21 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		public void AddItem(global::ScheduleOne.UI.Shop.ShopListing listing, int quantity)
+		public void AddItem(ShopListing listing, int quantity)
 		{
 		}
 
-		public void RemoveItem(global::ScheduleOne.UI.Shop.ShopListing listing, int quantity)
+		public void RemoveItem(ShopListing listing, int quantity)
 		{
 		}
 
 		public void ClearCart()
 		{
+		}
+
+		public int GetCartCount(ShopListing listing)
+		{
+			return 0;
 		}
 
 		public void BopCartIcon()
@@ -109,7 +119,7 @@ namespace ScheduleOne.UI.Shop
 			return 0f;
 		}
 
-		private global::ScheduleOne.UI.Shop.CartEntry GetEntry(global::ScheduleOne.UI.Shop.ShopListing listing)
+		private CartEntry GetEntry(ShopListing listing)
 		{
 			return null;
 		}

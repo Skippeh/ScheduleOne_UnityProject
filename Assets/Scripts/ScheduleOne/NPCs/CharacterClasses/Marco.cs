@@ -1,14 +1,18 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Dialogue;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Marco : global::ScheduleOne.NPCs.NPC
+	public class Marco : NPC
 	{
-		public global::UnityEngine.Transform VehicleRecoveryPoint;
+		public Transform VehicleRecoveryPoint;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector VehicleDetector;
+		public VehicleDetector VehicleDetector;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer RecoveryConversation;
+		public DialogueContainer RecoveryConversation;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 

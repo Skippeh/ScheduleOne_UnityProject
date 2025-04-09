@@ -1,12 +1,15 @@
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class HeartbeatSoundController : global::UnityEngine.MonoBehaviour
+	public class HeartbeatSoundController : MonoBehaviour
 	{
-		public global::ScheduleOne.Audio.AudioSourceController sound;
+		public AudioSourceController sound;
 
-		public global::ScheduleOne.Tools.FloatSmoother VolumeController;
+		public FloatSmoother VolumeController;
 
-		public global::ScheduleOne.Tools.FloatSmoother PitchController;
+		public FloatSmoother PitchController;
 
 		private void Awake()
 		{

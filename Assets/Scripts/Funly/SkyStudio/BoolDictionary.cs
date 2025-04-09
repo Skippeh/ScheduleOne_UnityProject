@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class BoolDictionary : global::Funly.SkyStudio.SerializableDictionary<string, bool>
+	[Serializable]
+	public class BoolDictionary : SerializableDictionary<string, bool>
 	{
 	}
 }

@@ -1,22 +1,24 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Camera))]
-	public class WeatherDepthCamera : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Camera))]
+	public class WeatherDepthCamera : MonoBehaviour
 	{
-		private global::UnityEngine.Camera m_DepthCamera;
+		private Camera m_DepthCamera;
 
-		[global::UnityEngine.Tooltip("Shader used to render out depth + normal texture. This should be the sky studio depth shader.")]
-		public global::UnityEngine.Shader depthShader;
+		[Tooltip("Shader used to render out depth + normal texture. This should be the sky studio depth shader.")]
+		public Shader depthShader;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.RenderTexture overheadDepthTexture;
+		[HideInInspector]
+		public RenderTexture overheadDepthTexture;
 
-		[global::UnityEngine.Tooltip("You can help increase performance by only rendering periodically some number of frames.")]
-		[global::UnityEngine.Range(1f, 60f)]
+		[Tooltip("You can help increase performance by only rendering periodically some number of frames.")]
+		[Range(1f, 60f)]
 		public int renderFrameInterval;
 
-		[global::UnityEngine.Tooltip("The resolution of the texture. Higher resolution uses more rendering time but makes more precise weather along edges.")]
-		[global::UnityEngine.Range(128f, 8192f)]
+		[Tooltip("The resolution of the texture. Higher resolution uses more rendering time but makes more precise weather along edges.")]
+		[Range(128f, 8192f)]
 		public int textureResolution;
 
 		private void Start()

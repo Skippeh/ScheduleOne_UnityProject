@@ -1,6 +1,10 @@
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities.Power
 {
-	public class PowerLine : global::ScheduleOne.ConstructableScripts.Constructable
+	public class PowerLine : Constructable
 	{
 		public static int powerLine_MinSegments;
 
@@ -10,23 +14,23 @@ namespace ScheduleOne.Property.Utilities.Power
 
 		public static float updateThreshold;
 
-		public global::ScheduleOne.Property.Utilities.Power.PowerNode nodeA;
+		public PowerNode nodeA;
 
-		public global::ScheduleOne.Property.Utilities.Power.PowerNode nodeB;
+		public PowerNode nodeB;
 
 		public float LengthFactor;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> segments;
+		protected List<Transform> segments;
 
-		private global::UnityEngine.Vector3 nodeA_LastUpdatePos;
+		private Vector3 nodeA_LastUpdatePos;
 
-		private global::UnityEngine.Vector3 nodeB_LastUpdatePos;
+		private Vector3 nodeB_LastUpdatePos;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EUtilities_002EPower_002EPowerLineAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EProperty_002EUtilities_002EPower_002EPowerLineAssembly_002DCSharp_002Edll_Excuted;
 
-		public void InitializePowerLine(global::ScheduleOne.Property.Utilities.Power.PowerNode a, global::ScheduleOne.Property.Utilities.Power.PowerNode b)
+		public void InitializePowerLine(PowerNode a, PowerNode b)
 		{
 		}
 
@@ -46,7 +50,7 @@ namespace ScheduleOne.Property.Utilities.Power
 		{
 		}
 
-		public global::ScheduleOne.Property.Utilities.Power.PowerNode GetOtherNode(global::ScheduleOne.Property.Utilities.Power.PowerNode firstNode)
+		public PowerNode GetOtherNode(PowerNode firstNode)
 		{
 			return null;
 		}
@@ -55,30 +59,30 @@ namespace ScheduleOne.Property.Utilities.Power
 		{
 		}
 
-		public override global::UnityEngine.Vector3 GetCosmeticCenter()
+		public override Vector3 GetCosmeticCenter()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static bool CanNodesBeConnected(global::ScheduleOne.Property.Utilities.Power.PowerNode nodeA, global::ScheduleOne.Property.Utilities.Power.PowerNode nodeB)
+		public static bool CanNodesBeConnected(PowerNode nodeA, PowerNode nodeB)
 		{
 			return false;
 		}
 
-		public static int GetSegmentCount(global::UnityEngine.Vector3 startPoint, global::UnityEngine.Vector3 endPoint)
+		public static int GetSegmentCount(Vector3 startPoint, Vector3 endPoint)
 		{
 			return 0;
 		}
 
-		public static void DrawPowerLine(global::UnityEngine.Vector3 startPoint, global::UnityEngine.Vector3 endPoint, global::System.Collections.Generic.List<global::UnityEngine.Transform> segments, float lengthFactor)
+		public static void DrawPowerLine(Vector3 startPoint, Vector3 endPoint, List<Transform> segments, float lengthFactor)
 		{
 		}
 
-		private static void PositionSegments(global::System.Collections.Generic.List<global::UnityEngine.Vector3> points, global::System.Collections.Generic.List<global::UnityEngine.Transform> segments)
+		private static void PositionSegments(List<Vector3> points, List<Transform> segments)
 		{
 		}
 
-		private static global::System.Collections.Generic.List<global::UnityEngine.Vector3> GetCatenaryPoints(global::UnityEngine.Vector3 startPoint, global::UnityEngine.Vector3 endPoint, int pointCount, float l)
+		private static List<Vector3> GetCatenaryPoints(Vector3 startPoint, Vector3 endPoint, int pointCount, float l)
 		{
 			return null;
 		}

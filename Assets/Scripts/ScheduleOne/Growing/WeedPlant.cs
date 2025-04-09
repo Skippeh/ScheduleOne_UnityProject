@@ -1,10 +1,12 @@
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Growing
 {
-	public class WeedPlant : global::ScheduleOne.Growing.Plant
+	public class WeedPlant : Plant
 	{
-		public global::ScheduleOne.Growing.PlantHarvestable BranchPrefab;
+		public PlantHarvestable BranchPrefab;
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetHarvestedProduct(int quantity = 1)
+		public override ItemInstance GetHarvestedProduct(int quantity = 1)
 		{
 			return null;
 		}

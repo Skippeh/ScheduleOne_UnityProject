@@ -1,34 +1,39 @@
+using ScheduleOne.Delivery;
+using ScheduleOne.UI.Tooltips;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Delivery
 {
-	public class DeliveryStatusDisplay : global::UnityEngine.MonoBehaviour
+	public class DeliveryStatusDisplay : MonoBehaviour
 	{
-		public global::UnityEngine.GameObject ItemEntryPrefab;
+		public GameObject ItemEntryPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Rect;
+		[Header("References")]
+		public RectTransform Rect;
 
-		public global::UnityEngine.UI.Text DestinationLabel;
+		public Text DestinationLabel;
 
-		public global::UnityEngine.UI.Text ShopLabel;
+		public Text ShopLabel;
 
-		public global::UnityEngine.UI.Image StatusImage;
+		public Image StatusImage;
 
-		public global::UnityEngine.UI.Text StatusLabel;
+		public Text StatusLabel;
 
-		public global::ScheduleOne.UI.Tooltips.Tooltip StatusTooltip;
+		public Tooltip StatusTooltip;
 
-		public global::UnityEngine.RectTransform ItemEntryContainer;
+		public RectTransform ItemEntryContainer;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Color StatusColor_Transit;
+		[Header("Settings")]
+		public Color StatusColor_Transit;
 
-		public global::UnityEngine.Color StatusColor_Waiting;
+		public Color StatusColor_Waiting;
 
-		public global::UnityEngine.Color StatusColor_Arrived;
+		public Color StatusColor_Arrived;
 
-		public global::ScheduleOne.Delivery.DeliveryInstance DeliveryInstance { get; private set; }
+		public DeliveryInstance DeliveryInstance { get; private set; }
 
-		public void AssignDelivery(global::ScheduleOne.Delivery.DeliveryInstance instance)
+		public void AssignDelivery(DeliveryInstance instance)
 		{
 		}
 

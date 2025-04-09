@@ -1,7 +1,11 @@
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Properties
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "Seizure", menuName = "Properties/Seizure Property")]
-	public class Seizure : global::ScheduleOne.Properties.Property
+	[CreateAssetMenu(fileName = "Seizure", menuName = "Properties/Seizure Property")]
+	public class Seizure : Property
 	{
 		public const float CAMERA_JITTER_INTENSITY = 1f;
 
@@ -9,19 +13,19 @@ namespace ScheduleOne.Properties
 
 		public const float DURATION_PLAYER = 30f;
 
-		public override void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ApplyToNPC(NPC npc)
 		{
 		}
 
-		public override void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ApplyToPlayer(Player player)
 		{
 		}
 
-		public override void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ClearFromNPC(NPC npc)
 		{
 		}
 
-		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ClearFromPlayer(Player player)
 		{
 		}
 	}

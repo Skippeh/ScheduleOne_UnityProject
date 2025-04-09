@@ -1,37 +1,46 @@
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Combat
 {
-	public class CombatManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Combat.CombatManager>
+	public class CombatManager : NetworkSingleton<CombatManager>
 	{
-		public global::UnityEngine.LayerMask MeleeLayerMask;
+		public LayerMask MeleeLayerMask;
 
-		public global::UnityEngine.LayerMask ExplosionLayerMask;
+		public LayerMask ExplosionLayerMask;
 
-		public global::UnityEngine.LayerMask RangedWeaponLayerMask;
+		public LayerMask RangedWeaponLayerMask;
 
-		public global::ScheduleOne.Combat.Explosion ExplosionPrefab;
+		public Explosion ExplosionPrefab;
 
-		private global::System.Collections.Generic.List<int> explosionIDs;
+		private List<int> explosionIDs;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ECombat_002ECombatManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ECombat_002ECombatManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void CreateTestExplosion()
 		{
 		}
 
-		public void CreateExplosion(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data)
+		public void CreateExplosion(Vector3 origin, ExplosionData data)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void CreateExplosion(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void CreateExplosion(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void Explosion(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		[ObserversRpc(RunLocally = true)]
+		private void Explosion(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
@@ -47,27 +56,27 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		private void RpcWriter___Server_CreateExplosion_2907189355(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		private void RpcWriter___Server_CreateExplosion_2907189355(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
-		private void RpcLogic___CreateExplosion_2907189355(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		private void RpcLogic___CreateExplosion_2907189355(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
-		private void RpcReader___Server_CreateExplosion_2907189355(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateExplosion_2907189355(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Explosion_2907189355(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		private void RpcWriter___Observers_Explosion_2907189355(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
-		private void RpcLogic___Explosion_2907189355(global::UnityEngine.Vector3 origin, global::ScheduleOne.Combat.ExplosionData data, int id)
+		private void RpcLogic___Explosion_2907189355(Vector3 origin, ExplosionData data, int id)
 		{
 		}
 
-		private void RpcReader___Observers_Explosion_2907189355(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Explosion_2907189355(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

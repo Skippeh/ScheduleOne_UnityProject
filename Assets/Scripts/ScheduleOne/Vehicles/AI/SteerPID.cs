@@ -6,7 +6,7 @@ namespace ScheduleOne.Vehicles.AI
 
 		private float error_sum;
 
-		public float GetNewValue(float error, global::ScheduleOne.Vehicles.AI.PID_Parameters pid_parameters)
+		public float GetNewValue(float error, PID_Parameters pid_parameters)
 		{
 			return 0f;
 		}

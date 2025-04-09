@@ -1,15 +1,21 @@
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.GameTime;
+using ScheduleOne.NPCs.Schedules;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCScheduleManager : global::UnityEngine.MonoBehaviour
+	public class NPCScheduleManager : MonoBehaviour
 	{
 		public bool DEBUG_MODE;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject[] EnabledDuringCurfew;
+		[Header("References")]
+		public GameObject[] EnabledDuringCurfew;
 
-		public global::UnityEngine.GameObject[] EnabledDuringNoCurfew;
+		public GameObject[] EnabledDuringNoCurfew;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> ActionList;
+		public List<NPCAction> ActionList;
 
 		protected int lastProcessedTime;
 
@@ -17,15 +23,15 @@ namespace ScheduleOne.NPCs
 
 		public bool CurfewModeEnabled { get; protected set; }
 
-		public global::ScheduleOne.NPCs.Schedules.NPCAction ActiveAction { get; set; }
+		public NPCAction ActiveAction { get; set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> PendingActions { get; set; }
+		public List<NPCAction> PendingActions { get; set; }
 
-		public global::ScheduleOne.NPCs.NPC Npc { get; protected set; }
+		public NPC Npc { get; protected set; }
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> ActionsAwaitingStart { get; set; }
+		protected List<NPCAction> ActionsAwaitingStart { get; set; }
 
-		protected global::ScheduleOne.GameTime.TimeManager Time => null;
+		protected TimeManager Time => null;
 
 		protected virtual void Awake()
 		{
@@ -55,7 +61,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void InitializeActions()
 		{
 		}
@@ -64,17 +70,17 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> GetActionsOccurringAt(int time)
+		private List<NPCAction> GetActionsOccurringAt(int time)
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> GetActionsTotallyOccurringWithinRange(int min, int max, bool checkShouldStart)
+		private List<NPCAction> GetActionsTotallyOccurringWithinRange(int min, int max, bool checkShouldStart)
 		{
 			return null;
 		}
 
-		private void StartAction(global::ScheduleOne.NPCs.Schedules.NPCAction action)
+		private void StartAction(NPCAction action)
 		{
 		}
 

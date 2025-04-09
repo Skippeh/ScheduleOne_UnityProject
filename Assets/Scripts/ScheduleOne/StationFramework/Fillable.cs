@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class Fillable : global::UnityEngine.MonoBehaviour
+	public class Fillable : MonoBehaviour
 	{
 		public class Content
 		{
@@ -8,24 +11,24 @@ namespace ScheduleOne.StationFramework
 
 			public float Volume_L;
 
-			public global::UnityEngine.Color Color;
+			public Color Color;
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.StationFramework.LiquidContainer LiquidContainer;
+		[Header("References")]
+		public LiquidContainer LiquidContainer;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool FillableEnabled;
 
 		public float LiquidCapacity_L;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.Fillable.Content> contents { get; protected set; }
+		public List<Content> contents { get; protected set; }
 
 		private void Awake()
 		{
 		}
 
-		public void AddLiquid(string label, float volume, global::UnityEngine.Color color)
+		public void AddLiquid(string label, float volume, Color color)
 		{
 		}
 

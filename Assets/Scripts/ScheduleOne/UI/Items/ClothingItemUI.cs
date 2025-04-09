@@ -1,8 +1,10 @@
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ClothingItemUI : global::ScheduleOne.UI.Items.ItemUI
+	public class ClothingItemUI : ItemUI
 	{
-		public global::UnityEngine.UI.Image ClothingTypeIcon;
+		public Image ClothingTypeIcon;
 
 		public override void UpdateUI()
 		{

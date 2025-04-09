@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class ForkliftCamera : global::ScheduleOne.Vehicles.VehicleCamera
+	public class ForkliftCamera : VehicleCamera
 	{
-		[global::UnityEngine.Header("Forklift References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform forkCamPos;
+		[Header("Forklift References")]
+		[SerializeField]
+		protected Transform forkCamPos;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Light guidanceLight;
+		[SerializeField]
+		protected Light guidanceLight;
 
 		protected bool forkliftCamActive;
 

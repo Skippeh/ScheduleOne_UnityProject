@@ -1,6 +1,22 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Misc;
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Police
 {
-	public class RoadCheckpoint : global::FishNet.Object.NetworkBehaviour
+	public class RoadCheckpoint : NetworkBehaviour
 	{
 		public enum ECheckpointState
 		{
@@ -10,44 +26,44 @@ namespace ScheduleOne.Police
 
 		public const float MAX_TIME_OPEN = 15f;
 
-		protected global::ScheduleOne.Police.RoadCheckpoint.ECheckpointState appliedState;
+		protected ECheckpointState appliedState;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> AssignedNPCs;
+		public List<NPC> AssignedNPCs;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Product.Packaging.EStealthLevel MaxStealthLevel;
+		[Header("Settings")]
+		public EStealthLevel MaxStealthLevel;
 
 		public bool OpenForNPCs;
 
 		public bool EnabledOnStart;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject container;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject container;
 
-		public global::ScheduleOne.Misc.CarStopper Stopper1;
+		public CarStopper Stopper1;
 
-		public global::ScheduleOne.Misc.CarStopper Stopper2;
+		public CarStopper Stopper2;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector SearchArea1;
+		public VehicleDetector SearchArea1;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector SearchArea2;
+		public VehicleDetector SearchArea2;
 
-		public global::ScheduleOne.Vehicles.VehicleObstacle VehicleObstacle1;
+		public VehicleObstacle VehicleObstacle1;
 
-		public global::ScheduleOne.Vehicles.VehicleObstacle VehicleObstacle2;
+		public VehicleObstacle VehicleObstacle2;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector NPCVehicleDetectionArea1;
+		public VehicleDetector NPCVehicleDetectionArea1;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector NPCVehicleDetectionArea2;
+		public VehicleDetector NPCVehicleDetectionArea2;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector ImmediateVehicleDetector;
+		public VehicleDetector ImmediateVehicleDetector;
 
-		public global::UnityEngine.Rigidbody[] TrafficCones;
+		public Rigidbody[] TrafficCones;
 
-		public global::UnityEngine.Transform[] StandPoints;
+		public Transform[] StandPoints;
 
-		protected global::System.Collections.Generic.Dictionary<global::UnityEngine.Rigidbody, global::System.Tuple<global::UnityEngine.Vector3, global::UnityEngine.Quaternion>> trafficConeOriginalTransforms;
+		protected Dictionary<Rigidbody, Tuple<Vector3, Quaternion>> trafficConeOriginalTransforms;
 
 		private float timeSinceGate1Open;
 
@@ -57,43 +73,23 @@ namespace ScheduleOne.Police
 
 		private bool vehicleDetectedSinceGate2Open;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onPlayerWalkThrough;
+		public UnityEvent<Player> onPlayerWalkThrough;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CGate1Open_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CGate1Open_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CGate2Open_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CGate2Open_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPolice_002ERoadCheckpointAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EPolice_002ERoadCheckpointAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Police.RoadCheckpoint.ECheckpointState ActivationState { get; protected set; }
+		public ECheckpointState ActivationState { get; protected set; }
 
-		public bool Gate1Open
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar(SendRate = 0.25f)]
+		public bool Gate1Open { get; protected set; }
 
-		public bool Gate2Open
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar(SendRate = 0.25f)]
+		public bool Gate2Open { get; protected set; }
 
 		public bool SyncAccessor__003CGate1Open_003Ek__BackingField
 		{
@@ -129,13 +125,13 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Enable(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Enable(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void Disable()
 		{
 		}
@@ -152,7 +148,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		public void PlayerDetected(global::ScheduleOne.PlayerScripts.Player player)
+		public void PlayerDetected(Player player)
 		{
 		}
 
@@ -168,23 +164,23 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void RpcWriter___Observers_Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Enable_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Enable_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Enable_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Enable_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -196,11 +192,11 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void RpcReader___Observers_Disable_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Disable_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EPolice_002ERoadCheckpoint(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EPolice_002ERoadCheckpoint(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

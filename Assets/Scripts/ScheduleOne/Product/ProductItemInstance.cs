@@ -1,72 +1,84 @@
+using System;
+using FishNet.Serializing.Helping;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.NPCs;
+using ScheduleOne.Packaging;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	public class ProductItemInstance : global::ScheduleOne.ItemFramework.QualityItemInstance
+	[Serializable]
+	public class ProductItemInstance : QualityItemInstance
 	{
 		public string PackagingID;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		private global::ScheduleOne.Product.Packaging.PackagingDefinition packaging;
+		[CodegenExclude]
+		private PackagingDefinition packaging;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.Product.Packaging.PackagingDefinition AppliedPackaging => null;
+		[CodegenExclude]
+		public PackagingDefinition AppliedPackaging => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		public int Amount => 0;
 
 		public override string Name => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public override global::ScheduleOne.Equipping.Equippable Equippable => null;
+		[CodegenExclude]
+		public override Equippable Equippable => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public override global::ScheduleOne.Storage.StoredItem StoredItem => null;
+		[CodegenExclude]
+		public override StoredItem StoredItem => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public override global::UnityEngine.Sprite Icon => null;
+		[CodegenExclude]
+		public override Sprite Icon => null;
 
 		public ProductItemInstance()
 		{
 		}
 
-		public ProductItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality, global::ScheduleOne.Product.Packaging.PackagingDefinition _packaging = null)
+		public ProductItemInstance(ItemDefinition definition, int quantity, EQuality quality, PackagingDefinition _packaging = null)
 		{
 		}
 
-		public override bool CanStackWith(global::ScheduleOne.ItemFramework.ItemInstance other, bool checkQuantities = true)
+		public override bool CanStackWith(ItemInstance other, bool checkQuantities = true)
 		{
 			return false;
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
 
-		public virtual void SetPackaging(global::ScheduleOne.Product.Packaging.PackagingDefinition def)
+		public virtual void SetPackaging(PackagingDefinition def)
 		{
 		}
 
-		private global::ScheduleOne.Equipping.Equippable GetEquippable()
-		{
-			return null;
-		}
-
-		private global::ScheduleOne.Storage.StoredItem GetStoredItem()
+		private Equippable GetEquippable()
 		{
 			return null;
 		}
 
-		public virtual void SetupPackagingVisuals(global::ScheduleOne.Packaging.FilledPackagingVisuals visuals)
-		{
-		}
-
-		private global::UnityEngine.Sprite GetIcon()
+		private StoredItem GetStoredItem()
 		{
 			return null;
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public virtual void SetupPackagingVisuals(FilledPackagingVisuals visuals)
+		{
+		}
+
+		private Sprite GetIcon()
+		{
+			return null;
+		}
+
+		public override ItemData GetItemData()
 		{
 			return null;
 		}
@@ -76,24 +88,24 @@ namespace ScheduleOne.Product
 			return 0f;
 		}
 
-		public float GetSimilarity(global::ScheduleOne.Product.ProductDefinition other, global::ScheduleOne.ItemFramework.EQuality quality)
+		public float GetSimilarity(ProductDefinition other, EQuality quality)
 		{
 			return 0f;
 		}
 
-		public virtual void ApplyEffectsToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void ApplyEffectsToNPC(NPC npc)
 		{
 		}
 
-		public virtual void ClearEffectsFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void ClearEffectsFromNPC(NPC npc)
 		{
 		}
 
-		public virtual void ApplyEffectsToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public virtual void ApplyEffectsToPlayer(Player player)
 		{
 		}
 
-		public virtual void ClearEffectsFromPlayer(global::ScheduleOne.PlayerScripts.Player Player)
+		public virtual void ClearEffectsFromPlayer(Player Player)
 		{
 		}
 

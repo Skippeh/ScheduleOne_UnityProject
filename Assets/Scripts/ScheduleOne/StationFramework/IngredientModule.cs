@@ -1,10 +1,10 @@
 namespace ScheduleOne.StationFramework
 {
-	public class IngredientModule : global::ScheduleOne.StationFramework.ItemModule
+	public class IngredientModule : ItemModule
 	{
-		public global::ScheduleOne.StationFramework.IngredientPiece[] Pieces;
+		public IngredientPiece[] Pieces;
 
-		public override void ActivateModule(global::ScheduleOne.StationFramework.StationItem item)
+		public override void ActivateModule(StationItem item)
 		{
 		}
 	}

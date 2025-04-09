@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemRemover : global::UnityEngine.MonoBehaviour
+	public class ItemRemover : MonoBehaviour
 	{
-		public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+		public ItemDefinition Item;
 
 		public int Quantity;
 

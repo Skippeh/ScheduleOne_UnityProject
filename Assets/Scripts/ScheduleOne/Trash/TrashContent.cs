@@ -1,9 +1,13 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Persistence;
+
 namespace ScheduleOne.Trash
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class TrashContent
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Entry
 		{
 			public string TrashID;
@@ -19,7 +23,7 @@ namespace ScheduleOne.Trash
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashContent.Entry> Entries;
+		public List<Entry> Entries;
 
 		public void AddTrash(string trashID, int quantity)
 		{
@@ -43,12 +47,12 @@ namespace ScheduleOne.Trash
 			return 0;
 		}
 
-		public global::ScheduleOne.Persistence.TrashContentData GetData()
+		public TrashContentData GetData()
 		{
 			return null;
 		}
 
-		public void LoadFromData(global::ScheduleOne.Persistence.TrashContentData data)
+		public void LoadFromData(TrashContentData data)
 		{
 		}
 	}

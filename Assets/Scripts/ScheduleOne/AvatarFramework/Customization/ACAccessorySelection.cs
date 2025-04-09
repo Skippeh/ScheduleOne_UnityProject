@@ -1,6 +1,6 @@
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACAccessorySelection : global::ScheduleOne.AvatarFramework.Customization.ACSelection<global::ScheduleOne.AvatarFramework.Accessory>
+	public class ACAccessorySelection : ACSelection<Accessory>
 	{
 		public override string GetOptionLabel(int index)
 		{

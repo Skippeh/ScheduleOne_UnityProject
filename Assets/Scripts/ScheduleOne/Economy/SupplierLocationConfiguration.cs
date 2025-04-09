@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	public class SupplierLocationConfiguration : global::UnityEngine.MonoBehaviour
+	public class SupplierLocationConfiguration : MonoBehaviour
 	{
 		public string SupplierID;
 

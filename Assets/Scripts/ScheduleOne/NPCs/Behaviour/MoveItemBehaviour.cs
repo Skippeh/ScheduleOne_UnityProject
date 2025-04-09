@@ -1,6 +1,11 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class MoveItemBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class MoveItemBehaviour : Behaviour
 	{
 		public enum EState
 		{
@@ -11,23 +16,23 @@ namespace ScheduleOne.NPCs.Behaviour
 			Placing = 4
 		}
 
-		private global::ScheduleOne.Management.TransitRoute assignedRoute;
+		private TransitRoute assignedRoute;
 
-		private global::ScheduleOne.ItemFramework.ItemInstance itemToRetrieveTemplate;
+		private ItemInstance itemToRetrieveTemplate;
 
 		private int grabbedAmount;
 
 		private int maxMoveAmount;
 
-		private global::ScheduleOne.NPCs.Behaviour.MoveItemBehaviour.EState currentState;
+		private EState currentState;
 
-		private global::UnityEngine.Coroutine walkToSourceRoutine;
+		private Coroutine walkToSourceRoutine;
 
-		private global::UnityEngine.Coroutine grabRoutine;
+		private Coroutine grabRoutine;
 
-		private global::UnityEngine.Coroutine walkToDestinationRoutine;
+		private Coroutine walkToDestinationRoutine;
 
-		private global::UnityEngine.Coroutine placingRoutine;
+		private Coroutine placingRoutine;
 
 		private bool skipPickup;
 
@@ -37,11 +42,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public bool Initialized { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.Management.TransitRoute route, global::ScheduleOne.ItemFramework.ItemInstance _itemToRetrieveTemplate, int _maxMoveAmount = -1, bool _skipPickup = false)
+		public void Initialize(TransitRoute route, ItemInstance _itemToRetrieveTemplate, int _maxMoveAmount = -1, bool _skipPickup = false)
 		{
 		}
 
-		public void Resume(global::ScheduleOne.Management.TransitRoute route, global::ScheduleOne.ItemFramework.ItemInstance _itemToRetrieveTemplate, int _maxMoveAmount = -1)
+		public void Resume(TransitRoute route, ItemInstance _itemToRetrieveTemplate, int _maxMoveAmount = -1)
 		{
 		}
 
@@ -69,7 +74,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private bool IsNpcInventoryItemValid(global::ScheduleOne.ItemFramework.ItemInstance item)
+		private bool IsNpcInventoryItemValid(ItemInstance item)
 		{
 			return false;
 		}
@@ -111,34 +116,34 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public bool IsTransitRouteValid(global::ScheduleOne.Management.TransitRoute route, string itemID, out string invalidReason)
+		public bool IsTransitRouteValid(TransitRoute route, string itemID, out string invalidReason)
 		{
 			invalidReason = null;
 			return false;
 		}
 
-		public bool IsTransitRouteValid(global::ScheduleOne.Management.TransitRoute route, global::ScheduleOne.ItemFramework.ItemInstance templateItem, out string invalidReason)
+		public bool IsTransitRouteValid(TransitRoute route, ItemInstance templateItem, out string invalidReason)
 		{
 			invalidReason = null;
 			return false;
 		}
 
-		public bool IsTransitRouteValid(global::ScheduleOne.Management.TransitRoute route, string itemID)
+		public bool IsTransitRouteValid(TransitRoute route, string itemID)
 		{
 			return false;
 		}
 
-		public bool IsDestinationValid(global::ScheduleOne.Management.TransitRoute route, global::ScheduleOne.ItemFramework.ItemInstance item)
+		public bool IsDestinationValid(TransitRoute route, ItemInstance item)
 		{
 			return false;
 		}
 
-		public bool CanGetToSource(global::ScheduleOne.Management.TransitRoute route)
+		public bool CanGetToSource(TransitRoute route)
 		{
 			return false;
 		}
 
-		private global::UnityEngine.Transform GetSourceAccessPoint(global::ScheduleOne.Management.TransitRoute route)
+		private Transform GetSourceAccessPoint(TransitRoute route)
 		{
 			return null;
 		}
@@ -148,12 +153,12 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		public bool CanGetToDestination(global::ScheduleOne.Management.TransitRoute route)
+		public bool CanGetToDestination(TransitRoute route)
 		{
 			return false;
 		}
 
-		private global::UnityEngine.Transform GetDestinationAccessPoint(global::ScheduleOne.Management.TransitRoute route)
+		private Transform GetDestinationAccessPoint(TransitRoute route)
 		{
 			return null;
 		}
@@ -163,12 +168,12 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.MoveItemData GetSaveData()
+		public MoveItemData GetSaveData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.MoveItemData moveItemData)
+		public void Load(MoveItemData moveItemData)
 		{
 		}
 

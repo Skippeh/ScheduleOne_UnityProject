@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.Police
 {
 	public class Offense
@@ -15,11 +17,11 @@ namespace ScheduleOne.Police
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Police.Offense.Charge> charges;
+		public List<Charge> charges;
 
-		public global::System.Collections.Generic.List<string> penalties;
+		public List<string> penalties;
 
-		public Offense(global::System.Collections.Generic.List<global::ScheduleOne.Police.Offense.Charge> _charges)
+		public Offense(List<Charge> _charges)
 		{
 		}
 	}

@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class AmbientOneShot : global::UnityEngine.MonoBehaviour
+	public class AmbientOneShot : MonoBehaviour
 	{
 		public enum EPlayTime
 		{
@@ -9,18 +11,18 @@ namespace ScheduleOne.Audio
 			Night = 2
 		}
 
-		public global::ScheduleOne.Audio.AudioSourceController Audio;
+		public AudioSourceController Audio;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Settings")]
+		[Range(0f, 1f)]
 		public float Volume;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float ChancePerHour;
 
 		public int CooldownTime;
 
-		public global::ScheduleOne.Audio.AmbientOneShot.EPlayTime PlayTime;
+		public EPlayTime PlayTime;
 
 		public float MinDistance;
 

@@ -1,10 +1,14 @@
+using ScheduleOne.Packaging;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	public class Product_Stored : global::ScheduleOne.Storage.StoredItem
+	public class Product_Stored : StoredItem
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public FilledPackagingVisuals Visuals;
 
-		public override void InitializeStoredItem(global::ScheduleOne.Storage.StorableItemInstance _item, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 _originCoordinate, float _rotation)
+		public override void InitializeStoredItem(StorableItemInstance _item, StorageGrid grid, Vector2 _originCoordinate, float _rotation)
 		{
 		}
 	}

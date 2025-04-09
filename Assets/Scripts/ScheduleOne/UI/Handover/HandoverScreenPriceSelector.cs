@@ -1,14 +1,18 @@
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Handover
 {
-	public class HandoverScreenPriceSelector : global::UnityEngine.MonoBehaviour
+	public class HandoverScreenPriceSelector : MonoBehaviour
 	{
 		public const float MinPrice = 1f;
 
 		public const float MaxPrice = 9999f;
 
-		public global::UnityEngine.UI.InputField InputField;
+		public InputField InputField;
 
-		public global::UnityEngine.Events.UnityEvent onPriceChanged;
+		public UnityEvent onPriceChanged;
 
 		public float Price { get; private set; }
 

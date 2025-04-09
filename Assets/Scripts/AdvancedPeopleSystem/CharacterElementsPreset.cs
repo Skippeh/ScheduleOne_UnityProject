@@ -1,16 +1,19 @@
+using System;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterElementsPreset
 	{
 		public string name;
 
-		public global::UnityEngine.Mesh[] mesh;
+		public Mesh[] mesh;
 
 		public string[] hideParts;
 
 		public float yOffset;
 
-		public global::UnityEngine.Material[] mats;
+		public Material[] mats;
 	}
 }

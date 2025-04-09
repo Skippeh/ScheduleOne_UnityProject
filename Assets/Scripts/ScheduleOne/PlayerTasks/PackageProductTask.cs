@@ -1,16 +1,20 @@
+using System.Collections.Generic;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Packaging;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class PackageProductTask : global::ScheduleOne.PlayerTasks.Task
+	public class PackageProductTask : Task
 	{
-		protected global::ScheduleOne.ObjectScripts.PackagingStation station;
+		protected PackagingStation station;
 
-		protected global::ScheduleOne.Packaging.FunctionalPackaging Packaging;
+		protected FunctionalPackaging Packaging;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> Products;
+		protected List<FunctionalProduct> Products;
 
 		public override string TaskName { get; protected set; }
 
-		public PackageProductTask(global::ScheduleOne.ObjectScripts.PackagingStation _station)
+		public PackageProductTask(PackagingStation _station)
 		{
 		}
 

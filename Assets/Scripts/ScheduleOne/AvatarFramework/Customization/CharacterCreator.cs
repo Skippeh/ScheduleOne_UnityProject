@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.Clothing;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.CharacterCreator;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class CharacterCreator : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.AvatarFramework.Customization.CharacterCreator>
+	public class CharacterCreator : Singleton<CharacterCreator>
 	{
 		public enum ECategory
 		{
@@ -13,39 +20,39 @@ namespace ScheduleOne.AvatarFramework.Customization
 			Accessories = 6
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.CharacterCreator.BaseCharacterCreatorField> Fields;
+		public List<BaseCharacterCreatorField> Fields;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Container;
+		[Header("References")]
+		public Transform Container;
 
-		public global::UnityEngine.Transform CameraPosition;
+		public Transform CameraPosition;
 
-		public global::UnityEngine.Transform RigContainer;
+		public Transform RigContainer;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Rig;
+		public Avatar Rig;
 
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::UnityEngine.Animation CanvasAnimation;
+		public UnityEngine.Animation CanvasAnimation;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DemoCreator;
 
-		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings DefaultSettings;
+		public BasicAvatarSettings DefaultSettings;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings> Presets;
+		public List<BasicAvatarSettings> Presets;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings> onComplete;
+		public UnityEvent<BasicAvatarSettings> onComplete;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings, global::System.Collections.Generic.List<global::ScheduleOne.Clothing.ClothingInstance>> onCompleteWithClothing;
+		public UnityEvent<BasicAvatarSettings, List<ClothingInstance>> onCompleteWithClothing;
 
-		private global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Clothing.ClothingDefinition> lastSelectedClothingDefinitions;
+		private Dictionary<string, ClothingDefinition> lastSelectedClothingDefinitions;
 
 		private float rigTargetY;
 
 		public bool IsOpen { get; protected set; }
 
-		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings ActiveSettings { get; protected set; }
+		public BasicAvatarSettings ActiveSettings { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -59,7 +66,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public void Open(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings initialSettings, bool showUI = true)
+		public void Open(BasicAvatarSettings initialSettings, bool showUI = true)
 		{
 		}
 
@@ -83,7 +90,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public T SetValue<T>(string fieldName, T value, global::ScheduleOne.Clothing.ClothingDefinition definition)
+		public T SetValue<T>(string fieldName, T value, ClothingDefinition definition)
 		{
 			return default(T);
 		}
@@ -92,7 +99,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public void RefreshCategory(global::ScheduleOne.AvatarFramework.Customization.CharacterCreator.ECategory category)
+		public void RefreshCategory(ECategory category)
 		{
 		}
 	}

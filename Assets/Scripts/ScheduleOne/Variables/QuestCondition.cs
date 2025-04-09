@@ -1,19 +1,22 @@
+using System;
+using ScheduleOne.Quests;
+
 namespace ScheduleOne.Variables
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class QuestCondition
 	{
 		public bool CheckQuestState;
 
 		public string QuestName;
 
-		public global::ScheduleOne.Quests.EQuestState QuestState;
+		public EQuestState QuestState;
 
 		public bool CheckQuestEntryState;
 
 		public int QuestEntryIndex;
 
-		public global::ScheduleOne.Quests.EQuestState QuestEntryState;
+		public EQuestState QuestEntryState;
 
 		public bool Evaluate()
 		{

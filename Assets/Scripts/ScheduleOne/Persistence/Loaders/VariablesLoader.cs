@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class VariablesLoader : global::ScheduleOne.Persistence.Loaders.Loader
+	public class VariablesLoader : Loader
 	{
 		public override void Load(string mainPath)
 		{

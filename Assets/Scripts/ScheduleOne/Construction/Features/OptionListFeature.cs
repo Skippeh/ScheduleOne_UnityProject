@@ -1,14 +1,23 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.UI.Construction.Features;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.Features
 {
-	public abstract class OptionListFeature : global::ScheduleOne.Construction.Features.Feature
+	public abstract class OptionListFeature : Feature
 	{
-		[global::UnityEngine.Header("Option list feature settings")]
+		[Header("Option list feature settings")]
 		public int defaultOptionIndex;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
+		[SyncVar]
 		public int ownedOptionIndex;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<int> syncVar___ownedOptionIndex;
+		public SyncVar<int> syncVar___ownedOptionIndex;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstruction_002EFeatures_002EOptionListFeatureAssembly_002DCSharp_002Edll_Excuted;
 
@@ -29,7 +38,7 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		public override global::ScheduleOne.UI.Construction.Features.FI_Base CreateInterface(global::UnityEngine.Transform parent)
+		public override FI_Base CreateInterface(Transform parent)
 		{
 			return null;
 		}
@@ -38,13 +47,13 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		protected abstract global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.Features.FI_OptionList.Option> GetOptions();
+		protected abstract List<FI_OptionList.Option> GetOptions();
 
 		public virtual void SelectOption(int optionIndex)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		protected virtual void SetData(int colorIndex)
 		{
 		}
@@ -77,11 +86,11 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		private void RpcReader___Server_SetData_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetData_3316948804(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EConstruction_002EFeatures_002EOptionListFeature(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EConstruction_002EFeatures_002EOptionListFeature(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

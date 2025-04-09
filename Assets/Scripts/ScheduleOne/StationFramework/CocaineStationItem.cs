@@ -1,10 +1,13 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Packaging;
+
 namespace ScheduleOne.StationFramework
 {
-	public class CocaineStationItem : global::ScheduleOne.StationFramework.StationItem
+	public class CocaineStationItem : StationItem
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals[] Visuals;
+		public FilledPackagingVisuals[] Visuals;
 
-		public override void Initialize(global::ScheduleOne.ItemFramework.StorableItemDefinition itemDefinition)
+		public override void Initialize(StorableItemDefinition itemDefinition)
 		{
 		}
 	}

@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACReplicator : global::UnityEngine.MonoBehaviour
+	public class ACReplicator : MonoBehaviour
 	{
 		public string propertyName;
 
@@ -8,7 +10,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		protected virtual void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings newSettings)
+		protected virtual void AvatarSettingsChanged(AvatarSettings newSettings)
 		{
 		}
 	}

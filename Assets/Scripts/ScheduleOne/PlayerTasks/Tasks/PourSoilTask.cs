@@ -1,12 +1,17 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.ObjectScripts.Soil;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class PourSoilTask : global::ScheduleOne.PlayerTasks.Tasks.PourIntoPotTask
+	public class PourSoilTask : PourIntoPotTask
 	{
-		private global::ScheduleOne.ObjectScripts.Soil.PourableSoil soil;
+		private PourableSoil soil;
 
-		private global::UnityEngine.Collider HoveredTopCollider;
+		private Collider HoveredTopCollider;
 
-		public PourSoilTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public PourSoilTask(Pot _pot, ItemInstance _itemInstance, Pourable _pourablePrefab)
 			: base(null, null, null)
 		{
 		}
@@ -27,7 +32,7 @@ namespace ScheduleOne.PlayerTasks.Tasks
 		{
 		}
 
-		private global::UnityEngine.Collider GetHoveredTopCollider()
+		private Collider GetHoveredTopCollider()
 		{
 			return null;
 		}

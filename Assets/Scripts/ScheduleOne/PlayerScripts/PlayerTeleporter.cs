@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerTeleporter : global::UnityEngine.MonoBehaviour
+	public class PlayerTeleporter : MonoBehaviour
 	{
-		public void Teleport(global::UnityEngine.Transform destination)
+		public void Teleport(Transform destination)
 		{
 		}
 	}

@@ -1,33 +1,39 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.EntityFramework;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class ObjectSelector : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.DevUtilities.ObjectSelector>
+	public class ObjectSelector : Singleton<ObjectSelector>
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected float detectionRange;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.LayerMask detectionMask;
+		[SerializeField]
+		protected LayerMask detectionMask;
 
-		private global::System.Collections.Generic.List<global::System.Type> allowedTypes;
+		private List<Type> allowedTypes;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> selectedObjects;
+		private List<BuildableItem> selectedObjects;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ConstructableScripts.Constructable> selectedConstructables;
+		private List<Constructable> selectedConstructables;
 
-		public global::System.Action onClose;
+		public Action onClose;
 
 		private int selectionLimit;
 
 		private bool exitOnSelectionLimit;
 
-		private global::ScheduleOne.EntityFramework.BuildableItem hoveredBuildable;
+		private BuildableItem hoveredBuildable;
 
-		private global::ScheduleOne.ConstructableScripts.Constructable hoveredConstructable;
+		private Constructable hoveredConstructable;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> outlinedObjects;
+		private List<BuildableItem> outlinedObjects;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ConstructableScripts.Constructable> outlinedConstructables;
+		private List<Constructable> outlinedConstructables;
 
 		public bool isSelecting { get; protected set; }
 
@@ -43,21 +49,21 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private global::ScheduleOne.EntityFramework.BuildableItem GetHoveredBuildable()
+		private BuildableItem GetHoveredBuildable()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ConstructableScripts.Constructable GetHoveredConstructable()
+		private Constructable GetHoveredConstructable()
 		{
 			return null;
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
-		public void StartSelecting(string selectionTitle, global::System.Collections.Generic.List<global::System.Type> _typeRestriction, ref global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> initialSelection_Objects, ref global::System.Collections.Generic.List<global::ScheduleOne.ConstructableScripts.Constructable> initalSelection_Constructables, int _selectionLimit, bool _exitOnSelectionLimit)
+		public void StartSelecting(string selectionTitle, List<Type> _typeRestriction, ref List<BuildableItem> initialSelection_Objects, ref List<Constructable> initalSelection_Constructables, int _selectionLimit, bool _exitOnSelectionLimit)
 		{
 		}
 

@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace Beautify.Universal
 {
-	public class SphereAnimator : global::UnityEngine.MonoBehaviour
+	public class SphereAnimator : MonoBehaviour
 	{
-		private global::UnityEngine.Rigidbody rb;
+		private Rigidbody rb;
 
 		private void Start()
 		{

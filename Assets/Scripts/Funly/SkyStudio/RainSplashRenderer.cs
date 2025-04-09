@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class RainSplashRenderer : global::Funly.SkyStudio.BaseSpriteInstancedRenderer
+	public class RainSplashRenderer : BaseSpriteInstancedRenderer
 	{
-		private global::UnityEngine.Camera m_DepthCamera;
+		private Camera m_DepthCamera;
 
 		private float[] m_StartSplashYPositions;
 
@@ -22,24 +24,24 @@ namespace Funly.SkyStudio
 
 		private float m_SplashSurfaceOffset;
 
-		private global::Funly.SkyStudio.SkyProfile m_SkyProfile;
+		private SkyProfile m_SkyProfile;
 
 		private float m_TimeOfDay;
 
-		private global::Funly.SkyStudio.RainSplashArtItem m_Style;
+		private RainSplashArtItem m_Style;
 
-		private global::UnityEngine.Bounds m_Bounds;
+		private Bounds m_Bounds;
 
 		private void Start()
 		{
 		}
 
-		protected override global::UnityEngine.Bounds CalculateMeshBounds()
+		protected override Bounds CalculateMeshBounds()
 		{
-			return default(global::UnityEngine.Bounds);
+			return default(Bounds);
 		}
 
-		protected override global::Funly.SkyStudio.BaseSpriteItemData CreateSpriteItemData()
+		protected override BaseSpriteItemData CreateSpriteItemData()
 		{
 			return null;
 		}
@@ -54,26 +56,26 @@ namespace Funly.SkyStudio
 			return 0;
 		}
 
-		protected override void CalculateSpriteTRS(global::Funly.SkyStudio.BaseSpriteItemData data, out global::UnityEngine.Vector3 spritePosition, out global::UnityEngine.Quaternion spriteRotation, out global::UnityEngine.Vector3 spriteScale)
+		protected override void CalculateSpriteTRS(BaseSpriteItemData data, out Vector3 spritePosition, out Quaternion spriteRotation, out Vector3 spriteScale)
 		{
-			spritePosition = default(global::UnityEngine.Vector3);
-			spriteRotation = default(global::UnityEngine.Quaternion);
-			spriteScale = default(global::UnityEngine.Vector3);
+			spritePosition = default(Vector3);
+			spriteRotation = default(Quaternion);
+			spriteScale = default(Vector3);
 		}
 
-		protected override void ConfigureSpriteItemData(global::Funly.SkyStudio.BaseSpriteItemData data)
-		{
-		}
-
-		protected override void PrepareDataArraysForRendering(int instanceId, global::Funly.SkyStudio.BaseSpriteItemData data)
+		protected override void ConfigureSpriteItemData(BaseSpriteItemData data)
 		{
 		}
 
-		protected override void PopulatePropertyBlockForRendering(ref global::UnityEngine.MaterialPropertyBlock propertyBlock)
+		protected override void PrepareDataArraysForRendering(int instanceId, BaseSpriteItemData data)
 		{
 		}
 
-		public void UpdateForTimeOfDay(global::Funly.SkyStudio.SkyProfile skyProfile, float timeOfDay, global::Funly.SkyStudio.RainSplashArtItem style)
+		protected override void PopulatePropertyBlockForRendering(ref MaterialPropertyBlock propertyBlock)
+		{
+		}
+
+		public void UpdateForTimeOfDay(SkyProfile skyProfile, float timeOfDay, RainSplashArtItem style)
 		{
 		}
 
@@ -81,9 +83,9 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private global::UnityEngine.Vector3 CreateWorldSplashPoint()
+		private Vector3 CreateWorldSplashPoint()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 	}
 }

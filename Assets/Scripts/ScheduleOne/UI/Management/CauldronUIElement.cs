@@ -1,10 +1,12 @@
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.UI.Management
 {
-	public class CauldronUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class CauldronUIElement : WorldspaceUIElement
 	{
-		public global::ScheduleOne.ObjectScripts.Cauldron AssignedCauldron { get; protected set; }
+		public Cauldron AssignedCauldron { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.Cauldron cauldron)
+		public void Initialize(Cauldron cauldron)
 		{
 		}
 

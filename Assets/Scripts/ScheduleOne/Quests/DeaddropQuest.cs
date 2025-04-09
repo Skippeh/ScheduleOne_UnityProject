@@ -1,16 +1,19 @@
+using System.Collections.Generic;
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.Quests
 {
-	public class DeaddropQuest : global::ScheduleOne.Quests.Quest
+	public class DeaddropQuest : Quest
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Quests.DeaddropQuest> DeaddropQuests;
+		public static List<DeaddropQuest> DeaddropQuests;
 
-		public global::ScheduleOne.Economy.DeadDrop Drop { get; private set; }
+		public DeadDrop Drop { get; private set; }
 
 		public override void Begin(bool network = true)
 		{
 		}
 
-		public void SetDrop(global::ScheduleOne.Economy.DeadDrop drop)
+		public void SetDrop(DeadDrop drop)
 		{
 		}
 

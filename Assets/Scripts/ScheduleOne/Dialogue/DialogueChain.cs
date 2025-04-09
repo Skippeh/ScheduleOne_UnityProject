@@ -1,12 +1,16 @@
+using System;
+using ScheduleOne.UI.Phone.Messages;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DialogueChain
 	{
-		[global::UnityEngine.TextArea(1, 10)]
+		[TextArea(1, 10)]
 		public string[] Lines;
 
-		public global::ScheduleOne.UI.Phone.Messages.MessageChain GetMessageChain()
+		public MessageChain GetMessageChain()
 		{
 			return null;
 		}

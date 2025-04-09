@@ -1,7 +1,10 @@
+using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace VLB
 {
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/config/")]
-	public class Config : global::UnityEngine.ScriptableObject
+	[HelpURL("http://saladgamer.com/vlb-doc/config/")]
+	public class Config : ScriptableObject
 	{
 		public const string ClassName = "Config";
 
@@ -19,15 +22,15 @@ namespace VLB
 
 		public int geometryRenderQueueHD;
 
-		[global::UnityEngine.Serialization.FormerlySerializedAs("renderPipeline")]
-		[global::UnityEngine.Serialization.FormerlySerializedAs("_RenderPipeline")]
-		[global::UnityEngine.SerializeField]
-		private global::VLB.RenderPipeline m_RenderPipeline;
+		[FormerlySerializedAs("renderPipeline")]
+		[FormerlySerializedAs("_RenderPipeline")]
+		[SerializeField]
+		private RenderPipeline m_RenderPipeline;
 
-		[global::UnityEngine.Serialization.FormerlySerializedAs("renderingMode")]
-		[global::UnityEngine.Serialization.FormerlySerializedAs("_RenderingMode")]
-		[global::UnityEngine.SerializeField]
-		private global::VLB.RenderingMode m_RenderingMode;
+		[FormerlySerializedAs("renderingMode")]
+		[FormerlySerializedAs("_RenderingMode")]
+		[SerializeField]
+		private RenderingMode m_RenderingMode;
 
 		public float ditheringFactor;
 
@@ -41,26 +44,26 @@ namespace VLB
 
 		public int urpDepthCameraScriptableRendererIndex;
 
-		[global::UnityEngine.Range(0.01f, 2f)]
+		[Range(0.01f, 2f)]
 		public float globalNoiseScale;
 
-		public global::UnityEngine.Vector3 globalNoiseVelocity;
+		public Vector3 globalNoiseVelocity;
 
 		public string fadeOutCameraTag;
 
-		[global::VLB.HighlightNull]
-		public global::UnityEngine.Texture3D noiseTexture3D;
+		[HighlightNull]
+		public Texture3D noiseTexture3D;
 
-		[global::VLB.HighlightNull]
-		public global::UnityEngine.ParticleSystem dustParticlesPrefab;
+		[HighlightNull]
+		public ParticleSystem dustParticlesPrefab;
 
-		[global::VLB.HighlightNull]
-		public global::UnityEngine.Texture2D ditheringNoiseTexture;
+		[HighlightNull]
+		public Texture2D ditheringNoiseTexture;
 
-		[global::VLB.HighlightNull]
-		public global::UnityEngine.Texture2D jitteringNoiseTexture;
+		[HighlightNull]
+		public Texture2D jitteringNoiseTexture;
 
-		public global::VLB.FeatureEnabledColorGradient featureEnabledColorGradient;
+		public FeatureEnabledColorGradient featureEnabledColorGradient;
 
 		public bool featureEnabledDepthBlend;
 
@@ -76,47 +79,47 @@ namespace VLB
 
 		public bool featureEnabledCookie;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.RaymarchingQuality[] m_RaymarchingQualities;
+		[SerializeField]
+		private RaymarchingQuality[] m_RaymarchingQualities;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_DefaultRaymarchingQualityUniqueID;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int pluginVersion;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Material _DummyMaterial;
+		[SerializeField]
+		private Material _DummyMaterial;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Material _DummyMaterialHD;
+		[SerializeField]
+		private Material _DummyMaterialHD;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Shader _BeamShader;
+		[SerializeField]
+		private Shader _BeamShader;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Shader _BeamShaderHD;
+		[SerializeField]
+		private Shader _BeamShaderHD;
 
-		private global::UnityEngine.Transform m_CachedFadeOutCamera;
+		private Transform m_CachedFadeOutCamera;
 
-		private static global::VLB.Config ms_Instance;
+		private static Config ms_Instance;
 
-		public global::VLB.RenderPipeline renderPipeline
+		public RenderPipeline renderPipeline
 		{
 			get
 			{
-				return default(global::VLB.RenderPipeline);
+				return default(RenderPipeline);
 			}
 			set
 			{
 			}
 		}
 
-		public global::VLB.RenderingMode renderingMode
+		public RenderingMode renderingMode
 		{
 			get
 			{
-				return default(global::VLB.RenderingMode);
+				return default(RenderingMode);
 			}
 			set
 			{
@@ -127,7 +130,7 @@ namespace VLB
 
 		public bool SD_requiresDoubleSidedMesh => false;
 
-		public global::UnityEngine.Transform fadeOutCameraTransform => null;
+		public Transform fadeOutCameraTransform => null;
 
 		public int defaultRaymarchingQualityUniqueID => 0;
 
@@ -137,39 +140,39 @@ namespace VLB
 
 		public bool hasRenderPipelineMismatch => false;
 
-		public static global::VLB.Config Instance => null;
+		public static Config Instance => null;
 
 		public bool IsSRPBatcherSupported()
 		{
 			return false;
 		}
 
-		public global::VLB.RenderingMode GetActualRenderingMode(global::VLB.ShaderMode shaderMode)
+		public RenderingMode GetActualRenderingMode(ShaderMode shaderMode)
 		{
-			return default(global::VLB.RenderingMode);
+			return default(RenderingMode);
 		}
 
-		public global::UnityEngine.Shader GetBeamShader(global::VLB.ShaderMode mode)
+		public Shader GetBeamShader(ShaderMode mode)
 		{
 			return null;
 		}
 
-		private unsafe ref global::UnityEngine.Shader GetBeamShaderInternal(global::VLB.ShaderMode mode)
+		private unsafe ref Shader GetBeamShaderInternal(ShaderMode mode)
 		{
-			throw null;
+			return ref _BeamShaderHD;
 		}
 
-		private int GetRenderQueueInternal(global::VLB.ShaderMode mode)
+		private int GetRenderQueueInternal(ShaderMode mode)
 		{
 			return 0;
 		}
 
-		public global::UnityEngine.Material NewMaterialTransient(global::VLB.ShaderMode mode, bool gpuInstanced)
+		public Material NewMaterialTransient(ShaderMode mode, bool gpuInstanced)
 		{
 			return null;
 		}
 
-		public void SetURPScriptableRendererIndexToDepthCamera(global::UnityEngine.Camera camera)
+		public void SetURPScriptableRendererIndexToDepthCamera(Camera camera)
 		{
 		}
 
@@ -177,12 +180,12 @@ namespace VLB
 		{
 		}
 
-		public global::VLB.RaymarchingQuality GetRaymarchingQualityForIndex(int index)
+		public RaymarchingQuality GetRaymarchingQualityForIndex(int index)
 		{
 			return null;
 		}
 
-		public global::VLB.RaymarchingQuality GetRaymarchingQualityForUniqueID(int id)
+		public RaymarchingQuality GetRaymarchingQualityForUniqueID(int id)
 		{
 			return null;
 		}
@@ -201,7 +204,7 @@ namespace VLB
 		{
 		}
 
-		[global::UnityEngine.RuntimeInitializeOnLoadMethod]
+		[RuntimeInitializeOnLoadMethod]
 		private static void OnStartup()
 		{
 		}
@@ -218,7 +221,7 @@ namespace VLB
 		{
 		}
 
-		public global::UnityEngine.ParticleSystem NewVolumetricDustParticles()
+		public ParticleSystem NewVolumetricDustParticles()
 		{
 			return null;
 		}
@@ -231,12 +234,12 @@ namespace VLB
 		{
 		}
 
-		private static global::VLB.Config LoadAssetInternal(string assetName)
+		private static Config LoadAssetInternal(string assetName)
 		{
 			return null;
 		}
 
-		private static global::VLB.Config GetInstance(bool assertIfNotFound)
+		private static Config GetInstance(bool assertIfNotFound)
 		{
 			return null;
 		}

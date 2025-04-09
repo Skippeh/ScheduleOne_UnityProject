@@ -1,11 +1,15 @@
+using System;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ClipboardScreen : global::UnityEngine.MonoBehaviour
+	public class ClipboardScreen : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ClosedOffset;
 
 		public bool OpenOnStart;
@@ -14,7 +18,7 @@ namespace ScheduleOne.UI.Management
 
 		public int ExitActionPriority;
 
-		private global::UnityEngine.Coroutine lerpRoutine;
+		private Coroutine lerpRoutine;
 
 		public bool IsOpen { get; protected set; }
 
@@ -22,7 +26,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exitAction)
+		private void Exit(ExitAction exitAction)
 		{
 		}
 
@@ -34,7 +38,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void Lerp(bool open, global::System.Action callback)
+		private void Lerp(bool open, Action callback)
 		{
 		}
 	}

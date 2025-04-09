@@ -1,6 +1,9 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class CookableModule : global::ScheduleOne.StationFramework.ItemModule
+	public class CookableModule : ItemModule
 	{
 		public enum ECookableType
 		{
@@ -8,21 +11,21 @@ namespace ScheduleOne.StationFramework
 			Solid = 1
 		}
 
-		[global::UnityEngine.Header("Cook Settings")]
+		[Header("Cook Settings")]
 		public int CookTime;
 
-		public global::ScheduleOne.StationFramework.CookableModule.ECookableType CookType;
+		public ECookableType CookType;
 
-		[global::UnityEngine.Header("Product Settings")]
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Product;
+		[Header("Product Settings")]
+		public StorableItemDefinition Product;
 
 		public int ProductQuantity;
 
-		public global::UnityEngine.Rigidbody ProductShardPrefab;
+		public Rigidbody ProductShardPrefab;
 
-		[global::UnityEngine.Header("Appearance")]
-		public global::UnityEngine.Color LiquidColor;
+		[Header("Appearance")]
+		public Color LiquidColor;
 
-		public global::UnityEngine.Color SolidColor;
+		public Color SolidColor;
 	}
 }

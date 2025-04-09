@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.VoiceOver
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VODatabaseEntry
 	{
-		public global::ScheduleOne.VoiceOver.EVOLineType LineType;
+		public EVOLineType LineType;
 
-		public global::UnityEngine.AudioClip[] Clips;
+		public AudioClip[] Clips;
 
-		private global::UnityEngine.AudioClip lastClip;
+		private AudioClip lastClip;
 
 		public float VolumeMultiplier;
 
-		public global::UnityEngine.AudioClip GetRandomClip()
+		public AudioClip GetRandomClip()
 		{
 			return null;
 		}

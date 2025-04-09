@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace RadiantGI.Universal
 {
-	public class ToggleEffect : global::UnityEngine.MonoBehaviour
+	public class ToggleEffect : MonoBehaviour
 	{
-		public global::UnityEngine.Rendering.VolumeProfile profile;
+		public VolumeProfile profile;
 
-		private global::RadiantGI.Universal.RadiantGlobalIllumination radiant;
+		private RadiantGlobalIllumination radiant;
 
 		private void Start()
 		{

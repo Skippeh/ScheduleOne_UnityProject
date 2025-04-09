@@ -1,21 +1,28 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Networking;
+using Steamworks;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Multiplayer
 {
-	public class LobbyInterface : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.UI.Multiplayer.LobbyInterface>
+	public class LobbyInterface : PersistentSingleton<LobbyInterface>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Networking.Lobby Lobby;
+		[Header("References")]
+		public Lobby Lobby;
 
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::TMPro.TextMeshProUGUI LobbyTitle;
+		public TextMeshProUGUI LobbyTitle;
 
-		public global::UnityEngine.RectTransform[] PlayerSlots;
+		public RectTransform[] PlayerSlots;
 
-		public global::UnityEngine.UI.Button InviteButton;
+		public Button InviteButton;
 
-		public global::UnityEngine.UI.Button LeaveButton;
+		public Button LeaveButton;
 
-		public global::UnityEngine.GameObject InviteHint;
+		public GameObject InviteHint;
 
 		protected override void Awake()
 		{
@@ -49,7 +56,7 @@ namespace ScheduleOne.UI.Multiplayer
 		{
 		}
 
-		public void SetPlayer(int index, global::Steamworks.CSteamID player)
+		public void SetPlayer(int index, CSteamID player)
 		{
 		}
 
@@ -57,7 +64,7 @@ namespace ScheduleOne.UI.Multiplayer
 		{
 		}
 
-		private global::UnityEngine.Texture2D GetAvatar(global::Steamworks.CSteamID user)
+		private Texture2D GetAvatar(CSteamID user)
 		{
 			return null;
 		}

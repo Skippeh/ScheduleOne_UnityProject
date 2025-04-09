@@ -1,45 +1,55 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.ATM
 {
-	public class ATMInterface : global::UnityEngine.MonoBehaviour
+	public class ATMInterface : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CProcessTransaction_003Ed__56 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CProcessTransaction_003Ed__56 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.ATM.ATMInterface _003C_003E4__this;
+			public ATMInterface _003C_003E4__this;
 
 			public bool depositing;
 
 			public float amount;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CProcessTransaction_003Ed__56(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -48,97 +58,97 @@ namespace ScheduleOne.UI.ATM
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		[SerializeField]
+		protected Canvas canvas;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Money.ATM atm;
+		[SerializeField]
+		protected ScheduleOne.Money.ATM atm;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Audio.AudioSourceController CompleteSound;
+		[SerializeField]
+		protected AudioSourceController CompleteSound;
 
-		[global::UnityEngine.Header("Menu")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform menuScreen;
+		[Header("Menu")]
+		[SerializeField]
+		protected RectTransform menuScreen;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text menu_TitleText;
+		[SerializeField]
+		protected Text menu_TitleText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button menu_DepositButton;
+		[SerializeField]
+		protected Button menu_DepositButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button menu_WithdrawButton;
+		[SerializeField]
+		protected Button menu_WithdrawButton;
 
-		[global::UnityEngine.Header("Top bar")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text depositLimitText;
+		[Header("Top bar")]
+		[SerializeField]
+		protected Text depositLimitText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text onlineBalanceText;
+		[SerializeField]
+		protected Text onlineBalanceText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text cleanCashText;
+		[SerializeField]
+		protected Text cleanCashText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform depositLimitContainer;
+		[SerializeField]
+		protected RectTransform depositLimitContainer;
 
-		[global::UnityEngine.Header("Amount screen")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform amountSelectorScreen;
+		[Header("Amount screen")]
+		[SerializeField]
+		protected RectTransform amountSelectorScreen;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text amountSelectorTitle;
+		[SerializeField]
+		protected Text amountSelectorTitle;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.UI.Button> amountButtons;
+		[SerializeField]
+		protected List<Button> amountButtons;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text amountLabelText;
+		[SerializeField]
+		protected Text amountLabelText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform amountBackground;
+		[SerializeField]
+		protected RectTransform amountBackground;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform selectedButtonIndicator;
+		[SerializeField]
+		protected RectTransform selectedButtonIndicator;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button confirmAmountButton;
+		[SerializeField]
+		protected Button confirmAmountButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text confirmButtonText;
+		[SerializeField]
+		protected Text confirmButtonText;
 
-		[global::UnityEngine.Header("Processing screen")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform processingScreen;
+		[Header("Processing screen")]
+		[SerializeField]
+		protected RectTransform processingScreen;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform processingScreenIndicator;
+		[SerializeField]
+		protected RectTransform processingScreenIndicator;
 
-		[global::UnityEngine.Header("Success screen")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform successScreen;
+		[Header("Success screen")]
+		[SerializeField]
+		protected RectTransform successScreen;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text successScreenSubtitle;
+		[SerializeField]
+		protected Text successScreenSubtitle;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button doneButton;
+		[SerializeField]
+		protected Button doneButton;
 
-		private global::UnityEngine.RectTransform activeScreen;
+		private RectTransform activeScreen;
 
 		public static int[] amounts;
 
@@ -182,11 +192,11 @@ namespace ScheduleOne.UI.ATM
 		{
 		}
 
-		public virtual void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		public virtual void Exit(ExitAction action)
 		{
 		}
 
-		public void SetActiveScreen(global::UnityEngine.RectTransform screen)
+		public void SetActiveScreen(RectTransform screen)
 		{
 		}
 
@@ -231,8 +241,8 @@ namespace ScheduleOne.UI.ATM
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.ATM.ATMInterface._003CProcessTransaction_003Ed__56))]
-		protected global::System.Collections.IEnumerator ProcessTransaction(float amount, bool depositing)
+		[IteratorStateMachine(typeof(_003CProcessTransaction_003Ed__56))]
+		protected IEnumerator ProcessTransaction(float amount, bool depositing)
 		{
 			return null;
 		}

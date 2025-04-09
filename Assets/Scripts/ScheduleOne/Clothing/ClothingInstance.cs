@@ -1,9 +1,14 @@
+using System;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.Clothing
 {
-	[global::System.Serializable]
-	public class ClothingInstance : global::ScheduleOne.Storage.StorableItemInstance
+	[Serializable]
+	public class ClothingInstance : StorableItemInstance
 	{
-		public global::ScheduleOne.Clothing.EClothingColor Color;
+		public EClothingColor Color;
 
 		public override string Name => null;
 
@@ -11,16 +16,16 @@ namespace ScheduleOne.Clothing
 		{
 		}
 
-		public ClothingInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.Clothing.EClothingColor color)
+		public ClothingInstance(ItemDefinition definition, int quantity, EClothingColor color)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}

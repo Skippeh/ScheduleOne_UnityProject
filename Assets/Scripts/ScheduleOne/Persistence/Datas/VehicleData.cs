@@ -1,19 +1,23 @@
+using System;
+using ScheduleOne.Vehicles.Modification;
+using UnityEngine;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class VehicleData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class VehicleData : SaveData
 	{
 		public string GUID;
 
 		public string VehicleCode;
 
-		public global::UnityEngine.Vector3 Position;
+		public Vector3 Position;
 
-		public global::UnityEngine.Quaternion Rotation;
+		public Quaternion Rotation;
 
 		public string Color;
 
-		public VehicleData(global::System.Guid guid, string code, global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot, global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		public VehicleData(Guid guid, string code, Vector3 pos, Quaternion rot, EVehicleColor col)
 		{
 		}
 	}

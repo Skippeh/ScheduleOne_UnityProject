@@ -1,12 +1,21 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Dragging
 {
-	public class DragManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Dragging.DragManager>
+	public class DragManager : NetworkSingleton<DragManager>
 	{
 		public const float DRAGGABLE_OFFSET = 1.25f;
 
-		public global::ScheduleOne.Audio.AudioSourceController ThrowSound;
+		public AudioSourceController ThrowSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float DragForce;
 
 		public float DampingFactor;
@@ -19,21 +28,21 @@ namespace ScheduleOne.Dragging
 
 		public float MassInfluence;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dragging.Draggable> AllDraggables;
+		private List<Draggable> AllDraggables;
 
-		private global::ScheduleOne.Dragging.Draggable lastThrownDraggable;
+		private Draggable lastThrownDraggable;
 
-		private global::ScheduleOne.Dragging.Draggable lastHeldDraggable;
+		private Draggable lastHeldDraggable;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDragging_002EDragManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EDragging_002EDragManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Dragging.Draggable CurrentDraggable { get; protected set; }
+		public Draggable CurrentDraggable { get; protected set; }
 
 		public bool IsDragging => false;
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -50,46 +59,46 @@ namespace ScheduleOne.Dragging
 			return false;
 		}
 
-		public void RegisterDraggable(global::ScheduleOne.Dragging.Draggable draggable)
+		public void RegisterDraggable(Draggable draggable)
 		{
 		}
 
-		public void Deregister(global::ScheduleOne.Dragging.Draggable draggable)
+		public void Deregister(Draggable draggable)
 		{
 		}
 
-		public void StartDragging(global::ScheduleOne.Dragging.Draggable draggable)
+		public void StartDragging(Draggable draggable)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendDragger(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendDragger(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void SetDragger(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		[ObserversRpc]
+		private void SetDragger(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		public void StopDragging(global::UnityEngine.Vector3 velocity)
+		public void StopDragging(Vector3 velocity)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void SendDraggableTransformData(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void SendDraggableTransformData(string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void SetDraggableTransformData(global::FishNet.Connection.NetworkConnection conn, string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void SetDraggableTransformData(NetworkConnection conn, string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetTargetPosition()
+		private Vector3 GetTargetPosition()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public override void NetworkInitialize___Early()
@@ -104,59 +113,59 @@ namespace ScheduleOne.Dragging
 		{
 		}
 
-		private void RpcWriter___Server_SendDragger_807933219(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		private void RpcWriter___Server_SendDragger_807933219(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		private void RpcLogic___SendDragger_807933219(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		private void RpcLogic___SendDragger_807933219(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		private void RpcReader___Server_SendDragger_807933219(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDragger_807933219(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetDragger_807933219(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		private void RpcWriter___Observers_SetDragger_807933219(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		private void RpcLogic___SetDragger_807933219(string draggableGUID, global::FishNet.Object.NetworkObject dragger, global::UnityEngine.Vector3 position)
+		private void RpcLogic___SetDragger_807933219(string draggableGUID, NetworkObject dragger, Vector3 position)
 		{
 		}
 
-		private void RpcReader___Observers_SetDragger_807933219(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetDragger_807933219(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendDraggableTransformData_4062762274(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		private void RpcWriter___Server_SendDraggableTransformData_4062762274(string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private void RpcLogic___SendDraggableTransformData_4062762274(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		private void RpcLogic___SendDraggableTransformData_4062762274(string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private void RpcReader___Server_SendDraggableTransformData_4062762274(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDraggableTransformData_4062762274(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetDraggableTransformData_3831223955(global::FishNet.Connection.NetworkConnection conn, string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		private void RpcWriter___Observers_SetDraggableTransformData_3831223955(NetworkConnection conn, string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private void RpcLogic___SetDraggableTransformData_3831223955(global::FishNet.Connection.NetworkConnection conn, string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		private void RpcLogic___SetDraggableTransformData_3831223955(NetworkConnection conn, string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private void RpcReader___Observers_SetDraggableTransformData_3831223955(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetDraggableTransformData_3831223955(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetDraggableTransformData_3831223955(global::FishNet.Connection.NetworkConnection conn, string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity)
+		private void RpcWriter___Target_SetDraggableTransformData_3831223955(NetworkConnection conn, string guid, Vector3 position, Quaternion rotation, Vector3 velocity)
 		{
 		}
 
-		private void RpcReader___Target_SetDraggableTransformData_3831223955(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetDraggableTransformData_3831223955(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

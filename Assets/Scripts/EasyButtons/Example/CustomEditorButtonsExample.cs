@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace EasyButtons.Example
 {
-	public class CustomEditorButtonsExample : global::UnityEngine.MonoBehaviour
+	public class CustomEditorButtonsExample : MonoBehaviour
 	{
-		[global::EasyButtons.Button("Custom Editor Example")]
+		[Button("Custom Editor Example")]
 		private void SayHello()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void SecondButton()
 		{
 		}

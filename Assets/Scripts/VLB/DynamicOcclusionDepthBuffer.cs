@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-dynocclusion-sd-depthbuffer/")]
-	public class DynamicOcclusionDepthBuffer : global::VLB.DynamicOcclusionAbstractBase
+	[ExecuteInEditMode]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-dynocclusion-sd-depthbuffer/")]
+	public class DynamicOcclusionDepthBuffer : DynamicOcclusionAbstractBase
 	{
 		public new const string ClassName = "DynamicOcclusionDepthBuffer";
 
-		public global::UnityEngine.LayerMask layerMask;
+		public LayerMask layerMask;
 
 		public bool useOcclusionCulling;
 
@@ -14,7 +16,7 @@ namespace VLB
 
 		public float fadeDistanceToSurface;
 
-		private global::UnityEngine.Camera m_DepthCamera;
+		private Camera m_DepthCamera;
 
 		private bool m_NeedToUpdateOcclusionNextFrame;
 
@@ -23,16 +25,16 @@ namespace VLB
 			return null;
 		}
 
-		protected override global::VLB.MaterialManager.SD.DynamicOcclusion GetDynamicOcclusionMode()
+		protected override MaterialManager.SD.DynamicOcclusion GetDynamicOcclusionMode()
 		{
-			return default(global::VLB.MaterialManager.SD.DynamicOcclusion);
+			return default(MaterialManager.SD.DynamicOcclusion);
 		}
 
 		private void ProcessOcclusionInternal()
 		{
 		}
 
-		protected override bool OnProcessOcclusion(global::VLB.DynamicOcclusionAbstractBase.ProcessOcclusionSource source)
+		protected override bool OnProcessOcclusion(ProcessOcclusionSource source)
 		{
 			return false;
 		}
@@ -78,7 +80,7 @@ namespace VLB
 		{
 		}
 
-		protected override void OnModifyMaterialCallback(global::VLB.MaterialModifier.Interface owner)
+		protected override void OnModifyMaterialCallback(MaterialModifier.Interface owner)
 		{
 		}
 	}

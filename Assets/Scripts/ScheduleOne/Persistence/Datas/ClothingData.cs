@@ -1,11 +1,14 @@
+using System;
+using ScheduleOne.Clothing;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ClothingData : global::ScheduleOne.Persistence.Datas.ItemData
+	[Serializable]
+	public class ClothingData : ItemData
 	{
-		public global::ScheduleOne.Clothing.EClothingColor Color;
+		public EClothingColor Color;
 
-		public ClothingData(string iD, int quantity, global::ScheduleOne.Clothing.EClothingColor color)
+		public ClothingData(string iD, int quantity, EClothingColor color)
 			: base(null, 0)
 		{
 		}

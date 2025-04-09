@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class HelpInformation : global::UnityEngine.MonoBehaviour
+	public class HelpInformation : MonoBehaviour
 	{
 	}
 }

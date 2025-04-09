@@ -1,59 +1,69 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.NPCs;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.UI.Phone.Messages;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Messaging
 {
-	[global::System.Serializable]
-	public class MSGConversation : global::ScheduleOne.Persistence.ISaveable
+	[Serializable]
+	public class MSGConversation : ISaveable
 	{
 		public const int MAX_MESSAGE_HISTORY = 10;
 
 		public string contactName;
 
-		public global::ScheduleOne.NPCs.NPC sender;
+		public NPC sender;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.Message> messageHistory;
+		public List<Message> messageHistory;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Messages.MessageChain> messageChainHistory;
+		public List<MessageChain> messageChainHistory;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Messages.MessageBubble> bubbles;
+		public List<MessageBubble> bubbles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.SendableMessage> Sendables;
+		public List<SendableMessage> Sendables;
 
 		public bool read;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.EConversationCategory> Categories;
+		public List<EConversationCategory> Categories;
 
-		public global::UnityEngine.RectTransform entry;
+		public RectTransform entry;
 
-		protected global::UnityEngine.RectTransform container;
+		protected RectTransform container;
 
-		protected global::UnityEngine.RectTransform bubbleContainer;
+		protected RectTransform bubbleContainer;
 
-		protected global::UnityEngine.RectTransform scrollRectContainer;
+		protected RectTransform scrollRectContainer;
 
-		protected global::UnityEngine.UI.ScrollRect scrollRect;
+		protected ScrollRect scrollRect;
 
-		protected global::UnityEngine.UI.Text entryPreviewText;
+		protected Text entryPreviewText;
 
-		protected global::UnityEngine.RectTransform unreadDot;
+		protected RectTransform unreadDot;
 
-		protected global::UnityEngine.UI.Slider slider;
+		protected Slider slider;
 
-		protected global::UnityEngine.UI.Image sliderFill;
+		protected Image sliderFill;
 
-		protected global::UnityEngine.RectTransform responseContainer;
+		protected RectTransform responseContainer;
 
-		protected global::ScheduleOne.UI.Phone.Messages.MessageSenderInterface senderInterface;
+		protected MessageSenderInterface senderInterface;
 
 		private bool uiCreated;
 
-		public global::System.Action onMessageRendered;
+		public Action onMessageRendered;
 
-		public global::System.Action onLoaded;
+		public Action onLoaded;
 
-		public global::System.Action onResponsesShown;
+		public Action onResponsesShown;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.Response> currentResponses;
+		public List<Response> currentResponses;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> responseRects;
+		private List<RectTransform> responseRects;
 
 		public bool IsSenderKnown { get; protected set; }
 
@@ -71,17 +81,17 @@ namespace ScheduleOne.Messaging
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
-		public MSGConversation(global::ScheduleOne.NPCs.NPC _npc, string _contactName)
+		public MSGConversation(NPC _npc, string _contactName)
 		{
 		}
 
@@ -89,7 +99,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public void SetCategories(global::System.Collections.Generic.List<global::ScheduleOne.Messaging.EConversationCategory> cat)
+		public void SetCategories(List<EConversationCategory> cat)
 		{
 		}
 
@@ -125,7 +135,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		protected virtual void RenderMessage(global::ScheduleOne.Messaging.Message m)
+		protected virtual void RenderMessage(Message m)
 		{
 		}
 
@@ -137,15 +147,15 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public void SendMessage(global::ScheduleOne.Messaging.Message message, bool notify = true, bool network = true)
+		public void SendMessage(Message message, bool notify = true, bool network = true)
 		{
 		}
 
-		public void SendMessageChain(global::ScheduleOne.UI.Phone.Messages.MessageChain messages, float initialDelay = 0f, bool notify = true, bool network = true)
+		public void SendMessageChain(MessageChain messages, float initialDelay = 0f, bool notify = true, bool network = true)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.MSGConversationData GetSaveData()
+		public MSGConversationData GetSaveData()
 		{
 			return null;
 		}
@@ -155,24 +165,24 @@ namespace ScheduleOne.Messaging
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.MSGConversationData data)
+		public virtual void Load(MSGConversationData data)
 		{
 		}
 
-		public void SetSliderValue(float value, global::UnityEngine.Color color)
+		public void SetSliderValue(float value, Color color)
 		{
 		}
 
-		public global::ScheduleOne.Messaging.Response GetResponse(string label)
+		public Response GetResponse(string label)
 		{
 			return null;
 		}
 
-		public void ShowResponses(global::System.Collections.Generic.List<global::ScheduleOne.Messaging.Response> _responses, float showResponseDelay = 0f, bool network = true)
+		public void ShowResponses(List<Response> _responses, float showResponseDelay = 0f, bool network = true)
 		{
 		}
 
-		protected void CreateResponseUI(global::ScheduleOne.Messaging.Response r)
+		protected void CreateResponseUI(Response r)
 		{
 		}
 
@@ -188,7 +198,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public void ResponseChosen(global::ScheduleOne.Messaging.Response r, bool network)
+		public void ResponseChosen(Response r, bool network)
 		{
 		}
 
@@ -196,7 +206,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public global::ScheduleOne.Messaging.SendableMessage CreateSendableMessage(string text)
+		public SendableMessage CreateSendableMessage(string text)
 		{
 			return null;
 		}
@@ -205,7 +215,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public void RenderPlayerMessage(global::ScheduleOne.Messaging.SendableMessage sendable)
+		public void RenderPlayerMessage(SendableMessage sendable)
 		{
 		}
 

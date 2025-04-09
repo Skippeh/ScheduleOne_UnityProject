@@ -1,27 +1,32 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class KeyframeGroupDictionary : global::UnityEngine.ISerializationCallbackReceiver, global::System.Collections.Generic.IEnumerable<string>, global::System.Collections.IEnumerable
+	[Serializable]
+	public class KeyframeGroupDictionary : ISerializationCallbackReceiver, IEnumerable<string>, IEnumerable
 	{
-		[global::System.NonSerialized]
-		private global::System.Collections.Generic.Dictionary<string, global::Funly.SkyStudio.IKeyframeGroup> m_Groups;
+		[NonSerialized]
+		private Dictionary<string, IKeyframeGroup> m_Groups;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.ColorGroupDictionary m_ColorGroup;
+		[SerializeField]
+		private ColorGroupDictionary m_ColorGroup;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.NumberGroupDictionary m_NumberGroup;
+		[SerializeField]
+		private NumberGroupDictionary m_NumberGroup;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.TextureGroupDictionary m_TextureGroup;
+		[SerializeField]
+		private TextureGroupDictionary m_TextureGroup;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.SpherePointGroupDictionary m_SpherePointGroup;
+		[SerializeField]
+		private SpherePointGroupDictionary m_SpherePointGroup;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.BoolGroupDictionary m_BoolGroup;
+		[SerializeField]
+		private BoolGroupDictionary m_BoolGroup;
 
-		public global::Funly.SkyStudio.IKeyframeGroup this[string aKey]
+		public IKeyframeGroup this[string aKey]
 		{
 			get
 			{
@@ -54,12 +59,12 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public global::System.Collections.Generic.IEnumerator<string> GetEnumerator()
+		public IEnumerator<string> GetEnumerator()
 		{
 			return null;
 		}
 
-		global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return null;
 		}

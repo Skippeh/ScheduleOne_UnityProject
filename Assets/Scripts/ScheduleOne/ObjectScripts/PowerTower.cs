@@ -1,6 +1,8 @@
+using ScheduleOne.ConstructableScripts;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class PowerTower : global::ScheduleOne.ConstructableScripts.Constructable_GridBased
+	public class PowerTower : Constructable_GridBased
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EPowerTowerAssembly_002DCSharp_002Edll_Excuted;
 

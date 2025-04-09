@@ -1,35 +1,37 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamHD))]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-cookie-hd/")]
-	public class VolumetricCookieHD : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(VolumetricLightBeamHD))]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-cookie-hd/")]
+	public class VolumetricCookieHD : MonoBehaviour
 	{
 		public const string ClassName = "VolumetricCookieHD";
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_Contribution;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture m_CookieTexture;
+		[SerializeField]
+		private Texture m_CookieTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.CookieChannel m_Channel;
+		[SerializeField]
+		private CookieChannel m_Channel;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_Negative;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector2 m_Translation;
+		[SerializeField]
+		private Vector2 m_Translation;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_Rotation;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector2 m_Scale;
+		[SerializeField]
+		private Vector2 m_Scale;
 
-		private global::VLB.VolumetricLightBeamHD m_Master;
+		private VolumetricLightBeamHD m_Master;
 
 		public float contribution
 		{
@@ -42,7 +44,7 @@ namespace VLB
 			}
 		}
 
-		public global::UnityEngine.Texture cookieTexture
+		public Texture cookieTexture
 		{
 			get
 			{
@@ -53,11 +55,11 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.CookieChannel channel
+		public CookieChannel channel
 		{
 			get
 			{
-				return default(global::VLB.CookieChannel);
+				return default(CookieChannel);
 			}
 			set
 			{
@@ -75,11 +77,11 @@ namespace VLB
 			}
 		}
 
-		public global::UnityEngine.Vector2 translation
+		public Vector2 translation
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
@@ -97,11 +99,11 @@ namespace VLB
 			}
 		}
 
-		public global::UnityEngine.Vector2 scale
+		public Vector2 scale
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
@@ -112,7 +114,7 @@ namespace VLB
 		{
 		}
 
-		public static void ApplyMaterialProperties(global::VLB.VolumetricCookieHD instance, global::VLB.BeamGeometryHD geom)
+		public static void ApplyMaterialProperties(VolumetricCookieHD instance, BeamGeometryHD geom)
 		{
 		}
 

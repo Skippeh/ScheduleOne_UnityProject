@@ -1,6 +1,6 @@
 namespace Funly.SkyStudio
 {
-	public class Standard3dShaderDefinition : global::Funly.SkyStudio.BaseShaderDefinition
+	public class Standard3dShaderDefinition : BaseShaderDefinition
 	{
 		public const float MaxStarSize = 0.2f;
 
@@ -20,12 +20,12 @@ namespace Funly.SkyStudio
 
 		public const float MaxHDRValue = 25f;
 
-		protected override global::Funly.SkyStudio.ProfileFeatureSection[] ProfileFeatureSection()
+		protected override ProfileFeatureSection[] ProfileFeatureSection()
 		{
 			return null;
 		}
 
-		protected override global::Funly.SkyStudio.ProfileGroupSection[] ProfileDefinitionTable()
+		protected override ProfileGroupSection[] ProfileDefinitionTable()
 		{
 			return null;
 		}

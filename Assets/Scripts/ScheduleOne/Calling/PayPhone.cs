@@ -1,26 +1,34 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Interaction;
+using ScheduleOne.Lighting;
+using ScheduleOne.ScriptableObjects;
+using UnityEngine;
+
 namespace ScheduleOne.Calling
 {
-	public class PayPhone : global::UnityEngine.MonoBehaviour
+	public class PayPhone : MonoBehaviour
 	{
 		public const float RING_INTERVAL = 4f;
 
 		public const float RING_RANGE = 9f;
 
-		public global::ScheduleOne.Lighting.BlinkingLight Light;
+		public BlinkingLight Light;
 
-		public global::ScheduleOne.Audio.AudioSourceController RingSound;
+		public AudioSourceController RingSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController AnswerSound;
+		public AudioSourceController AnswerSound;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform CameraPosition;
+		public Transform CameraPosition;
 
 		private float timeSinceLastRing;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData QueuedCall => null;
+		private const float ringRangeSquared = 81f;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCall => null;
+		public PhoneCallData QueuedCall => null;
+
+		public PhoneCallData ActiveCall => null;
 
 		public void FixedUpdate()
 		{

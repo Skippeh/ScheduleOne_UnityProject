@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Kim : global::ScheduleOne.NPCs.NPC
+	public class Kim : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EKimAssembly_002DCSharp_002Edll_Excuted;
 

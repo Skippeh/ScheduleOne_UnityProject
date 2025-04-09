@@ -1,6 +1,13 @@
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.Employees;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class PotActionBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class PotActionBehaviour : Behaviour
 	{
 		public enum EActionType
 		{
@@ -22,27 +29,27 @@ namespace ScheduleOne.NPCs.Behaviour
 			WalkingToDestination = 5
 		}
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public int AdditiveNumber;
 
-		[global::UnityEngine.Header("Equippables")]
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable WateringCanEquippable;
+		[Header("Equippables")]
+		public AvatarEquippable WateringCanEquippable;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable TrimmersEquippable;
+		public AvatarEquippable TrimmersEquippable;
 
-		private global::ScheduleOne.Employees.Botanist botanist;
+		private Botanist botanist;
 
-		private global::UnityEngine.Coroutine walkToSuppliesRoutine;
+		private Coroutine walkToSuppliesRoutine;
 
-		private global::UnityEngine.Coroutine grabRoutine;
+		private Coroutine grabRoutine;
 
-		private global::UnityEngine.Coroutine walkToPotRoutine;
+		private Coroutine walkToPotRoutine;
 
-		private global::UnityEngine.Coroutine performActionRoutine;
+		private Coroutine performActionRoutine;
 
 		private string currentActionAnimation;
 
-		private global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable currentActionEquippable;
+		private AvatarEquippable currentActionEquippable;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EPotActionBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
@@ -50,17 +57,17 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public bool Initialized { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.Pot AssignedPot { get; protected set; }
+		public Pot AssignedPot { get; protected set; }
 
-		public global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType CurrentActionType { get; protected set; }
+		public EActionType CurrentActionType { get; protected set; }
 
-		public global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EState CurrentState { get; protected set; }
+		public EState CurrentState { get; protected set; }
 
 		public override void Awake()
 		{
 		}
 
-		public virtual void Initialize(global::ScheduleOne.ObjectScripts.Pot pot, global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		public virtual void Initialize(Pot pot, EActionType actionType)
 		{
 		}
 
@@ -120,17 +127,17 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private string GetActionAnimation(global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		private string GetActionAnimation(EActionType actionType)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable GetActionEquippable(global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		private AvatarEquippable GetActionEquippable(EActionType actionType)
 		{
 			return null;
 		}
 
-		public float GetWaitTime(global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		public float GetWaitTime(EActionType actionType)
 		{
 			return 0f;
 		}
@@ -145,7 +152,7 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private global::ScheduleOne.Management.ITransitEntity GetSuppliesAsTransitEntity()
+		private ITransitEntity GetSuppliesAsTransitEntity()
 		{
 			return null;
 		}
@@ -155,7 +162,7 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private global::UnityEngine.Transform GetPotAccessPoint()
+		private Transform GetPotAccessPoint()
 		{
 			return null;
 		}
@@ -165,7 +172,7 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private string[] GetRequiredItemIDs(global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType, global::ScheduleOne.ObjectScripts.Pot pot)
+		private string[] GetRequiredItemIDs(EActionType actionType, Pot pot)
 		{
 			return null;
 		}
@@ -180,58 +187,58 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		public bool DoesTaskTypeRequireSupplies(global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
+		public bool DoesTaskTypeRequireSupplies(EActionType actionType)
 		{
 			return false;
 		}
 
-		public bool DoesBotanistHaveMaterialsForTask(global::ScheduleOne.Employees.Botanist botanist, global::ScheduleOne.ObjectScripts.Pot pot, global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType, int additiveNumber = -1)
+		public bool DoesBotanistHaveMaterialsForTask(Botanist botanist, Pot pot, EActionType actionType, int additiveNumber = -1)
 		{
 			return false;
 		}
 
-		private global::ScheduleOne.ItemFramework.ItemInstance GetSoilInSupplies()
+		private ItemInstance GetSoilInSupplies()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ItemFramework.ItemInstance GetSeedInSupplies(global::ScheduleOne.ObjectScripts.Pot pot)
+		private ItemInstance GetSeedInSupplies(Pot pot)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ItemFramework.ItemInstance GetAdditiveInSupplies(global::ScheduleOne.ObjectScripts.Pot pot, int additiveNumber)
+		private ItemInstance GetAdditiveInSupplies(Pot pot, int additiveNumber)
 		{
 			return null;
 		}
 
-		public bool CanPotBeWatered(global::ScheduleOne.ObjectScripts.Pot pot, float threshold)
+		public bool CanPotBeWatered(Pot pot, float threshold)
 		{
 			return false;
 		}
 
-		public bool CanPotHaveSoilPour(global::ScheduleOne.ObjectScripts.Pot pot)
+		public bool CanPotHaveSoilPour(Pot pot)
 		{
 			return false;
 		}
 
-		public bool CanPotHaveSeedSown(global::ScheduleOne.ObjectScripts.Pot pot)
+		public bool CanPotHaveSeedSown(Pot pot)
 		{
 			return false;
 		}
 
-		public bool CanPotHaveAdditiveApplied(global::ScheduleOne.ObjectScripts.Pot pot, out int additiveNumber)
+		public bool CanPotHaveAdditiveApplied(Pot pot, out int additiveNumber)
 		{
 			additiveNumber = default(int);
 			return false;
 		}
 
-		public bool CanPotBeHarvested(global::ScheduleOne.ObjectScripts.Pot pot)
+		public bool CanPotBeHarvested(Pot pot)
 		{
 			return false;
 		}
 
-		public bool DoesPotHaveValidDestination(global::ScheduleOne.ObjectScripts.Pot pot)
+		public bool DoesPotHaveValidDestination(Pot pot)
 		{
 			return false;
 		}

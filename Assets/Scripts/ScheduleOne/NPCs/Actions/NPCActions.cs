@@ -1,14 +1,22 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Law;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.NPCs.Actions
 {
-	public class NPCActions : global::FishNet.Object.NetworkBehaviour
+	public class NPCActions : NetworkBehaviour
 	{
-		private global::ScheduleOne.NPCs.NPC npc;
+		private NPC npc;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EActions_002ENPCActionsAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EActions_002ENPCActionsAssembly_002DCSharp_002Edll_Excuted;
 
-		protected global::ScheduleOne.NPCs.Behaviour.NPCBehaviour behaviour => null;
+		protected NPCBehaviour behaviour => null;
 
 		public virtual void Awake()
 		{
@@ -18,16 +26,16 @@ namespace ScheduleOne.NPCs.Actions
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void CallPolice_Networked(global::ScheduleOne.PlayerScripts.Player player)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void CallPolice_Networked(Player player)
 		{
 		}
 
-		public void SetCallPoliceBehaviourCrime(global::ScheduleOne.Law.Crime crime)
+		public void SetCallPoliceBehaviourCrime(Crime crime)
 		{
 		}
 
-		public void FacePlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public void FacePlayer(Player player)
 		{
 		}
 
@@ -43,15 +51,15 @@ namespace ScheduleOne.NPCs.Actions
 		{
 		}
 
-		private void RpcWriter___Server_CallPolice_Networked_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcWriter___Server_CallPolice_Networked_1385486242(Player player)
 		{
 		}
 
-		public void RpcLogic___CallPolice_Networked_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		public void RpcLogic___CallPolice_Networked_1385486242(Player player)
 		{
 		}
 
-		private void RpcReader___Server_CallPolice_Networked_1385486242(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CallPolice_Networked_1385486242(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

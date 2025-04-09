@@ -1,13 +1,17 @@
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Dan : global::ScheduleOne.NPCs.NPC
+	public class Dan : NPC
 	{
-		public global::ScheduleOne.UI.Shop.ShopInterface ShopInterface;
+		public ShopInterface ShopInterface;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string[] OrderCompletedLines;
 
-		public global::UnityEngine.Events.UnityEvent onGreeting;
+		public UnityEvent onGreeting;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EDanAssembly_002DCSharp_002Edll_Excuted;
 

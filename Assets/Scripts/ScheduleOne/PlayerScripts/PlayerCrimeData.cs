@@ -1,14 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.Law;
+using ScheduleOne.NPCs;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerCrimeData : global::FishNet.Object.NetworkBehaviour
+	public class PlayerCrimeData : NetworkBehaviour
 	{
 		public class VehicleCollisionInstance
 		{
-			public global::ScheduleOne.NPCs.NPC Victim;
+			public NPC Victim;
 
 			public float TimeSince;
 
-			public VehicleCollisionInstance(global::ScheduleOne.NPCs.NPC victim, float timeSince)
+			public VehicleCollisionInstance(NPC victim, float timeSince)
 			{
 			}
 		}
@@ -42,13 +56,13 @@ namespace ScheduleOne.PlayerScripts
 
 		public const float VEHICLE_COLLISION_LIMIT = 3f;
 
-		public global::ScheduleOne.Police.PoliceOfficer NearestOfficer;
+		public PoliceOfficer NearestOfficer;
 
-		public global::ScheduleOne.PlayerScripts.Player Player;
+		public Player Player;
 
-		public global::ScheduleOne.Audio.AudioSourceController onPursuitEscapedSound;
+		public AudioSourceController onPursuitEscapedSound;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> Pursuers;
+		public List<PoliceOfficer> Pursuers;
 
 		public float TimeSincePursuitStart;
 
@@ -56,17 +70,17 @@ namespace ScheduleOne.PlayerScripts
 
 		public float TimeSinceSighted;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Law.Crime, int> Crimes;
+		public Dictionary<Crime, int> Crimes;
 
 		public bool BodySearchPending;
 
 		public float timeSinceLastShot;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerCrimeData.VehicleCollisionInstance> Collisions;
+		protected List<VehicleCollisionInstance> Collisions;
 
-		private global::ScheduleOne.Audio.MusicTrack _lightCombatTrack;
+		private MusicTrack _lightCombatTrack;
 
-		private global::ScheduleOne.Audio.MusicTrack _heavyCombatTrack;
+		private MusicTrack _heavyCombatTrack;
 
 		private float outOfSightTimeToDipMusic;
 
@@ -76,40 +90,26 @@ namespace ScheduleOne.PlayerScripts
 
 		private float musicChangeRate_Up;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel> syncVar____003CCurrentPursuitLevel_003Ek__BackingField;
+		public SyncVar<EPursuitLevel> syncVar____003CCurrentPursuitLevel_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::UnityEngine.Vector3> syncVar____003CLastKnownPosition_003Ek__BackingField;
+		public SyncVar<Vector3> syncVar____003CLastKnownPosition_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPlayerScripts_002EPlayerCrimeDataAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EPlayerScripts_002EPlayerCrimeDataAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel CurrentPursuitLevel
+		[field: SyncVar(SendRate = 0.5f, WritePermissions = WritePermission.ClientUnsynchronized)]
+		public EPursuitLevel CurrentPursuitLevel
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return default(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel);
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
-			protected set
-			{
-			}
+			get; [ServerRpc(RunLocally = true)]
+			protected set;
 		}
 
-		public global::UnityEngine.Vector3 LastKnownPosition
+		[field: SyncVar(SendRate = 0.5f, WritePermissions = WritePermission.ClientUnsynchronized)]
+		public Vector3 LastKnownPosition
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return default(global::UnityEngine.Vector3);
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
-			protected set
-			{
-			}
+			get; [ServerRpc(RunLocally = true)]
+			protected set;
 		}
 
 		public float CurrentArrestProgress { get; protected set; }
@@ -120,22 +120,22 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool EvadedArrest { get; protected set; }
 
-		public global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel SyncAccessor__003CCurrentPursuitLevel_003Ek__BackingField
+		public EPursuitLevel SyncAccessor__003CCurrentPursuitLevel_003Ek__BackingField
 		{
 			get
 			{
-				return default(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel);
+				return default(EPursuitLevel);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Vector3 SyncAccessor__003CLastKnownPosition_003Ek__BackingField
+		public Vector3 SyncAccessor__003CLastKnownPosition_003Ek__BackingField
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
@@ -162,7 +162,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void SetPursuitLevel(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel level)
+		public void SetPursuitLevel(EPursuitLevel level)
 		{
 		}
 
@@ -174,7 +174,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void RecordLastKnownPosition(bool resetTimeSinceSighted)
 		{
 		}
@@ -195,7 +195,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void AddCrime(global::ScheduleOne.Law.Crime crime, int quantity = 1)
+		public void AddCrime(Crime crime, int quantity = 1)
 		{
 		}
 
@@ -203,7 +203,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool IsCrimeOnRecord(global::System.Type crime)
+		public bool IsCrimeOnRecord(Type crime)
 		{
 			return false;
 		}
@@ -246,7 +246,7 @@ namespace ScheduleOne.PlayerScripts
 			return 0f;
 		}
 
-		public void RecordVehicleCollision(global::ScheduleOne.NPCs.NPC victim)
+		public void RecordVehicleCollision(NPC victim)
 		{
 		}
 
@@ -266,29 +266,29 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_set_CurrentPursuitLevel_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel value)
+		private void RpcWriter___Server_set_CurrentPursuitLevel_2979171596(EPursuitLevel value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		protected void RpcLogic___set_CurrentPursuitLevel_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel value)
+		[SpecialName]
+		protected void RpcLogic___set_CurrentPursuitLevel_2979171596(EPursuitLevel value)
 		{
 		}
 
-		private void RpcReader___Server_set_CurrentPursuitLevel_2979171596(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_CurrentPursuitLevel_2979171596(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_set_LastKnownPosition_4276783012(global::UnityEngine.Vector3 value)
+		private void RpcWriter___Server_set_LastKnownPosition_4276783012(Vector3 value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		protected void RpcLogic___set_LastKnownPosition_4276783012(global::UnityEngine.Vector3 value)
+		[SpecialName]
+		protected void RpcLogic___set_LastKnownPosition_4276783012(Vector3 value)
 		{
 		}
 
-		private void RpcReader___Server_set_LastKnownPosition_4276783012(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_LastKnownPosition_4276783012(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -300,11 +300,11 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_RecordLastKnownPosition_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_RecordLastKnownPosition_1140765316(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EPlayerScripts_002EPlayerCrimeData(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EPlayerScripts_002EPlayerCrimeData(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

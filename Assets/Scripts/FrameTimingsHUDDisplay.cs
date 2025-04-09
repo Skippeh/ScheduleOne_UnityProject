@@ -1,4 +1,7 @@
-public class FrameTimingsHUDDisplay : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FrameTimingsHUDDisplay : MonoBehaviour
 {
 	public struct FrameTimingPoint
 	{
@@ -11,13 +14,13 @@ public class FrameTimingsHUDDisplay : global::UnityEngine.MonoBehaviour
 		public double gpuFrameTime;
 	}
 
-	private global::UnityEngine.GUIStyle m_Style;
+	private GUIStyle m_Style;
 
-	private readonly global::UnityEngine.FrameTiming[] m_FrameTimings;
+	private readonly FrameTiming[] m_FrameTimings;
 
 	public const int SAMPLE_SIZE = 200;
 
-	public global::System.Collections.Generic.List<FrameTimingsHUDDisplay.FrameTimingPoint> frameTimingsHistory;
+	public List<FrameTimingPoint> frameTimingsHistory;
 
 	private void Awake()
 	{

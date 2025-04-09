@@ -1,11 +1,14 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class CombatNPCDetector : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class CombatNPCDetector : MonoBehaviour
 	{
 		public bool DetectOnlyInCombat;
 
-		public global::UnityEngine.Events.UnityEvent onDetected;
+		public UnityEvent onDetected;
 
 		public float ContactTimeForDetection;
 
@@ -21,7 +24,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

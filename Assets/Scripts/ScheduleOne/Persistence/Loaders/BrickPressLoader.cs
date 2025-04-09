@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class BrickPressLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class BrickPressLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

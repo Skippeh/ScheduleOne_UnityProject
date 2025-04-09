@@ -1,8 +1,25 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.Combat;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Interaction;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class VendingMachine : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.IGenericSaveable
+	public class VendingMachine : NetworkBehaviour, IGUIDRegisterable, IGenericSaveable
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.VendingMachine> AllMachines;
+		public static List<VendingMachine> AllMachines;
 
 		public const float COST = 2f;
 
@@ -18,49 +35,49 @@ namespace ScheduleOne.ObjectScripts
 
 		public const int MAX_CASH_DROP = 4;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public int LitStartTime;
 
 		public int LitOnEndTime;
 
-		public global::ScheduleOne.ItemFramework.ItemPickup CukePrefab;
+		public ItemPickup CukePrefab;
 
-		public global::ScheduleOne.ItemFramework.CashPickup CashPrefab;
+		public CashPickup CashPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.MeshRenderer DoorMesh;
+		[Header("References")]
+		public MeshRenderer DoorMesh;
 
-		public global::UnityEngine.MeshRenderer BodyMesh;
+		public MeshRenderer BodyMesh;
 
-		public global::UnityEngine.Material DoorOffMat;
+		public Material DoorOffMat;
 
-		public global::UnityEngine.Material DoorOnMat;
+		public Material DoorOnMat;
 
-		public global::UnityEngine.Material BodyOffMat;
+		public Material BodyOffMat;
 
-		public global::UnityEngine.Material BodyOnMat;
+		public Material BodyOnMat;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight[] Lights;
+		public OptimizedLight[] Lights;
 
-		public global::ScheduleOne.Audio.AudioSourceController PaySound;
+		public AudioSourceController PaySound;
 
-		public global::ScheduleOne.Audio.AudioSourceController DispenseSound;
+		public AudioSourceController DispenseSound;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::UnityEngine.Transform ItemSpawnPoint;
+		public Transform ItemSpawnPoint;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform AccessPoint;
+		public Transform AccessPoint;
 
-		public global::ScheduleOne.Combat.PhysicsDamageable Damageable;
+		public PhysicsDamageable Damageable;
 
-		public global::UnityEngine.Transform CashSpawnPoint;
+		public Transform CashSpawnPoint;
 
-		public global::UnityEngine.Events.UnityEvent onBreak;
+		public UnityEvent onBreak;
 
-		public global::UnityEngine.Events.UnityEvent onRepair;
+		public UnityEvent onRepair;
 
 		private bool isLit;
 
@@ -68,7 +85,7 @@ namespace ScheduleOne.ObjectScripts
 
 		private float timeOnLastFreeItem;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EVendingMachineAssembly_002DCSharp_002Edll_Excuted;
@@ -79,11 +96,11 @@ namespace ScheduleOne.ObjectScripts
 
 		public int DaysUntilRepair { get; protected set; }
 
-		public global::ScheduleOne.ItemFramework.ItemPickup lastDroppedItem { get; protected set; }
+		public ItemPickup lastDroppedItem { get; protected set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -96,11 +113,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -128,17 +145,17 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendPurchase()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void PurchaseRoutine()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void DropItem()
 		{
 		}
@@ -147,7 +164,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void Impacted(global::ScheduleOne.Combat.Impact impact)
+		private void Impacted(Impact impact)
 		{
 		}
 
@@ -155,32 +172,32 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendBreak()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void Break(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void Break(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void Repair()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void DropCash()
 		{
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.GenericSaveData data)
+		public void Load(GenericSaveData data)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.GenericSaveData GetSaveData()
+		public GenericSaveData GetSaveData()
 		{
 			return null;
 		}
@@ -205,7 +222,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPurchase_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPurchase_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -217,7 +234,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_PurchaseRoutine_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PurchaseRoutine_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -229,7 +246,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_DropItem_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_DropItem_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -241,27 +258,27 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendBreak_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendBreak_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcLogic___Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Break_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Break_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Break_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Break_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Break_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Break_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -273,7 +290,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_Repair_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Repair_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -285,7 +302,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_DropCash_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_DropCash_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

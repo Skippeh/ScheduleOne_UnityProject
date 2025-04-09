@@ -1,8 +1,11 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class CrosshairText : global::UnityEngine.MonoBehaviour
+	public class CrosshairText : MonoBehaviour
 	{
-		public global::TMPro.TextMeshProUGUI Label;
+		public TextMeshProUGUI Label;
 
 		private bool setThisFrame;
 
@@ -14,7 +17,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Show(string text, global::UnityEngine.Color col = default(global::UnityEngine.Color))
+		public void Show(string text, Color col = default(Color))
 		{
 		}
 

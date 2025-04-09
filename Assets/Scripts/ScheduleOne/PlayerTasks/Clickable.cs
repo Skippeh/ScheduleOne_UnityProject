@@ -1,6 +1,10 @@
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class Clickable : global::UnityEngine.MonoBehaviour
+	public class Clickable : MonoBehaviour
 	{
 		public bool ClickableEnabled;
 
@@ -8,13 +12,13 @@ namespace ScheduleOne.PlayerTasks
 
 		public bool FlattenZOffset;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.RaycastHit> onClickStart;
+		public UnityEvent<RaycastHit> onClickStart;
 
-		public global::UnityEngine.Events.UnityEvent onClickEnd;
+		public UnityEvent onClickEnd;
 
-		public virtual global::ScheduleOne.PlayerScripts.CursorManager.ECursorType HoveredCursor { get; protected set; }
+		public virtual CursorManager.ECursorType HoveredCursor { get; protected set; }
 
-		public global::UnityEngine.Vector3 originalHitPoint { get; protected set; }
+		public Vector3 originalHitPoint { get; protected set; }
 
 		public bool IsHeld { get; protected set; }
 
@@ -22,7 +26,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		public virtual void StartClick(global::UnityEngine.RaycastHit hit)
+		public virtual void StartClick(RaycastHit hit)
 		{
 		}
 
@@ -30,7 +34,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		public void SetOriginalHitPoint(global::UnityEngine.Vector3 hitPoint)
+		public void SetOriginalHitPoint(Vector3 hitPoint)
 		{
 		}
 	}

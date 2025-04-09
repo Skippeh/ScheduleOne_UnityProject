@@ -1,36 +1,39 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Map
 {
-	public class MapApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.Map.MapApp>
+	public class MapApp : App<MapApp>
 	{
 		public const float KeyMoveSpeed = 1.25f;
 
-		public global::UnityEngine.RectTransform ContentRect;
+		public RectTransform ContentRect;
 
-		public global::UnityEngine.RectTransform PoIContainer;
+		public RectTransform PoIContainer;
 
-		public global::UnityEngine.UI.Scrollbar HorizontalScrollbar;
+		public Scrollbar HorizontalScrollbar;
 
-		public global::UnityEngine.UI.Scrollbar VerticalScrollbar;
+		public Scrollbar VerticalScrollbar;
 
-		public global::UnityEngine.UI.Image BackgroundImage;
+		public Image BackgroundImage;
 
-		public global::UnityEngine.CanvasGroup LabelGroup;
+		public CanvasGroup LabelGroup;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Sprite DemoMapSprite;
+		[Header("Settings")]
+		public Sprite DemoMapSprite;
 
-		public global::UnityEngine.Sprite MainMapSprite;
+		public Sprite MainMapSprite;
 
-		public global::UnityEngine.Sprite TutorialMapSprite;
+		public Sprite TutorialMapSprite;
 
 		public float LabelScrollMin;
 
 		public float LabelScrollMax;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool SkipFocusPlayer;
 
-		private global::UnityEngine.Coroutine contentMoveRoutine;
+		private Coroutine contentMoveRoutine;
 
 		private bool opened;
 
@@ -46,7 +49,7 @@ namespace ScheduleOne.UI.Phone.Map
 		{
 		}
 
-		public void FocusPosition(global::UnityEngine.Vector2 anchoredPosition)
+		public void FocusPosition(Vector2 anchoredPosition)
 		{
 		}
 	}

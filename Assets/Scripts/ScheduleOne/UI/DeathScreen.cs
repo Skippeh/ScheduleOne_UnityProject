@@ -1,21 +1,26 @@
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class DeathScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.DeathScreen>
+	public class DeathScreen : Singleton<DeathScreen>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.CanvasGroup group;
+		public CanvasGroup group;
 
-		public global::UnityEngine.UI.Button respawnButton;
+		public Button respawnButton;
 
-		public global::UnityEngine.UI.Button loadSaveButton;
+		public Button loadSaveButton;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::ScheduleOne.Audio.AudioSourceController Sound;
+		public AudioSourceController Sound;
 
 		private bool arrested;
 

@@ -1,14 +1,17 @@
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Camera))]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData))]
-	public class URPWeatherDepth : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Camera))]
+	[RequireComponent(typeof(UniversalAdditionalCameraData))]
+	public class URPWeatherDepth : MonoBehaviour
 	{
-		public global::UnityEngine.RenderTexture renderTexture;
+		public RenderTexture renderTexture;
 
-		private global::UnityEngine.Camera m_Camera;
+		private Camera m_Camera;
 
-		private global::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData m_CameraData;
+		private UniversalAdditionalCameraData m_CameraData;
 
 		private void Start()
 		{

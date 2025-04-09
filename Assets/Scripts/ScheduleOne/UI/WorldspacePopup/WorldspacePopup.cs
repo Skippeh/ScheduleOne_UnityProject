@@ -1,40 +1,43 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.UI.WorldspacePopup
 {
-	public class WorldspacePopup : global::UnityEngine.MonoBehaviour
+	public class WorldspacePopup : MonoBehaviour
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.UI.WorldspacePopup.WorldspacePopup> ActivePopups;
+		public static List<WorldspacePopup> ActivePopups;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float CurrentFillLevel;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopupUI UIPrefab;
+		[Header("Settings")]
+		public WorldspacePopupUI UIPrefab;
 
 		public bool DisplayOnHUD;
 
 		public bool ScaleWithDistance;
 
-		public global::UnityEngine.Vector3 WorldspaceOffset;
+		public Vector3 WorldspaceOffset;
 
 		public float Range;
 
 		public float SizeMultiplier;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopupUI WorldspaceUI;
+		[HideInInspector]
+		public WorldspacePopupUI WorldspaceUI;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.RectTransform HUDUI;
+		[HideInInspector]
+		public RectTransform HUDUI;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopupUI HUDUIIcon;
+		[HideInInspector]
+		public WorldspacePopupUI HUDUIIcon;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.CanvasGroup HUDUICanvasGroup;
+		[HideInInspector]
+		public CanvasGroup HUDUICanvasGroup;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.WorldspacePopup.WorldspacePopupUI> UIs;
+		private List<WorldspacePopupUI> UIs;
 
-		private global::UnityEngine.Coroutine popupCoroutine;
+		private Coroutine popupCoroutine;
 
 		private void OnEnable()
 		{
@@ -44,7 +47,7 @@ namespace ScheduleOne.UI.WorldspacePopup
 		{
 		}
 
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopupUI CreateUI(global::UnityEngine.RectTransform parent)
+		public WorldspacePopupUI CreateUI(RectTransform parent)
 		{
 			return null;
 		}

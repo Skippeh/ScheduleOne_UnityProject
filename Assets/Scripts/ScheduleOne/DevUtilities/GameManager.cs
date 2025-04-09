@@ -1,27 +1,39 @@
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class GameManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.DevUtilities.GameManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class GameManager : NetworkSingleton<GameManager>, IBaseSaveable, ISaveable
 	{
 		public const bool IS_DEMO = false;
 
 		public static bool IS_BETA;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int seed;
 
 		public string OrganisationName;
 
-		public global::ScheduleOne.DevUtilities.GameSettings Settings;
+		public GameSettings Settings;
 
-		public global::UnityEngine.Transform SpawnPoint;
+		public Transform SpawnPoint;
 
-		public global::UnityEngine.Transform NoHomeRespawnPoint;
+		public Transform NoHomeRespawnPoint;
 
-		public global::UnityEngine.Transform Temp;
+		public Transform Temp;
 
-		public global::UnityEngine.Events.UnityEvent onSettingsLoaded;
+		public UnityEvent onSettingsLoaded;
 
-		private global::ScheduleOne.Persistence.Loaders.GameDataLoader loader;
+		private GameDataLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDevUtilities_002EGameManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -31,7 +43,7 @@ namespace ScheduleOne.DevUtilities
 
 		public static int Seed => 0;
 
-		public global::UnityEngine.Sprite OrganisationLogo { get; protected set; }
+		public Sprite OrganisationLogo { get; protected set; }
 
 		public bool IsTutorial => false;
 
@@ -39,13 +51,13 @@ namespace ScheduleOne.DevUtilities
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -57,12 +69,12 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		public void SetGameData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.GameData data)
+		[TargetRpc]
+		public void SetGameData(NetworkConnection conn, GameData data)
 		{
 		}
 
@@ -75,11 +87,11 @@ namespace ScheduleOne.DevUtilities
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.GameData data, string path)
+		public void Load(GameData data, string path)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void EndTutorial(bool natural)
 		{
 		}
@@ -96,15 +108,15 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private void RpcWriter___Target_SetGameData_3076874643(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.GameData data)
+		private void RpcWriter___Target_SetGameData_3076874643(NetworkConnection conn, GameData data)
 		{
 		}
 
-		public void RpcLogic___SetGameData_3076874643(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.GameData data)
+		public void RpcLogic___SetGameData_3076874643(NetworkConnection conn, GameData data)
 		{
 		}
 
-		private void RpcReader___Target_SetGameData_3076874643(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetGameData_3076874643(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

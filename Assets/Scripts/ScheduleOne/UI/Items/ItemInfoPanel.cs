@@ -1,41 +1,44 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemInfoPanel : global::UnityEngine.MonoBehaviour
+	public class ItemInfoPanel : MonoBehaviour
 	{
 		public const float VERTICAL_THRESHOLD = 200f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform ContentContainer;
+		public RectTransform ContentContainer;
 
-		public global::UnityEngine.GameObject TopArrow;
+		public GameObject TopArrow;
 
-		public global::UnityEngine.GameObject BottomArrow;
+		public GameObject BottomArrow;
 
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Vector2 Offset;
+		[Header("Settings")]
+		public Vector2 Offset;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Items.ItemInfoContent DefaultContentPrefab;
+		[Header("Prefabs")]
+		public ItemInfoContent DefaultContentPrefab;
 
-		private global::ScheduleOne.UI.Items.ItemInfoContent content;
+		private ItemInfoContent content;
 
 		public bool IsOpen { get; protected set; }
 
-		public global::ScheduleOne.ItemFramework.ItemInstance CurrentItem { get; protected set; }
+		public ItemInstance CurrentItem { get; protected set; }
 
 		private void Awake()
 		{
 		}
 
-		public void Open(global::ScheduleOne.ItemFramework.ItemInstance item, global::UnityEngine.RectTransform rect)
+		public void Open(ItemInstance item, RectTransform rect)
 		{
 		}
 
-		public void Open(global::ScheduleOne.ItemFramework.ItemDefinition def, global::UnityEngine.RectTransform rect)
+		public void Open(ItemDefinition def, RectTransform rect)
 		{
 		}
 

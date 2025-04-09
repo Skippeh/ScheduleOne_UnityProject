@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class StorageRackLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class StorageRackLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

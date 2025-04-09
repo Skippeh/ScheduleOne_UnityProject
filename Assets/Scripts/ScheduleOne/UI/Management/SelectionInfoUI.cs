@@ -1,24 +1,30 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class SelectionInfoUI : global::UnityEngine.MonoBehaviour
+	public class SelectionInfoUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image Icon;
+		[Header("References")]
+		public Image Icon;
 
-		public global::TMPro.TextMeshProUGUI Title;
+		public TextMeshProUGUI Title;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool SelfUpdate;
 
-		public global::UnityEngine.Sprite NonUniformTypeSprite;
+		public Sprite NonUniformTypeSprite;
 
-		public global::UnityEngine.Sprite CrossSprite;
+		public Sprite CrossSprite;
 
 		private void Update()
 		{
 		}
 
-		public void Set(global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> Configurables)
+		public void Set(List<IConfigurable> Configurables)
 		{
 		}
 	}

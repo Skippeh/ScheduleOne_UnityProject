@@ -1,5 +1,10 @@
-[global::UnityEngine.DisallowMultipleComponent]
-public class SteamManager : global::UnityEngine.MonoBehaviour
+using System.Text;
+using AOT;
+using Steamworks;
+using UnityEngine;
+
+[DisallowMultipleComponent]
+public class SteamManager : MonoBehaviour
 {
 	protected static bool s_EverInitialized;
 
@@ -7,18 +12,18 @@ public class SteamManager : global::UnityEngine.MonoBehaviour
 
 	protected bool m_bInitialized;
 
-	protected global::Steamworks.SteamAPIWarningMessageHook_t m_SteamAPIWarningMessageHook;
+	protected SteamAPIWarningMessageHook_t m_SteamAPIWarningMessageHook;
 
 	protected static SteamManager Instance => null;
 
 	public static bool Initialized => false;
 
-	[global::AOT.MonoPInvokeCallback(typeof(global::Steamworks.SteamAPIWarningMessageHook_t))]
-	protected static void SteamAPIDebugTextHook(int nSeverity, global::System.Text.StringBuilder pchDebugText)
+	[MonoPInvokeCallback(typeof(SteamAPIWarningMessageHook_t))]
+	protected static void SteamAPIDebugTextHook(int nSeverity, StringBuilder pchDebugText)
 	{
 	}
 
-	[global::UnityEngine.RuntimeInitializeOnLoadMethod(global::UnityEngine.RuntimeInitializeLoadType.SubsystemRegistration)]
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	private static void InitOnPlayMode()
 	{
 	}

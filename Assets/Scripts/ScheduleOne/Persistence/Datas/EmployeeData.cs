@@ -1,7 +1,10 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class EmployeeData : global::ScheduleOne.Persistence.Datas.NPCData
+	[Serializable]
+	public class EmployeeData : NPCData
 	{
 		public string AssignedProperty;
 
@@ -13,15 +16,15 @@ namespace ScheduleOne.Persistence.Datas
 
 		public int AppearanceIndex;
 
-		public global::UnityEngine.Vector3 Position;
+		public Vector3 Position;
 
-		public global::UnityEngine.Quaternion Rotation;
+		public Quaternion Rotation;
 
 		public string GUID;
 
 		public bool PaidForToday;
 
-		public EmployeeData(string id, string assignedProperty, string firstName, string lastName, bool isMale, int appearanceIndex, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::System.Guid guid, bool paidForToday)
+		public EmployeeData(string id, string assignedProperty, string firstName, string lastName, bool isMale, int appearanceIndex, Vector3 position, Quaternion rotation, Guid guid, bool paidForToday)
 			: base(null)
 		{
 		}

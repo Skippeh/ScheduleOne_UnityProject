@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class AstarUtility : global::UnityEngine.MonoBehaviour
+	public class AstarUtility : MonoBehaviour
 	{
-		public static global::UnityEngine.Vector3 GetClosestPointOnGraph(global::UnityEngine.Vector3 point, string GraphName)
+		public static Vector3 GetClosestPointOnGraph(Vector3 point, string GraphName)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 	}
 }

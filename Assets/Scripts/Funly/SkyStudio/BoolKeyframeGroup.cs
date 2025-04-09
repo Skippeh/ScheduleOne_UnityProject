@@ -1,14 +1,16 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class BoolKeyframeGroup : global::Funly.SkyStudio.KeyframeGroup<global::Funly.SkyStudio.BoolKeyframe>
+	[Serializable]
+	public class BoolKeyframeGroup : KeyframeGroup<BoolKeyframe>
 	{
 		public BoolKeyframeGroup(string name)
 			: base((string)null)
 		{
 		}
 
-		public BoolKeyframeGroup(string name, global::Funly.SkyStudio.BoolKeyframe keyframe)
+		public BoolKeyframeGroup(string name, BoolKeyframe keyframe)
 			: base((string)null)
 		{
 		}

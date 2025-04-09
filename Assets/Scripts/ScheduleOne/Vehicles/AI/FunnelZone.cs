@@ -1,19 +1,22 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.BoxCollider))]
-	public class FunnelZone : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(BoxCollider))]
+	public class FunnelZone : MonoBehaviour
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.AI.FunnelZone> funnelZones;
+		public static List<FunnelZone> funnelZones;
 
-		public global::UnityEngine.BoxCollider col;
+		public BoxCollider col;
 
-		public global::UnityEngine.Transform entryPoint;
+		public Transform entryPoint;
 
 		protected virtual void Awake()
 		{
 		}
 
-		public static global::ScheduleOne.Vehicles.AI.FunnelZone GetFunnelZone(global::UnityEngine.Vector3 point)
+		public static FunnelZone GetFunnelZone(Vector3 point)
 		{
 			return null;
 		}

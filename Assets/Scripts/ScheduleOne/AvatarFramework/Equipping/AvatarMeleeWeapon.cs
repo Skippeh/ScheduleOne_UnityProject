@@ -1,8 +1,12 @@
+using System;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class AvatarMeleeWeapon : global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon
+	public class AvatarMeleeWeapon : AvatarWeapon
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class MeleeAttack
 		{
 			public float RangeMultiplier;
@@ -15,28 +19,28 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 			public float AttackSoundDelay;
 
-			public global::UnityEngine.AudioClip[] AttackClips;
+			public AudioClip[] AttackClips;
 
-			public global::UnityEngine.AudioClip[] HitClips;
+			public AudioClip[] HitClips;
 		}
 
 		public const float GruntChance = 0.4f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController AttackSound;
+		[Header("References")]
+		public AudioSourceController AttackSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController HitSound;
+		public AudioSourceController HitSound;
 
-		[global::UnityEngine.Header("Melee Weapon settings")]
+		[Header("Melee Weapon settings")]
 		public float AttackRange;
 
 		public float AttackRadius;
 
 		public float Damage;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarMeleeWeapon.MeleeAttack[] Attacks;
+		public MeleeAttack[] Attacks;
 
-		private global::UnityEngine.Coroutine attackRoutine;
+		private Coroutine attackRoutine;
 
 		public override void Unequip()
 		{

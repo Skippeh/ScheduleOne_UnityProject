@@ -1,12 +1,16 @@
+using System.Collections.Generic;
+using ScheduleOne.UI.MainMenu;
+using UnityEngine;
+
 namespace ScheduleOne
 {
-	public class CommandListScreen : global::ScheduleOne.UI.MainMenu.MainMenuScreen
+	public class CommandListScreen : MainMenuScreen
 	{
-		public global::UnityEngine.RectTransform CommandEntryContainer;
+		public RectTransform CommandEntryContainer;
 
-		public global::UnityEngine.RectTransform CommandEntryPrefab;
+		public RectTransform CommandEntryPrefab;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> commandEntries;
+		private List<RectTransform> commandEntries;
 
 		private void Start()
 		{

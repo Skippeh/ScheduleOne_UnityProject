@@ -1,9 +1,11 @@
-[global::UnityEngine.AddComponentMenu("Camera-Control/Smooth Mouse Orbit - Unluck Software")]
-public class SmoothCameraOrbit : global::UnityEngine.MonoBehaviour
-{
-	public global::UnityEngine.Transform target;
+using UnityEngine;
 
-	public global::UnityEngine.Vector3 targetOffset;
+[AddComponentMenu("Camera-Control/Smooth Mouse Orbit - Unluck Software")]
+public class SmoothCameraOrbit : MonoBehaviour
+{
+	public Transform target;
+
+	public Vector3 targetOffset;
 
 	public float distance;
 
@@ -37,13 +39,13 @@ public class SmoothCameraOrbit : global::UnityEngine.MonoBehaviour
 
 	private float desiredDistance;
 
-	private global::UnityEngine.Quaternion currentRotation;
+	private Quaternion currentRotation;
 
-	private global::UnityEngine.Quaternion desiredRotation;
+	private Quaternion desiredRotation;
 
-	private global::UnityEngine.Quaternion rotation;
+	private Quaternion rotation;
 
-	private global::UnityEngine.Vector3 position;
+	private Vector3 position;
 
 	private float idleTimer;
 

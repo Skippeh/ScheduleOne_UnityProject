@@ -1,39 +1,46 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Interaction;
+using ScheduleOne.Packaging;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	public class NewMixDiscoveryBox : global::UnityEngine.MonoBehaviour
+	public class NewMixDiscoveryBox : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class DrugTypeVisuals
 		{
-			public global::ScheduleOne.Product.EDrugType DrugType;
+			public EDrugType DrugType;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+			public FilledPackagingVisuals Visuals;
 		}
 
 		private bool isOpen;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform CameraPosition;
+		[Header("References")]
+		public Transform CameraPosition;
 
-		public global::TMPro.TextMeshPro PropertiesText;
+		public TextMeshPro PropertiesText;
 
-		public global::ScheduleOne.Product.NewMixDiscoveryBox.DrugTypeVisuals[] Visuals;
+		public DrugTypeVisuals[] Visuals;
 
-		public global::UnityEngine.Animation Animation;
+		public Animation Animation;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform Lid;
+		public Transform Lid;
 
-		private global::UnityEngine.Pose closedLidPose;
+		private Pose closedLidPose;
 
-		private global::ScheduleOne.Product.NewMixOperation currentMix;
+		private NewMixOperation currentMix;
 
 		public void Start()
 		{
 		}
 
-		public void ShowProduct(global::ScheduleOne.Product.ProductDefinition baseDefinition, global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public void ShowProduct(ProductDefinition baseDefinition, List<ScheduleOne.Properties.Property> properties)
 		{
 		}
 

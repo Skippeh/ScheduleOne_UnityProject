@@ -1,16 +1,21 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class GridItemData : global::ScheduleOne.Persistence.Datas.BuildableItemData
+	[Serializable]
+	public class GridItemData : BuildableItemData
 	{
 		public string GridGUID;
 
-		public global::UnityEngine.Vector2 OriginCoordinate;
+		public Vector2 OriginCoordinate;
 
 		public int Rotation;
 
-		public GridItemData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation)
-			: base(default(global::System.Guid), null, 0)
+		public GridItemData(Guid guid, ItemInstance item, int loadOrder, Grid grid, Vector2 originCoordinate, int rotation)
+			: base(default(Guid), null, 0)
 		{
 		}
 	}

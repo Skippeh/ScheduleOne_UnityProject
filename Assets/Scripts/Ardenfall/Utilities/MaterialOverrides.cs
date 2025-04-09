@@ -1,17 +1,21 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Ardenfall.Utilities
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MaterialOverrides
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class TextureProperty
 		{
 			public string propertyName;
 
-			public global::UnityEngine.Texture2D propertyValue;
+			public Texture2D propertyValue;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class FloatProperty
 		{
 			public string propertyName;
@@ -19,7 +23,7 @@ namespace Ardenfall.Utilities
 			public float propertyValue;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class IntProperty
 		{
 			public string propertyName;
@@ -27,33 +31,33 @@ namespace Ardenfall.Utilities
 			public int propertyValue;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class VectorProperty
 		{
 			public string propertyName;
 
-			public global::UnityEngine.Vector4 propertyValue;
+			public Vector4 propertyValue;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class ColorProperty
 		{
 			public string propertyName;
 
-			public global::UnityEngine.Color propertyValue;
+			public Color propertyValue;
 		}
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.MaterialOverrides.TextureProperty> textureOverrides;
+		public List<TextureProperty> textureOverrides;
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.MaterialOverrides.FloatProperty> floatOverrides;
+		public List<FloatProperty> floatOverrides;
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.MaterialOverrides.IntProperty> intOverrides;
+		public List<IntProperty> intOverrides;
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.MaterialOverrides.VectorProperty> vectorOverrides;
+		public List<VectorProperty> vectorOverrides;
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.MaterialOverrides.ColorProperty> colorOverrides;
+		public List<ColorProperty> colorOverrides;
 
-		public void OverrideMaterial(global::UnityEngine.Material material)
+		public void OverrideMaterial(Material material)
 		{
 		}
 	}

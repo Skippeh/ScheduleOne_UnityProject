@@ -1,6 +1,14 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerVisualState : global::FishNet.Object.NetworkBehaviour
+	public class PlayerVisualState : NetworkBehaviour
 	{
 		public enum EVisualState
 		{
@@ -17,23 +25,23 @@ namespace ScheduleOne.PlayerScripts
 			Brandishing = 10
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class VisualState
 		{
-			public global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state;
+			public EVisualState state;
 
 			public string label;
 
-			public global::System.Action stateDestroyed;
+			public Action stateDestroyed;
 		}
 
 		public float Suspiciousness;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState> visualStates;
+		public List<VisualState> visualStates;
 
-		private global::ScheduleOne.PlayerScripts.Player player;
+		private Player player;
 
-		private global::System.Collections.Generic.Dictionary<string, global::UnityEngine.Coroutine> removalRoutinesDict;
+		private Dictionary<string, Coroutine> removalRoutinesDict;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPlayerScripts_002EPlayerVisualStateAssembly_002DCSharp_002Edll_Excuted;
 
@@ -47,17 +55,17 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void ApplyState(string label, global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state, float autoRemoveAfter = 0f)
+		[ServerRpc(RunLocally = true)]
+		public void ApplyState(string label, EVisualState state, float autoRemoveAfter = 0f)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void RemoveState(string label, float delay = 0f)
 		{
 		}
 
-		public global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState GetState(string label)
+		public VisualState GetState(string label)
 		{
 			return null;
 		}
@@ -82,15 +90,15 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_ApplyState_868472085(string label, global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state, float autoRemoveAfter = 0f)
+		private void RpcWriter___Server_ApplyState_868472085(string label, EVisualState state, float autoRemoveAfter = 0f)
 		{
 		}
 
-		public void RpcLogic___ApplyState_868472085(string label, global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state, float autoRemoveAfter = 0f)
+		public void RpcLogic___ApplyState_868472085(string label, EVisualState state, float autoRemoveAfter = 0f)
 		{
 		}
 
-		private void RpcReader___Server_ApplyState_868472085(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ApplyState_868472085(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -102,7 +110,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_RemoveState_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RemoveState_606697822(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

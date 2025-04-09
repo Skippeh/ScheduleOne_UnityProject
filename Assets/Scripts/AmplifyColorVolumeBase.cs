@@ -1,8 +1,11 @@
-[global::UnityEngine.ExecuteInEditMode]
-[global::UnityEngine.AddComponentMenu("")]
-public class AmplifyColorVolumeBase : global::UnityEngine.MonoBehaviour
+using AmplifyColor;
+using UnityEngine;
+
+[ExecuteInEditMode]
+[AddComponentMenu("")]
+public class AmplifyColorVolumeBase : MonoBehaviour
 {
-	public global::UnityEngine.Texture2D LutTexture;
+	public Texture2D LutTexture;
 
 	public float Exposure;
 
@@ -12,8 +15,8 @@ public class AmplifyColorVolumeBase : global::UnityEngine.MonoBehaviour
 
 	public bool ShowInSceneView;
 
-	[global::UnityEngine.HideInInspector]
-	public global::AmplifyColor.VolumeEffectContainer EffectContainer;
+	[HideInInspector]
+	public VolumeEffectContainer EffectContainer;
 
 	private void OnDrawGizmos()
 	{

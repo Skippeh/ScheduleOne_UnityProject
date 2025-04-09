@@ -1,29 +1,39 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class SoilPourer : global::ScheduleOne.EntityFramework.GridItem
+	public class SoilPourer : GridItem
 	{
 		public float AnimationDuration;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject HandleIntObj;
+		[Header("References")]
+		public InteractableObject HandleIntObj;
 
-		public global::ScheduleOne.Interaction.InteractableObject FillIntObj;
+		public InteractableObject FillIntObj;
 
-		public global::UnityEngine.MeshRenderer DirtPlane;
+		public MeshRenderer DirtPlane;
 
-		public global::UnityEngine.Transform Dirt_Min;
+		public Transform Dirt_Min;
 
-		public global::UnityEngine.Transform Dirt_Max;
+		public Transform Dirt_Max;
 
-		public global::UnityEngine.ParticleSystem PourParticles;
+		public ParticleSystem PourParticles;
 
-		public global::UnityEngine.Animation PourAnimation;
+		public Animation PourAnimation;
 
-		public global::ScheduleOne.Audio.AudioSourceController FillSound;
+		public AudioSourceController FillSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController ActivateSound;
+		public AudioSourceController ActivateSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController DirtPourSound;
+		public AudioSourceController DirtPourSound;
 
 		private bool isDispensing;
 
@@ -33,7 +43,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public string SoilID { get; protected set; }
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -45,12 +55,12 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendPourSoil()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void PourSoil()
 		{
 		}
@@ -67,14 +77,14 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendSoil(string ID)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		protected void SetSoil(global::FishNet.Connection.NetworkConnection conn, string ID)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		protected void SetSoil(NetworkConnection conn, string ID)
 		{
 		}
 
@@ -82,7 +92,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		protected virtual global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> GetPots()
+		protected virtual List<Pot> GetPots()
 		{
 			return null;
 		}
@@ -112,7 +122,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPourSoil_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPourSoil_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -124,7 +134,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Observers_PourSoil_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PourSoil_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -136,27 +146,27 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcReader___Server_SendSoil_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendSoil_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetSoil_2971853958(global::FishNet.Connection.NetworkConnection conn, string ID)
+		private void RpcWriter___Observers_SetSoil_2971853958(NetworkConnection conn, string ID)
 		{
 		}
 
-		protected void RpcLogic___SetSoil_2971853958(global::FishNet.Connection.NetworkConnection conn, string ID)
+		protected void RpcLogic___SetSoil_2971853958(NetworkConnection conn, string ID)
 		{
 		}
 
-		private void RpcReader___Observers_SetSoil_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetSoil_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetSoil_2971853958(global::FishNet.Connection.NetworkConnection conn, string ID)
+		private void RpcWriter___Target_SetSoil_2971853958(NetworkConnection conn, string ID)
 		{
 		}
 
-		private void RpcReader___Target_SetSoil_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetSoil_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,38 +1,44 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Management;
+using ScheduleOne.UI.Input;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ManagementWorldspaceCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Management.ManagementWorldspaceCanvas>
+	public class ManagementWorldspaceCanvas : Singleton<ManagementWorldspaceCanvas>
 	{
 		public const float VISIBILITY_RANGE = 5f;
 
 		public const float PROPERTY_CANVAS_RANGE = 50f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.AnimationCurve ScaleCurve;
+		public AnimationCurve ScaleCurve;
 
-		public global::ScheduleOne.Management.TransitLineVisuals TransitRouteVisualsPrefab;
+		public TransitLineVisuals TransitRouteVisualsPrefab;
 
-		public global::ScheduleOne.UI.Input.InputPrompt CrosshairPrompt;
+		public InputPrompt CrosshairPrompt;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask ObjectSelectionLayerMask;
+		[Header("Settings")]
+		public LayerMask ObjectSelectionLayerMask;
 
-		public global::UnityEngine.Color HoveredOutlineColor;
+		public Color HoveredOutlineColor;
 
-		public global::UnityEngine.Color SelectedOutlineColor;
+		public Color SelectedOutlineColor;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> ShownConfigurables;
+		private List<IConfigurable> ShownConfigurables;
 
-		public global::ScheduleOne.Management.IConfigurable HoveredConfigurable;
+		public IConfigurable HoveredConfigurable;
 
-		private global::ScheduleOne.Management.IConfigurable OutlinedConfigurable;
+		private IConfigurable OutlinedConfigurable;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> SelectedConfigurables;
+		public List<IConfigurable> SelectedConfigurables;
 
 		public bool IsOpen { get; protected set; }
 
-		public global::ScheduleOne.Property.Property CurrentProperty => null;
+		public ScheduleOne.Property.Property CurrentProperty => null;
 
 		public void Open()
 		{
@@ -62,11 +68,11 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void AddToSelection(global::ScheduleOne.Management.IConfigurable config)
+		private void AddToSelection(IConfigurable config)
 		{
 		}
 
-		private void RemoveFromSelection(global::ScheduleOne.Management.IConfigurable config)
+		private void RemoveFromSelection(IConfigurable config)
 		{
 		}
 
@@ -78,12 +84,12 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private global::ScheduleOne.Management.IConfigurable GetHoveredConfigurable()
+		private IConfigurable GetHoveredConfigurable()
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> GetConfigurablesToShow()
+		private List<IConfigurable> GetConfigurablesToShow()
 		{
 			return null;
 		}

@@ -1,16 +1,21 @@
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Cutscenes
 {
-	public class CutsceneManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Cutscenes.CutsceneManager>
+	public class CutsceneManager : Singleton<CutsceneManager>
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Cutscenes.Cutscene> Cutscenes;
+		public List<Cutscene> Cutscenes;
 
-		[global::UnityEngine.Header("Run cutscene by name")]
-		[global::UnityEngine.SerializeField]
+		[Header("Run cutscene by name")]
+		[SerializeField]
 		private string cutsceneName;
 
-		private global::ScheduleOne.Cutscenes.Cutscene playingCutscene;
+		private Cutscene playingCutscene;
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void RunCutscene()
 		{
 		}

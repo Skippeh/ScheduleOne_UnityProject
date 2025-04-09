@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace VLB_Samples
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Collider), typeof(global::UnityEngine.Rigidbody), typeof(global::UnityEngine.MeshRenderer))]
-	public class CheckIfInsideBeam : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(MeshRenderer))]
+	public class CheckIfInsideBeam : MonoBehaviour
 	{
 		private bool isInsideBeam;
 
-		private global::UnityEngine.Material m_Material;
+		private Material m_Material;
 
-		private global::UnityEngine.Collider m_Collider;
+		private Collider m_Collider;
 
 		private void Start()
 		{
@@ -21,7 +23,7 @@ namespace VLB_Samples
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider trigger)
+		private void OnTriggerStay(Collider trigger)
 		{
 		}
 	}

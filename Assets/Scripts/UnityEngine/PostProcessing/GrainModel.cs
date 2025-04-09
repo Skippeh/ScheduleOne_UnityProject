@@ -1,37 +1,39 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class GrainModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class GrainModel : PostProcessingModel
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public struct Settings
 		{
-			[global::UnityEngine.Tooltip("Enable the use of colored grain.")]
+			[Tooltip("Enable the use of colored grain.")]
 			public bool colored;
 
-			[global::UnityEngine.Range(0f, 1f)]
-			[global::UnityEngine.Tooltip("Grain strength. Higher means more visible grain.")]
+			[Range(0f, 1f)]
+			[Tooltip("Grain strength. Higher means more visible grain.")]
 			public float intensity;
 
-			[global::UnityEngine.Range(0.3f, 3f)]
-			[global::UnityEngine.Tooltip("Grain particle size.")]
+			[Range(0.3f, 3f)]
+			[Tooltip("Grain particle size.")]
 			public float size;
 
-			[global::UnityEngine.Range(0f, 1f)]
-			[global::UnityEngine.Tooltip("Controls the noisiness response curve based on scene luminance. Lower values mean less noise in dark areas.")]
+			[Range(0f, 1f)]
+			[Tooltip("Controls the noisiness response curve based on scene luminance. Lower values mean less noise in dark areas.")]
 			public float luminanceContribution;
 
-			public static global::UnityEngine.PostProcessing.GrainModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.GrainModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.GrainModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.GrainModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.GrainModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

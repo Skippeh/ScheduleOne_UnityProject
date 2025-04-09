@@ -1,7 +1,9 @@
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.UI
 {
-	public class CashSlotUI : global::ScheduleOne.UI.ItemSlotUI
+	public class CashSlotUI : ItemSlotUI
 	{
-		private global::ScheduleOne.ItemFramework.CashInstance cashInstance;
+		private CashInstance cashInstance;
 	}
 }

@@ -1,11 +1,13 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable))]
-	public class AvatarEquippableLookAt : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(AvatarEquippable))]
+	public class AvatarEquippableLookAt : MonoBehaviour
 	{
 		public int Priority;
 
-		private global::ScheduleOne.AvatarFramework.Avatar avatar;
+		private Avatar avatar;
 
 		private void Start()
 		{

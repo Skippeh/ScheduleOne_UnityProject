@@ -1,6 +1,10 @@
+using System;
+using System.Reflection;
+using UnityEngine;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VolumeEffectField
 	{
 		public string fieldName;
@@ -9,21 +13,21 @@ namespace AmplifyColor
 
 		public float valueSingle;
 
-		public global::UnityEngine.Color valueColor;
+		public Color valueColor;
 
 		public bool valueBoolean;
 
-		public global::UnityEngine.Vector2 valueVector2;
+		public Vector2 valueVector2;
 
-		public global::UnityEngine.Vector3 valueVector3;
+		public Vector3 valueVector3;
 
-		public global::UnityEngine.Vector4 valueVector4;
+		public Vector4 valueVector4;
 
 		public VolumeEffectField(string fieldName, string fieldType)
 		{
 		}
 
-		public VolumeEffectField(global::System.Reflection.FieldInfo pi, global::UnityEngine.Component c)
+		public VolumeEffectField(FieldInfo pi, Component c)
 		{
 		}
 

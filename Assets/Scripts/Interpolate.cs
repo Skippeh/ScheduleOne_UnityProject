@@ -1,3 +1,10 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 public class Interpolate
 {
 	public enum EaseType
@@ -26,68 +33,68 @@ public class Interpolate
 		EaseInOutCirc = 21
 	}
 
-	public delegate global::UnityEngine.Vector3 ToVector3<T>(T v);
+	public delegate Vector3 ToVector3<T>(T v);
 
 	public delegate float Function(float a, float b, float c, float d);
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CNewBezier_003Ed__16<T> : global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3>, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CNewBezier_003Ed__16<T> : IEnumerable<Vector3>, IEnumerable, IEnumerator<Vector3>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
-		private global::UnityEngine.Vector3 _003C_003E2__current;
+		private Vector3 _003C_003E2__current;
 
 		private int _003C_003El__initialThreadId;
 
-		private global::System.Collections.IList nodes;
+		private IList nodes;
 
-		public global::System.Collections.IList _003C_003E3__nodes;
+		public IList _003C_003E3__nodes;
 
-		private global::System.Collections.Generic.IEnumerable<float> steps;
+		private IEnumerable<float> steps;
 
-		public global::System.Collections.Generic.IEnumerable<float> _003C_003E3__steps;
+		public IEnumerable<float> _003C_003E3__steps;
 
-		private Interpolate.ToVector3<T> toVector3;
+		private ToVector3<T> toVector3;
 
-		public Interpolate.ToVector3<T> _003C_003E3__toVector3;
+		public ToVector3<T> _003C_003E3__toVector3;
 
-		private Interpolate.Function ease;
+		private Function ease;
 
-		public Interpolate.Function _003C_003E3__ease;
+		public Function _003C_003E3__ease;
 
 		private float maxStep;
 
 		public float _003C_003E3__maxStep;
 
-		private global::UnityEngine.Vector3[] _003Cpoints_003E5__2;
+		private Vector3[] _003Cpoints_003E5__2;
 
-		private global::System.Collections.Generic.IEnumerator<float> _003C_003E7__wrap2;
+		private IEnumerator<float> _003C_003E7__wrap2;
 
-		global::UnityEngine.Vector3 global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3>.Current
+		Vector3 IEnumerator<Vector3>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CNewBezier_003Ed__16(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -96,7 +103,7 @@ public class Interpolate
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
@@ -106,40 +113,40 @@ public class Interpolate
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3> global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3>.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator<Vector3> IEnumerable<Vector3>.GetEnumerator()
 		{
 			return null;
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return null;
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CNewCatmullRom_003Ed__20<T> : global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3>, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CNewCatmullRom_003Ed__20<T> : IEnumerable<Vector3>, IEnumerable, IEnumerator<Vector3>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
-		private global::UnityEngine.Vector3 _003C_003E2__current;
+		private Vector3 _003C_003E2__current;
 
 		private int _003C_003El__initialThreadId;
 
-		private global::System.Collections.IList nodes;
+		private IList nodes;
 
-		public global::System.Collections.IList _003C_003E3__nodes;
+		public IList _003C_003E3__nodes;
 
-		private Interpolate.ToVector3<T> toVector3;
+		private ToVector3<T> toVector3;
 
-		public Interpolate.ToVector3<T> _003C_003E3__toVector3;
+		public ToVector3<T> _003C_003E3__toVector3;
 
 		private bool loop;
 
@@ -165,31 +172,31 @@ public class Interpolate
 
 		private int _003Cstep_003E5__9;
 
-		global::UnityEngine.Vector3 global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3>.Current
+		Vector3 IEnumerator<Vector3>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CNewCatmullRom_003Ed__20(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -198,32 +205,32 @@ public class Interpolate
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.Generic.IEnumerator<global::UnityEngine.Vector3> global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3>.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator<Vector3> IEnumerable<Vector3>.GetEnumerator()
 		{
 			return null;
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return null;
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CNewCounter_003Ed__6 : global::System.Collections.Generic.IEnumerable<float>, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerator<float>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CNewCounter_003Ed__6 : IEnumerable<float>, IEnumerable, IEnumerator<float>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -245,31 +252,31 @@ public class Interpolate
 
 		private int _003Ci_003E5__2;
 
-		float global::System.Collections.Generic.IEnumerator<float>.Current
+		float IEnumerator<float>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return 0f;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CNewCounter_003Ed__6(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -278,76 +285,76 @@ public class Interpolate
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.Generic.IEnumerator<float> global::System.Collections.Generic.IEnumerable<float>.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator<float> IEnumerable<float>.GetEnumerator()
 		{
 			return null;
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return null;
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CNewEase_003Ed__9 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CNewEase_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
 		private object _003C_003E2__current;
 
-		public global::UnityEngine.Vector3 end;
+		public Vector3 end;
 
-		public global::UnityEngine.Vector3 start;
+		public Vector3 start;
 
-		public global::System.Collections.Generic.IEnumerable<float> driver;
+		public IEnumerable<float> driver;
 
-		public Interpolate.Function ease;
+		public Function ease;
 
 		public float total;
 
-		private global::UnityEngine.Vector3 _003Cdistance_003E5__2;
+		private Vector3 _003Cdistance_003E5__2;
 
-		private global::System.Collections.Generic.IEnumerator<float> _003C_003E7__wrap2;
+		private IEnumerator<float> _003C_003E7__wrap2;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CNewEase_003Ed__9(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -356,7 +363,7 @@ public class Interpolate
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
@@ -366,14 +373,14 @@ public class Interpolate
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CNewTimer_003Ed__3 : global::System.Collections.Generic.IEnumerable<float>, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerator<float>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CNewTimer_003Ed__3 : IEnumerable<float>, IEnumerable, IEnumerator<float>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -387,31 +394,31 @@ public class Interpolate
 
 		private float _003CelapsedTime_003E5__2;
 
-		float global::System.Collections.Generic.IEnumerator<float>.Current
+		float IEnumerator<float>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return 0f;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CNewTimer_003Ed__3(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -420,128 +427,128 @@ public class Interpolate
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.Generic.IEnumerator<float> global::System.Collections.Generic.IEnumerable<float>.GetEnumerator()
-		{
-			return null;
-		}
-
-		[global::System.Diagnostics.DebuggerHidden]
-		global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+		[DebuggerHidden]
+		IEnumerator<float> IEnumerable<float>.GetEnumerator()
 		{
 			return null;
 		}
+
+		[DebuggerHidden]
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return null;
+		}
 	}
 
-	private static global::UnityEngine.Vector3 Identity(global::UnityEngine.Vector3 v)
+	private static Vector3 Identity(Vector3 v)
 	{
-		return default(global::UnityEngine.Vector3);
+		return default(Vector3);
 	}
 
-	private static global::UnityEngine.Vector3 TransformDotPosition(global::UnityEngine.Transform t)
+	private static Vector3 TransformDotPosition(Transform t)
 	{
-		return default(global::UnityEngine.Vector3);
+		return default(Vector3);
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(Interpolate._003CNewTimer_003Ed__3))]
-	private static global::System.Collections.Generic.IEnumerable<float> NewTimer(float duration)
-	{
-		return null;
-	}
-
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(Interpolate._003CNewCounter_003Ed__6))]
-	private static global::System.Collections.Generic.IEnumerable<float> NewCounter(int start, int end, int step)
-	{
-		return null;
-	}
-
-	public static global::System.Collections.IEnumerator NewEase(Interpolate.Function ease, global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 end, float duration)
+	[IteratorStateMachine(typeof(_003CNewTimer_003Ed__3))]
+	private static IEnumerable<float> NewTimer(float duration)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.IEnumerator NewEase(Interpolate.Function ease, global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 end, int slices)
+	[IteratorStateMachine(typeof(_003CNewCounter_003Ed__6))]
+	private static IEnumerable<float> NewCounter(int start, int end, int step)
 	{
 		return null;
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(Interpolate._003CNewEase_003Ed__9))]
-	private static global::System.Collections.IEnumerator NewEase(Interpolate.Function ease, global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 end, float total, global::System.Collections.Generic.IEnumerable<float> driver)
+	public static IEnumerator NewEase(Function ease, Vector3 start, Vector3 end, float duration)
 	{
 		return null;
 	}
 
-	private static global::UnityEngine.Vector3 Ease(Interpolate.Function ease, global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 distance, float elapsedTime, float duration)
-	{
-		return default(global::UnityEngine.Vector3);
-	}
-
-	public static Interpolate.Function Ease(Interpolate.EaseType type)
+	public static IEnumerator NewEase(Function ease, Vector3 start, Vector3 end, int slices)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewBezier(Interpolate.Function ease, global::UnityEngine.Transform[] nodes, float duration)
+	[IteratorStateMachine(typeof(_003CNewEase_003Ed__9))]
+	private static IEnumerator NewEase(Function ease, Vector3 start, Vector3 end, float total, IEnumerable<float> driver)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewBezier(Interpolate.Function ease, global::UnityEngine.Transform[] nodes, int slices)
+	private static Vector3 Ease(Function ease, Vector3 start, Vector3 distance, float elapsedTime, float duration)
+	{
+		return default(Vector3);
+	}
+
+	public static Function Ease(EaseType type)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewBezier(Interpolate.Function ease, global::UnityEngine.Vector3[] points, float duration)
+	public static IEnumerable<Vector3> NewBezier(Function ease, Transform[] nodes, float duration)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewBezier(Interpolate.Function ease, global::UnityEngine.Vector3[] points, int slices)
+	public static IEnumerable<Vector3> NewBezier(Function ease, Transform[] nodes, int slices)
 	{
 		return null;
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(Interpolate._003CNewBezier_003Ed__16<>))]
-	private static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewBezier<T>(Interpolate.Function ease, global::System.Collections.IList nodes, Interpolate.ToVector3<T> toVector3, float maxStep, global::System.Collections.Generic.IEnumerable<float> steps)
+	public static IEnumerable<Vector3> NewBezier(Function ease, Vector3[] points, float duration)
 	{
 		return null;
 	}
 
-	private static global::UnityEngine.Vector3 Bezier(Interpolate.Function ease, global::UnityEngine.Vector3[] points, float elapsedTime, float duration)
-	{
-		return default(global::UnityEngine.Vector3);
-	}
-
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewCatmullRom(global::UnityEngine.Transform[] nodes, int slices, bool loop)
+	public static IEnumerable<Vector3> NewBezier(Function ease, Vector3[] points, int slices)
 	{
 		return null;
 	}
 
-	public static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewCatmullRom(global::UnityEngine.Vector3[] points, int slices, bool loop)
+	[IteratorStateMachine(typeof(_003CNewBezier_003Ed__16<>))]
+	private static IEnumerable<Vector3> NewBezier<T>(Function ease, IList nodes, ToVector3<T> toVector3, float maxStep, IEnumerable<float> steps)
 	{
 		return null;
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(Interpolate._003CNewCatmullRom_003Ed__20<>))]
-	private static global::System.Collections.Generic.IEnumerable<global::UnityEngine.Vector3> NewCatmullRom<T>(global::System.Collections.IList nodes, Interpolate.ToVector3<T> toVector3, int slices, bool loop)
+	private static Vector3 Bezier(Function ease, Vector3[] points, float elapsedTime, float duration)
+	{
+		return default(Vector3);
+	}
+
+	public static IEnumerable<Vector3> NewCatmullRom(Transform[] nodes, int slices, bool loop)
 	{
 		return null;
 	}
 
-	private static global::UnityEngine.Vector3 CatmullRom(global::UnityEngine.Vector3 previous, global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 end, global::UnityEngine.Vector3 next, float elapsedTime, float duration)
+	public static IEnumerable<Vector3> NewCatmullRom(Vector3[] points, int slices, bool loop)
 	{
-		return default(global::UnityEngine.Vector3);
+		return null;
+	}
+
+	[IteratorStateMachine(typeof(_003CNewCatmullRom_003Ed__20<>))]
+	private static IEnumerable<Vector3> NewCatmullRom<T>(IList nodes, ToVector3<T> toVector3, int slices, bool loop)
+	{
+		return null;
+	}
+
+	private static Vector3 CatmullRom(Vector3 previous, Vector3 start, Vector3 end, Vector3 next, float elapsedTime, float duration)
+	{
+		return default(Vector3);
 	}
 
 	private static float Linear(float start, float distance, float elapsedTime, float duration)

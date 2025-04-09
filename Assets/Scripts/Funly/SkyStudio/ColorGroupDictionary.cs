@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class ColorGroupDictionary : global::Funly.SkyStudio.SerializableDictionary<string, global::Funly.SkyStudio.ColorKeyframeGroup>
+	[Serializable]
+	public class ColorGroupDictionary : SerializableDictionary<string, ColorKeyframeGroup>
 	{
 	}
 }

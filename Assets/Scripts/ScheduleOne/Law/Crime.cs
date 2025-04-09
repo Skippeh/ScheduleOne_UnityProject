@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Crime
 	{
 		public virtual string CrimeName { get; protected set; }

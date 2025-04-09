@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public static class Noise3D
@@ -6,7 +8,7 @@ namespace VLB
 
 		private static bool ms_IsSupported;
 
-		private static global::UnityEngine.Texture3D ms_NoiseTexture;
+		private static Texture3D ms_NoiseTexture;
 
 		private const int kMinShaderLevel = 35;
 
@@ -16,7 +18,7 @@ namespace VLB
 
 		public static string isNotSupportedString => null;
 
-		[global::UnityEngine.RuntimeInitializeOnLoadMethod]
+		[RuntimeInitializeOnLoadMethod]
 		private static void OnStartUp()
 		{
 		}

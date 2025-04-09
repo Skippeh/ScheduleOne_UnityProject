@@ -1,7 +1,9 @@
+using System;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
-	public class CharacterSelectedElements : global::System.ICloneable
+	[Serializable]
+	public class CharacterSelectedElements : ICloneable
 	{
 		public int Hair;
 
@@ -24,12 +26,12 @@ namespace AdvancedPeopleSystem
 			return null;
 		}
 
-		public int GetSelectedIndex(global::AdvancedPeopleSystem.CharacterElementType type)
+		public int GetSelectedIndex(CharacterElementType type)
 		{
 			return 0;
 		}
 
-		public void SetSelectedIndex(global::AdvancedPeopleSystem.CharacterElementType type, int newIndex)
+		public void SetSelectedIndex(CharacterElementType type, int newIndex)
 		{
 		}
 	}

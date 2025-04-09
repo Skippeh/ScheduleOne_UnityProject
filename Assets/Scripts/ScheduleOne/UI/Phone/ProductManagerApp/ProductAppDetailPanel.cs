@@ -1,53 +1,57 @@
+using ScheduleOne.Product;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.ProductManagerApp
 {
-	public class ProductAppDetailPanel : global::UnityEngine.MonoBehaviour
+	public class ProductAppDetailPanel : MonoBehaviour
 	{
-		public global::UnityEngine.Color AddictionColor_Min;
+		public Color AddictionColor_Min;
 
-		public global::UnityEngine.Color AddictionColor_Max;
+		public Color AddictionColor_Max;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject NothingSelected;
+		[Header("References")]
+		public GameObject NothingSelected;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
-		public global::UnityEngine.UI.Text NameLabel;
+		public Text NameLabel;
 
-		public global::UnityEngine.UI.InputField ValueLabel;
+		public InputField ValueLabel;
 
-		public global::UnityEngine.UI.Text SuggestedPriceLabel;
+		public Text SuggestedPriceLabel;
 
-		public global::UnityEngine.UI.Toggle ListedForSale;
+		public Toggle ListedForSale;
 
-		public global::UnityEngine.UI.Text DescLabel;
+		public Text DescLabel;
 
-		public global::UnityEngine.UI.Text[] PropertyLabels;
+		public Text[] PropertyLabels;
 
-		public global::UnityEngine.RectTransform Listed;
+		public RectTransform Listed;
 
-		public global::UnityEngine.RectTransform Delisted;
+		public RectTransform Delisted;
 
-		public global::UnityEngine.RectTransform NotDiscovered;
+		public RectTransform NotDiscovered;
 
-		public global::UnityEngine.RectTransform RecipesLabel;
+		public RectTransform RecipesLabel;
 
-		public global::UnityEngine.RectTransform[] RecipeEntries;
+		public RectTransform[] RecipeEntries;
 
-		public global::UnityEngine.UI.VerticalLayoutGroup LayoutGroup;
+		public VerticalLayoutGroup LayoutGroup;
 
-		public global::UnityEngine.UI.Scrollbar AddictionSlider;
+		public Scrollbar AddictionSlider;
 
-		public global::UnityEngine.UI.Text AddictionLabel;
+		public Text AddictionLabel;
 
-		public global::UnityEngine.UI.ScrollRect ScrollRect;
+		public ScrollRect ScrollRect;
 
-		public global::ScheduleOne.Product.ProductDefinition ActiveProduct { get; protected set; }
+		public ProductDefinition ActiveProduct { get; protected set; }
 
 		public void Awake()
 		{
 		}
 
-		public void SetActiveProduct(global::ScheduleOne.Product.ProductDefinition productDefinition)
+		public void SetActiveProduct(ProductDefinition productDefinition)
 		{
 		}
 

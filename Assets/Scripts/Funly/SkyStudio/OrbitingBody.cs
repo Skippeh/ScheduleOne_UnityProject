@@ -1,23 +1,25 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class OrbitingBody : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class OrbitingBody : MonoBehaviour
 	{
-		private global::UnityEngine.Transform m_PositionTransform;
+		private Transform m_PositionTransform;
 
-		private global::Funly.SkyStudio.RotateBody m_RotateBody;
+		private RotateBody m_RotateBody;
 
-		private global::Funly.SkyStudio.SpherePoint m_SpherePoint;
+		private SpherePoint m_SpherePoint;
 
-		private global::UnityEngine.Vector3 m_CachedWorldDirection;
+		private Vector3 m_CachedWorldDirection;
 
-		private global::UnityEngine.Light m_BodyLight;
+		private Light m_BodyLight;
 
-		public global::UnityEngine.Transform positionTransform => null;
+		public Transform positionTransform => null;
 
-		public global::Funly.SkyStudio.RotateBody rotateBody => null;
+		public RotateBody rotateBody => null;
 
-		public global::Funly.SkyStudio.SpherePoint Point
+		public SpherePoint Point
 		{
 			get
 			{
@@ -28,9 +30,9 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Vector3 BodyGlobalDirection => default(global::UnityEngine.Vector3);
+		public Vector3 BodyGlobalDirection => default(Vector3);
 
-		public global::UnityEngine.Light BodyLight => null;
+		public Light BodyLight => null;
 
 		public void ResetOrbit()
 		{

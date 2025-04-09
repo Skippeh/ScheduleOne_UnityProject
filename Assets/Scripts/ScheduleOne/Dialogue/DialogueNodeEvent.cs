@@ -1,10 +1,13 @@
+using System;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DialogueNodeEvent
 	{
 		public string NodeLabel;
 
-		public global::UnityEngine.Events.UnityEvent onNodeDisplayed;
+		public UnityEvent onNodeDisplayed;
 	}
 }

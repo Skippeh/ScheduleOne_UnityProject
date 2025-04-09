@@ -1,19 +1,22 @@
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Delivery
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.LandVehicle))]
-	public class DeliveryVehicle : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(LandVehicle))]
+	public class DeliveryVehicle : MonoBehaviour
 	{
 		public string GUID;
 
-		public global::ScheduleOne.Vehicles.LandVehicle Vehicle { get; private set; }
+		public LandVehicle Vehicle { get; private set; }
 
-		public global::ScheduleOne.Delivery.DeliveryInstance ActiveDelivery { get; private set; }
+		public DeliveryInstance ActiveDelivery { get; private set; }
 
 		private void Awake()
 		{
 		}
 
-		public void Activate(global::ScheduleOne.Delivery.DeliveryInstance instance)
+		public void Activate(DeliveryInstance instance)
 		{
 		}
 

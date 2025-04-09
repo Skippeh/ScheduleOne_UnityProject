@@ -1,13 +1,15 @@
+using System;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct Entry
 	{
 		public string Key;
 
-		public global::ScheduleOne.Dialogue.DialogueChain[] Chains;
+		public DialogueChain[] Chains;
 
-		public global::ScheduleOne.Dialogue.DialogueChain GetRandomChain()
+		public DialogueChain GetRandomChain()
 		{
 			return null;
 		}

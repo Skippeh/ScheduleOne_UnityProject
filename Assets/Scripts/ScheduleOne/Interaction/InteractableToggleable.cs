@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Interaction
 {
-	public class InteractableToggleable : global::UnityEngine.MonoBehaviour
+	public class InteractableToggleable : MonoBehaviour
 	{
 		public string ActivateMessage;
 
@@ -8,14 +11,14 @@ namespace ScheduleOne.Interaction
 
 		public float CoolDown;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Events.UnityEvent onToggle;
+		public UnityEvent onToggle;
 
-		public global::UnityEngine.Events.UnityEvent onActivate;
+		public UnityEvent onActivate;
 
-		public global::UnityEngine.Events.UnityEvent onDeactivate;
+		public UnityEvent onDeactivate;
 
 		private float lastActivated;
 

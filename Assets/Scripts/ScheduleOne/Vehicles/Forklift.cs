@@ -1,66 +1,60 @@
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class Forklift : global::ScheduleOne.Vehicles.LandVehicle
+	public class Forklift : LandVehicle
 	{
-		[global::UnityEngine.Header("Forklift References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform steeringWheel;
+		[Header("Forklift References")]
+		[SerializeField]
+		protected Transform steeringWheel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Rigidbody forkRb;
+		[SerializeField]
+		protected Rigidbody forkRb;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.ConfigurableJoint joint;
+		[SerializeField]
+		protected ConfigurableJoint joint;
 
-		[global::UnityEngine.Header("Forklift settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Forklift settings")]
+		[SerializeField]
 		protected float steeringWheelAngleMultiplier;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float lift_MinY;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float lift_MaxY;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float liftMoveRate;
 
 		private float lastFrameTargetForkHeight;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CtargetForkHeight_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CtargetForkHeight_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CactualForkHeight_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CactualForkHeight_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002EForkliftAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EVehicles_002EForkliftAssembly_002DCSharp_002Edll_Excuted;
 
+		[field: SyncVar(Channel = Channel.Unreliable)]
 		public float targetForkHeight
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
-			protected set
-			{
-			}
+			get; [ServerRpc(RunLocally = true)]
+			protected set;
 		}
 
+		[field: SyncVar(SendRate = 0.04f, Channel = Channel.Unreliable)]
 		public float actualForkHeight
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
-			protected set
-			{
-			}
+			get; [ServerRpc(RunLocally = true)]
+			protected set;
 		}
 
 		public float SyncAccessor__003CtargetForkHeight_003Ek__BackingField
@@ -117,12 +111,12 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
+		[SpecialName]
 		protected void RpcLogic___set_targetForkHeight_431000436(float value)
 		{
 		}
 
-		private void RpcReader___Server_set_targetForkHeight_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_targetForkHeight_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -130,16 +124,16 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
+		[SpecialName]
 		protected void RpcLogic___set_actualForkHeight_431000436(float value)
 		{
 		}
 
-		private void RpcReader___Server_set_actualForkHeight_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_actualForkHeight_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002EForklift(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002EForklift(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,6 +1,19 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Dialogue;
+using ScheduleOne.NPCs;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Employees
 {
-	public class Employee : global::ScheduleOne.NPCs.NPC
+	public class Employee : NPC
 	{
 		public class NoWorkReason
 		{
@@ -17,53 +30,43 @@ namespace ScheduleOne.Employees
 
 		public bool DEBUG;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Employees.EEmployeeType Type;
+		[SerializeField]
+		protected EEmployeeType Type;
 
-		[global::UnityEngine.Header("Payment")]
+		[Header("Payment")]
 		public float SigningFee;
 
 		public float DailyWage;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.Behaviour.IdleBehaviour WaitOutside;
+		[Header("References")]
+		public IdleBehaviour WaitOutside;
 
-		public global::ScheduleOne.NPCs.Behaviour.MoveItemBehaviour MoveItemBehaviour;
+		public MoveItemBehaviour MoveItemBehaviour;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer BedNotAssignedDialogue;
+		public DialogueContainer BedNotAssignedDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer NotPaidDialogue;
+		public DialogueContainer NotPaidDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer WorkIssueDialogueTemplate;
+		public DialogueContainer WorkIssueDialogueTemplate;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer FireDialogue;
+		public DialogueContainer FireDialogue;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee.NoWorkReason> WorkIssues;
+		private List<NoWorkReason> WorkIssues;
 
 		protected bool initialized;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CPaidForToday_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CPaidForToday_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEmployees_002EEmployeeAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEmployees_002EEmployeeAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Property.Property AssignedProperty { get; protected set; }
+		public ScheduleOne.Property.Property AssignedProperty { get; protected set; }
 
 		public int EmployeeIndex { get; protected set; }
 
-		public bool PaidForToday
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			private set
-			{
-			}
-		}
+		[field: SyncVar]
+		public bool PaidForToday { get; private set; }
 
 		public bool Fired { get; private set; }
 
@@ -73,7 +76,7 @@ namespace ScheduleOne.Employees
 
 		protected int AppearanceIndex { get; private set; }
 
-		public global::ScheduleOne.Employees.EEmployeeType EmployeeType => default(global::ScheduleOne.Employees.EEmployeeType);
+		public EEmployeeType EmployeeType => default(EEmployeeType);
 
 		public int TimeSinceLastWorked { get; private set; }
 
@@ -96,17 +99,17 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public virtual void Initialize(global::FishNet.Connection.NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public virtual void Initialize(NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
 		{
 		}
 
-		protected virtual void AssignProperty(global::ScheduleOne.Property.Property prop)
+		protected virtual void AssignProperty(ScheduleOne.Property.Property prop)
 		{
 		}
 
@@ -122,12 +125,12 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SendFire()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReceiveFire()
 		{
 		}
@@ -162,7 +165,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		protected override bool ShouldNoticeGeneralCrime(global::ScheduleOne.PlayerScripts.Player player)
+		protected override bool ShouldNoticeGeneralCrime(Player player)
 		{
 			return false;
 		}
@@ -189,7 +192,7 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		public virtual global::ScheduleOne.ObjectScripts.BedItem GetBed()
+		public virtual BedItem GetBed()
 		{
 			return null;
 		}
@@ -203,7 +206,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		public virtual bool GetWorkIssue(out global::ScheduleOne.Dialogue.DialogueContainer notWorkingReason)
+		public virtual bool GetWorkIssue(out DialogueContainer notWorkingReason)
 		{
 			notWorkingReason = null;
 			return false;
@@ -217,7 +220,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void SubmitNoWorkReason(string reason, string fix, int priority = 0)
 		{
 		}
@@ -248,23 +251,23 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcWriter___Observers_Initialize_2260823878(global::FishNet.Connection.NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
+		private void RpcWriter___Observers_Initialize_2260823878(NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
 		{
 		}
 
-		public virtual void RpcLogic___Initialize_2260823878(global::FishNet.Connection.NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
+		public virtual void RpcLogic___Initialize_2260823878(NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
 		{
 		}
 
-		private void RpcReader___Observers_Initialize_2260823878(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Initialize_2260823878(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Initialize_2260823878(global::FishNet.Connection.NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
+		private void RpcWriter___Target_Initialize_2260823878(NetworkConnection conn, string firstName, string lastName, string id, string guid, string propertyID, bool male, int appearanceIndex)
 		{
 		}
 
-		private void RpcReader___Target_Initialize_2260823878(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Initialize_2260823878(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -276,7 +279,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcReader___Server_SendFire_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendFire_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -288,7 +291,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveFire_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveFire_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -300,11 +303,11 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcReader___Observers_SubmitNoWorkReason_15643032(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SubmitNoWorkReason_15643032(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002EEmployee(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002EEmployee(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

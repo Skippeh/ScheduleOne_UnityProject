@@ -1,8 +1,12 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Growing;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class HarvestPlant : global::ScheduleOne.PlayerTasks.Task
+	public class HarvestPlant : Task
 	{
-		protected global::ScheduleOne.ObjectScripts.Pot pot;
+		protected Pot pot;
 
 		private int HarvestCount;
 
@@ -14,11 +18,11 @@ namespace ScheduleOne.PlayerTasks
 
 		private static bool CanDrag;
 
-		private global::ScheduleOne.Audio.AudioSourceController SoundLoop;
+		private AudioSourceController SoundLoop;
 
 		public override string TaskName { get; protected set; }
 
-		public HarvestPlant(global::ScheduleOne.ObjectScripts.Pot _pot, bool canDrag, global::ScheduleOne.Audio.AudioSourceController soundLoopPrefab)
+		public HarvestPlant(Pot _pot, bool canDrag, AudioSourceController soundLoopPrefab)
 		{
 		}
 
@@ -38,7 +42,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		private global::ScheduleOne.Growing.PlantHarvestable GetHoveredHarvestable()
+		private PlantHarvestable GetHoveredHarvestable()
 		{
 			return null;
 		}

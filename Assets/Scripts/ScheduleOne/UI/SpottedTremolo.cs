@@ -1,15 +1,19 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Stealth;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class SpottedTremolo : global::UnityEngine.MonoBehaviour
+	public class SpottedTremolo : MonoBehaviour
 	{
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float Intensity;
 
-		public global::ScheduleOne.Audio.AudioSourceController Loop;
+		public AudioSourceController Loop;
 
-		public global::ScheduleOne.Stealth.PlayerVisibility PlayerVisibility;
+		public PlayerVisibility PlayerVisibility;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MinVolume;
 
 		public float MaxVolume;
@@ -20,8 +24,8 @@ namespace ScheduleOne.UI
 
 		public float SmoothTime;
 
-		[global::UnityEngine.Range(0f, 1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 1f)]
+		[SerializeField]
 		private float smoothedIntensity;
 
 		public void Update()

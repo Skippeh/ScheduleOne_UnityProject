@@ -1,9 +1,12 @@
+using ScheduleOne.Persistence;
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class SaveDisplay : global::UnityEngine.MonoBehaviour
+	public class SaveDisplay : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform[] Slots;
+		[Header("References")]
+		public RectTransform[] Slots;
 
 		public void Awake()
 		{
@@ -13,7 +16,7 @@ namespace ScheduleOne.UI.MainMenu
 		{
 		}
 
-		public void SetDisplayedSave(int index, global::ScheduleOne.Persistence.SaveInfo info)
+		public void SetDisplayedSave(int index, SaveInfo info)
 		{
 		}
 

@@ -1,6 +1,8 @@
-public class ModifySkyAtRuntime : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class ModifySkyAtRuntime : MonoBehaviour
 {
-	[global::UnityEngine.Range(0f, 1f)]
+	[Range(0f, 1f)]
 	public float speed;
 
 	private void Update()

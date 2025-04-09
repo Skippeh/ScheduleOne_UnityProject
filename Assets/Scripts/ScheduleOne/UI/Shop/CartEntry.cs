@@ -1,25 +1,29 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class CartEntry : global::UnityEngine.MonoBehaviour
+	public class CartEntry : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		[Header("References")]
+		public TextMeshProUGUI NameLabel;
 
-		public global::TMPro.TextMeshProUGUI PriceLabel;
+		public TextMeshProUGUI PriceLabel;
 
-		public global::UnityEngine.UI.Button IncrementButton;
+		public Button IncrementButton;
 
-		public global::UnityEngine.UI.Button DecrementButton;
+		public Button DecrementButton;
 
-		public global::UnityEngine.UI.Button RemoveButton;
+		public Button RemoveButton;
 
 		public int Quantity { get; protected set; }
 
-		public global::ScheduleOne.UI.Shop.Cart Cart { get; protected set; }
+		public Cart Cart { get; protected set; }
 
-		public global::ScheduleOne.UI.Shop.ShopListing Listing { get; protected set; }
+		public ShopListing Listing { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.UI.Shop.Cart cart, global::ScheduleOne.UI.Shop.ShopListing listing, int quantity)
+		public void Initialize(Cart cart, ShopListing listing, int quantity)
 		{
 		}
 

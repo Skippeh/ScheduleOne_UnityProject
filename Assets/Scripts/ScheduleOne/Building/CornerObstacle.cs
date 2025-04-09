@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class CornerObstacle : global::UnityEngine.MonoBehaviour
+	public class CornerObstacle : MonoBehaviour
 	{
 		public bool obstacleEnabled;
 
-		public global::ScheduleOne.Tiles.FootprintTile parentFootprint;
+		public FootprintTile parentFootprint;
 
-		public global::UnityEngine.Vector2 coordinates;
+		public Vector2 coordinates;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> GetNeighbourTiles(global::ScheduleOne.Tiles.Tile pairedTile)
+		public List<Tile> GetNeighbourTiles(Tile pairedTile)
 		{
 			return null;
 		}

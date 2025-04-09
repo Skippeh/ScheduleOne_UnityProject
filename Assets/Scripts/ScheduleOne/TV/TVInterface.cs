@@ -1,27 +1,34 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.PlayerScripts;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class TVInterface : global::UnityEngine.MonoBehaviour
+	public class TVInterface : MonoBehaviour
 	{
 		public const float OPEN_TIME = 0.15f;
 
 		public const float FOV = 60f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> Players;
+		public List<Player> Players;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.Transform CameraPosition;
+		public Transform CameraPosition;
 
-		public global::ScheduleOne.TV.TVHomeScreen HomeScreen;
+		public TVHomeScreen HomeScreen;
 
-		public global::TMPro.TextMeshPro TimeLabel;
+		public TextMeshPro TimeLabel;
 
-		public global::TMPro.TextMeshPro Daylabel;
+		public TextMeshPro Daylabel;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onPlayerAdded;
+		public UnityEvent<Player> onPlayerAdded;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onPlayerRemoved;
+		public UnityEvent<Player> onPlayerRemoved;
 
 		public bool IsOpen { get; private set; }
 
@@ -49,7 +56,7 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -58,11 +65,11 @@ namespace ScheduleOne.TV
 			return false;
 		}
 
-		public void AddPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public void AddPlayer(Player player)
 		{
 		}
 
-		public void RemovePlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public void RemovePlayer(Player player)
 		{
 		}
 	}

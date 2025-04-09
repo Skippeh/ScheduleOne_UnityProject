@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct PID_Parameters
 	{
 		public float P;
@@ -11,9 +13,9 @@ namespace ScheduleOne.Vehicles.AI
 
 		public PID_Parameters(float P, float I, float D)
 		{
-			this.P = 0f;
-			this.I = 0f;
-			this.D = 0f;
+			this.P = P;
+			this.I = I;
+			this.D = D;
 		}
 	}
 }

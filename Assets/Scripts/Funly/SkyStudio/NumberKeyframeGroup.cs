@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class NumberKeyframeGroup : global::Funly.SkyStudio.KeyframeGroup<global::Funly.SkyStudio.NumberKeyframe>
+	[Serializable]
+	public class NumberKeyframeGroup : KeyframeGroup<NumberKeyframe>
 	{
 		public float minValue;
 
@@ -12,7 +14,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public NumberKeyframeGroup(string name, float min, float max, global::Funly.SkyStudio.NumberKeyframe frame)
+		public NumberKeyframeGroup(string name, float min, float max, NumberKeyframe frame)
 			: base((string)null)
 		{
 		}

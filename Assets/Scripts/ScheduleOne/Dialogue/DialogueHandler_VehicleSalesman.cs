@@ -1,10 +1,12 @@
+using ScheduleOne.NPCs.CharacterClasses;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueHandler_VehicleSalesman : global::ScheduleOne.Dialogue.ControlledDialogueHandler
+	public class DialogueHandler_VehicleSalesman : ControlledDialogueHandler
 	{
-		public global::ScheduleOne.NPCs.CharacterClasses.Jeremy Salesman;
+		public Jeremy Salesman;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.Jeremy.DealershipListing selectedVehicle;
+		public Jeremy.DealershipListing selectedVehicle;
 
 		protected override string ModifyChoiceText(string choiceLabel, string choiceText)
 		{

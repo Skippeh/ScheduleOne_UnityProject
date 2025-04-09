@@ -1,22 +1,24 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleAudio : global::UnityEngine.MonoBehaviour
+	public class VehicleAudio : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Refererences")]
-		public global::ScheduleOne.Vehicles.LandVehicle Vehicle;
+		[Header("Refererences")]
+		public LandVehicle Vehicle;
 
-		public global::ScheduleOne.Vehicles.VehicleLights Lights;
+		public VehicleLights Lights;
 
-		[global::UnityEngine.Header("Sounds")]
-		public global::UnityEngine.AudioSource EngineStartSound;
+		[Header("Sounds")]
+		public AudioSource EngineStartSound;
 
-		public global::UnityEngine.AudioSource EngineStopSound;
+		public AudioSource EngineStopSound;
 
-		public global::UnityEngine.AudioSource HeadlightsOnSound;
+		public AudioSource HeadlightsOnSound;
 
-		public global::UnityEngine.AudioSource HeadlightsOffSound;
+		public AudioSource HeadlightsOffSound;
 
-		public global::UnityEngine.AudioSource HornSound;
+		public AudioSource HornSound;
 
 		protected virtual void Awake()
 		{

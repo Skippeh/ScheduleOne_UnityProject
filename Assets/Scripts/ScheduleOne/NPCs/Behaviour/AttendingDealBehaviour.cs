@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class AttendingDealBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class AttendingDealBehaviour : Behaviour
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EAttendingDealBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,29 +1,31 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class ChromaticAberrationModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class ChromaticAberrationModel : PostProcessingModel
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public struct Settings
 		{
-			[global::UnityEngine.Tooltip("Shift the hue of chromatic aberrations.")]
-			public global::UnityEngine.Texture2D spectralTexture;
+			[Tooltip("Shift the hue of chromatic aberrations.")]
+			public Texture2D spectralTexture;
 
-			[global::UnityEngine.Range(0f, 1f)]
-			[global::UnityEngine.Tooltip("Amount of tangential distortion.")]
+			[Range(0f, 1f)]
+			[Tooltip("Amount of tangential distortion.")]
 			public float intensity;
 
-			public static global::UnityEngine.PostProcessing.ChromaticAberrationModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.ChromaticAberrationModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.ChromaticAberrationModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.ChromaticAberrationModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.ChromaticAberrationModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

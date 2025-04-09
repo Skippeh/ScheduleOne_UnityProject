@@ -1,23 +1,29 @@
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Economy;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class NewCustomerPopup : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.NewCustomerPopup>
+	public class NewCustomerPopup : Singleton<NewCustomerPopup>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::TMPro.TextMeshProUGUI Title;
+		public TextMeshProUGUI Title;
 
-		public global::UnityEngine.RectTransform[] Entries;
+		public RectTransform[] Entries;
 
-		public global::ScheduleOne.Audio.AudioSourceController SoundEffect;
+		public AudioSourceController SoundEffect;
 
-		private global::UnityEngine.Coroutine routine;
+		private Coroutine routine;
 
 		public bool IsPlaying { get; protected set; }
 
@@ -25,7 +31,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void PlayPopup(global::ScheduleOne.Economy.Customer customer)
+		public void PlayPopup(Customer customer)
 		{
 		}
 

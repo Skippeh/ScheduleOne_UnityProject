@@ -1,17 +1,25 @@
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Lighting;
+using ScheduleOne.Misc;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class GrowLight : global::ScheduleOne.EntityFramework.ProceduralGridItem
+	public class GrowLight : ProceduralGridItem
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Misc.ToggleableLight Light;
+		[Header("References")]
+		public ToggleableLight Light;
 
-		public global::ScheduleOne.Lighting.UsableLightSource usableLightSource;
+		public UsableLightSource usableLightSource;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EGrowLightAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EGrowLightAssembly_002DCSharp_002Edll_Excuted;
 
-		public override void InitializeProceduralGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public override void InitializeProceduralGridItem(ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 

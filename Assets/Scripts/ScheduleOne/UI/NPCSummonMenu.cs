@@ -1,17 +1,23 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class NPCSummonMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.NPCSummonMenu>
+	public class NPCSummonMenu : Singleton<NPCSummonMenu>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform EntryContainer;
+		public RectTransform EntryContainer;
 
-		public global::UnityEngine.RectTransform[] Entries;
+		public RectTransform[] Entries;
 
-		private global::System.Action<global::ScheduleOne.NPCs.NPC> callback;
+		private Action<NPC> callback;
 
 		public bool IsOpen { get; private set; }
 
@@ -19,11 +25,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		private void Exit(ExitAction exit)
 		{
 		}
 
-		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> npcs, global::System.Action<global::ScheduleOne.NPCs.NPC> _callback)
+		public void Open(List<NPC> npcs, Action<NPC> _callback)
 		{
 		}
 
@@ -31,7 +37,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void NPCSelected(global::ScheduleOne.NPCs.NPC npc)
+		public void NPCSelected(NPC npc)
 		{
 		}
 	}

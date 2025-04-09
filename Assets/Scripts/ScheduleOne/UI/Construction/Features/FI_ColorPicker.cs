@@ -1,36 +1,42 @@
+using ScheduleOne.Construction.Features;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Construction.Features
 {
-	public class FI_ColorPicker : global::ScheduleOne.UI.Construction.Features.FI_Base
+	public class FI_ColorPicker : FI_Base
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform colorButtonContainer;
+		[Header("References")]
+		[SerializeField]
+		protected RectTransform colorButtonContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button buyButton;
+		[SerializeField]
+		protected Button buyButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI buyButtonText;
+		[SerializeField]
+		protected TextMeshProUGUI buyButtonText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI colorLabel;
+		[SerializeField]
+		protected TextMeshProUGUI colorLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform bar;
+		[SerializeField]
+		protected RectTransform bar;
 
-		[global::UnityEngine.Header("Prefab")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject colorButtonPrefab;
+		[Header("Prefab")]
+		[SerializeField]
+		protected GameObject colorButtonPrefab;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Construction.Features.ColorFeature.NamedColor> onSelectionChanged;
+		public UnityEvent<ColorFeature.NamedColor> onSelectionChanged;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Construction.Features.ColorFeature.NamedColor> onSelectionPurchased;
+		public UnityEvent<ColorFeature.NamedColor> onSelectionPurchased;
 
-		private global::ScheduleOne.Construction.Features.ColorFeature specificFeature;
+		private ColorFeature specificFeature;
 
 		private int selectionIndex;
 
-		public override void Initialize(global::ScheduleOne.Construction.Features.Feature _feature)
+		public override void Initialize(Feature _feature)
 		{
 		}
 

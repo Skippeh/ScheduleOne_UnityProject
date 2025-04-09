@@ -1,8 +1,11 @@
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public class ConstructUpdate_Base : global::UnityEngine.MonoBehaviour
+	public class ConstructUpdate_Base : MonoBehaviour
 	{
-		public global::ScheduleOne.ConstructableScripts.Constructable_GridBased MovedConstructable;
+		public Constructable_GridBased MovedConstructable;
 
 		public bool isMoving => false;
 

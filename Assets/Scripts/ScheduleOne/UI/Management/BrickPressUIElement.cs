@@ -1,10 +1,12 @@
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.UI.Management
 {
-	public class BrickPressUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class BrickPressUIElement : WorldspaceUIElement
 	{
-		public global::ScheduleOne.ObjectScripts.BrickPress AssignedPress { get; protected set; }
+		public BrickPress AssignedPress { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.BrickPress press)
+		public void Initialize(BrickPress press)
 		{
 		}
 

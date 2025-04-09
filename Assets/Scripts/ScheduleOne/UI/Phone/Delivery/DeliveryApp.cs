@@ -1,25 +1,32 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.Delivery;
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Delivery
 {
-	public class DeliveryApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.Delivery.DeliveryApp>
+	public class DeliveryApp : App<DeliveryApp>
 	{
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Delivery.DeliveryShop> deliveryShops;
+		private List<DeliveryShop> deliveryShops;
 
-		public global::ScheduleOne.UI.Phone.Delivery.DeliveryStatusDisplay StatusDisplayPrefab;
+		public DeliveryStatusDisplay StatusDisplayPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animation OrderSubmittedAnim;
+		[Header("References")]
+		public Animation OrderSubmittedAnim;
 
-		public global::ScheduleOne.Audio.AudioSourceController OrderSubmittedSound;
+		public AudioSourceController OrderSubmittedSound;
 
-		public global::UnityEngine.RectTransform StatusDisplayContainer;
+		public RectTransform StatusDisplayContainer;
 
-		public global::UnityEngine.RectTransform NoDeliveriesIndicator;
+		public RectTransform NoDeliveriesIndicator;
 
-		public global::UnityEngine.UI.ScrollRect MainScrollRect;
+		public ScrollRect MainScrollRect;
 
-		public global::UnityEngine.UI.LayoutGroup MainLayoutGroup;
+		public LayoutGroup MainLayoutGroup;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Delivery.DeliveryStatusDisplay> statusDisplays;
+		private List<DeliveryStatusDisplay> statusDisplays;
 
 		private bool started;
 
@@ -51,11 +58,11 @@ namespace ScheduleOne.UI.Phone.Delivery
 		{
 		}
 
-		private void CreateDeliveryStatusDisplay(global::ScheduleOne.Delivery.DeliveryInstance instance)
+		private void CreateDeliveryStatusDisplay(DeliveryInstance instance)
 		{
 		}
 
-		private void DeliveryCompleted(global::ScheduleOne.Delivery.DeliveryInstance instance)
+		private void DeliveryCompleted(DeliveryInstance instance)
 		{
 		}
 
@@ -67,16 +74,16 @@ namespace ScheduleOne.UI.Phone.Delivery
 		{
 		}
 
-		public static void RefreshLayoutGroupsImmediateAndRecursive(global::UnityEngine.GameObject root)
+		public static void RefreshLayoutGroupsImmediateAndRecursive(GameObject root)
 		{
 		}
 
-		public global::ScheduleOne.UI.Phone.Delivery.DeliveryShop GetShop(global::ScheduleOne.UI.Shop.ShopInterface matchingShop)
+		public DeliveryShop GetShop(ShopInterface matchingShop)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.UI.Phone.Delivery.DeliveryShop GetShop(string shopName)
+		public DeliveryShop GetShop(string shopName)
 		{
 			return null;
 		}

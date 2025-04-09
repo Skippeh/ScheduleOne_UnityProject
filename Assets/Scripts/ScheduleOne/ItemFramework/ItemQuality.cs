@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
 	public static class ItemQuality
@@ -10,24 +12,24 @@ namespace ScheduleOne.ItemFramework
 
 		public const float Poor_Threshold = 0.25f;
 
-		public static global::UnityEngine.Color Heavenly_Color;
+		public static Color Heavenly_Color;
 
-		public static global::UnityEngine.Color Premium_Color;
+		public static Color Premium_Color;
 
-		public static global::UnityEngine.Color Standard_Color;
+		public static Color Standard_Color;
 
-		public static global::UnityEngine.Color Poor_Color;
+		public static Color Poor_Color;
 
-		public static global::UnityEngine.Color Trash_Color;
+		public static Color Trash_Color;
 
-		public static global::ScheduleOne.ItemFramework.EQuality GetQuality(float qualityScalar)
+		public static EQuality GetQuality(float qualityScalar)
 		{
-			return default(global::ScheduleOne.ItemFramework.EQuality);
+			return default(EQuality);
 		}
 
-		public static global::UnityEngine.Color GetColor(global::ScheduleOne.ItemFramework.EQuality quality)
+		public static Color GetColor(EQuality quality)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

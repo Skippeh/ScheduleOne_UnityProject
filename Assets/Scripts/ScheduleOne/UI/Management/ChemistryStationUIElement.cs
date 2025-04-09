@@ -1,15 +1,19 @@
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.UI.Stations;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ChemistryStationUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class ChemistryStationUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Stations.StationRecipeEntry RecipeEntry;
+		[Header("References")]
+		public StationRecipeEntry RecipeEntry;
 
-		public global::UnityEngine.GameObject NoRecipe;
+		public GameObject NoRecipe;
 
-		public global::ScheduleOne.ObjectScripts.ChemistryStation AssignedStation { get; protected set; }
+		public ChemistryStation AssignedStation { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.ChemistryStation oven)
+		public void Initialize(ChemistryStation oven)
 		{
 		}
 

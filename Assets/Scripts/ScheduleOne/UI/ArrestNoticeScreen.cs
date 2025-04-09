@@ -1,26 +1,33 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Law;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class ArrestNoticeScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.ArrestNoticeScreen>
+	public class ArrestNoticeScreen : Singleton<ArrestNoticeScreen>
 	{
 		public const float VEHICLE_POSSESSION_TIMEOUT = 30f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		public global::UnityEngine.RectTransform CrimeEntryContainer;
+		public RectTransform CrimeEntryContainer;
 
-		public global::UnityEngine.RectTransform PenaltyEntryContainer;
+		public RectTransform PenaltyEntryContainer;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.RectTransform CrimeEntryPrefab;
+		[Header("Prefabs")]
+		public RectTransform CrimeEntryPrefab;
 
-		public global::UnityEngine.RectTransform PenaltyEntryPrefab;
+		public RectTransform PenaltyEntryPrefab;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Law.Crime, int> recordedCrimes;
+		private Dictionary<Crime, int> recordedCrimes;
 
-		private global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		private LandVehicle vehicle;
 
 		public bool isOpen { get; protected set; }
 
@@ -32,7 +39,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -48,11 +55,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void RecordPossession(global::ScheduleOne.Product.Packaging.EStealthLevel maxStealthLevel)
+		private void RecordPossession(EStealthLevel maxStealthLevel)
 		{
 		}
 
-		private void ConfiscateItems(global::ScheduleOne.Product.Packaging.EStealthLevel maxStealthLevel)
+		private void ConfiscateItems(EStealthLevel maxStealthLevel)
 		{
 		}
 

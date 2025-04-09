@@ -1,6 +1,25 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.AvatarFramework.Animation;
+using ScheduleOne.Dragging;
+using ScheduleOne.Management;
+using ScheduleOne.Tools;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCMovement : global::FishNet.Object.NetworkBehaviour
+	public class NPCMovement : NetworkBehaviour
 	{
 		public enum EAgentType
 		{
@@ -24,8 +43,8 @@ namespace ScheduleOne.NPCs
 			Success = 4
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFaceDirection_Process_003Ed__139 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CFaceDirection_Process_003Ed__139 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -33,39 +52,39 @@ namespace ScheduleOne.NPCs
 
 			public float lerpTime;
 
-			public global::ScheduleOne.NPCs.NPCMovement _003C_003E4__this;
+			public NPCMovement _003C_003E4__this;
 
-			public global::UnityEngine.Vector3 forward;
+			public Vector3 forward;
 
-			private global::UnityEngine.Quaternion _003CstartRot_003E5__2;
+			private Quaternion _003CstartRot_003E5__2;
 
 			private float _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CFaceDirection_Process_003Ed__139(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -74,14 +93,14 @@ namespace ScheduleOne.NPCs
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -114,15 +133,15 @@ namespace ScheduleOne.NPCs
 
 		public const float PLAYER_DIST_IMPACT_THRESHOLD = 30f;
 
-		public static global::System.Collections.Generic.Dictionary<global::UnityEngine.Vector3, global::UnityEngine.Vector3> cachedClosestReachablePoints;
+		public static Dictionary<Vector3, Vector3> cachedClosestReachablePoints;
 
-		public static global::System.Collections.Generic.List<global::UnityEngine.Vector3> cachedClosestPointKeys;
+		public static List<Vector3> cachedClosestPointKeys;
 
 		public const float CLOSEST_REACHABLE_POINT_CACHE_MAX_SQR_OFFSET = 1f;
 
 		public bool DEBUG;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float WalkSpeed;
 
 		public float RunSpeed;
@@ -133,30 +152,30 @@ namespace ScheduleOne.NPCs
 
 		public float SlipperyModeMultiplier;
 
-		public global::UnityEngine.AI.ObstacleAvoidanceType DefaultObstacleAvoidanceType;
+		public ObstacleAvoidanceType DefaultObstacleAvoidanceType;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.AI.NavMeshAgent Agent;
+		[Header("References")]
+		public NavMeshAgent Agent;
 
-		public global::ScheduleOne.NPCs.NPCSpeedController SpeedController;
+		public NPCSpeedController SpeedController;
 
-		protected global::ScheduleOne.NPCs.NPC npc;
+		protected NPC npc;
 
-		public global::UnityEngine.CapsuleCollider capsuleCollider;
+		public CapsuleCollider capsuleCollider;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.NPCs.NPCAnimation anim;
+		[SerializeField]
+		protected NPCAnimation anim;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Rigidbody ragdollCentralRB;
+		[SerializeField]
+		protected Rigidbody ragdollCentralRB;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator velocityCalculator;
+		public SmoothedVelocityCalculator velocityCalculator;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Dragging.Draggable RagdollDraggable;
+		[SerializeField]
+		protected Draggable RagdollDraggable;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Collider RagdollDraggableCollider;
+		[SerializeField]
+		protected Collider RagdollDraggableCollider;
 
 		public float MovementSpeedScale;
 
@@ -164,33 +183,33 @@ namespace ScheduleOne.NPCs
 
 		private float ragdollStaticTime;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Vehicles.LandVehicle> onHitByCar;
+		public UnityEvent<LandVehicle> onHitByCar;
 
-		public global::UnityEngine.Events.UnityEvent onRagdollStart;
+		public UnityEvent onRagdollStart;
 
-		public global::UnityEngine.Events.UnityEvent onRagdollEnd;
+		public UnityEvent onRagdollEnd;
 
 		private bool cacheNextPath;
 
-		private global::UnityEngine.Vector3 currentDestination_Reachable;
+		private Vector3 currentDestination_Reachable;
 
-		private global::System.Action<global::ScheduleOne.NPCs.NPCMovement.WalkResult> walkResultCallback;
+		private Action<WalkResult> walkResultCallback;
 
 		private float currentMaxDistanceForSuccess;
 
 		private bool forceIsMoving;
 
-		private global::UnityEngine.Coroutine FaceDirectionRoutine;
+		private Coroutine FaceDirectionRoutine;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.ConstantForce> ragdollForceComponents;
+		private List<ConstantForce> ragdollForceComponents;
 
 		private float timeUntilNextStumble;
 
 		private float timeSinceStumble;
 
-		private global::UnityEngine.Vector3 stumbleDirection;
+		private Vector3 stumbleDirection;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Vector3> desiredVelocityHistory;
+		private List<Vector3> desiredVelocityHistory;
 
 		private int desiredVelocityHistoryLength;
 
@@ -208,19 +227,19 @@ namespace ScheduleOne.NPCs
 
 		public bool IsPaused { get; protected set; }
 
-		public global::UnityEngine.Vector3 FootPosition => default(global::UnityEngine.Vector3);
+		public Vector3 FootPosition => default(Vector3);
 
 		public float GravityMultiplier { get; protected set; }
 
-		public global::ScheduleOne.NPCs.NPCMovement.EStance Stance { get; protected set; }
+		public EStance Stance { get; protected set; }
 
 		public float timeSinceHitByCar { get; protected set; }
 
 		public bool FaceDirectionInProgress => false;
 
-		public global::UnityEngine.Vector3 CurrentDestination { get; protected set; }
+		public Vector3 CurrentDestination { get; protected set; }
 
-		public global::ScheduleOne.NPCs.NPCPathCache PathCache { get; private set; }
+		public NPCPathCache PathCache { get; private set; }
 
 		public bool Disoriented { get; set; }
 
@@ -236,7 +255,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -252,7 +271,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void Stumble()
 		{
 		}
@@ -294,28 +313,28 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public void OnTriggerEnter(global::UnityEngine.Collider other)
+		public void OnTriggerEnter(Collider other)
 		{
 		}
 
-		public void OnCollisionEnter(global::UnityEngine.Collision collision)
+		public void OnCollisionEnter(Collision collision)
 		{
 		}
 
-		private void CheckHit(global::UnityEngine.Collider other, global::UnityEngine.Collider thisCollider, bool isCollision, global::UnityEngine.Vector3 hitPoint)
+		private void CheckHit(Collider other, Collider thisCollider, bool isCollision, Vector3 hitPoint)
 		{
 		}
 
-		public void Warp(global::UnityEngine.Transform target)
+		public void Warp(Transform target)
 		{
 		}
 
-		public void Warp(global::UnityEngine.Vector3 position)
+		public void Warp(Vector3 position)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(ExcludeServer = true)]
-		private void ReceiveWarp(global::UnityEngine.Vector3 position)
+		[ObserversRpc(ExcludeServer = true)]
+		private void ReceiveWarp(Vector3 position)
 		{
 		}
 
@@ -328,15 +347,15 @@ namespace ScheduleOne.NPCs
 			return false;
 		}
 
-		public void SetAgentType(global::ScheduleOne.NPCs.NPCMovement.EAgentType type)
+		public void SetAgentType(EAgentType type)
 		{
 		}
 
-		public void SetSeat(global::ScheduleOne.AvatarFramework.Animation.AvatarSeat seat)
+		public void SetSeat(AvatarSeat seat)
 		{
 		}
 
-		public void SetStance(global::ScheduleOne.NPCs.NPCMovement.EStance stance)
+		public void SetStance(EStance stance)
 		{
 		}
 
@@ -348,54 +367,54 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void ActivateRagdoll_Server()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void ActivateRagdoll(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		[ObserversRpc(RunLocally = true)]
+		public void ActivateRagdoll(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void ApplyRagdollForce(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		[ObserversRpc(RunLocally = true)]
+		public void ApplyRagdollForce(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void DeactivateRagdoll()
 		{
 		}
 
-		private bool SmartSampleNavMesh(global::UnityEngine.Vector3 position, out global::UnityEngine.AI.NavMeshHit hit, float minRadius = 1f, float maxRadius = 10f, int steps = 3)
+		private bool SmartSampleNavMesh(Vector3 position, out NavMeshHit hit, float minRadius = 1f, float maxRadius = 10f, int steps = 3)
 		{
-			hit = default(global::UnityEngine.AI.NavMeshHit);
+			hit = default(NavMeshHit);
 			return false;
 		}
 
-		public void SetDestination(global::UnityEngine.Vector3 pos)
+		public void SetDestination(Vector3 pos)
 		{
 		}
 
-		public void SetDestination(global::ScheduleOne.Management.ITransitEntity entity)
+		public void SetDestination(ITransitEntity entity)
 		{
 		}
 
-		public void SetDestination(global::UnityEngine.Vector3 pos, global::System.Action<global::ScheduleOne.NPCs.NPCMovement.WalkResult> callback = null, float maximumDistanceForSuccess = 1f, float cacheMaxDistSqr = 1f)
+		public void SetDestination(Vector3 pos, Action<WalkResult> callback = null, float maximumDistanceForSuccess = 1f, float cacheMaxDistSqr = 1f)
 		{
 		}
 
-		private void SetDestination(global::UnityEngine.Vector3 pos, global::System.Action<global::ScheduleOne.NPCs.NPCMovement.WalkResult> callback = null, bool interruptExistingCallback = true, float successThreshold = 1f, float cacheMaxDistSqr = 1f)
+		private void SetDestination(Vector3 pos, Action<WalkResult> callback = null, bool interruptExistingCallback = true, float successThreshold = 1f, float cacheMaxDistSqr = 1f)
 		{
 		}
 
-		private bool IsNPCPositionValid(global::UnityEngine.Vector3 position)
+		private bool IsNPCPositionValid(Vector3 position)
 		{
 			return false;
 		}
 
-		private void EndSetDestination(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		private void EndSetDestination(WalkResult result)
 		{
 		}
 
@@ -407,16 +426,16 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public void FacePoint(global::UnityEngine.Vector3 point, float lerpTime = 0.5f)
+		public void FacePoint(Vector3 point, float lerpTime = 0.5f)
 		{
 		}
 
-		public void FaceDirection(global::UnityEngine.Vector3 forward, float lerpTime = 0.5f)
+		public void FaceDirection(Vector3 forward, float lerpTime = 0.5f)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__139))]
-		protected global::System.Collections.IEnumerator FaceDirection_Process(global::UnityEngine.Vector3 forward, float lerpTime)
+		[IteratorStateMachine(typeof(_003CFaceDirection_Process_003Ed__139))]
+		protected IEnumerator FaceDirection_Process(Vector3 forward, float lerpTime)
 		{
 			return null;
 		}
@@ -429,34 +448,34 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public bool IsAsCloseAsPossible(global::UnityEngine.Vector3 location, float distanceThreshold = 0.5f)
+		public bool IsAsCloseAsPossible(Vector3 location, float distanceThreshold = 0.5f)
 		{
 			return false;
 		}
 
-		public bool GetClosestReachablePoint(global::UnityEngine.Vector3 targetPosition, out global::UnityEngine.Vector3 closestPoint)
+		public bool GetClosestReachablePoint(Vector3 targetPosition, out Vector3 closestPoint)
 		{
-			closestPoint = default(global::UnityEngine.Vector3);
+			closestPoint = default(Vector3);
 			return false;
 		}
 
-		public bool CanGetTo(global::UnityEngine.Vector3 position, float proximityReq = 1f)
-		{
-			return false;
-		}
-
-		public bool CanGetTo(global::ScheduleOne.Management.ITransitEntity entity, float proximityReq = 1f)
+		public bool CanGetTo(Vector3 position, float proximityReq = 1f)
 		{
 			return false;
 		}
 
-		public bool CanGetTo(global::UnityEngine.Vector3 position, float proximityReq, out global::UnityEngine.AI.NavMeshPath path)
+		public bool CanGetTo(ITransitEntity entity, float proximityReq = 1f)
+		{
+			return false;
+		}
+
+		public bool CanGetTo(Vector3 position, float proximityReq, out NavMeshPath path)
 		{
 			path = null;
 			return false;
 		}
 
-		private global::UnityEngine.AI.NavMeshPath GetPathTo(global::UnityEngine.Vector3 position, float proximityReq = 1f)
+		private NavMeshPath GetPathTo(Vector3 position, float proximityReq = 1f)
 		{
 			return null;
 		}
@@ -473,15 +492,15 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveWarp_4276783012(global::UnityEngine.Vector3 position)
+		private void RpcWriter___Observers_ReceiveWarp_4276783012(Vector3 position)
 		{
 		}
 
-		private void RpcLogic___ReceiveWarp_4276783012(global::UnityEngine.Vector3 position)
+		private void RpcLogic___ReceiveWarp_4276783012(Vector3 position)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveWarp_4276783012(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveWarp_4276783012(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -493,31 +512,31 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcReader___Server_ActivateRagdoll_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ActivateRagdoll_Server_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ActivateRagdoll_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		private void RpcWriter___Observers_ActivateRagdoll_2690242654(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		public void RpcLogic___ActivateRagdoll_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		public void RpcLogic___ActivateRagdoll_2690242654(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		private void RpcReader___Observers_ActivateRagdoll_2690242654(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ActivateRagdoll_2690242654(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ApplyRagdollForce_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		private void RpcWriter___Observers_ApplyRagdollForce_2690242654(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		public void RpcLogic___ApplyRagdollForce_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
+		public void RpcLogic___ApplyRagdollForce_2690242654(Vector3 forcePoint, Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		private void RpcReader___Observers_ApplyRagdollForce_2690242654(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ApplyRagdollForce_2690242654(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -529,7 +548,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcReader___Observers_DeactivateRagdoll_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_DeactivateRagdoll_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

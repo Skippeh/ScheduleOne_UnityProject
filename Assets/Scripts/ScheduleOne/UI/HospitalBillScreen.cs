@@ -1,21 +1,25 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class HospitalBillScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.HospitalBillScreen>
+	public class HospitalBillScreen : Singleton<HospitalBillScreen>
 	{
 		public const float BILL_COST = 250f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		public global::TMPro.TextMeshProUGUI PatientNameLabel;
+		public TextMeshProUGUI PatientNameLabel;
 
-		public global::TMPro.TextMeshProUGUI BillNumberLabel;
+		public TextMeshProUGUI BillNumberLabel;
 
-		public global::TMPro.TextMeshProUGUI PaidAmountLabel;
+		public TextMeshProUGUI PaidAmountLabel;
 
 		private bool arrested;
 
@@ -25,7 +29,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

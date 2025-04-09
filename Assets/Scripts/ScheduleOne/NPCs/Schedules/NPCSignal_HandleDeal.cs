@@ -1,14 +1,18 @@
+using ScheduleOne.Economy;
+using ScheduleOne.Quests;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_HandleDeal : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_HandleDeal : NPCSignal
 	{
-		private global::ScheduleOne.Economy.Dealer dealer;
+		private Dealer dealer;
 
-		private global::ScheduleOne.Quests.Contract contract;
+		private Contract contract;
 
-		private global::ScheduleOne.Economy.Customer customer;
+		private Customer customer;
 
-		private global::UnityEngine.Coroutine handoverRoutine;
+		private Coroutine handoverRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_HandleDealAssembly_002DCSharp_002Edll_Excuted;
 
@@ -16,7 +20,7 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public new string ActionName => null;
 
-		public void AssignContract(global::ScheduleOne.Quests.Contract c)
+		public void AssignContract(Contract c)
 		{
 		}
 
@@ -71,7 +75,7 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
@@ -83,14 +87,14 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetStandPos()
+		private Vector3 GetStandPos()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::UnityEngine.Vector3 GetStandDir()
+		private Vector3 GetStandDir()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public override void NetworkInitialize___Early()

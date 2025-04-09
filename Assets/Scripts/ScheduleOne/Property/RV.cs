@@ -1,12 +1,19 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Property
 {
-	public class RV : global::ScheduleOne.Property.Property
+	public class RV : Property
 	{
-		public global::UnityEngine.Transform ModelContainer;
+		public Transform ModelContainer;
 
-		public global::UnityEngine.Transform FXContainer;
+		public Transform FXContainer;
 
-		public global::UnityEngine.Events.UnityEvent onSetExploded;
+		public UnityEvent onSetExploded;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002ERVAssembly_002DCSharp_002Edll_Excuted;
 
@@ -18,7 +25,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -35,8 +42,8 @@ namespace ScheduleOne.Property
 			return false;
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		public void SetExploded(global::FishNet.Connection.NetworkConnection conn)
+		[TargetRpc]
+		public void SetExploded(NetworkConnection conn)
 		{
 		}
 
@@ -60,15 +67,15 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		private void RpcWriter___Target_SetExploded_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_SetExploded_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___SetExploded_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___SetExploded_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_SetExploded_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetExploded_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

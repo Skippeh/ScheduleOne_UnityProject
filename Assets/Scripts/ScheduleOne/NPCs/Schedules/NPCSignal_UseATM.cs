@@ -1,12 +1,18 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Money;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_UseATM : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_UseATM : NPCSignal
 	{
 		private const float destinationThreshold = 2f;
 
-		public global::ScheduleOne.Money.ATM ATM;
+		public ATM ATM;
 
-		private global::UnityEngine.Coroutine purchaseCoroutine;
+		private Coroutine purchaseCoroutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_UseATMAssembly_002DCSharp_002Edll_Excuted;
 
@@ -48,11 +54,11 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void Purchase()
 		{
 		}
@@ -77,7 +83,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_Purchase_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Purchase_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

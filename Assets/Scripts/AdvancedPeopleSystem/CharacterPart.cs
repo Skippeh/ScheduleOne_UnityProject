@@ -1,10 +1,14 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterPart
 	{
 		public string name;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.SkinnedMeshRenderer> skinnedMesh;
+		public List<SkinnedMeshRenderer> skinnedMesh;
 	}
 }

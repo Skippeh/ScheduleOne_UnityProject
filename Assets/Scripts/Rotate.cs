@@ -1,8 +1,10 @@
-public class Rotate : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class Rotate : MonoBehaviour
 {
 	public float Speed;
 
-	public global::UnityEngine.Vector3 Axis;
+	public Vector3 Axis;
 
 	private void Update()
 	{

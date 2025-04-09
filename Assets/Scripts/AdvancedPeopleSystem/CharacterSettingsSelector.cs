@@ -1,10 +1,12 @@
+using System;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterSettingsSelector
 	{
 		public string name;
 
-		public global::AdvancedPeopleSystem.CharacterSettings settings;
+		public CharacterSettings settings;
 	}
 }

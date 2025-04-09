@@ -10,7 +10,7 @@ namespace Funly.SkyStudio
 
 		void TrimToSingleKeyframe();
 
-		void RemoveKeyFrame(global::Funly.SkyStudio.IBaseKeyframe keyframe);
+		void RemoveKeyFrame(IBaseKeyframe keyframe);
 
 		int GetKeyFrameCount();
 	}

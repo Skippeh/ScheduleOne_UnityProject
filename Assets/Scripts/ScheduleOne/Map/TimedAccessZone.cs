@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class TimedAccessZone : global::ScheduleOne.Map.AccessZone
+	public class TimedAccessZone : AccessZone
 	{
-		[global::UnityEngine.Header("Timing Settings")]
+		[Header("Timing Settings")]
 		public int OpenTime;
 
 		public int CloseTime;

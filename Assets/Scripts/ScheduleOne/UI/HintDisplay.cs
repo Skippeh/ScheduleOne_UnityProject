@@ -1,6 +1,12 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.Input;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class HintDisplay : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.HintDisplay>
+	public class HintDisplay : Singleton<HintDisplay>
 	{
 		private class Hint
 		{
@@ -15,27 +21,27 @@ namespace ScheduleOne.UI
 
 		public const float FadeTime = 0.3f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::TMPro.TextMeshProUGUI Label;
+		public TextMeshProUGUI Label;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::ScheduleOne.UI.Input.InputPrompt DismissPrompt;
+		public InputPrompt DismissPrompt;
 
-		public global::UnityEngine.Animation FlashAnim;
+		public Animation FlashAnim;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Vector2 Padding;
+		[Header("Settings")]
+		public Vector2 Padding;
 
-		public global::UnityEngine.Vector2 Offset;
+		public Vector2 Offset;
 
-		private global::UnityEngine.Coroutine autoCloseRoutine;
+		private Coroutine autoCloseRoutine;
 
-		private global::UnityEngine.Coroutine fadeRoutine;
+		private Coroutine fadeRoutine;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.HintDisplay.Hint> hintQueue;
+		private List<Hint> hintQueue;
 
 		private float timeSinceOpened;
 

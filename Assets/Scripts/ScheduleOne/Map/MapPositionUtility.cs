@@ -1,10 +1,14 @@
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class MapPositionUtility : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Map.MapPositionUtility>
+	public class MapPositionUtility : Singleton<MapPositionUtility>
 	{
-		public global::UnityEngine.Transform OriginPoint;
+		public Transform OriginPoint;
 
-		public global::UnityEngine.Transform EdgePoint;
+		public Transform EdgePoint;
 
 		public float MapDimensions;
 
@@ -14,12 +18,12 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetMapPosition(global::UnityEngine.Vector3 worldPosition)
+		public Vector2 GetMapPosition(Vector3 worldPosition)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Recalculate()
 		{
 		}

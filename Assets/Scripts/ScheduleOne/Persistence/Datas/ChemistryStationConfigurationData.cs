@@ -1,13 +1,15 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ChemistryStationConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class ChemistryStationConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.StationRecipeFieldData Recipe;
+		public StationRecipeFieldData Recipe;
 
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Destination;
+		public ObjectFieldData Destination;
 
-		public ChemistryStationConfigurationData(global::ScheduleOne.Persistence.Datas.StationRecipeFieldData recipe, global::ScheduleOne.Persistence.Datas.ObjectFieldData destination)
+		public ChemistryStationConfigurationData(StationRecipeFieldData recipe, ObjectFieldData destination)
 		{
 		}
 	}

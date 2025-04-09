@@ -1,24 +1,29 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class BuildUpdate_ProceduralGrid : global::ScheduleOne.Building.BuildUpdate_Base
+	public class BuildUpdate_ProceduralGrid : BuildUpdate_Base
 	{
 		public class Intersection
 		{
-			public global::ScheduleOne.Tiles.FootprintTile footprintTile;
+			public FootprintTile footprintTile;
 
-			public global::ScheduleOne.Tiles.ProceduralTile procTile;
+			public ProceduralTile procTile;
 		}
 
-		public global::UnityEngine.GameObject GhostModel;
+		public GameObject GhostModel;
 
-		public global::ScheduleOne.EntityFramework.ProceduralGridItem ItemClass;
+		public ProceduralGridItem ItemClass;
 
-		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance;
+		public ItemInstance ItemInstance;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float detectionRange;
 
-		public global::UnityEngine.LayerMask detectionMask;
+		public LayerMask detectionMask;
 
 		public float rotation_Smoothing;
 
@@ -26,9 +31,9 @@ namespace ScheduleOne.Building
 
 		protected bool validPosition;
 
-		protected global::UnityEngine.Material currentGhostMaterial;
+		protected Material currentGhostMaterial;
 
-		protected global::ScheduleOne.Building.BuildUpdate_ProceduralGrid.Intersection bestIntersection;
+		protected Intersection bestIntersection;
 
 		protected virtual void Update()
 		{
@@ -54,7 +59,7 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		private bool IsMatchValid(global::ScheduleOne.Tiles.FootprintTile footprintTile, global::ScheduleOne.Tiles.ProceduralTile matchedTile)
+		private bool IsMatchValid(FootprintTile footprintTile, ProceduralTile matchedTile)
 		{
 			return false;
 		}
@@ -63,7 +68,7 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		private global::ScheduleOne.Tiles.ProceduralTile GetNearbyProcTile()
+		private ProceduralTile GetNearbyProcTile()
 		{
 			return null;
 		}

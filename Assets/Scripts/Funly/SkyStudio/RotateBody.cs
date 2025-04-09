@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class RotateBody : global::UnityEngine.MonoBehaviour
+	public class RotateBody : MonoBehaviour
 	{
 		private float m_SpinSpeed;
 

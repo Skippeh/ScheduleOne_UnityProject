@@ -1,14 +1,18 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class KeyframeGroup<T> : global::Funly.SkyStudio.IKeyframeGroup where T : global::Funly.SkyStudio.IBaseKeyframe
+	[Serializable]
+	public class KeyframeGroup<T> : IKeyframeGroup where T : IBaseKeyframe
 	{
-		public global::System.Collections.Generic.List<T> keyframes;
+		public List<T> keyframes;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private string m_Name;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private string m_Id;
 
 		public string name
@@ -45,7 +49,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public void RemoveKeyFrame(global::Funly.SkyStudio.IBaseKeyframe keyframe)
+		public void RemoveKeyFrame(IBaseKeyframe keyframe)
 		{
 		}
 
@@ -63,7 +67,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public float CurveAdjustedBlendingTime(global::Funly.SkyStudio.InterpolationCurve curve, float t)
+		public float CurveAdjustedBlendingTime(InterpolationCurve curve, float t)
 		{
 			return 0f;
 		}
@@ -87,7 +91,7 @@ namespace Funly.SkyStudio
 			return false;
 		}
 
-		public static float ProgressBetweenSurroundingKeyframes(float time, global::Funly.SkyStudio.BaseKeyframe beforeKey, global::Funly.SkyStudio.BaseKeyframe afterKey)
+		public static float ProgressBetweenSurroundingKeyframes(float time, BaseKeyframe beforeKey, BaseKeyframe afterKey)
 		{
 			return 0f;
 		}
@@ -106,9 +110,9 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public global::Funly.SkyStudio.InterpolationDirection GetShortestInterpolationDirection(float previousKeyValue, float nextKeyValue, float minValue, float maxValue)
+		public InterpolationDirection GetShortestInterpolationDirection(float previousKeyValue, float nextKeyValue, float minValue, float maxValue)
 		{
-			return default(global::Funly.SkyStudio.InterpolationDirection);
+			return default(InterpolationDirection);
 		}
 
 		public void CalculateCircularDistances(float previousKeyValue, float nextKeyValue, float minValue, float maxValue, out float forwardDistance, out float reverseDistance)
@@ -117,7 +121,7 @@ namespace Funly.SkyStudio
 			reverseDistance = default(float);
 		}
 
-		public float InterpolateFloat(global::Funly.SkyStudio.InterpolationCurve curve, global::Funly.SkyStudio.InterpolationDirection direction, float time, float beforeTime, float nextTime, float previousKeyValue, float nextKeyValue, float minValue, float maxValue)
+		public float InterpolateFloat(InterpolationCurve curve, InterpolationDirection direction, float time, float beforeTime, float nextTime, float previousKeyValue, float nextKeyValue, float minValue, float maxValue)
 		{
 			return 0f;
 		}

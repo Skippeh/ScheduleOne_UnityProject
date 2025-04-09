@@ -1,25 +1,29 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class AvatarWeapon : global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable
+	public class AvatarWeapon : AvatarEquippable
 	{
-		[global::UnityEngine.Header("Range settings")]
+		[Header("Range settings")]
 		public float MinUseRange;
 
 		public float MaxUseRange;
 
-		[global::UnityEngine.Header("Cooldown settings")]
+		[Header("Cooldown settings")]
 		public float CooldownDuration;
 
-		[global::UnityEngine.Header("Equipping")]
-		public global::UnityEngine.AudioClip[] EquipClips;
+		[Header("Equipping")]
+		public AudioClip[] EquipClips;
 
-		public global::ScheduleOne.Audio.AudioSourceController EquipSound;
+		public AudioSourceController EquipSound;
 
-		public global::UnityEngine.Events.UnityEvent onSuccessfulHit;
+		public UnityEvent onSuccessfulHit;
 
 		public float LastUseTime { get; private set; }
 
-		public override void Equip(global::ScheduleOne.AvatarFramework.Avatar _avatar)
+		public override void Equip(Avatar _avatar)
 		{
 		}
 

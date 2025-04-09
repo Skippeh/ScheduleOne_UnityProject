@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class PoliceBelt : global::ScheduleOne.AvatarFramework.Accessory
+	public class PoliceBelt : Accessory
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject BatonObject;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject BatonObject;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject TaserObject;
+		[SerializeField]
+		protected GameObject TaserObject;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject GunObject;
+		[SerializeField]
+		protected GameObject GunObject;
 
 		public void SetBatonVisible(bool vis)
 		{

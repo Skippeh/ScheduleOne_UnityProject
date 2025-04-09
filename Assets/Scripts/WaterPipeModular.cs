@@ -1,29 +1,32 @@
-[global::UnityEngine.ExecuteInEditMode]
-public class WaterPipeModular : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class WaterPipeModular : MonoBehaviour
 {
-	[global::UnityEngine.HideInInspector]
-	public global::System.Collections.Generic.List<global::UnityEngine.GameObject> itemsList;
+	[HideInInspector]
+	public List<GameObject> itemsList;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject largeWaterPipe;
+	[HideInInspector]
+	public GameObject largeWaterPipe;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject mediumWaterPipe;
+	[HideInInspector]
+	public GameObject mediumWaterPipe;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject smallWaterpipe;
+	[HideInInspector]
+	public GameObject smallWaterpipe;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject innerCorner;
+	[HideInInspector]
+	public GameObject innerCorner;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject outerCorner;
+	[HideInInspector]
+	public GameObject outerCorner;
 
 	private void Start()
 	{
 	}
 
-	public void BuildNextItem(global::UnityEngine.GameObject item)
+	public void BuildNextItem(GameObject item)
 	{
 	}
 

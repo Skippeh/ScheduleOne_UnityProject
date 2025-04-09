@@ -1,13 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.Management.UI;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class MixingStationConfigPanel : global::ScheduleOne.Management.UI.ConfigPanel
+	public class MixingStationConfigPanel : ConfigPanel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Management.ObjectFieldUI DestinationUI;
+		[Header("References")]
+		public ObjectFieldUI DestinationUI;
 
-		public global::ScheduleOne.UI.Management.NumberFieldUI StartThresholdUI;
+		public NumberFieldUI StartThresholdUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		public override void Bind(List<EntityConfiguration> configs)
 		{
 		}
 	}

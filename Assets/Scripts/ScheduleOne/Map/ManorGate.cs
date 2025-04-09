@@ -1,19 +1,25 @@
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Interaction;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class ManorGate : global::ScheduleOne.Map.Gate
+	public class ManorGate : Gate
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntercomInt;
+		[Header("References")]
+		public InteractableObject IntercomInt;
 
-		public global::UnityEngine.Light IntercomLight;
+		public Light IntercomLight;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector ExteriorVehicleDetector;
+		public VehicleDetector ExteriorVehicleDetector;
 
-		public global::ScheduleOne.Tools.PlayerDetector ExteriorPlayerDetector;
+		public PlayerDetector ExteriorPlayerDetector;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector InteriorVehicleDetector;
+		public VehicleDetector InteriorVehicleDetector;
 
-		public global::ScheduleOne.Tools.PlayerDetector InteriorPlayerDetector;
+		public PlayerDetector InteriorPlayerDetector;
 
 		private bool intercomActive;
 
@@ -33,7 +39,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void ActivateIntercom()
 		{
 		}

@@ -1,6 +1,9 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Messaging
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Message
 	{
 		public enum ESenderType
@@ -13,7 +16,7 @@ namespace ScheduleOne.Messaging
 
 		public string text;
 
-		public global::ScheduleOne.Messaging.Message.ESenderType sender;
+		public ESenderType sender;
 
 		public bool endOfGroup;
 
@@ -21,15 +24,15 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		public Message(string _text, global::ScheduleOne.Messaging.Message.ESenderType _type, bool _endOfGroup = false, int _messageId = -1)
+		public Message(string _text, ESenderType _type, bool _endOfGroup = false, int _messageId = -1)
 		{
 		}
 
-		public Message(global::ScheduleOne.Persistence.Datas.TextMessageData data)
+		public Message(TextMessageData data)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.TextMessageData GetSaveData()
+		public TextMessageData GetSaveData()
 		{
 			return null;
 		}

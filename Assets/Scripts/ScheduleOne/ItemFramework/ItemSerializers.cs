@@ -1,178 +1,184 @@
+using FishNet.Serializing;
+using ScheduleOne.Clothing;
+using ScheduleOne.ObjectScripts.WateringCan;
+using ScheduleOne.Product;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.ItemFramework
 {
 	public static class ItemSerializers
 	{
 		public const bool DEBUG = false;
 
-		private static global::ScheduleOne.ItemFramework.ItemInstance Read(this global::FishNet.Serializing.Reader reader)
+		private static ItemInstance Read(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.ItemInstance value)
+		public static void WriteItemInstance(this Writer writer, ItemInstance value)
 		{
 		}
 
-		public static global::ScheduleOne.ItemFramework.ItemInstance ReadItemInstance(this global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
-		private static global::ScheduleOne.ItemFramework.ItemInstance DirectReadItemInstance(this global::FishNet.Serializing.Reader reader)
+		public static ItemInstance ReadItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteStorableItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Storage.StorableItemInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Storage.StorableItemInstance ReadStorableItemInstance(this global::FishNet.Serializing.Reader reader)
+		private static ItemInstance DirectReadItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Storage.StorableItemInstance DirectReadStorableItemInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteStorableItemInstance(this Writer writer, StorableItemInstance value)
+		{
+		}
+
+		public static StorableItemInstance ReadStorableItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteCashInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.CashInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.ItemFramework.CashInstance ReadCashInstance(this global::FishNet.Serializing.Reader reader)
+		private static StorableItemInstance DirectReadStorableItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ItemFramework.CashInstance DirectReadCashInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteCashInstance(this Writer writer, CashInstance value)
+		{
+		}
+
+		public static CashInstance ReadCashInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteQualityItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.QualityItemInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.ItemFramework.QualityItemInstance ReadQualityItemInstance(this global::FishNet.Serializing.Reader reader)
+		private static CashInstance DirectReadCashInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ItemFramework.QualityItemInstance DirectReadQualityItemInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteQualityItemInstance(this Writer writer, QualityItemInstance value)
+		{
+		}
+
+		public static QualityItemInstance ReadQualityItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteClothingInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Clothing.ClothingInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Clothing.ClothingInstance ReadClothingInstance(this global::FishNet.Serializing.Reader reader)
+		private static QualityItemInstance DirectReadQualityItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Clothing.ClothingInstance DirectReadClothingInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteClothingInstance(this Writer writer, ClothingInstance value)
+		{
+		}
+
+		public static ClothingInstance ReadClothingInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteProductItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.ProductItemInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Product.ProductItemInstance ReadProductItemInstance(this global::FishNet.Serializing.Reader reader)
+		private static ClothingInstance DirectReadClothingInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Product.ProductItemInstance DirectReadProductItemInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteProductItemInstance(this Writer writer, ProductItemInstance value)
+		{
+		}
+
+		public static ProductItemInstance ReadProductItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteWeedInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.WeedInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Product.WeedInstance ReadWeedInstance(this global::FishNet.Serializing.Reader reader)
+		private static ProductItemInstance DirectReadProductItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Product.WeedInstance DirectReadWeedInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteWeedInstance(this Writer writer, WeedInstance value)
+		{
+		}
+
+		public static WeedInstance ReadWeedInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteMethInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.MethInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Product.MethInstance ReadMethInstance(this global::FishNet.Serializing.Reader reader)
+		private static WeedInstance DirectReadWeedInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Product.MethInstance DirectReadMethInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteMethInstance(this Writer writer, MethInstance value)
+		{
+		}
+
+		public static MethInstance ReadMethInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteCocaineInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.CocaineInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.Product.CocaineInstance ReadCocaineInstance(this global::FishNet.Serializing.Reader reader)
+		private static MethInstance DirectReadMethInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.Product.CocaineInstance DirectReadCocaineInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteCocaineInstance(this Writer writer, CocaineInstance value)
+		{
+		}
+
+		public static CocaineInstance ReadCocaineInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteIntegerItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.IntegerItemInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.ItemFramework.IntegerItemInstance ReadIntegerItemInstance(this global::FishNet.Serializing.Reader reader)
+		private static CocaineInstance DirectReadCocaineInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ItemFramework.IntegerItemInstance DirectReadIntegerItemInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteIntegerItemInstance(this Writer writer, IntegerItemInstance value)
+		{
+		}
+
+		public static IntegerItemInstance ReadIntegerItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteWateringCanInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance ReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
+		private static IntegerItemInstance DirectReadIntegerItemInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance DirectReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteWateringCanInstance(this Writer writer, WateringCanInstance value)
+		{
+		}
+
+		public static WateringCanInstance ReadWateringCanInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		public static void WriteTrashGrabberInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance value)
-		{
-		}
-
-		public static global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance ReadTrashGrabberInstance(this global::FishNet.Serializing.Reader reader)
+		private static WateringCanInstance DirectReadWateringCanInstance(this Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance DirectReadTrashGrabberInstance(this global::FishNet.Serializing.Reader reader)
+		public static void WriteTrashGrabberInstance(this Writer writer, TrashGrabberInstance value)
+		{
+		}
+
+		public static TrashGrabberInstance ReadTrashGrabberInstance(this Reader reader)
+		{
+			return null;
+		}
+
+		private static TrashGrabberInstance DirectReadTrashGrabberInstance(this Reader reader)
 		{
 			return null;
 		}

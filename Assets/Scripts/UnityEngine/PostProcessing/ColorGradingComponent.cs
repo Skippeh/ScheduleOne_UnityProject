@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class ColorGradingComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.ColorGradingModel>
+	public sealed class ColorGradingComponent : PostProcessingComponentRenderTexture<ColorGradingModel>
 	{
 		private static class Uniforms
 		{
@@ -51,9 +51,9 @@ namespace UnityEngine.PostProcessing
 
 		private const float k_CurveStep = 1f / 128f;
 
-		private global::UnityEngine.Texture2D m_GradingCurves;
+		private Texture2D m_GradingCurves;
 
-		private global::UnityEngine.Color[] m_pixels;
+		private Color[] m_pixels;
 
 		public override bool active => false;
 
@@ -62,95 +62,95 @@ namespace UnityEngine.PostProcessing
 			return 0f;
 		}
 
-		private global::UnityEngine.Vector3 CIExyToLMS(float x, float y)
+		private Vector3 CIExyToLMS(float x, float y)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::UnityEngine.Vector3 CalculateColorBalance(float temperature, float tint)
+		private Vector3 CalculateColorBalance(float temperature, float tint)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private static global::UnityEngine.Color NormalizeColor(global::UnityEngine.Color c)
+		private static Color NormalizeColor(Color c)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		private static global::UnityEngine.Vector3 ClampVector(global::UnityEngine.Vector3 v, float min, float max)
+		private static Vector3 ClampVector(Vector3 v, float min, float max)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetLiftValue(global::UnityEngine.Color lift)
+		public static Vector3 GetLiftValue(Color lift)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetGammaValue(global::UnityEngine.Color gamma)
+		public static Vector3 GetGammaValue(Color gamma)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetGainValue(global::UnityEngine.Color gain)
+		public static Vector3 GetGainValue(Color gain)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static void CalculateLiftGammaGain(global::UnityEngine.Color lift, global::UnityEngine.Color gamma, global::UnityEngine.Color gain, out global::UnityEngine.Vector3 outLift, out global::UnityEngine.Vector3 outGamma, out global::UnityEngine.Vector3 outGain)
+		public static void CalculateLiftGammaGain(Color lift, Color gamma, Color gain, out Vector3 outLift, out Vector3 outGamma, out Vector3 outGain)
 		{
-			outLift = default(global::UnityEngine.Vector3);
-			outGamma = default(global::UnityEngine.Vector3);
-			outGain = default(global::UnityEngine.Vector3);
+			outLift = default(Vector3);
+			outGamma = default(Vector3);
+			outGain = default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetSlopeValue(global::UnityEngine.Color slope)
+		public static Vector3 GetSlopeValue(Color slope)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetPowerValue(global::UnityEngine.Color power)
+		public static Vector3 GetPowerValue(Color power)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 GetOffsetValue(global::UnityEngine.Color offset)
+		public static Vector3 GetOffsetValue(Color offset)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static void CalculateSlopePowerOffset(global::UnityEngine.Color slope, global::UnityEngine.Color power, global::UnityEngine.Color offset, out global::UnityEngine.Vector3 outSlope, out global::UnityEngine.Vector3 outPower, out global::UnityEngine.Vector3 outOffset)
+		public static void CalculateSlopePowerOffset(Color slope, Color power, Color offset, out Vector3 outSlope, out Vector3 outPower, out Vector3 outOffset)
 		{
-			outSlope = default(global::UnityEngine.Vector3);
-			outPower = default(global::UnityEngine.Vector3);
-			outOffset = default(global::UnityEngine.Vector3);
+			outSlope = default(Vector3);
+			outPower = default(Vector3);
+			outOffset = default(Vector3);
 		}
 
-		private global::UnityEngine.TextureFormat GetCurveFormat()
+		private TextureFormat GetCurveFormat()
 		{
-			return default(global::UnityEngine.TextureFormat);
+			return default(TextureFormat);
 		}
 
-		private global::UnityEngine.Texture2D GetCurveTexture()
+		private Texture2D GetCurveTexture()
 		{
 			return null;
 		}
 
-		private bool IsLogLutValid(global::UnityEngine.RenderTexture lut)
+		private bool IsLogLutValid(RenderTexture lut)
 		{
 			return false;
 		}
 
-		private global::UnityEngine.RenderTextureFormat GetLutFormat()
+		private RenderTextureFormat GetLutFormat()
 		{
-			return default(global::UnityEngine.RenderTextureFormat);
+			return default(RenderTextureFormat);
 		}
 
 		private void GenerateLut()
 		{
 		}
 
-		public override void Prepare(global::UnityEngine.Material uberMaterial)
+		public override void Prepare(Material uberMaterial)
 		{
 		}
 

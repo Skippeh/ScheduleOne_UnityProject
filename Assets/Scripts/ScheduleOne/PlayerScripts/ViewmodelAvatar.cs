@@ -1,16 +1,20 @@
+using ScheduleOne.AvatarFramework;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class ViewmodelAvatar : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.PlayerScripts.ViewmodelAvatar>
+	public class ViewmodelAvatar : Singleton<ViewmodelAvatar>
 	{
-		public global::ScheduleOne.AvatarFramework.Avatar ParentAvatar;
+		public ScheduleOne.AvatarFramework.Avatar ParentAvatar;
 
-		public global::UnityEngine.Animator Animator;
+		public Animator Animator;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		public global::UnityEngine.Transform RightHandContainer;
+		public Transform RightHandContainer;
 
-		private global::UnityEngine.Vector3 baseOffset;
+		private Vector3 baseOffset;
 
 		public bool IsVisible { get; private set; }
 
@@ -22,15 +26,15 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void SetAppearance(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void SetAppearance(AvatarSettings settings)
 		{
 		}
 
-		public void SetAnimatorController(global::UnityEngine.RuntimeAnimatorController controller)
+		public void SetAnimatorController(RuntimeAnimatorController controller)
 		{
 		}
 
-		public void SetOffset(global::UnityEngine.Vector3 offset)
+		public void SetOffset(Vector3 offset)
 		{
 		}
 	}

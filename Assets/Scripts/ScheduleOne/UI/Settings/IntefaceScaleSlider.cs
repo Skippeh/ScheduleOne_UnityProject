@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class IntefaceScaleSlider : global::ScheduleOne.UI.Settings.SettingsSlider
+	public class IntefaceScaleSlider : SettingsSlider
 	{
 		public const float MULTIPLIER = 0.1f;
 

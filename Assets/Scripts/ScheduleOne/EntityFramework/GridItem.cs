@@ -1,6 +1,17 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.EntityFramework
 {
-	public class GridItem : global::ScheduleOne.EntityFramework.BuildableItem
+	public class GridItem : BuildableItem
 	{
 		public enum EGridType
 		{
@@ -9,30 +20,30 @@ namespace ScheduleOne.EntityFramework
 			OutdoorOnly = 2
 		}
 
-		[global::UnityEngine.Header("Grid item data")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
+		[Header("Grid item data")]
+		public List<CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
 
-		public global::ScheduleOne.EntityFramework.GridItem.EGridType GridType;
+		public EGridType GridType;
 
-		public global::System.Guid OwnerGridGUID;
+		public Guid OwnerGridGUID;
 
-		public global::UnityEngine.Vector2 OriginCoordinate;
+		public Vector2 OriginCoordinate;
 
 		public int Rotation;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinatePair> CoordinatePairs;
+		public List<CoordinatePair> CoordinatePairs;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEntityFramework_002EGridItemAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEntityFramework_002EGridItemAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Tiles.FootprintTile OriginFootprint => null;
+		public FootprintTile OriginFootprint => null;
 
 		public int FootprintX => 0;
 
 		public int FootprintY => 0;
 
-		public global::ScheduleOne.Tiles.Grid OwnerGrid { get; protected set; }
+		public Grid OwnerGrid { get; protected set; }
 
 		public override void Awake()
 		{
@@ -42,26 +53,26 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		protected override void SendInitToClient(global::FishNet.Connection.NetworkConnection conn)
+		protected override void SendInitToClient(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendGridItemData(global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		[ServerRpc(RequireOwnership = false)]
+		public void SendGridItemData(ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void InitializeGridItem(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		public virtual void InitializeGridItem(NetworkConnection conn, ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		public virtual void InitializeGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public virtual void InitializeGridItem(ItemInstance instance, Grid grid, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		protected void SetGridData(global::System.Guid gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation)
+		protected void SetGridData(Guid gridGUID, Vector2 originCoordinate, int rotation)
 		{
 		}
 
@@ -94,17 +105,17 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public global::ScheduleOne.Tiles.FootprintTile GetFootprintTile(global::ScheduleOne.Tiles.Coordinate coord)
+		public FootprintTile GetFootprintTile(Coordinate coord)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Tiles.Tile GetParentTileAtFootprintCoordinate(global::ScheduleOne.Tiles.Coordinate footprintCoord)
+		public Tile GetParentTileAtFootprintCoordinate(Coordinate footprintCoord)
 		{
 			return null;
 		}
 
-		public virtual bool CanShareTileWith(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.GridItem> obstacles)
+		public virtual bool CanShareTileWith(List<GridItem> obstacles)
 		{
 			return false;
 		}
@@ -126,35 +137,35 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		private void RpcWriter___Server_SendGridItemData_2821640832(global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		private void RpcWriter___Server_SendGridItemData_2821640832(ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		public void RpcLogic___SendGridItemData_2821640832(global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public void RpcLogic___SendGridItemData_2821640832(ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		private void RpcReader___Server_SendGridItemData_2821640832(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendGridItemData_2821640832(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_InitializeGridItem_1883577149(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		private void RpcWriter___Target_InitializeGridItem_1883577149(NetworkConnection conn, ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		public virtual void RpcLogic___InitializeGridItem_1883577149(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public virtual void RpcLogic___InitializeGridItem_1883577149(NetworkConnection conn, ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		private void RpcReader___Target_InitializeGridItem_1883577149(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_InitializeGridItem_1883577149(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_InitializeGridItem_1883577149(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string gridGUID, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		private void RpcWriter___Observers_InitializeGridItem_1883577149(NetworkConnection conn, ItemInstance instance, string gridGUID, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
-		private void RpcReader___Observers_InitializeGridItem_1883577149(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_InitializeGridItem_1883577149(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

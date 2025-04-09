@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class MedicalCentre : global::ScheduleOne.Map.NPCEnterableBuilding
+	public class MedicalCentre : NPCEnterableBuilding
 	{
-		public global::UnityEngine.Transform RespawnPoint;
+		public Transform RespawnPoint;
 	}
 }

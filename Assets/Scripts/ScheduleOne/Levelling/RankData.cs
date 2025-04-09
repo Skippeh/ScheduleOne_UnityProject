@@ -1,6 +1,8 @@
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Levelling
 {
-	public class RankData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class RankData : SaveData
 	{
 		public int Rank;
 

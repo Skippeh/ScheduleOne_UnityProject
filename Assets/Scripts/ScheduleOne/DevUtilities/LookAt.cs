@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class LookAt : global::UnityEngine.MonoBehaviour
+	public class LookAt : MonoBehaviour
 	{
-		public global::UnityEngine.Transform Target;
+		public Transform Target;
 
 		private void LateUpdate()
 		{

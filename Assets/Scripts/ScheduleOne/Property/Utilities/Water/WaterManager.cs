@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities.Water
 {
-	public class WaterManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Property.Utilities.Water.WaterManager>
+	public class WaterManager : Singleton<WaterManager>
 	{
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject waterPipePrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject waterPipePrefab;
 
 		public static float pricePerL;
 
-		private global::System.Collections.Generic.Dictionary<int, float> usageAtTime;
+		private Dictionary<int, float> usageAtTime;
 
 		private float usageThisMinute;
 

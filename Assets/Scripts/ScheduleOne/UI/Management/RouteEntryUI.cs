@@ -1,23 +1,30 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class RouteEntryUI : global::UnityEngine.MonoBehaviour
+	public class RouteEntryUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI SourceLabel;
+		[Header("References")]
+		public TextMeshProUGUI SourceLabel;
 
-		public global::TMPro.TextMeshProUGUI DestinationLabel;
+		public TextMeshProUGUI DestinationLabel;
 
-		public global::UnityEngine.UI.Image FilterIcon;
+		public Image FilterIcon;
 
-		public global::UnityEngine.Events.UnityEvent onDeleteClicked;
+		public UnityEvent onDeleteClicked;
 
 		private bool settingSource;
 
 		private bool settingDestination;
 
-		public global::ScheduleOne.Management.AdvancedTransitRoute AssignedRoute { get; private set; }
+		public AdvancedTransitRoute AssignedRoute { get; private set; }
 
-		public void AssignRoute(global::ScheduleOne.Management.AdvancedTransitRoute route)
+		public void AssignRoute(AdvancedTransitRoute route)
 		{
 		}
 
@@ -45,13 +52,13 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private bool ObjectValid(global::ScheduleOne.Management.ITransitEntity obj, out string reason)
+		private bool ObjectValid(ITransitEntity obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void ObjectsSelected(global::System.Collections.Generic.List<global::ScheduleOne.Management.ITransitEntity> objs)
+		public void ObjectsSelected(List<ITransitEntity> objs)
 		{
 		}
 	}

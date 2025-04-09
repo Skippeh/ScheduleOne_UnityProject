@@ -1,29 +1,32 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Emotions
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class AvatarEmotionPreset
 	{
 		public string PresetName;
 
-		public global::UnityEngine.Texture2D FaceTexture;
+		public Texture2D FaceTexture;
 
-		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration LeftEyeRestingState;
+		public Eye.EyeLidConfiguration LeftEyeRestingState;
 
-		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration RightEyeRestingState;
+		public Eye.EyeLidConfiguration RightEyeRestingState;
 
-		[global::UnityEngine.Range(-30f, 30f)]
+		[Range(-30f, 30f)]
 		public float BrowAngleChange_L;
 
-		[global::UnityEngine.Range(-30f, 30f)]
+		[Range(-30f, 30f)]
 		public float BrowAngleChange_R;
 
-		[global::UnityEngine.Range(-1f, 1f)]
+		[Range(-1f, 1f)]
 		public float BrowHeightChange_L;
 
-		[global::UnityEngine.Range(-1f, 1f)]
+		[Range(-1f, 1f)]
 		public float BrowHeightChange_R;
 
-		public static global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset Lerp(global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset start, global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset end, global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset neutralPreset, float lerp)
+		public static AvatarEmotionPreset Lerp(AvatarEmotionPreset start, AvatarEmotionPreset end, AvatarEmotionPreset neutralPreset, float lerp)
 		{
 			return null;
 		}

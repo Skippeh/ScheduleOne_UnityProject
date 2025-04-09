@@ -1,28 +1,33 @@
+using ScheduleOne.Economy;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Handover
 {
-	public class HandoverScreenDetailPanel : global::UnityEngine.MonoBehaviour
+	public class HandoverScreenDetailPanel : MonoBehaviour
 	{
-		public global::UnityEngine.UI.LayoutGroup LayoutGroup;
+		public LayoutGroup LayoutGroup;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		public TextMeshProUGUI NameLabel;
 
-		public global::UnityEngine.RectTransform RelationshipContainer;
+		public RectTransform RelationshipContainer;
 
-		public global::UnityEngine.UI.Scrollbar RelationshipScrollbar;
+		public Scrollbar RelationshipScrollbar;
 
-		public global::UnityEngine.RectTransform AddictionContainer;
+		public RectTransform AddictionContainer;
 
-		public global::UnityEngine.UI.Scrollbar AdditionScrollbar;
+		public Scrollbar AdditionScrollbar;
 
-		public global::UnityEngine.UI.Image StandardsStar;
+		public Image StandardsStar;
 
-		public global::TMPro.TextMeshProUGUI StandardsLabel;
+		public TextMeshProUGUI StandardsLabel;
 
-		public global::TMPro.TextMeshProUGUI EffectsLabel;
+		public TextMeshProUGUI EffectsLabel;
 
-		public void Open(global::ScheduleOne.Economy.Customer customer)
+		public void Open(Customer customer)
 		{
 		}
 

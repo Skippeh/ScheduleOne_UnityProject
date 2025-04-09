@@ -2,7 +2,7 @@ namespace ScheduleOne.Property
 {
 	public class LaunderingOperation
 	{
-		public global::ScheduleOne.Property.Business business;
+		public Business business;
 
 		public float amount;
 
@@ -10,7 +10,7 @@ namespace ScheduleOne.Property
 
 		public int completionTime_Minutes;
 
-		public LaunderingOperation(global::ScheduleOne.Property.Business _business, float _amount, int _minutesSinceStarted)
+		public LaunderingOperation(Business _business, float _amount, int _minutesSinceStarted)
 		{
 		}
 	}

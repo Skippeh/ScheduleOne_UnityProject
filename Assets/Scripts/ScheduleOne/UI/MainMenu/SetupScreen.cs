@@ -1,19 +1,23 @@
+using ScheduleOne.ExtendedComponents;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class SetupScreen : global::ScheduleOne.UI.MainMenu.MainMenuScreen
+	public class SetupScreen : MainMenuScreen
 	{
 		public const string DEFAULT_SAVE_PATH = "DefaultSave";
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.ExtendedComponents.GameInputField InputField;
+		[Header("References")]
+		public GameInputField InputField;
 
-		public global::UnityEngine.UI.Button StartButton;
+		public Button StartButton;
 
-		public global::UnityEngine.RectTransform SkipIntroContainer;
+		public RectTransform SkipIntroContainer;
 
-		public global::UnityEngine.UI.Toggle SkipIntroToggle;
+		public Toggle SkipIntroToggle;
 
-		public global::UnityEngine.RectTransform NotHostWarning;
+		public RectTransform NotHostWarning;
 
 		private int slotIndex;
 

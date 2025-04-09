@@ -1,18 +1,20 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class TransitionBetweenProfiles : global::UnityEngine.MonoBehaviour
+	public class TransitionBetweenProfiles : MonoBehaviour
 	{
-		public global::Funly.SkyStudio.SkyProfile daySkyProfile;
+		public SkyProfile daySkyProfile;
 
-		public global::Funly.SkyStudio.SkyProfile nightSkyProfile;
+		public SkyProfile nightSkyProfile;
 
-		[global::UnityEngine.Tooltip("How long the transition animation will last.")]
-		[global::UnityEngine.Range(0.1f, 30f)]
+		[Tooltip("How long the transition animation will last.")]
+		[Range(0.1f, 30f)]
 		public float transitionDuration;
 
-		public global::Funly.SkyStudio.TimeOfDayController timeOfDayController;
+		public TimeOfDayController timeOfDayController;
 
-		private global::Funly.SkyStudio.SkyProfile m_CurrentSkyProfile;
+		private SkyProfile m_CurrentSkyProfile;
 
 		private void Start()
 		{

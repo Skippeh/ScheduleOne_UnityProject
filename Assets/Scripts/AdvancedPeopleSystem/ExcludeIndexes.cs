@@ -1,9 +1,11 @@
+using System;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ExcludeIndexes
 	{
-		public global::AdvancedPeopleSystem.ExcludeItem item;
+		public ExcludeItem item;
 
 		public int index;
 	}

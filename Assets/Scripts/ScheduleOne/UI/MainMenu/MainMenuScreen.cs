@@ -1,24 +1,27 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class MainMenuScreen : global::UnityEngine.MonoBehaviour
+	public class MainMenuScreen : MonoBehaviour
 	{
 		public const float LERP_TIME = 0.075f;
 
 		public const float LERP_SCALE = 1.25f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public int ExitInputPriority;
 
 		public bool OpenOnStart;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.MainMenu.MainMenuScreen PreviousScreen;
+		[Header("References")]
+		public MainMenuScreen PreviousScreen;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		private global::UnityEngine.RectTransform Rect;
+		private RectTransform Rect;
 
-		private global::UnityEngine.Coroutine lerpRoutine;
+		private Coroutine lerpRoutine;
 
 		public bool IsOpen { get; protected set; }
 
@@ -30,7 +33,7 @@ namespace ScheduleOne.UI.MainMenu
 		{
 		}
 
-		protected virtual void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		protected virtual void Exit(ExitAction action)
 		{
 		}
 

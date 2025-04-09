@@ -1,17 +1,21 @@
+using System.Collections.Generic;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class VehicleDetector : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class VehicleDetector : MonoBehaviour
 	{
 		public const float ACTIVATION_DISTANCE_SQ = 400f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> vehicles;
+		public List<LandVehicle> vehicles;
 
-		public global::ScheduleOne.Vehicles.LandVehicle closestVehicle;
+		public LandVehicle closestVehicle;
 
 		private bool ignoreExit;
 
-		private global::UnityEngine.Collider[] detectionColliders;
+		private Collider[] detectionColliders;
 
 		private bool collidersEnabled;
 
@@ -29,7 +33,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(Collider other)
 		{
 		}
 
@@ -37,7 +41,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private void OnTriggerExit(global::UnityEngine.Collider other)
+		private void OnTriggerExit(Collider other)
 		{
 		}
 

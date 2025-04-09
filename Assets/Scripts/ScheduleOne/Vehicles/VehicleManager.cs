@@ -1,15 +1,26 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Vehicles.VehicleManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class VehicleManager : NetworkSingleton<VehicleManager>, IBaseSaveable, ISaveable
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> AllVehicles;
+		public List<LandVehicle> AllVehicles;
 
-		[global::UnityEngine.Header("Vehicles")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> VehiclePrefabs;
+		[Header("Vehicles")]
+		public List<LandVehicle> VehiclePrefabs;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> PlayerOwnedVehicles;
+		public List<LandVehicle> PlayerOwnedVehicles;
 
-		private global::ScheduleOne.Persistence.Loaders.VehiclesLoader loader;
+		private VehiclesLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002EVehicleManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -19,13 +30,13 @@ namespace ScheduleOne.Vehicles
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -37,27 +48,27 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SpawnVehicle(string vehicleCode, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, bool playerOwned)
+		[ServerRpc(RequireOwnership = false)]
+		public void SpawnVehicle(string vehicleCode, Vector3 position, Quaternion rotation, bool playerOwned)
 		{
 		}
 
-		public global::ScheduleOne.Vehicles.LandVehicle SpawnAndReturnVehicle(string vehicleCode, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, bool playerOwned)
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.Vehicles.LandVehicle GetVehiclePrefab(string vehicleCode)
+		public LandVehicle SpawnAndReturnVehicle(string vehicleCode, Vector3 position, Quaternion rotation, bool playerOwned)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Vehicles.LandVehicle SpawnAndLoadVehicle(global::ScheduleOne.Persistence.Datas.VehicleData data, string path, bool playerOwned)
+		public LandVehicle GetVehiclePrefab(string vehicleCode)
 		{
 			return null;
 		}
 
-		public void LoadVehicle(global::ScheduleOne.Persistence.Datas.VehicleData data, string path)
+		public LandVehicle SpawnAndLoadVehicle(VehicleData data, string path, bool playerOwned)
+		{
+			return null;
+		}
+
+		public void LoadVehicle(VehicleData data, string path)
 		{
 		}
 
@@ -66,17 +77,17 @@ namespace ScheduleOne.Vehicles
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public void SpawnLoanSharkVehicle(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rot)
+		public void SpawnLoanSharkVehicle(Vector3 position, Quaternion rot)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void EnableLoanSharkVisuals(global::FishNet.Object.NetworkObject veh)
+		[ObserversRpc(RunLocally = true)]
+		private void EnableLoanSharkVisuals(NetworkObject veh)
 		{
 		}
 
@@ -92,27 +103,27 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void RpcWriter___Server_SpawnVehicle_3323115898(string vehicleCode, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, bool playerOwned)
+		private void RpcWriter___Server_SpawnVehicle_3323115898(string vehicleCode, Vector3 position, Quaternion rotation, bool playerOwned)
 		{
 		}
 
-		public void RpcLogic___SpawnVehicle_3323115898(string vehicleCode, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, bool playerOwned)
+		public void RpcLogic___SpawnVehicle_3323115898(string vehicleCode, Vector3 position, Quaternion rotation, bool playerOwned)
 		{
 		}
 
-		private void RpcReader___Server_SpawnVehicle_3323115898(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SpawnVehicle_3323115898(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_EnableLoanSharkVisuals_3323014238(global::FishNet.Object.NetworkObject veh)
+		private void RpcWriter___Observers_EnableLoanSharkVisuals_3323014238(NetworkObject veh)
 		{
 		}
 
-		private void RpcLogic___EnableLoanSharkVisuals_3323014238(global::FishNet.Object.NetworkObject veh)
+		private void RpcLogic___EnableLoanSharkVisuals_3323014238(NetworkObject veh)
 		{
 		}
 
-		private void RpcReader___Observers_EnableLoanSharkVisuals_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EnableLoanSharkVisuals_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

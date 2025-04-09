@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class QualitySetter : global::UnityEngine.MonoBehaviour
+	public class QualitySetter : MonoBehaviour
 	{
 		private void Awake()
 		{

@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class CanvasDistanceFade : global::UnityEngine.MonoBehaviour
+	public class CanvasDistanceFade : MonoBehaviour
 	{
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
 		public float MinDistance;
 

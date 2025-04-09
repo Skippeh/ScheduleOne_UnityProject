@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ProductItemData : global::ScheduleOne.Persistence.Datas.QualityItemData
+	[Serializable]
+	public class ProductItemData : QualityItemData
 	{
 		public string PackagingID;
 

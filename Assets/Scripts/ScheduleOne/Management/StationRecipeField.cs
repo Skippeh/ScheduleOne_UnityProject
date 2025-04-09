@@ -1,19 +1,24 @@
+using System.Collections.Generic;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.StationFramework;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class StationRecipeField : global::ScheduleOne.Management.ConfigField
+	public class StationRecipeField : ConfigField
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> Options;
+		public List<StationRecipe> Options;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.StationFramework.StationRecipe> onRecipeChanged;
+		public UnityEvent<StationRecipe> onRecipeChanged;
 
-		public global::ScheduleOne.StationFramework.StationRecipe SelectedRecipe { get; protected set; }
+		public StationRecipe SelectedRecipe { get; protected set; }
 
-		public StationRecipeField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public StationRecipeField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetRecipe(global::ScheduleOne.StationFramework.StationRecipe recipe, bool network)
+		public void SetRecipe(StationRecipe recipe, bool network)
 		{
 		}
 
@@ -22,12 +27,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.StationRecipeFieldData GetData()
+		public StationRecipeFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.StationRecipeFieldData data)
+		public void Load(StationRecipeFieldData data)
 		{
 		}
 	}

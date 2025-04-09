@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace VLB
 {
-	public abstract class VolumetricLightBeamAbstractBase : global::UnityEngine.MonoBehaviour
+	public abstract class VolumetricLightBeamAbstractBase : MonoBehaviour
 	{
 		public enum AttachedLightType
 		{
@@ -11,30 +13,30 @@ namespace VLB
 
 		public const string ClassName = "VolumetricLightBeamAbstractBase";
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int pluginVersion;
 
-		protected global::UnityEngine.Light m_CachedLightSpot;
+		protected Light m_CachedLightSpot;
 
 		public bool hasGeometry => false;
 
-		public global::UnityEngine.Bounds bounds => default(global::UnityEngine.Bounds);
+		public Bounds bounds => default(Bounds);
 
 		public int _INTERNAL_pluginVersion => 0;
 
-		public global::UnityEngine.Light lightSpotAttached => null;
+		public Light lightSpotAttached => null;
 
-		public abstract global::VLB.BeamGeometryAbstractBase GetBeamGeometry();
+		public abstract BeamGeometryAbstractBase GetBeamGeometry();
 
 		protected abstract void SetBeamGeometryNull();
 
 		public abstract bool IsScalable();
 
-		public abstract global::UnityEngine.Vector3 GetLossyScale();
+		public abstract Vector3 GetLossyScale();
 
-		public global::UnityEngine.Light GetLightSpotAttachedSlow(out global::VLB.VolumetricLightBeamAbstractBase.AttachedLightType lightType)
+		public Light GetLightSpotAttachedSlow(out AttachedLightType lightType)
 		{
-			lightType = default(global::VLB.VolumetricLightBeamAbstractBase.AttachedLightType);
+			lightType = default(AttachedLightType);
 			return null;
 		}
 

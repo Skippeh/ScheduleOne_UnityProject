@@ -1,39 +1,45 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class PackagingStationCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.PackagingStationCanvas>
+	public class PackagingStationCanvas : Singleton<PackagingStationCanvas>
 	{
 		public bool ShowHintOnOpen;
 
 		public bool ShowShiftClickHint;
 
-		public global::ScheduleOne.ObjectScripts.PackagingStation.EMode CurrentMode;
+		public PackagingStation.EMode CurrentMode;
 
-		public global::UnityEngine.Color InstructionWarningColor;
+		public Color InstructionWarningColor;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
-		public global::ScheduleOne.UI.ItemSlotUI PackagingSlotUI;
+		public ItemSlotUI PackagingSlotUI;
 
-		public global::ScheduleOne.UI.ItemSlotUI ProductSlotUI;
+		public ItemSlotUI ProductSlotUI;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::UnityEngine.UI.Image InstructionShadow;
+		public Image InstructionShadow;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
-		public global::UnityEngine.Animation ModeAnimation;
+		public Animation ModeAnimation;
 
-		public global::TMPro.TextMeshProUGUI ButtonLabel;
+		public TextMeshProUGUI ButtonLabel;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.PackagingStation PackagingStation { get; protected set; }
+		public PackagingStation PackagingStation { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -47,7 +53,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void SetIsOpen(global::ScheduleOne.ObjectScripts.PackagingStation station, bool open, bool removeUI = true)
+		public void SetIsOpen(PackagingStation station, bool open, bool removeUI = true)
 		{
 		}
 
@@ -63,7 +69,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void SetMode(global::ScheduleOne.ObjectScripts.PackagingStation.EMode mode)
+		public void SetMode(PackagingStation.EMode mode)
 		{
 		}
 	}

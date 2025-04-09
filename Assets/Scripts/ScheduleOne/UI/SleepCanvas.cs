@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class SleepCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.SleepCanvas>
+	public class SleepCanvas : Singleton<SleepCanvas>
 	{
 		public const int MaxSleepTime = 12;
 
@@ -8,42 +15,42 @@ namespace ScheduleOne.UI
 
 		private float QueuedMessageDisplayTime;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform MenuContainer;
+		public RectTransform MenuContainer;
 
-		public global::TMPro.TextMeshProUGUI CurrentTimeLabel;
+		public TextMeshProUGUI CurrentTimeLabel;
 
-		public global::UnityEngine.UI.Button IncreaseButton;
+		public Button IncreaseButton;
 
-		public global::UnityEngine.UI.Button DecreaseButton;
+		public Button DecreaseButton;
 
-		public global::TMPro.TextMeshProUGUI EndTimeLabel;
+		public TextMeshProUGUI EndTimeLabel;
 
-		public global::UnityEngine.UI.Button SleepButton;
+		public Button SleepButton;
 
-		public global::TMPro.TextMeshProUGUI SleepButtonLabel;
+		public TextMeshProUGUI SleepButtonLabel;
 
-		public global::UnityEngine.UI.Image BlackOverlay;
+		public Image BlackOverlay;
 
-		public global::TMPro.TextMeshProUGUI SleepMessageLabel;
+		public TextMeshProUGUI SleepMessageLabel;
 
-		public global::UnityEngine.CanvasGroup SleepMessageGroup;
+		public CanvasGroup SleepMessageGroup;
 
-		public global::TMPro.TextMeshProUGUI TimeLabel;
+		public TextMeshProUGUI TimeLabel;
 
-		public global::TMPro.TextMeshProUGUI WakeLabel;
+		public TextMeshProUGUI WakeLabel;
 
-		public global::TMPro.TextMeshProUGUI WaitingForHostLabel;
+		public TextMeshProUGUI WaitingForHostLabel;
 
-		public global::UnityEngine.Events.UnityEvent onSleepFullyFaded;
+		public UnityEvent onSleepFullyFaded;
 
-		public global::UnityEngine.Events.UnityEvent onSleepEndFade;
+		public UnityEvent onSleepEndFade;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.IPostSleepEvent> queuedPostSleepEvents;
+		private List<IPostSleepEvent> queuedPostSleepEvents;
 
 		public bool IsMenuOpen { get; protected set; }
 
@@ -53,7 +60,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -65,7 +72,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void AddPostSleepEvent(global::ScheduleOne.UI.IPostSleepEvent postSleepEvent)
+		public void AddPostSleepEvent(IPostSleepEvent postSleepEvent)
 		{
 		}
 

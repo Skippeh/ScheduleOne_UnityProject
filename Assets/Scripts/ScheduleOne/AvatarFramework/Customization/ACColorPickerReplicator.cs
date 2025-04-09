@@ -1,10 +1,10 @@
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACColorPickerReplicator : global::ScheduleOne.AvatarFramework.Customization.ACReplicator
+	public class ACColorPickerReplicator : ACReplicator
 	{
-		public global::HSVPicker.ColorPicker picker;
+		public HSVPicker.ColorPicker picker;
 
-		protected override void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings newSettings)
+		protected override void AvatarSettingsChanged(AvatarSettings newSettings)
 		{
 		}
 	}

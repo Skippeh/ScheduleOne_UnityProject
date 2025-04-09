@@ -1,26 +1,33 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Employees;
+using ScheduleOne.Trash;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class DisposeTrashBagBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class DisposeTrashBagBehaviour : Behaviour
 	{
 		public string TRASH_BAG_ASSET_PATH;
 
 		public const float GRAB_MAX_DISTANCE = 2f;
 
-		private global::ScheduleOne.Trash.TrashContent heldTrash;
+		private TrashContent heldTrash;
 
-		private global::UnityEngine.Coroutine grabRoutine;
+		private Coroutine grabRoutine;
 
-		private global::UnityEngine.Coroutine dropRoutine;
+		private Coroutine dropRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EDisposeTrashBagBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EDisposeTrashBagBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Trash.TrashBag TargetBag { get; private set; }
+		public TrashBag TargetBag { get; private set; }
 
-		private global::ScheduleOne.Employees.Cleaner Cleaner => null;
+		private Cleaner Cleaner => null;
 
-		public void SetTargetBag(global::ScheduleOne.Trash.TrashBag bag)
+		public void SetTargetBag(TrashBag bag)
 		{
 		}
 
@@ -60,12 +67,12 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void GrabTrash()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void DropTrash()
 		{
 		}
@@ -100,7 +107,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_GrabTrash_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_GrabTrash_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -112,7 +119,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_DropTrash_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_DropTrash_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class UIMover : global::UnityEngine.MonoBehaviour
+	public class UIMover : MonoBehaviour
 	{
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
-		public global::UnityEngine.Vector2 MinSpeed;
+		public Vector2 MinSpeed;
 
-		public global::UnityEngine.Vector2 MaxSpeed;
+		public Vector2 MaxSpeed;
 
 		public float SpeedMultiplier;
 
-		private global::UnityEngine.Vector2 speed;
+		private Vector2 speed;
 
 		private void Start()
 		{

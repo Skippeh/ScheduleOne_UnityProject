@@ -1,31 +1,42 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Trash
 {
-	public class TrashManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Trash.TrashManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class TrashManager : NetworkSingleton<TrashManager>, IBaseSaveable, ISaveable
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class TrashItemData
 		{
-			public global::ScheduleOne.Trash.TrashItem Item;
+			public TrashItem Item;
 
-			[global::UnityEngine.Range(0f, 1f)]
+			[Range(0f, 1f)]
 			public float GenerationChance;
 		}
 
 		public const int TRASH_ITEM_LIMIT = 2000;
 
-		public global::ScheduleOne.Trash.TrashItem[] TrashPrefabs;
+		public TrashItem[] TrashPrefabs;
 
-		public global::ScheduleOne.Trash.TrashItem TrashBagPrefab;
+		public TrashItem TrashBagPrefab;
 
-		public global::ScheduleOne.Trash.TrashManager.TrashItemData[] GenerateableTrashItems;
+		public TrashItemData[] GenerateableTrashItems;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> trashItems;
+		private List<TrashItem> trashItems;
 
 		public float TrashForceMultiplier;
 
-		private global::ScheduleOne.Persistence.Loaders.TrashLoader loader;
+		private TrashLoader loader;
 
-		private global::System.Collections.Generic.List<string> writtenItemFiles;
+		private List<string> writtenItemFiles;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ETrash_002ETrashManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -35,13 +46,13 @@ namespace ScheduleOne.Trash
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -53,62 +64,62 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void ReplicateTransformData(global::ScheduleOne.Trash.TrashItem trash)
+		public void ReplicateTransformData(TrashItem trash)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendTransformData(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendTransformData(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveTransformData(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		[ObserversRpc]
+		private void ReceiveTransformData(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		public global::ScheduleOne.Trash.TrashItem CreateTrashItem(string id, global::UnityEngine.Vector3 posiiton, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity = default(global::UnityEngine.Vector3), string guid = "", bool startKinematic = false)
-		{
-			return null;
-		}
-
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendTrashItem(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
-		{
-		}
-
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		private void CreateTrashItem(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
-		{
-		}
-
-		private global::ScheduleOne.Trash.TrashItem CreateAndReturnTrashItem(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, string guid, bool startKinematic)
+		public TrashItem CreateTrashItem(string id, Vector3 posiiton, Quaternion rotation, Vector3 initialVelocity = default(Vector3), string guid = "", bool startKinematic = false)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Trash.TrashItem CreateTrashBag(string id, global::UnityEngine.Vector3 posiiton, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity = default(global::UnityEngine.Vector3), string guid = "", bool startKinematic = false)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendTrashItem(string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
+		{
+		}
+
+		[ObserversRpc]
+		[TargetRpc]
+		private void CreateTrashItem(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
+		{
+		}
+
+		private TrashItem CreateAndReturnTrashItem(string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, string guid, bool startKinematic)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendTrashBag(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		public TrashItem CreateTrashBag(string id, Vector3 posiiton, Quaternion rotation, TrashContentData content, Vector3 initialVelocity = default(Vector3), string guid = "", bool startKinematic = false)
+		{
+			return null;
+		}
+
+		[ServerRpc(RequireOwnership = false)]
+		private void SendTrashBag(string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		private void CreateTrashBag(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		[ObserversRpc]
+		[TargetRpc]
+		private void CreateTrashBag(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private global::ScheduleOne.Trash.TrashItem CreateAndReturnTrashBag(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, string guid, bool startKinematic)
+		private TrashItem CreateAndReturnTrashBag(string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, string guid, bool startKinematic)
 		{
 			return null;
 		}
@@ -117,26 +128,26 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		public void DestroyTrash(global::ScheduleOne.Trash.TrashItem trash)
+		public void DestroyTrash(TrashItem trash)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendDestroyTrash(string guid)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void DestroyTrash(string guid)
 		{
 		}
 
-		public global::ScheduleOne.Trash.TrashItem GetTrashPrefab(string id)
+		public TrashItem GetTrashPrefab(string id)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Trash.TrashItem GetRandomGeneratableTrashPrefab()
+		public TrashItem GetRandomGeneratableTrashPrefab()
 		{
 			return null;
 		}
@@ -146,7 +157,7 @@ namespace ScheduleOne.Trash
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -163,91 +174,91 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		private void RpcWriter___Server_SendTransformData_2990100769(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		private void RpcWriter___Server_SendTransformData_2990100769(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		private void RpcLogic___SendTransformData_2990100769(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		private void RpcLogic___SendTransformData_2990100769(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		private void RpcReader___Server_SendTransformData_2990100769(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendTransformData_2990100769(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveTransformData_2990100769(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		private void RpcWriter___Observers_ReceiveTransformData_2990100769(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		private void RpcLogic___ReceiveTransformData_2990100769(string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 velocity, global::FishNet.Connection.NetworkConnection sender)
+		private void RpcLogic___ReceiveTransformData_2990100769(string guid, Vector3 position, Quaternion rotation, Vector3 velocity, NetworkConnection sender)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveTransformData_2990100769(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveTransformData_2990100769(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendTrashItem_478112418(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Server_SendTrashItem_478112418(string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcLogic___SendTrashItem_478112418(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcLogic___SendTrashItem_478112418(string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Server_SendTrashItem_478112418(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendTrashItem_478112418(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateTrashItem_2385526393(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Observers_CreateTrashItem_2385526393(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcLogic___CreateTrashItem_2385526393(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcLogic___CreateTrashItem_2385526393(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Observers_CreateTrashItem_2385526393(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateTrashItem_2385526393(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_CreateTrashItem_2385526393(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Target_CreateTrashItem_2385526393(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Target_CreateTrashItem_2385526393(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateTrashItem_2385526393(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendTrashBag_3965031115(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Server_SendTrashBag_3965031115(string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcLogic___SendTrashBag_3965031115(string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcLogic___SendTrashBag_3965031115(string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Server_SendTrashBag_3965031115(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendTrashBag_3965031115(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateTrashBag_680856992(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Observers_CreateTrashBag_680856992(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcLogic___CreateTrashBag_680856992(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcLogic___CreateTrashBag_680856992(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Observers_CreateTrashBag_680856992(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateTrashBag_680856992(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_CreateTrashBag_680856992(global::FishNet.Connection.NetworkConnection conn, string id, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, global::ScheduleOne.Persistence.TrashContentData content, global::UnityEngine.Vector3 initialVelocity, global::FishNet.Connection.NetworkConnection sender, string guid, bool startKinematic = false)
+		private void RpcWriter___Target_CreateTrashBag_680856992(NetworkConnection conn, string id, Vector3 position, Quaternion rotation, TrashContentData content, Vector3 initialVelocity, NetworkConnection sender, string guid, bool startKinematic = false)
 		{
 		}
 
-		private void RpcReader___Target_CreateTrashBag_680856992(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateTrashBag_680856992(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -259,7 +270,7 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		private void RpcReader___Server_SendDestroyTrash_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDestroyTrash_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -271,7 +282,7 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		private void RpcReader___Observers_DestroyTrash_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_DestroyTrash_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

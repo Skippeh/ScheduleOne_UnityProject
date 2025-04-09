@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace ScheduleOne.Noise
 {
 	public class NoiseEvent
 	{
-		public global::UnityEngine.Vector3 origin;
+		public Vector3 origin;
 
 		public float range;
 
-		public global::ScheduleOne.Noise.ENoiseType type;
+		public ENoiseType type;
 
-		public global::UnityEngine.GameObject source;
+		public GameObject source;
 
-		public NoiseEvent(global::UnityEngine.Vector3 _origin, float _range, global::ScheduleOne.Noise.ENoiseType _type, global::UnityEngine.GameObject _source = null)
+		public NoiseEvent(Vector3 _origin, float _range, ENoiseType _type, GameObject _source = null)
 		{
 		}
 	}

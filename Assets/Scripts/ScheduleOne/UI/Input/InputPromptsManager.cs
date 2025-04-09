@@ -1,21 +1,24 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Input
 {
-	public class InputPromptsManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Input.InputPromptsManager>
+	public class InputPromptsManager : Singleton<InputPromptsManager>
 	{
-		[global::UnityEngine.Header("Input Prompt Prefabs")]
-		public global::UnityEngine.GameObject KeyPromptPrefab;
+		[Header("Input Prompt Prefabs")]
+		public GameObject KeyPromptPrefab;
 
-		public global::UnityEngine.GameObject WideKeyPromptPrefab;
+		public GameObject WideKeyPromptPrefab;
 
-		public global::UnityEngine.GameObject ExtraWideKeyPromptPrefab;
+		public GameObject ExtraWideKeyPromptPrefab;
 
-		public global::UnityEngine.GameObject LeftClickPromptPrefab;
+		public GameObject LeftClickPromptPrefab;
 
-		public global::UnityEngine.GameObject MiddleClickPromptPrefab;
+		public GameObject MiddleClickPromptPrefab;
 
-		public global::UnityEngine.GameObject RightClickPromptPrefab;
+		public GameObject RightClickPromptPrefab;
 
-		public global::ScheduleOne.UI.Input.PromptImage GetPromptImage(string controlPath, global::UnityEngine.RectTransform parent)
+		public PromptImage GetPromptImage(string controlPath, RectTransform parent)
 		{
 			return null;
 		}

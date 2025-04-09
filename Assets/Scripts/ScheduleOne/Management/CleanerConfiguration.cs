@@ -1,18 +1,23 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class CleanerConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class CleanerConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public ObjectField Bed;
 
-		public global::ScheduleOne.Management.ObjectListField Bins;
+		public ObjectListField Bins;
 
-		public global::ScheduleOne.Employees.Cleaner cleaner { get; protected set; }
+		public Cleaner cleaner { get; protected set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.TrashContainerItem> binItems { get; private set; }
+		public List<TrashContainerItem> binItems { get; private set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public BedItem bedItem { get; private set; }
 
-		public CleanerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Cleaner _cleaner)
+		public CleanerConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Cleaner _cleaner)
 			: base(null, null)
 		{
 		}
@@ -21,13 +26,13 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private bool IsObjValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool IsObjValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void AssignedBinsChanged(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objects)
+		public void AssignedBinsChanged(List<BuildableItem> objects)
 		{
 		}
 
@@ -41,7 +46,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void BedChanged(BuildableItem newItem)
 		{
 		}
 	}

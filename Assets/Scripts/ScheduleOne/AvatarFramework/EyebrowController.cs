@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class EyebrowController : global::UnityEngine.MonoBehaviour
+	public class EyebrowController : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Eyebrow leftBrow;
+		[Header("References")]
+		public Eyebrow leftBrow;
 
-		public global::ScheduleOne.AvatarFramework.Eyebrow rightBrow;
+		public Eyebrow rightBrow;
 
-		public void ApplySettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplySettings(AvatarSettings settings)
 		{
 		}
 

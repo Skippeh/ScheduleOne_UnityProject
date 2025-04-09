@@ -1,10 +1,14 @@
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class Autotest : global::UnityEngine.MonoBehaviour
+	public class Autotest : MonoBehaviour
 	{
-		public global::ScheduleOne.ConstructableScripts.Constructable_GridBased workerAccom;
+		public Constructable_GridBased workerAccom;
 
-		public global::ScheduleOne.Tiles.Grid crescentGrid;
+		public Grid crescentGrid;
 
 		protected void Start()
 		{

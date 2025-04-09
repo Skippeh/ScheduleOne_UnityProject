@@ -1,20 +1,25 @@
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.Tools;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LabOvenHammer : global::UnityEngine.MonoBehaviour
+	public class LabOvenHammer : MonoBehaviour
 	{
-		public global::ScheduleOne.PlayerTasks.Draggable Draggable;
+		public Draggable Draggable;
 
-		public global::ScheduleOne.PlayerTasks.DraggableConstraint Constraint;
+		public DraggableConstraint Constraint;
 
-		public global::ScheduleOne.PlayerTasks.RotateRigidbodyToTarget Rotator;
+		public RotateRigidbodyToTarget Rotator;
 
-		public global::UnityEngine.Transform CoM;
+		public Transform CoM;
 
-		public global::UnityEngine.Transform ImpactPoint;
+		public Transform ImpactPoint;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
+		public SmoothedVelocityCalculator VelocityCalculator;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MinHeight;
 
 		public float MaxHeight;
@@ -23,7 +28,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public float MaxAngle;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collision> onCollision;
+		public UnityEvent<Collision> onCollision;
 
 		private void Start()
 		{
@@ -33,7 +38,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void OnCollisionEnter(global::UnityEngine.Collision collision)
+		private void OnCollisionEnter(Collision collision)
 		{
 		}
 	}

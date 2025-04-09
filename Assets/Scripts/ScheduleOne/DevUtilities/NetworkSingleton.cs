@@ -1,6 +1,8 @@
+using FishNet.Object;
+
 namespace ScheduleOne.DevUtilities
 {
-	public abstract class NetworkSingleton<T> : global::FishNet.Object.NetworkBehaviour where T : global::ScheduleOne.DevUtilities.NetworkSingleton<T>
+	public abstract class NetworkSingleton<T> : NetworkBehaviour where T : NetworkSingleton<T>
 	{
 		private static T instance;
 

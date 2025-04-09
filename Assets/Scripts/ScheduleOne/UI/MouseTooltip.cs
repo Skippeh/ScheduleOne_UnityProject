@@ -1,38 +1,43 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class MouseTooltip : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.MouseTooltip>
+	public class MouseTooltip : Singleton<MouseTooltip>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform IconRect;
+		[Header("References")]
+		public RectTransform IconRect;
 
-		public global::UnityEngine.UI.Image IconImg;
+		public Image IconImg;
 
-		public global::UnityEngine.RectTransform TooltipRect;
+		public RectTransform TooltipRect;
 
-		public global::TMPro.TextMeshProUGUI TooltipLabel;
+		public TextMeshProUGUI TooltipLabel;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Vector3 TooltipOffset_NoIcon;
+		[Header("Settings")]
+		public Vector3 TooltipOffset_NoIcon;
 
-		public global::UnityEngine.Vector3 TooltipOffset_WithIcon;
+		public Vector3 TooltipOffset_WithIcon;
 
-		public global::UnityEngine.Vector3 IconOffset;
+		public Vector3 IconOffset;
 
-		[global::UnityEngine.Header("Colors")]
-		public global::UnityEngine.Color Color_Invalid;
+		[Header("Colors")]
+		public Color Color_Invalid;
 
-		[global::UnityEngine.Header("Sprites")]
-		public global::UnityEngine.Sprite Sprite_Cross;
+		[Header("Sprites")]
+		public Sprite Sprite_Cross;
 
 		private bool tooltipShownThisFrame;
 
 		private bool iconShownThisFrame;
 
-		public void ShowTooltip(string text, global::UnityEngine.Color col)
+		public void ShowTooltip(string text, Color col)
 		{
 		}
 
-		public void ShowIcon(global::UnityEngine.Sprite sprite, global::UnityEngine.Color col)
+		public void ShowIcon(Sprite sprite, Color col)
 		{
 		}
 

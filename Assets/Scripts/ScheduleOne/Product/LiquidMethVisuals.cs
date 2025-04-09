@@ -1,14 +1,17 @@
+using ScheduleOne.StationFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	public class LiquidMethVisuals : global::UnityEngine.MonoBehaviour
+	public class LiquidMethVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer StaticLiquidMesh;
+		public MeshRenderer StaticLiquidMesh;
 
-		public global::ScheduleOne.StationFramework.LiquidContainer LiquidContainer;
+		public LiquidContainer LiquidContainer;
 
-		public global::UnityEngine.ParticleSystem PourParticles;
+		public ParticleSystem PourParticles;
 
-		public void Setup(global::ScheduleOne.Product.LiquidMethDefinition def)
+		public void Setup(LiquidMethDefinition def)
 		{
 		}
 	}

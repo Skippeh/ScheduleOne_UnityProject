@@ -1,20 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Property
 {
-	public class PropertyManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Property.PropertyManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class PropertyManager : Singleton<PropertyManager>, IBaseSaveable, ISaveable
 	{
-		private global::ScheduleOne.Persistence.Loaders.PropertiesLoader loader;
+		private PropertiesLoader loader;
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -31,16 +37,16 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public void LoadProperty(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string containerPath)
+		public void LoadProperty(PropertyData propertyData, string containerPath)
 		{
 		}
 
-		public global::ScheduleOne.Property.Property GetProperty(string code)
+		public Property GetProperty(string code)
 		{
 			return null;
 		}

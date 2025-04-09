@@ -1,6 +1,9 @@
-public class NavMeshCleaner : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NavMeshCleaner : MonoBehaviour
 {
-	public global::System.Collections.Generic.List<global::UnityEngine.Vector3> m_WalkablePoint;
+	public List<Vector3> m_WalkablePoint;
 
 	public float m_Height;
 

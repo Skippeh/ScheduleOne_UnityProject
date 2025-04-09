@@ -1,14 +1,16 @@
+using ScheduleOne.Clothing;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemFilter_ClothingSlot : global::ScheduleOne.ItemFramework.ItemFilter
+	public class ItemFilter_ClothingSlot : ItemFilter
 	{
-		public global::ScheduleOne.Clothing.EClothingSlot SlotType { get; private set; }
+		public EClothingSlot SlotType { get; private set; }
 
-		public ItemFilter_ClothingSlot(global::ScheduleOne.Clothing.EClothingSlot slot)
+		public ItemFilter_ClothingSlot(EClothingSlot slot)
 		{
 		}
 
-		public override bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}

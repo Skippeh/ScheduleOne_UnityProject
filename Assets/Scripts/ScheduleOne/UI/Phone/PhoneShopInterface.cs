@@ -1,69 +1,77 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Messaging;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class PhoneShopInterface : global::UnityEngine.MonoBehaviour
+	public class PhoneShopInterface : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Listing
 		{
-			public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+			public ItemDefinition Item;
 
 			public float Price;
 
-			public Listing(global::ScheduleOne.ItemFramework.ItemDefinition item, float price)
+			public Listing(ItemDefinition item, float price)
 			{
 			}
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class CartEntry
 		{
-			public global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing Listing;
+			public Listing Listing;
 
 			public int Quantity;
 
-			public CartEntry(global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing listing, int quantity)
+			public CartEntry(Listing listing, int quantity)
 			{
 			}
 		}
 
-		public global::UnityEngine.RectTransform EntryPrefab;
+		public RectTransform EntryPrefab;
 
-		public global::UnityEngine.Color ValidAmountColor;
+		public Color ValidAmountColor;
 
-		public global::UnityEngine.Color InvalidAmountColor;
+		public Color InvalidAmountColor;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject Container;
+		[Header("References")]
+		public GameObject Container;
 
-		public global::UnityEngine.UI.Text TitleLabel;
+		public Text TitleLabel;
 
-		public global::UnityEngine.UI.Text SubtitleLabel;
+		public Text SubtitleLabel;
 
-		public global::UnityEngine.RectTransform EntryContainer;
+		public RectTransform EntryContainer;
 
-		public global::UnityEngine.UI.Text OrderTotalLabel;
+		public Text OrderTotalLabel;
 
-		public global::UnityEngine.UI.Text OrderLimitLabel;
+		public Text OrderLimitLabel;
 
-		public global::UnityEngine.UI.Text DebtLabel;
+		public Text DebtLabel;
 
-		public global::UnityEngine.UI.Button ConfirmButton;
+		public Button ConfirmButton;
 
-		public global::UnityEngine.GameObject ItemLimitContainer;
+		public GameObject ItemLimitContainer;
 
-		public global::UnityEngine.UI.Text ItemLimitLabel;
+		public Text ItemLimitLabel;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> _entries;
+		private List<RectTransform> _entries;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing> _items;
+		private List<Listing> _items;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.CartEntry> _cart;
+		private List<CartEntry> _cart;
 
 		private float orderLimit;
 
-		private global::System.Action<global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.CartEntry>, float> orderConfirmedCallback;
+		private Action<List<CartEntry>, float> orderConfirmedCallback;
 
-		private global::ScheduleOne.Messaging.MSGConversation conversation;
+		private MSGConversation conversation;
 
 		public bool IsOpen { get; private set; }
 
@@ -71,7 +79,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void Open(string title, string subtitle, global::ScheduleOne.Messaging.MSGConversation _conversation, global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing> listings, float _orderLimit, float debt, global::System.Action<global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.CartEntry>, float> _orderConfirmedCallback)
+		public void Open(string title, string subtitle, MSGConversation _conversation, List<Listing> listings, float _orderLimit, float debt, Action<List<CartEntry>, float> _orderConfirmedCallback)
 		{
 		}
 
@@ -79,11 +87,11 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		public void Exit(ExitAction action)
 		{
 		}
 
-		private void ChangeListingQuantity(global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing listing, int change)
+		private void ChangeListingQuantity(Listing listing, int change)
 		{
 		}
 

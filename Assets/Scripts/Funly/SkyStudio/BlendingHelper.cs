@@ -1,28 +1,30 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public class BlendingHelper
 	{
-		private global::Funly.SkyStudio.ProfileBlendingState m_State;
+		private ProfileBlendingState m_State;
 
-		public BlendingHelper(global::Funly.SkyStudio.ProfileBlendingState state)
+		public BlendingHelper(ProfileBlendingState state)
 		{
 		}
 
-		public void UpdateState(global::Funly.SkyStudio.ProfileBlendingState state)
+		public void UpdateState(ProfileBlendingState state)
 		{
 		}
 
-		public global::UnityEngine.Color ProfileColorForKey(global::Funly.SkyStudio.SkyProfile profile, string key)
+		public Color ProfileColorForKey(SkyProfile profile, string key)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		public float ProfileNumberForKey(global::Funly.SkyStudio.SkyProfile profile, string key)
+		public float ProfileNumberForKey(SkyProfile profile, string key)
 		{
 			return 0f;
 		}
 
-		public global::Funly.SkyStudio.SpherePoint ProfileSpherePointForKey(global::Funly.SkyStudio.SkyProfile profile, string key)
+		public SpherePoint ProfileSpherePointForKey(SkyProfile profile, string key)
 		{
 			return null;
 		}
@@ -39,7 +41,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public void BlendColor(string key, global::UnityEngine.Color from, global::UnityEngine.Color to, float progress)
+		public void BlendColor(string key, Color from, Color to, float progress)
 		{
 		}
 
@@ -63,13 +65,13 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public void BlendSpherePoint(string key, global::Funly.SkyStudio.SpherePoint from, global::Funly.SkyStudio.SpherePoint to, float progress)
+		public void BlendSpherePoint(string key, SpherePoint from, SpherePoint to, float progress)
 		{
 		}
 
-		public global::Funly.SkyStudio.ProfileFeatureBlendingMode GetFeatureAnimationMode(string featureKey)
+		public ProfileFeatureBlendingMode GetFeatureAnimationMode(string featureKey)
 		{
-			return default(global::Funly.SkyStudio.ProfileFeatureBlendingMode);
+			return default(ProfileFeatureBlendingMode);
 		}
 	}
 }

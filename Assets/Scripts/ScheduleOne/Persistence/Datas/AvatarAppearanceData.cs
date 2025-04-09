@@ -1,11 +1,14 @@
+using System;
+using ScheduleOne.AvatarFramework;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class AvatarAppearanceData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class AvatarAppearanceData : SaveData
 	{
-		public global::ScheduleOne.AvatarFramework.AvatarSettings AvatarSettings;
+		public AvatarSettings AvatarSettings;
 
-		public AvatarAppearanceData(global::ScheduleOne.AvatarFramework.AvatarSettings avatarSettings)
+		public AvatarAppearanceData(AvatarSettings avatarSettings)
 		{
 		}
 	}

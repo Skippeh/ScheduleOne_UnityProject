@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class NodeLinkData
 	{
 		public string BaseDialogueOrBranchNodeGuid;

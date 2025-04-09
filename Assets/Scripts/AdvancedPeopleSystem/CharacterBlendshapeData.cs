@@ -1,18 +1,21 @@
+using System;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterBlendshapeData
 	{
 		public string blendshapeName;
 
-		public global::AdvancedPeopleSystem.CharacterBlendShapeType type;
+		public CharacterBlendShapeType type;
 
-		public global::AdvancedPeopleSystem.CharacterBlendShapeGroup group;
+		public CharacterBlendShapeGroup group;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float value;
 
-		public CharacterBlendshapeData(string name, global::AdvancedPeopleSystem.CharacterBlendShapeType t, global::AdvancedPeopleSystem.CharacterBlendShapeGroup g, float value = 0f)
+		public CharacterBlendshapeData(string name, CharacterBlendShapeType t, CharacterBlendShapeGroup g, float value = 0f)
 		{
 		}
 

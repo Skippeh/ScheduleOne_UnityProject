@@ -1,10 +1,12 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_WaitForDelivery : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_WaitForDelivery : NPCSignal
 	{
 		public const float DESTINATION_THRESHOLD = 1.5f;
 
-		public global::ScheduleOne.Economy.DeliveryLocation Location;
+		public DeliveryLocation Location;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_WaitForDeliveryAssembly_002DCSharp_002Edll_Excuted;
 
@@ -62,7 +64,7 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 

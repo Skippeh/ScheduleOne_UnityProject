@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs
 {
-	public class Meg : global::ScheduleOne.NPCs.NPC
+	public class Meg : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EMegAssembly_002DCSharp_002Edll_Excuted;
 

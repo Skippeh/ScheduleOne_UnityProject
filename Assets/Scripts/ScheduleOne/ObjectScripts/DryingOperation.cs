@@ -1,17 +1,20 @@
+using System;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.ObjectScripts
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DryingOperation
 	{
 		public string ItemID;
 
 		public int Quantity;
 
-		public global::ScheduleOne.ItemFramework.EQuality StartQuality;
+		public EQuality StartQuality;
 
 		public int Time;
 
-		public DryingOperation(string itemID, int quantity, global::ScheduleOne.ItemFramework.EQuality startQuality, int time)
+		public DryingOperation(string itemID, int quantity, EQuality startQuality, int time)
 		{
 		}
 
@@ -23,14 +26,14 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::ScheduleOne.ItemFramework.QualityItemInstance GetQualityItemInstance()
+		public QualityItemInstance GetQualityItemInstance()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.EQuality GetQuality()
+		public EQuality GetQuality()
 		{
-			return default(global::ScheduleOne.ItemFramework.EQuality);
+			return default(EQuality);
 		}
 	}
 }

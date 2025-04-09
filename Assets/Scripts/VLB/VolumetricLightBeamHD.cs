@@ -1,96 +1,98 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.SelectionBase]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
-	public class VolumetricLightBeamHD : global::VLB.VolumetricLightBeamAbstractBase
+	[ExecuteInEditMode]
+	[DisallowMultipleComponent]
+	[SelectionBase]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
+	public class VolumetricLightBeamHD : VolumetricLightBeamAbstractBase
 	{
 		public new const string ClassName = "VolumetricLightBeamHD";
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_ColorFromLight;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.ColorMode m_ColorMode;
+		[SerializeField]
+		private ColorMode m_ColorMode;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color m_ColorFlat;
+		[SerializeField]
+		private Color m_ColorFlat;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Gradient m_ColorGradient;
+		[SerializeField]
+		private Gradient m_ColorGradient;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.BlendingMode m_BlendingMode;
+		[SerializeField]
+		private BlendingMode m_BlendingMode;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_Intensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_IntensityMultiplier;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_HDRPExposureWeight;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_SpotAngle;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_SpotAngleMultiplier;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_ConeRadiusStart;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_Scalable;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_FallOffStart;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_FallOffEnd;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_FallOffEndMultiplier;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.AttenuationEquationHD m_AttenuationEquation;
+		[SerializeField]
+		private AttenuationEquationHD m_AttenuationEquation;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_SideSoftness;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_RaymarchingQualityID;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_JitteringFactor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_JitteringFrameRate;
 
-		[global::VLB.MinMaxRange(0f, 1f)]
-		[global::UnityEngine.SerializeField]
-		private global::VLB.MinMaxRangeFloat m_JitteringLerpRange;
+		[MinMaxRange(0f, 1f)]
+		[SerializeField]
+		private MinMaxRangeFloat m_JitteringLerpRange;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.NoiseMode m_NoiseMode;
+		[SerializeField]
+		private NoiseMode m_NoiseMode;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_NoiseIntensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_NoiseScaleUseGlobal;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_NoiseScaleLocal;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_NoiseVelocityUseGlobal;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 m_NoiseVelocityLocal;
+		[SerializeField]
+		private Vector3 m_NoiseVelocityLocal;
 
-		protected global::VLB.BeamGeometryHD m_BeamGeom;
+		protected BeamGeometryHD m_BeamGeom;
 
 		public bool colorFromLight
 		{
@@ -103,29 +105,29 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.ColorMode colorMode
+		public ColorMode colorMode
 		{
 			get
 			{
-				return default(global::VLB.ColorMode);
+				return default(ColorMode);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color colorFlat
+		public Color colorFlat
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Gradient colorGradient
+		public Gradient colorGradient
 		{
 			get
 			{
@@ -175,11 +177,11 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.BlendingMode blendingMode
+		public BlendingMode blendingMode
 		{
 			get
 			{
-				return default(global::VLB.BlendingMode);
+				return default(BlendingMode);
 			}
 			set
 			{
@@ -247,11 +249,11 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.AttenuationEquationHD attenuationEquation
+		public AttenuationEquationHD attenuationEquation
 		{
 			get
 			{
-				return default(global::VLB.AttenuationEquationHD);
+				return default(AttenuationEquationHD);
 			}
 			set
 			{
@@ -328,22 +330,22 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.MinMaxRangeFloat jitteringLerpRange
+		public MinMaxRangeFloat jitteringLerpRange
 		{
 			get
 			{
-				return default(global::VLB.MinMaxRangeFloat);
+				return default(MinMaxRangeFloat);
 			}
 			set
 			{
 			}
 		}
 
-		public global::VLB.NoiseMode noiseMode
+		public NoiseMode noiseMode
 		{
 			get
 			{
-				return default(global::VLB.NoiseMode);
+				return default(NoiseMode);
 			}
 			set
 			{
@@ -396,11 +398,11 @@ namespace VLB
 			}
 		}
 
-		public global::UnityEngine.Vector3 noiseVelocityLocal
+		public Vector3 noiseVelocityLocal
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
@@ -431,11 +433,11 @@ namespace VLB
 
 		public int blendingModeAsInt => 0;
 
-		public global::UnityEngine.Quaternion beamInternalLocalRotation => default(global::UnityEngine.Quaternion);
+		public Quaternion beamInternalLocalRotation => default(Quaternion);
 
-		public global::UnityEngine.Vector3 beamLocalForward => default(global::UnityEngine.Vector3);
+		public Vector3 beamLocalForward => default(Vector3);
 
-		public global::UnityEngine.Vector3 beamGlobalForward => default(global::UnityEngine.Vector3);
+		public Vector3 beamGlobalForward => default(Vector3);
 
 		public uint _INTERNAL_InstancedMaterialGroupID { get; protected set; }
 
@@ -449,7 +451,7 @@ namespace VLB
 			return false;
 		}
 
-		public override global::VLB.BeamGeometryAbstractBase GetBeamGeometry()
+		public override BeamGeometryAbstractBase GetBeamGeometry()
 		{
 			return null;
 		}
@@ -458,28 +460,28 @@ namespace VLB
 		{
 		}
 
-		public override global::UnityEngine.Vector3 GetLossyScale()
+		public override Vector3 GetLossyScale()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public global::VLB.VolumetricCookieHD GetAdditionalComponentCookie()
+		public VolumetricCookieHD GetAdditionalComponentCookie()
 		{
 			return null;
 		}
 
-		public global::VLB.VolumetricShadowHD GetAdditionalComponentShadow()
+		public VolumetricShadowHD GetAdditionalComponentShadow()
 		{
 			return null;
 		}
 
-		public void SetPropertyDirty(global::VLB.DirtyProps flags)
+		public void SetPropertyDirty(DirtyProps flags)
 		{
 		}
 
-		public virtual global::VLB.Dimensions GetDimensions()
+		public virtual Dimensions GetDimensions()
 		{
-			return default(global::VLB.Dimensions);
+			return default(Dimensions);
 		}
 
 		public virtual bool DoesSupportSorting2D()
@@ -497,12 +499,12 @@ namespace VLB
 			return 0;
 		}
 
-		public float GetInsideBeamFactor(global::UnityEngine.Vector3 posWS)
+		public float GetInsideBeamFactor(Vector3 posWS)
 		{
 			return 0f;
 		}
 
-		public float GetInsideBeamFactorFromObjectSpacePos(global::UnityEngine.Vector3 posOS)
+		public float GetInsideBeamFactorFromObjectSpacePos(Vector3 posOS)
 		{
 			return 0f;
 		}

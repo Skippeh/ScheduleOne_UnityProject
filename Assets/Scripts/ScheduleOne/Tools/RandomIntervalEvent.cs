@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class RandomIntervalEvent : global::UnityEngine.MonoBehaviour
+	public class RandomIntervalEvent : MonoBehaviour
 	{
 		public float MinInterval;
 
@@ -8,7 +11,7 @@ namespace ScheduleOne.Tools
 
 		public bool ExecuteOnEnable;
 
-		public global::UnityEngine.Events.UnityEvent OnInterval;
+		public UnityEvent OnInterval;
 
 		private float nextInterval;
 

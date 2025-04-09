@@ -1,7 +1,10 @@
+using FishNet.Object;
+using UnityEngine;
+
 namespace ScheduleOne.Skating
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Skating.Skateboard))]
-	public class SkateboardCamera : global::FishNet.Object.NetworkBehaviour
+	[RequireComponent(typeof(Skateboard))]
+	public class SkateboardCamera : NetworkBehaviour
 	{
 		private const float followDelta = 7.5f;
 
@@ -17,10 +20,10 @@ namespace ScheduleOne.Skating
 
 		private const float yMaxLimit = 89f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform cameraOrigin;
+		[Header("References")]
+		public Transform cameraOrigin;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float CameraFollowSpeed;
 
 		public float HorizontalOffset;
@@ -29,14 +32,14 @@ namespace ScheduleOne.Skating
 
 		public float CameraDownAngle;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float FOVMultiplier_MinSpeed;
 
 		public float FOVMultiplier_MaxSpeed;
 
 		public float FOVMultiplierChangeRate;
 
-		private global::ScheduleOne.Skating.Skateboard board;
+		private Skateboard board;
 
 		private float currentFovMultiplier;
 
@@ -48,13 +51,13 @@ namespace ScheduleOne.Skating
 
 		private float orbitDistance;
 
-		private global::UnityEngine.Vector3 lastFrameCameraOffset;
+		private Vector3 lastFrameCameraOffset;
 
-		private global::UnityEngine.Vector3 lastManualOffset;
+		private Vector3 lastManualOffset;
 
-		private global::UnityEngine.Transform targetTransform;
+		private Transform targetTransform;
 
-		private global::UnityEngine.Transform cameraDolly;
+		private Transform cameraDolly;
 
 		private float x;
 
@@ -64,7 +67,7 @@ namespace ScheduleOne.Skating
 
 		private bool NetworkInitialize__LateScheduleOne_002ESkating_002ESkateboardCameraAssembly_002DCSharp_002Edll_Excuted;
 
-		private global::UnityEngine.Transform cam => null;
+		private Transform cam => null;
 
 		public virtual void Awake()
 		{
@@ -103,14 +106,14 @@ namespace ScheduleOne.Skating
 			return 0f;
 		}
 
-		private global::UnityEngine.Vector3 GetTargetCameraPosition()
+		private Vector3 GetTargetCameraPosition()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::UnityEngine.Vector3 LimitCameraPosition(global::UnityEngine.Vector3 targetPosition)
+		private Vector3 LimitCameraPosition(Vector3 targetPosition)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public virtual void NetworkInitialize___Early()

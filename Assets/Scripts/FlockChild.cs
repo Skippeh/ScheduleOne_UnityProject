@@ -1,42 +1,44 @@
-public class FlockChild : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class FlockChild : MonoBehaviour
 {
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public FlockController _spawner;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.Vector3 _wayPoint;
+	[HideInInspector]
+	public Vector3 _wayPoint;
 
 	public float _speed;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool _dived;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public float _stuckCounter;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public float _damping;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool _soar;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool _landing;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public float _targetSpeed;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool _move;
 
-	public global::UnityEngine.GameObject _model;
+	public GameObject _model;
 
-	public global::UnityEngine.Transform _modelT;
+	public Transform _modelT;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public float _avoidValue;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public float _avoidDistance;
 
 	private float _soarTimer;
@@ -47,12 +49,12 @@ public class FlockChild : global::UnityEngine.MonoBehaviour
 
 	private int _updateSeed;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool _avoid;
 
-	public global::UnityEngine.Transform _thisT;
+	public Transform _thisT;
 
-	public global::UnityEngine.Vector3 _landingPosOffset;
+	public Vector3 _landingPosOffset;
 
 	public void Start()
 	{
@@ -119,9 +121,9 @@ public class FlockChild : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	public global::UnityEngine.Vector3 findWaypoint()
+	public Vector3 findWaypoint()
 	{
-		return default(global::UnityEngine.Vector3);
+		return default(Vector3);
 	}
 
 	public void Soar()

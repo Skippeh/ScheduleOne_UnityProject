@@ -1,6 +1,9 @@
+using ScheduleOne.GameTime;
+using ScheduleOne.Quests;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class CustomerData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class CustomerData : SaveData
 	{
 		public float Dependence;
 
@@ -18,9 +21,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool IsContractOffered;
 
-		public global::ScheduleOne.Quests.ContractInfo OfferedContract;
+		public ContractInfo OfferedContract;
 
-		public global::ScheduleOne.GameTime.GameDateTime OfferedContractTime;
+		public GameDateTime OfferedContractTime;
 
 		public int TimeSincePlayerApproached;
 
@@ -28,7 +31,7 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool HasBeenRecommended;
 
-		public CustomerData(float dependence, string[] purchaseableProducts, float[] productAffinities, int timeSinceLastDealCompleted, int timeSinceLastDealOffered, int offeredDeals, int completedDeals, bool isContractOffered, global::ScheduleOne.Quests.ContractInfo offeredContract, global::ScheduleOne.GameTime.GameDateTime offeredTime, int timeSincePlayerApproached, int timeSinceInstantDealOffered, bool hasBeenRecommended)
+		public CustomerData(float dependence, string[] purchaseableProducts, float[] productAffinities, int timeSinceLastDealCompleted, int timeSinceLastDealOffered, int offeredDeals, int completedDeals, bool isContractOffered, ContractInfo offeredContract, GameDateTime offeredTime, int timeSincePlayerApproached, int timeSinceInstantDealOffered, bool hasBeenRecommended)
 		{
 		}
 

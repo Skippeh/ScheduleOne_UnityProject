@@ -1,22 +1,28 @@
+using ScheduleOne.Dialogue;
+using ScheduleOne.Doors;
+using ScheduleOne.Interaction;
+using ScheduleOne.NPCs.CharacterClasses;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class DarkMarketMainDoor : global::UnityEngine.MonoBehaviour
+	public class DarkMarketMainDoor : MonoBehaviour
 	{
-		public global::UnityEngine.AudioSource KnockSound;
+		public AudioSource KnockSound;
 
-		public global::ScheduleOne.Interaction.InteractableObject InteractableObject;
+		public InteractableObject InteractableObject;
 
-		public global::ScheduleOne.Doors.Peephole Peephole;
+		public Peephole Peephole;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.Igor Igor;
+		public Igor Igor;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer FailDialogue;
+		public DialogueContainer FailDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer SuccessDialogue;
+		public DialogueContainer SuccessDialogue;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer SuccessDialogueNotOpen;
+		public DialogueContainer SuccessDialogueNotOpen;
 
-		private global::UnityEngine.Coroutine knockRoutine;
+		private Coroutine knockRoutine;
 
 		public bool KnockingEnabled { get; private set; }
 

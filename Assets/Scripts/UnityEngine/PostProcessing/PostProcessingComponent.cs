@@ -1,14 +1,14 @@
 namespace UnityEngine.PostProcessing
 {
-	public abstract class PostProcessingComponent<T> : global::UnityEngine.PostProcessing.PostProcessingComponentBase where T : global::UnityEngine.PostProcessing.PostProcessingModel
+	public abstract class PostProcessingComponent<T> : PostProcessingComponentBase where T : PostProcessingModel
 	{
 		public T model { get; internal set; }
 
-		public virtual void Init(global::UnityEngine.PostProcessing.PostProcessingContext pcontext, T pmodel)
+		public virtual void Init(PostProcessingContext pcontext, T pmodel)
 		{
 		}
 
-		public override global::UnityEngine.PostProcessing.PostProcessingModel GetModel()
+		public override PostProcessingModel GetModel()
 		{
 			return null;
 		}

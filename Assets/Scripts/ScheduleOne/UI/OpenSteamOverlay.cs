@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class OpenSteamOverlay : global::UnityEngine.MonoBehaviour
+	public class OpenSteamOverlay : MonoBehaviour
 	{
 		public enum EType
 		{
@@ -10,7 +12,7 @@ namespace ScheduleOne.UI
 
 		public const uint APP_ID = 3164500u;
 
-		public global::ScheduleOne.UI.OpenSteamOverlay.EType Type;
+		public EType Type;
 
 		public string CustomLink;
 

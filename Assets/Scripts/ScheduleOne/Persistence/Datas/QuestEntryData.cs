@@ -1,13 +1,16 @@
+using System;
+using ScheduleOne.Quests;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class QuestEntryData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class QuestEntryData : SaveData
 	{
 		public string Name;
 
-		public global::ScheduleOne.Quests.EQuestState State;
+		public EQuestState State;
 
-		public QuestEntryData(string name, global::ScheduleOne.Quests.EQuestState state)
+		public QuestEntryData(string name, EQuestState state)
 		{
 		}
 

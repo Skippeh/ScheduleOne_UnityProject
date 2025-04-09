@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class ForkliftFork : global::UnityEngine.MonoBehaviour
+	public class ForkliftFork : MonoBehaviour
 	{
-		public global::ScheduleOne.Vehicles.Forklift forklift;
+		public Forklift forklift;
 	}
 }

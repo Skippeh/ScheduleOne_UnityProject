@@ -1,16 +1,22 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class BrickPressBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class BrickPressBehaviour : Behaviour
 	{
 		public const float BASE_PACKAGING_TIME = 15f;
 
-		private global::UnityEngine.Coroutine packagingRoutine;
+		private Coroutine packagingRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EBrickPressBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EBrickPressBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.BrickPress Press { get; protected set; }
+		public BrickPress Press { get; protected set; }
 
 		public bool PackagingInProgress { get; protected set; }
 
@@ -42,7 +48,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void AssignStation(global::ScheduleOne.ObjectScripts.BrickPress press)
+		public void AssignStation(BrickPress press)
 		{
 		}
 
@@ -55,7 +61,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void BeginPackaging()
 		{
 		}
@@ -64,7 +70,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public bool IsStationReady(global::ScheduleOne.ObjectScripts.BrickPress press)
+		public bool IsStationReady(BrickPress press)
 		{
 			return false;
 		}
@@ -89,7 +95,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_BeginPackaging_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginPackaging_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

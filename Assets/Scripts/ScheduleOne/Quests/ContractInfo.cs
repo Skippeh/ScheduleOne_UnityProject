@@ -1,15 +1,20 @@
+using System;
+using ScheduleOne.Dialogue;
+using ScheduleOne.Economy;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.Quests
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ContractInfo
 	{
 		public float Payment;
 
-		public global::ScheduleOne.Product.ProductList Products;
+		public ProductList Products;
 
 		public string DeliveryLocationGUID;
 
-		public global::ScheduleOne.Quests.QuestWindowConfig DeliveryWindow;
+		public QuestWindowConfig DeliveryWindow;
 
 		public bool Expires;
 
@@ -19,9 +24,9 @@ namespace ScheduleOne.Quests
 
 		public bool IsCounterOffer;
 
-		public global::ScheduleOne.Economy.DeliveryLocation DeliveryLocation { get; private set; }
+		public DeliveryLocation DeliveryLocation { get; private set; }
 
-		public ContractInfo(float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, bool expires, int expiresAfter, int pickupScheduleIndex, bool isCounterOffer)
+		public ContractInfo(float payment, ProductList products, string deliveryLocationGUID, QuestWindowConfig deliveryWindow, bool expires, int expiresAfter, int pickupScheduleIndex, bool isCounterOffer)
 		{
 		}
 
@@ -29,7 +34,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public global::ScheduleOne.Dialogue.DialogueChain ProcessMessage(global::ScheduleOne.Dialogue.DialogueChain messageChain)
+		public DialogueChain ProcessMessage(DialogueChain messageChain)
 		{
 			return null;
 		}

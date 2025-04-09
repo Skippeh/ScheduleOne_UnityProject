@@ -1,33 +1,39 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class RouteListFieldUI : global::UnityEngine.MonoBehaviour
+	public class RouteListFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
+		[Header("References")]
 		public string FieldText;
 
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		public TextMeshProUGUI FieldLabel;
 
-		public global::ScheduleOne.UI.Management.RouteEntryUI[] RouteEntries;
+		public RouteEntryUI[] RouteEntries;
 
-		public global::UnityEngine.RectTransform MultiEditBlocker;
+		public RectTransform MultiEditBlocker;
 
-		public global::UnityEngine.UI.Button AddButton;
+		public Button AddButton;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.RouteListField> Fields { get; protected set; }
+		public List<RouteListField> Fields { get; protected set; }
 
 		private void Start()
 		{
 		}
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.RouteListField> field)
+		public void Bind(List<RouteListField> field)
 		{
 		}
 
-		private void Refresh(global::System.Collections.Generic.List<global::ScheduleOne.Management.AdvancedTransitRoute> newVal)
+		private void Refresh(List<AdvancedTransitRoute> newVal)
 		{
 		}
 
-		private void EntryDeleteClicked(global::ScheduleOne.UI.Management.RouteEntryUI entry)
+		private void EntryDeleteClicked(RouteEntryUI entry)
 		{
 		}
 
@@ -35,7 +41,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void RouteChanged(global::ScheduleOne.Management.ITransitEntity newEntity)
+		private void RouteChanged(ITransitEntity newEntity)
 		{
 		}
 	}

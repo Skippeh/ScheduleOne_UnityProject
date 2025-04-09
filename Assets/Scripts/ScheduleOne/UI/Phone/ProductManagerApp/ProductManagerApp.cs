@@ -1,37 +1,42 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Phone.ProductManagerApp
 {
-	public class ProductManagerApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.ProductManagerApp.ProductManagerApp>
+	public class ProductManagerApp : App<ProductManagerApp>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ProductTypeContainer
 		{
-			public global::ScheduleOne.Product.EDrugType DrugType;
+			public EDrugType DrugType;
 
-			public global::UnityEngine.RectTransform Container;
+			public RectTransform Container;
 
-			public global::UnityEngine.RectTransform NoneDisplay;
+			public RectTransform NoneDisplay;
 
 			public void RefreshNoneDisplay()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Phone.ProductManagerApp.ProductManagerApp.ProductTypeContainer FavouritesContainer;
+		[Header("References")]
+		public ProductTypeContainer FavouritesContainer;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.ProductManagerApp.ProductManagerApp.ProductTypeContainer> ProductTypeContainers;
+		public List<ProductTypeContainer> ProductTypeContainers;
 
-		public global::ScheduleOne.UI.Phone.ProductManagerApp.ProductAppDetailPanel DetailPanel;
+		public ProductAppDetailPanel DetailPanel;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::UnityEngine.GameObject EntryPrefab;
+		public GameObject EntryPrefab;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductEntry> favouriteEntries;
+		private List<ProductEntry> favouriteEntries;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductEntry> entries;
+		private List<ProductEntry> entries;
 
-		private global::ScheduleOne.Product.ProductEntry selectedEntry;
+		private ProductEntry selectedEntry;
 
 		protected override void Awake()
 		{
@@ -45,23 +50,23 @@ namespace ScheduleOne.UI.Phone.ProductManagerApp
 		{
 		}
 
-		public virtual void CreateEntry(global::ScheduleOne.Product.ProductDefinition definition)
+		public virtual void CreateEntry(ProductDefinition definition)
 		{
 		}
 
-		private void ProductFavourited(global::ScheduleOne.Product.ProductDefinition product)
+		private void ProductFavourited(ProductDefinition product)
 		{
 		}
 
-		private void ProductUnfavourited(global::ScheduleOne.Product.ProductDefinition product)
+		private void ProductUnfavourited(ProductDefinition product)
 		{
 		}
 
-		private void CreateFavouriteEntry(global::ScheduleOne.Product.ProductDefinition definition)
+		private void CreateFavouriteEntry(ProductDefinition definition)
 		{
 		}
 
-		private void RemoveFavouriteEntry(global::ScheduleOne.Product.ProductDefinition definition)
+		private void RemoveFavouriteEntry(ProductDefinition definition)
 		{
 		}
 
@@ -69,7 +74,7 @@ namespace ScheduleOne.UI.Phone.ProductManagerApp
 		{
 		}
 
-		public void SelectProduct(global::ScheduleOne.Product.ProductEntry entry)
+		public void SelectProduct(ProductEntry entry)
 		{
 		}
 

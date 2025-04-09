@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MixRecipeData
 	{
 		public string Product;

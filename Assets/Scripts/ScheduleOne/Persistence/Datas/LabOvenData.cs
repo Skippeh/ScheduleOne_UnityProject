@@ -1,23 +1,28 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class LabOvenData : global::ScheduleOne.Persistence.Datas.GridItemData
+	public class LabOvenData : GridItemData
 	{
-		public global::ScheduleOne.Persistence.Datas.ItemSet InputContents;
+		public ItemSet InputContents;
 
-		public global::ScheduleOne.Persistence.Datas.ItemSet OutputContents;
+		public ItemSet OutputContents;
 
 		public string CurrentIngredientID;
 
 		public int CurrentIngredientQuantity;
 
-		public global::ScheduleOne.ItemFramework.EQuality CurrentIngredientQuality;
+		public EQuality CurrentIngredientQuality;
 
 		public string CurrentProductID;
 
 		public int CurrentCookProgress;
 
-		public LabOvenData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, global::ScheduleOne.Persistence.Datas.ItemSet inputContents, global::ScheduleOne.Persistence.Datas.ItemSet outputContents, string ingredientID, int currentIngredientQuantity, global::ScheduleOne.ItemFramework.EQuality ingredientQuality, string productID, int currentCookProgress)
-			: base(default(global::System.Guid), null, 0, null, default(global::UnityEngine.Vector2), 0)
+		public LabOvenData(Guid guid, ItemInstance item, int loadOrder, Grid grid, Vector2 originCoordinate, int rotation, ItemSet inputContents, ItemSet outputContents, string ingredientID, int currentIngredientQuantity, EQuality ingredientQuality, string productID, int currentCookProgress)
+			: base(default(Guid), null, 0, null, default(Vector2), 0)
 		{
 		}
 	}

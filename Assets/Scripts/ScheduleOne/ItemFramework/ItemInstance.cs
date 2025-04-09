@@ -1,59 +1,65 @@
+using System;
+using FishNet.Serializing.Helping;
+using ScheduleOne.Equipping;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
+	[Serializable]
 	public abstract class ItemInstance
 	{
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		protected global::ScheduleOne.ItemFramework.ItemDefinition definition;
+		[CodegenExclude]
+		protected ItemDefinition definition;
 
 		public string ID;
 
 		public int Quantity;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::System.Action onDataChanged;
+		[CodegenExclude]
+		public Action onDataChanged;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::System.Action requestClearSlot;
+		[CodegenExclude]
+		public Action requestClearSlot;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.ItemFramework.ItemDefinition Definition => null;
+		[CodegenExclude]
+		public ItemDefinition Definition => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		public virtual string Name => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		public virtual string Description => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::UnityEngine.Sprite Icon => null;
+		[CodegenExclude]
+		public virtual Sprite Icon => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::ScheduleOne.ItemFramework.EItemCategory Category => default(global::ScheduleOne.ItemFramework.EItemCategory);
+		[CodegenExclude]
+		public virtual EItemCategory Category => default(EItemCategory);
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		public virtual int StackLimit => 0;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::UnityEngine.Color LabelDisplayColor => default(global::UnityEngine.Color);
+		[CodegenExclude]
+		public virtual Color LabelDisplayColor => default(Color);
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::ScheduleOne.Equipping.Equippable Equippable => null;
+		[CodegenExclude]
+		public virtual Equippable Equippable => null;
 
 		public ItemInstance()
 		{
 		}
 
-		public ItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+		public ItemInstance(ItemDefinition definition, int quantity)
 		{
 		}
 
-		public virtual bool CanStackWith(global::ScheduleOne.ItemFramework.ItemInstance other, bool checkQuantities = true)
+		public virtual bool CanStackWith(ItemInstance other, bool checkQuantities = true)
 		{
 			return false;
 		}
 
-		public virtual global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public virtual ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
@@ -75,7 +81,7 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public virtual global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public virtual ItemData GetItemData()
 		{
 			return null;
 		}

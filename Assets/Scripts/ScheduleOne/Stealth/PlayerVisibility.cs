@@ -1,30 +1,36 @@
+using System.Collections.Generic;
+using FishNet.Object;
+using ScheduleOne.NPCs;
+using ScheduleOne.Vision;
+using UnityEngine;
+
 namespace ScheduleOne.Stealth
 {
-	public class PlayerVisibility : global::FishNet.Object.NetworkBehaviour
+	public class PlayerVisibility : NetworkBehaviour
 	{
 		public const float MAX_VISIBLITY = 100f;
 
 		public float CurrentVisibility;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisibilityAttribute> activeAttributes;
+		public List<VisibilityAttribute> activeAttributes;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisibilityAttribute> filteredAttributes;
+		public List<VisibilityAttribute> filteredAttributes;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask visibilityCheckMask;
+		[Header("Settings")]
+		public LayerMask visibilityCheckMask;
 
-		[global::UnityEngine.Header("References")]
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> visibilityPoints;
+		[Header("References")]
+		public List<Transform> visibilityPoints;
 
-		private global::ScheduleOne.Vision.VisibilityAttribute environmentalVisibility;
+		private VisibilityAttribute environmentalVisibility;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RaycastHit> hits;
+		private List<RaycastHit> hits;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStealth_002EPlayerVisibilityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EStealth_002EPlayerVisibilityAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Vision.VisionEvent HighestVisionEvent { get; set; }
+		public VisionEvent HighestVisionEvent { get; set; }
 
 		public override void OnStartClient()
 		{
@@ -39,7 +45,7 @@ namespace ScheduleOne.Stealth
 			return 0f;
 		}
 
-		public global::ScheduleOne.Vision.VisibilityAttribute GetAttribute(string name)
+		public VisibilityAttribute GetAttribute(string name)
 		{
 			return null;
 		}
@@ -48,7 +54,7 @@ namespace ScheduleOne.Stealth
 		{
 		}
 
-		public float CalculateExposureToPoint(global::UnityEngine.Vector3 point, float checkRange = 50f, global::ScheduleOne.NPCs.NPC checkingNPC = null)
+		public float CalculateExposureToPoint(Vector3 point, float checkRange = 50f, NPC checkingNPC = null)
 		{
 			return 0f;
 		}

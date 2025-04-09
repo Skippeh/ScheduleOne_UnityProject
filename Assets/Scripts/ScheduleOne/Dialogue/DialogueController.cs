@@ -1,8 +1,16 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Interaction;
+using ScheduleOne.NPCs;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController : global::UnityEngine.MonoBehaviour
+	public class DialogueController : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class DialogueChoice
 		{
 			public delegate bool ShouldShowCheck(bool enabled);
@@ -13,13 +21,13 @@ namespace ScheduleOne.Dialogue
 
 			public string ChoiceText;
 
-			public global::ScheduleOne.Dialogue.DialogueContainer Conversation;
+			public DialogueContainer Conversation;
 
-			public global::UnityEngine.Events.UnityEvent onChoosen;
+			public UnityEvent onChoosen;
 
-			public global::ScheduleOne.Dialogue.DialogueController.DialogueChoice.ShouldShowCheck shouldShowCheck;
+			public ShouldShowCheck shouldShowCheck;
 
-			public global::ScheduleOne.Dialogue.DialogueController.DialogueChoice.IsChoiceValid isValidCheck;
+			public IsChoiceValid isValidCheck;
 
 			public int Priority;
 
@@ -35,7 +43,7 @@ namespace ScheduleOne.Dialogue
 			}
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class GreetingOverride
 		{
 			public string Greeting;
@@ -44,34 +52,34 @@ namespace ScheduleOne.Dialogue
 
 			public bool PlayVO;
 
-			public global::ScheduleOne.VoiceOver.EVOLineType VOType;
+			public EVOLineType VOType;
 		}
 
 		public static float GREETING_COOLDOWN;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer GenericDialogue;
+		public DialogueContainer GenericDialogue;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DialogueEnabled;
 
 		public bool UseDialogueBehaviour;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController.DialogueChoice> Choices;
+		public List<DialogueChoice> Choices;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController.GreetingOverride> GreetingOverrides;
+		public List<GreetingOverride> GreetingOverrides;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer OverrideContainer;
+		public DialogueContainer OverrideContainer;
 
-		protected global::ScheduleOne.NPCs.NPC npc;
+		protected NPC npc;
 
-		protected global::ScheduleOne.Dialogue.DialogueHandler handler;
+		protected DialogueHandler handler;
 
 		private float lastGreetingTime;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController.DialogueChoice> shownChoices;
+		private List<DialogueChoice> shownChoices;
 
 		private bool dialogueQueued;
 
@@ -101,32 +109,32 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		private string GetActiveGreeting(out bool playVO, out global::ScheduleOne.VoiceOver.EVOLineType voLineType)
+		private string GetActiveGreeting(out bool playVO, out EVOLineType voLineType)
 		{
 			playVO = default(bool);
-			voLineType = default(global::ScheduleOne.VoiceOver.EVOLineType);
+			voLineType = default(EVOLineType);
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController.DialogueChoice> GetActiveChoices()
+		private List<DialogueChoice> GetActiveChoices()
 		{
 			return null;
 		}
 
-		protected virtual bool GetCustomGreeting(out string greeting, out bool playVO, out global::ScheduleOne.VoiceOver.EVOLineType voLineType)
+		protected virtual bool GetCustomGreeting(out string greeting, out bool playVO, out EVOLineType voLineType)
 		{
 			greeting = null;
 			playVO = default(bool);
-			voLineType = default(global::ScheduleOne.VoiceOver.EVOLineType);
+			voLineType = default(EVOLineType);
 			return false;
 		}
 
-		public virtual int AddDialogueChoice(global::ScheduleOne.Dialogue.DialogueController.DialogueChoice data, int priority = 0)
+		public virtual int AddDialogueChoice(DialogueChoice data, int priority = 0)
 		{
 			return 0;
 		}
 
-		public virtual int AddGreetingOverride(global::ScheduleOne.Dialogue.DialogueController.GreetingOverride data)
+		public virtual int AddGreetingOverride(GreetingOverride data)
 		{
 			return 0;
 		}
@@ -146,7 +154,7 @@ namespace ScheduleOne.Dialogue
 			return null;
 		}
 
-		public virtual void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		public virtual void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 
@@ -160,7 +168,7 @@ namespace ScheduleOne.Dialogue
 			return false;
 		}
 
-		public void SetOverrideContainer(global::ScheduleOne.Dialogue.DialogueContainer container)
+		public void SetOverrideContainer(DialogueContainer container)
 		{
 		}
 

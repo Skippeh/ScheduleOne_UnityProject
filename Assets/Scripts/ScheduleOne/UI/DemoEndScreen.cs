@@ -1,11 +1,15 @@
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class DemoEndScreen : global::UnityEngine.MonoBehaviour
+	public class DemoEndScreen : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
 		public bool IsOpen { get; private set; }
 
@@ -17,7 +21,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Open()
 		{
 		}
@@ -30,7 +34,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

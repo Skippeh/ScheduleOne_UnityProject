@@ -2,11 +2,11 @@ namespace ScheduleOne.Tiles
 {
 	public class CoordinatePair
 	{
-		public global::ScheduleOne.Tiles.Coordinate coord1;
+		public Coordinate coord1;
 
-		public global::ScheduleOne.Tiles.Coordinate coord2;
+		public Coordinate coord2;
 
-		public CoordinatePair(global::ScheduleOne.Tiles.Coordinate _c1, global::ScheduleOne.Tiles.Coordinate _c2)
+		public CoordinatePair(Coordinate _c1, Coordinate _c2)
 		{
 		}
 	}

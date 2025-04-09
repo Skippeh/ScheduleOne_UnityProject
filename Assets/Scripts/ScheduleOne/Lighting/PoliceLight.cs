@@ -1,43 +1,52 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Lighting
 {
-	public class PoliceLight : global::UnityEngine.MonoBehaviour
+	public class PoliceLight : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CCycleCoroutine_003Ed__17 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CCycleCoroutine_003Ed__17 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Lighting.PoliceLight _003C_003E4__this;
+			public PoliceLight _003C_003E4__this;
 
 			private float _003Ctime_003E5__2;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CCycleCoroutine_003Ed__17(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -46,49 +55,49 @@ namespace ScheduleOne.Lighting
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
 		public bool IsOn;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.MeshRenderer[] RedMeshes;
+		[Header("References")]
+		public MeshRenderer[] RedMeshes;
 
-		public global::UnityEngine.MeshRenderer[] BlueMeshes;
+		public MeshRenderer[] BlueMeshes;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight[] RedLights;
+		public OptimizedLight[] RedLights;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight[] BlueLights;
+		public OptimizedLight[] BlueLights;
 
-		public global::ScheduleOne.Audio.AudioSourceController Siren;
+		public AudioSourceController Siren;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float CycleDuration;
 
-		public global::UnityEngine.Material RedOffMat;
+		public Material RedOffMat;
 
-		public global::UnityEngine.Material RedOnMat;
+		public Material RedOnMat;
 
-		public global::UnityEngine.Material BlueOffMat;
+		public Material BlueOffMat;
 
-		public global::UnityEngine.Material BlueOnMat;
+		public Material BlueOnMat;
 
-		public global::UnityEngine.AnimationCurve RedBrightnessCurve;
+		public AnimationCurve RedBrightnessCurve;
 
-		public global::UnityEngine.AnimationCurve BlueBrightnessCurve;
+		public AnimationCurve BlueBrightnessCurve;
 
 		public float LightBrightness;
 
-		private global::UnityEngine.Coroutine cycleRoutine;
+		private Coroutine cycleRoutine;
 
 		public void SetIsOn(bool isOn)
 		{
@@ -98,8 +107,8 @@ namespace ScheduleOne.Lighting
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Lighting.PoliceLight._003CCycleCoroutine_003Ed__17))]
-		protected global::System.Collections.IEnumerator CycleCoroutine()
+		[IteratorStateMachine(typeof(_003CCycleCoroutine_003Ed__17))]
+		protected IEnumerator CycleCoroutine()
 		{
 			return null;
 		}

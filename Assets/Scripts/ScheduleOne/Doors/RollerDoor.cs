@@ -1,19 +1,21 @@
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	public class RollerDoor : global::UnityEngine.MonoBehaviour
+	public class RollerDoor : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Transform Door;
+		[Header("Settings")]
+		public Transform Door;
 
-		public global::UnityEngine.Vector3 LocalPos_Open;
+		public Vector3 LocalPos_Open;
 
-		public global::UnityEngine.Vector3 LocalPos_Closed;
+		public Vector3 LocalPos_Closed;
 
 		public float LerpTime;
 
-		public global::UnityEngine.GameObject Blocker;
+		public GameObject Blocker;
 
-		private global::UnityEngine.Vector3 startPos;
+		private Vector3 startPos;
 
 		private float timeSinceValueChange;
 

@@ -1,8 +1,12 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class PourOntoTargetTask : global::ScheduleOne.PlayerTasks.Tasks.PourIntoPotTask
+	public class PourOntoTargetTask : PourIntoPotTask
 	{
-		public global::UnityEngine.Transform Target;
+		public Transform Target;
 
 		public float SUCCESS_THRESHOLD;
 
@@ -10,7 +14,7 @@ namespace ScheduleOne.PlayerTasks.Tasks
 
 		private float timeOverTarget;
 
-		public PourOntoTargetTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public PourOntoTargetTask(Pot _pot, ItemInstance _itemInstance, Pourable _pourablePrefab)
 			: base(null, null, null)
 		{
 		}

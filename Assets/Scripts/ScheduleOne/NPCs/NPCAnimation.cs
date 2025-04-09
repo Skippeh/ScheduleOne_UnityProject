@@ -1,23 +1,28 @@
+using FishNet.Object;
+using ScheduleOne.AvatarFramework.Animation;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCAnimation : global::FishNet.Object.NetworkBehaviour
+	public class NPCAnimation : NetworkBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		[Header("References")]
+		public ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation anim;
+		[SerializeField]
+		protected AvatarAnimation anim;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.NPCs.NPCMovement movement;
+		[SerializeField]
+		protected NPCMovement movement;
 
-		protected global::ScheduleOne.NPCs.NPC npc;
+		protected NPC npc;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Tools.SmoothedVelocityCalculator velocityCalculator;
+		[SerializeField]
+		protected SmoothedVelocityCalculator velocityCalculator;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.AnimationCurve WalkMapCurve;
+		[Header("Settings")]
+		public AnimationCurve WalkMapCurve;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCAnimationAssembly_002DCSharp_002Edll_Excuted;
 

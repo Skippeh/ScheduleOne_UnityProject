@@ -1,6 +1,16 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Levelling
 {
-	public class LevelManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Levelling.LevelManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class LevelManager : NetworkSingleton<LevelManager>, IBaseSaveable, ISaveable
 	{
 		public const int TIERS_PER_RANK = 5;
 
@@ -10,17 +20,17 @@ namespace ScheduleOne.Levelling
 
 		private int rankCount;
 
-		public global::System.Action<global::ScheduleOne.Levelling.FullRank, global::ScheduleOne.Levelling.FullRank> onRankUp;
+		public Action<FullRank, FullRank> onRankUp;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Levelling.FullRank, global::System.Collections.Generic.List<global::ScheduleOne.Levelling.Unlockable>> Unlockables;
+		public Dictionary<FullRank, List<Unlockable>> Unlockables;
 
-		private global::ScheduleOne.Persistence.Loaders.RankLoader loader;
+		private RankLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ELevelling_002ELevelManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ELevelling_002ELevelManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Levelling.ERank Rank { get; private set; }
+		public ERank Rank { get; private set; }
 
 		public int Tier { get; private set; }
 
@@ -34,13 +44,13 @@ namespace ScheduleOne.Levelling
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -52,7 +62,7 @@ namespace ScheduleOne.Levelling
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -60,24 +70,24 @@ namespace ScheduleOne.Levelling
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void AddXP(int xp)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void AddXPLocal(int xp)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Levelling.ERank rank, int tier, int xp, int totalXp)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetData(NetworkConnection conn, ERank rank, int tier, int xp, int totalXp)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void IncreaseTierNetworked(global::ScheduleOne.Levelling.FullRank before, global::ScheduleOne.Levelling.FullRank after)
+		[ObserversRpc]
+		private void IncreaseTierNetworked(FullRank before, FullRank after)
 		{
 		}
 
@@ -90,36 +100,36 @@ namespace ScheduleOne.Levelling
 			return null;
 		}
 
-		public global::ScheduleOne.Levelling.FullRank GetFullRank()
+		public FullRank GetFullRank()
 		{
-			return default(global::ScheduleOne.Levelling.FullRank);
+			return default(FullRank);
 		}
 
-		public void AddUnlockable(global::ScheduleOne.Levelling.Unlockable unlockable)
+		public void AddUnlockable(Unlockable unlockable)
 		{
 		}
 
-		public int GetTotalXPForRank(global::ScheduleOne.Levelling.FullRank fullrank)
-		{
-			return 0;
-		}
-
-		public global::ScheduleOne.Levelling.FullRank GetFullRank(int totalXp)
-		{
-			return default(global::ScheduleOne.Levelling.FullRank);
-		}
-
-		public int GetXPForTier(global::ScheduleOne.Levelling.ERank rank)
+		public int GetTotalXPForRank(FullRank fullrank)
 		{
 			return 0;
 		}
 
-		public static float GetOrderLimitMultiplier(global::ScheduleOne.Levelling.FullRank rank)
+		public FullRank GetFullRank(int totalXp)
+		{
+			return default(FullRank);
+		}
+
+		public int GetXPForTier(ERank rank)
+		{
+			return 0;
+		}
+
+		public static float GetOrderLimitMultiplier(FullRank rank)
 		{
 			return 0f;
 		}
 
-		private static float GetRankOrderLimitMultiplier(global::ScheduleOne.Levelling.ERank rank)
+		private static float GetRankOrderLimitMultiplier(ERank rank)
 		{
 			return 0f;
 		}
@@ -144,7 +154,7 @@ namespace ScheduleOne.Levelling
 		{
 		}
 
-		private void RpcReader___Server_AddXP_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_AddXP_3316948804(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -156,39 +166,39 @@ namespace ScheduleOne.Levelling
 		{
 		}
 
-		private void RpcReader___Observers_AddXPLocal_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddXPLocal_3316948804(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetData_20965027(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Levelling.ERank rank, int tier, int xp, int totalXp)
+		private void RpcWriter___Observers_SetData_20965027(NetworkConnection conn, ERank rank, int tier, int xp, int totalXp)
 		{
 		}
 
-		public void RpcLogic___SetData_20965027(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Levelling.ERank rank, int tier, int xp, int totalXp)
+		public void RpcLogic___SetData_20965027(NetworkConnection conn, ERank rank, int tier, int xp, int totalXp)
 		{
 		}
 
-		private void RpcReader___Observers_SetData_20965027(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetData_20965027(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetData_20965027(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Levelling.ERank rank, int tier, int xp, int totalXp)
+		private void RpcWriter___Target_SetData_20965027(NetworkConnection conn, ERank rank, int tier, int xp, int totalXp)
 		{
 		}
 
-		private void RpcReader___Target_SetData_20965027(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetData_20965027(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_IncreaseTierNetworked_3953286437(global::ScheduleOne.Levelling.FullRank before, global::ScheduleOne.Levelling.FullRank after)
+		private void RpcWriter___Observers_IncreaseTierNetworked_3953286437(FullRank before, FullRank after)
 		{
 		}
 
-		private void RpcLogic___IncreaseTierNetworked_3953286437(global::ScheduleOne.Levelling.FullRank before, global::ScheduleOne.Levelling.FullRank after)
+		private void RpcLogic___IncreaseTierNetworked_3953286437(FullRank before, FullRank after)
 		{
 		}
 
-		private void RpcReader___Observers_IncreaseTierNetworked_3953286437(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_IncreaseTierNetworked_3953286437(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

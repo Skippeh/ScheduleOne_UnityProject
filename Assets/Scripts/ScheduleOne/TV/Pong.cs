@@ -1,6 +1,10 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class Pong : global::ScheduleOne.TV.TVApp
+	public class Pong : TVApp
 	{
 		public enum EGameMode
 		{
@@ -21,21 +25,21 @@ namespace ScheduleOne.TV
 			GameOver = 2
 		}
 
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
-		public global::ScheduleOne.TV.PongPaddle LeftPaddle;
+		public PongPaddle LeftPaddle;
 
-		public global::ScheduleOne.TV.PongPaddle RightPaddle;
+		public PongPaddle RightPaddle;
 
-		public global::ScheduleOne.TV.PongBall Ball;
+		public PongBall Ball;
 
-		public global::TMPro.TextMeshProUGUI LeftScoreLabel;
+		public TextMeshProUGUI LeftScoreLabel;
 
-		public global::TMPro.TextMeshProUGUI RightScoreLabel;
+		public TextMeshProUGUI RightScoreLabel;
 
-		public global::TMPro.TextMeshProUGUI WinnerLabel;
+		public TextMeshProUGUI WinnerLabel;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float InitialVelocity;
 
 		public float VelocityGainPerSecond;
@@ -44,34 +48,34 @@ namespace ScheduleOne.TV
 
 		public int GoalsToWin;
 
-		[global::UnityEngine.Header("AI")]
+		[Header("AI")]
 		public float ReactionTime;
 
 		public float TargetRandomization;
 
 		public float SpeedMultiplier;
 
-		public global::UnityEngine.Events.UnityEvent onServe;
+		public UnityEvent onServe;
 
-		public global::UnityEngine.Events.UnityEvent onLeftScore;
+		public UnityEvent onLeftScore;
 
-		public global::UnityEngine.Events.UnityEvent onRightScore;
+		public UnityEvent onRightScore;
 
-		public global::UnityEngine.Events.UnityEvent onGameOver;
+		public UnityEvent onGameOver;
 
-		public global::UnityEngine.Events.UnityEvent onLocalPlayerWin;
+		public UnityEvent onLocalPlayerWin;
 
-		public global::UnityEngine.Events.UnityEvent onReset;
+		public UnityEvent onReset;
 
-		private global::ScheduleOne.TV.Pong.ESide nextBallSide;
+		private ESide nextBallSide;
 
-		private global::UnityEngine.Vector3 ballVelocity;
+		private Vector3 ballVelocity;
 
 		private float reactionTimer;
 
-		public global::ScheduleOne.TV.Pong.EGameMode GameMode { get; set; }
+		public EGameMode GameMode { get; set; }
 
-		public global::ScheduleOne.TV.Pong.EState State { get; set; }
+		public EState State { get; set; }
 
 		public int LeftScore { get; set; }
 
@@ -97,11 +101,11 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		public void GoalHit(global::ScheduleOne.TV.Pong.ESide side)
+		public void GoalHit(ESide side)
 		{
 		}
 
-		private void Win(global::ScheduleOne.TV.Pong.ESide winner)
+		private void Win(ESide winner)
 		{
 		}
 
@@ -117,7 +121,7 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		public void SetPaddleTargetY(global::ScheduleOne.TV.Pong.ESide player, float y)
+		public void SetPaddleTargetY(ESide player, float y)
 		{
 		}
 

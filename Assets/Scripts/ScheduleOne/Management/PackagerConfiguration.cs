@@ -1,24 +1,29 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class PackagerConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class PackagerConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public ObjectField Bed;
 
-		public global::ScheduleOne.Management.ObjectListField Stations;
+		public ObjectListField Stations;
 
-		public global::ScheduleOne.Management.RouteListField Routes;
+		public RouteListField Routes;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.PackagingStation> AssignedStations;
+		public List<PackagingStation> AssignedStations;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.BrickPress> AssignedBrickPresses;
+		public List<BrickPress> AssignedBrickPresses;
 
 		public int AssignedStationCount => 0;
 
-		public global::ScheduleOne.Employees.Packager packager { get; protected set; }
+		public Packager packager { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public BedItem bedItem { get; private set; }
 
-		public PackagerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Packager _botanist)
+		public PackagerConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Packager _botanist)
 			: base(null, null)
 		{
 		}
@@ -27,13 +32,13 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private bool IsStationValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool IsStationValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void AssignedStationsChanged(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objects)
+		public void AssignedStationsChanged(List<BuildableItem> objects)
 		{
 		}
 
@@ -47,7 +52,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void BedChanged(BuildableItem newItem)
 		{
 		}
 	}

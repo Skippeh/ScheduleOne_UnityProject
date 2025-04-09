@@ -1,10 +1,13 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SetRendererMaterial : global::UnityEngine.MonoBehaviour
+	public class SetRendererMaterial : MonoBehaviour
 	{
-		public global::UnityEngine.Material Material;
+		public Material Material;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void SetMaterial()
 		{
 		}

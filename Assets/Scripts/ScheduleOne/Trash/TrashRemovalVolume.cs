@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.Trash
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.BoxCollider))]
-	public class TrashRemovalVolume : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(BoxCollider))]
+	public class TrashRemovalVolume : MonoBehaviour
 	{
-		public global::UnityEngine.BoxCollider Collider;
+		public BoxCollider Collider;
 
 		public float RemovalChance;
 
@@ -19,7 +21,7 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		private global::ScheduleOne.Trash.TrashItem[] GetTrash()
+		private TrashItem[] GetTrash()
 		{
 			return null;
 		}

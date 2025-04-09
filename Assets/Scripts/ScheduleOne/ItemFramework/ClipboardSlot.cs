@@ -1,6 +1,8 @@
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ClipboardSlot : global::ScheduleOne.PlayerScripts.HotbarSlot
+	public class ClipboardSlot : HotbarSlot
 	{
 		public override void ClearStoredInstance(bool _internal = false)
 		{

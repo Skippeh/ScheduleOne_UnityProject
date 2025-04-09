@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
-	public class TransitRouteMaterial : global::UnityEngine.MonoBehaviour
+	public class TransitRouteMaterial : MonoBehaviour
 	{
 		private void Awake()
 		{

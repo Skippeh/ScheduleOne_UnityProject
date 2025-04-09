@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Jack : global::ScheduleOne.NPCs.NPC
+	public class Jack : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EJackAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,18 +1,22 @@
+using ScheduleOne.ObjectScripts.WateringCan;
+using ScheduleOne.Property.Utilities.Water;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class FillWateringCan : global::ScheduleOne.PlayerTasks.Task
+	public class FillWateringCan : Task
 	{
-		protected global::ScheduleOne.Property.Utilities.Water.Tap tap;
+		protected Tap tap;
 
-		protected global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance instance;
+		protected WateringCanInstance instance;
 
-		protected global::ScheduleOne.ObjectScripts.WateringCan.WateringCanVisuals visuals;
+		protected WateringCanVisuals visuals;
 
 		private bool audioPlayed;
 
 		public new string TaskName { get; protected set; }
 
-		public FillWateringCan(global::ScheduleOne.Property.Utilities.Water.Tap _tap, global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance _instance)
+		public FillWateringCan(Tap _tap, WateringCanInstance _instance)
 		{
 		}
 
@@ -24,7 +28,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		private void HandleClickStart(global::UnityEngine.RaycastHit hit)
+		private void HandleClickStart(RaycastHit hit)
 		{
 		}
 

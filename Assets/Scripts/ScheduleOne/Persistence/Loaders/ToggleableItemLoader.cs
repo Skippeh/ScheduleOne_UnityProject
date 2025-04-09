@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class ToggleableItemLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class ToggleableItemLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

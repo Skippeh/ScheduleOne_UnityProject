@@ -1,15 +1,19 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Management
 {
-	public class ManagementUtilities : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Management.ManagementUtilities>
+	public class ManagementUtilities : Singleton<ManagementUtilities>
 	{
-		public global::System.Collections.Generic.List<string> weedSeedAssetPaths;
+		public List<string> weedSeedAssetPaths;
 
-		public global::System.Collections.Generic.List<string> additiveAssetPaths;
+		public List<string> additiveAssetPaths;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.AdditiveDefinition> AdditiveDefinitions;
+		public List<AdditiveDefinition> AdditiveDefinitions;
 
-		public static global::System.Collections.Generic.List<string> WeedSeedAssetPaths => null;
+		public static List<string> WeedSeedAssetPaths => null;
 
-		public static global::System.Collections.Generic.List<string> AdditiveAssetPaths => null;
+		public static List<string> AdditiveAssetPaths => null;
 	}
 }

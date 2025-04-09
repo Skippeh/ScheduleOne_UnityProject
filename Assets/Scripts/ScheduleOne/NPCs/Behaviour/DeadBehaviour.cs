@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class DeadBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class DeadBehaviour : Behaviour
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EDeadBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,8 +1,10 @@
+using ScheduleOne.Dialogue;
+
 namespace ScheduleOne.NPCs
 {
-	public class Stan : global::ScheduleOne.NPCs.NPC
+	public class Stan : NPC
 	{
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 

@@ -1,20 +1,27 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Clothing
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "ClothingDefinition", menuName = "ScriptableObjects/ClothingDefinition", order = 1)]
-	public class ClothingDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "ClothingDefinition", menuName = "ScriptableObjects/ClothingDefinition", order = 1)]
+	public class ClothingDefinition : StorableItemDefinition
 	{
-		public global::ScheduleOne.Clothing.EClothingSlot Slot;
+		public EClothingSlot Slot;
 
-		public global::ScheduleOne.Clothing.EClothingApplicationType ApplicationType;
+		public EClothingApplicationType ApplicationType;
 
 		public string ClothingAssetPath;
 
 		public bool Colorable;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Clothing.EClothingSlot> SlotsToBlock;
+		public EClothingColor DefaultColor;
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public List<EClothingSlot> SlotsToBlock;
+
+		public override ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}

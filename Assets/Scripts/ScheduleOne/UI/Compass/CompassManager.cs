@@ -1,51 +1,56 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Compass
 {
-	public class CompassManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Compass.CompassManager>
+	public class CompassManager : Singleton<CompassManager>
 	{
 		public class Notch
 		{
-			public global::UnityEngine.RectTransform Rect;
+			public RectTransform Rect;
 
-			public global::UnityEngine.CanvasGroup Group;
+			public CanvasGroup Group;
 		}
 
 		public class Element
 		{
 			public bool Visible;
 
-			public global::UnityEngine.RectTransform Rect;
+			public RectTransform Rect;
 
-			public global::UnityEngine.CanvasGroup Group;
+			public CanvasGroup Group;
 
-			public global::TMPro.TextMeshProUGUI DistanceLabel;
+			public TextMeshProUGUI DistanceLabel;
 
-			public global::UnityEngine.Transform Transform;
+			public Transform Transform;
 		}
 
 		public const float DISTANCE_LABEL_THRESHOLD = 50f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::UnityEngine.Transform NotchPointContainer;
+		public Transform NotchPointContainer;
 
-		public global::UnityEngine.RectTransform NotchUIContainer;
+		public RectTransform NotchUIContainer;
 
-		public global::UnityEngine.RectTransform ElementUIContainer;
+		public RectTransform ElementUIContainer;
 
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject DirectionIndicatorPrefab;
+		[Header("Prefabs")]
+		public GameObject DirectionIndicatorPrefab;
 
-		public global::UnityEngine.GameObject NotchPrefab;
+		public GameObject NotchPrefab;
 
-		public global::UnityEngine.GameObject ElementPrefab;
+		public GameObject ElementPrefab;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool CompassEnabled;
 
-		public global::UnityEngine.Vector2 ElementContentSize;
+		public Vector2 ElementContentSize;
 
 		public float CompassUIRange;
 
@@ -57,15 +62,15 @@ namespace ScheduleOne.UI.Compass
 
 		public float OpenYPos;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Transform> notchPositions;
+		private List<Transform> notchPositions;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Compass.CompassManager.Notch> notches;
+		private List<Notch> notches;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Compass.CompassManager.Element> elements;
+		private List<Element> elements;
 
-		private global::UnityEngine.Coroutine lerpContainerPositionCoroutine;
+		private Coroutine lerpContainerPositionCoroutine;
 
-		private global::UnityEngine.Transform cam => null;
+		private Transform cam => null;
 
 		protected override void Awake()
 		{
@@ -95,26 +100,26 @@ namespace ScheduleOne.UI.Compass
 		{
 		}
 
-		private void UpdateElement(global::ScheduleOne.UI.Compass.CompassManager.Element element)
+		private void UpdateElement(Element element)
 		{
 		}
 
-		public void GetCompassData(global::UnityEngine.Vector3 worldPosition, out float xPos, out float alpha)
+		public void GetCompassData(Vector3 worldPosition, out float xPos, out float alpha)
 		{
 			xPos = default(float);
 			alpha = default(float);
 		}
 
-		public global::ScheduleOne.UI.Compass.CompassManager.Element AddElement(global::UnityEngine.Transform transform, global::UnityEngine.RectTransform contentPrefab, bool visible = true)
+		public Element AddElement(Transform transform, RectTransform contentPrefab, bool visible = true)
 		{
 			return null;
 		}
 
-		public void RemoveElement(global::UnityEngine.Transform transform, bool alsoDestroyRect = true)
+		public void RemoveElement(Transform transform, bool alsoDestroyRect = true)
 		{
 		}
 
-		public void RemoveElement(global::ScheduleOne.UI.Compass.CompassManager.Element el, bool alsoDestroyRect = true)
+		public void RemoveElement(Element el, bool alsoDestroyRect = true)
 		{
 		}
 	}

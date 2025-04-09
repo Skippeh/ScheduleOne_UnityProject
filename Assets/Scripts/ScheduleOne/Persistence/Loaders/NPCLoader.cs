@@ -1,6 +1,8 @@
+using ScheduleOne.NPCs;
+
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class NPCLoader : global::ScheduleOne.Persistence.Loaders.Loader
+	public class NPCLoader : Loader
 	{
 		public virtual string NPCType => null;
 
@@ -8,7 +10,7 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
-		protected void TryLoadInventory(string mainPath, global::ScheduleOne.NPCs.NPC npc)
+		protected void TryLoadInventory(string mainPath, NPC npc)
 		{
 		}
 	}

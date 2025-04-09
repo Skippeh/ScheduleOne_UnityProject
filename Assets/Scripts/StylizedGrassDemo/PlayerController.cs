@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace StylizedGrassDemo
 {
-	public class PlayerController : global::UnityEngine.MonoBehaviour
+	public class PlayerController : MonoBehaviour
 	{
-		public global::UnityEngine.Camera cam;
+		public Camera cam;
 
 		private float speed;
 
 		private float jumpForce;
 
-		private global::UnityEngine.Rigidbody rb;
+		private Rigidbody rb;
 
 		private bool isGrounded;
 
-		public global::UnityEngine.ParticleSystem landBendEffect;
+		public ParticleSystem landBendEffect;
 
-		private global::UnityEngine.RaycastHit raycastHit;
+		private RaycastHit raycastHit;
 
 		private void Start()
 		{

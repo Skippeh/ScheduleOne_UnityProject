@@ -1,59 +1,65 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.NPCs;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class BodySearchScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.BodySearchScreen>
+	public class BodySearchScreen : Singleton<BodySearchScreen>
 	{
 		public const float MAX_SPEED_BOOST = 2.5f;
 
-		public global::UnityEngine.Color SlotRedColor;
+		public Color SlotRedColor;
 
-		public global::UnityEngine.Color SlotHighlightRedColor;
+		public Color SlotHighlightRedColor;
 
 		public float GapTime;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform MinigameController;
+		public RectTransform MinigameController;
 
-		public global::UnityEngine.RectTransform SlotContainer;
+		public RectTransform SlotContainer;
 
-		public global::ScheduleOne.UI.ItemSlotUI ItemSlotPrefab;
+		public ItemSlotUI ItemSlotPrefab;
 
-		public global::UnityEngine.RectTransform SearchIndicator;
+		public RectTransform SearchIndicator;
 
-		public global::UnityEngine.RectTransform SearchIndicatorStart;
+		public RectTransform SearchIndicatorStart;
 
-		public global::UnityEngine.RectTransform SearchIndicatorEnd;
+		public RectTransform SearchIndicatorEnd;
 
-		public global::UnityEngine.Animation IndicatorAnimation;
+		public Animation IndicatorAnimation;
 
-		public global::UnityEngine.Animation TutorialAnimation;
+		public Animation TutorialAnimation;
 
-		public global::UnityEngine.RectTransform TutorialContainer;
+		public RectTransform TutorialContainer;
 
-		public global::UnityEngine.Animation ResetAnimation;
+		public Animation ResetAnimation;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.ItemSlotUI> slots;
+		private List<ItemSlotUI> slots;
 
-		public global::UnityEngine.Events.UnityEvent onSearchClear;
+		public UnityEvent onSearchClear;
 
-		public global::UnityEngine.Events.UnityEvent onSearchFail;
+		public UnityEvent onSearchFail;
 
-		private global::UnityEngine.Color defaultSlotColor;
+		private Color defaultSlotColor;
 
-		private global::UnityEngine.Color defaultSlotHighlightColor;
+		private Color defaultSlotHighlightColor;
 
-		private global::ScheduleOne.UI.ItemSlotUI concealedSlot;
+		private ItemSlotUI concealedSlot;
 
-		private global::ScheduleOne.UI.ItemSlotUI hoveredSlot;
+		private ItemSlotUI hoveredSlot;
 
-		private global::UnityEngine.Color[] defaultItemIconColors;
+		private Color[] defaultItemIconColors;
 
 		private float speedBoost;
 
-		private global::ScheduleOne.NPCs.NPC searcher;
+		private NPC searcher;
 
 		public bool IsOpen { get; private set; }
 
@@ -71,24 +77,24 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Open(global::ScheduleOne.NPCs.NPC _searcher, float searchTime = 0f)
+		public void Open(NPC _searcher, float searchTime = 0f)
 		{
 		}
 
-		private bool IsSlotConcealed(global::ScheduleOne.UI.ItemSlotUI slot)
+		private bool IsSlotConcealed(ItemSlotUI slot)
 		{
 			return false;
 		}
 
-		private void ItemDetected(global::ScheduleOne.UI.ItemSlotUI slot)
+		private void ItemDetected(ItemSlotUI slot)
 		{
 		}
 
-		public void SlotHeld(global::ScheduleOne.UI.ItemSlotUI ui)
+		public void SlotHeld(ItemSlotUI ui)
 		{
 		}
 
-		public void SlotReleased(global::ScheduleOne.UI.ItemSlotUI ui)
+		public void SlotReleased(ItemSlotUI ui)
 		{
 		}
 

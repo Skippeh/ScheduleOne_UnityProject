@@ -1,17 +1,22 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.ObjectScripts
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MixOperation
 	{
 		public string ProductID;
 
-		public global::ScheduleOne.ItemFramework.EQuality ProductQuality;
+		public EQuality ProductQuality;
 
 		public string IngredientID;
 
 		public int Quantity;
 
-		public MixOperation(string productID, global::ScheduleOne.ItemFramework.EQuality productQuality, string ingredientID, int quantity)
+		public MixOperation(string productID, EQuality productQuality, string ingredientID, int quantity)
 		{
 		}
 
@@ -19,13 +24,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::ScheduleOne.Product.EDrugType GetOutput(out global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public EDrugType GetOutput(out List<ScheduleOne.Properties.Property> properties)
 		{
 			properties = null;
-			return default(global::ScheduleOne.Product.EDrugType);
+			return default(EDrugType);
 		}
 
-		public bool IsOutputKnown(out global::ScheduleOne.Product.ProductDefinition knownProduct)
+		public bool IsOutputKnown(out ProductDefinition knownProduct)
 		{
 			knownProduct = null;
 			return false;

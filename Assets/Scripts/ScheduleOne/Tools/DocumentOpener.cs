@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class DocumentOpener : global::UnityEngine.MonoBehaviour
+	public class DocumentOpener : MonoBehaviour
 	{
 		public string DocumentName;
 

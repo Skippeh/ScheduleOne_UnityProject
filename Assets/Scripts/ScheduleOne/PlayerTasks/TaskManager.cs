@@ -1,12 +1,16 @@
+using System;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class TaskManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.PlayerTasks.TaskManager>
+	public class TaskManager : Singleton<TaskManager>
 	{
-		public global::ScheduleOne.PlayerTasks.Task currentTask;
+		public Task currentTask;
 
-		public global::ScheduleOne.Audio.AudioSourceController TaskCompleteSound;
+		public AudioSourceController TaskCompleteSound;
 
-		public global::System.Action<global::ScheduleOne.PlayerTasks.Task> OnTaskStarted;
+		public Action<Task> OnTaskStarted;
 
 		protected override void Start()
 		{
@@ -16,7 +20,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -32,7 +36,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		public void StartTask(global::ScheduleOne.PlayerTasks.Task task)
+		public void StartTask(Task task)
 		{
 		}
 	}

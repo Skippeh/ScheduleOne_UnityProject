@@ -1,10 +1,13 @@
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleSeat : global::UnityEngine.MonoBehaviour
+	public class VehicleSeat : MonoBehaviour
 	{
 		public bool isDriverSeat;
 
-		public global::ScheduleOne.PlayerScripts.Player Occupant;
+		public Player Occupant;
 
 		public bool isOccupied => false;
 	}

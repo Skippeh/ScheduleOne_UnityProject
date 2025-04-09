@@ -1,3 +1,5 @@
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Vision
 {
 	public class VisionEvent
@@ -8,17 +10,17 @@ namespace ScheduleOne.Vision
 
 		private float currentNoticeTime;
 
-		public global::ScheduleOne.PlayerScripts.Player Target { get; protected set; }
+		public Player Target { get; protected set; }
 
-		public global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState State { get; protected set; }
+		public PlayerVisualState.VisualState State { get; protected set; }
 
-		public global::ScheduleOne.Vision.VisionCone Owner { get; protected set; }
+		public VisionCone Owner { get; protected set; }
 
 		public float FullNoticeTime { get; protected set; }
 
 		public float NormalizedNoticeLevel => 0f;
 
-		public VisionEvent(global::ScheduleOne.Vision.VisionCone _owner, global::ScheduleOne.PlayerScripts.Player _target, global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState _state, float _noticeTime)
+		public VisionEvent(VisionCone _owner, Player _target, PlayerVisualState.VisualState _state, float _noticeTime)
 		{
 		}
 

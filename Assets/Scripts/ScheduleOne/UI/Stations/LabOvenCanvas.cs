@@ -1,35 +1,41 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class LabOvenCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.LabOvenCanvas>
+	public class LabOvenCanvas : Singleton<LabOvenCanvas>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
-		public global::ScheduleOne.UI.ItemSlotUI IngredientSlotUI;
+		public ItemSlotUI IngredientSlotUI;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::TMPro.TextMeshProUGUI ErrorLabel;
+		public TextMeshProUGUI ErrorLabel;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
-		public global::TMPro.TextMeshProUGUI BeginButtonLabel;
+		public TextMeshProUGUI BeginButtonLabel;
 
-		public global::UnityEngine.RectTransform ProgressContainer;
+		public RectTransform ProgressContainer;
 
-		public global::UnityEngine.UI.Image IngredientIcon;
+		public Image IngredientIcon;
 
-		public global::UnityEngine.UI.Image ProgressImg;
+		public Image ProgressImg;
 
-		public global::UnityEngine.UI.Image ProductIcon;
+		public Image ProductIcon;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.LabOven Oven { get; protected set; }
+		public LabOven Oven { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -43,7 +49,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void SetIsOpen(global::ScheduleOne.ObjectScripts.LabOven oven, bool open, bool removeUI = true)
+		public void SetIsOpen(LabOven oven, bool open, bool removeUI = true)
 		{
 		}
 

@@ -1,12 +1,15 @@
+using System;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class PreBuiltBlendshape
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public string name;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public float weight;
 
 		public PreBuiltBlendshape(string name, float weight)

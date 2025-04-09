@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public abstract class SphereUtility
 	{
-		private const float k_HalfPI = global::System.MathF.PI / 2f;
+		private const float k_HalfPI = MathF.PI / 2f;
 
-		public static global::UnityEngine.Vector2 DirectionToSphericalCoordinate(global::UnityEngine.Vector3 direction)
+		public static Vector2 DirectionToSphericalCoordinate(Vector3 direction)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		public static global::UnityEngine.Vector3 SphericalCoordinateToDirection(global::UnityEngine.Vector2 coord)
+		public static Vector3 SphericalCoordinateToDirection(Vector2 coord)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public static float RadiusAtHeight(float yPos)
@@ -19,9 +22,9 @@ namespace Funly.SkyStudio
 			return 0f;
 		}
 
-		public static global::UnityEngine.Vector3 SphericalToPoint(float yPosition, float radAngle)
+		public static Vector3 SphericalToPoint(float yPosition, float radAngle)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public static float RadAngleToPercent(float radAngle)
@@ -44,7 +47,7 @@ namespace Funly.SkyStudio
 			return 0f;
 		}
 
-		public static float AngleToReachTarget(global::UnityEngine.Vector2 point, float targetAngle)
+		public static float AngleToReachTarget(Vector2 point, float targetAngle)
 		{
 			return 0f;
 		}
@@ -54,45 +57,45 @@ namespace Funly.SkyStudio
 			return 0f;
 		}
 
-		public static global::UnityEngine.Vector3 RotateAroundXAxis(global::UnityEngine.Vector3 point, float angle)
+		public static Vector3 RotateAroundXAxis(Vector3 point, float angle)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 RotateAroundYAxis(global::UnityEngine.Vector3 point, float angle)
+		public static Vector3 RotateAroundYAxis(Vector3 point, float angle)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector3 RotatePoint(global::UnityEngine.Vector3 point, float xAxisRotation, float yAxisRotation)
+		public static Vector3 RotatePoint(Vector3 point, float xAxisRotation, float yAxisRotation)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		public static global::UnityEngine.Vector2 Rotate2d(global::UnityEngine.Vector2 pos, float angle)
+		public static Vector2 Rotate2d(Vector2 pos, float angle)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		public static global::UnityEngine.Vector2 Matrix2x2Mult(global::UnityEngine.Vector4 matrix, global::UnityEngine.Vector2 pos)
+		public static Vector2 Matrix2x2Mult(Vector4 matrix, Vector2 pos)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		public static void CalculateStarRotation(global::UnityEngine.Vector3 star, out float xRotationAngle, out float yRotationAngle)
+		public static void CalculateStarRotation(Vector3 star, out float xRotationAngle, out float yRotationAngle)
 		{
 			xRotationAngle = default(float);
 			yRotationAngle = default(float);
 		}
 
-		public static global::UnityEngine.Vector2 ConvertUVToSphericalCoordinate(global::UnityEngine.Vector2 uv)
+		public static Vector2 ConvertUVToSphericalCoordinate(Vector2 uv)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		public static global::UnityEngine.Vector2 ConvertSphericalCoordateToUV(global::UnityEngine.Vector2 sphereCoord)
+		public static Vector2 ConvertSphericalCoordateToUV(Vector2 sphereCoord)
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 	}
 }

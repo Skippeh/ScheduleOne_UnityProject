@@ -1,25 +1,28 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Management
 {
-	public class AdvancedTransitRoute : global::ScheduleOne.Management.TransitRoute
+	public class AdvancedTransitRoute : TransitRoute
 	{
-		public global::ScheduleOne.Management.ManagementItemFilter Filter { get; private set; }
+		public ManagementItemFilter Filter { get; private set; }
 
-		public AdvancedTransitRoute(global::ScheduleOne.Management.ITransitEntity source, global::ScheduleOne.Management.ITransitEntity destination)
+		public AdvancedTransitRoute(ITransitEntity source, ITransitEntity destination)
 			: base(null, null)
 		{
 		}
 
-		public AdvancedTransitRoute(global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData data)
+		public AdvancedTransitRoute(AdvancedTransitRouteData data)
 			: base(null, null)
 		{
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemInstance GetItemReadyToMove()
+		public ItemInstance GetItemReadyToMove()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData GetData()
+		public AdvancedTransitRouteData GetData()
 		{
 			return null;
 		}

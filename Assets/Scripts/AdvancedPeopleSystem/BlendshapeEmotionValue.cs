@@ -1,13 +1,16 @@
+using System;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class BlendshapeEmotionValue
 	{
-		public global::AdvancedPeopleSystem.CharacterBlendShapeType BlendType;
+		public CharacterBlendShapeType BlendType;
 
-		[global::UnityEngine.Range(-100f, 100f)]
+		[Range(-100f, 100f)]
 		public float BlendValue;
 
-		public global::UnityEngine.AnimationCurve BlendAnimationCurve;
+		public AnimationCurve BlendAnimationCurve;
 	}
 }

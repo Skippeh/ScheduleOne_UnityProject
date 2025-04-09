@@ -1,6 +1,26 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.Dialogue;
+using ScheduleOne.FX;
+using ScheduleOne.Law;
+using ScheduleOne.NPCs;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vision;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+
 namespace ScheduleOne.Police
 {
-	public class PoliceOfficer : global::ScheduleOne.NPCs.NPC
+	public class PoliceOfficer : NPC
 	{
 		public const float DEACTIVATION_TIME = 1f;
 
@@ -18,62 +38,62 @@ namespace ScheduleOne.Police
 
 		public const float MAX_CHATTER_INTERVAL = 45f;
 
-		public static global::System.Action<global::ScheduleOne.Vision.VisionEventReceipt> OnPoliceVisionEvent;
+		public static Action<VisionEventReceipt> OnPoliceVisionEvent;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> Officers;
+		public static List<PoliceOfficer> Officers;
 
-		public global::ScheduleOne.Vehicles.LandVehicle AssignedVehicle;
+		public LandVehicle AssignedVehicle;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour PursuitBehaviour;
+		[Header("References")]
+		public PursuitBehaviour PursuitBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.VehiclePursuitBehaviour VehiclePursuitBehaviour;
+		public VehiclePursuitBehaviour VehiclePursuitBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.BodySearchBehaviour BodySearchBehaviour;
+		public BodySearchBehaviour BodySearchBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.CheckpointBehaviour CheckpointBehaviour;
+		public CheckpointBehaviour CheckpointBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.FootPatrolBehaviour FootPatrolBehaviour;
+		public FootPatrolBehaviour FootPatrolBehaviour;
 
-		public global::ScheduleOne.FX.ProximityCircle ProxCircle;
+		public ProximityCircle ProxCircle;
 
-		public global::ScheduleOne.NPCs.Behaviour.VehiclePatrolBehaviour VehiclePatrolBehaviour;
+		public VehiclePatrolBehaviour VehiclePatrolBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.SentryBehaviour SentryBehaviour;
+		public SentryBehaviour SentryBehaviour;
 
-		public global::ScheduleOne.VoiceOver.PoliceChatterVO ChatterVO;
+		public PoliceChatterVO ChatterVO;
 
-		[global::UnityEngine.Header("Dialogue")]
-		public global::ScheduleOne.Dialogue.DialogueContainer CheckpointDialogue;
+		[Header("Dialogue")]
+		public DialogueContainer CheckpointDialogue;
 
-		[global::UnityEngine.Header("Tools")]
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable BatonPrefab;
+		[Header("Tools")]
+		public AvatarEquippable BatonPrefab;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable TaserPrefab;
+		public AvatarEquippable TaserPrefab;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable GunPrefab;
+		public AvatarEquippable GunPrefab;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool AutoDeactivate;
 
 		public bool ChatterEnabled;
 
-		[global::UnityEngine.Header("Behaviour Settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Behaviour Settings")]
+		[Range(0f, 1f)]
 		public float Suspicion;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float Leniency;
 
-		[global::UnityEngine.Header("Body Search Settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Body Search Settings")]
+		[Range(0f, 1f)]
 		public float BodySearchChance;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public float BodySearchDuration;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.AvatarFramework.Customization.PoliceBelt belt;
+		[HideInInspector]
+		public PoliceBelt belt;
 
 		private float timeSinceReadyToPool;
 
@@ -81,28 +101,18 @@ namespace ScheduleOne.Police
 
 		private float chatterCountDown;
 
-		private global::ScheduleOne.Police.Investigation currentBodySearchInvestigation;
+		private Investigation currentBodySearchInvestigation;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CTargetPlayerNOB_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CTargetPlayerNOB_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPolice_002EPoliceOfficerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EPolice_002EPoliceOfficerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::FishNet.Object.NetworkObject TargetPlayerNOB
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public NetworkObject TargetPlayerNOB { get; protected set; }
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CTargetPlayerNOB_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CTargetPlayerNOB_003Ek__BackingField
 		{
 			get
 			{
@@ -137,23 +147,23 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public virtual void BeginFootPursuit_Networked(global::FishNet.Object.NetworkObject target, bool includeColleagues = true)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public virtual void BeginFootPursuit_Networked(NetworkObject target, bool includeColleagues = true)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void BeginFootPursuitTest(string playerCode)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public virtual void BeginVehiclePursuit_Networked(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public virtual void BeginVehiclePursuit_Networked(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void BeginVehiclePursuit(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		[ObserversRpc(RunLocally = true)]
+		private void BeginVehiclePursuit(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
@@ -161,18 +171,18 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public virtual void BeginBodySearch_Networked(global::FishNet.Object.NetworkObject target)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public virtual void BeginBodySearch_Networked(NetworkObject target)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void BeginBodySearch(global::FishNet.Object.NetworkObject target)
+		[ObserversRpc(RunLocally = true)]
+		private void BeginBodySearch(NetworkObject target)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void AssignToCheckpoint(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation location)
+		[ObserversRpc(RunLocally = true)]
+		public virtual void AssignToCheckpoint(CheckpointManager.ECheckpointLocation location)
 		{
 		}
 
@@ -180,15 +190,15 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		public void StartFootPatrol(global::ScheduleOne.NPCs.Behaviour.PatrolGroup group, bool warpToStartPoint)
+		public void StartFootPatrol(PatrolGroup group, bool warpToStartPoint)
 		{
 		}
 
-		public void StartVehiclePatrol(global::ScheduleOne.NPCs.Behaviour.VehiclePatrolRoute route, global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void StartVehiclePatrol(VehiclePatrolRoute route, LandVehicle vehicle)
 		{
 		}
 
-		public virtual void AssignToSentryLocation(global::ScheduleOne.Law.SentryLocation location)
+		public virtual void AssignToSentryLocation(SentryLocation location)
 		{
 		}
 
@@ -204,7 +214,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		protected override bool ShouldNoticeGeneralCrime(global::ScheduleOne.PlayerScripts.Player player)
+		protected override bool ShouldNoticeGeneralCrime(Player player)
 		{
 			return false;
 		}
@@ -223,7 +233,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 
@@ -244,7 +254,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void StartBodySearchInvestigation(global::ScheduleOne.PlayerScripts.Player player)
+		private void StartBodySearchInvestigation(Player player)
 		{
 		}
 
@@ -252,11 +262,11 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		public void ConductBodySearch(global::ScheduleOne.PlayerScripts.Player player)
+		public void ConductBodySearch(Player player)
 		{
 		}
 
-		private bool CanInvestigatePlayer(global::ScheduleOne.PlayerScripts.Player player)
+		private bool CanInvestigatePlayer(Player player)
 		{
 			return false;
 		}
@@ -273,15 +283,15 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void RpcWriter___Server_BeginFootPursuit_Networked_419679943(global::FishNet.Object.NetworkObject target, bool includeColleagues = true)
+		private void RpcWriter___Server_BeginFootPursuit_Networked_419679943(NetworkObject target, bool includeColleagues = true)
 		{
 		}
 
-		public virtual void RpcLogic___BeginFootPursuit_Networked_419679943(global::FishNet.Object.NetworkObject target, bool includeColleagues = true)
+		public virtual void RpcLogic___BeginFootPursuit_Networked_419679943(NetworkObject target, bool includeColleagues = true)
 		{
 		}
 
-		private void RpcReader___Server_BeginFootPursuit_Networked_419679943(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_BeginFootPursuit_Networked_419679943(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -293,71 +303,71 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void RpcReader___Observers_BeginFootPursuitTest_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginFootPursuitTest_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_BeginVehiclePursuit_Networked_2261819652(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		private void RpcWriter___Server_BeginVehiclePursuit_Networked_2261819652(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
-		public virtual void RpcLogic___BeginVehiclePursuit_Networked_2261819652(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		public virtual void RpcLogic___BeginVehiclePursuit_Networked_2261819652(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
-		private void RpcReader___Server_BeginVehiclePursuit_Networked_2261819652(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_BeginVehiclePursuit_Networked_2261819652(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_BeginVehiclePursuit_2261819652(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		private void RpcWriter___Observers_BeginVehiclePursuit_2261819652(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
-		private void RpcLogic___BeginVehiclePursuit_2261819652(global::FishNet.Object.NetworkObject target, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
+		private void RpcLogic___BeginVehiclePursuit_2261819652(NetworkObject target, NetworkObject vehicle, bool beginAsSighted)
 		{
 		}
 
-		private void RpcReader___Observers_BeginVehiclePursuit_2261819652(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginVehiclePursuit_2261819652(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_BeginBodySearch_Networked_3323014238(global::FishNet.Object.NetworkObject target)
+		private void RpcWriter___Server_BeginBodySearch_Networked_3323014238(NetworkObject target)
 		{
 		}
 
-		public virtual void RpcLogic___BeginBodySearch_Networked_3323014238(global::FishNet.Object.NetworkObject target)
+		public virtual void RpcLogic___BeginBodySearch_Networked_3323014238(NetworkObject target)
 		{
 		}
 
-		private void RpcReader___Server_BeginBodySearch_Networked_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_BeginBodySearch_Networked_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_BeginBodySearch_3323014238(global::FishNet.Object.NetworkObject target)
+		private void RpcWriter___Observers_BeginBodySearch_3323014238(NetworkObject target)
 		{
 		}
 
-		private void RpcLogic___BeginBodySearch_3323014238(global::FishNet.Object.NetworkObject target)
+		private void RpcLogic___BeginBodySearch_3323014238(NetworkObject target)
 		{
 		}
 
-		private void RpcReader___Observers_BeginBodySearch_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginBodySearch_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_AssignToCheckpoint_4087078542(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation location)
+		private void RpcWriter___Observers_AssignToCheckpoint_4087078542(CheckpointManager.ECheckpointLocation location)
 		{
 		}
 
-		public virtual void RpcLogic___AssignToCheckpoint_4087078542(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation location)
+		public virtual void RpcLogic___AssignToCheckpoint_4087078542(CheckpointManager.ECheckpointLocation location)
 		{
 		}
 
-		private void RpcReader___Observers_AssignToCheckpoint_4087078542(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AssignToCheckpoint_4087078542(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EPolice_002EPoliceOfficer(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EPolice_002EPoliceOfficer(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,6 +1,9 @@
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class IntegerItemInstance : global::ScheduleOne.Storage.StorableItemInstance
+	public class IntegerItemInstance : StorableItemInstance
 	{
 		public int Value;
 
@@ -8,11 +11,11 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public IntegerItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, int value)
+		public IntegerItemInstance(ItemDefinition definition, int quantity, int value)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
@@ -25,7 +28,7 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}

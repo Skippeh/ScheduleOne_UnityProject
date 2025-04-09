@@ -1,6 +1,9 @@
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class CauldronTask : global::ScheduleOne.PlayerTasks.Task
+	public class CauldronTask : Task
 	{
 		public enum EStep
 		{
@@ -8,22 +11,22 @@ namespace ScheduleOne.PlayerTasks
 			StartMixing = 1
 		}
 
-		private global::ScheduleOne.StationFramework.StationItem[] CocaLeaves;
+		private StationItem[] CocaLeaves;
 
-		private global::ScheduleOne.StationFramework.StationItem Gasoline;
+		private StationItem Gasoline;
 
-		private global::ScheduleOne.PlayerTasks.Draggable Tub;
+		private Draggable Tub;
 
-		public global::ScheduleOne.ObjectScripts.Cauldron Cauldron { get; private set; }
+		public Cauldron Cauldron { get; private set; }
 
-		public global::ScheduleOne.PlayerTasks.CauldronTask.EStep CurrentStep { get; private set; }
+		public EStep CurrentStep { get; private set; }
 
-		public static string GetStepDescription(global::ScheduleOne.PlayerTasks.CauldronTask.EStep step)
+		public static string GetStepDescription(EStep step)
 		{
 			return null;
 		}
 
-		public CauldronTask(global::ScheduleOne.ObjectScripts.Cauldron caudron)
+		public CauldronTask(Cauldron caudron)
 		{
 		}
 

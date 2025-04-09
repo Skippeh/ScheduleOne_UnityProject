@@ -1,8 +1,8 @@
 namespace UnityEngine.PostProcessing
 {
-	public abstract class PostProcessingComponentRenderTexture<T> : global::UnityEngine.PostProcessing.PostProcessingComponent<T> where T : global::UnityEngine.PostProcessing.PostProcessingModel
+	public abstract class PostProcessingComponentRenderTexture<T> : PostProcessingComponent<T> where T : PostProcessingModel
 	{
-		public virtual void Prepare(global::UnityEngine.Material material)
+		public virtual void Prepare(Material material)
 		{
 		}
 	}

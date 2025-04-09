@@ -1,13 +1,17 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class AudioZone : global::ScheduleOne.Audio.Zone
+	public class AudioZone : Zone
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Track
 		{
-			public global::ScheduleOne.Audio.AudioSourceController Source;
+			public AudioSourceController Source;
 
-			[global::UnityEngine.Range(0.01f, 2f)]
+			[Range(0.01f, 2f)]
 			public float Volume;
 
 			public int StartTime;
@@ -51,13 +55,13 @@ namespace ScheduleOne.Audio
 
 		public const float ROLLOFF_SCALE = 0.5f;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Range(1f, 200f)]
+		[Header("Settings")]
+		[Range(1f, 200f)]
 		public float MaxDistance;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioZone.Track> Tracks;
+		public List<Track> Tracks;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Audio.AudioZoneModifierVolume, float> Modifiers;
+		public Dictionary<AudioZoneModifierVolume, float> Modifiers;
 
 		protected float CurrentVolumeMultiplier;
 
@@ -80,11 +84,11 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public void AddModifier(global::ScheduleOne.Audio.AudioZoneModifierVolume modifier, float value)
+		public void AddModifier(AudioZoneModifierVolume modifier, float value)
 		{
 		}
 
-		public void RemoveModifier(global::ScheduleOne.Audio.AudioZoneModifierVolume modifier)
+		public void RemoveModifier(AudioZoneModifierVolume modifier)
 		{
 		}
 

@@ -1,17 +1,21 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class QualityField : global::ScheduleOne.Management.ConfigField
+	public class QualityField : ConfigField
 	{
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.ItemFramework.EQuality> onValueChanged;
+		public UnityEvent<EQuality> onValueChanged;
 
-		public global::ScheduleOne.ItemFramework.EQuality Value { get; protected set; }
+		public EQuality Value { get; protected set; }
 
-		public QualityField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public QualityField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetValue(global::ScheduleOne.ItemFramework.EQuality value, bool network)
+		public void SetValue(EQuality value, bool network)
 		{
 		}
 
@@ -20,12 +24,12 @@ namespace ScheduleOne.Management
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.QualityFieldData GetData()
+		public QualityFieldData GetData()
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.QualityFieldData data)
+		public void Load(QualityFieldData data)
 		{
 		}
 	}

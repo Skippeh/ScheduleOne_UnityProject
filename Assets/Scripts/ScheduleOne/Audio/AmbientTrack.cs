@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class AmbientTrack : global::UnityEngine.MonoBehaviour
+	public class AmbientTrack : MonoBehaviour
 	{
 		public const float MIN_TIME_BETWEEN_AMBIENT_TRACKS = 540f;
 
-		public static global::ScheduleOne.Audio.AmbientTrack LastPlayedTrack;
+		public static AmbientTrack LastPlayedTrack;
 
 		public static bool TrackQueued;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.MusicTrack> Tracks;
+		public List<MusicTrack> Tracks;
 
 		public int MinTime;
 
@@ -26,7 +30,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void ForcePlay()
 		{
 		}

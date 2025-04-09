@@ -1,7 +1,14 @@
-public class LandingSpotController : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+public class LandingSpotController : MonoBehaviour
 {
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CInstantLand_003Ed__23 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CInstantLand_003Ed__23 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -11,31 +18,31 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 
 		public LandingSpotController _003C_003E4__this;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CInstantLand_003Ed__23(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -44,20 +51,20 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CInstantLandOnStart_003Ed__22 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CInstantLandOnStart_003Ed__22 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -67,31 +74,31 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 
 		public LandingSpotController _003C_003E4__this;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CInstantLandOnStart_003Ed__22(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -100,23 +107,23 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
 	public bool _randomRotate;
 
-	public global::UnityEngine.Vector2 _autoCatchDelay;
+	public Vector2 _autoCatchDelay;
 
-	public global::UnityEngine.Vector2 _autoDismountDelay;
+	public Vector2 _autoDismountDelay;
 
 	public float _maxBirdDistance;
 
@@ -136,9 +143,9 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 
 	public float _landingTurnSpeedModifier;
 
-	public global::UnityEngine.Transform _featherPS;
+	public Transform _featherPS;
 
-	public global::UnityEngine.Transform _thisT;
+	public Transform _thisT;
 
 	public int _activeLandingSpots;
 
@@ -164,14 +171,14 @@ public class LandingSpotController : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(LandingSpotController._003CInstantLandOnStart_003Ed__22))]
-	public global::System.Collections.IEnumerator InstantLandOnStart(float delay)
+	[IteratorStateMachine(typeof(_003CInstantLandOnStart_003Ed__22))]
+	public IEnumerator InstantLandOnStart(float delay)
 	{
 		return null;
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(LandingSpotController._003CInstantLand_003Ed__23))]
-	public global::System.Collections.IEnumerator InstantLand(float delay)
+	[IteratorStateMachine(typeof(_003CInstantLand_003Ed__23))]
+	public IEnumerator InstantLand(float delay)
 	{
 		return null;
 	}

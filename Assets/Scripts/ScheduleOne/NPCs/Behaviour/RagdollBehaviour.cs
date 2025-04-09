@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class RagdollBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class RagdollBehaviour : Behaviour
 	{
 		public bool Seizure;
 

@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Melissa : global::ScheduleOne.NPCs.NPC
+	public class Melissa : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EMelissaAssembly_002DCSharp_002Edll_Excuted;
 

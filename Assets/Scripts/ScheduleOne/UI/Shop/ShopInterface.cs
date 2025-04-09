@@ -1,6 +1,22 @@
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.Audio;
+using ScheduleOne.Delivery;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.Storage;
+using ScheduleOne.Vehicles;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ShopInterface : global::UnityEngine.MonoBehaviour
+	public class ShopInterface : MonoBehaviour, ISaveable
 	{
 		public enum EPaymentType
 		{
@@ -10,73 +26,101 @@ namespace ScheduleOne.UI.Shop
 			PreferOnline = 3
 		}
 
+		public static List<ShopInterface> AllShops;
+
 		public const int MAX_ITEM_QUANTITY = 999;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string ShopName;
 
-		public global::ScheduleOne.UI.Shop.ShopInterface.EPaymentType PaymentType;
+		public string ShopCode;
+
+		public EPaymentType PaymentType;
 
 		public bool ShowCurrencyHint;
 
-		[global::UnityEngine.Header("Listings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopListing> Listings;
+		[Header("Listings")]
+		public List<ShopListing> Listings;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform ListingContainer;
+		public RectTransform ListingContainer;
 
-		public global::TMPro.TextMeshProUGUI StoreNameLabel;
+		public TextMeshProUGUI StoreNameLabel;
 
-		public global::ScheduleOne.UI.Shop.Cart Cart;
+		public Cart Cart;
 
-		public global::ScheduleOne.Storage.StorageEntity[] DeliveryBays;
+		public StorageEntity[] DeliveryBays;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector LoadingBayDetector;
+		public VehicleDetector LoadingBayDetector;
 
-		public global::ScheduleOne.UI.Shop.ShopInterfaceDetailPanel DetailPanel;
+		public ShopInterfaceDetailPanel DetailPanel;
 
-		public global::UnityEngine.UI.ScrollRect ListingScrollRect;
+		public ScrollRect ListingScrollRect;
 
-		public global::ScheduleOne.UI.Shop.ShopAmountSelector AmountSelector;
+		public ShopAmountSelector AmountSelector;
 
-		public global::ScheduleOne.Delivery.DeliveryVehicle DeliveryVehicle;
+		public DeliveryVehicle DeliveryVehicle;
 
-		[global::UnityEngine.Header("Audio")]
-		public global::ScheduleOne.Audio.AudioSourceController AddItemSound;
+		[Header("Audio")]
+		public AudioSourceController AddItemSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController RemoveItemSound;
+		public AudioSourceController RemoveItemSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController CheckoutSound;
+		public AudioSourceController CheckoutSound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Shop.ListingUI ListingUIPrefab;
+		[Header("Prefabs")]
+		public ListingUI ListingUIPrefab;
 
-		public global::UnityEngine.Events.UnityEvent onOrderCompleted;
+		public UnityEvent onOrderCompleted;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.CategoryButton> categoryButtons;
+		[SerializeField]
+		private List<CategoryButton> categoryButtons;
 
-		private global::ScheduleOne.UI.Shop.EShopCategory categoryFilter;
+		private EShopCategory categoryFilter;
 
 		private string searchTerm;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ListingUI> listingUI;
+		private List<ListingUI> listingUI;
 
-		private global::ScheduleOne.UI.Shop.ListingUI selectedListing;
+		private ListingUI selectedListing;
 
 		private bool dropdownMouseUp;
 
+		private ShopLoader loader;
+
 		public bool IsOpen { get; protected set; }
+
+		public string SaveFolderName => null;
+
+		public string SaveFileName => null;
+
+		public Loader Loader => null;
+
+		public bool ShouldSaveUnderFolder => false;
+
+		public List<string> LocalExtraFiles { get; set; }
+
+		public List<string> LocalExtraFolders { get; set; }
+
+		public bool HasChanged { get; set; }
 
 		protected virtual void Awake()
 		{
 		}
 
 		protected virtual void Start()
+		{
+		}
+
+		public virtual void InitializeSaveable()
+		{
+		}
+
+		private void OnDestroy()
 		{
 		}
 
@@ -88,6 +132,19 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
+		protected void OnDayPass()
+		{
+		}
+
+		protected void OnWeekPass()
+		{
+		}
+
+		[Button]
+		public void Open()
+		{
+		}
+
 		public virtual void SetIsOpen(bool isOpen)
 		{
 		}
@@ -96,27 +153,27 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		protected virtual void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		protected virtual void Exit(ExitAction action)
 		{
 		}
 
-		private void CreateListingUI(global::ScheduleOne.UI.Shop.ShopListing listing)
+		private void CreateListingUI(ShopListing listing)
 		{
 		}
 
-		public void SelectCategory(global::ScheduleOne.UI.Shop.EShopCategory category)
+		public void SelectCategory(EShopCategory category)
 		{
 		}
 
-		public virtual void ListingClicked(global::ScheduleOne.UI.Shop.ListingUI listingUI)
+		public virtual void ListingClicked(ListingUI listingUI)
 		{
 		}
 
-		private void ShowCartAnimation(global::ScheduleOne.UI.Shop.ListingUI listing)
+		private void ShowCartAnimation(ListingUI listing)
 		{
 		}
 
-		public void CategorySelected(global::ScheduleOne.UI.Shop.EShopCategory category)
+		public void CategorySelected(EShopCategory category)
 		{
 		}
 
@@ -136,7 +193,7 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		public bool CanCartFitItem(global::ScheduleOne.UI.Shop.ShopListing listing)
+		public bool CanCartFitItem(ShopListing listing)
 		{
 			return false;
 		}
@@ -146,7 +203,7 @@ namespace ScheduleOne.UI.Shop
 			return false;
 		}
 
-		public bool WillCartFit(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> availableSlots)
+		public bool WillCartFit(List<ItemSlot> availableSlots)
 		{
 			return false;
 		}
@@ -156,17 +213,17 @@ namespace ScheduleOne.UI.Shop
 			return false;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> GetAvailableSlots()
+		public List<ItemSlot> GetAvailableSlots()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Vehicles.LandVehicle GetLoadingBayVehicle()
+		public LandVehicle GetLoadingBayVehicle()
 		{
 			return null;
 		}
 
-		public void PlaceItemInDeliveryBay(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void PlaceItemInDeliveryBay(ItemInstance item)
 		{
 		}
 
@@ -174,20 +231,39 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		public void OpenAmountSelector(global::ScheduleOne.UI.Shop.ListingUI listing)
+		public void OpenAmountSelector(ListingUI listing)
 		{
 		}
 
-		private void DropdownClicked(global::ScheduleOne.UI.Shop.ListingUI listing)
+		private void DropdownClicked(ListingUI listing)
 		{
 		}
 
-		private void EntryHovered(global::ScheduleOne.UI.Shop.ListingUI listing)
+		private void EntryHovered(ListingUI listing)
 		{
 		}
 
 		private void EntryUnhovered()
 		{
+		}
+
+		public void Load(ShopData data)
+		{
+		}
+
+		public bool ShouldSave()
+		{
+			return false;
+		}
+
+		public ShopListing GetListing(string itemID)
+		{
+			return null;
+		}
+
+		public virtual string GetSaveString()
+		{
+			return null;
 		}
 	}
 }

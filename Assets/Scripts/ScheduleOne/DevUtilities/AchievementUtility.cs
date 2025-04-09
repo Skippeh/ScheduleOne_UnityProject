@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class AchievementUtility : global::UnityEngine.MonoBehaviour
+	public class AchievementUtility : MonoBehaviour
 	{
-		public global::ScheduleOne.AchievementManager.EAchievement Achievement;
+		public AchievementManager.EAchievement Achievement;
 
 		public void UnlockAchievement()
 		{

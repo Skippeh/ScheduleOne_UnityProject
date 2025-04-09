@@ -1,8 +1,10 @@
+using System;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class PropertyContainer
 	{
-		public global::ScheduleOne.Product.EProperty Property;
+		public EProperty Property;
 	}
 }

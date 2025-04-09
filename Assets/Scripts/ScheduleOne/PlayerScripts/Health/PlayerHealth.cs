@@ -1,21 +1,28 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts.Health
 {
-	public class PlayerHealth : global::FishNet.Object.NetworkBehaviour
+	public class PlayerHealth : NetworkBehaviour
 	{
 		public const float MAX_HEALTH = 100f;
 
 		public const float HEALTH_RECOVERY_PER_MINUTE = 0.5f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerScripts.Player Player;
+		[Header("References")]
+		public Player Player;
 
-		public global::UnityEngine.ParticleSystem BloodParticles;
+		public ParticleSystem BloodParticles;
 
-		public global::UnityEngine.Events.UnityEvent<float> onHealthChanged;
+		public UnityEvent<float> onHealthChanged;
 
-		public global::UnityEngine.Events.UnityEvent onDie;
+		public UnityEvent onDie;
 
-		public global::UnityEngine.Events.UnityEvent onRevive;
+		public UnityEvent onRevive;
 
 		private bool AfflictedWithLethalEffect;
 
@@ -39,7 +46,7 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void TakeDamage(float damage, bool flinch = true, bool playBloodMist = true)
 		{
 		}
@@ -64,27 +71,27 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendDie()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void Die()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendRevive(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendRevive(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, ExcludeOwner = true)]
-		public void Revive(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		[ObserversRpc(RunLocally = true, ExcludeOwner = true)]
+		public void Revive(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void PlayBloodMist()
 		{
 		}
@@ -109,7 +116,7 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		private void RpcReader___Observers_TakeDamage_3505310624(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_TakeDamage_3505310624(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -121,7 +128,7 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		private void RpcReader___Server_SendDie_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDie_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -133,31 +140,31 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		private void RpcReader___Observers_Die_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Die_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendRevive_3848837105(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		private void RpcWriter___Server_SendRevive_3848837105(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		public void RpcLogic___SendRevive_3848837105(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		public void RpcLogic___SendRevive_3848837105(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		private void RpcReader___Server_SendRevive_3848837105(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendRevive_3848837105(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Revive_3848837105(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		private void RpcWriter___Observers_Revive_3848837105(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		public void RpcLogic___Revive_3848837105(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		public void RpcLogic___Revive_3848837105(Vector3 position, Quaternion rotation)
 		{
 		}
 
-		private void RpcReader___Observers_Revive_3848837105(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Revive_3848837105(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -169,7 +176,7 @@ namespace ScheduleOne.PlayerScripts.Health
 		{
 		}
 
-		private void RpcReader___Observers_PlayBloodMist_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlayBloodMist_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

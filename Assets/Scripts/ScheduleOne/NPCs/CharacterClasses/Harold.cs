@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Harold : global::ScheduleOne.NPCs.NPC
+	public class Harold : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EHaroldAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,7 +1,12 @@
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 namespace ScheduleOne.UI.Input
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class InputPrompt : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class InputPrompt : MonoBehaviour
 	{
 		public enum EInputPromptAlignment
 		{
@@ -12,35 +17,35 @@ namespace ScheduleOne.UI.Input
 
 		public static float Spacing;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::System.Collections.Generic.List<global::UnityEngine.InputSystem.InputActionReference> Actions;
+		[Header("Settings")]
+		public List<InputActionReference> Actions;
 
 		public string Label;
 
-		public global::ScheduleOne.UI.Input.InputPrompt.EInputPromptAlignment Alignment;
+		public EInputPromptAlignment Alignment;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::UnityEngine.RectTransform ImagesContainer;
+		public RectTransform ImagesContainer;
 
-		public global::TMPro.TextMeshProUGUI LabelComponent;
+		public TextMeshProUGUI LabelComponent;
 
-		public global::UnityEngine.RectTransform Shade;
+		public RectTransform Shade;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool OverridePromptImageColor;
 
-		public global::UnityEngine.Color PromptImageColor;
+		public Color PromptImageColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Input.PromptImage> promptImages;
+		[SerializeField]
+		private List<PromptImage> promptImages;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.InputSystem.InputActionReference> displayedActions;
+		private List<InputActionReference> displayedActions;
 
-		private global::ScheduleOne.UI.Input.InputPrompt.EInputPromptAlignment AppliedAlignment;
+		private EInputPromptAlignment AppliedAlignment;
 
-		private global::ScheduleOne.UI.Input.InputPromptsManager manager => null;
+		private InputPromptsManager manager => null;
 
 		private void OnEnable()
 		{

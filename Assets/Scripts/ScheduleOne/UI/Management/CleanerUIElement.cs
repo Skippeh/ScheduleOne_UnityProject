@@ -1,13 +1,17 @@
+using ScheduleOne.Employees;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class CleanerUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class CleanerUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image[] StationsIcons;
+		[Header("References")]
+		public Image[] StationsIcons;
 
-		public global::ScheduleOne.Employees.Cleaner AssignedCleaner { get; protected set; }
+		public Cleaner AssignedCleaner { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.Employees.Cleaner cleaner)
+		public void Initialize(Cleaner cleaner)
 		{
 		}
 

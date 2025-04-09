@@ -1,14 +1,17 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class PositionHistoryTracker : global::UnityEngine.MonoBehaviour
+	public class PositionHistoryTracker : MonoBehaviour
 	{
-		[global::UnityEngine.Tooltip("Frequency (in seconds) to record the position.")]
+		[Tooltip("Frequency (in seconds) to record the position.")]
 		public float recordingFrequency;
 
-		[global::UnityEngine.Tooltip("Duration (in seconds) to store the position history.")]
+		[Tooltip("Duration (in seconds) to store the position history.")]
 		public float historyDuration;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Vector3> positionHistory;
+		public List<Vector3> positionHistory;
 
 		private float lastRecordTime;
 
@@ -26,9 +29,9 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public global::UnityEngine.Vector3 GetPositionXSecondsAgo(float secondsAgo)
+		public Vector3 GetPositionXSecondsAgo(float secondsAgo)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void ClearHistory()

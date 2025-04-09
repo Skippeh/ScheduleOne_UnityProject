@@ -1,12 +1,15 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class MonoBehaviourEvents : global::UnityEngine.MonoBehaviour
+	public class MonoBehaviourEvents : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent onAwake;
+		public UnityEvent onAwake;
 
-		public global::UnityEngine.Events.UnityEvent onStart;
+		public UnityEvent onStart;
 
-		public global::UnityEngine.Events.UnityEvent onUpdate;
+		public UnityEvent onUpdate;
 
 		private void Awake()
 		{

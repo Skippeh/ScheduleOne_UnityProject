@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StoredItemRandomRotation : global::UnityEngine.MonoBehaviour
+	public class StoredItemRandomRotation : MonoBehaviour
 	{
-		public global::UnityEngine.Transform ItemContainer;
+		public Transform ItemContainer;
 
 		public void Awake()
 		{

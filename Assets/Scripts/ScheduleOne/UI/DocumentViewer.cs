@@ -1,13 +1,17 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class DocumentViewer : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.DocumentViewer>
+	public class DocumentViewer : Singleton<DocumentViewer>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform[] Documents;
+		public RectTransform[] Documents;
 
-		public global::UnityEngine.Events.UnityEvent onOpen;
+		public UnityEvent onOpen;
 
 		public bool IsOpen { get; protected set; }
 
@@ -15,7 +19,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

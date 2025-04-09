@@ -1,14 +1,18 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerTasks.Tasks;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class ApplyAdditiveToPot : global::ScheduleOne.PlayerTasks.Tasks.PourIntoPotTask
+	public class ApplyAdditiveToPot : PourIntoPotTask
 	{
-		private global::ScheduleOne.ItemFramework.AdditiveDefinition def;
+		private AdditiveDefinition def;
 
 		protected override bool UseCoverage => false;
 
-		protected override global::ScheduleOne.ObjectScripts.Pot.ECameraPosition CameraPosition => default(global::ScheduleOne.ObjectScripts.Pot.ECameraPosition);
+		protected override Pot.ECameraPosition CameraPosition => default(Pot.ECameraPosition);
 
-		public ApplyAdditiveToPot(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public ApplyAdditiveToPot(Pot _pot, ItemInstance _itemInstance, Pourable _pourablePrefab)
 			: base(null, null, null)
 		{
 		}

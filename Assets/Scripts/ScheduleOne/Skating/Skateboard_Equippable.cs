@@ -1,6 +1,11 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Skating
 {
-	public class Skateboard_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Skateboard_Equippable : Equippable_Viewmodel
 	{
 		public const float ModelLerpSpeed = 8f;
 
@@ -18,28 +23,28 @@ namespace ScheduleOne.Skating
 
 		public const float DismountAngle = 80f;
 
-		public global::ScheduleOne.Skating.Skateboard SkateboardPrefab;
+		public Skateboard SkateboardPrefab;
 
 		public bool blockDismount;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform ModelContainer;
+		[Header("References")]
+		public Transform ModelContainer;
 
-		public global::UnityEngine.Transform ModelPosition_Raised;
+		public Transform ModelPosition_Raised;
 
-		public global::UnityEngine.Transform ModelPosition_Lowered;
+		public Transform ModelPosition_Lowered;
 
 		private float mountTime;
 
 		public bool IsRiding { get; private set; }
 
-		public global::ScheduleOne.Skating.Skateboard ActiveSkateboard { get; private set; }
+		public Skateboard ActiveSkateboard { get; private set; }
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -68,9 +73,9 @@ namespace ScheduleOne.Skating
 			return false;
 		}
 
-		private global::UnityEngine.Pose GetSkateboardSpawnPose()
+		private Pose GetSkateboardSpawnPose()
 		{
-			return default(global::UnityEngine.Pose);
+			return default(Pose);
 		}
 	}
 }

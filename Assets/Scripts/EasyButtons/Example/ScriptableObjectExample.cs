@@ -1,19 +1,21 @@
+using UnityEngine;
+
 namespace EasyButtons.Example
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "ScriptableObjectExample.asset", menuName = "EasyButtons/ScriptableObjectExample")]
-	public class ScriptableObjectExample : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(fileName = "ScriptableObjectExample.asset", menuName = "EasyButtons/ScriptableObjectExample")]
+	public class ScriptableObjectExample : ScriptableObject
 	{
-		[global::EasyButtons.Button]
+		[Button]
 		public void SayHello()
 		{
 		}
 
-		[global::EasyButtons.Button(Mode = global::EasyButtons.ButtonMode.DisabledInPlayMode)]
+		[Button(Mode = ButtonMode.DisabledInPlayMode)]
 		public void SayHelloEditor()
 		{
 		}
 
-		[global::EasyButtons.Button(Mode = global::EasyButtons.ButtonMode.EnabledInPlayMode)]
+		[Button(Mode = ButtonMode.EnabledInPlayMode)]
 		public void SayHelloPlayMode()
 		{
 		}

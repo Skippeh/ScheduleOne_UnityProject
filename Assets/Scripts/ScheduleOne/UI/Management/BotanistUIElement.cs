@@ -1,19 +1,24 @@
+using ScheduleOne.Employees;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class BotanistUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class BotanistUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image SupplyIcon;
+		[Header("References")]
+		public Image SupplyIcon;
 
-		public global::UnityEngine.GameObject NoSupply;
+		public GameObject NoSupply;
 
-		public global::TMPro.TextMeshProUGUI SupplyLabel;
+		public TextMeshProUGUI SupplyLabel;
 
-		public global::UnityEngine.RectTransform[] PotRects;
+		public RectTransform[] PotRects;
 
-		public global::ScheduleOne.Employees.Botanist AssignedBotanist { get; protected set; }
+		public Botanist AssignedBotanist { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.Employees.Botanist bot)
+		public void Initialize(Botanist bot)
 		{
 		}
 

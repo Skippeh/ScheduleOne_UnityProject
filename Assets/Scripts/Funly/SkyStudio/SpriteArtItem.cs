@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class SpriteArtItem : global::UnityEngine.ScriptableObject
+	public class SpriteArtItem : ScriptableObject
 	{
-		public global::UnityEngine.Mesh mesh;
+		public Mesh mesh;
 
-		public global::UnityEngine.Material material;
+		public Material material;
 
 		public int rows;
 
@@ -14,7 +16,7 @@ namespace Funly.SkyStudio
 
 		public int animateSpeed;
 
-		[global::UnityEngine.Tooltip("Color that will be multiplied against the base lightning bolt text color")]
-		public global::UnityEngine.Color tintColor;
+		[Tooltip("Color that will be multiplied against the base lightning bolt text color")]
+		public Color tintColor;
 	}
 }

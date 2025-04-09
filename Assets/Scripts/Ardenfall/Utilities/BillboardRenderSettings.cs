@@ -1,9 +1,13 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Ardenfall.Utilities
 {
-	[global::UnityEngine.CreateAssetMenu(menuName = "Ardenfall/Foliage/Billboard Render Settings")]
-	public class BillboardRenderSettings : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(menuName = "Ardenfall/Foliage/Billboard Render Settings")]
+	public class BillboardRenderSettings : ScriptableObject
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class BillboardTexture
 		{
 			public string textureId;
@@ -12,20 +16,20 @@ namespace Ardenfall.Utilities
 
 			public bool alphaIsTransparency;
 
-			public global::System.Collections.Generic.List<global::Ardenfall.Utilities.BillboardRenderSettings.BakePass> bakePasses;
+			public List<BakePass> bakePasses;
 
-			public global::UnityEngine.TextureFormat GetFormat()
+			public TextureFormat GetFormat()
 			{
-				return default(global::UnityEngine.TextureFormat);
+				return default(TextureFormat);
 			}
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class BakePass
 		{
-			public global::UnityEngine.Shader customShader;
+			public Shader customShader;
 
-			public global::Ardenfall.Utilities.MaterialOverrides materialOverrides;
+			public MaterialOverrides materialOverrides;
 
 			public bool r;
 
@@ -36,8 +40,8 @@ namespace Ardenfall.Utilities
 			public bool a;
 		}
 
-		public global::System.Collections.Generic.List<global::Ardenfall.Utilities.BillboardRenderSettings.BillboardTexture> billboardTextures;
+		public List<BillboardTexture> billboardTextures;
 
-		public global::UnityEngine.Shader billboardShader;
+		public Shader billboardShader;
 	}
 }

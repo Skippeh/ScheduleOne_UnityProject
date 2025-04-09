@@ -1,7 +1,10 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemDefinitionInfoHoverable : global::UnityEngine.MonoBehaviour
+	public class ItemDefinitionInfoHoverable : MonoBehaviour
 	{
-		public global::ScheduleOne.ItemFramework.ItemDefinition AssignedItem;
+		public ItemDefinition AssignedItem;
 	}
 }

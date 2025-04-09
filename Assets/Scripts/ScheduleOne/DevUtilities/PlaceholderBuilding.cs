@@ -1,21 +1,24 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class PlaceholderBuilding : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class PlaceholderBuilding : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Name;
 
-		public global::UnityEngine.Vector3 Dimensions;
+		public Vector3 Dimensions;
 
 		public bool AutoGround;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Model;
+		[Header("References")]
+		public Transform Model;
 
-		public global::TMPro.TextMeshPro Label;
+		public TextMeshPro Label;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private Vector3 lastFramePosition;
 
 		private void Awake()
 		{

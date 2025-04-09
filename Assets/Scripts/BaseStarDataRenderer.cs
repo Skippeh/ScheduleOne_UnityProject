@@ -1,8 +1,12 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 public abstract class BaseStarDataRenderer
 {
 	public delegate void StarDataProgress(BaseStarDataRenderer renderer, float progress);
 
-	public delegate void StarDataComplete(BaseStarDataRenderer renderer, global::UnityEngine.Texture2D texture, bool success);
+	public delegate void StarDataComplete(BaseStarDataRenderer renderer, Texture2D texture, bool success);
 
 	public float density;
 
@@ -16,31 +20,31 @@ public abstract class BaseStarDataRenderer
 
 	protected bool isCancelled;
 
-	public event BaseStarDataRenderer.StarDataProgress progressCallback
+	public event StarDataProgress progressCallback
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		[CompilerGenerated]
 		add
 		{
 		}
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		[CompilerGenerated]
 		remove
 		{
 		}
 	}
 
-	public event BaseStarDataRenderer.StarDataComplete completionCallback
+	public event StarDataComplete completionCallback
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		[CompilerGenerated]
 		add
 		{
 		}
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		[CompilerGenerated]
 		remove
 		{
 		}
 	}
 
-	public abstract global::System.Collections.IEnumerator ComputeStarData();
+	public abstract IEnumerator ComputeStarData();
 
 	public virtual void Cancel()
 	{
@@ -50,7 +54,7 @@ public abstract class BaseStarDataRenderer
 	{
 	}
 
-	protected void SendCompletion(global::UnityEngine.Texture2D texture, bool success)
+	protected void SendCompletion(Texture2D texture, bool success)
 	{
 	}
 }

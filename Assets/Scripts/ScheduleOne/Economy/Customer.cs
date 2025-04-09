@@ -1,26 +1,51 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Dialogue;
+using ScheduleOne.GameTime;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Map;
+using ScheduleOne.NPCs;
+using ScheduleOne.NPCs.Relation;
+using ScheduleOne.NPCs.Schedules;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Product;
+using ScheduleOne.Quests;
+using ScheduleOne.UI.Handover;
+using ScheduleOne.UI.Phone.Messages;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Economy
 {
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPC))]
-	public class Customer : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(NPC))]
+	public class Customer : NetworkBehaviour, ISaveable
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ScheduleGroupPair
 		{
-			public global::UnityEngine.GameObject NormalScheduleGroup;
+			public GameObject NormalScheduleGroup;
 
-			public global::UnityEngine.GameObject CurfewScheduleGroup;
+			public GameObject CurfewScheduleGroup;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class CustomerPreference
 		{
-			public global::ScheduleOne.Product.EDrugType DrugType;
+			public EDrugType DrugType;
 
-			[global::UnityEngine.Header("Optionally, a specific product")]
-			public global::ScheduleOne.Product.ProductDefinition Definition;
+			[Header("Optionally, a specific product")]
+			public ProductDefinition Definition;
 
-			public global::ScheduleOne.ItemFramework.EQuality MinimumQuality;
+			public EQuality MinimumQuality;
 		}
 
 		public enum ESampleFeedback
@@ -30,9 +55,9 @@ namespace ScheduleOne.Economy
 			Correct = 2
 		}
 
-		public static global::System.Action<global::ScheduleOne.Economy.Customer> onCustomerUnlocked;
+		public static Action<Customer> onCustomerUnlocked;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> UnlockedCustomers;
+		public static List<Customer> UnlockedCustomers;
 
 		public const float AFFINITY_MAX_EFFECT = 0.3f;
 
@@ -78,69 +103,59 @@ namespace ScheduleOne.Economy
 
 		public const float RELATIONSHIP_FOR_GUARANTEED_SUPPLIER_RECOMMENDATION = 0.6f;
 
-		private global::ScheduleOne.Quests.ContractInfo offeredContractInfo;
+		private ContractInfo offeredContractInfo;
 
-		public global::ScheduleOne.NPCs.Schedules.NPCSignal_WaitForDelivery DealSignal;
+		public NPCSignal_WaitForDelivery DealSignal;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool AvailableInDemo;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Economy.CustomerData customerData;
+		[SerializeField]
+		protected CustomerData customerData;
 
-		public global::ScheduleOne.Economy.DeliveryLocation DefaultDeliveryLocation;
+		public DeliveryLocation DefaultDeliveryLocation;
 
 		public bool CanRecommendFriends;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onUnlocked;
+		[Header("Events")]
+		public UnityEvent onUnlocked;
 
-		public global::UnityEngine.Events.UnityEvent onDealCompleted;
+		public UnityEvent onDealCompleted;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Quests.Contract> onContractAssigned;
+		public UnityEvent<Contract> onContractAssigned;
 
 		private bool awaitingSample;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice sampleChoice;
+		private DialogueController.DialogueChoice sampleChoice;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice completeContractChoice;
+		private DialogueController.DialogueChoice completeContractChoice;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice offerDealChoice;
+		private DialogueController.DialogueChoice offerDealChoice;
 
-		private global::ScheduleOne.Dialogue.DialogueController.GreetingOverride awaitingDealGreeting;
+		private DialogueController.GreetingOverride awaitingDealGreeting;
 
 		private int minsSinceUnlocked;
 
 		private bool sampleOfferedToday;
 
-		private global::ScheduleOne.Economy.CustomerAffinityData currentAffinityData;
+		private CustomerAffinityData currentAffinityData;
 
 		private bool pendingInstantDeal;
 
-		private global::ScheduleOne.Product.ProductItemInstance consumedSample;
+		private ProductItemInstance consumedSample;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CCurrentAddiction_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CCurrentAddiction_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CHasBeenRecommended_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CHasBeenRecommended_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEconomy_002ECustomerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEconomy_002ECustomerAssembly_002DCSharp_002Edll_Excuted;
 
-		public float CurrentAddiction
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar]
+		public float CurrentAddiction { get; protected set; }
 
-		public global::ScheduleOne.Quests.ContractInfo OfferedContractInfo
+		public ContractInfo OfferedContractInfo
 		{
 			get
 			{
@@ -151,9 +166,9 @@ namespace ScheduleOne.Economy
 			}
 		}
 
-		public global::ScheduleOne.GameTime.GameDateTime OfferedContractTime { get; protected set; }
+		public GameDateTime OfferedContractTime { get; protected set; }
 
-		public global::ScheduleOne.Quests.Contract CurrentContract { get; protected set; }
+		public Contract CurrentContract { get; protected set; }
 
 		public bool IsAwaitingDelivery { get; protected set; }
 
@@ -169,42 +184,32 @@ namespace ScheduleOne.Economy
 
 		public int CompletedDeliveries { get; protected set; }
 
-		public bool HasBeenRecommended
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar]
+		public bool HasBeenRecommended { get; protected set; }
 
-		public global::ScheduleOne.NPCs.NPC NPC { get; protected set; }
+		public NPC NPC { get; protected set; }
 
-		public global::ScheduleOne.Economy.Dealer AssignedDealer { get; protected set; }
+		public Dealer AssignedDealer { get; protected set; }
 
-		public global::ScheduleOne.Economy.CustomerData CustomerData => null;
+		public CustomerData CustomerData => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> OrderableProducts => null;
+		public List<ProductDefinition> OrderableProducts => null;
 
-		private global::ScheduleOne.Dialogue.DialogueDatabase dialogueDatabase => null;
+		private DialogueDatabase dialogueDatabase => null;
 
-		public global::ScheduleOne.Map.NPCPoI potentialCustomerPoI { get; private set; }
+		public NPCPoI potentialCustomerPoI { get; private set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -246,7 +251,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -278,9 +283,9 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void ConfigureDealSignal(global::FishNet.Connection.NetworkConnection conn, int startTime, bool active)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void ConfigureDealSignal(NetworkConnection conn, int startTime, bool active)
 		{
 		}
 
@@ -288,18 +293,18 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private global::ScheduleOne.Quests.ContractInfo CheckContractGeneration(bool force = false)
+		private ContractInfo CheckContractGeneration(bool force = false)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.Product.ProductDefinition GetWeightedRandomProduct(out float appeal)
+		private ProductDefinition GetWeightedRandomProduct(out float appeal)
 		{
 			appeal = default(float);
 			return null;
 		}
 
-		protected virtual void OnCustomerUnlocked(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType unlockType, bool notify)
+		protected virtual void OnCustomerUnlocked(NPCRelationData.EUnlockType unlockType, bool notify)
 		{
 		}
 
@@ -307,34 +312,34 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public virtual void OfferContract(global::ScheduleOne.Quests.ContractInfo info)
+		public virtual void OfferContract(ContractInfo info)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void SetOfferedContract(global::ScheduleOne.Quests.ContractInfo info, global::ScheduleOne.GameTime.GameDateTime offerTime)
+		[ObserversRpc]
+		private void SetOfferedContract(ContractInfo info, GameDateTime offerTime)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public virtual void ExpireOffer()
 		{
 		}
 
-		public virtual void AssignContract(global::ScheduleOne.Quests.Contract contract)
+		public virtual void AssignContract(Contract contract)
 		{
 		}
 
-		protected virtual void NotifyPlayerOfContract(global::ScheduleOne.Quests.ContractInfo contract, global::ScheduleOne.UI.Phone.Messages.MessageChain offerMessage, bool canAccept, bool canReject, bool canCounterOffer = true)
+		protected virtual void NotifyPlayerOfContract(ContractInfo contract, MessageChain offerMessage, bool canAccept, bool canReject, bool canCounterOffer = true)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendSetUpResponseCallbacks()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetUpResponseCallbacks()
 		{
 		}
@@ -347,35 +352,35 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void SendCounteroffer(global::ScheduleOne.Product.ProductDefinition product, int quantity, float price)
+		protected virtual void SendCounteroffer(ProductDefinition product, int quantity, float price)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void ProcessCounterOfferServerSide(string productID, int quantity, float price)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetContractIsCounterOffer()
 		{
 		}
 
-		protected virtual void PlayerAcceptedContract(global::ScheduleOne.Economy.EDealWindow window)
+		protected virtual void PlayerAcceptedContract(EDealWindow window)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendContractAccepted(global::ScheduleOne.Economy.EDealWindow window, bool trackContract)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendContractAccepted(EDealWindow window, bool trackContract)
 		{
 		}
 
-		public virtual string ContractAccepted(global::ScheduleOne.Economy.EDealWindow window, bool trackContract)
+		public virtual string ContractAccepted(EDealWindow window, bool trackContract)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ReceiveContractAccepted()
 		{
 		}
@@ -384,12 +389,12 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual bool EvaluateCounteroffer(global::ScheduleOne.Product.ProductDefinition product, int quantity, float price)
+		protected virtual bool EvaluateCounteroffer(ProductDefinition product, int quantity, float price)
 		{
 			return false;
 		}
 
-		public static float GetValueProposition(global::ScheduleOne.Product.ProductDefinition product, float price)
+		public static float GetValueProposition(ProductDefinition product, float price)
 		{
 			return 0f;
 		}
@@ -398,7 +403,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ReceiveContractRejected()
 		{
 		}
@@ -429,7 +434,7 @@ namespace ScheduleOne.Economy
 			return false;
 		}
 
-		public virtual void OfferDealItems(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool offeredByPlayer, out bool accepted)
+		public virtual void OfferDealItems(List<ItemInstance> items, bool offeredByPlayer, out bool accepted)
 		{
 			accepted = default(bool);
 		}
@@ -438,16 +443,16 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public virtual void ProcessHandover(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::ScheduleOne.Quests.Contract contract, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, bool giveBonuses = true)
+		public virtual void ProcessHandover(HandoverScreen.EHandoverOutcome outcome, Contract contract, List<ItemInstance> items, bool handoverByPlayer, bool giveBonuses = true)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void ProcessHandoverServerSide(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		[ServerRpc(RequireOwnership = false)]
+		private void ProcessHandoverServerSide(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, bool handoverByPlayer, float totalPayment, ProductList productList, float satisfaction, NetworkObject dealer)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ProcessHandoverClient(float satisfaction, bool handoverByPlayer, string npcToRecommend)
 		{
 		}
@@ -456,36 +461,36 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RecommendDealer(global::ScheduleOne.Economy.Dealer dealer)
+		private void RecommendDealer(Dealer dealer)
 		{
 		}
 
-		private void RecommendSupplier(global::ScheduleOne.Economy.Supplier supplier)
+		private void RecommendSupplier(Supplier supplier)
 		{
 		}
 
-		private void RecommendCustomer(global::ScheduleOne.Economy.Customer friend)
+		private void RecommendCustomer(Customer friend)
 		{
 		}
 
-		public virtual void CurrentContractEnded(global::ScheduleOne.Quests.EQuestState outcome)
+		public virtual void CurrentContractEnded(EQuestState outcome)
 		{
 		}
 
-		public virtual float EvaluateDelivery(global::ScheduleOne.Quests.Contract contract, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> providedItems, out float highestAddiction, out global::ScheduleOne.Product.EDrugType mainTypeType, out int matchedProductCount)
+		public virtual float EvaluateDelivery(Contract contract, List<ItemInstance> providedItems, out float highestAddiction, out EDrugType mainTypeType, out int matchedProductCount)
 		{
 			highestAddiction = default(float);
-			mainTypeType = default(global::ScheduleOne.Product.EDrugType);
+			mainTypeType = default(EDrugType);
 			matchedProductCount = default(int);
 			return 0f;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void ChangeAddiction(float change)
 		{
 		}
 
-		private void ConsumeProduct(global::ScheduleOne.ItemFramework.ItemInstance item)
+		private void ConsumeProduct(ItemInstance item)
 		{
 		}
 
@@ -504,7 +509,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public float GetOfferSuccessChance(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, float askingPrice)
+		public float GetOfferSuccessChance(List<ItemInstance> items, float askingPrice)
 		{
 			return 0f;
 		}
@@ -514,12 +519,12 @@ namespace ScheduleOne.Economy
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RequestProduct()
 		{
 		}
 
-		public void RequestProduct(global::ScheduleOne.PlayerScripts.Player target)
+		public void RequestProduct(Player target)
 		{
 		}
 
@@ -527,17 +532,17 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void RejectProductRequestOffer()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void RejectProductRequestOffer_Local()
 		{
 		}
 
-		public void AssignDealer(global::ScheduleOne.Economy.Dealer dealer)
+		public void AssignDealer(Dealer dealer)
 		{
 		}
 
@@ -546,22 +551,22 @@ namespace ScheduleOne.Economy
 			return null;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.CustomerData GetCustomerData()
+		public ScheduleOne.Persistence.Datas.CustomerData GetCustomerData()
 		{
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveCustomerData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.CustomerData data)
+		[TargetRpc]
+		private void ReceiveCustomerData(NetworkConnection conn, ScheduleOne.Persistence.Datas.CustomerData data)
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.CustomerData data)
+		public virtual void Load(ScheduleOne.Persistence.Datas.CustomerData data)
 		{
 		}
 
@@ -614,21 +619,21 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private float GetSampleSuccess(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, float price)
+		private float GetSampleSuccess(List<ItemInstance> items, float price)
 		{
 			return 0f;
 		}
 
-		private void ProcessSample(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, float price)
+		private void ProcessSample(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, float price)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void ProcessSampleServerSide(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void ProcessSampleServerSide(List<ItemInstance> items)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ProcessSampleClient()
 		{
 		}
@@ -645,32 +650,32 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void SampleWasSufficient()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void SampleWasInsufficient()
 		{
 		}
 
-		public float GetProductEnjoyment(global::ScheduleOne.Product.ProductDefinition product, global::ScheduleOne.ItemFramework.EQuality quality)
+		public float GetProductEnjoyment(ProductDefinition product, EQuality quality)
 		{
 			return 0f;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> GetOrderedDrugTypes()
+		public List<EDrugType> GetOrderedDrugTypes()
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void AdjustAffinity(global::ScheduleOne.Product.EDrugType drugType, float change)
+		[ServerRpc(RequireOwnership = false)]
+		public void AdjustAffinity(EDrugType drugType, float change)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void AutocreateCustomerSettings()
 		{
 		}
@@ -687,35 +692,35 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcWriter___Observers_ConfigureDealSignal_338960014(global::FishNet.Connection.NetworkConnection conn, int startTime, bool active)
+		private void RpcWriter___Observers_ConfigureDealSignal_338960014(NetworkConnection conn, int startTime, bool active)
 		{
 		}
 
-		private void RpcLogic___ConfigureDealSignal_338960014(global::FishNet.Connection.NetworkConnection conn, int startTime, bool active)
+		private void RpcLogic___ConfigureDealSignal_338960014(NetworkConnection conn, int startTime, bool active)
 		{
 		}
 
-		private void RpcReader___Observers_ConfigureDealSignal_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ConfigureDealSignal_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ConfigureDealSignal_338960014(global::FishNet.Connection.NetworkConnection conn, int startTime, bool active)
+		private void RpcWriter___Target_ConfigureDealSignal_338960014(NetworkConnection conn, int startTime, bool active)
 		{
 		}
 
-		private void RpcReader___Target_ConfigureDealSignal_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ConfigureDealSignal_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetOfferedContract_4277245194(global::ScheduleOne.Quests.ContractInfo info, global::ScheduleOne.GameTime.GameDateTime offerTime)
+		private void RpcWriter___Observers_SetOfferedContract_4277245194(ContractInfo info, GameDateTime offerTime)
 		{
 		}
 
-		private void RpcLogic___SetOfferedContract_4277245194(global::ScheduleOne.Quests.ContractInfo info, global::ScheduleOne.GameTime.GameDateTime offerTime)
+		private void RpcLogic___SetOfferedContract_4277245194(ContractInfo info, GameDateTime offerTime)
 		{
 		}
 
-		private void RpcReader___Observers_SetOfferedContract_4277245194(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetOfferedContract_4277245194(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -727,7 +732,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_ExpireOffer_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ExpireOffer_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -739,7 +744,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_SendSetUpResponseCallbacks_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendSetUpResponseCallbacks_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -751,7 +756,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_SetUpResponseCallbacks_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetUpResponseCallbacks_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -763,7 +768,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_ProcessCounterOfferServerSide_900355577(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ProcessCounterOfferServerSide_900355577(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -775,19 +780,19 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_SetContractIsCounterOffer_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetContractIsCounterOffer_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendContractAccepted_507093020(global::ScheduleOne.Economy.EDealWindow window, bool trackContract)
+		private void RpcWriter___Server_SendContractAccepted_507093020(EDealWindow window, bool trackContract)
 		{
 		}
 
-		private void RpcLogic___SendContractAccepted_507093020(global::ScheduleOne.Economy.EDealWindow window, bool trackContract)
+		private void RpcLogic___SendContractAccepted_507093020(EDealWindow window, bool trackContract)
 		{
 		}
 
-		private void RpcReader___Server_SendContractAccepted_507093020(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendContractAccepted_507093020(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -799,7 +804,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveContractAccepted_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveContractAccepted_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -811,19 +816,19 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveContractRejected_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveContractRejected_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		private void RpcWriter___Server_ProcessHandoverServerSide_3760244802(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, bool handoverByPlayer, float totalPayment, ProductList productList, float satisfaction, NetworkObject dealer)
 		{
 		}
 
-		private void RpcLogic___ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		private void RpcLogic___ProcessHandoverServerSide_3760244802(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, bool handoverByPlayer, float totalPayment, ProductList productList, float satisfaction, NetworkObject dealer)
 		{
 		}
 
-		private void RpcReader___Server_ProcessHandoverServerSide_3760244802(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ProcessHandoverServerSide_3760244802(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -835,7 +840,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_ProcessHandoverClient_537707335(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ProcessHandoverClient_537707335(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -847,7 +852,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_ChangeAddiction_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ChangeAddiction_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -859,7 +864,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_RejectProductRequestOffer_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RejectProductRequestOffer_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -871,31 +876,31 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_RejectProductRequestOffer_Local_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_RejectProductRequestOffer_Local_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveCustomerData_2280244125(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.CustomerData data)
+		private void RpcWriter___Target_ReceiveCustomerData_2280244125(NetworkConnection conn, ScheduleOne.Persistence.Datas.CustomerData data)
 		{
 		}
 
-		private void RpcLogic___ReceiveCustomerData_2280244125(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.CustomerData data)
+		private void RpcLogic___ReceiveCustomerData_2280244125(NetworkConnection conn, ScheduleOne.Persistence.Datas.CustomerData data)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveCustomerData_2280244125(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveCustomerData_2280244125(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_ProcessSampleServerSide_3704012609(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
+		private void RpcWriter___Server_ProcessSampleServerSide_3704012609(List<ItemInstance> items)
 		{
 		}
 
-		private void RpcLogic___ProcessSampleServerSide_3704012609(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
+		private void RpcLogic___ProcessSampleServerSide_3704012609(List<ItemInstance> items)
 		{
 		}
 
-		private void RpcReader___Server_ProcessSampleServerSide_3704012609(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ProcessSampleServerSide_3704012609(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -907,7 +912,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_ProcessSampleClient_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ProcessSampleClient_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -919,7 +924,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_SampleWasSufficient_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SampleWasSufficient_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -931,23 +936,23 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_SampleWasInsufficient_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SampleWasInsufficient_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_AdjustAffinity_3036964899(global::ScheduleOne.Product.EDrugType drugType, float change)
+		private void RpcWriter___Server_AdjustAffinity_3036964899(EDrugType drugType, float change)
 		{
 		}
 
-		public void RpcLogic___AdjustAffinity_3036964899(global::ScheduleOne.Product.EDrugType drugType, float change)
+		public void RpcLogic___AdjustAffinity_3036964899(EDrugType drugType, float change)
 		{
 		}
 
-		private void RpcReader___Server_AdjustAffinity_3036964899(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_AdjustAffinity_3036964899(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEconomy_002ECustomer(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEconomy_002ECustomer(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

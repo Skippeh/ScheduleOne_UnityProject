@@ -1,14 +1,16 @@
-public class SwooshTest : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class SwooshTest : MonoBehaviour
 {
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.AnimationClip _animation;
+	[SerializeField]
+	private AnimationClip _animation;
 
-	private global::UnityEngine.AnimationState _animationState;
+	private AnimationState _animationState;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private int _start;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private int _end;
 
 	private float _startN;
@@ -21,7 +23,7 @@ public class SwooshTest : global::UnityEngine.MonoBehaviour
 
 	private float _prevAnimTime;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private MeleeWeaponTrail _trail;
 
 	private bool _firstFrame;

@@ -1,77 +1,89 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.AvatarFramework;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Quests;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+
 namespace ScheduleOne.Employees
 {
-	public class EmployeeManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Employees.EmployeeManager>
+	public class EmployeeManager : NetworkSingleton<EmployeeManager>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class EmployeeAppearance
 		{
-			public global::ScheduleOne.AvatarFramework.AvatarSettings Settings;
+			public AvatarSettings Settings;
 
-			public global::UnityEngine.Sprite Mugshot;
+			public Sprite Mugshot;
 		}
 
 		public const float MALE_EMPLOYEE_CHANCE = 0.67f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> AllEmployees;
+		public List<Employee> AllEmployees;
 
-		public global::ScheduleOne.Quests.Quest_Employees[] EmployeeQuests;
+		public Quest_Employees[] EmployeeQuests;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.Employees.Botanist BotanistPrefab;
+		[Header("Prefabs")]
+		public Botanist BotanistPrefab;
 
-		public global::ScheduleOne.Employees.Packager PackagerPrefab;
+		public Packager PackagerPrefab;
 
-		public global::ScheduleOne.Employees.Chemist ChemistPrefab;
+		public Chemist ChemistPrefab;
 
-		public global::ScheduleOne.Employees.Cleaner CleanerPrefab;
+		public Cleaner CleanerPrefab;
 
-		[global::UnityEngine.Header("Appearances")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Employees.EmployeeManager.EmployeeAppearance> MaleAppearances;
+		[Header("Appearances")]
+		public List<EmployeeAppearance> MaleAppearances;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Employees.EmployeeManager.EmployeeAppearance> FemaleAppearances;
+		public List<EmployeeAppearance> FemaleAppearances;
 
-		[global::UnityEngine.Header("Voices")]
-		public global::ScheduleOne.VoiceOver.VODatabase[] MaleVoices;
+		[Header("Voices")]
+		public VODatabase[] MaleVoices;
 
-		public global::ScheduleOne.VoiceOver.VODatabase[] FemaleVoices;
+		public VODatabase[] FemaleVoices;
 
-		[global::UnityEngine.Header("Names")]
+		[Header("Names")]
 		public string[] MaleFirstNames;
 
 		public string[] FemaleFirstNames;
 
 		public string[] LastNames;
 
-		private global::System.Collections.Generic.List<string> takenNames;
+		private List<string> takenNames;
 
-		private global::System.Collections.Generic.List<int> takenMaleAppearances;
+		private List<int> takenMaleAppearances;
 
-		private global::System.Collections.Generic.List<int> takenFemaleAppearances;
+		private List<int> takenFemaleAppearances;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEmployees_002EEmployeeManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEmployees_002EEmployeeManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		public void CreateNewEmployee(global::ScheduleOne.Property.Property property, global::ScheduleOne.Employees.EEmployeeType type)
+		public void CreateNewEmployee(ScheduleOne.Property.Property property, EEmployeeType type)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void CreateEmployee(global::ScheduleOne.Property.Property property, global::ScheduleOne.Employees.EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string guid = "")
+		[ServerRpc(RequireOwnership = false)]
+		public void CreateEmployee(ScheduleOne.Property.Property property, EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, Vector3 position, Quaternion rotation, string guid = "")
 		{
 		}
 
-		public global::ScheduleOne.Employees.Employee CreateEmployee_Server(global::ScheduleOne.Property.Property property, global::ScheduleOne.Employees.EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string guid)
+		public Employee CreateEmployee_Server(ScheduleOne.Property.Property property, EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, Vector3 position, Quaternion rotation, string guid)
 		{
 			return null;
 		}
 
-		private bool IsPositionValid(global::UnityEngine.Vector3 position)
+		private bool IsPositionValid(Vector3 position)
 		{
 			return false;
 		}
 
-		private bool IsRotationValid(global::UnityEngine.Quaternion rotation)
+		private bool IsRotationValid(Quaternion rotation)
 		{
 			return false;
 		}
@@ -95,28 +107,28 @@ namespace ScheduleOne.Employees
 			lastName = null;
 		}
 
-		public global::ScheduleOne.Employees.EmployeeManager.EmployeeAppearance GetAppearance(bool male, int index)
+		public EmployeeAppearance GetAppearance(bool male, int index)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.VoiceOver.VODatabase GetVoice(bool male, int index)
+		public VODatabase GetVoice(bool male, int index)
 		{
 			return null;
 		}
 
-		public void GetRandomAppearance(bool male, out int index, out global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void GetRandomAppearance(bool male, out int index, out AvatarSettings settings)
 		{
 			index = default(int);
 			settings = null;
 		}
 
-		public global::ScheduleOne.Employees.Employee GetEmployeePrefab(global::ScheduleOne.Employees.EEmployeeType type)
+		public Employee GetEmployeePrefab(EEmployeeType type)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> GetEmployeesByType(global::ScheduleOne.Employees.EEmployeeType type)
+		public List<Employee> GetEmployeesByType(EEmployeeType type)
 		{
 			return null;
 		}
@@ -133,15 +145,15 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcWriter___Server_CreateEmployee_311954683(global::ScheduleOne.Property.Property property, global::ScheduleOne.Employees.EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string guid = "")
+		private void RpcWriter___Server_CreateEmployee_311954683(ScheduleOne.Property.Property property, EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, Vector3 position, Quaternion rotation, string guid = "")
 		{
 		}
 
-		public void RpcLogic___CreateEmployee_311954683(global::ScheduleOne.Property.Property property, global::ScheduleOne.Employees.EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string guid = "")
+		public void RpcLogic___CreateEmployee_311954683(ScheduleOne.Property.Property property, EEmployeeType type, string firstName, string lastName, string id, bool male, int appearanceIndex, Vector3 position, Quaternion rotation, string guid = "")
 		{
 		}
 
-		private void RpcReader___Server_CreateEmployee_311954683(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateEmployee_311954683(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

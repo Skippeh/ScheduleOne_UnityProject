@@ -1,12 +1,15 @@
+using ScheduleOne.Management.Presets;
+using ScheduleOne.Management.Presets.Options;
+
 namespace ScheduleOne.Management
 {
-	public class PotPresetEditScreen : global::ScheduleOne.Management.PresetEditScreen
+	public class PotPresetEditScreen : PresetEditScreen
 	{
-		public global::ScheduleOne.Management.Presets.Options.GenericOptionUI SeedsUI;
+		public GenericOptionUI SeedsUI;
 
-		public global::ScheduleOne.Management.Presets.Options.GenericOptionUI AdditivesUI;
+		public GenericOptionUI AdditivesUI;
 
-		private global::ScheduleOne.Management.Presets.PotPreset castedPreset;
+		private PotPreset castedPreset;
 
 		protected override void Awake()
 		{
@@ -16,7 +19,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public override void Open(global::ScheduleOne.Management.Presets.Preset preset)
+		public override void Open(Preset preset)
 		{
 		}
 

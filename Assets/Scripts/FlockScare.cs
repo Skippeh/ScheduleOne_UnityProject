@@ -1,4 +1,6 @@
-public class FlockScare : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class FlockScare : MonoBehaviour
 {
 	public LandingSpotController[] landingSpotControllers;
 

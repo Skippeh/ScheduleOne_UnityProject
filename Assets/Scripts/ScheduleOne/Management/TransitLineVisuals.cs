@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
-	public class TransitLineVisuals : global::UnityEngine.MonoBehaviour
+	public class TransitLineVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.LineRenderer Renderer;
+		public LineRenderer Renderer;
 
-		public void SetSourcePosition(global::UnityEngine.Vector3 position)
+		public void SetSourcePosition(Vector3 position)
 		{
 		}
 
-		public void SetDestinationPosition(global::UnityEngine.Vector3 position)
+		public void SetDestinationPosition(Vector3 position)
 		{
 		}
 	}

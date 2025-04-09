@@ -1,18 +1,21 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class PalletZone : global::UnityEngine.MonoBehaviour
+	public class PalletZone : MonoBehaviour
 	{
-		private global::System.Collections.Generic.List<global::ScheduleOne.Storage.Pallet> pallets;
+		private List<Pallet> pallets;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject palletPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject palletPrefab;
 
 		private bool orderReceivedThisFrame;
 
 		public bool isClear => false;
 
-		protected void OnTriggerStay(global::UnityEngine.Collider other)
+		protected void OnTriggerStay(Collider other)
 		{
 		}
 
@@ -24,7 +27,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public global::ScheduleOne.Storage.Pallet GeneratePallet()
+		public Pallet GeneratePallet()
 		{
 			return null;
 		}

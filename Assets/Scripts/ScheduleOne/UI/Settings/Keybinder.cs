@@ -1,8 +1,11 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class Keybinder : global::UnityEngine.MonoBehaviour
+	public class Keybinder : MonoBehaviour
 	{
-		public global::ScheduleOne.DevUtilities.RebindActionUI rebindActionUI;
+		public RebindActionUI rebindActionUI;
 
 		private void Awake()
 		{

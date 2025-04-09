@@ -1,8 +1,10 @@
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Packaging
 {
-	public class PackagingStationMk2 : global::ScheduleOne.ObjectScripts.PackagingStation
+	public class PackagingStationMk2 : PackagingStation
 	{
-		public global::ScheduleOne.Packaging.PackagingTool PackagingTool;
+		public PackagingTool PackagingTool;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPackaging_002EPackagingStationMk2Assembly_002DCSharp_002Edll_Excuted;
 

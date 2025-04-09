@@ -1,4 +1,6 @@
-public class ProductLoader : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class ProductLoader : MonoBehaviour
 {
 	private void Start()
 	{

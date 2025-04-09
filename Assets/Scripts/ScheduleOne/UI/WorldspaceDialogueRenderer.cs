@@ -1,36 +1,39 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class WorldspaceDialogueRenderer : global::UnityEngine.MonoBehaviour
+	public class WorldspaceDialogueRenderer : MonoBehaviour
 	{
 		private const float FadeDist = 2f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MaxRange;
 
 		public float BaseScale;
 
-		public global::UnityEngine.AnimationCurve Scale;
+		public AnimationCurve Scale;
 
-		public global::UnityEngine.Vector2 Padding;
+		public Vector2 Padding;
 
-		public global::UnityEngine.Vector3 WorldSpaceOffset;
+		public Vector3 WorldSpaceOffset;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		public global::UnityEngine.RectTransform Background;
+		public RectTransform Background;
 
-		public global::TMPro.TextMeshProUGUI Text;
+		public TextMeshProUGUI Text;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		private global::UnityEngine.Vector3 localOffset;
+		private Vector3 localOffset;
 
 		private float CurrentOpacity;
 
-		private global::UnityEngine.Coroutine hideCoroutine;
+		private Coroutine hideCoroutine;
 
 		public string ShownText { get; protected set; }
 

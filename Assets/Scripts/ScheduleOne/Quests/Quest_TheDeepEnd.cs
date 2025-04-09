@@ -1,6 +1,12 @@
+using ScheduleOne.Map;
+using ScheduleOne.Misc;
+using ScheduleOne.NPCs.CharacterClasses;
+using ScheduleOne.ScriptableObjects;
+using UnityEngine;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_TheDeepEnd : global::ScheduleOne.Quests.Quest
+	public class Quest_TheDeepEnd : Quest
 	{
 		public const float MEETING_REMINDER_TIME = 36f;
 
@@ -10,17 +16,17 @@ namespace ScheduleOne.Quests
 
 		private bool meetingSetup;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.Thomas Thomas;
+		public Thomas Thomas;
 
-		public global::ScheduleOne.Map.ManorGate Gate;
+		public ManorGate Gate;
 
-		public global::ScheduleOne.Misc.ModularSwitch Switch;
+		public ModularSwitch Switch;
 
-		public global::UnityEngine.Transform MeetingTeleportPoint;
+		public Transform MeetingTeleportPoint;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData PostMeetingCall;
+		public PhoneCallData PostMeetingCall;
 
-		public global::ScheduleOne.Quests.SystemTriggerObject PostMeetingTrigger;
+		public SystemTriggerObject PostMeetingTrigger;
 
 		protected override void Start()
 		{
@@ -50,7 +56,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public override void SetQuestEntryState(int entryIndex, global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public override void SetQuestEntryState(int entryIndex, EQuestState state, bool network = true)
 		{
 		}
 	}

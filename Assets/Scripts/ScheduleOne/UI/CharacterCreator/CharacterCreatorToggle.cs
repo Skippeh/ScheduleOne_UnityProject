@@ -1,11 +1,14 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorToggle : global::ScheduleOne.UI.CharacterCreator.CharacterCreatorField<int>
+	public class CharacterCreatorToggle : CharacterCreatorField<int>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Button Button1;
+		[Header("References")]
+		public Button Button1;
 
-		public global::UnityEngine.UI.Button Button2;
+		public Button Button2;
 
 		protected override void Awake()
 		{

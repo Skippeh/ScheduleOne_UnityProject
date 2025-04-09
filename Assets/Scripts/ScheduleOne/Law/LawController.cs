@@ -1,51 +1,59 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.GameTime;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	public class LawController : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Law.LawController>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class LawController : Singleton<LawController>, IBaseSaveable, ISaveable
 	{
 		public const float DAILY_INTENSITY_DRAIN = 0.05f;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public int LE_Intensity;
 
 		private float internalLawIntensity;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Law.LawActivitySettings MondaySettings;
+		[Header("Settings")]
+		public LawActivitySettings MondaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings TuesdaySettings;
+		public LawActivitySettings TuesdaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings WednesdaySettings;
+		public LawActivitySettings WednesdaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings ThursdaySettings;
+		public LawActivitySettings ThursdaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings FridaySettings;
+		public LawActivitySettings FridaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings SaturdaySettings;
+		public LawActivitySettings SaturdaySettings;
 
-		public global::ScheduleOne.Law.LawActivitySettings SundaySettings;
+		public LawActivitySettings SundaySettings;
 
-		[global::UnityEngine.Header("Demo Settings")]
+		[Header("Demo Settings")]
 		public float IntensityIncreasePerDay;
 
-		private global::ScheduleOne.Persistence.Loaders.LawLoader loader;
+		private LawLoader loader;
 
 		public bool OverrideSettings { get; protected set; }
 
-		public global::ScheduleOne.Law.LawActivitySettings OverriddenSettings { get; protected set; }
+		public LawActivitySettings OverriddenSettings { get; protected set; }
 
-		public global::ScheduleOne.Law.LawActivitySettings CurrentSettings { get; protected set; }
+		public LawActivitySettings CurrentSettings { get; protected set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -81,17 +89,17 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		public global::ScheduleOne.Law.LawActivitySettings GetSettings()
+		public LawActivitySettings GetSettings()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Law.LawActivitySettings GetSettings(global::ScheduleOne.GameTime.EDay day)
+		public LawActivitySettings GetSettings(EDay day)
 		{
 			return null;
 		}
 
-		public void OverrideSetings(global::ScheduleOne.Law.LawActivitySettings settings)
+		public void OverrideSetings(LawActivitySettings settings)
 		{
 		}
 
@@ -112,7 +120,7 @@ namespace ScheduleOne.Law
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.LawData data)
+		public void Load(LawData data)
 		{
 		}
 	}

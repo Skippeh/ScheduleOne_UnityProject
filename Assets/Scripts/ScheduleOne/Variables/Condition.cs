@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Variables
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Condition
 	{
 		public enum EConditionType
@@ -15,7 +17,7 @@ namespace ScheduleOne.Variables
 
 		public string VariableName;
 
-		public global::ScheduleOne.Variables.Condition.EConditionType Operator;
+		public EConditionType Operator;
 
 		public string Value;
 

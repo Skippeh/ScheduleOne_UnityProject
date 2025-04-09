@@ -1,6 +1,9 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class GameplayMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.GameplayMenu>
+	public class GameplayMenu : Singleton<GameplayMenu>
 	{
 		public enum EGameplayScreen
 		{
@@ -16,29 +19,29 @@ namespace ScheduleOne.UI
 
 		public const float SlideTime = 0.12f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Camera OverlayCamera;
+		[Header("References")]
+		public Camera OverlayCamera;
 
-		public global::UnityEngine.Light OverlayLight;
+		public Light OverlayLight;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ContainerOffset_PhoneScreen;
 
-		private global::UnityEngine.Coroutine openCloseRoutine;
+		private Coroutine openCloseRoutine;
 
-		private global::UnityEngine.Coroutine screenChangeRoutine;
+		private Coroutine screenChangeRoutine;
 
 		public bool IsOpen { get; protected set; }
 
 		public bool CharacterScreenEnabled => false;
 
-		public global::ScheduleOne.UI.GameplayMenu.EGameplayScreen CurrentScreen { get; protected set; }
+		public EGameplayScreen CurrentScreen { get; protected set; }
 
 		protected override void Start()
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public void Exit(ExitAction exit)
 		{
 		}
 
@@ -46,7 +49,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void SetScreen(global::ScheduleOne.UI.GameplayMenu.EGameplayScreen screen)
+		public void SetScreen(EGameplayScreen screen)
 		{
 		}
 

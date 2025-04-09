@@ -1,12 +1,16 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts.WateringCan;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemUI_WateringCan : global::ScheduleOne.UI.Items.ItemUI
+	public class ItemUI_WateringCan : ItemUI
 	{
-		protected global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance wcInstance;
+		protected WateringCanInstance wcInstance;
 
-		public global::UnityEngine.UI.Text AmountLabel;
+		public Text AmountLabel;
 
-		public override void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Setup(ItemInstance item)
 		{
 		}
 

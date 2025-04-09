@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class HeavyFlinchBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class HeavyFlinchBehaviour : Behaviour
 	{
 		public const float FLINCH_DURATION = 1.25f;
 

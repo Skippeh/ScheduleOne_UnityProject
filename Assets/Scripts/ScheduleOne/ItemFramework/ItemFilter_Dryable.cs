@@ -1,13 +1,13 @@
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemFilter_Dryable : global::ScheduleOne.ItemFramework.ItemFilter
+	public class ItemFilter_Dryable : ItemFilter
 	{
-		public override bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}
 
-		public static bool IsItemDryable(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public static bool IsItemDryable(ItemInstance instance)
 		{
 			return false;
 		}

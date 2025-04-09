@@ -1,12 +1,14 @@
+using ScheduleOne.Audio;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class AudioSlider : global::ScheduleOne.UI.Settings.SettingsSlider
+	public class AudioSlider : SettingsSlider
 	{
 		public const float MULTIPLIER = 0.01f;
 
 		public bool Master;
 
-		public global::ScheduleOne.Audio.EAudioType AudioType;
+		public EAudioType AudioType;
 
 		protected virtual void Start()
 		{

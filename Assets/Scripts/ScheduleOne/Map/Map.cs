@@ -1,15 +1,19 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Levelling;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class Map : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Map.Map>
+	public class Map : Singleton<Map>
 	{
-		public global::ScheduleOne.Map.MapRegionData[] Regions;
+		public MapRegionData[] Regions;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Map.PoliceStation PoliceStation;
+		[Header("References")]
+		public PoliceStation PoliceStation;
 
-		public global::ScheduleOne.Map.MedicalCentre MedicalCentre;
+		public MedicalCentre MedicalCentre;
 
-		public global::UnityEngine.Transform TreeBounds;
+		public Transform TreeBounds;
 
 		protected override void Awake()
 		{
@@ -23,7 +27,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public global::ScheduleOne.Map.MapRegionData GetRegionData(global::ScheduleOne.Map.EMapRegion region)
+		public MapRegionData GetRegionData(EMapRegion region)
 		{
 			return null;
 		}
@@ -32,7 +36,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		private void OnRankUp(global::ScheduleOne.Levelling.FullRank oldRank, global::ScheduleOne.Levelling.FullRank newRank)
+		private void OnRankUp(FullRank oldRank, FullRank newRank)
 		{
 		}
 	}

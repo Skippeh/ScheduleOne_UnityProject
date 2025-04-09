@@ -1,42 +1,45 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "skyProfile.asset", menuName = "Sky Studio/Sky Profile", order = 0)]
-	public class SkyProfile : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(fileName = "skyProfile.asset", menuName = "Sky Studio/Sky Profile", order = 0)]
+	public class SkyProfile : ScriptableObject
 	{
 		public const string DefaultShaderName = "Funly/Sky Studio/Skybox/3D Standard";
 
 		public const string DefaultLegacyShaderName = "Funly/Sky Studio/Skybox/3D Standard - Global Keywords";
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Material m_SkyboxMaterial;
+		[SerializeField]
+		private Material m_SkyboxMaterial;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private string m_ShaderName;
 
-		public global::Funly.SkyStudio.IProfileDefinition profileDefinition;
+		public IProfileDefinition profileDefinition;
 
-		public global::System.Collections.Generic.List<string> timelineManagedKeys;
+		public List<string> timelineManagedKeys;
 
-		public global::Funly.SkyStudio.KeyframeGroupDictionary keyframeGroups;
+		public KeyframeGroupDictionary keyframeGroups;
 
-		public global::Funly.SkyStudio.BoolDictionary featureStatus;
+		public BoolDictionary featureStatus;
 
-		public global::Funly.SkyStudio.LightningArtSet lightningArtSet;
+		public LightningArtSet lightningArtSet;
 
-		public global::Funly.SkyStudio.RainSplashArtSet rainSplashArtSet;
+		public RainSplashArtSet rainSplashArtSet;
 
-		public global::UnityEngine.Texture2D starLayer1DataTexture;
+		public Texture2D starLayer1DataTexture;
 
-		public global::UnityEngine.Texture2D starLayer2DataTexture;
+		public Texture2D starLayer2DataTexture;
 
-		public global::UnityEngine.Texture2D starLayer3DataTexture;
+		public Texture2D starLayer3DataTexture;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_ProfileVersion;
 
-		private global::System.Collections.Generic.Dictionary<string, global::Funly.SkyStudio.ProfileGroupDefinition> m_KeyToGroupInfo;
+		private Dictionary<string, ProfileGroupDefinition> m_KeyToGroupInfo;
 
-		public global::UnityEngine.Material skyboxMaterial
+		public Material skyboxMaterial
 		{
 			get
 			{
@@ -49,9 +52,9 @@ namespace Funly.SkyStudio
 
 		public string shaderName => null;
 
-		public global::Funly.SkyStudio.ProfileGroupSection[] groupDefinitions => null;
+		public ProfileGroupSection[] groupDefinitions => null;
 
-		public global::Funly.SkyStudio.ProfileFeatureSection[] featureDefinitions => null;
+		public ProfileFeatureSection[] featureDefinitions => null;
 
 		public float GetNumberPropertyValue(string propertyKey)
 		{
@@ -63,32 +66,32 @@ namespace Funly.SkyStudio
 			return 0f;
 		}
 
-		public global::UnityEngine.Color GetColorPropertyValue(string propertyKey)
+		public Color GetColorPropertyValue(string propertyKey)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		public global::UnityEngine.Color GetColorPropertyValue(string propertyKey, float timeOfDay)
+		public Color GetColorPropertyValue(string propertyKey, float timeOfDay)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
-		public global::UnityEngine.Texture GetTexturePropertyValue(string propertyKey)
-		{
-			return null;
-		}
-
-		public global::UnityEngine.Texture GetTexturePropertyValue(string propertyKey, float timeOfDay)
+		public Texture GetTexturePropertyValue(string propertyKey)
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.SpherePoint GetSpherePointPropertyValue(string propertyKey)
+		public Texture GetTexturePropertyValue(string propertyKey, float timeOfDay)
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.SpherePoint GetSpherePointPropertyValue(string propertyKey, float timeOfDay)
+		public SpherePoint GetSpherePointPropertyValue(string propertyKey)
+		{
+			return null;
+		}
+
+		public SpherePoint GetSpherePointPropertyValue(string propertyKey, float timeOfDay)
 		{
 			return null;
 		}
@@ -115,7 +118,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private global::Funly.SkyStudio.IProfileDefinition GetShaderInfoForMaterial(string shaderName)
+		private IProfileDefinition GetShaderInfoForMaterial(string shaderName)
 		{
 			return null;
 		}
@@ -128,12 +131,12 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public global::System.Collections.Generic.Dictionary<string, global::Funly.SkyStudio.ProfileGroupDefinition> GroupDefinitionDictionary()
+		public Dictionary<string, ProfileGroupDefinition> GroupDefinitionDictionary()
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.ProfileGroupSection[] ProfileDefinitionTable()
+		public ProfileGroupSection[] ProfileDefinitionTable()
 		{
 			return null;
 		}
@@ -142,15 +145,15 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private void AddColorGroup(string propKey, string groupName, global::UnityEngine.Color color)
+		private void AddColorGroup(string propKey, string groupName, Color color)
 		{
 		}
 
-		private void AddTextureGroup(string propKey, string groupName, global::UnityEngine.Texture2D texture)
+		private void AddTextureGroup(string propKey, string groupName, Texture2D texture)
 		{
 		}
 
-		private void AddSpherePointGroup(string propKey, string groupName, global::Funly.SkyStudio.SpherePoint point)
+		private void AddSpherePointGroup(string propKey, string groupName, SpherePoint point)
 		{
 		}
 
@@ -163,22 +166,22 @@ namespace Funly.SkyStudio
 			return null;
 		}
 
-		public global::Funly.SkyStudio.IKeyframeGroup GetGroup(string propertyKey)
+		public IKeyframeGroup GetGroup(string propertyKey)
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.IKeyframeGroup GetGroupWithId(string groupId)
+		public IKeyframeGroup GetGroupWithId(string groupId)
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.ProfileGroupSection[] GetProfileDefinitions()
+		public ProfileGroupSection[] GetProfileDefinitions()
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.ProfileGroupSection GetSectionInfo(string sectionKey)
+		public ProfileGroupSection GetSectionInfo(string sectionKey)
 		{
 			return null;
 		}
@@ -192,17 +195,17 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::Funly.SkyStudio.ProfileGroupDefinition> GetGroupDefinitionsManagedByTimeline()
+		public List<ProfileGroupDefinition> GetGroupDefinitionsManagedByTimeline()
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::Funly.SkyStudio.ProfileGroupDefinition> GetGroupDefinitionsNotManagedByTimeline()
+		public List<ProfileGroupDefinition> GetGroupDefinitionsNotManagedByTimeline()
 		{
 			return null;
 		}
 
-		public global::Funly.SkyStudio.ProfileGroupDefinition GetGroupDefinitionForKey(string propertyKey)
+		public ProfileGroupDefinition GetGroupDefinitionForKey(string propertyKey)
 		{
 			return null;
 		}
@@ -215,7 +218,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public bool CanGroupBeOnTimeline(global::Funly.SkyStudio.ProfileGroupDefinition definition)
+		public bool CanGroupBeOnTimeline(ProfileGroupDefinition definition)
 		{
 			return false;
 		}

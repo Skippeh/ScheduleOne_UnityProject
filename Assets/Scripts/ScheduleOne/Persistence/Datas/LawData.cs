@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Datas
 {
-	public class LawData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class LawData : SaveData
 	{
 		public float InternalLawIntensity;
 

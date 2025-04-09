@@ -4,10 +4,10 @@ namespace Funly.SkyStudio
 	{
 		string shaderName { get; }
 
-		global::Funly.SkyStudio.ProfileFeatureSection[] features { get; }
+		ProfileFeatureSection[] features { get; }
 
-		global::Funly.SkyStudio.ProfileGroupSection[] groups { get; }
+		ProfileGroupSection[] groups { get; }
 
-		global::Funly.SkyStudio.ProfileFeatureDefinition GetFeatureDefinition(string featureKey);
+		ProfileFeatureDefinition GetFeatureDefinition(string featureKey);
 	}
 }

@@ -1,12 +1,16 @@
+using ScheduleOne.ItemFramework;
+using TMPro;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class QualityItemInfoContent : global::ScheduleOne.UI.Items.ItemInfoContent
+	public class QualityItemInfoContent : ItemInfoContent
 	{
-		public global::UnityEngine.UI.Image Star;
+		public Image Star;
 
-		public global::TMPro.TextMeshProUGUI QualityLabel;
+		public TextMeshProUGUI QualityLabel;
 
-		public override void Initialize(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override void Initialize(ItemInstance instance)
 		{
 		}
 	}

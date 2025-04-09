@@ -1,8 +1,13 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Dialogue;
+using ScheduleOne.Map;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Jeremy : global::ScheduleOne.NPCs.NPC
+	public class Jeremy : NPC
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class DealershipListing
 		{
 			public string vehicleCode;
@@ -12,11 +17,11 @@ namespace ScheduleOne.NPCs.CharacterClasses
 			public float price => 0f;
 		}
 
-		public global::ScheduleOne.Map.Dealership Dealership;
+		public Dealership Dealership;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.CharacterClasses.Jeremy.DealershipListing> Listings;
+		public List<DealershipListing> Listings;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 

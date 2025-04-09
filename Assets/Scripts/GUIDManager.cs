@@ -1,33 +1,37 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne;
+
 public static class GUIDManager
 {
-	private static global::System.Collections.Generic.List<global::System.Guid> registeredGUIDs;
+	private static List<Guid> registeredGUIDs;
 
-	private static global::System.Collections.Generic.Dictionary<global::System.Guid, object> guidToObject;
+	private static Dictionary<Guid, object> guidToObject;
 
-	public static void RegisterObject(global::ScheduleOne.IGUIDRegisterable obj)
+	public static void RegisterObject(IGUIDRegisterable obj)
 	{
 	}
 
-	public static void DeregisterObject(global::ScheduleOne.IGUIDRegisterable obj)
+	public static void DeregisterObject(IGUIDRegisterable obj)
 	{
 	}
 
-	public static T GetObject<T>(global::System.Guid guid)
+	public static T GetObject<T>(Guid guid)
 	{
 		return default(T);
 	}
 
-	public static global::System.Type GetObjectType(global::System.Guid guid)
+	public static Type GetObjectType(Guid guid)
 	{
 		return null;
 	}
 
-	public static global::System.Guid GenerateUniqueGUID()
+	public static Guid GenerateUniqueGUID()
 	{
-		return default(global::System.Guid);
+		return default(Guid);
 	}
 
-	public static bool IsGUIDAlreadyRegistered(global::System.Guid guid)
+	public static bool IsGUIDAlreadyRegistered(Guid guid)
 	{
 		return false;
 	}

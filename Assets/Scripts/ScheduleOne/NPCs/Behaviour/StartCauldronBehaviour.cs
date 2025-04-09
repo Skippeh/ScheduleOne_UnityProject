@@ -1,16 +1,22 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class StartCauldronBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class StartCauldronBehaviour : Behaviour
 	{
 		public const float START_CAULDRON_TIME = 15f;
 
-		private global::UnityEngine.Coroutine workRoutine;
+		private Coroutine workRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EStartCauldronBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EStartCauldronBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.Cauldron Station { get; protected set; }
+		public Cauldron Station { get; protected set; }
 
 		public bool WorkInProgress { get; protected set; }
 
@@ -42,7 +48,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void AssignStation(global::ScheduleOne.ObjectScripts.Cauldron station)
+		public void AssignStation(Cauldron station)
 		{
 		}
 
@@ -55,7 +61,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void BeginCauldron()
 		{
 		}
@@ -64,7 +70,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public bool IsStationReady(global::ScheduleOne.ObjectScripts.Cauldron station)
+		public bool IsStationReady(Cauldron station)
 		{
 			return false;
 		}
@@ -89,7 +95,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_BeginCauldron_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginCauldron_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

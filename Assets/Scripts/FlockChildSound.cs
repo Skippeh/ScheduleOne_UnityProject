@@ -1,17 +1,20 @@
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.AudioSource))]
-public class FlockChildSound : global::UnityEngine.MonoBehaviour
-{
-	public global::ScheduleOne.Audio.AudioSourceController controller;
+using ScheduleOne.Audio;
+using UnityEngine;
 
-	public global::UnityEngine.AudioClip[] _idleSounds;
+[RequireComponent(typeof(AudioSource))]
+public class FlockChildSound : MonoBehaviour
+{
+	public AudioSourceController controller;
+
+	public AudioClip[] _idleSounds;
 
 	public float _idleSoundRandomChance;
 
-	public global::UnityEngine.AudioClip[] _flightSounds;
+	public AudioClip[] _flightSounds;
 
 	public float _flightSoundRandomChance;
 
-	public global::UnityEngine.AudioClip[] _scareSounds;
+	public AudioClip[] _scareSounds;
 
 	public float _pitchMin;
 
@@ -23,7 +26,7 @@ public class FlockChildSound : global::UnityEngine.MonoBehaviour
 
 	private FlockChild _flockChild;
 
-	private global::UnityEngine.AudioSource _audio;
+	private AudioSource _audio;
 
 	private bool _hasLanded;
 

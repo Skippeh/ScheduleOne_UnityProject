@@ -2,7 +2,7 @@ namespace ScheduleOne.Management
 {
 	public static class ConfigurableType
 	{
-		public static string GetTypeName(global::ScheduleOne.Management.EConfigurableType type)
+		public static string GetTypeName(EConfigurableType type)
 		{
 			return null;
 		}

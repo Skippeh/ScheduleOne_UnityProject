@@ -1,8 +1,15 @@
+using System;
+using EasyButtons;
+using ScheduleOne.Interaction;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dragging
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Interaction.InteractableObject))]
-	public class Draggable : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	[RequireComponent(typeof(Rigidbody))]
+	[RequireComponent(typeof(InteractableObject))]
+	public class Draggable : MonoBehaviour, IGUIDRegisterable
 	{
 		public enum EInitialReplicationMode
 		{
@@ -17,46 +24,46 @@ namespace ScheduleOne.Dragging
 
 		public const float MAX_TARGET_OFFSET = 1.5f;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rigidbody Rigidbody;
+		[Header("References")]
+		public Rigidbody Rigidbody;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform DragOrigin;
+		public Transform DragOrigin;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool CreateCoM;
 
-		[global::UnityEngine.Range(0.5f, 2f)]
+		[Range(0.5f, 2f)]
 		public float HoldDistanceMultiplier;
 
-		[global::UnityEngine.Range(0f, 5f)]
+		[Range(0f, 5f)]
 		public float DragForceMultiplier;
 
-		public global::ScheduleOne.Dragging.Draggable.EInitialReplicationMode InitialReplicationMode;
+		public EInitialReplicationMode InitialReplicationMode;
 
 		private float timeSinceLastDrag;
 
-		public global::UnityEngine.Events.UnityEvent onDragStart;
+		public UnityEvent onDragStart;
 
-		public global::UnityEngine.Events.UnityEvent onDragEnd;
+		public UnityEvent onDragEnd;
 
-		public global::UnityEngine.Events.UnityEvent onHovered;
+		public UnityEvent onHovered;
 
-		public global::UnityEngine.Events.UnityEvent onInteracted;
+		public UnityEvent onInteracted;
 
 		public bool IsBeingDragged => false;
 
-		public global::ScheduleOne.PlayerScripts.Player CurrentDragger { get; protected set; }
+		public Player CurrentDragger { get; protected set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		public global::UnityEngine.Vector3 initialPosition { get; private set; }
+		public Vector3 initialPosition { get; private set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -69,7 +76,7 @@ namespace ScheduleOne.Dragging
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -85,7 +92,7 @@ namespace ScheduleOne.Dragging
 		{
 		}
 
-		public void ApplyDragForces(global::UnityEngine.Vector3 targetPosition)
+		public void ApplyDragForces(Vector3 targetPosition)
 		{
 		}
 
@@ -102,7 +109,7 @@ namespace ScheduleOne.Dragging
 			return false;
 		}
 
-		public void StartDragging(global::ScheduleOne.PlayerScripts.Player dragger)
+		public void StartDragging(Player dragger)
 		{
 		}
 

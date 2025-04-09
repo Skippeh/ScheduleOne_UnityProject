@@ -1,27 +1,31 @@
+using System;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class Grave : global::UnityEngine.MonoBehaviour
+	public class Grave : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class GraveSuface
 		{
-			public global::UnityEngine.GameObject Object;
+			public GameObject Object;
 
-			public global::UnityEngine.MeshRenderer Mesh;
+			public MeshRenderer Mesh;
 
-			public global::UnityEngine.Material[] Materials;
+			public Material[] Materials;
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Map.Grave.GraveSuface[] Surfaces;
+		[Header("References")]
+		public GraveSuface[] Surfaces;
 
-		public global::UnityEngine.GameObject[] HeadstoneObjects;
+		public GameObject[] HeadstoneObjects;
 
-		public global::UnityEngine.MeshRenderer[] HeadstoneMeshes;
+		public MeshRenderer[] HeadstoneMeshes;
 
-		public global::UnityEngine.Material[] HeadstoneMaterials;
+		public Material[] HeadstoneMaterials;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RandomizeGrave()
 		{
 		}

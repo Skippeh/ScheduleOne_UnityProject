@@ -1,45 +1,53 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class CashCounter : global::UnityEngine.MonoBehaviour
+	public class CashCounter : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpNote_003Ed__10 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CLerpNote_003Ed__10 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.ObjectScripts.CashCounter _003C_003E4__this;
+			public CashCounter _003C_003E4__this;
 
-			public global::UnityEngine.Transform note;
+			public Transform note;
 
 			private float _003Ci_003E5__2;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CLerpNote_003Ed__10(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -48,14 +56,14 @@ namespace ScheduleOne.ObjectScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -64,18 +72,18 @@ namespace ScheduleOne.ObjectScripts
 
 		public bool IsOn;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject UpperNotes;
+		[Header("References")]
+		public GameObject UpperNotes;
 
-		public global::UnityEngine.GameObject LowerNotes;
+		public GameObject LowerNotes;
 
-		public global::UnityEngine.Transform NoteStartPoint;
+		public Transform NoteStartPoint;
 
-		public global::UnityEngine.Transform NoteEndPoint;
+		public Transform NoteEndPoint;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> MovingNotes;
+		public List<Transform> MovingNotes;
 
-		public global::ScheduleOne.Audio.AudioSourceController Audio;
+		public AudioSourceController Audio;
 
 		private bool lerping;
 
@@ -83,8 +91,8 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.ObjectScripts.CashCounter._003CLerpNote_003Ed__10))]
-		private global::System.Collections.IEnumerator LerpNote(global::UnityEngine.Transform note)
+		[IteratorStateMachine(typeof(_003CLerpNote_003Ed__10))]
+		private IEnumerator LerpNote(Transform note)
 		{
 			return null;
 		}

@@ -1,45 +1,55 @@
+using System.Collections.Generic;
+using EPOOutline;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Construction.Features;
+using ScheduleOne.EntityFramework;
+using UnityEngine;
+
 namespace ScheduleOne.ConstructableScripts
 {
-	public class Constructable : global::FishNet.Object.NetworkBehaviour
+	public class Constructable : NetworkBehaviour
 	{
-		[global::UnityEngine.Header("Basic settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Basic settings")]
+		[SerializeField]
 		protected bool isStatic;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string constructableName;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string constructableDescription;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string constructableAssetPath;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string ID;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Sprite constructableIcon;
+		[SerializeField]
+		protected Sprite constructableIcon;
 
-		[global::UnityEngine.Header("Bounds settings")]
-		public global::UnityEngine.BoxCollider boundingBox;
+		[Header("Bounds settings")]
+		public BoxCollider boundingBox;
 
-		[global::UnityEngine.Header("Construction Handler")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject constructionHandler_Asset;
+		[Header("Construction Handler")]
+		[SerializeField]
+		protected GameObject constructionHandler_Asset;
 
-		[global::UnityEngine.Header("Outline settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> outlineRenderers;
+		[Header("Outline settings")]
+		[SerializeField]
+		protected List<GameObject> outlineRenderers;
 
-		protected global::EPOOutline.Outlinable outlineEffect;
+		protected Outlinable outlineEffect;
 
-		[global::UnityEngine.Header("Features")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Construction.Features.Feature> features;
+		[Header("Features")]
+		public List<Feature> features;
 
 		private bool isDestroyed;
 
-		private global::System.Collections.Generic.Dictionary<global::UnityEngine.Transform, global::UnityEngine.LayerMask> originalLayers;
+		private Dictionary<Transform, LayerMask> originalLayers;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstructableScripts_002EConstructableAssembly_002DCSharp_002Edll_Excuted;
 
@@ -55,9 +65,9 @@ namespace ScheduleOne.ConstructableScripts
 
 		public string PrefabID => null;
 
-		public global::UnityEngine.Sprite ConstructableIcon => null;
+		public Sprite ConstructableIcon => null;
 
-		public global::UnityEngine.GameObject _constructionHandler_Asset => null;
+		public GameObject _constructionHandler_Asset => null;
 
 		public bool isVisible { get; protected set; }
 
@@ -84,12 +94,12 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void Destroy_Networked()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void DestroyConstructableWrapper()
 		{
 		}
@@ -114,7 +124,7 @@ namespace ScheduleOne.ConstructableScripts
 			return null;
 		}
 
-		public void ShowOutline(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor color)
+		public void ShowOutline(BuildableItem.EOutlineColor color)
 		{
 		}
 
@@ -122,9 +132,9 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public virtual global::UnityEngine.Vector3 GetCosmeticCenter()
+		public virtual Vector3 GetCosmeticCenter()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public float GetBoundingBoxLongestSide()
@@ -140,7 +150,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public void SetLayerRecursively(global::UnityEngine.GameObject go, int layerNumber)
+		public void SetLayerRecursively(GameObject go, int layerNumber)
 		{
 		}
 
@@ -164,7 +174,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		private void RpcReader___Server_Destroy_Networked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_Destroy_Networked_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -176,7 +186,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		private void RpcReader___Observers_DestroyConstructableWrapper_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_DestroyConstructableWrapper_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

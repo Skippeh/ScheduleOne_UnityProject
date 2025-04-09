@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DriveFlags
 	{
 		public enum EObstacleMode
@@ -24,7 +26,7 @@ namespace ScheduleOne.Vehicles.AI
 
 		public bool StuckDetection;
 
-		public global::ScheduleOne.Vehicles.AI.DriveFlags.EObstacleMode ObstacleMode;
+		public EObstacleMode ObstacleMode;
 
 		public bool AutoBrakeAtDestination;
 

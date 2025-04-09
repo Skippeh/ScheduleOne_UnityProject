@@ -1,41 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class OceanCollider : global::UnityEngine.MonoBehaviour
+	public class OceanCollider : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CWarpPlayer_003Ed__4 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CWarpPlayer_003Ed__4 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Map.OceanCollider _003C_003E4__this;
+			public OceanCollider _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CWarpPlayer_003Ed__4(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,56 +53,56 @@ namespace ScheduleOne.Map
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CWarpVehicle_003Ed__5 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CWarpVehicle_003Ed__5 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Vehicles.LandVehicle veh;
+			public LandVehicle veh;
 
-			public global::ScheduleOne.Map.OceanCollider _003C_003E4__this;
+			public OceanCollider _003C_003E4__this;
 
 			private bool _003Cfaded_003E5__2;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CWarpVehicle_003Ed__5(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -102,36 +111,36 @@ namespace ScheduleOne.Map
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
 		private bool localPlayerBeingWarped;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> warpedVehicles;
+		private List<LandVehicle> warpedVehicles;
 
-		public global::ScheduleOne.Audio.AudioSourceController SplashSound;
+		public AudioSourceController SplashSound;
 
-		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(Collider other)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Map.OceanCollider._003CWarpPlayer_003Ed__4))]
-		private global::System.Collections.IEnumerator WarpPlayer()
+		[IteratorStateMachine(typeof(_003CWarpPlayer_003Ed__4))]
+		private IEnumerator WarpPlayer()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Map.OceanCollider._003CWarpVehicle_003Ed__5))]
-		private global::System.Collections.IEnumerator WarpVehicle(global::ScheduleOne.Vehicles.LandVehicle veh)
+		[IteratorStateMachine(typeof(_003CWarpVehicle_003Ed__5))]
+		private IEnumerator WarpVehicle(LandVehicle veh)
 		{
 			return null;
 		}

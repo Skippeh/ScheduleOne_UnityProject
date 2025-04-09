@@ -1,17 +1,20 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueModule : global::UnityEngine.MonoBehaviour
+	public class DialogueModule : MonoBehaviour
 	{
-		public global::ScheduleOne.Dialogue.EDialogueModule ModuleType;
+		public EDialogueModule ModuleType;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.Entry> Entries;
+		public List<Entry> Entries;
 
-		public global::ScheduleOne.Dialogue.Entry GetEntry(string key)
+		public Entry GetEntry(string key)
 		{
-			return default(global::ScheduleOne.Dialogue.Entry);
+			return default(Entry);
 		}
 
-		public global::ScheduleOne.Dialogue.DialogueChain GetChain(string key)
+		public DialogueChain GetChain(string key)
 		{
 			return null;
 		}

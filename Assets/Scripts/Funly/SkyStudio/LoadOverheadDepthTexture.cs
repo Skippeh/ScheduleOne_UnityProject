@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.UI.RawImage))]
-	public class LoadOverheadDepthTexture : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(RawImage))]
+	public class LoadOverheadDepthTexture : MonoBehaviour
 	{
-		private global::Funly.SkyStudio.WeatherDepthCamera m_RainCamera;
+		private WeatherDepthCamera m_RainCamera;
 
 		private void Start()
 		{

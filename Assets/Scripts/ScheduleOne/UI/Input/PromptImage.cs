@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.Input
 {
-	public class PromptImage : global::UnityEngine.MonoBehaviour
+	public class PromptImage : MonoBehaviour
 	{
 		public float Width;
 	}

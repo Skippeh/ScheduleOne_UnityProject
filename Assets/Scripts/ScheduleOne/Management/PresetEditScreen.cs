@@ -1,31 +1,39 @@
+using System;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Management.Presets;
+using ScheduleOne.Management.Presets.Options.SetterScreens;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Management
 {
-	public class PresetEditScreen : global::UnityEngine.MonoBehaviour
+	public class PresetEditScreen : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class OptionData
 		{
-			public global::UnityEngine.GameObject OptionEntryPrefab;
+			public GameObject OptionEntryPrefab;
 
-			public global::ScheduleOne.Management.Presets.Options.SetterScreens.OptionSetterScreen OptionSetterScreen;
+			public OptionSetterScreen OptionSetterScreen;
 		}
 
-		public global::ScheduleOne.Management.Presets.Preset EditedPreset;
+		public Preset EditedPreset;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform IconBackgroundRect;
+		[Header("References")]
+		public RectTransform IconBackgroundRect;
 
-		public global::UnityEngine.UI.Image IconBackground;
+		public Image IconBackground;
 
-		public global::UnityEngine.RectTransform InputFieldRect;
+		public RectTransform InputFieldRect;
 
-		public global::TMPro.TMP_InputField InputField;
+		public TMP_InputField InputField;
 
-		public global::UnityEngine.RectTransform EditButtonRect;
+		public RectTransform EditButtonRect;
 
-		public global::UnityEngine.UI.Button ReturnButton;
+		public Button ReturnButton;
 
-		public global::UnityEngine.UI.Button DeleteButton;
+		public Button DeleteButton;
 
 		public bool isOpen => false;
 
@@ -33,11 +41,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
-		public virtual void Open(global::ScheduleOne.Management.Presets.Preset preset)
+		public virtual void Open(Preset preset)
 		{
 		}
 

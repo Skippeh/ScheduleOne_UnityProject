@@ -1,8 +1,11 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Persistence
 {
-	public class LoadEventTransmitter : global::UnityEngine.MonoBehaviour
+	public class LoadEventTransmitter : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent onLoadComplete;
+		public UnityEvent onLoadComplete;
 
 		private void Start()
 		{

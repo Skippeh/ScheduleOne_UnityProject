@@ -1,6 +1,8 @@
-public class LookAtCamera : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class LookAtCamera : MonoBehaviour
 {
-	public global::UnityEngine.Camera lookAtCamera;
+	public Camera lookAtCamera;
 
 	public bool lookOnlyOnAwake;
 

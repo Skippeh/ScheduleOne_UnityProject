@@ -1,29 +1,36 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Management.Presets.Options;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Management.SetterScreens
 {
-	public class ItemSetterScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Management.SetterScreens.ItemSetterScreen>
+	public class ItemSetterScreen : Singleton<ItemSetterScreen>
 	{
 		private class Pair
 		{
 			public string prefabID;
 
-			public global::UnityEngine.RectTransform entry;
+			public RectTransform entry;
 		}
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject ListEntryPrefab;
+		[Header("Prefabs")]
+		public GameObject ListEntryPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform EntryContainer;
+		[Header("References")]
+		public RectTransform EntryContainer;
 
-		public global::TMPro.TextMeshProUGUI TitleLabel;
+		public TextMeshProUGUI TitleLabel;
 
-		private global::UnityEngine.RectTransform allEntry;
+		private RectTransform allEntry;
 
-		private global::UnityEngine.RectTransform noneEntry;
+		private RectTransform noneEntry;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Management.SetterScreens.ItemSetterScreen.Pair> pairs;
+		private List<Pair> pairs;
 
-		public global::ScheduleOne.Management.Presets.Options.ItemList Option { get; private set; }
+		public ItemList Option { get; private set; }
 
 		public bool IsOpen => false;
 
@@ -31,11 +38,11 @@ namespace ScheduleOne.Management.SetterScreens
 		{
 		}
 
-		public virtual void Open(global::ScheduleOne.Management.Presets.Options.ItemList option)
+		public virtual void Open(ItemList option)
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -43,7 +50,7 @@ namespace ScheduleOne.Management.SetterScreens
 		{
 		}
 
-		private global::UnityEngine.RectTransform CreateEntry(global::UnityEngine.Sprite icon, string label, global::System.Action onClick, string prefabID = "", bool createPair = false)
+		private RectTransform CreateEntry(Sprite icon, string label, Action onClick, string prefabID = "", bool createPair = false)
 		{
 			return null;
 		}
@@ -64,7 +71,7 @@ namespace ScheduleOne.Management.SetterScreens
 		{
 		}
 
-		private void SetEntryTicked(global::UnityEngine.RectTransform entry, bool ticked)
+		private void SetEntryTicked(RectTransform entry, bool ticked)
 		{
 		}
 

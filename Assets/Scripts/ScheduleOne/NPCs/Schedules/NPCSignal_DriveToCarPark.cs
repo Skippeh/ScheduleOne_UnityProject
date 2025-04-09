@@ -1,15 +1,20 @@
+using ScheduleOne.Map;
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vehicles.AI;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_DriveToCarPark : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_DriveToCarPark : NPCSignal
 	{
-		public global::ScheduleOne.Map.ParkingLot ParkingLot;
+		public ParkingLot ParkingLot;
 
-		public global::ScheduleOne.Vehicles.LandVehicle Vehicle;
+		public LandVehicle Vehicle;
 
-		[global::UnityEngine.Header("Parking Settings")]
+		[Header("Parking Settings")]
 		public bool OverrideParkingType;
 
-		public global::ScheduleOne.Vehicles.EParkingAlignment ParkingType;
+		public EParkingAlignment ParkingType;
 
 		private bool isAtDestination;
 
@@ -72,16 +77,16 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetWalkDestination()
+		private Vector3 GetWalkDestination()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private void DriveCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult result)
+		private void DriveCallback(VehicleAgent.ENavigationResult result)
 		{
 		}
 
@@ -89,9 +94,9 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private global::ScheduleOne.Vehicles.EParkingAlignment GetParkingType()
+		private EParkingAlignment GetParkingType()
 		{
-			return default(global::ScheduleOne.Vehicles.EParkingAlignment);
+			return default(EParkingAlignment);
 		}
 
 		public override void NetworkInitialize___Early()

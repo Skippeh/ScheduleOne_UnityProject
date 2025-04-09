@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class UISpawner : global::UnityEngine.MonoBehaviour
+	public class UISpawner : MonoBehaviour
 	{
-		public global::UnityEngine.RectTransform SpawnArea;
+		public RectTransform SpawnArea;
 
-		public global::UnityEngine.GameObject[] Prefabs;
+		public GameObject[] Prefabs;
 
 		public float MinInterval;
 
@@ -12,15 +15,15 @@ namespace ScheduleOne.UI
 
 		public float SpawnRateMultiplier;
 
-		public global::UnityEngine.Vector2 MinScale;
+		public Vector2 MinScale;
 
-		public global::UnityEngine.Vector2 MaxScale;
+		public Vector2 MaxScale;
 
 		public bool UniformScale;
 
 		private float nextSpawnTime;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.GameObject> OnSpawn;
+		public UnityEvent<GameObject> OnSpawn;
 
 		private void Start()
 		{

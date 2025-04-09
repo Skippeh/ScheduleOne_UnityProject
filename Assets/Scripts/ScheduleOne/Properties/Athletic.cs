@@ -1,27 +1,31 @@
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Properties
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "Athletic", menuName = "Properties/Athletic Property")]
-	public class Athletic : global::ScheduleOne.Properties.Property
+	[CreateAssetMenu(fileName = "Athletic", menuName = "Properties/Athletic Property")]
+	public class Athletic : Property
 	{
 		public const float SPEED_MULTIPLIER = 1.3f;
 
-		[global::UnityEngine.ColorUsage(true, true)]
-		[global::UnityEngine.SerializeField]
-		public global::UnityEngine.Color TintColor;
+		[ColorUsage(true, true)]
+		[SerializeField]
+		public Color TintColor;
 
-		public override void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ApplyToNPC(NPC npc)
 		{
 		}
 
-		public override void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ApplyToPlayer(Player player)
 		{
 		}
 
-		public override void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ClearFromNPC(NPC npc)
 		{
 		}
 
-		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ClearFromPlayer(Player player)
 		{
 		}
 	}

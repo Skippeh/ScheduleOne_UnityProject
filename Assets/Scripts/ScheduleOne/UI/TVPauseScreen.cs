@@ -1,8 +1,12 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.TV;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class TVPauseScreen : global::UnityEngine.MonoBehaviour
+	public class TVPauseScreen : MonoBehaviour
 	{
-		public global::ScheduleOne.TV.TVApp App;
+		public TVApp App;
 
 		public bool IsPaused { get; private set; }
 
@@ -10,7 +14,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

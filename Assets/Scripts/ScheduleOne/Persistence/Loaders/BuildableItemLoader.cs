@@ -1,6 +1,8 @@
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class BuildableItemLoader : global::ScheduleOne.Persistence.Loaders.Loader
+	public class BuildableItemLoader : Loader
 	{
 		public virtual string ItemType => null;
 
@@ -8,12 +10,12 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.BuildableItemData GetBuildableItemData(string mainPath)
+		public BuildableItemData GetBuildableItemData(string mainPath)
 		{
 			return null;
 		}
 
-		protected T GetData<T>(string mainPath) where T : global::ScheduleOne.Persistence.Datas.BuildableItemData
+		protected T GetData<T>(string mainPath) where T : BuildableItemData
 		{
 			return null;
 		}

@@ -1,19 +1,33 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine.Events;
+
 namespace ScheduleOne.GameTime
 {
-	public class TimeManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.GameTime.TimeManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class TimeManager : NetworkSingleton<TimeManager>, IBaseSaveable, ISaveable
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CStaggeredMinPass_003Ed__103 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CStaggeredMinPass_003Ed__103 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.GameTime.TimeManager _003C_003E4__this;
+			public TimeManager _003C_003E4__this;
 
 			public float staggerTime;
 
-			private global::System.Delegate[] _003Clisteners_003E5__2;
+			private Delegate[] _003Clisteners_003E5__2;
 
 			private float _003CperDelay_003E5__3;
 
@@ -27,31 +41,31 @@ namespace ScheduleOne.GameTime
 
 			private int _003Ci_003E5__8;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CStaggeredMinPass_003Ed__103(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -60,26 +74,26 @@ namespace ScheduleOne.GameTime
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTickLoop_003Ed__101 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CTickLoop_003Ed__101 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.GameTime.TimeManager _003C_003E4__this;
+			public TimeManager _003C_003E4__this;
 
 			private float _003ClastWaitExcess_003E5__2;
 
@@ -87,31 +101,31 @@ namespace ScheduleOne.GameTime
 
 			private float _003CtimeOnWaitStart_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CTickLoop_003Ed__101(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -120,26 +134,26 @@ namespace ScheduleOne.GameTime
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTimeLoop_003Ed__102 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CTimeLoop_003Ed__102 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.GameTime.TimeManager _003C_003E4__this;
+			public TimeManager _003C_003E4__this;
 
 			private float _003ClastWaitExcess_003E5__2;
 
@@ -147,31 +161,31 @@ namespace ScheduleOne.GameTime
 
 			private float _003CtimeOnWaitStart_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CTimeLoop_003Ed__102(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -180,14 +194,14 @@ namespace ScheduleOne.GameTime
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -202,49 +216,49 @@ namespace ScheduleOne.GameTime
 
 		public int DefaultTime;
 
-		public global::ScheduleOne.GameTime.EDay DefaultDay;
+		public EDay DefaultDay;
 
 		public float TimeProgressionMultiplier;
 
 		private int savedTime;
 
-		public global::System.Action onMinutePass;
+		public Action onMinutePass;
 
-		public global::System.Action onHourPass;
+		public Action onHourPass;
 
-		public global::System.Action onDayPass;
+		public Action onDayPass;
 
-		public global::System.Action onWeekPass;
+		public Action onWeekPass;
 
-		public global::System.Action onUpdate;
+		public Action onUpdate;
 
-		public global::System.Action onFixedUpdate;
+		public Action onFixedUpdate;
 
-		public global::System.Action<int> onTimeSkip;
+		public Action<int> onTimeSkip;
 
-		public global::System.Action onTick;
+		public Action onTick;
 
-		public static global::System.Action onSleepStart;
+		public static Action onSleepStart;
 
-		public global::UnityEngine.Events.UnityEvent _onSleepStart;
+		public UnityEvent _onSleepStart;
 
-		public static global::System.Action<int> onSleepEnd;
+		public static Action<int> onSleepEnd;
 
-		public global::UnityEngine.Events.UnityEvent _onSleepEnd;
+		public UnityEvent _onSleepEnd;
 
-		public global::UnityEngine.Events.UnityEvent onFirstNight;
+		public UnityEvent onFirstNight;
 
-		public global::System.Action onTimeChanged;
+		public Action onTimeChanged;
 
 		public const int SelectedWakeTime = 700;
 
-		private global::ScheduleOne.GameTime.GameDateTime sleepStartTime;
+		private GameDateTime sleepStartTime;
 
 		private int sleepEndTime;
 
 		private float defaultFixedTimeScale;
 
-		private global::ScheduleOne.Persistence.Loaders.TimeLoader loader;
+		private TimeLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EGameTime_002ETimeManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -270,7 +284,7 @@ namespace ScheduleOne.GameTime
 
 		public float Playtime { get; protected set; }
 
-		public global::ScheduleOne.GameTime.EDay CurrentDay => default(global::ScheduleOne.GameTime.EDay);
+		public EDay CurrentDay => default(EDay);
 
 		public bool TimeOverridden { get; protected set; }
 
@@ -280,13 +294,13 @@ namespace ScheduleOne.GameTime
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -298,7 +312,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -310,13 +324,13 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		public void SendTimeData(global::FishNet.Connection.NetworkConnection connection)
+		public void SendTimeData(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, ExcludeServer = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void SetData(global::FishNet.Connection.NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
+		[ObserversRpc(RunLocally = true, ExcludeServer = true)]
+		[TargetRpc]
+		private void SetData(NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
 		{
 		}
 
@@ -328,35 +342,35 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void ResetHostSleepDone()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void MarkHostSleepDone()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetHostSleepDone(bool done)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTickLoop_003Ed__101))]
-		private global::System.Collections.IEnumerator TickLoop()
+		[IteratorStateMachine(typeof(_003CTickLoop_003Ed__101))]
+		private IEnumerator TickLoop()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTimeLoop_003Ed__102))]
-		private global::System.Collections.IEnumerator TimeLoop()
+		[IteratorStateMachine(typeof(_003CTimeLoop_003Ed__102))]
+		private IEnumerator TimeLoop()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CStaggeredMinPass_003Ed__103))]
-		private global::System.Collections.IEnumerator StaggeredMinPass(float staggerTime)
+		[IteratorStateMachine(typeof(_003CStaggeredMinPass_003Ed__103))]
+		private IEnumerator StaggeredMinPass(float staggerTime)
 		{
 			return null;
 		}
@@ -403,18 +417,28 @@ namespace ScheduleOne.GameTime
 			return false;
 		}
 
-		public bool IsCurrentDateWithinRange(global::ScheduleOne.GameTime.GameDateTime start, global::ScheduleOne.GameTime.GameDateTime end)
+		public bool IsCurrentDateWithinRange(GameDateTime start, GameDateTime end)
 		{
 			return false;
+		}
+
+		[ObserversRpc]
+		private void InvokeDayPassClientSide()
+		{
+		}
+
+		[ObserversRpc]
+		private void InvokeWeekPassClientSide()
+		{
 		}
 
 		public void FastForwardToWakeTime()
 		{
 		}
 
-		public global::ScheduleOne.GameTime.GameDateTime GetDateTime()
+		public GameDateTime GetDateTime()
 		{
-			return default(global::ScheduleOne.GameTime.GameDateTime);
+			return default(GameDateTime);
 		}
 
 		public int GetTotalMinSum()
@@ -427,22 +451,22 @@ namespace ScheduleOne.GameTime
 			return 0;
 		}
 
-		public static global::System.Collections.Generic.List<int> GetAllTimeInRange(int min, int max)
+		public static List<int> GetAllTimeInRange(int min, int max)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetWakeTime(int amount)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void StartSleep()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void EndSleep()
 		{
 		}
@@ -476,23 +500,23 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcWriter___Observers_SetData_2661156041(global::FishNet.Connection.NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
+		private void RpcWriter___Observers_SetData_2661156041(NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
 		{
 		}
 
-		private void RpcLogic___SetData_2661156041(global::FishNet.Connection.NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
+		private void RpcLogic___SetData_2661156041(NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
 		{
 		}
 
-		private void RpcReader___Observers_SetData_2661156041(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetData_2661156041(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetData_2661156041(global::FishNet.Connection.NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
+		private void RpcWriter___Target_SetData_2661156041(NetworkConnection conn, int _elapsedDays, int _time, float sendTime)
 		{
 		}
 
-		private void RpcReader___Target_SetData_2661156041(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetData_2661156041(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -504,7 +528,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Server_ResetHostSleepDone_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ResetHostSleepDone_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -516,7 +540,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Server_MarkHostSleepDone_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_MarkHostSleepDone_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -528,7 +552,31 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Observers_SetHostSleepDone_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetHostSleepDone_1140765316(PooledReader PooledReader0, Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_InvokeDayPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcLogic___InvokeDayPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_InvokeDayPassClientSide_2166136261(PooledReader PooledReader0, Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_InvokeWeekPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcLogic___InvokeWeekPassClientSide_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_InvokeWeekPassClientSide_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -540,7 +588,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Server_SetWakeTime_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetWakeTime_3316948804(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -552,7 +600,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Observers_StartSleep_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartSleep_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -564,7 +612,7 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		private void RpcReader___Observers_EndSleep_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EndSleep_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

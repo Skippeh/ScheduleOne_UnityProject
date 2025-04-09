@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Levelling
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct FullRank
 	{
-		public global::ScheduleOne.Levelling.ERank Rank;
+		public ERank Rank;
 
-		[global::UnityEngine.Range(1f, 5f)]
+		[Range(1f, 5f)]
 		public int Tier;
 
-		public FullRank(global::ScheduleOne.Levelling.ERank rank, int tier)
+		public FullRank(ERank rank, int tier)
 		{
-			Rank = default(global::ScheduleOne.Levelling.ERank);
-			Tier = 0;
+			this.Rank = rank;
+			this.Tier = tier;
 		}
 
 		public override string ToString()
@@ -19,42 +22,42 @@ namespace ScheduleOne.Levelling
 			return null;
 		}
 
-		public global::ScheduleOne.Levelling.FullRank NextRank()
+		public FullRank NextRank()
 		{
-			return default(global::ScheduleOne.Levelling.FullRank);
+			return default(FullRank);
 		}
 
-		public static string GetString(global::ScheduleOne.Levelling.FullRank rank)
+		public static string GetString(FullRank rank)
 		{
 			return null;
 		}
 
-		public static bool operator >(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator >(FullRank a, FullRank b)
 		{
 			return false;
 		}
 
-		public static bool operator <(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator <(FullRank a, FullRank b)
 		{
 			return false;
 		}
 
-		public static bool operator <=(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator <=(FullRank a, FullRank b)
 		{
 			return false;
 		}
 
-		public static bool operator >=(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator >=(FullRank a, FullRank b)
 		{
 			return false;
 		}
 
-		public static bool operator ==(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator ==(FullRank a, FullRank b)
 		{
 			return false;
 		}
 
-		public static bool operator !=(global::ScheduleOne.Levelling.FullRank a, global::ScheduleOne.Levelling.FullRank b)
+		public static bool operator !=(FullRank a, FullRank b)
 		{
 			return false;
 		}
@@ -69,7 +72,7 @@ namespace ScheduleOne.Levelling
 			return 0;
 		}
 
-		public int CompareTo(global::ScheduleOne.Levelling.FullRank other)
+		public int CompareTo(FullRank other)
 		{
 			return 0;
 		}

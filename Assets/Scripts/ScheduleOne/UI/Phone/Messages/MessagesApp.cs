@@ -1,80 +1,89 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Messaging;
+using ScheduleOne.UI.Tooltips;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	public class MessagesApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.Messages.MessagesApp>
+	public class MessagesApp : App<MessagesApp>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class CategoryInfo
 		{
-			public global::ScheduleOne.Messaging.EConversationCategory Category;
+			public EConversationCategory Category;
 
 			public string Name;
 
-			public global::UnityEngine.Color Color;
+			public Color Color;
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> Conversations;
+		public static List<MSGConversation> Conversations;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> ActiveConversations;
+		public static List<MSGConversation> ActiveConversations;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Messages.MessagesApp.CategoryInfo> categoryInfos;
+		public List<CategoryInfo> categoryInfos;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform conversationEntryContainer;
+		[Header("References")]
+		[SerializeField]
+		protected RectTransform conversationEntryContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform conversationContainer;
+		[SerializeField]
+		protected RectTransform conversationContainer;
 
-		public global::UnityEngine.GameObject homePage;
+		public GameObject homePage;
 
-		public global::UnityEngine.GameObject dialoguePage;
+		public GameObject dialoguePage;
 
-		public global::UnityEngine.UI.Text dialoguePageNameText;
+		public Text dialoguePageNameText;
 
-		public global::UnityEngine.RectTransform relationshipContainer;
+		public RectTransform relationshipContainer;
 
-		public global::UnityEngine.UI.Scrollbar relationshipScrollbar;
+		public Scrollbar relationshipScrollbar;
 
-		public global::ScheduleOne.UI.Tooltips.Tooltip relationshipTooltip;
+		public Tooltip relationshipTooltip;
 
-		public global::UnityEngine.RectTransform standardsContainer;
+		public RectTransform standardsContainer;
 
-		public global::UnityEngine.UI.Image standardsStar;
+		public Image standardsStar;
 
-		public global::ScheduleOne.UI.Tooltips.Tooltip standardsTooltip;
+		public Tooltip standardsTooltip;
 
-		public global::UnityEngine.RectTransform iconContainerRect;
+		public RectTransform iconContainerRect;
 
-		public global::UnityEngine.UI.Image iconImage;
+		public Image iconImage;
 
-		public global::UnityEngine.Sprite BlankAvatarSprite;
+		public Sprite BlankAvatarSprite;
 
-		public global::ScheduleOne.UI.Phone.Messages.DealWindowSelector DealWindowSelector;
+		public DealWindowSelector DealWindowSelector;
 
-		public global::ScheduleOne.UI.Phone.PhoneShopInterface PhoneShopInterface;
+		public PhoneShopInterface PhoneShopInterface;
 
-		public global::ScheduleOne.UI.Phone.CounterofferInterface CounterofferInterface;
+		public CounterofferInterface CounterofferInterface;
 
-		public global::UnityEngine.RectTransform ClearFilterButton;
+		public RectTransform ClearFilterButton;
 
-		public global::UnityEngine.UI.Button[] CategoryButtons;
+		public Button[] CategoryButtons;
 
-		public global::ScheduleOne.Audio.AudioSourceController MessageReceivedSound;
+		public AudioSourceController MessageReceivedSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController MessageSentSound;
+		public AudioSourceController MessageSentSound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject conversationEntryPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject conversationEntryPrefab;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject conversationContainerPrefab;
+		[SerializeField]
+		protected GameObject conversationContainerPrefab;
 
-		public global::UnityEngine.GameObject messageBubblePrefab;
+		public GameObject messageBubblePrefab;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> unreadConversations;
+		public List<MSGConversation> unreadConversations;
 
-		public global::ScheduleOne.Messaging.MSGConversation currentConversation { get; private set; }
+		public MSGConversation currentConversation { get; private set; }
 
 		protected override void Start()
 		{
@@ -92,7 +101,7 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public void CreateConversationUI(global::ScheduleOne.Messaging.MSGConversation c, out global::UnityEngine.RectTransform entry, out global::UnityEngine.RectTransform container)
+		public void CreateConversationUI(MSGConversation c, out RectTransform entry, out RectTransform container)
 		{
 			entry = null;
 			container = null;
@@ -110,15 +119,15 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public override void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public override void Exit(ExitAction exit)
 		{
 		}
 
-		public void SetCurrentConversation(global::ScheduleOne.Messaging.MSGConversation conversation)
+		public void SetCurrentConversation(MSGConversation conversation)
 		{
 		}
 
-		public global::ScheduleOne.UI.Phone.Messages.MessagesApp.CategoryInfo GetCategoryInfo(global::ScheduleOne.Messaging.EConversationCategory category)
+		public CategoryInfo GetCategoryInfo(EConversationCategory category)
 		{
 			return null;
 		}

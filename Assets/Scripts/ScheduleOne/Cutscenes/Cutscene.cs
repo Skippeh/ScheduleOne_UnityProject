@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Cutscenes
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Animation))]
-	public class Cutscene : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Animation))]
+	public class Cutscene : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Name;
 
 		public bool DisablePlayerControl;
@@ -12,15 +15,15 @@ namespace ScheduleOne.Cutscenes
 
 		public float CameraFOV;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform CameraControl;
+		[Header("References")]
+		public Transform CameraControl;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onPlay;
+		[Header("Events")]
+		public UnityEvent onPlay;
 
-		public global::UnityEngine.Events.UnityEvent onEnd;
+		public UnityEvent onEnd;
 
-		private global::UnityEngine.Animation animation;
+		private Animation animation;
 
 		public bool IsPlaying { get; private set; }
 

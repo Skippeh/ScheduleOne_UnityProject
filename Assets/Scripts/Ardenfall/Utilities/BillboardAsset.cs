@@ -1,32 +1,35 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Ardenfall.Utilities
 {
-	[global::UnityEngine.CreateAssetMenu(menuName = "Ardenfall/Foliage/Billboard Asset")]
-	public class BillboardAsset : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(menuName = "Ardenfall/Foliage/Billboard Asset")]
+	public class BillboardAsset : ScriptableObject
 	{
-		public global::UnityEngine.GameObject prefab;
+		public GameObject prefab;
 
-		public global::Ardenfall.Utilities.BillboardRenderSettings renderSettings;
+		public BillboardRenderSettings renderSettings;
 
-		[global::UnityEngine.Header("Values")]
+		[Header("Values")]
 		public int textureSize;
 
 		public float cutoff;
 
-		[global::UnityEngine.Header("LODs")]
+		[Header("LODs")]
 		public bool pickLastLOD;
 
 		public int LODIndex;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::UnityEngine.Texture2D> generatedTextures;
+		[HideInInspector]
+		public List<Texture2D> generatedTextures;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.Mesh generatedMesh;
+		[HideInInspector]
+		public Mesh generatedMesh;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.Material generatedMaterial;
+		[HideInInspector]
+		public Material generatedMaterial;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.GameObject generatedPrefab;
+		[HideInInspector]
+		public GameObject generatedPrefab;
 	}
 }

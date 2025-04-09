@@ -1,10 +1,13 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.ScriptableObjects
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "StringDatabase", menuName = "ScriptableObjects/StringDatabase", order = 1)]
-	public class StringDatabase : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "StringDatabase", menuName = "ScriptableObjects/StringDatabase", order = 1)]
+	public class StringDatabase : ScriptableObject
 	{
-		[global::UnityEngine.TextArea(2, 10)]
+		[TextArea(2, 10)]
 		public string[] Strings;
 	}
 }

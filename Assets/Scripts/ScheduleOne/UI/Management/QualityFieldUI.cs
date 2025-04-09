@@ -1,19 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class QualityFieldUI : global::UnityEngine.MonoBehaviour
+	public class QualityFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		[Header("References")]
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.UI.Button[] QualityButtons;
+		public Button[] QualityButtons;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.QualityField> Fields { get; protected set; }
+		public List<QualityField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.QualityField> field)
+		public void Bind(List<QualityField> field)
 		{
 		}
 
-		private void Refresh(global::ScheduleOne.ItemFramework.EQuality value)
+		private void Refresh(EQuality value)
 		{
 		}
 
@@ -22,7 +29,7 @@ namespace ScheduleOne.UI.Management
 			return false;
 		}
 
-		public void ValueChanged(global::ScheduleOne.ItemFramework.EQuality value)
+		public void ValueChanged(EQuality value)
 		{
 		}
 	}

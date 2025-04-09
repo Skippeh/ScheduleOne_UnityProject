@@ -10,28 +10,28 @@ namespace ScheduleOne.Economy
 
 		public int EndTime;
 
-		public static readonly global::ScheduleOne.Economy.DealWindowInfo Morning;
+		public static readonly DealWindowInfo Morning;
 
-		public static readonly global::ScheduleOne.Economy.DealWindowInfo Afternoon;
+		public static readonly DealWindowInfo Afternoon;
 
-		public static readonly global::ScheduleOne.Economy.DealWindowInfo Night;
+		public static readonly DealWindowInfo Night;
 
-		public static readonly global::ScheduleOne.Economy.DealWindowInfo LateNight;
+		public static readonly DealWindowInfo LateNight;
 
 		public DealWindowInfo(int startTime, int endTime)
 		{
-			StartTime = 0;
-			EndTime = 0;
+			this.StartTime = startTime;
+			this.EndTime = endTime;
 		}
 
-		public static global::ScheduleOne.Economy.DealWindowInfo GetWindowInfo(global::ScheduleOne.Economy.EDealWindow window)
+		public static DealWindowInfo GetWindowInfo(EDealWindow window)
 		{
-			return default(global::ScheduleOne.Economy.DealWindowInfo);
+			return default(DealWindowInfo);
 		}
 
-		public static global::ScheduleOne.Economy.EDealWindow GetWindow(int time)
+		public static EDealWindow GetWindow(int time)
 		{
-			return default(global::ScheduleOne.Economy.EDealWindow);
+			return default(EDealWindow);
 		}
 	}
 }

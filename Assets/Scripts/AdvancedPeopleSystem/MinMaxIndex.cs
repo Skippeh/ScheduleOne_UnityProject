@@ -1,6 +1,8 @@
+using System;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MinMaxIndex
 	{
 		public int Min;

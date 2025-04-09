@@ -1,10 +1,12 @@
+using System;
+
 namespace ScheduleOne.Tiles
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct CoordinateFootprintTilePair
 	{
-		public global::ScheduleOne.Tiles.Coordinate coord;
+		public Coordinate coord;
 
-		public global::ScheduleOne.Tiles.FootprintTile footprintTile;
+		public FootprintTile footprintTile;
 	}
 }

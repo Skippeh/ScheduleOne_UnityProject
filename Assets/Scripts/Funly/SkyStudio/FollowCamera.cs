@@ -1,11 +1,13 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class FollowCamera : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class FollowCamera : MonoBehaviour
 	{
-		public global::UnityEngine.Camera followCamera;
+		public Camera followCamera;
 
-		public global::UnityEngine.Vector3 offset;
+		public Vector3 offset;
 
 		private void Update()
 		{

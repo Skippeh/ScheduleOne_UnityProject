@@ -1,6 +1,17 @@
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.Interaction;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Casino
 {
-	public class SlotMachine : global::FishNet.Object.NetworkBehaviour
+	public class SlotMachine : NetworkBehaviour
 	{
 		public enum ESymbol
 		{
@@ -23,47 +34,47 @@ namespace ScheduleOne.Casino
 
 		public static int[] BetAmounts;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject DownButton;
+		[Header("References")]
+		public InteractableObject DownButton;
 
-		public global::ScheduleOne.Interaction.InteractableObject UpButton;
+		public InteractableObject UpButton;
 
-		public global::ScheduleOne.Interaction.InteractableObject HandleIntObj;
+		public InteractableObject HandleIntObj;
 
-		public global::TMPro.TextMeshPro BetAmountLabel;
+		public TextMeshPro BetAmountLabel;
 
-		public global::ScheduleOne.Casino.SlotReel[] Reels;
+		public SlotReel[] Reels;
 
-		public global::ScheduleOne.Audio.AudioSourceController SpinLoop;
+		public AudioSourceController SpinLoop;
 
-		public global::UnityEngine.Animation ScreenAnimation;
+		public Animation ScreenAnimation;
 
-		public global::UnityEngine.ParticleSystem[] JackpotParticles;
+		public ParticleSystem[] JackpotParticles;
 
-		[global::UnityEngine.Header("Win Animations")]
-		public global::TMPro.TextMeshProUGUI[] WinAmountLabels;
+		[Header("Win Animations")]
+		public TextMeshProUGUI[] WinAmountLabels;
 
-		public global::UnityEngine.AnimationClip MiniWinAnimation;
+		public AnimationClip MiniWinAnimation;
 
-		public global::UnityEngine.AnimationClip SmallWinAnimation;
+		public AnimationClip SmallWinAnimation;
 
-		public global::UnityEngine.AnimationClip BigWinAnimation;
+		public AnimationClip BigWinAnimation;
 
-		public global::UnityEngine.AnimationClip JackpotAnimation;
+		public AnimationClip JackpotAnimation;
 
-		public global::ScheduleOne.Audio.AudioSourceController MiniWinSound;
+		public AudioSourceController MiniWinSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController SmallWinSound;
+		public AudioSourceController SmallWinSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController BigWinSound;
+		public AudioSourceController BigWinSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController JackpotSound;
+		public AudioSourceController JackpotSound;
 
-		public global::UnityEngine.Events.UnityEvent onDownPressed;
+		public UnityEvent onDownPressed;
 
-		public global::UnityEngine.Events.UnityEvent onUpPressed;
+		public UnityEvent onUpPressed;
 
-		public global::UnityEngine.Events.UnityEvent onHandlePulled;
+		public UnityEvent onHandlePulled;
 
 		private int currentBetIndex;
 
@@ -79,7 +90,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -103,67 +114,67 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void HandleInteracted()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendBetIndex(int index)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetBetIndex(global::FishNet.Connection.NetworkConnection conn, int index)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetBetIndex(NetworkConnection conn, int index)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendStartSpin(global::FishNet.Connection.NetworkConnection spinner, int betAmount)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendStartSpin(NetworkConnection spinner, int betAmount)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void StartSpin(global::FishNet.Connection.NetworkConnection spinner, global::ScheduleOne.Casino.SlotMachine.ESymbol[] symbols, int betAmount)
+		[ObserversRpc(RunLocally = true)]
+		public void StartSpin(NetworkConnection spinner, ESymbol[] symbols, int betAmount)
 		{
 		}
 
-		private global::ScheduleOne.Casino.SlotMachine.EOutcome EvaluateOutcome(global::ScheduleOne.Casino.SlotMachine.ESymbol[] outcome)
+		private EOutcome EvaluateOutcome(ESymbol[] outcome)
 		{
-			return default(global::ScheduleOne.Casino.SlotMachine.EOutcome);
+			return default(EOutcome);
 		}
 
-		private int GetWinAmount(global::ScheduleOne.Casino.SlotMachine.EOutcome outcome, int betAmount)
+		private int GetWinAmount(EOutcome outcome, int betAmount)
 		{
 			return 0;
 		}
 
-		private void DisplayOutcome(global::ScheduleOne.Casino.SlotMachine.EOutcome outcome, int winAmount)
+		private void DisplayOutcome(EOutcome outcome, int winAmount)
 		{
 		}
 
-		public static global::ScheduleOne.Casino.SlotMachine.ESymbol GetRandomSymbol()
+		public static ESymbol GetRandomSymbol()
 		{
-			return default(global::ScheduleOne.Casino.SlotMachine.ESymbol);
+			return default(ESymbol);
 		}
 
-		private bool IsFruit(global::ScheduleOne.Casino.SlotMachine.ESymbol symbol)
-		{
-			return false;
-		}
-
-		private bool IsAllFruit(global::ScheduleOne.Casino.SlotMachine.ESymbol[] symbols)
+		private bool IsFruit(ESymbol symbol)
 		{
 			return false;
 		}
 
-		private bool IsUniform(global::ScheduleOne.Casino.SlotMachine.ESymbol[] symbols)
+		private bool IsAllFruit(ESymbol[] symbols)
 		{
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		private bool IsUniform(ESymbol[] symbols)
+		{
+			return false;
+		}
+
+		[Button]
 		public void SimulateMany()
 		{
 		}
@@ -188,51 +199,51 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Server_SendBetIndex_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendBetIndex_3316948804(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetBetIndex_2681120339(global::FishNet.Connection.NetworkConnection conn, int index)
+		private void RpcWriter___Observers_SetBetIndex_2681120339(NetworkConnection conn, int index)
 		{
 		}
 
-		public void RpcLogic___SetBetIndex_2681120339(global::FishNet.Connection.NetworkConnection conn, int index)
+		public void RpcLogic___SetBetIndex_2681120339(NetworkConnection conn, int index)
 		{
 		}
 
-		private void RpcReader___Observers_SetBetIndex_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetBetIndex_2681120339(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetBetIndex_2681120339(global::FishNet.Connection.NetworkConnection conn, int index)
+		private void RpcWriter___Target_SetBetIndex_2681120339(NetworkConnection conn, int index)
 		{
 		}
 
-		private void RpcReader___Target_SetBetIndex_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetBetIndex_2681120339(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendStartSpin_2681120339(global::FishNet.Connection.NetworkConnection spinner, int betAmount)
+		private void RpcWriter___Server_SendStartSpin_2681120339(NetworkConnection spinner, int betAmount)
 		{
 		}
 
-		public void RpcLogic___SendStartSpin_2681120339(global::FishNet.Connection.NetworkConnection spinner, int betAmount)
+		public void RpcLogic___SendStartSpin_2681120339(NetworkConnection spinner, int betAmount)
 		{
 		}
 
-		private void RpcReader___Server_SendStartSpin_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendStartSpin_2681120339(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_StartSpin_2659526290(global::FishNet.Connection.NetworkConnection spinner, global::ScheduleOne.Casino.SlotMachine.ESymbol[] symbols, int betAmount)
+		private void RpcWriter___Observers_StartSpin_2659526290(NetworkConnection spinner, ESymbol[] symbols, int betAmount)
 		{
 		}
 
-		public void RpcLogic___StartSpin_2659526290(global::FishNet.Connection.NetworkConnection spinner, global::ScheduleOne.Casino.SlotMachine.ESymbol[] symbols, int betAmount)
+		public void RpcLogic___StartSpin_2659526290(NetworkConnection spinner, ESymbol[] symbols, int betAmount)
 		{
 		}
 
-		private void RpcReader___Observers_StartSpin_2659526290(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartSpin_2659526290(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,17 +1,22 @@
+using System.Collections.Generic;
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class ObstructionDetector : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class ObstructionDetector : MonoBehaviour
 	{
-		private global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		private LandVehicle vehicle;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> vehicles;
+		public List<LandVehicle> vehicles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> npcs;
+		public List<NPC> npcs;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerMovement> players;
+		public List<PlayerMovement> players;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.VehicleObstacle> vehicleObstacles;
+		public List<VehicleObstacle> vehicleObstacles;
 
 		public float closestObstructionDistance;
 
@@ -25,7 +30,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

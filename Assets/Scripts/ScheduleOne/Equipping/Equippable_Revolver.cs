@@ -1,10 +1,13 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Revolver : global::ScheduleOne.Equipping.Equippable_RangedWeapon
+	public class Equippable_Revolver : Equippable_RangedWeapon
 	{
-		public global::UnityEngine.Transform[] Bullets;
+		public Transform[] Bullets;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

@@ -1,16 +1,18 @@
-[global::UnityEngine.ExecuteAlways]
-public class MaterialChanger : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+[ExecuteAlways]
+public class MaterialChanger : MonoBehaviour
 {
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.Range(0f, 5f)]
+	[SerializeField]
+	[Range(0f, 5f)]
 	private float _value;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private string _changeMaterialSetting;
 
-	private global::UnityEngine.Renderer[] _renderers;
+	private Renderer[] _renderers;
 
-	private global::UnityEngine.MaterialPropertyBlock _propBlock;
+	private MaterialPropertyBlock _propBlock;
 
 	private void OnEnable()
 	{

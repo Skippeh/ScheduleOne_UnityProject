@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Funly.SkyStudio
 {
 	public abstract class ProfilePropertyKeys
@@ -298,7 +300,7 @@ namespace Funly.SkyStudio
 
 		public const string ThunderSoundDelayKey = "ThunderSoundDelayKey";
 
-		public static global::System.Collections.Generic.HashSet<string> GetPropertyKeysSet()
+		public static HashSet<string> GetPropertyKeysSet()
 		{
 			return null;
 		}

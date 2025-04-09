@@ -1,35 +1,37 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class Accessory : global::UnityEngine.MonoBehaviour
+	public class Accessory : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Name;
 
 		public string AssetPath;
 
 		public bool ReduceFootSize;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float FootSizeReduction;
 
 		public bool ShouldBlockHair;
 
 		public bool ColorAllMeshes;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.MeshRenderer[] meshesToColor;
+		[Header("References")]
+		public MeshRenderer[] meshesToColor;
 
-		public global::UnityEngine.SkinnedMeshRenderer[] skinnedMeshesToColor;
+		public SkinnedMeshRenderer[] skinnedMeshesToColor;
 
-		public global::UnityEngine.SkinnedMeshRenderer[] skinnedMeshesToBind;
+		public SkinnedMeshRenderer[] skinnedMeshesToBind;
 
-		public global::UnityEngine.SkinnedMeshRenderer[] shapeKeyMeshRends;
+		public SkinnedMeshRenderer[] shapeKeyMeshRends;
 
 		private void Awake()
 		{
 		}
 
-		public void ApplyColor(global::UnityEngine.Color col)
+		public void ApplyColor(Color col)
 		{
 		}
 
@@ -37,7 +39,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void BindBones(global::UnityEngine.Transform[] bones)
+		public void BindBones(Transform[] bones)
 		{
 		}
 	}

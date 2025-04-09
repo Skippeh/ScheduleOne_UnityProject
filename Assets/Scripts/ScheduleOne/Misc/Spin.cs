@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class Spin : global::UnityEngine.MonoBehaviour
+	public class Spin : MonoBehaviour
 	{
-		public global::UnityEngine.Vector3 Axis;
+		public Vector3 Axis;
 
 		public float Speed;
 

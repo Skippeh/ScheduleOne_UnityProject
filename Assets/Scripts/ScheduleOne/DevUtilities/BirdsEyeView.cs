@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class BirdsEyeView : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.DevUtilities.BirdsEyeView>
+	public class BirdsEyeView : Singleton<BirdsEyeView>
 	{
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Vector3 bounds_Min;
+		[Header("Settings")]
+		public Vector3 bounds_Min;
 
-		public global::UnityEngine.Vector3 bounds_Max;
+		public Vector3 bounds_Max;
 
-		[global::UnityEngine.Header("Camera settings")]
+		[Header("Camera settings")]
 		public float lateralMovementSpeed;
 
 		public float scrollMovementSpeed;
 
 		public float targetFollowSpeed;
 
-		[global::UnityEngine.Header("Camera orbit settings")]
+		[Header("Camera orbit settings")]
 		public float xSpeed;
 
 		public float ySpeed;
@@ -23,7 +25,7 @@ namespace ScheduleOne.DevUtilities
 
 		public float yMaxLimit;
 
-		private global::UnityEngine.Vector3 rotationOriginPoint;
+		private Vector3 rotationOriginPoint;
 
 		private float distance;
 
@@ -33,11 +35,11 @@ namespace ScheduleOne.DevUtilities
 
 		private float y;
 
-		private global::UnityEngine.Transform targetTransform;
+		private Transform targetTransform;
 
-		private global::UnityEngine.Coroutine originSlideRoutine;
+		private Coroutine originSlideRoutine;
 
-		private global::UnityEngine.Transform playerCam => null;
+		private Transform playerCam => null;
 
 		public bool isEnabled { get; protected set; }
 
@@ -53,7 +55,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void Enable(global::UnityEngine.Vector3 startPosition, global::UnityEngine.Quaternion startRotation)
+		public void Enable(Vector3 startPosition, Quaternion startRotation)
 		{
 		}
 
@@ -86,7 +88,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void SlideCameraOrigin(global::UnityEngine.Vector3 position, float offsetDistance, float time = 0f)
+		public void SlideCameraOrigin(Vector3 position, float offsetDistance, float time = 0f)
 		{
 		}
 	}

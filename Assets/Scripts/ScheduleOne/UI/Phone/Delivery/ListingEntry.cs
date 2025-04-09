@@ -1,29 +1,34 @@
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Delivery
 {
-	public class ListingEntry : global::UnityEngine.MonoBehaviour
+	public class ListingEntry : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image Icon;
+		[Header("References")]
+		public Image Icon;
 
-		public global::UnityEngine.UI.Text ItemNameLabel;
+		public Text ItemNameLabel;
 
-		public global::UnityEngine.UI.Text ItemPriceLabel;
+		public Text ItemPriceLabel;
 
-		public global::UnityEngine.UI.InputField QuantityInput;
+		public InputField QuantityInput;
 
-		public global::UnityEngine.UI.Button IncrementButton;
+		public Button IncrementButton;
 
-		public global::UnityEngine.UI.Button DecrementButton;
+		public Button DecrementButton;
 
-		public global::UnityEngine.RectTransform LockedContainer;
+		public RectTransform LockedContainer;
 
-		public global::UnityEngine.Events.UnityEvent onQuantityChanged;
+		public UnityEvent onQuantityChanged;
 
-		public global::ScheduleOne.UI.Shop.ShopListing MatchingListing { get; private set; }
+		public ShopListing MatchingListing { get; private set; }
 
 		public int SelectedQuantity { get; private set; }
 
-		public void Initialize(global::ScheduleOne.UI.Shop.ShopListing match)
+		public void Initialize(ShopListing match)
 		{
 		}
 

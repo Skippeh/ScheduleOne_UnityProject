@@ -1,21 +1,24 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.AudioSource))]
-	public class LightningRenderer : global::Funly.SkyStudio.BaseSpriteInstancedRenderer
+	[RequireComponent(typeof(AudioSource))]
+	public class LightningRenderer : BaseSpriteInstancedRenderer
 	{
-		private static global::System.Collections.Generic.List<global::Funly.SkyStudio.LightningSpawnArea> m_SpawnAreas;
+		private static List<LightningSpawnArea> m_SpawnAreas;
 
 		private float m_LightningProbability;
 
 		private float m_NextSpawnTime;
 
-		private global::Funly.SkyStudio.SkyProfile m_SkyProfile;
+		private SkyProfile m_SkyProfile;
 
-		private global::Funly.SkyStudio.LightningArtItem m_Style;
+		private LightningArtItem m_Style;
 
 		private float m_TimeOfDay;
 
-		private global::UnityEngine.AudioSource m_AudioSource;
+		private AudioSource m_AudioSource;
 
 		private float m_LightningIntensity;
 
@@ -29,12 +32,12 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		protected override global::UnityEngine.Bounds CalculateMeshBounds()
+		protected override Bounds CalculateMeshBounds()
 		{
-			return default(global::UnityEngine.Bounds);
+			return default(Bounds);
 		}
 
-		protected override global::Funly.SkyStudio.BaseSpriteItemData CreateSpriteItemData()
+		protected override BaseSpriteItemData CreateSpriteItemData()
 		{
 			return null;
 		}
@@ -44,22 +47,22 @@ namespace Funly.SkyStudio
 			return false;
 		}
 
-		protected override void CalculateSpriteTRS(global::Funly.SkyStudio.BaseSpriteItemData data, out global::UnityEngine.Vector3 spritePosition, out global::UnityEngine.Quaternion spriteRotation, out global::UnityEngine.Vector3 spriteScale)
+		protected override void CalculateSpriteTRS(BaseSpriteItemData data, out Vector3 spritePosition, out Quaternion spriteRotation, out Vector3 spriteScale)
 		{
-			spritePosition = default(global::UnityEngine.Vector3);
-			spriteRotation = default(global::UnityEngine.Quaternion);
-			spriteScale = default(global::UnityEngine.Vector3);
+			spritePosition = default(Vector3);
+			spriteRotation = default(Quaternion);
+			spriteScale = default(Vector3);
 		}
 
-		protected override void ConfigureSpriteItemData(global::Funly.SkyStudio.BaseSpriteItemData data)
-		{
-		}
-
-		protected override void PrepareDataArraysForRendering(int instanceId, global::Funly.SkyStudio.BaseSpriteItemData data)
+		protected override void ConfigureSpriteItemData(BaseSpriteItemData data)
 		{
 		}
 
-		protected override void PopulatePropertyBlockForRendering(ref global::UnityEngine.MaterialPropertyBlock propertyBlock)
+		protected override void PrepareDataArraysForRendering(int instanceId, BaseSpriteItemData data)
+		{
+		}
+
+		protected override void PopulatePropertyBlockForRendering(ref MaterialPropertyBlock propertyBlock)
 		{
 		}
 
@@ -68,7 +71,7 @@ namespace Funly.SkyStudio
 			return 0;
 		}
 
-		public void UpdateForTimeOfDay(global::Funly.SkyStudio.SkyProfile skyProfile, float timeOfDay, global::Funly.SkyStudio.LightningArtItem artItem)
+		public void UpdateForTimeOfDay(SkyProfile skyProfile, float timeOfDay, LightningArtItem artItem)
 		{
 		}
 
@@ -76,7 +79,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private global::Funly.SkyStudio.LightningSpawnArea GetRandomLightningSpawnArea()
+		private LightningSpawnArea GetRandomLightningSpawnArea()
 		{
 			return null;
 		}
@@ -85,20 +88,20 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public static void AddSpawnArea(global::Funly.SkyStudio.LightningSpawnArea area)
+		public static void AddSpawnArea(LightningSpawnArea area)
 		{
 		}
 
-		public static void RemoveSpawnArea(global::Funly.SkyStudio.LightningSpawnArea area)
+		public static void RemoveSpawnArea(LightningSpawnArea area)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetRandomWorldPositionInsideSpawnArea(global::Funly.SkyStudio.LightningSpawnArea area)
+		private Vector3 GetRandomWorldPositionInsideSpawnArea(LightningSpawnArea area)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private float CalculateLightningBoltScaleForArea(global::Funly.SkyStudio.LightningSpawnArea area)
+		private float CalculateLightningBoltScaleForArea(LightningSpawnArea area)
 		{
 			return 0f;
 		}

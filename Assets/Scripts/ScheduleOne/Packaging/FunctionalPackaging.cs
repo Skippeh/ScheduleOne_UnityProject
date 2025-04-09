@@ -1,8 +1,17 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.Packaging
 {
-	public class FunctionalPackaging : global::ScheduleOne.PlayerTasks.Draggable
+	public class FunctionalPackaging : Draggable
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string SealInstruction;
 
 		public bool AutoEnableSealing;
@@ -11,28 +20,28 @@ namespace ScheduleOne.Packaging
 
 		public float ProductContactMaxVelocity;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Product.Packaging.PackagingDefinition Definition;
+		[Header("References")]
+		public PackagingDefinition Definition;
 
-		public global::UnityEngine.Transform AlignmentPoint;
+		public Transform AlignmentPoint;
 
-		public global::UnityEngine.Transform[] ProductAlignmentPoints;
+		public Transform[] ProductAlignmentPoints;
 
-		public global::ScheduleOne.Audio.AudioSourceController SealSound;
+		public AudioSourceController SealSound;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> PackedProducts;
+		protected List<FunctionalProduct> PackedProducts;
 
-		public global::System.Action onFullyPacked;
+		public Action onFullyPacked;
 
-		public global::System.Action onSealed;
+		public Action onSealed;
 
-		public global::System.Action onReachOutput;
+		public Action onReachOutput;
 
-		private global::ScheduleOne.ObjectScripts.PackagingStation station;
+		private PackagingStation station;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Packaging.FunctionalProduct, float> productContactTime;
+		private Dictionary<FunctionalProduct, float> productContactTime;
 
-		private global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
+		private SmoothedVelocityCalculator VelocityCalculator;
 
 		public bool IsSealed { get; protected set; }
 
@@ -40,11 +49,11 @@ namespace ScheduleOne.Packaging
 
 		public bool ReachedOutput { get; protected set; }
 
-		public virtual void Initialize(global::ScheduleOne.ObjectScripts.PackagingStation _station, global::UnityEngine.Transform alignment, bool align = true)
+		public virtual void Initialize(PackagingStation _station, Transform alignment, bool align = true)
 		{
 		}
 
-		public void AlignTo(global::UnityEngine.Transform alignment)
+		public void AlignTo(Transform alignment)
 		{
 		}
 
@@ -56,7 +65,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		protected virtual void PackProduct(global::ScheduleOne.Packaging.FunctionalProduct product)
+		protected virtual void PackProduct(FunctionalProduct product)
 		{
 		}
 
@@ -64,7 +73,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		protected virtual void OnTriggerStay(global::UnityEngine.Collider other)
+		protected virtual void OnTriggerStay(Collider other)
 		{
 		}
 

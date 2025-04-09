@@ -1,11 +1,14 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.ScriptableObjects
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "CallerID", menuName = "ScriptableObjects/CallerID", order = 1)]
-	public class CallerID : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "CallerID", menuName = "ScriptableObjects/CallerID", order = 1)]
+	public class CallerID : ScriptableObject
 	{
 		public string Name;
 
-		public global::UnityEngine.Sprite ProfilePicture;
+		public Sprite ProfilePicture;
 	}
 }

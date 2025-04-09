@@ -1,6 +1,8 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	public sealed class TaaComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.AntialiasingModel>
+	public sealed class TaaComponent : PostProcessingComponentRenderTexture<AntialiasingModel>
 	{
 		private static class Uniforms
 		{
@@ -19,32 +21,32 @@ namespace UnityEngine.PostProcessing
 
 		private const int k_SampleCount = 8;
 
-		private readonly global::UnityEngine.RenderBuffer[] m_MRT;
+		private readonly RenderBuffer[] m_MRT;
 
 		private int m_SampleIndex;
 
 		private bool m_ResetHistory;
 
-		private global::UnityEngine.RenderTexture m_HistoryTexture;
+		private RenderTexture m_HistoryTexture;
 
 		public override bool active => false;
 
-		public global::UnityEngine.Vector2 jitterVector { get; private set; }
+		public Vector2 jitterVector { get; private set; }
 
-		public override global::UnityEngine.DepthTextureMode GetCameraFlags()
+		public override DepthTextureMode GetCameraFlags()
 		{
-			return default(global::UnityEngine.DepthTextureMode);
+			return default(DepthTextureMode);
 		}
 
 		public void ResetHistory()
 		{
 		}
 
-		public void SetProjectionMatrix(global::System.Func<global::UnityEngine.Vector2, global::UnityEngine.Matrix4x4> jitteredFunc)
+		public void SetProjectionMatrix(Func<Vector2, Matrix4x4> jitteredFunc)
 		{
 		}
 
-		public void Render(global::UnityEngine.RenderTexture source, global::UnityEngine.RenderTexture destination)
+		public void Render(RenderTexture source, RenderTexture destination)
 		{
 		}
 
@@ -53,19 +55,19 @@ namespace UnityEngine.PostProcessing
 			return 0f;
 		}
 
-		private global::UnityEngine.Vector2 GenerateRandomOffset()
+		private Vector2 GenerateRandomOffset()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		private global::UnityEngine.Matrix4x4 GetPerspectiveProjectionMatrix(global::UnityEngine.Vector2 offset)
+		private Matrix4x4 GetPerspectiveProjectionMatrix(Vector2 offset)
 		{
-			return default(global::UnityEngine.Matrix4x4);
+			return default(Matrix4x4);
 		}
 
-		private global::UnityEngine.Matrix4x4 GetOrthographicProjectionMatrix(global::UnityEngine.Vector2 offset)
+		private Matrix4x4 GetOrthographicProjectionMatrix(Vector2 offset)
 		{
-			return default(global::UnityEngine.Matrix4x4);
+			return default(Matrix4x4);
 		}
 
 		public override void OnDisable()

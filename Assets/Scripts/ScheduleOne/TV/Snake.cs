@@ -1,6 +1,12 @@
+using System.Collections.Generic;
+using EasyButtons;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class Snake : global::ScheduleOne.TV.TVApp
+	public class Snake : TVApp
 	{
 		public enum EGameState
 		{
@@ -12,45 +18,45 @@ namespace ScheduleOne.TV
 
 		public const int SIZE_Y = 12;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.TV.SnakeTile TilePrefab;
+		[Header("Settings")]
+		public SnakeTile TilePrefab;
 
 		public float TimePerTile;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform PlaySpace;
+		[Header("References")]
+		public RectTransform PlaySpace;
 
-		public global::ScheduleOne.TV.SnakeTile[] Tiles;
+		public SnakeTile[] Tiles;
 
-		public global::TMPro.TextMeshProUGUI ScoreText;
+		public TextMeshProUGUI ScoreText;
 
-		private global::UnityEngine.Vector2 lastFoodPosition;
+		private Vector2 lastFoodPosition;
 
 		private float _timeSinceLastMove;
 
 		private float _timeOnGameOver;
 
-		public global::UnityEngine.Events.UnityEvent onStart;
+		public UnityEvent onStart;
 
-		public global::UnityEngine.Events.UnityEvent onEat;
+		public UnityEvent onEat;
 
-		public global::UnityEngine.Events.UnityEvent onGameOver;
+		public UnityEvent onGameOver;
 
-		public global::UnityEngine.Events.UnityEvent onWin;
+		public UnityEvent onWin;
 
-		public global::UnityEngine.Vector2 HeadPosition { get; private set; }
+		public Vector2 HeadPosition { get; private set; }
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Vector2> Tail { get; private set; }
+		public List<Vector2> Tail { get; private set; }
 
-		public global::UnityEngine.Vector2 LastTailPosition { get; private set; }
+		public Vector2 LastTailPosition { get; private set; }
 
-		public global::UnityEngine.Vector2 Direction { get; private set; }
+		public Vector2 Direction { get; private set; }
 
-		public global::UnityEngine.Vector2 QueuedDirection { get; private set; }
+		public Vector2 QueuedDirection { get; private set; }
 
-		public global::UnityEngine.Vector2 NextDirection { get; private set; }
+		public Vector2 NextDirection { get; private set; }
 
-		public global::ScheduleOne.TV.Snake.EGameState GameState { get; private set; }
+		public EGameState GameState { get; private set; }
 
 		protected override void Awake()
 		{
@@ -72,12 +78,12 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		private global::ScheduleOne.TV.SnakeTile GetTile(global::UnityEngine.Vector2 position)
+		private SnakeTile GetTile(Vector2 position)
 		{
 			return null;
 		}
 
-		private void StartGame(global::UnityEngine.Vector2 initialDir)
+		private void StartGame(Vector2 initialDir)
 		{
 		}
 
@@ -101,7 +107,7 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void CreateTiles()
 		{
 		}

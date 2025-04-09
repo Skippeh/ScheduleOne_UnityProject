@@ -1,13 +1,16 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
-	public class AmbientLoopJukebox : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(AudioSourceController))]
+	public class AmbientLoopJukebox : MonoBehaviour
 	{
-		public global::UnityEngine.AnimationCurve VolumeCurve;
+		public AnimationCurve VolumeCurve;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.AudioClip> Clips;
+		public List<AudioClip> Clips;
 
-		private global::ScheduleOne.Audio.AudioSourceController audioSourceController;
+		private AudioSourceController audioSourceController;
 
 		private int currentClipIndex;
 

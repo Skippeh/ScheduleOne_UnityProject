@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Datas
 {
-	public class NPCHealthData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class NPCHealthData : SaveData
 	{
 		public float Health;
 

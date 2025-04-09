@@ -1,19 +1,23 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ProductList
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Entry
 		{
 			public string ProductID;
 
-			public global::ScheduleOne.ItemFramework.EQuality Quality;
+			public EQuality Quality;
 
 			public int Quantity;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductList.Entry> entries;
+		public List<Entry> entries;
 
 		public string GetCommaSeperatedString()
 		{

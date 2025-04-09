@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class IntegerItemData : global::ScheduleOne.Persistence.Datas.ItemData
+	[Serializable]
+	public class IntegerItemData : ItemData
 	{
 		public int Value;
 

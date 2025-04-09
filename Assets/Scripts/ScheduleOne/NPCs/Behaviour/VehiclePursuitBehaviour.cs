@@ -1,6 +1,12 @@
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vehicles.AI;
+using ScheduleOne.Vision;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class VehiclePursuitBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class VehiclePursuitBehaviour : Behaviour
 	{
 		public new const float MAX_CONSECUTIVE_PATHING_FAILURES = 5f;
 
@@ -16,10 +22,10 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public const float TIME_STATIONARY_TO_EXIT = 3f;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.AnimationCurve RepathDistanceThresholdMap;
+		[Header("Settings")]
+		public AnimationCurve RepathDistanceThresholdMap;
 
-		public global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		public LandVehicle vehicle;
 
 		private bool initialContactMade;
 
@@ -37,7 +43,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private float timeStationary;
 
-		private global::UnityEngine.Vector3 currentDriveTarget;
+		private Vector3 currentDriveTarget;
 
 		private int targetChanges;
 
@@ -49,11 +55,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EVehiclePursuitBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; protected set; }
+		public Player TargetPlayer { get; protected set; }
 
 		private bool isDriving => false;
 
-		private global::ScheduleOne.Vehicles.AI.VehicleAgent Agent => null;
+		private VehicleAgent Agent => null;
 
 		public override void Awake()
 		{
@@ -83,7 +89,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public virtual void AssignTarget(global::ScheduleOne.PlayerScripts.Player target)
+		public virtual void AssignTarget(Player target)
 		{
 		}
 
@@ -116,26 +122,26 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlayerChasePoint()
+		private Vector3 GetPlayerChasePoint()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private void SetAggressiveDriving(bool aggressive)
 		{
 		}
 
-		private void DriveTo(global::UnityEngine.Vector3 location)
+		private void DriveTo(Vector3 location)
 		{
 		}
 
-		private void NavigationCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult status)
+		private void NavigationCallback(VehicleAgent.ENavigationResult status)
 		{
 		}
 
-		private bool IsAsCloseAsPossible(global::UnityEngine.Vector3 pos, out global::UnityEngine.Vector3 closestPosition)
+		private bool IsAsCloseAsPossible(Vector3 pos, out Vector3 closestPosition)
 		{
-			closestPosition = default(global::UnityEngine.Vector3);
+			closestPosition = default(Vector3);
 			return false;
 		}
 
@@ -148,11 +154,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 
-		private void ProcessThirdPartyVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessThirdPartyVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 

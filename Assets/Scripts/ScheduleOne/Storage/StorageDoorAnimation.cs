@@ -1,23 +1,27 @@
+using EasyButtons;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageDoorAnimation : global::UnityEngine.MonoBehaviour
+	public class StorageDoorAnimation : MonoBehaviour
 	{
 		private bool overriddeIsOpen;
 
 		private bool overrideState;
 
-		public global::UnityEngine.Transform ItemContainer;
+		public Transform ItemContainer;
 
-		[global::UnityEngine.Header("Animations")]
-		public global::UnityEngine.Animation[] Anims;
+		[Header("Animations")]
+		public Animation[] Anims;
 
-		public global::UnityEngine.AnimationClip OpenAnim;
+		public AnimationClip OpenAnim;
 
-		public global::UnityEngine.AnimationClip CloseAnim;
+		public AnimationClip CloseAnim;
 
-		public global::ScheduleOne.Audio.AudioSourceController OpenSound;
+		public AudioSourceController OpenSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController CloseSound;
+		public AudioSourceController CloseSound;
 
 		public bool IsOpen { get; protected set; }
 
@@ -25,12 +29,12 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Open()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Close()
 		{
 		}

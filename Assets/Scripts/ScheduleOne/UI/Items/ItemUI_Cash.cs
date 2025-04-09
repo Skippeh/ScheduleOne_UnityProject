@@ -1,12 +1,15 @@
+using ScheduleOne.ItemFramework;
+using TMPro;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemUI_Cash : global::ScheduleOne.UI.Items.ItemUI
+	public class ItemUI_Cash : ItemUI
 	{
-		protected global::ScheduleOne.ItemFramework.CashInstance cashInstance;
+		protected CashInstance cashInstance;
 
-		public global::TMPro.TextMeshProUGUI AmountLabel;
+		public TextMeshProUGUI AmountLabel;
 
-		public override void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Setup(ItemInstance item)
 		{
 		}
 

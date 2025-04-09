@@ -1,22 +1,27 @@
-public class TrailerCop : global::UnityEngine.MonoBehaviour
+using EasyButtons;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.Police;
+using UnityEngine;
+
+public class TrailerCop : MonoBehaviour
 {
-	public global::ScheduleOne.Police.PoliceOfficer Officer;
+	public PoliceOfficer Officer;
 
-	public global::UnityEngine.Transform StartPoint;
+	public Transform StartPoint;
 
-	public global::UnityEngine.Transform EndPoint;
+	public Transform EndPoint;
 
-	public global::UnityEngine.Transform FaceTarget;
+	public Transform FaceTarget;
 
-	public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable Equippable;
+	public AvatarEquippable Equippable;
 
 	public float Speed;
 
 	public bool RaiseWeapon;
 
-	public global::UnityEngine.Transform ShootTarget;
+	public Transform ShootTarget;
 
-	[global::EasyButtons.Button]
+	[Button]
 	public void Play()
 	{
 	}

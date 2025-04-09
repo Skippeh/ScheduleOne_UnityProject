@@ -1,24 +1,27 @@
+using ScheduleOne.Clothing;
+using ScheduleOne.DevUtilities;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ClothingShopInterface : global::ScheduleOne.UI.Shop.ShopInterface
+	public class ClothingShopInterface : ShopInterface
 	{
-		public global::ScheduleOne.UI.Shop.ShopColorPicker ColorPicker;
+		public ShopColorPicker ColorPicker;
 
-		private global::ScheduleOne.UI.Shop.ShopListing _selectedListing;
+		private ShopListing _selectedListing;
 
 		protected override void Start()
 		{
 		}
 
-		public override void ListingClicked(global::ScheduleOne.UI.Shop.ListingUI listingUI)
+		public override void ListingClicked(ListingUI listingUI)
 		{
 		}
 
-		protected override void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		protected override void Exit(ExitAction action)
 		{
 		}
 
-		private void ColorPicked(global::ScheduleOne.Clothing.EClothingColor color)
+		private void ColorPicked(EClothingColor color)
 		{
 		}
 

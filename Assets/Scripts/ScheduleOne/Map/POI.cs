@@ -1,6 +1,11 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Map
 {
-	public class POI : global::UnityEngine.MonoBehaviour
+	public class POI : MonoBehaviour
 	{
 		public enum TextShowMode
 		{
@@ -9,7 +14,7 @@ namespace ScheduleOne.Map
 			OnHover = 2
 		}
 
-		public global::ScheduleOne.Map.POI.TextShowMode MainTextVisibility;
+		public TextShowMode MainTextVisibility;
 
 		public string DefaultMainText;
 
@@ -17,26 +22,26 @@ namespace ScheduleOne.Map
 
 		public bool Rotate;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject UIPrefab;
+		[SerializeField]
+		protected GameObject UIPrefab;
 
-		protected global::UnityEngine.UI.Text mainLabel;
+		protected Text mainLabel;
 
-		protected global::UnityEngine.UI.Button button;
+		protected Button button;
 
-		protected global::UnityEngine.EventSystems.EventTrigger eventTrigger;
+		protected EventTrigger eventTrigger;
 
 		private bool mainTextSet;
 
-		public global::UnityEngine.Events.UnityEvent onUICreated;
+		public UnityEvent onUICreated;
 
 		public bool UISetup { get; protected set; }
 
 		public string MainText { get; protected set; }
 
-		public global::UnityEngine.RectTransform UI { get; protected set; }
+		public RectTransform UI { get; protected set; }
 
-		public global::UnityEngine.RectTransform IconContainer { get; protected set; }
+		public RectTransform IconContainer { get; protected set; }
 
 		private void OnEnable()
 		{

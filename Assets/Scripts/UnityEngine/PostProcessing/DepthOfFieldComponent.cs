@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class DepthOfFieldComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.DepthOfFieldModel>
+	public sealed class DepthOfFieldComponent : PostProcessingComponentRenderTexture<DepthOfFieldModel>
 	{
 		private static class Uniforms
 		{
@@ -29,15 +29,15 @@ namespace UnityEngine.PostProcessing
 
 		private const string k_ShaderString = "Hidden/Post FX/Depth Of Field";
 
-		private global::UnityEngine.RenderTexture m_CoCHistory;
+		private RenderTexture m_CoCHistory;
 
 		private const float k_FilmHeight = 0.024f;
 
 		public override bool active => false;
 
-		public override global::UnityEngine.DepthTextureMode GetCameraFlags()
+		public override DepthTextureMode GetCameraFlags()
 		{
-			return default(global::UnityEngine.DepthTextureMode);
+			return default(DepthTextureMode);
 		}
 
 		private float CalculateFocalLength()
@@ -55,12 +55,12 @@ namespace UnityEngine.PostProcessing
 			return false;
 		}
 
-		private global::UnityEngine.RenderTextureFormat SelectFormat(global::UnityEngine.RenderTextureFormat primary, global::UnityEngine.RenderTextureFormat secondary)
+		private RenderTextureFormat SelectFormat(RenderTextureFormat primary, RenderTextureFormat secondary)
 		{
-			return default(global::UnityEngine.RenderTextureFormat);
+			return default(RenderTextureFormat);
 		}
 
-		public void Prepare(global::UnityEngine.RenderTexture source, global::UnityEngine.Material uberMaterial, bool antialiasCoC, global::UnityEngine.Vector2 taaJitter, float taaBlending)
+		public void Prepare(RenderTexture source, Material uberMaterial, bool antialiasCoC, Vector2 taaJitter, float taaBlending)
 		{
 		}
 

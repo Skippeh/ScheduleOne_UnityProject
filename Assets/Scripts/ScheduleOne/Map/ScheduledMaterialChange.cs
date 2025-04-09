@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class ScheduledMaterialChange : global::UnityEngine.MonoBehaviour
+	public class ScheduledMaterialChange : MonoBehaviour
 	{
 		private enum EOnState
 		{
@@ -9,16 +11,16 @@ namespace ScheduleOne.Map
 			Off = 2
 		}
 
-		public global::UnityEngine.MeshRenderer[] Renderers;
+		public MeshRenderer[] Renderers;
 
 		public int MaterialIndex;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool Enabled;
 
-		public global::UnityEngine.Material OutsideTimeRangeMaterial;
+		public Material OutsideTimeRangeMaterial;
 
-		public global::UnityEngine.Material InsideTimeRangeMaterial;
+		public Material InsideTimeRangeMaterial;
 
 		public int TimeRangeMin;
 
@@ -28,12 +30,12 @@ namespace ScheduleOne.Map
 
 		public int TimeRangeRandomization;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float TurnOnChance;
 
 		private bool appliedInsideTimeRange;
 
-		private global::ScheduleOne.Map.ScheduledMaterialChange.EOnState onState;
+		private EOnState onState;
 
 		private int randomShift;
 

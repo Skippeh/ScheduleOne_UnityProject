@@ -1,52 +1,61 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Management.UI;
+using ScheduleOne.Tools;
+using ScheduleOne.UI.Management;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
-	public class ManagementInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Management.ManagementInterface>
+	public class ManagementInterface : Singleton<ManagementInterface>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ConfigurableTypePanel
 		{
-			public global::ScheduleOne.Management.EConfigurableType Type;
+			public EConfigurableType Type;
 
-			public global::ScheduleOne.Management.UI.ConfigPanel Panel;
+			public ConfigPanel Panel;
 		}
 
 		public const float PANEL_SLIDE_TIME = 0.1f;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI NothingSelectedLabel;
+		[Header("References")]
+		public TextMeshProUGUI NothingSelectedLabel;
 
-		public global::TMPro.TextMeshProUGUI DifferentTypesSelectedLabel;
+		public TextMeshProUGUI DifferentTypesSelectedLabel;
 
-		public global::UnityEngine.RectTransform PanelContainer;
+		public RectTransform PanelContainer;
 
-		public global::ScheduleOne.UI.Management.ClipboardScreen MainScreen;
+		public ClipboardScreen MainScreen;
 
-		public global::ScheduleOne.UI.Management.ItemSelector ItemSelectorScreen;
+		public ItemSelector ItemSelectorScreen;
 
-		public global::ScheduleOne.UI.Management.NPCSelector NPCSelector;
+		public NPCSelector NPCSelector;
 
-		public global::ScheduleOne.UI.Management.ObjectSelector ObjectSelector;
+		public ScheduleOne.UI.Management.ObjectSelector ObjectSelector;
 
-		public global::ScheduleOne.UI.Management.RecipeSelector RecipeSelectorScreen;
+		public RecipeSelector RecipeSelectorScreen;
 
-		public global::ScheduleOne.UI.Management.TransitEntitySelector TransitEntitySelector;
+		public TransitEntitySelector TransitEntitySelector;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Management.ManagementInterface.ConfigurableTypePanel[] ConfigPanelPrefabs;
+		[SerializeField]
+		protected ConfigurableTypePanel[] ConfigPanelPrefabs;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> Configurables;
+		public List<IConfigurable> Configurables;
 
 		private bool areConfigurablesUniform;
 
-		private global::ScheduleOne.Management.UI.ConfigPanel loadedPanel;
+		private ConfigPanel loadedPanel;
 
-		public global::ScheduleOne.Tools.ManagementClipboard_Equippable EquippedClipboard { get; protected set; }
+		public ManagementClipboard_Equippable EquippedClipboard { get; protected set; }
 
 		protected override void Start()
 		{
 		}
 
-		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> configurables, global::ScheduleOne.Tools.ManagementClipboard_Equippable _equippedClipboard)
+		public void Open(List<IConfigurable> configurables, ManagementClipboard_Equippable _equippedClipboard)
 		{
 		}
 
@@ -66,7 +75,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public global::ScheduleOne.Management.UI.ConfigPanel GetConfigPanelPrefab(global::ScheduleOne.Management.EConfigurableType type)
+		public ConfigPanel GetConfigPanelPrefab(EConfigurableType type)
 		{
 			return null;
 		}

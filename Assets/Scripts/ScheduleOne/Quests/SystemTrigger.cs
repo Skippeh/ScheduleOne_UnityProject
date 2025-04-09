@@ -1,23 +1,28 @@
+using System;
+using ScheduleOne.Variables;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Quests
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class SystemTrigger
 	{
-		public global::ScheduleOne.Variables.Conditions Conditions;
+		public Conditions Conditions;
 
-		[global::UnityEngine.Header("True")]
-		public global::ScheduleOne.Variables.VariableSetter[] onEvaluateTrueVariableSetters;
+		[Header("True")]
+		public VariableSetter[] onEvaluateTrueVariableSetters;
 
-		public global::ScheduleOne.Quests.QuestStateSetter[] onEvaluateTrueQuestSetters;
+		public QuestStateSetter[] onEvaluateTrueQuestSetters;
 
-		public global::UnityEngine.Events.UnityEvent onEvaluateTrue;
+		public UnityEvent onEvaluateTrue;
 
-		[global::UnityEngine.Header("False")]
-		public global::ScheduleOne.Variables.VariableSetter[] onEvaluateFalseVariableSetters;
+		[Header("False")]
+		public VariableSetter[] onEvaluateFalseVariableSetters;
 
-		public global::ScheduleOne.Quests.QuestStateSetter[] onEvaluateFalseQuestSetters;
+		public QuestStateSetter[] onEvaluateFalseQuestSetters;
 
-		public global::UnityEngine.Events.UnityEvent onEvaluateFalse;
+		public UnityEvent onEvaluateFalse;
 
 		public bool Trigger()
 		{

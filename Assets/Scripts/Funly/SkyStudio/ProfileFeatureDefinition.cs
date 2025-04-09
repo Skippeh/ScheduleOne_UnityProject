@@ -1,6 +1,8 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ProfileFeatureDefinition
 	{
 		public enum FeatureType
@@ -14,7 +16,7 @@ namespace Funly.SkyStudio
 
 		public string[] featureKeys;
 
-		public global::Funly.SkyStudio.ProfileFeatureDefinition.FeatureType featureType;
+		public FeatureType featureType;
 
 		public string shaderKeyword;
 
@@ -36,17 +38,17 @@ namespace Funly.SkyStudio
 
 		public bool isShaderKeywordFeature;
 
-		public static global::Funly.SkyStudio.ProfileFeatureDefinition CreateShaderFeature(string featureKey, string shaderKeyword, bool value, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
+		public static ProfileFeatureDefinition CreateShaderFeature(string featureKey, string shaderKeyword, bool value, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileFeatureDefinition CreateShaderFeatureDropdown(string[] featureKeys, string[] shaderKeywords, string[] labels, int selectedIndex, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
+		public static ProfileFeatureDefinition CreateShaderFeatureDropdown(string[] featureKeys, string[] shaderKeywords, string[] labels, int selectedIndex, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileFeatureDefinition CreateBooleanFeature(string featureKey, bool value, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
+		public static ProfileFeatureDefinition CreateBooleanFeature(string featureKey, bool value, string name, string dependsOnFeature, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}

@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace StylizedGrassDemo
 {
-	public class MoveInCircle : global::UnityEngine.MonoBehaviour
+	public class MoveInCircle : MonoBehaviour
 	{
 		public float radius;
 
 		public float speed;
 
-		public global::UnityEngine.Vector3 offset;
+		public Vector3 offset;
 
 		private void Update()
 		{

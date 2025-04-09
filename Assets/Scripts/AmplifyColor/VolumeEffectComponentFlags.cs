@@ -1,11 +1,15 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VolumeEffectComponentFlags
 	{
 		public string componentName;
 
-		public global::System.Collections.Generic.List<global::AmplifyColor.VolumeEffectFieldFlags> componentFields;
+		public List<VolumeEffectFieldFlags> componentFields;
 
 		public bool blendFlag;
 
@@ -13,19 +17,19 @@ namespace AmplifyColor
 		{
 		}
 
-		public VolumeEffectComponentFlags(global::AmplifyColor.VolumeEffectComponent comp)
+		public VolumeEffectComponentFlags(VolumeEffectComponent comp)
 		{
 		}
 
-		public VolumeEffectComponentFlags(global::UnityEngine.Component c)
+		public VolumeEffectComponentFlags(Component c)
 		{
 		}
 
-		public void UpdateComponentFlags(global::AmplifyColor.VolumeEffectComponent comp)
+		public void UpdateComponentFlags(VolumeEffectComponent comp)
 		{
 		}
 
-		public void UpdateComponentFlags(global::UnityEngine.Component c)
+		public void UpdateComponentFlags(Component c)
 		{
 		}
 

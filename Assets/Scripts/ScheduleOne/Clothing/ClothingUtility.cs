@@ -1,30 +1,35 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Clothing
 {
-	public class ClothingUtility : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Clothing.ClothingUtility>
+	public class ClothingUtility : Singleton<ClothingUtility>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ColorData
 		{
-			public global::ScheduleOne.Clothing.EClothingColor ColorType;
+			public EClothingColor ColorType;
 
-			public global::UnityEngine.Color ActualColor;
+			public Color ActualColor;
 
-			public global::UnityEngine.Color LabelColor;
+			public Color LabelColor;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class ClothingSlotData
 		{
-			public global::ScheduleOne.Clothing.EClothingSlot Slot;
+			public EClothingSlot Slot;
 
 			public string Name;
 
-			public global::UnityEngine.Sprite Icon;
+			public Sprite Icon;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Clothing.ClothingUtility.ColorData> ColorDataList;
+		public List<ColorData> ColorDataList;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Clothing.ClothingUtility.ClothingSlotData> ClothingSlotDataList;
+		public List<ClothingSlotData> ClothingSlotDataList;
 
 		protected override void Awake()
 		{
@@ -34,12 +39,12 @@ namespace ScheduleOne.Clothing
 		{
 		}
 
-		public global::ScheduleOne.Clothing.ClothingUtility.ColorData GetColorData(global::ScheduleOne.Clothing.EClothingColor color)
+		public ColorData GetColorData(EClothingColor color)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Clothing.ClothingUtility.ClothingSlotData GetSlotData(global::ScheduleOne.Clothing.EClothingSlot slot)
+		public ClothingSlotData GetSlotData(EClothingSlot slot)
 		{
 			return null;
 		}

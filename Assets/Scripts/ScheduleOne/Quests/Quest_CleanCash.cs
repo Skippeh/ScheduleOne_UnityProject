@@ -1,10 +1,10 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_CleanCash : global::ScheduleOne.Quests.Quest
+	public class Quest_CleanCash : Quest
 	{
-		public global::ScheduleOne.Quests.QuestEntry BuyBusinessEntry;
+		public QuestEntry BuyBusinessEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry GoToBusinessEntry;
+		public QuestEntry GoToBusinessEntry;
 
 		protected override void MinPass()
 		{

@@ -1,12 +1,15 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class IntegerItemUI : global::ScheduleOne.UI.Items.ItemUI
+	public class IntegerItemUI : ItemUI
 	{
-		public global::UnityEngine.UI.Text ValueLabel;
+		public Text ValueLabel;
 
-		protected global::ScheduleOne.ItemFramework.IntegerItemInstance integerItemInstance;
+		protected IntegerItemInstance integerItemInstance;
 
-		public override void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Setup(ItemInstance item)
 		{
 		}
 

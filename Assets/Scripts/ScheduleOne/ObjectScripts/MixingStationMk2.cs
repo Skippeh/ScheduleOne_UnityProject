@@ -1,19 +1,23 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class MixingStationMk2 : global::ScheduleOne.ObjectScripts.MixingStation
+	public class MixingStationMk2 : MixingStation
 	{
-		public global::UnityEngine.Animation Animation;
+		public Animation Animation;
 
-		[global::UnityEngine.Header("Screen")]
-		public global::UnityEngine.Canvas ScreenCanvas;
+		[Header("Screen")]
+		public Canvas ScreenCanvas;
 
-		public global::UnityEngine.UI.Image OutputIcon;
+		public Image OutputIcon;
 
-		public global::UnityEngine.RectTransform QuestionMark;
+		public RectTransform QuestionMark;
 
-		public global::TMPro.TextMeshProUGUI QuantityLabel;
+		public TextMeshProUGUI QuantityLabel;
 
-		public global::TMPro.TextMeshProUGUI ProgressLabel;
+		public TextMeshProUGUI ProgressLabel;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EMixingStationMk2Assembly_002DCSharp_002Edll_Excuted;
 

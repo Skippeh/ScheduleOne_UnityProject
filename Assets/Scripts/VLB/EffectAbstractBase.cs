@@ -1,9 +1,13 @@
+using System;
+using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace VLB
 {
-	[global::UnityEngine.AddComponentMenu("")]
-	public class EffectAbstractBase : global::UnityEngine.MonoBehaviour
+	[AddComponentMenu("")]
+	public class EffectAbstractBase : MonoBehaviour
 	{
-		[global::System.Flags]
+		[Flags]
 		public enum ComponentsToChange
 		{
 			UnityLight = 1,
@@ -13,16 +17,16 @@ namespace VLB
 
 		public const string ClassName = "EffectAbstractBase";
 
-		public global::VLB.EffectAbstractBase.ComponentsToChange componentsToChange;
+		public ComponentsToChange componentsToChange;
 
-		[global::UnityEngine.Serialization.FormerlySerializedAs("restoreBaseIntensity")]
+		[FormerlySerializedAs("restoreBaseIntensity")]
 		public bool restoreIntensityOnDisable;
 
-		protected global::VLB.VolumetricLightBeamAbstractBase m_Beam;
+		protected VolumetricLightBeamAbstractBase m_Beam;
 
-		protected global::UnityEngine.Light m_Light;
+		protected Light m_Light;
 
-		protected global::VLB.VolumetricDustParticles m_Particles;
+		protected VolumetricDustParticles m_Particles;
 
 		protected float m_BaseIntensityBeamInside;
 
@@ -30,7 +34,7 @@ namespace VLB
 
 		protected float m_BaseIntensityLight;
 
-		[global::System.Obsolete("Use 'restoreIntensityOnDisable' instead")]
+		[Obsolete("Use 'restoreIntensityOnDisable' instead")]
 		public bool restoreBaseIntensity
 		{
 			get
@@ -42,23 +46,23 @@ namespace VLB
 			}
 		}
 
-		public virtual void InitFrom(global::VLB.EffectAbstractBase Source)
+		public virtual void InitFrom(EffectAbstractBase Source)
 		{
 		}
 
-		private void GetIntensity(global::VLB.VolumetricLightBeamSD beam)
+		private void GetIntensity(VolumetricLightBeamSD beam)
 		{
 		}
 
-		private void GetIntensity(global::VLB.VolumetricLightBeamHD beam)
+		private void GetIntensity(VolumetricLightBeamHD beam)
 		{
 		}
 
-		private void SetIntensity(global::VLB.VolumetricLightBeamSD beam, float additive)
+		private void SetIntensity(VolumetricLightBeamSD beam, float additive)
 		{
 		}
 
-		private void SetIntensity(global::VLB.VolumetricLightBeamHD beam, float additive)
+		private void SetIntensity(VolumetricLightBeamHD beam, float additive)
 		{
 		}
 

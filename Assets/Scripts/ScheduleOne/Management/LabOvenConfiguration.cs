@@ -1,16 +1,19 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class LabOvenConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class LabOvenConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.NPCField AssignedChemist;
+		public NPCField AssignedChemist;
 
-		public global::ScheduleOne.Management.ObjectField Destination;
+		public ObjectField Destination;
 
-		public global::ScheduleOne.ObjectScripts.LabOven Oven { get; protected set; }
+		public LabOven Oven { get; protected set; }
 
-		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
+		public TransitRoute DestinationRoute { get; protected set; }
 
-		public LabOvenConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.LabOven oven)
+		public LabOvenConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, LabOven oven)
 			: base(null, null)
 		{
 		}
@@ -19,11 +22,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void DestinationChanged(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void DestinationChanged(BuildableItem item)
 		{
 		}
 
-		public bool DestinationFilter(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public bool DestinationFilter(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

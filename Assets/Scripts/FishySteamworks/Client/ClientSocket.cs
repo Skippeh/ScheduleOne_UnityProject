@@ -1,14 +1,18 @@
+using System;
+using System.Threading;
+using Steamworks;
+
 namespace FishySteamworks.Client
 {
-	public class ClientSocket : global::FishySteamworks.CommonSocket
+	public class ClientSocket : CommonSocket
 	{
-		private global::Steamworks.Callback<global::Steamworks.SteamNetConnectionStatusChangedCallback_t> _onLocalConnectionStateCallback;
+		private Callback<SteamNetConnectionStatusChangedCallback_t> _onLocalConnectionStateCallback;
 
-		private global::Steamworks.CSteamID _hostSteamID;
+		private CSteamID _hostSteamID;
 
-		private global::Steamworks.HSteamNetConnection _socket;
+		private HSteamNetConnection _socket;
 
-		private global::System.Threading.Thread _timeoutThread;
+		private Thread _timeoutThread;
 
 		private float _connectTimeout;
 
@@ -23,7 +27,7 @@ namespace FishySteamworks.Client
 			return false;
 		}
 
-		private void OnLocalConnectionState(global::Steamworks.SteamNetConnectionStatusChangedCallback_t args)
+		private void OnLocalConnectionState(SteamNetConnectionStatusChangedCallback_t args)
 		{
 		}
 
@@ -36,7 +40,7 @@ namespace FishySteamworks.Client
 		{
 		}
 
-		internal void SendToServer(byte channelId, global::System.ArraySegment<byte> segment)
+		internal void SendToServer(byte channelId, ArraySegment<byte> segment)
 		{
 		}
 

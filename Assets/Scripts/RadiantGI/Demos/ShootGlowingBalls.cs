@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace RadiantGI.Demos
 {
-	public class ShootGlowingBalls : global::UnityEngine.MonoBehaviour
+	public class ShootGlowingBalls : MonoBehaviour
 	{
 		public int count;
 
-		public global::UnityEngine.Transform center;
+		public Transform center;
 
-		public global::UnityEngine.GameObject glowingBall;
+		public GameObject glowingBall;
 
 		private void Start()
 		{

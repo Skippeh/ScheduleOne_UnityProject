@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Louis : global::ScheduleOne.NPCs.NPC
+	public class Louis : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ELouisAssembly_002DCSharp_002Edll_Excuted;
 

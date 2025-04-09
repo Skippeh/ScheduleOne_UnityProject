@@ -1,20 +1,25 @@
+using System;
+using ScheduleOne.UI.Settings;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class SettingsScreen : global::ScheduleOne.UI.MainMenu.MainMenuScreen
+	public class SettingsScreen : MainMenuScreen
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class SettingsCategory
 		{
-			public global::UnityEngine.UI.Button Button;
+			public Button Button;
 
-			public global::UnityEngine.GameObject Panel;
+			public GameObject Panel;
 		}
 
-		public global::ScheduleOne.UI.MainMenu.SettingsScreen.SettingsCategory[] Categories;
+		public SettingsCategory[] Categories;
 
-		public global::UnityEngine.UI.Button ApplyDisplayButton;
+		public Button ApplyDisplayButton;
 
-		public global::ScheduleOne.UI.Settings.ConfirmDisplaySettings ConfirmDisplaySettings;
+		public ConfirmDisplaySettings ConfirmDisplaySettings;
 
 		protected override void Awake()
 		{

@@ -1,6 +1,8 @@
-public class RotateAround : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class RotateAround : MonoBehaviour
 {
-	public global::UnityEngine.Transform rot_center;
+	public Transform rot_center;
 
 	private void Start()
 	{

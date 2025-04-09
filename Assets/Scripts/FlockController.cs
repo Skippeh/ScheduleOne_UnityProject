@@ -1,4 +1,7 @@
-public class FlockController : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FlockController : MonoBehaviour
 {
 	public FlockChild _childPrefab;
 
@@ -76,11 +79,11 @@ public class FlockController : global::UnityEngine.MonoBehaviour
 
 	public float _soarMaxTime;
 
-	public global::UnityEngine.LayerMask _avoidanceMask;
+	public LayerMask _avoidanceMask;
 
-	public global::System.Collections.Generic.List<FlockChild> _roamers;
+	public List<FlockChild> _roamers;
 
-	public global::UnityEngine.Vector3 _posBuffer;
+	public Vector3 _posBuffer;
 
 	public int _updateDivisor;
 
@@ -92,15 +95,15 @@ public class FlockController : global::UnityEngine.MonoBehaviour
 
 	public bool _groupChildToNewTransform;
 
-	public global::UnityEngine.Transform _groupTransform;
+	public Transform _groupTransform;
 
 	public string _groupName;
 
 	public bool _groupChildToFlock;
 
-	public global::UnityEngine.Vector3 _startPosOffset;
+	public Vector3 _startPosOffset;
 
-	public global::UnityEngine.Transform _thisT;
+	public Transform _thisT;
 
 	public void Start()
 	{
@@ -110,7 +113,7 @@ public class FlockController : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	public void AddChildToParent(global::UnityEngine.Transform obj)
+	public void AddChildToParent(Transform obj)
 	{
 	}
 

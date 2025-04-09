@@ -1,17 +1,20 @@
+using System;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ProductData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class ProductData : SaveData
 	{
 		public string Name;
 
 		public string ID;
 
-		public global::ScheduleOne.Product.EDrugType DrugType;
+		public EDrugType DrugType;
 
 		public string[] Properties;
 
-		public ProductData(string name, string id, global::ScheduleOne.Product.EDrugType drugType, string[] properties)
+		public ProductData(string name, string id, EDrugType drugType, string[] properties)
 		{
 		}
 	}

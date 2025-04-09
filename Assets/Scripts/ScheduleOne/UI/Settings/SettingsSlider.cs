@@ -1,14 +1,18 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class SettingsSlider : global::UnityEngine.MonoBehaviour
+	public class SettingsSlider : MonoBehaviour
 	{
 		private const float VALUE_DISPLAY_TIME = 2f;
 
 		public bool DisplayValue;
 
-		protected global::UnityEngine.UI.Slider slider;
+		protected Slider slider;
 
-		protected global::TMPro.TextMeshProUGUI valueLabel;
+		protected TextMeshProUGUI valueLabel;
 
 		protected float timeOnValueChange;
 

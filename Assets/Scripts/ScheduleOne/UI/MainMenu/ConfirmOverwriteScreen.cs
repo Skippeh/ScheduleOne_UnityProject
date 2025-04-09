@@ -1,8 +1,8 @@
 namespace ScheduleOne.UI.MainMenu
 {
-	public class ConfirmOverwriteScreen : global::ScheduleOne.UI.MainMenu.MainMenuScreen
+	public class ConfirmOverwriteScreen : MainMenuScreen
 	{
-		public global::ScheduleOne.UI.MainMenu.SetupScreen SetupScreen;
+		public SetupScreen SetupScreen;
 
 		private int slotIndex;
 

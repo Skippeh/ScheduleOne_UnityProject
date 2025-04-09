@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace VLB
 {
-	[global::UnityEngine.AddComponentMenu("")]
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
-	public class BeamGeometryHD : global::VLB.BeamGeometryAbstractBase
+	[AddComponentMenu("")]
+	[ExecuteInEditMode]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
+	public class BeamGeometryHD : BeamGeometryAbstractBase
 	{
 		public enum InvalidTexture
 		{
@@ -11,15 +14,15 @@ namespace VLB
 			NoDepth = 1
 		}
 
-		private global::VLB.VolumetricLightBeamHD m_Master;
+		private VolumetricLightBeamHD m_Master;
 
-		private global::VLB.VolumetricCookieHD m_Cookie;
+		private VolumetricCookieHD m_Cookie;
 
-		private global::VLB.VolumetricShadowHD m_Shadow;
+		private VolumetricShadowHD m_Shadow;
 
-		private global::UnityEngine.Camera m_CurrentCameraRenderingSRP;
+		private Camera m_CurrentCameraRenderingSRP;
 
-		private global::VLB.DirtyProps m_DirtyProps;
+		private DirtyProps m_DirtyProps;
 
 		public bool visible
 		{
@@ -48,7 +51,7 @@ namespace VLB
 
 		private bool isNoiseEnabled => false;
 
-		protected override global::VLB.VolumetricLightBeamAbstractBase GetMaster()
+		protected override VolumetricLightBeamAbstractBase GetMaster()
 		{
 			return null;
 		}
@@ -61,7 +64,7 @@ namespace VLB
 		{
 		}
 
-		public void Initialize(global::VLB.VolumetricLightBeamHD master)
+		public void Initialize(VolumetricLightBeamHD master)
 		{
 		}
 
@@ -69,14 +72,14 @@ namespace VLB
 		{
 		}
 
-		private global::UnityEngine.Vector3 ComputeLocalMatrix()
+		private Vector3 ComputeLocalMatrix()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::VLB.MaterialManager.StaticPropertiesHD ComputeMaterialStaticProperties()
+		private MaterialManager.StaticPropertiesHD ComputeMaterialStaticProperties()
 		{
-			return default(global::VLB.MaterialManager.StaticPropertiesHD);
+			return default(MaterialManager.StaticPropertiesHD);
 		}
 
 		private bool ApplyMaterial()
@@ -88,23 +91,23 @@ namespace VLB
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Vector4 value)
+		public void SetMaterialProp(int nameID, Vector4 value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Color value)
+		public void SetMaterialProp(int nameID, Color value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Matrix4x4 value)
+		public void SetMaterialProp(int nameID, Matrix4x4 value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Texture value)
+		public void SetMaterialProp(int nameID, Texture value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::VLB.BeamGeometryHD.InvalidTexture invalidTexture)
+		public void SetMaterialProp(int nameID, InvalidTexture invalidTexture)
 		{
 		}
 
@@ -116,7 +119,7 @@ namespace VLB
 		{
 		}
 
-		public void SetPropertyDirty(global::VLB.DirtyProps prop)
+		public void SetPropertyDirty(DirtyProps prop)
 		{
 		}
 
@@ -128,7 +131,7 @@ namespace VLB
 		{
 		}
 
-		private void OnBeginCameraRenderingSRP(global::UnityEngine.Rendering.ScriptableRenderContext context, global::UnityEngine.Camera cam)
+		private void OnBeginCameraRenderingSRP(ScriptableRenderContext context, Camera cam)
 		{
 		}
 
@@ -136,7 +139,7 @@ namespace VLB
 		{
 		}
 
-		private void OnWillCameraRenderThisBeam(global::UnityEngine.Camera cam)
+		private void OnWillCameraRenderThisBeam(Camera cam)
 		{
 		}
 
@@ -144,7 +147,7 @@ namespace VLB
 		{
 		}
 
-		private void UpdateMaterialPropertiesForCamera(global::UnityEngine.Camera cam)
+		private void UpdateMaterialPropertiesForCamera(Camera cam)
 		{
 		}
 	}

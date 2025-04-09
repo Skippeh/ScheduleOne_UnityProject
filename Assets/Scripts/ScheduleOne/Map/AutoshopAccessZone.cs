@@ -1,10 +1,13 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class AutoshopAccessZone : global::ScheduleOne.Map.NPCPresenceAccessZone
+	public class AutoshopAccessZone : NPCPresenceAccessZone
 	{
-		public global::UnityEngine.Animation RollerDoorAnim;
+		public Animation RollerDoorAnim;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector VehicleDetection;
+		public VehicleDetector VehicleDetection;
 
 		private bool rollerDoorOpen;
 

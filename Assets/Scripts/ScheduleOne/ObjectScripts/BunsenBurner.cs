@@ -1,36 +1,40 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class BunsenBurner : global::UnityEngine.MonoBehaviour
+	public class BunsenBurner : MonoBehaviour
 	{
 		public bool LockDial;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Gradient FlameColor;
+		[Header("Settings")]
+		public Gradient FlameColor;
 
-		public global::UnityEngine.AnimationCurve LightIntensity;
+		public AnimationCurve LightIntensity;
 
 		public float HandleRotationSpeed;
 
-		public global::UnityEngine.AnimationCurve FlamePitch;
+		public AnimationCurve FlamePitch;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.ParticleSystem Flame;
+		[Header("References")]
+		public ParticleSystem Flame;
 
-		public global::UnityEngine.Light Light;
+		public Light Light;
 
-		public global::UnityEngine.Transform Handle;
+		public Transform Handle;
 
-		public global::ScheduleOne.PlayerTasks.Clickable HandleClickable;
+		public Clickable HandleClickable;
 
-		public global::UnityEngine.Transform Handle_Min;
+		public Transform Handle_Min;
 
-		public global::UnityEngine.Transform Handle_Max;
+		public Transform Handle_Max;
 
-		public global::UnityEngine.Transform Highlight;
+		public Transform Highlight;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::ScheduleOne.Audio.AudioSourceController FlameSound;
+		public AudioSourceController FlameSound;
 
 		public bool Interactable { get; private set; }
 
@@ -60,7 +64,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 

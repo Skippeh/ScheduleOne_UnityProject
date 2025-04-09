@@ -1,20 +1,24 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.VoiceOver
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "VODatabase", menuName = "ScriptableObjects/VODatabase")]
-	public class VODatabase : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "VODatabase", menuName = "ScriptableObjects/VODatabase")]
+	public class VODatabase : ScriptableObject
 	{
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float VolumeMultiplier;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.VoiceOver.VODatabaseEntry> Entries;
+		public List<VODatabaseEntry> Entries;
 
-		public global::ScheduleOne.VoiceOver.VODatabaseEntry GetEntry(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		public VODatabaseEntry GetEntry(EVOLineType lineType)
 		{
 			return null;
 		}
 
-		public global::UnityEngine.AudioClip GetRandomClip(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		public AudioClip GetRandomClip(EVOLineType lineType)
 		{
 			return null;
 		}

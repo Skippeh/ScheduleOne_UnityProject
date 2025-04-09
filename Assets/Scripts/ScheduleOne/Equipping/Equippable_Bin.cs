@@ -1,7 +1,9 @@
+using ScheduleOne.ObjectScripts.HandheldBin;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Bin : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_Bin : Equippable_Viewmodel
 	{
-		public global::ScheduleOne.ObjectScripts.HandheldBin.HandheldBin_Functional bin;
+		public HandheldBin_Functional bin;
 	}
 }

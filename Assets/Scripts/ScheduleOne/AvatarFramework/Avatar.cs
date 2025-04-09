@@ -1,6 +1,15 @@
+using System;
+using EasyButtons;
+using ScheduleOne.AvatarFramework.Animation;
+using ScheduleOne.AvatarFramework.Emotions;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.AvatarFramework.Impostors;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class Avatar : global::UnityEngine.MonoBehaviour
+	public class Avatar : MonoBehaviour
 	{
 		public const int MAX_ACCESSORIES = 9;
 
@@ -12,89 +21,89 @@ namespace ScheduleOne.AvatarFramework
 
 		private static float femaleShoulderScale;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Anim;
+		[Header("References")]
+		public AvatarAnimation Anim;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarLookController LookController;
+		public AvatarLookController LookController;
 
-		public global::UnityEngine.SkinnedMeshRenderer[] BodyMeshes;
+		public SkinnedMeshRenderer[] BodyMeshes;
 
-		public global::UnityEngine.SkinnedMeshRenderer[] ShapeKeyMeshes;
+		public SkinnedMeshRenderer[] ShapeKeyMeshes;
 
-		public global::UnityEngine.SkinnedMeshRenderer FaceMesh;
+		public SkinnedMeshRenderer FaceMesh;
 
-		public global::ScheduleOne.AvatarFramework.EyeController Eyes;
+		public EyeController Eyes;
 
-		public global::ScheduleOne.AvatarFramework.EyebrowController EyeBrows;
+		public EyebrowController EyeBrows;
 
-		public global::UnityEngine.Transform BodyContainer;
+		public Transform BodyContainer;
 
-		public global::UnityEngine.Transform Armature;
+		public Transform Armature;
 
-		public global::UnityEngine.Transform LeftShoulder;
+		public Transform LeftShoulder;
 
-		public global::UnityEngine.Transform RightShoulder;
+		public Transform RightShoulder;
 
-		public global::UnityEngine.Transform HeadBone;
+		public Transform HeadBone;
 
-		public global::UnityEngine.Transform HipBone;
+		public Transform HipBone;
 
-		public global::UnityEngine.Rigidbody[] RagdollRBs;
+		public Rigidbody[] RagdollRBs;
 
-		public global::UnityEngine.Collider[] RagdollColliders;
+		public Collider[] RagdollColliders;
 
-		public global::UnityEngine.Rigidbody MiddleSpineRB;
+		public Rigidbody MiddleSpineRB;
 
-		public global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionManager EmotionManager;
+		public AvatarEmotionManager EmotionManager;
 
-		public global::ScheduleOne.AvatarFramework.AvatarEffects Effects;
+		public AvatarEffects Effects;
 
-		public global::UnityEngine.Transform MiddleSpine;
+		public Transform MiddleSpine;
 
-		public global::UnityEngine.Transform LowerSpine;
+		public Transform LowerSpine;
 
-		public global::UnityEngine.Transform LowestSpine;
+		public Transform LowestSpine;
 
-		public global::ScheduleOne.AvatarFramework.Impostors.AvatarImpostor Impostor;
+		public AvatarImpostor Impostor;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.AvatarFramework.AvatarSettings InitialAvatarSettings;
+		[Header("Settings")]
+		public AvatarSettings InitialAvatarSettings;
 
-		public global::UnityEngine.Material DefaultAvatarMaterial;
+		public Material DefaultAvatarMaterial;
 
 		public bool UseImpostor;
 
-		public global::UnityEngine.Events.UnityEvent<bool, bool, bool> onRagdollChange;
+		public UnityEvent<bool, bool, bool> onRagdollChange;
 
-		[global::UnityEngine.Header("Data - readonly")]
-		[global::UnityEngine.SerializeField]
+		[Header("Data - readonly")]
+		[SerializeField]
 		protected float appliedGender;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float appliedWeight;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.AvatarFramework.Hair appliedHair;
+		[SerializeField]
+		protected Hair appliedHair;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color appliedHairColor;
+		[SerializeField]
+		protected Color appliedHairColor;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.AvatarFramework.Accessory[] appliedAccessories;
+		[SerializeField]
+		protected Accessory[] appliedAccessories;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected bool wearingHairBlockingAccessory;
 
 		private float additionalWeight;
 
 		private float additionalGender;
 
-		[global::UnityEngine.Header("Runtime loading")]
-		public global::ScheduleOne.AvatarFramework.AvatarSettings SettingsToLoad;
+		[Header("Runtime loading")]
+		public AvatarSettings SettingsToLoad;
 
-		public global::UnityEngine.Events.UnityEvent onSettingsLoaded;
+		public UnityEvent onSettingsLoaded;
 
-		private global::UnityEngine.Vector3 originalHipPos;
+		private Vector3 originalHipPos;
 
 		private bool usingCombinedLayer;
 
@@ -102,18 +111,18 @@ namespace ScheduleOne.AvatarFramework
 
 		public bool Ragdolled { get; protected set; }
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable CurrentEquippable { get; protected set; }
+		public AvatarEquippable CurrentEquippable { get; protected set; }
 
-		public global::ScheduleOne.AvatarFramework.AvatarSettings CurrentSettings { get; protected set; }
+		public AvatarSettings CurrentSettings { get; protected set; }
 
-		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
+		public Vector3 CenterPoint => default(Vector3);
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Load()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void LoadNaked()
 		{
 		}
@@ -134,11 +143,11 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void GetMugshot(global::System.Action<global::UnityEngine.Texture2D> callback)
+		public void GetMugshot(Action<Texture2D> callback)
 		{
 		}
 
-		public void SetEmission(global::UnityEngine.Color color)
+		public void SetEmission(Color color)
 		{
 		}
 
@@ -150,6 +159,21 @@ namespace ScheduleOne.AvatarFramework
 		public bool IsWhite()
 		{
 			return false;
+		}
+
+		public string GetFormalAddress(bool capitalized = true)
+		{
+			return null;
+		}
+
+		public string GetThirdPersonAddress(bool capitalized = true)
+		{
+			return null;
+		}
+
+		public string GetThirdPersonPronoun(bool capitalized = true)
+		{
+			return null;
 		}
 
 		private void ApplyShapeKeys(float gender, float weight, bool bodyOnly = false)
@@ -164,15 +188,15 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void LoadAvatarSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void LoadAvatarSettings(AvatarSettings settings)
 		{
 		}
 
-		public void LoadNakedSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings, int maxLayerOrder = 19)
+		public void LoadNakedSettings(AvatarSettings settings, int maxLayerOrder = 19)
 		{
 		}
 
-		public void ApplyBodySettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyBodySettings(AvatarSettings settings)
 		{
 		}
 
@@ -184,11 +208,11 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetSkinColor(global::UnityEngine.Color color)
+		public void SetSkinColor(Color color)
 		{
 		}
 
-		public void ApplyHairSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyHairSettings(AvatarSettings settings)
 		{
 		}
 
@@ -196,11 +220,11 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void ApplyHairColorSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyHairColorSettings(AvatarSettings settings)
 		{
 		}
 
-		public void OverrideHairColor(global::UnityEngine.Color color)
+		public void OverrideHairColor(Color color)
 		{
 		}
 
@@ -208,19 +232,19 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void ApplyEyeBallSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyEyeBallSettings(AvatarSettings settings)
 		{
 		}
 
-		public void ApplyEyeLidSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyEyeLidSettings(AvatarSettings settings)
 		{
 		}
 
-		public void ApplyEyeLidColorSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyEyeLidColorSettings(AvatarSettings settings)
 		{
 		}
 
-		public void ApplyEyebrowSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyEyebrowSettings(AvatarSettings settings)
 		{
 		}
 
@@ -228,27 +252,27 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void ApplyFaceLayerSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyFaceLayerSettings(AvatarSettings settings)
 		{
 		}
 
-		private void SetFaceLayer(int index, string assetPath, global::UnityEngine.Color color)
+		private void SetFaceLayer(int index, string assetPath, Color color)
 		{
 		}
 
-		public void SetFaceTexture(global::UnityEngine.Texture2D tex, global::UnityEngine.Color color)
+		public void SetFaceTexture(Texture2D tex, Color color)
 		{
 		}
 
-		public void ApplyBodyLayerSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings, int maxOrder = -1)
+		public void ApplyBodyLayerSettings(AvatarSettings settings, int maxOrder = -1)
 		{
 		}
 
-		private void SetBodyLayer(int index, string assetPath, global::UnityEngine.Color color)
+		private void SetBodyLayer(int index, string assetPath, Color color)
 		{
 		}
 
-		public void ApplyAccessorySettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void ApplyAccessorySettings(AvatarSettings settings)
 		{
 		}
 
@@ -260,7 +284,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public virtual global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable SetEquippable(string assetPath)
+		public virtual AvatarEquippable SetEquippable(string assetPath)
 		{
 			return null;
 		}

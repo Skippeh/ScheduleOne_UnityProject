@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Chris : global::ScheduleOne.NPCs.NPC
+	public class Chris : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EChrisAssembly_002DCSharp_002Edll_Excuted;
 

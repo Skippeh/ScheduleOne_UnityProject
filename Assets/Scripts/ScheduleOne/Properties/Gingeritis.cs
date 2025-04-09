@@ -1,23 +1,27 @@
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Properties
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "Gingeritis", menuName = "Properties/Gingeritis Property")]
-	public class Gingeritis : global::ScheduleOne.Properties.Property
+	[CreateAssetMenu(fileName = "Gingeritis", menuName = "Properties/Gingeritis Property")]
+	public class Gingeritis : Property
 	{
-		public static global::UnityEngine.Color32 Color;
+		public static Color32 Color;
 
-		public override void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ApplyToNPC(NPC npc)
 		{
 		}
 
-		public override void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ApplyToPlayer(Player player)
 		{
 		}
 
-		public override void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void ClearFromNPC(NPC npc)
 		{
 		}
 
-		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ClearFromPlayer(Player player)
 		{
 		}
 	}

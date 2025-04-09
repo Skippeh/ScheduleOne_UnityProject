@@ -1,12 +1,15 @@
+using ScheduleOne.ObjectScripts.WateringCan;
+using ScheduleOne.PlayerTasks;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class FunctionalWateringCan : global::ScheduleOne.PlayerTasks.Pourable
+	public class FunctionalWateringCan : Pourable
 	{
-		public global::ScheduleOne.ObjectScripts.WateringCan.WateringCanVisuals Visuals;
+		public WateringCanVisuals Visuals;
 
-		private global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance itemInstance;
+		private WateringCanInstance itemInstance;
 
-		public void Setup(global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance instance)
+		public void Setup(WateringCanInstance instance)
 		{
 		}
 

@@ -1,7 +1,11 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	public class CashInstance : global::ScheduleOne.Storage.StorableItemInstance
+	[Serializable]
+	public class CashInstance : StorableItemInstance
 	{
 		public const float MAX_BALANCE = 1E+09f;
 
@@ -11,11 +15,11 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public CashInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+		public CashInstance(ItemDefinition definition, int quantity)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
@@ -28,7 +32,7 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}

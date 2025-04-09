@@ -1,19 +1,21 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class MSGConversationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class MSGConversationData : SaveData
 	{
 		public int ConversationIndex;
 
 		public bool Read;
 
-		public global::ScheduleOne.Persistence.Datas.TextMessageData[] MessageHistory;
+		public TextMessageData[] MessageHistory;
 
-		public global::ScheduleOne.Persistence.Datas.TextResponseData[] ActiveResponses;
+		public TextResponseData[] ActiveResponses;
 
 		public bool IsHidden;
 
-		public MSGConversationData(int conversationIndex, bool read, global::ScheduleOne.Persistence.Datas.TextMessageData[] messageHistory, global::ScheduleOne.Persistence.Datas.TextResponseData[] activeResponses, bool isHidden)
+		public MSGConversationData(int conversationIndex, bool read, TextMessageData[] messageHistory, TextResponseData[] activeResponses, bool isHidden)
 		{
 		}
 

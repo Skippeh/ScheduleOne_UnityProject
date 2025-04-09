@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Storage.StorageEntity))]
-	public class StorageEntityVisualizer : global::ScheduleOne.Storage.StorageVisualizer
+	[RequireComponent(typeof(StorageEntity))]
+	public class StorageEntityVisualizer : StorageVisualizer
 	{
-		private global::ScheduleOne.Storage.StorageEntity storageEntity;
+		private StorageEntity storageEntity;
 
 		protected virtual void Start()
 		{

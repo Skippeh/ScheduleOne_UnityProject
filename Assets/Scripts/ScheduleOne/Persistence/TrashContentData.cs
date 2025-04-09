@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Trash;
+
 namespace ScheduleOne.Persistence
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class TrashContentData
 	{
 		public string[] TrashIDs;
@@ -15,7 +19,7 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public TrashContentData(global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> trashItems)
+		public TrashContentData(List<TrashItem> trashItems)
 		{
 		}
 	}

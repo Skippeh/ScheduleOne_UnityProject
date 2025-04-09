@@ -1,10 +1,12 @@
+using ScheduleOne.Property;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueHandler_EstateAgent : global::ScheduleOne.Dialogue.ControlledDialogueHandler
+	public class DialogueHandler_EstateAgent : ControlledDialogueHandler
 	{
-		private global::ScheduleOne.Property.Property selectedProperty;
+		private ScheduleOne.Property.Property selectedProperty;
 
-		private global::ScheduleOne.Property.Business selectedBusiness;
+		private Business selectedBusiness;
 
 		public override bool CheckChoice(string choiceLabel, out string invalidReason)
 		{

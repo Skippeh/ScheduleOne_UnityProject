@@ -1,10 +1,12 @@
+using UnityEngine.UI;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACSliderReplicator : global::ScheduleOne.AvatarFramework.Customization.ACReplicator
+	public class ACSliderReplicator : ACReplicator
 	{
-		public global::UnityEngine.UI.Slider slider;
+		public Slider slider;
 
-		protected override void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings newSettings)
+		protected override void AvatarSettingsChanged(AvatarSettings newSettings)
 		{
 		}
 	}

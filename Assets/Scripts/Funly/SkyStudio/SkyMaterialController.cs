@@ -1,390 +1,392 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public class SkyMaterialController
 	{
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Material _skyboxMaterial;
+		[SerializeField]
+		private Material _skyboxMaterial;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _skyColor;
+		[SerializeField]
+		private Color _skyColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _skyMiddleColor;
+		[SerializeField]
+		private Color _skyMiddleColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _horizonColor;
+		[SerializeField]
+		private Color _horizonColor;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(-1f, 1f)]
+		[SerializeField]
+		[Range(-1f, 1f)]
 		private float _gradientFadeBegin;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 2f)]
+		[SerializeField]
+		[Range(0f, 2f)]
 		private float _gradientFadeLength;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _skyMiddlePosition;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Cubemap _backgroundCubemap;
+		[SerializeField]
+		private Cubemap _backgroundCubemap;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(-1f, 1f)]
+		[SerializeField]
+		[Range(-1f, 1f)]
 		private float _starFadeBegin;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 2f)]
+		[SerializeField]
+		[Range(0f, 2f)]
 		private float _starFadeLength;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _horizonDistanceScale;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _starBasicCubemap;
+		[SerializeField]
+		private Texture _starBasicCubemap;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _starBasicTwinkleSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _starBasicTwinkleAmount;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _starBasicOpacity;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _starBasicTintColor;
+		[SerializeField]
+		private Color _starBasicTintColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _starBasicExponent;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _starBasicIntensity;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _starLayer1Texture;
+		[SerializeField]
+		private Texture _starLayer1Texture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _starLayer1DataTexture;
+		[SerializeField]
+		private Texture2D _starLayer1DataTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _starLayer1Color;
+		[SerializeField]
+		private Color _starLayer1Color;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 0.1f)]
+		[SerializeField]
+		[Range(0f, 0.1f)]
 		private float _starLayer1MaxRadius;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer1TwinkleAmount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer1TwinkleSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer1RotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.0001f, 0.9999f)]
+		[SerializeField]
+		[Range(0.0001f, 0.9999f)]
 		private float _starLayer1EdgeFeathering;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 10f)]
+		[SerializeField]
+		[Range(1f, 10f)]
 		private float _starLayer1BloomFilterBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector4 _starLayer1SpriteDimensions;
+		[SerializeField]
+		private Vector4 _starLayer1SpriteDimensions;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _starLayer1SpriteItemCount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer1SpriteAnimationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _starLayer2Texture;
+		[SerializeField]
+		private Texture _starLayer2Texture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _starLayer2DataTexture;
+		[SerializeField]
+		private Texture2D _starLayer2DataTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _starLayer2Color;
+		[SerializeField]
+		private Color _starLayer2Color;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 0.1f)]
+		[SerializeField]
+		[Range(0f, 0.1f)]
 		private float _starLayer2MaxRadius;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer2TwinkleAmount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer2TwinkleSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer2RotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.0001f, 0.9999f)]
+		[SerializeField]
+		[Range(0.0001f, 0.9999f)]
 		private float _starLayer2EdgeFeathering;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 10f)]
+		[SerializeField]
+		[Range(1f, 10f)]
 		private float _starLayer2BloomFilterBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector4 _starLayer2SpriteDimensions;
+		[SerializeField]
+		private Vector4 _starLayer2SpriteDimensions;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _starLayer2SpriteItemCount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer2SpriteAnimationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _starLayer3Texture;
+		[SerializeField]
+		private Texture _starLayer3Texture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _starLayer3DataTexture;
+		[SerializeField]
+		private Texture2D _starLayer3DataTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _starLayer3Color;
+		[SerializeField]
+		private Color _starLayer3Color;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 0.1f)]
+		[SerializeField]
+		[Range(0f, 0.1f)]
 		private float _starLayer3MaxRadius;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer3TwinkleAmount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer3TwinkleSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _starLayer3RotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.0001f, 0.9999f)]
+		[SerializeField]
+		[Range(0.0001f, 0.9999f)]
 		private float _starLayer3EdgeFeathering;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 10f)]
+		[SerializeField]
+		[Range(1f, 10f)]
 		private float _starLayer3BloomFilterBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector4 _starLayer3SpriteDimensions;
+		[SerializeField]
+		private Vector4 _starLayer3SpriteDimensions;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _starLayer3SpriteItemCount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _starLayer3SpriteAnimationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _moonTexture;
+		[SerializeField]
+		private Texture _moonTexture;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _moonRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _moonColor;
+		[SerializeField]
+		private Color _moonColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 _moonDirection;
+		[SerializeField]
+		private Vector3 _moonDirection;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Matrix4x4 _moonWorldToLocalMatrix;
+		[SerializeField]
+		private Matrix4x4 _moonWorldToLocalMatrix;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _moonSize;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.0001f, 0.9999f)]
+		[SerializeField]
+		[Range(0.0001f, 0.9999f)]
 		private float _moonEdgeFeathering;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 10f)]
+		[SerializeField]
+		[Range(1f, 10f)]
 		private float _moonBloomFilterBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector4 _moonSpriteDimensions;
+		[SerializeField]
+		private Vector4 _moonSpriteDimensions;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _moonSpriteItemCount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _moonSpriteAnimationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _moonAlpha;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _sunTexture;
+		[SerializeField]
+		private Texture _sunTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _sunColor;
+		[SerializeField]
+		private Color _sunColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _sunRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 _sunDirection;
+		[SerializeField]
+		private Vector3 _sunDirection;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Matrix4x4 _sunWorldToLocalMatrix;
+		[SerializeField]
+		private Matrix4x4 _sunWorldToLocalMatrix;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _sunSize;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.0001f, 0.9999f)]
+		[SerializeField]
+		[Range(0.0001f, 0.9999f)]
 		private float _sunEdgeFeathering;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 10f)]
+		[SerializeField]
+		[Range(1f, 10f)]
 		private float _sunBloomFilterBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector4 _sunSpriteDimensions;
+		[SerializeField]
+		private Vector4 _sunSpriteDimensions;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _sunSpriteItemCount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _sunSpriteAnimationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _sunAlpha;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(-1f, 1f)]
+		[SerializeField]
+		[Range(-1f, 1f)]
 		private float _cloudBegin;
 
 		private float _cloudTextureTiling;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudColor;
+		[SerializeField]
+		private Color _cloudColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _cloudTexture;
+		[SerializeField]
+		private Texture _cloudTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _artCloudCustomTexture;
+		[SerializeField]
+		private Texture _artCloudCustomTexture;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudDensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudDirection;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudHeight;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudColor1;
+		[SerializeField]
+		private Color _cloudColor1;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudColor2;
+		[SerializeField]
+		private Color _cloudColor2;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudFadePosition;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudFadeAmount;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudAlpha;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _cloudCubemap;
+		[SerializeField]
+		private Texture _cloudCubemap;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _cloudCubemapDoubleLayerCustomTexture;
+		[SerializeField]
+		private Texture _cloudCubemapDoubleLayerCustomTexture;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapDoubleLayerRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapDoubleLayerHeight;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapDoubleLayerTintColor;
+		[SerializeField]
+		private Color _cloudCubemapDoubleLayerTintColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapTintColor;
+		[SerializeField]
+		private Color _cloudCubemapTintColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapHeight;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _cloudCubemapNormalTexture;
+		[SerializeField]
+		private Texture _cloudCubemapNormalTexture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapNormalLitColor;
+		[SerializeField]
+		private Color _cloudCubemapNormalLitColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapNormalShadowColor;
+		[SerializeField]
+		private Color _cloudCubemapNormalShadowColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapNormalRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapNormalHeight;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapNormalAmbientItensity;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture _cloudCubemapNormalDoubleLayerCustomTexture;
+		[SerializeField]
+		private Texture _cloudCubemapNormalDoubleLayerCustomTexture;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapNormalDoubleLayerRotationSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _cloudCubemapNormalDoubleLayerHeight;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapNormalDoubleLayerLitColor;
+		[SerializeField]
+		private Color _cloudCubemapNormalDoubleLayerLitColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _cloudCubemapNormalDoubleLayerShadowColor;
+		[SerializeField]
+		private Color _cloudCubemapNormalDoubleLayerShadowColor;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 _cloudCubemapNormalLightDirection;
+		[SerializeField]
+		private Vector3 _cloudCubemapNormalLightDirection;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _fogColor;
+		[SerializeField]
+		private Color _fogColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _fogDensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _fogHeight;
 
-		public global::UnityEngine.Material SkyboxMaterial
+		public Material SkyboxMaterial
 		{
 			get
 			{
@@ -395,33 +397,33 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color SkyColor
+		public Color SkyColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color SkyMiddleColor
+		public Color SkyMiddleColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color HorizonColor
+		public Color HorizonColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -461,7 +463,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Cubemap BackgroundCubemap
+		public Cubemap BackgroundCubemap
 		{
 			get
 			{
@@ -505,7 +507,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture StarBasicCubemap
+		public Texture StarBasicCubemap
 		{
 			get
 			{
@@ -549,11 +551,11 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color StarBasicTintColor
+		public Color StarBasicTintColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -582,7 +584,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture StarLayer1Texture
+		public Texture StarLayer1Texture
 		{
 			get
 			{
@@ -593,7 +595,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture2D StarLayer1DataTexture
+		public Texture2D StarLayer1DataTexture
 		{
 			get
 			{
@@ -604,11 +606,11 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color StarLayer1Color
+		public Color StarLayer1Color
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -703,7 +705,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture StarLayer2Texture
+		public Texture StarLayer2Texture
 		{
 			get
 			{
@@ -714,7 +716,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture2D StarLayer2DataTexture
+		public Texture2D StarLayer2DataTexture
 		{
 			get
 			{
@@ -725,11 +727,11 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color StarLayer2Color
+		public Color StarLayer2Color
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -824,7 +826,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture StarLayer3Texture
+		public Texture StarLayer3Texture
 		{
 			get
 			{
@@ -835,7 +837,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture2D StarLayer3DataTexture
+		public Texture2D StarLayer3DataTexture
 		{
 			get
 			{
@@ -846,11 +848,11 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color StarLayer3Color
+		public Color StarLayer3Color
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -945,7 +947,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture MoonTexture
+		public Texture MoonTexture
 		{
 			get
 			{
@@ -967,33 +969,33 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color MoonColor
+		public Color MoonColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Vector3 MoonDirection
+		public Vector3 MoonDirection
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Matrix4x4 MoonWorldToLocalMatrix
+		public Matrix4x4 MoonWorldToLocalMatrix
 		{
 			get
 			{
-				return default(global::UnityEngine.Matrix4x4);
+				return default(Matrix4x4);
 			}
 			set
 			{
@@ -1066,7 +1068,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture SunTexture
+		public Texture SunTexture
 		{
 			get
 			{
@@ -1077,11 +1079,11 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color SunColor
+		public Color SunColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -1099,22 +1101,22 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Vector3 SunDirection
+		public Vector3 SunDirection
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Matrix4x4 SunWorldToLocalMatrix
+		public Matrix4x4 SunWorldToLocalMatrix
 		{
 			get
 			{
-				return default(global::UnityEngine.Matrix4x4);
+				return default(Matrix4x4);
 			}
 			set
 			{
@@ -1209,18 +1211,18 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color CloudColor
+		public Color CloudColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Texture CloudTexture
+		public Texture CloudTexture
 		{
 			get
 			{
@@ -1231,7 +1233,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture ArtCloudCustomTexture
+		public Texture ArtCloudCustomTexture
 		{
 			get
 			{
@@ -1286,22 +1288,22 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color CloudColor1
+		public Color CloudColor1
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color CloudColor2
+		public Color CloudColor2
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -1341,7 +1343,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture CloudCubemap
+		public Texture CloudCubemap
 		{
 			get
 			{
@@ -1363,7 +1365,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture CloudCubemapDoubleLayerCustomTexture
+		public Texture CloudCubemapDoubleLayerCustomTexture
 		{
 			get
 			{
@@ -1396,22 +1398,22 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapDoubleLayerTintColor
+		public Color CloudCubemapDoubleLayerTintColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapTintColor
+		public Color CloudCubemapTintColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -1429,7 +1431,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture CloudCubemapNormalTexture
+		public Texture CloudCubemapNormalTexture
 		{
 			get
 			{
@@ -1440,22 +1442,22 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapNormalLitColor
+		public Color CloudCubemapNormalLitColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapNormalShadowColor
+		public Color CloudCubemapNormalShadowColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -1495,7 +1497,7 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Texture CloudCubemapNormalDoubleLayerCustomTexture
+		public Texture CloudCubemapNormalDoubleLayerCustomTexture
 		{
 			get
 			{
@@ -1528,44 +1530,44 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapNormalDoubleLayerLitColor
+		public Color CloudCubemapNormalDoubleLayerLitColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color CloudCubemapNormalDoubleLayerShadowColor
+		public Color CloudCubemapNormalDoubleLayerShadowColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Vector3 CloudCubemapNormalLightDirection
+		public Vector3 CloudCubemapNormalLightDirection
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Color FogColor
+		public Color FogColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -1598,45 +1600,45 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetStarLayer1SpriteDimensions()
+		public Vector2 GetStarLayer1SpriteDimensions()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		public void SetStarLayer2SpriteDimensions(int columns, int rows)
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetStarLayer2SpriteDimensions()
+		public Vector2 GetStarLayer2SpriteDimensions()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		public void SetStarLayer3SpriteDimensions(int columns, int rows)
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetStarLayer3SpriteDimensions()
+		public Vector2 GetStarLayer3SpriteDimensions()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		public void SetMoonSpriteDimensions(int columns, int rows)
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetMoonSpriteDimensions()
+		public Vector2 GetMoonSpriteDimensions()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		public void SetSunSpriteDimensions(int columns, int rows)
 		{
 		}
 
-		public global::UnityEngine.Vector2 GetSunSpriteDimensions()
+		public Vector2 GetSunSpriteDimensions()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
 		private void ApplyGradientValuesOnMaterial()

@@ -1,6 +1,9 @@
+using System;
+using System.Reflection;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VolumeEffectFieldFlags
 	{
 		public string fieldName;
@@ -9,11 +12,11 @@ namespace AmplifyColor
 
 		public bool blendFlag;
 
-		public VolumeEffectFieldFlags(global::System.Reflection.FieldInfo pi)
+		public VolumeEffectFieldFlags(FieldInfo pi)
 		{
 		}
 
-		public VolumeEffectFieldFlags(global::AmplifyColor.VolumeEffectField field)
+		public VolumeEffectFieldFlags(VolumeEffectField field)
 		{
 		}
 	}

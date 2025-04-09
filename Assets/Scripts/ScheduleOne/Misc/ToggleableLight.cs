@@ -1,26 +1,30 @@
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class ToggleableLight : global::UnityEngine.MonoBehaviour
+	public class ToggleableLight : MonoBehaviour
 	{
 		public bool isOn;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.DevUtilities.OptimizedLight[] lightSources;
+		[Header("References")]
+		[SerializeField]
+		protected OptimizedLight[] lightSources;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer[] lightSurfacesMeshes;
+		[SerializeField]
+		protected MeshRenderer[] lightSurfacesMeshes;
 
 		public int MaterialIndex;
 
-		[global::UnityEngine.Header("Materials")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material lightOnMat;
+		[Header("Materials")]
+		[SerializeField]
+		protected Material lightOnMat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material lightOffMat;
+		[SerializeField]
+		protected Material lightOffMat;
 
-		private global::ScheduleOne.ConstructableScripts.Constructable_GridBased constructable;
+		private Constructable_GridBased constructable;
 
 		private bool lightsApplied;
 

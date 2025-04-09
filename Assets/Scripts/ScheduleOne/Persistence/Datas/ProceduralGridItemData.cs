@@ -1,14 +1,17 @@
+using System;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ProceduralGridItemData : global::ScheduleOne.Persistence.Datas.BuildableItemData
+	[Serializable]
+	public class ProceduralGridItemData : BuildableItemData
 	{
 		public int Rotation;
 
-		public global::ScheduleOne.Persistence.Datas.FootprintMatchData[] FootprintMatches;
+		public FootprintMatchData[] FootprintMatches;
 
-		public ProceduralGridItemData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, int rotation, global::ScheduleOne.Persistence.Datas.FootprintMatchData[] footprintMatches)
-			: base(default(global::System.Guid), null, 0)
+		public ProceduralGridItemData(Guid guid, ItemInstance item, int loadOrder, int rotation, FootprintMatchData[] footprintMatches)
+			: base(default(Guid), null, 0)
 		{
 		}
 	}

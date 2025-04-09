@@ -1,9 +1,13 @@
+using System;
+using ScheduleOne.NPCs.Behaviour;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class PatrolInstance
 	{
-		public global::ScheduleOne.NPCs.Behaviour.FootPatrolRoute Route;
+		public FootPatrolRoute Route;
 
 		public int Members;
 
@@ -11,12 +15,12 @@ namespace ScheduleOne.Law
 
 		public int EndTime;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public int IntensityRequirement;
 
 		public bool OnlyIfCurfewEnabled;
 
-		public global::ScheduleOne.NPCs.Behaviour.PatrolGroup ActiveGroup { get; protected set; }
+		public PatrolGroup ActiveGroup { get; protected set; }
 
 		public void Evaluate()
 		{

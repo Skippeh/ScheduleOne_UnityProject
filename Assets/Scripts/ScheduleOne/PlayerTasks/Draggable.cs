@@ -1,6 +1,10 @@
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class Draggable : global::ScheduleOne.PlayerTasks.Clickable
+	public class Draggable : Clickable
 	{
 		public enum EDragProjectionMode
 		{
@@ -8,18 +12,18 @@ namespace ScheduleOne.PlayerTasks
 			FlatCameraForward = 1
 		}
 
-		[global::UnityEngine.Header("Drag Force")]
+		[Header("Drag Force")]
 		public float DragForceMultiplier;
 
-		public global::UnityEngine.Transform DragForceOrigin;
+		public Transform DragForceOrigin;
 
-		[global::UnityEngine.Header("Rotation")]
+		[Header("Rotation")]
 		public bool RotationEnabled;
 
 		public float TorqueMultiplier;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.PlayerTasks.Draggable.EDragProjectionMode DragProjectionMode;
+		[Header("Settings")]
+		public EDragProjectionMode DragProjectionMode;
 
 		public bool DisableGravityWhenDragged;
 
@@ -29,25 +33,25 @@ namespace ScheduleOne.PlayerTasks
 
 		public bool CanBeMultiDragged;
 
-		[global::UnityEngine.Header("Additional force")]
+		[Header("Additional force")]
 		public float idleUpForce;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool LocationRestrictionEnabled;
 
-		[global::UnityEngine.HideInInspector]
-		public global::UnityEngine.Vector3 Origin;
+		[HideInInspector]
+		public Vector3 Origin;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float MaxDistanceFromOrigin;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collider> onTriggerExit;
+		public UnityEvent<Collider> onTriggerExit;
 
-		protected global::ScheduleOne.PlayerTasks.DraggableConstraint constraint;
+		protected DraggableConstraint constraint;
 
-		public global::UnityEngine.Rigidbody Rb { get; protected set; }
+		public Rigidbody Rb { get; protected set; }
 
-		public override global::ScheduleOne.PlayerScripts.CursorManager.ECursorType HoveredCursor { get; protected set; }
+		public override CursorManager.ECursorType HoveredCursor { get; protected set; }
 
 		protected virtual void Awake()
 		{
@@ -69,11 +73,11 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		protected virtual void OnTriggerExit(global::UnityEngine.Collider other)
+		protected virtual void OnTriggerExit(Collider other)
 		{
 		}
 
-		public override void StartClick(global::UnityEngine.RaycastHit hit)
+		public override void StartClick(RaycastHit hit)
 		{
 		}
 

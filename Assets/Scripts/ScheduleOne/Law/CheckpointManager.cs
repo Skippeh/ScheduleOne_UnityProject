@@ -1,6 +1,11 @@
+using FishNet.Connection;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	public class CheckpointManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Law.CheckpointManager>
+	public class CheckpointManager : NetworkSingleton<CheckpointManager>
 	{
 		public enum ECheckpointLocation
 		{
@@ -10,28 +15,28 @@ namespace ScheduleOne.Law
 			WestResidential = 3
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Police.RoadCheckpoint WesternCheckpoint;
+		[Header("References")]
+		public RoadCheckpoint WesternCheckpoint;
 
-		public global::ScheduleOne.Police.RoadCheckpoint DocksCheckpoint;
+		public RoadCheckpoint DocksCheckpoint;
 
-		public global::ScheduleOne.Police.RoadCheckpoint NorthResidentialCheckpoint;
+		public RoadCheckpoint NorthResidentialCheckpoint;
 
-		public global::ScheduleOne.Police.RoadCheckpoint WestResidentialCheckpoint;
+		public RoadCheckpoint WestResidentialCheckpoint;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ELaw_002ECheckpointManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ELaw_002ECheckpointManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SetCheckpointEnabled(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation checkpoint, bool enabled, int requestedOfficers)
+		public void SetCheckpointEnabled(ECheckpointLocation checkpoint, bool enabled, int requestedOfficers)
 		{
 		}
 
-		public global::ScheduleOne.Police.RoadCheckpoint GetCheckpoint(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation loc)
+		public RoadCheckpoint GetCheckpoint(ECheckpointLocation loc)
 		{
 			return null;
 		}

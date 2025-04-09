@@ -1,21 +1,31 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.Law;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.UI.WorldspacePopup;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class CallPoliceBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class CallPoliceBehaviour : Behaviour
 	{
 		public const float CALL_POLICE_TIME = 4f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopup PhoneCallPopup;
+		[Header("References")]
+		public WorldspacePopup PhoneCallPopup;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable PhonePrefab;
+		public AvatarEquippable PhonePrefab;
 
-		public global::ScheduleOne.Audio.AudioSourceController CallSound;
+		public AudioSourceController CallSound;
 
 		private float currentCallTime;
 
-		public global::ScheduleOne.PlayerScripts.Player Target;
+		public Player Target;
 
-		public global::ScheduleOne.Law.Crime ReportedCrime;
+		public Crime ReportedCrime;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002ECallPoliceBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
@@ -25,7 +35,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void SetData(global::FishNet.Object.NetworkObject player, global::ScheduleOne.Law.Crime crime)
+		public void SetData(NetworkObject player, Crime crime)
 		{
 		}
 
@@ -49,7 +59,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void FinalizeCall()
 		{
 		}
@@ -79,7 +89,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_FinalizeCall_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_FinalizeCall_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

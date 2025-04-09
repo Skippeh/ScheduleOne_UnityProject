@@ -1,14 +1,17 @@
+using System;
+using FishNet.Object;
+
 namespace ScheduleOne.Tiles
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct CoordinateProceduralTilePair
 	{
-		public global::ScheduleOne.Tiles.Coordinate coord;
+		public Coordinate coord;
 
-		public global::FishNet.Object.NetworkObject tileParent;
+		public NetworkObject tileParent;
 
 		public int tileIndex;
 
-		public global::ScheduleOne.Tiles.ProceduralTile tile => null;
+		public ProceduralTile tile => null;
 	}
 }

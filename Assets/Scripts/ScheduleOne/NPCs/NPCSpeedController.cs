@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCSpeedController : global::UnityEngine.MonoBehaviour
+	public class NPCSpeedController : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class SpeedControl
 		{
 			public string id;
@@ -16,19 +20,19 @@ namespace ScheduleOne.NPCs
 			}
 		}
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Settings")]
+		[Range(0f, 1f)]
 		public float DefaultWalkSpeed;
 
 		public float SpeedMultiplier;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.NPCMovement Movement;
+		[Header("References")]
+		public NPCMovement Movement;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl> speedControlStack;
+		protected List<SpeedControl> speedControlStack;
 
-		[global::UnityEngine.Header("Debug")]
-		public global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl ActiveSpeedControl;
+		[Header("Debug")]
+		public SpeedControl ActiveSpeedControl;
 
 		private void Awake()
 		{
@@ -38,16 +42,16 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl GetHighestPriorityControl()
+		private SpeedControl GetHighestPriorityControl()
 		{
 			return null;
 		}
 
-		public void AddSpeedControl(global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl control)
+		public void AddSpeedControl(SpeedControl control)
 		{
 		}
 
-		public global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl GetSpeedControl(string id)
+		public SpeedControl GetSpeedControl(string id)
 		{
 			return null;
 		}

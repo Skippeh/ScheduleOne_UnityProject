@@ -1,44 +1,52 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace VLB
 {
-	[global::UnityEngine.AddComponentMenu("")]
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-sd/")]
-	public class BeamGeometrySD : global::VLB.BeamGeometryAbstractBase, global::VLB.MaterialModifier.Interface
+	[AddComponentMenu("")]
+	[ExecuteInEditMode]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-sd/")]
+	public class BeamGeometrySD : BeamGeometryAbstractBase, MaterialModifier.Interface
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CCoUpdateFadeOut_003Ed__17 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CCoUpdateFadeOut_003Ed__17 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::VLB.BeamGeometrySD _003C_003E4__this;
+			public BeamGeometrySD _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CCoUpdateFadeOut_003Ed__17(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -47,27 +55,27 @@ namespace VLB
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		private global::VLB.VolumetricLightBeamSD m_Master;
+		private VolumetricLightBeamSD m_Master;
 
-		private global::VLB.MeshType m_CurrentMeshType;
+		private MeshType m_CurrentMeshType;
 
-		private global::VLB.MaterialModifier.Callback m_MaterialModifierCallback;
+		private MaterialModifier.Callback m_MaterialModifierCallback;
 
-		private global::UnityEngine.Coroutine m_CoFadeOut;
+		private Coroutine m_CoFadeOut;
 
-		private global::UnityEngine.Camera m_CurrentCameraRenderingSRP;
+		private Camera m_CurrentCameraRenderingSRP;
 
 		private bool visible
 		{
@@ -112,18 +120,18 @@ namespace VLB
 
 		private bool isDepthBlendEnabled => false;
 
-		protected override global::VLB.VolumetricLightBeamAbstractBase GetMaster()
+		protected override VolumetricLightBeamAbstractBase GetMaster()
 		{
 			return null;
 		}
 
-		private float ComputeFadeOutFactor(global::UnityEngine.Transform camTransform)
+		private float ComputeFadeOutFactor(Transform camTransform)
 		{
 			return 0f;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::VLB.BeamGeometrySD._003CCoUpdateFadeOut_003Ed__17))]
-		private global::System.Collections.IEnumerator CoUpdateFadeOut()
+		[IteratorStateMachine(typeof(_003CCoUpdateFadeOut_003Ed__17))]
+		private IEnumerator CoUpdateFadeOut()
 		{
 			return null;
 		}
@@ -160,7 +168,7 @@ namespace VLB
 		{
 		}
 
-		public void Initialize(global::VLB.VolumetricLightBeamSD master)
+		public void Initialize(VolumetricLightBeamSD master)
 		{
 		}
 
@@ -168,14 +176,14 @@ namespace VLB
 		{
 		}
 
-		private global::UnityEngine.Vector3 ComputeLocalMatrix()
+		private Vector3 ComputeLocalMatrix()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::VLB.MaterialManager.StaticPropertiesSD ComputeMaterialStaticProperties()
+		private MaterialManager.StaticPropertiesSD ComputeMaterialStaticProperties()
 		{
-			return default(global::VLB.MaterialManager.StaticPropertiesSD);
+			return default(MaterialManager.StaticPropertiesSD);
 		}
 
 		private bool ApplyMaterial()
@@ -187,19 +195,19 @@ namespace VLB
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Vector4 value)
+		public void SetMaterialProp(int nameID, Vector4 value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Color value)
+		public void SetMaterialProp(int nameID, Color value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Matrix4x4 value)
+		public void SetMaterialProp(int nameID, Matrix4x4 value)
 		{
 		}
 
-		public void SetMaterialProp(int nameID, global::UnityEngine.Texture value)
+		public void SetMaterialProp(int nameID, Texture value)
 		{
 		}
 
@@ -211,7 +219,7 @@ namespace VLB
 		{
 		}
 
-		public void SetDynamicOcclusionCallback(string shaderKeyword, global::VLB.MaterialModifier.Callback cb)
+		public void SetDynamicOcclusionCallback(string shaderKeyword, MaterialModifier.Callback cb)
 		{
 		}
 
@@ -223,7 +231,7 @@ namespace VLB
 		{
 		}
 
-		private void OnBeginCameraRenderingSRP(global::UnityEngine.Rendering.ScriptableRenderContext context, global::UnityEngine.Camera cam)
+		private void OnBeginCameraRenderingSRP(ScriptableRenderContext context, Camera cam)
 		{
 		}
 
@@ -231,11 +239,11 @@ namespace VLB
 		{
 		}
 
-		private void OnWillCameraRenderThisBeam(global::UnityEngine.Camera cam)
+		private void OnWillCameraRenderThisBeam(Camera cam)
 		{
 		}
 
-		private void UpdateCameraRelatedProperties(global::UnityEngine.Camera cam)
+		private void UpdateCameraRelatedProperties(Camera cam)
 		{
 		}
 	}

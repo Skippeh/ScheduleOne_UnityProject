@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class GenericSaveData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class GenericSaveData : SaveData
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class BoolValue
 		{
 			public string key;
@@ -11,7 +14,7 @@ namespace ScheduleOne.Persistence.Datas
 			public bool value;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class FloatValue
 		{
 			public string key;
@@ -19,7 +22,7 @@ namespace ScheduleOne.Persistence.Datas
 			public float value;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class IntValue
 		{
 			public string key;
@@ -27,7 +30,7 @@ namespace ScheduleOne.Persistence.Datas
 			public int value;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class StringValue
 		{
 			public string key;
@@ -37,13 +40,13 @@ namespace ScheduleOne.Persistence.Datas
 
 		public string GUID;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.GenericSaveData.BoolValue> boolValues;
+		public List<BoolValue> boolValues;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.GenericSaveData.FloatValue> floatValues;
+		public List<FloatValue> floatValues;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.GenericSaveData.IntValue> intValues;
+		public List<IntValue> intValues;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.GenericSaveData.StringValue> stringValues;
+		public List<StringValue> stringValues;
 
 		public GenericSaveData(string guid)
 		{

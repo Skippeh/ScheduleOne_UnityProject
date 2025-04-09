@@ -1,23 +1,27 @@
+using System;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class ProductManagerData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class ProductManagerData : SaveData
 	{
 		public string[] DiscoveredProducts;
 
 		public string[] ListedProducts;
 
-		public global::ScheduleOne.Product.NewMixOperation ActiveMixOperation;
+		public NewMixOperation ActiveMixOperation;
 
 		public bool IsMixComplete;
 
-		public global::ScheduleOne.Product.MixRecipeData[] MixRecipes;
+		public MixRecipeData[] MixRecipes;
 
-		public global::ScheduleOne.DevUtilities.StringIntPair[] ProductPrices;
+		public StringIntPair[] ProductPrices;
 
 		public string[] FavouritedProducts;
 
-		public ProductManagerData(string[] discoveredProducts, string[] listedProducts, global::ScheduleOne.Product.NewMixOperation activeOperation, bool isMixComplete, global::ScheduleOne.Product.MixRecipeData[] mixRecipes, global::ScheduleOne.DevUtilities.StringIntPair[] productPrices, string[] favouritedProducts)
+		public ProductManagerData(string[] discoveredProducts, string[] listedProducts, NewMixOperation activeOperation, bool isMixComplete, MixRecipeData[] mixRecipes, StringIntPair[] productPrices, string[] favouritedProducts)
 		{
 		}
 	}

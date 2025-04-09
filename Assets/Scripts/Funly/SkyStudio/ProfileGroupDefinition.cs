@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public class ProfileGroupDefinition
@@ -25,19 +27,19 @@ namespace Funly.SkyStudio
 			Stars = 1
 		}
 
-		public global::Funly.SkyStudio.ProfileGroupDefinition.GroupType type;
+		public GroupType type;
 
-		public global::Funly.SkyStudio.ProfileGroupDefinition.FormatStyle formatStyle;
+		public FormatStyle formatStyle;
 
-		public global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType;
+		public RebuildType rebuildType;
 
 		public string propertyKey;
 
 		public string groupName;
 
-		public global::UnityEngine.Color color;
+		public Color color;
 
-		public global::Funly.SkyStudio.SpherePoint spherePoint;
+		public SpherePoint spherePoint;
 
 		public float minimumValue;
 
@@ -47,7 +49,7 @@ namespace Funly.SkyStudio
 
 		public bool boolValue;
 
-		public global::UnityEngine.Texture2D texture;
+		public Texture2D texture;
 
 		public string tooltip;
 
@@ -55,67 +57,67 @@ namespace Funly.SkyStudio
 
 		public bool dependsOnValue;
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, string tooltip)
+		public static ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType, global::Funly.SkyStudio.ProfileGroupDefinition.FormatStyle formatStyle, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition NumberGroupDefinition(string groupName, string propKey, float minimumValue, float maximumValue, float value, RebuildType rebuildType, FormatStyle formatStyle, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, global::UnityEngine.Color color, string tooltip)
+		public static ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, Color color, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, global::UnityEngine.Color color, string dependsOnFeature, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, Color color, string dependsOnFeature, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, global::UnityEngine.Color color, global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition ColorGroupDefinition(string groupName, string propKey, Color color, RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition SpherePointGroupDefinition(string groupName, string propKey, float horizontalRotation, float verticalRotation, string tooltip)
+		public static ProfileGroupDefinition SpherePointGroupDefinition(string groupName, string propKey, float horizontalRotation, float verticalRotation, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition SpherePointGroupDefinition(string groupName, string propKey, float horizontalRotation, float verticalRotation, global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition SpherePointGroupDefinition(string groupName, string propKey, float horizontalRotation, float verticalRotation, RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, global::UnityEngine.Texture2D texture, string tooltip)
+		public static ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, Texture2D texture, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, global::UnityEngine.Texture2D texture, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, Texture2D texture, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, global::UnityEngine.Texture2D texture, global::Funly.SkyStudio.ProfileGroupDefinition.RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition TextureGroupDefinition(string groupName, string propKey, Texture2D texture, RebuildType rebuildType, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}
 
-		public static global::Funly.SkyStudio.ProfileGroupDefinition BoolGroupDefinition(string groupName, string propKey, bool value, string dependsOnKeyword, bool dependsOnValue, string tooltip)
+		public static ProfileGroupDefinition BoolGroupDefinition(string groupName, string propKey, bool value, string dependsOnKeyword, bool dependsOnValue, string tooltip)
 		{
 			return null;
 		}

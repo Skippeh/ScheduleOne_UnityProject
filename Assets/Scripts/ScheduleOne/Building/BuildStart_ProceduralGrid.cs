@@ -1,12 +1,15 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Building
 {
-	public class BuildStart_ProceduralGrid : global::ScheduleOne.Building.BuildStart_Base
+	public class BuildStart_ProceduralGrid : BuildStart_Base
 	{
-		public override void StartBuilding(global::ScheduleOne.ItemFramework.ItemInstance itemInstance)
+		public override void StartBuilding(ItemInstance itemInstance)
 		{
 		}
 
-		protected virtual global::ScheduleOne.EntityFramework.ProceduralGridItem CreateGhostModel(global::ScheduleOne.ItemFramework.BuildableItemDefinition itemDefinition)
+		protected virtual ProceduralGridItem CreateGhostModel(BuildableItemDefinition itemDefinition)
 		{
 			return null;
 		}

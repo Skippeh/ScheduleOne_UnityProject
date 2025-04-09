@@ -1,14 +1,17 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class FoliageRustleSound : global::UnityEngine.MonoBehaviour
+	public class FoliageRustleSound : MonoBehaviour
 	{
 		public const float ACTIVATION_RANGE_SQUARED = 900f;
 
 		public const float COOLDOWN = 1f;
 
-		public global::ScheduleOne.Audio.AudioSourceController Sound;
+		public AudioSourceController Sound;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
 		private float timeOnLastHit;
 
@@ -16,7 +19,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public void OnTriggerEnter(global::UnityEngine.Collider other)
+		public void OnTriggerEnter(Collider other)
 		{
 		}
 

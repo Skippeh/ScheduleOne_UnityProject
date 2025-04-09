@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.LandVehicle))]
-	public class VehicleTeleporter : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(LandVehicle))]
+	public class VehicleTeleporter : MonoBehaviour
 	{
 		public void MoveToGraph(bool resetRotation = true)
 		{

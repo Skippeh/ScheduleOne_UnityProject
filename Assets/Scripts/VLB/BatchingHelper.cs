@@ -1,44 +1,46 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public static class BatchingHelper
 	{
 		public static bool forceEnableDepthBlend => false;
 
-		public static bool IsGpuInstancingEnabled(global::UnityEngine.Material material)
+		public static bool IsGpuInstancingEnabled(Material material)
 		{
 			return false;
 		}
 
-		public static void SetMaterialProperties(global::UnityEngine.Material material, bool enableGpuInstancing)
+		public static void SetMaterialProperties(Material material, bool enableGpuInstancing)
 		{
 		}
 
-		private static bool DoesRenderingModePreventBatching(global::VLB.ShaderMode shaderMode, ref string reasons)
-		{
-			return false;
-		}
-
-		public static bool CanBeBatched(global::VLB.VolumetricLightBeamSD beamA, global::VLB.VolumetricLightBeamSD beamB, ref string reasons)
+		private static bool DoesRenderingModePreventBatching(ShaderMode shaderMode, ref string reasons)
 		{
 			return false;
 		}
 
-		public static bool CanBeBatched(global::VLB.VolumetricLightBeamSD beam, ref string reasons)
+		public static bool CanBeBatched(VolumetricLightBeamSD beamA, VolumetricLightBeamSD beamB, ref string reasons)
 		{
 			return false;
 		}
 
-		public static bool CanBeBatched(global::VLB.VolumetricLightBeamHD beamA, global::VLB.VolumetricLightBeamHD beamB, ref string reasons)
+		public static bool CanBeBatched(VolumetricLightBeamSD beam, ref string reasons)
 		{
 			return false;
 		}
 
-		public static bool CanBeBatched(global::VLB.VolumetricLightBeamHD beam, ref string reasons)
+		public static bool CanBeBatched(VolumetricLightBeamHD beamA, VolumetricLightBeamHD beamB, ref string reasons)
 		{
 			return false;
 		}
 
-		public static bool CanBeBatched(global::VLB.VolumetricLightBeamAbstractBase beamA, global::VLB.VolumetricLightBeamAbstractBase beamB, ref string reasons)
+		public static bool CanBeBatched(VolumetricLightBeamHD beam, ref string reasons)
+		{
+			return false;
+		}
+
+		public static bool CanBeBatched(VolumetricLightBeamAbstractBase beamA, VolumetricLightBeamAbstractBase beamB, ref string reasons)
 		{
 			return false;
 		}

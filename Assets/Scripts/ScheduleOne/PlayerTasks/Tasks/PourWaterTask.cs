@@ -1,6 +1,9 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class PourWaterTask : global::ScheduleOne.PlayerTasks.Tasks.PourOntoTargetTask
+	public class PourWaterTask : PourOntoTargetTask
 	{
 		public const float NORMALIZED_FILL_PER_TARGET = 0.2f;
 
@@ -10,9 +13,9 @@ namespace ScheduleOne.PlayerTasks.Tasks
 
 		protected override bool FailOnEmpty => false;
 
-		protected override global::ScheduleOne.ObjectScripts.Pot.ECameraPosition CameraPosition => default(global::ScheduleOne.ObjectScripts.Pot.ECameraPosition);
+		protected override Pot.ECameraPosition CameraPosition => default(Pot.ECameraPosition);
 
-		public PourWaterTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public PourWaterTask(Pot _pot, ItemInstance _itemInstance, Pourable _pourablePrefab)
 			: base(null, null, null)
 		{
 		}

@@ -1,17 +1,21 @@
+using ScheduleOne.AvatarFramework.Animation;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class CameraOrbit : global::UnityEngine.MonoBehaviour
+	public class CameraOrbit : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Required")]
-		public global::UnityEngine.Transform target;
+		[Header("Required")]
+		public Transform target;
 
-		public global::UnityEngine.Transform cam;
+		public Transform cam;
 
-		public global::UnityEngine.UI.GraphicRaycaster raycaster;
+		public GraphicRaycaster raycaster;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarLookController LookAt;
+		public AvatarLookController LookAt;
 
-		[global::UnityEngine.Header("Config")]
+		[Header("Config")]
 		public float targetdistance;
 
 		public float xSpeed;
@@ -30,7 +34,7 @@ namespace ScheduleOne.DevUtilities
 
 		public float ScrollSensativity;
 
-		private global::UnityEngine.Rigidbody rb;
+		private Rigidbody rb;
 
 		private float x;
 

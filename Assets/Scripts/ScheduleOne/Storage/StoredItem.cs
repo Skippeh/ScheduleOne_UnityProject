@@ -1,19 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+using ScheduleOne.Interaction;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StoredItem : global::UnityEngine.MonoBehaviour
+	public class StoredItem : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform buildPoint;
+		[Header("References")]
+		public Transform buildPoint;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.CoordinateStorageFootprintTilePair> CoordinateFootprintTilePairs;
+		public List<CoordinateStorageFootprintTilePair> CoordinateFootprintTilePairs;
 
 		private int footprintX;
 
 		private int footprintY;
 
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		protected InteractableObject intObj;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinatePair> coordinatePairs;
+		protected List<CoordinatePair> coordinatePairs;
 
 		protected float rotation;
 
@@ -21,21 +28,21 @@ namespace ScheduleOne.Storage
 
 		public int ySize;
 
-		public global::ScheduleOne.Storage.StorableItemInstance item { get; protected set; }
+		public StorableItemInstance item { get; protected set; }
 
 		public bool Destroyed { get; private set; }
 
-		public global::ScheduleOne.Tiles.FootprintTile OriginFootprint => null;
+		public FootprintTile OriginFootprint => null;
 
 		public int FootprintX => 0;
 
 		public int FootprintY => 0;
 
-		public global::ScheduleOne.Storage.IStorageEntity parentStorageEntity { get; protected set; }
+		public IStorageEntity parentStorageEntity { get; protected set; }
 
-		public global::ScheduleOne.Storage.StorageGrid parentGrid { get; protected set; }
+		public StorageGrid parentGrid { get; protected set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinatePair> CoordinatePairs => null;
+		public List<CoordinatePair> CoordinatePairs => null;
 
 		public float Rotation => 0f;
 
@@ -53,7 +60,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public virtual void InitializeStoredItem(global::ScheduleOne.Storage.StorableItemInstance _item, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 _originCoordinate, float _rotation)
+		public virtual void InitializeStoredItem(StorableItemInstance _item, StorageGrid grid, Vector2 _originCoordinate, float _rotation)
 		{
 		}
 
@@ -81,16 +88,16 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public static void SetLayerRecursively(global::UnityEngine.GameObject go, int layerNumber)
+		public static void SetLayerRecursively(GameObject go, int layerNumber)
 		{
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> RemoveReservedItems(global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> itemList, global::ScheduleOne.Employees.Employee allowedReservant)
+		public static List<StoredItem> RemoveReservedItems(List<StoredItem> itemList, Employee allowedReservant)
 		{
 			return null;
 		}
 
-		public virtual global::UnityEngine.GameObject CreateGhostModel(global::ScheduleOne.ItemFramework.ItemInstance _item, global::UnityEngine.Transform parent)
+		public virtual GameObject CreateGhostModel(ItemInstance _item, Transform parent)
 		{
 			return null;
 		}
@@ -103,7 +110,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public global::ScheduleOne.Tiles.FootprintTile GetTile(global::ScheduleOne.Tiles.Coordinate coord)
+		public FootprintTile GetTile(Coordinate coord)
 		{
 			return null;
 		}

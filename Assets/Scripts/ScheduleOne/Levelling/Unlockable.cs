@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.Levelling
 {
 	public class Unlockable
 	{
-		public global::ScheduleOne.Levelling.FullRank Rank;
+		public FullRank Rank;
 
 		public string Title;
 
-		public global::UnityEngine.Sprite Icon;
+		public Sprite Icon;
 
-		public Unlockable(global::ScheduleOne.Levelling.FullRank rank, string title, global::UnityEngine.Sprite icon)
+		public Unlockable(FullRank rank, string title, Sprite icon)
 		{
 		}
 	}

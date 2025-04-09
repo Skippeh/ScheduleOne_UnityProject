@@ -1,14 +1,17 @@
+using ScheduleOne.AvatarFramework;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Cutscenes
 {
-	public class EndCutscene : global::ScheduleOne.Cutscenes.Cutscene
+	public class EndCutscene : Cutscene
 	{
-		public global::UnityEngine.Events.UnityEvent onStandUp;
+		public UnityEvent onStandUp;
 
-		public global::UnityEngine.Events.UnityEvent onRunStart;
+		public UnityEvent onRunStart;
 
-		public global::UnityEngine.Events.UnityEvent onEngineStart;
+		public UnityEvent onEngineStart;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public Avatar Avatar;
 
 		public override void Play()
 		{

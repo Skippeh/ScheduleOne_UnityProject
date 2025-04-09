@@ -1,16 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.HelpURL("https://kronnect.com/support")]
-	[global::UnityEngine.AddComponentMenu("Effects/Liquid Volume")]
-	[global::UnityEngine.DisallowMultipleComponent]
-	public class LiquidVolume : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[HelpURL("https://kronnect.com/support")]
+	[AddComponentMenu("Effects/Liquid Volume")]
+	[DisallowMultipleComponent]
+	public class LiquidVolume : MonoBehaviour
 	{
 		private struct MeshCache
 		{
-			public global::UnityEngine.Vector3[] verticesSorted;
+			public Vector3[] verticesSorted;
 
-			public global::UnityEngine.Vector3[] verticesUnsorted;
+			public Vector3[] verticesUnsorted;
 
 			public int[] indices;
 		}
@@ -128,287 +133,287 @@ namespace LiquidVolumeFX
 
 		public static bool FORCE_GLES_COMPATIBILITY;
 
-		[global::UnityEngine.SerializeField]
-		private global::LiquidVolumeFX.TOPOLOGY _topology;
+		[SerializeField]
+		private TOPOLOGY _topology;
 
-		[global::UnityEngine.SerializeField]
-		private global::LiquidVolumeFX.DETAIL _detail;
+		[SerializeField]
+		private DETAIL _detail;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _level;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _levelMultiplier;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Tooltip("Uses directional light color")]
+		[SerializeField]
+		[Tooltip("Uses directional light color")]
 		private bool _useLightColor;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Tooltip("Uses directional light direction for day/night cycle")]
+		[SerializeField]
+		[Tooltip("Uses directional light direction for day/night cycle")]
 		private bool _useLightDirection;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Light _directionalLight;
+		[SerializeField]
+		private Light _directionalLight;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.ColorUsage(true)]
-		private global::UnityEngine.Color _liquidColor1;
+		[SerializeField]
+		[ColorUsage(true)]
+		private Color _liquidColor1;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.1f, 4.85f)]
+		[SerializeField]
+		[Range(0.1f, 4.85f)]
 		private float _liquidScale1;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.ColorUsage(true)]
-		private global::UnityEngine.Color _liquidColor2;
+		[SerializeField]
+		[ColorUsage(true)]
+		private Color _liquidColor2;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(2f, 4.85f)]
+		[SerializeField]
+		[Range(2f, 4.85f)]
 		private float _liquidScale2;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _alpha;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.ColorUsage(true)]
-		private global::UnityEngine.Color _emissionColor;
+		[SerializeField]
+		[ColorUsage(true)]
+		private Color _emissionColor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _ditherShadows;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _murkiness;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _turbulence1;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _turbulence2;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _frecuency;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 2f)]
+		[SerializeField]
+		[Range(0f, 2f)]
 		private float _speed;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 5f)]
+		[SerializeField]
+		[Range(0f, 5f)]
 		private float _sparklingIntensity;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _sparklingAmount;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _deepObscurance;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.ColorUsage(true)]
-		private global::UnityEngine.Color _foamColor;
+		[SerializeField]
+		[ColorUsage(true)]
+		private Color _foamColor;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.01f, 1f)]
+		[SerializeField]
+		[Range(0.01f, 1f)]
 		private float _foamScale;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 0.1f)]
+		[SerializeField]
+		[Range(0f, 0.1f)]
 		private float _foamThickness;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(-1f, 1f)]
+		[SerializeField]
+		[Range(-1f, 1f)]
 		private float _foamDensity;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(4f, 100f)]
+		[SerializeField]
+		[Range(4f, 100f)]
 		private float _foamWeight;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _foamTurbulence;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _foamVisibleFromBottom;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _smokeEnabled;
 
-		[global::UnityEngine.ColorUsage(true)]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color _smokeColor;
+		[ColorUsage(true)]
+		[SerializeField]
+		private Color _smokeColor;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.01f, 1f)]
+		[SerializeField]
+		[Range(0.01f, 1f)]
 		private float _smokeScale;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _smokeBaseObscurance;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _smokeHeightAtten;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 20f)]
+		[SerializeField]
+		[Range(0f, 20f)]
 		private float _smokeSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _fixMesh;
 
-		public global::UnityEngine.Mesh originalMesh;
+		public Mesh originalMesh;
 
-		public global::UnityEngine.Vector3 originalPivotOffset;
+		public Vector3 originalPivotOffset;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 _pivotOffset;
+		[SerializeField]
+		private Vector3 _pivotOffset;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _limitVerticalRange;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1.5f)]
+		[SerializeField]
+		[Range(0f, 1.5f)]
 		private float _upperLimit;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(-1.5f, 1.5f)]
+		[SerializeField]
+		[Range(-1.5f, 1.5f)]
 		private float _lowerLimit;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _subMeshIndex;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Material _flaskMaterial;
+		[SerializeField]
+		private Material _flaskMaterial;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _flaskThickness;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _glossinessInternal;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _scatteringEnabled;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 16f)]
+		[SerializeField]
+		[Range(1f, 16f)]
 		private int _scatteringPower;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _scatteringAmount;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _refractionBlur;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _blurIntensity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _liquidRaySteps;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _foamRaySteps;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _smokeRaySteps;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _bumpMap;
+		[SerializeField]
+		private Texture2D _bumpMap;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		private float _bumpStrength;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _bumpDistortionScale;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector2 _bumpDistortionOffset;
+		[SerializeField]
+		private Vector2 _bumpDistortionOffset;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _distortionMap;
+		[SerializeField]
+		private Texture2D _distortionMap;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D _texture;
+		[SerializeField]
+		private Texture2D _texture;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector2 _textureScale;
+		[SerializeField]
+		private Vector2 _textureScale;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector2 _textureOffset;
+		[SerializeField]
+		private Vector2 _textureOffset;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		private float _distortionAmount;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _depthAware;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _depthAwareOffset;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _irregularDepthDebug;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _depthAwareCustomPass;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _depthAwareCustomPassDebug;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 5f)]
+		[SerializeField]
+		[Range(0f, 5f)]
 		private float _doubleSidedBias;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float _backDepthBias;
 
-		[global::UnityEngine.SerializeField]
-		private global::LiquidVolumeFX.LEVEL_COMPENSATION _rotationLevelCompensation;
+		[SerializeField]
+		private LEVEL_COMPENSATION _rotationLevelCompensation;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _ignoreGravity;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _reactToForces;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 _extentsScale;
+		[SerializeField]
+		private Vector3 _extentsScale;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(1f, 3f)]
+		[SerializeField]
+		[Range(1f, 3f)]
 		private int _noiseVariation;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _allowViewFromInside;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool _debugSpillPoint;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _renderQueue;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Cubemap _reflectionTexture;
+		[SerializeField]
+		private Cubemap _reflectionTexture;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.1f, 5f)]
+		[SerializeField]
+		[Range(0.1f, 5f)]
 		private float _physicsMass;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 0.2f)]
+		[SerializeField]
+		[Range(0f, 0.2f)]
 		private float _physicsAngularDamp;
 
 		private const int SHADER_KEYWORD_DEPTH_AWARE_INDEX = 0;
@@ -445,25 +450,25 @@ namespace LiquidVolumeFX
 
 		private const string SPILL_POINT_GIZMO = "SpillPointGizmo";
 
-		[global::System.NonSerialized]
-		public global::UnityEngine.Material liqMat;
+		[NonSerialized]
+		public Material liqMat;
 
-		private global::UnityEngine.Material liqMatSimple;
+		private Material liqMatSimple;
 
-		private global::UnityEngine.Material liqMatDefaultNoFlask;
+		private Material liqMatDefaultNoFlask;
 
-		private global::UnityEngine.Mesh mesh;
+		private Mesh mesh;
 
-		[global::System.NonSerialized]
-		public global::UnityEngine.Renderer mr;
+		[NonSerialized]
+		public Renderer mr;
 
-		private static readonly global::System.Collections.Generic.List<global::UnityEngine.Material> mrSharedMaterials;
+		private static readonly List<Material> mrSharedMaterials;
 
-		private global::UnityEngine.Vector3 lastPosition;
+		private Vector3 lastPosition;
 
-		private global::UnityEngine.Vector3 lastScale;
+		private Vector3 lastScale;
 
-		private global::UnityEngine.Quaternion lastRotation;
+		private Quaternion lastRotation;
 
 		private string[] shaderKeywords;
 
@@ -471,11 +476,11 @@ namespace LiquidVolumeFX
 
 		private float lastDistanceToCam;
 
-		private global::LiquidVolumeFX.DETAIL currentDetail;
+		private DETAIL currentDetail;
 
-		private global::UnityEngine.Vector4 turb;
+		private Vector4 turb;
 
-		private global::UnityEngine.Vector4 shaderTurb;
+		private Vector4 shaderTurb;
 
 		private float turbulenceSpeed;
 
@@ -489,17 +494,17 @@ namespace LiquidVolumeFX
 
 		private float levelMultipled;
 
-		private global::UnityEngine.Texture2D noise3DUnwrapped;
+		private Texture2D noise3DUnwrapped;
 
-		private global::UnityEngine.Texture3D[] noise3DTex;
+		private Texture3D[] noise3DTex;
 
-		private global::UnityEngine.Color[][] colors3D;
+		private Color[][] colors3D;
 
-		private global::UnityEngine.Vector3[] verticesUnsorted;
+		private Vector3[] verticesUnsorted;
 
-		private global::UnityEngine.Vector3[] verticesSorted;
+		private Vector3[] verticesSorted;
 
-		private static global::UnityEngine.Vector3[] rotatedVertices;
+		private static Vector3[] rotatedVertices;
 
 		private int[] verticesIndices;
 
@@ -507,9 +512,9 @@ namespace LiquidVolumeFX
 
 		private float lastLevelVolumeRef;
 
-		private global::UnityEngine.Vector3 inertia;
+		private Vector3 inertia;
 
-		private global::UnityEngine.Vector3 lastAvgVelocity;
+		private Vector3 lastAvgVelocity;
 
 		private float angularVelocity;
 
@@ -517,47 +522,47 @@ namespace LiquidVolumeFX
 
 		private float turbulenceDueForces;
 
-		private global::UnityEngine.Quaternion liquidRot;
+		private Quaternion liquidRot;
 
 		private float prevThickness;
 
-		private global::UnityEngine.GameObject spillPointGizmo;
+		private GameObject spillPointGizmo;
 
 		private static string[] defaultContainerNames;
 
-		private global::UnityEngine.Color[] pointLightColorBuffer;
+		private Color[] pointLightColorBuffer;
 
-		private global::UnityEngine.Vector4[] pointLightPositionBuffer;
+		private Vector4[] pointLightPositionBuffer;
 
 		private int lastPointLightCount;
 
-		private static readonly global::System.Collections.Generic.Dictionary<global::UnityEngine.Mesh, global::LiquidVolumeFX.LiquidVolume.MeshCache> meshCache;
+		private static readonly Dictionary<Mesh, MeshCache> meshCache;
 
-		private readonly global::System.Collections.Generic.List<global::UnityEngine.Vector3> verts;
+		private readonly List<Vector3> verts;
 
-		private readonly global::System.Collections.Generic.List<global::UnityEngine.Vector3> cutPoints;
+		private readonly List<Vector3> cutPoints;
 
-		private global::UnityEngine.Vector3 cutPlaneCenter;
+		private Vector3 cutPlaneCenter;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Mesh fixedMesh;
+		[SerializeField]
+		private Mesh fixedMesh;
 
-		public global::LiquidVolumeFX.TOPOLOGY topology
+		public TOPOLOGY topology
 		{
 			get
 			{
-				return default(global::LiquidVolumeFX.TOPOLOGY);
+				return default(TOPOLOGY);
 			}
 			set
 			{
 			}
 		}
 
-		public global::LiquidVolumeFX.DETAIL detail
+		public DETAIL detail
 		{
 			get
 			{
-				return default(global::LiquidVolumeFX.DETAIL);
+				return default(DETAIL);
 			}
 			set
 			{
@@ -608,7 +613,7 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Light directionalLight
+		public Light directionalLight
 		{
 			get
 			{
@@ -619,11 +624,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Color liquidColor1
+		public Color liquidColor1
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -641,11 +646,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Color liquidColor2
+		public Color liquidColor2
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -674,11 +679,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Color emissionColor
+		public Color emissionColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -784,11 +789,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Color foamColor
+		public Color foamColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -872,11 +877,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Color smokeColor
+		public Color smokeColor
 		{
 			get
 			{
-				return default(global::UnityEngine.Color);
+				return default(Color);
 			}
 			set
 			{
@@ -938,11 +943,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Vector3 pivotOffset
+		public Vector3 pivotOffset
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
@@ -993,7 +998,7 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Material flaskMaterial
+		public Material flaskMaterial
 		{
 			get
 			{
@@ -1114,7 +1119,7 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Texture2D bumpMap
+		public Texture2D bumpMap
 		{
 			get
 			{
@@ -1147,18 +1152,18 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Vector2 bumpDistortionOffset
+		public Vector2 bumpDistortionOffset
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Texture2D distortionMap
+		public Texture2D distortionMap
 		{
 			get
 			{
@@ -1169,7 +1174,7 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Texture2D texture
+		public Texture2D texture
 		{
 			get
 			{
@@ -1180,22 +1185,22 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Vector2 textureScale
+		public Vector2 textureScale
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Vector2 textureOffset
+		public Vector2 textureOffset
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector2);
+				return default(Vector2);
 			}
 			set
 			{
@@ -1290,11 +1295,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::LiquidVolumeFX.LEVEL_COMPENSATION rotationLevelCompensation
+		public LEVEL_COMPENSATION rotationLevelCompensation
 		{
 			get
 			{
-				return default(global::LiquidVolumeFX.LEVEL_COMPENSATION);
+				return default(LEVEL_COMPENSATION);
 			}
 			set
 			{
@@ -1323,11 +1328,11 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Vector3 extentsScale
+		public Vector3 extentsScale
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
@@ -1378,7 +1383,7 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public global::UnityEngine.Cubemap reflectionTexture
+		public Cubemap reflectionTexture
 		{
 			get
 			{
@@ -1415,13 +1420,13 @@ namespace LiquidVolumeFX
 
 		public float liquidSurfaceYPosition => 0f;
 
-		public event global::LiquidVolumeFX.PropertiesChangedEvent onPropertiesChanged
+		public event PropertiesChangedEvent onPropertiesChanged
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
@@ -1463,7 +1468,7 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		private int vertexComparer(global::UnityEngine.Vector3 v0, global::UnityEngine.Vector3 v1)
+		private int vertexComparer(Vector3 v0, Vector3 v1)
 		{
 			return 0;
 		}
@@ -1480,9 +1485,9 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		private global::UnityEngine.Color ApplyGlobalAlpha(global::UnityEngine.Color originalColor)
+		private Color ApplyGlobalAlpha(Color originalColor)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 
 		private void GetRenderer()
@@ -1497,7 +1502,7 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		private float SignedVolumeOfTriangle(global::UnityEngine.Vector3 p1, global::UnityEngine.Vector3 p2, global::UnityEngine.Vector3 p3, global::UnityEngine.Vector3 zeroPoint)
+		private float SignedVolumeOfTriangle(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 zeroPoint)
 		{
 			return 0f;
 		}
@@ -1517,9 +1522,9 @@ namespace LiquidVolumeFX
 			return 0f;
 		}
 
-		private global::UnityEngine.Vector3 ClampVertexToSlicePlane(global::UnityEngine.Vector3 p, global::UnityEngine.Vector3 q, float level)
+		private Vector3 ClampVertexToSlicePlane(Vector3 p, Vector3 q, float level)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public float GetMeshVolumeUnderLevel(float level01, float yExtent)
@@ -1537,7 +1542,7 @@ namespace LiquidVolumeFX
 			return 0f;
 		}
 
-		private int PolygonSortOnPlane(global::UnityEngine.Vector3 p1, global::UnityEngine.Vector3 p2)
+		private int PolygonSortOnPlane(Vector3 p1, Vector3 p2)
 		{
 			return 0;
 		}
@@ -1550,12 +1555,12 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		private bool PointInAABB(global::UnityEngine.Vector3 point)
+		private bool PointInAABB(Vector3 point)
 		{
 			return false;
 		}
 
-		private bool PointInCylinder(global::UnityEngine.Vector3 point)
+		private bool PointInCylinder(Vector3 point)
 		{
 			return false;
 		}
@@ -1564,15 +1569,15 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		public bool GetSpillPoint(out global::UnityEngine.Vector3 spillPosition, float apertureStart = 1f)
+		public bool GetSpillPoint(out Vector3 spillPosition, float apertureStart = 1f)
 		{
-			spillPosition = default(global::UnityEngine.Vector3);
+			spillPosition = default(Vector3);
 			return false;
 		}
 
-		public bool GetSpillPoint(out global::UnityEngine.Vector3 spillPosition, out float spillAmount, float apertureStart = 1f, global::LiquidVolumeFX.LEVEL_COMPENSATION rotationCompensation = global::LiquidVolumeFX.LEVEL_COMPENSATION.None)
+		public bool GetSpillPoint(out Vector3 spillPosition, out float spillAmount, float apertureStart = 1f, LEVEL_COMPENSATION rotationCompensation = LEVEL_COMPENSATION.None)
 		{
-			spillPosition = default(global::UnityEngine.Vector3);
+			spillPosition = default(Vector3);
 			spillAmount = default(float);
 			return false;
 		}
@@ -1589,7 +1594,7 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		public void CenterPivot(global::UnityEngine.Vector3 offset)
+		public void CenterPivot(Vector3 offset)
 		{
 		}
 
@@ -1609,7 +1614,7 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		public void CopyFrom(global::LiquidVolumeFX.LiquidVolume lv)
+		public void CopyFrom(LiquidVolume lv)
 		{
 		}
 	}

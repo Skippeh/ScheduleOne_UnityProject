@@ -1,11 +1,13 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class BusinessData : global::ScheduleOne.Persistence.Datas.PropertyData
+	[Serializable]
+	public class BusinessData : PropertyData
 	{
-		public global::ScheduleOne.Persistence.Datas.LaunderOperationData[] LaunderingOperations;
+		public LaunderOperationData[] LaunderingOperations;
 
-		public BusinessData(string propertyCode, bool isOwned, bool[] switchStates, global::ScheduleOne.Persistence.Datas.LaunderOperationData[] launderingOperations, bool[] toggleableStates)
+		public BusinessData(string propertyCode, bool isOwned, bool[] switchStates, LaunderOperationData[] launderingOperations, bool[] toggleableStates)
 			: base(null, isOwned: false, null, null)
 		{
 		}

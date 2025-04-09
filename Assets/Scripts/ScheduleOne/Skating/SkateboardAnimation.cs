@@ -1,18 +1,22 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Skating
 {
-	public class SkateboardAnimation : global::UnityEngine.MonoBehaviour
+	public class SkateboardAnimation : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class AlignmentSet
 		{
-			public global::UnityEngine.Transform Transform;
+			public Transform Transform;
 
-			public global::UnityEngine.Transform Default;
+			public Transform Default;
 
-			public global::UnityEngine.Transform Animated;
+			public Transform Animated;
 		}
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float JumpCrouchAmount;
 
 		public float CrouchSpeed;
@@ -37,45 +41,45 @@ namespace ScheduleOne.Skating
 
 		public float PushAnimationSpeed;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet PelvisContainerAlignment;
+		[Header("References")]
+		public AlignmentSet PelvisContainerAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet PelvisAlignment;
+		public AlignmentSet PelvisAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet SpineContainerAlignment;
+		public AlignmentSet SpineContainerAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet SpineAlignment;
+		public AlignmentSet SpineAlignment;
 
-		public global::UnityEngine.Transform SpineAlignment_Hunched;
+		public Transform SpineAlignment_Hunched;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet LeftFootAlignment;
+		public AlignmentSet LeftFootAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet RightFootAlignment;
+		public AlignmentSet RightFootAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet LeftLegBendTarget;
+		public AlignmentSet LeftLegBendTarget;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet RightLegBendTarget;
+		public AlignmentSet RightLegBendTarget;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet LeftHandAlignment;
+		public AlignmentSet LeftHandAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet RightHandAlignment;
+		public AlignmentSet RightHandAlignment;
 
-		public global::UnityEngine.Transform AvatarFaceTarget;
+		public Transform AvatarFaceTarget;
 
-		public global::UnityEngine.Transform HandContainer;
+		public Transform HandContainer;
 
-		public global::UnityEngine.Animation IKAnimation;
+		public Animation IKAnimation;
 
-		[global::UnityEngine.Header("Arm Lift")]
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet LeftHandLoweredAlignment;
+		[Header("Arm Lift")]
+		public AlignmentSet LeftHandLoweredAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet LeftHandRaisedAlignment;
+		public AlignmentSet LeftHandRaisedAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet RightHandLoweredAlignment;
+		public AlignmentSet RightHandLoweredAlignment;
 
-		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet RightHandRaisedAlignment;
+		public AlignmentSet RightHandRaisedAlignment;
 
-		private global::ScheduleOne.Skating.Skateboard board;
+		private Skateboard board;
 
 		private float currentCrouchShift;
 
@@ -83,17 +87,17 @@ namespace ScheduleOne.Skating
 
 		private float currentArmLift;
 
-		private global::UnityEngine.Quaternion pelvisDefaultRotation;
+		private Quaternion pelvisDefaultRotation;
 
-		private global::UnityEngine.Vector3 pelvisDefaultPosition;
+		private Vector3 pelvisDefaultPosition;
 
-		private global::UnityEngine.Vector3 spineDefaultPosition;
+		private Vector3 spineDefaultPosition;
 
 		private float currentMomentumOffset;
 
 		private float ikBlend;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet> alignmentSets;
+		private List<AlignmentSet> alignmentSets;
 
 		public float CurrentCrouchShift => 0f;
 

@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Persistence
 {
-	public class GenericSaveablesManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Persistence.GenericSaveablesManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class GenericSaveablesManager : Singleton<GenericSaveablesManager>, IBaseSaveable, ISaveable
 	{
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.IGenericSaveable> Saveables;
+		protected List<IGenericSaveable> Saveables;
 
-		private global::ScheduleOne.Persistence.Loaders.GenericSaveablesLoader loader;
+		private GenericSaveablesLoader loader;
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -28,7 +33,7 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void RegisterSaveable(global::ScheduleOne.Persistence.IGenericSaveable saveable)
+		public void RegisterSaveable(IGenericSaveable saveable)
 		{
 		}
 
@@ -37,12 +42,12 @@ namespace ScheduleOne.Persistence
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public void LoadSaveable(global::ScheduleOne.Persistence.Datas.GenericSaveData data)
+		public void LoadSaveable(GenericSaveData data)
 		{
 		}
 	}

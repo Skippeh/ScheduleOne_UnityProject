@@ -1,6 +1,8 @@
+using EasyButtons;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCEvent : global::ScheduleOne.NPCs.Schedules.NPCAction
+	public class NPCEvent : NPCAction
 	{
 		public int Duration;
 
@@ -12,12 +14,12 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public new string ActionName => null;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void ApplyDuration()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void ApplyEndTime()
 		{
 		}

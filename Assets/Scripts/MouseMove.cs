@@ -1,9 +1,11 @@
-public class MouseMove : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class MouseMove : MonoBehaviour
 {
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private float _sensitivity;
 
-	private global::UnityEngine.Vector3 _originalPos;
+	private Vector3 _originalPos;
 
 	private void Start()
 	{

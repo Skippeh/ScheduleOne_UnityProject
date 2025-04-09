@@ -1,6 +1,9 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.GameTime
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct GameDateTime
 	{
 		public int elapsedDays;
@@ -9,20 +12,25 @@ namespace ScheduleOne.GameTime
 
 		public GameDateTime(int _elapsedDays, int _time)
 		{
-			elapsedDays = 0;
-			time = 0;
+			elapsedDays = _elapsedDays;
+			time = _time;
 		}
 
 		public GameDateTime(int _minSum)
 		{
-			elapsedDays = 0;
-			time = 0;
+			elapsedDays = _minSum / 1440;
+			int minSum = _minSum % 1440;
+			if (_minSum < 0)
+			{
+				minSum = -_minSum % 1440;
+			}
+			time = TimeManager.Get24HourTimeFromMinSum(minSum);
 		}
 
-		public GameDateTime(global::ScheduleOne.Persistence.Datas.GameDateTimeData data)
+		public GameDateTime(GameDateTimeData data)
 		{
-			elapsedDays = 0;
-			time = 0;
+			elapsedDays = data.ElapsedDays;
+			time = data.Time;
 		}
 
 		public int GetMinSum()
@@ -30,27 +38,27 @@ namespace ScheduleOne.GameTime
 			return 0;
 		}
 
-		public global::ScheduleOne.GameTime.GameDateTime AddMins(int mins)
+		public GameDateTime AddMins(int mins)
 		{
-			return default(global::ScheduleOne.GameTime.GameDateTime);
+			return default(GameDateTime);
 		}
 
-		public static global::ScheduleOne.GameTime.GameDateTime operator +(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		public static GameDateTime operator +(GameDateTime a, GameDateTime b)
 		{
-			return default(global::ScheduleOne.GameTime.GameDateTime);
+			return default(GameDateTime);
 		}
 
-		public static global::ScheduleOne.GameTime.GameDateTime operator -(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		public static GameDateTime operator -(GameDateTime a, GameDateTime b)
 		{
-			return default(global::ScheduleOne.GameTime.GameDateTime);
+			return default(GameDateTime);
 		}
 
-		public static bool operator >(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		public static bool operator >(GameDateTime a, GameDateTime b)
 		{
 			return false;
 		}
 
-		public static bool operator <(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		public static bool operator <(GameDateTime a, GameDateTime b)
 		{
 			return false;
 		}

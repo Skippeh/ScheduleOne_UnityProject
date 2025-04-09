@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct DisplaySettings
 	{
 		public enum EDisplayMode
@@ -12,7 +16,7 @@ namespace ScheduleOne.DevUtilities
 
 		public int ResolutionIndex;
 
-		public global::ScheduleOne.DevUtilities.DisplaySettings.EDisplayMode DisplayMode;
+		public EDisplayMode DisplayMode;
 
 		public bool VSync;
 
@@ -24,7 +28,7 @@ namespace ScheduleOne.DevUtilities
 
 		public int ActiveDisplayIndex;
 
-		public static global::System.Collections.Generic.List<global::UnityEngine.Resolution> GetResolutions()
+		public static List<Resolution> GetResolutions()
 		{
 			return null;
 		}

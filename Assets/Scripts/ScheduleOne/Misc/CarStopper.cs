@@ -1,14 +1,17 @@
+using UnityEngine;
+using UnityEngine.AI;
+
 namespace ScheduleOne.Misc
 {
-	public class CarStopper : global::UnityEngine.MonoBehaviour
+	public class CarStopper : MonoBehaviour
 	{
 		public bool isActive;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform blocker;
+		[Header("References")]
+		[SerializeField]
+		protected Transform blocker;
 
-		public global::UnityEngine.AI.NavMeshObstacle Obstacle;
+		public NavMeshObstacle Obstacle;
 
 		private float moveTime;
 

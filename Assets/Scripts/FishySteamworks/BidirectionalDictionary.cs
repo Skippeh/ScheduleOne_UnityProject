@@ -1,20 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace FishySteamworks
 {
-	public class BidirectionalDictionary<T1, T2> : global::System.Collections.IEnumerable
+	public class BidirectionalDictionary<T1, T2> : IEnumerable
 	{
-		private global::System.Collections.Generic.Dictionary<T1, T2> t1ToT2Dict;
+		private Dictionary<T1, T2> t1ToT2Dict;
 
-		private global::System.Collections.Generic.Dictionary<T2, T1> t2ToT1Dict;
+		private Dictionary<T2, T1> t2ToT1Dict;
 
-		public global::System.Collections.Generic.IEnumerable<T1> FirstTypes => null;
+		public IEnumerable<T1> FirstTypes => null;
 
-		public global::System.Collections.Generic.IEnumerable<T2> SecondTypes => null;
+		public IEnumerable<T2> SecondTypes => null;
 
 		public int Count => 0;
 
-		public global::System.Collections.Generic.Dictionary<T1, T2> First => null;
+		public Dictionary<T1, T2> First => null;
 
-		public global::System.Collections.Generic.Dictionary<T2, T1> Second => null;
+		public Dictionary<T2, T1> Second => null;
 
 		public T1 this[T2 key]
 		{
@@ -38,7 +41,7 @@ namespace FishySteamworks
 			}
 		}
 
-		public global::System.Collections.IEnumerator GetEnumerator()
+		public IEnumerator GetEnumerator()
 		{
 			return null;
 		}

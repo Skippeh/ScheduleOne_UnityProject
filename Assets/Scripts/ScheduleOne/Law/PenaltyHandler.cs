@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.Law
 {
 	public static class PenaltyHandler
@@ -30,7 +32,7 @@ namespace ScheduleOne.Law
 
 		public const float DISCHARGE_FIREARM_FINE = 50f;
 
-		public static global::System.Collections.Generic.List<string> ProcessCrimeList(global::System.Collections.Generic.Dictionary<global::ScheduleOne.Law.Crime, int> crimes)
+		public static List<string> ProcessCrimeList(Dictionary<Crime, int> crimes)
 		{
 			return null;
 		}

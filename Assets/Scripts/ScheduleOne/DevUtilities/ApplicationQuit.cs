@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class ApplicationQuit : global::UnityEngine.MonoBehaviour
+	public class ApplicationQuit : MonoBehaviour
 	{
 		public void Quit()
 		{

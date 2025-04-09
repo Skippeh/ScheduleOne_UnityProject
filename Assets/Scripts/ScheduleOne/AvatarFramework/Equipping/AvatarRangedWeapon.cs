@@ -1,41 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class AvatarRangedWeapon : global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon
+	public class AvatarRangedWeapon : AvatarWeapon
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CReload_003Ed__30 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CReload_003Ed__30 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon _003C_003E4__this;
+			public AvatarRangedWeapon _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CReload_003Ed__30(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,21 +53,21 @@ namespace ScheduleOne.AvatarFramework.Equipping
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
 		public static string[] RaycastLayers;
 
-		[global::UnityEngine.Header("Weapon Settings")]
+		[Header("Weapon Settings")]
 		public int MagazineSize;
 
 		public float ReloadTime;
@@ -73,17 +82,17 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public float Damage;
 
-		[global::UnityEngine.Header("Accuracy")]
+		[Header("Accuracy")]
 		public float HitChange_MinRange;
 
 		public float HitChange_MaxRange;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform MuzzlePoint;
+		[Header("References")]
+		public Transform MuzzlePoint;
 
-		public global::ScheduleOne.Audio.AudioSourceController FireSound;
+		public AudioSourceController FireSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string LoweredAnimationTrigger;
 
 		public string RaisedAnimationTrigger;
@@ -102,7 +111,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public bool IsRaised { get; protected set; }
 
-		public override void Equip(global::ScheduleOne.AvatarFramework.Avatar _avatar)
+		public override void Equip(Avatar _avatar)
 		{
 		}
 
@@ -123,17 +132,17 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			return false;
 		}
 
-		public virtual void Shoot(global::UnityEngine.Vector3 endPoint)
+		public virtual void Shoot(Vector3 endPoint)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon._003CReload_003Ed__30))]
-		private global::System.Collections.IEnumerator Reload()
+		[IteratorStateMachine(typeof(_003CReload_003Ed__30))]
+		private IEnumerator Reload()
 		{
 			return null;
 		}
 
-		public bool IsPlayerInLoS(global::ScheduleOne.PlayerScripts.Player target)
+		public bool IsPlayerInLoS(Player target)
 		{
 			return false;
 		}

@@ -1,14 +1,16 @@
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Persistence
 {
 	public class LoadRequest
 	{
 		public string Path;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader;
+		public Loader Loader;
 
 		public bool IsDone { get; private set; }
 
-		public LoadRequest(string filePath, global::ScheduleOne.Persistence.Loaders.Loader loader)
+		public LoadRequest(string filePath, Loader loader)
 		{
 		}
 

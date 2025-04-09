@@ -1,4 +1,7 @@
-public class UICharacterRotate : global::UnityEngine.MonoBehaviour, global::UnityEngine.EventSystems.IPointerDownHandler, global::UnityEngine.EventSystems.IEventSystemHandler, global::UnityEngine.EventSystems.IPointerUpHandler
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class UICharacterRotate : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 {
 	public UIControllerDEMO uIController;
 
@@ -6,11 +9,11 @@ public class UICharacterRotate : global::UnityEngine.MonoBehaviour, global::Unit
 
 	private bool toogle;
 
-	public void OnPointerDown(global::UnityEngine.EventSystems.PointerEventData eventData)
+	public void OnPointerDown(PointerEventData eventData)
 	{
 	}
 
-	public void OnPointerUp(global::UnityEngine.EventSystems.PointerEventData eventData)
+	public void OnPointerUp(PointerEventData eventData)
 	{
 	}
 

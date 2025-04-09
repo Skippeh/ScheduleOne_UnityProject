@@ -1,9 +1,13 @@
+using FishNet.Object;
+using ScheduleOne.Map;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.LandVehicle))]
-	public class VehicleInitializer : global::FishNet.Object.NetworkBehaviour
+	[RequireComponent(typeof(LandVehicle))]
+	public class VehicleInitializer : NetworkBehaviour
 	{
-		public global::ScheduleOne.Map.ParkingLot InitialParkingLot;
+		public ParkingLot InitialParkingLot;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002EVehicleInitializerAssembly_002DCSharp_002Edll_Excuted;
 

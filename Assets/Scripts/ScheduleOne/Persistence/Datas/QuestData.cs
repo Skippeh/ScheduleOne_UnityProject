@@ -1,11 +1,14 @@
+using System;
+using ScheduleOne.Quests;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class QuestData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class QuestData : SaveData
 	{
 		public string GUID;
 
-		public global::ScheduleOne.Quests.EQuestState State;
+		public EQuestState State;
 
 		public bool IsTracked;
 
@@ -15,11 +18,11 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool Expires;
 
-		public global::ScheduleOne.Persistence.Datas.GameDateTimeData ExpiryDate;
+		public GameDateTimeData ExpiryDate;
 
-		public global::ScheduleOne.Persistence.Datas.QuestEntryData[] Entries;
+		public QuestEntryData[] Entries;
 
-		public QuestData(string guid, global::ScheduleOne.Quests.EQuestState state, bool isTracked, string title, string desc, bool expires, global::ScheduleOne.Persistence.Datas.GameDateTimeData expiry, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries)
+		public QuestData(string guid, EQuestState state, bool isTracked, string title, string desc, bool expires, GameDateTimeData expiry, QuestEntryData[] entries)
 		{
 		}
 	}

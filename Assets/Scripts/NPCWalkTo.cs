@@ -1,10 +1,14 @@
-public class NPCWalkTo : global::UnityEngine.MonoBehaviour
+using EasyButtons;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
+public class NPCWalkTo : MonoBehaviour
 {
-	public global::UnityEngine.Transform StartPoint;
+	public Transform StartPoint;
 
-	public global::UnityEngine.Transform End;
+	public Transform End;
 
-	public global::ScheduleOne.NPCs.NPC NPC;
+	public NPC NPC;
 
 	private void Start()
 	{
@@ -14,7 +18,7 @@ public class NPCWalkTo : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	[global::EasyButtons.Button]
+	[Button]
 	public void Walk()
 	{
 	}

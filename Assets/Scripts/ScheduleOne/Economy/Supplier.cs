@@ -1,6 +1,23 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Dialogue;
+using ScheduleOne.Messaging;
+using ScheduleOne.NPCs;
+using ScheduleOne.NPCs.Relation;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.Phone;
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Economy
 {
-	public class Supplier : global::ScheduleOne.NPCs.NPC
+	public class Supplier : NPC
 	{
 		public enum ESupplierStatus
 		{
@@ -23,61 +40,61 @@ namespace ScheduleOne.Economy
 
 		public const float DELIVERY_RELATIONSHIP_REQUIREMENT = 5f;
 
-		public static global::UnityEngine.Color32 SupplierLabelColor;
+		public static Color32 SupplierLabelColor;
 
-		[global::UnityEngine.Header("Supplier Settings")]
+		[Header("Supplier Settings")]
 		public float MinOrderLimit;
 
 		public float MaxOrderLimit;
 
-		public global::ScheduleOne.UI.Phone.PhoneShopInterface.Listing[] OnlineShopItems;
+		public PhoneShopInterface.Listing[] OnlineShopItems;
 
-		[global::UnityEngine.TextArea(3, 10)]
+		[TextArea(3, 10)]
 		public string SupplierRecommendMessage;
 
-		[global::UnityEngine.TextArea(3, 10)]
+		[TextArea(3, 10)]
 		public string SupplierUnlockHint;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Shop.ShopInterface Shop;
+		[Header("References")]
+		public ShopInterface Shop;
 
-		public global::ScheduleOne.Economy.SupplierStash Stash;
+		public SupplierStash Stash;
 
-		public global::UnityEngine.Events.UnityEvent onDeaddropReady;
+		public UnityEvent onDeaddropReady;
 
 		private int minsSinceMeetingStart;
 
 		private int minsSinceLastMeetingEnd;
 
-		private global::ScheduleOne.Economy.SupplierLocation currentLocation;
+		private SupplierLocation currentLocation;
 
-		private global::ScheduleOne.Dialogue.DialogueController dialogueController;
+		private DialogueController dialogueController;
 
-		private global::ScheduleOne.Dialogue.DialogueController.GreetingOverride meetingGreeting;
+		private DialogueController.GreetingOverride meetingGreeting;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice meetingChoice;
+		private DialogueController.DialogueChoice meetingChoice;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
+		[SyncVar]
 		public float debt;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
+		[SyncVar]
 		public bool deadDropPreparing;
 
-		private global::ScheduleOne.DevUtilities.StringIntPair[] deaddropItems;
+		private StringIntPair[] deaddropItems;
 
 		private int minsSinceDeaddropOrder;
 
 		private bool repaymentReminderSent;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___debt;
+		public SyncVar<float> syncVar___debt;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar___deadDropPreparing;
+		public SyncVar<bool> syncVar___deadDropPreparing;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEconomy_002ESupplierAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEconomy_002ESupplierAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Economy.Supplier.ESupplierStatus Status { get; private set; }
+		public ESupplierStatus Status { get; private set; }
 
 		public bool DeliveriesEnabled { get; private set; }
 
@@ -115,16 +132,16 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SendUnlocked()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void SetUnlocked()
 		{
 		}
@@ -141,8 +158,8 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void MeetAtLocation(global::FishNet.Connection.NetworkConnection conn, int locationIndex, int expireIn)
+		[ObserversRpc(RunLocally = true)]
+		public void MeetAtLocation(NetworkConnection conn, int locationIndex, int expireIn)
 		{
 		}
 
@@ -150,7 +167,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void SupplierUnlocked(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType type, bool notify)
+		protected virtual void SupplierUnlocked(NPCRelationData.EUnlockType type, bool notify)
 		{
 		}
 
@@ -158,9 +175,9 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void EnableDeliveries(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void EnableDeliveries(NetworkConnection conn)
 		{
 		}
 
@@ -176,16 +193,16 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void DeaddropConfirmed(global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.PhoneShopInterface.CartEntry> cart, float totalPrice)
+		protected virtual void DeaddropConfirmed(List<PhoneShopInterface.CartEntry> cart, float totalPrice)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SetDeaddrop(global::ScheduleOne.DevUtilities.StringIntPair[] items, int minsUntilReady)
+		[ServerRpc(RequireOwnership = false)]
+		private void SetDeaddrop(StringIntPair[] items, int minsUntilReady)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void ChangeDebt(float amount)
 		{
 		}
@@ -210,19 +227,19 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected global::ScheduleOne.Economy.SupplierLocation GetAppropriateLocation(out int locationIndex)
+		protected SupplierLocation GetAppropriateLocation(out int locationIndex)
 		{
 			locationIndex = default(int);
 			return null;
 		}
 
-		private bool IsDeadDropValid(global::ScheduleOne.Messaging.SendableMessage message, out string invalidReason)
+		private bool IsDeadDropValid(SendableMessage message, out string invalidReason)
 		{
 			invalidReason = null;
 			return false;
 		}
 
-		private bool IsMeetupValid(global::ScheduleOne.Messaging.SendableMessage message, out string invalidReason)
+		private bool IsMeetupValid(SendableMessage message, out string invalidReason)
 		{
 			invalidReason = null;
 			return false;
@@ -238,7 +255,7 @@ namespace ScheduleOne.Economy
 			return null;
 		}
 
-		public override void Load(global::ScheduleOne.Persistence.Datas.NPCData data, string containerPath)
+		public override void Load(NPCData data, string containerPath)
 		{
 		}
 
@@ -262,7 +279,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_SendUnlocked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendUnlocked_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -274,51 +291,51 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Observers_SetUnlocked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetUnlocked_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_MeetAtLocation_3470796954(global::FishNet.Connection.NetworkConnection conn, int locationIndex, int expireIn)
+		private void RpcWriter___Observers_MeetAtLocation_3470796954(NetworkConnection conn, int locationIndex, int expireIn)
 		{
 		}
 
-		public void RpcLogic___MeetAtLocation_3470796954(global::FishNet.Connection.NetworkConnection conn, int locationIndex, int expireIn)
+		public void RpcLogic___MeetAtLocation_3470796954(NetworkConnection conn, int locationIndex, int expireIn)
 		{
 		}
 
-		private void RpcReader___Observers_MeetAtLocation_3470796954(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_MeetAtLocation_3470796954(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_EnableDeliveries_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_EnableDeliveries_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___EnableDeliveries_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcLogic___EnableDeliveries_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_EnableDeliveries_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EnableDeliveries_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_EnableDeliveries_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_EnableDeliveries_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_EnableDeliveries_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_EnableDeliveries_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetDeaddrop_3971994486(global::ScheduleOne.DevUtilities.StringIntPair[] items, int minsUntilReady)
+		private void RpcWriter___Server_SetDeaddrop_3971994486(StringIntPair[] items, int minsUntilReady)
 		{
 		}
 
-		private void RpcLogic___SetDeaddrop_3971994486(global::ScheduleOne.DevUtilities.StringIntPair[] items, int minsUntilReady)
+		private void RpcLogic___SetDeaddrop_3971994486(StringIntPair[] items, int minsUntilReady)
 		{
 		}
 
-		private void RpcReader___Server_SetDeaddrop_3971994486(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetDeaddrop_3971994486(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -330,11 +347,11 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcReader___Server_ChangeDebt_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ChangeDebt_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEconomy_002ESupplier(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEconomy_002ESupplier(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

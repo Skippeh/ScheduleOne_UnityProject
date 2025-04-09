@@ -1,14 +1,18 @@
+using FishNet.Object;
+using ScheduleOne.UI.Construction.Features;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.Features
 {
-	public abstract class Feature : global::FishNet.Object.NetworkBehaviour
+	public abstract class Feature : NetworkBehaviour
 	{
 		public string featureName;
 
-		public global::UnityEngine.Sprite featureIcon;
+		public Sprite featureIcon;
 
-		public global::UnityEngine.Transform featureIconLocation;
+		public Transform featureIconLocation;
 
-		public global::UnityEngine.GameObject featureInterfacePrefab;
+		public GameObject featureInterfacePrefab;
 
 		public bool disableRoofDisibility;
 
@@ -24,7 +28,7 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		public virtual global::ScheduleOne.UI.Construction.Features.FI_Base CreateInterface(global::UnityEngine.Transform parent)
+		public virtual FI_Base CreateInterface(Transform parent)
 		{
 			return null;
 		}

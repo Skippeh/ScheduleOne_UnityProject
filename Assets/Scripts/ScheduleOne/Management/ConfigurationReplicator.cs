@@ -1,94 +1,102 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Management
 {
-	public class ConfigurationReplicator : global::FishNet.Object.NetworkBehaviour
+	public class ConfigurationReplicator : NetworkBehaviour
 	{
-		public global::ScheduleOne.Management.EntityConfiguration Configuration;
+		public EntityConfiguration Configuration;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EManagement_002EConfigurationReplicatorAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EManagement_002EConfigurationReplicatorAssembly_002DCSharp_002Edll_Excuted;
 
-		public void ReplicateField(global::ScheduleOne.Management.ConfigField field, global::FishNet.Connection.NetworkConnection conn = null)
+		public void ReplicateField(ConfigField field, NetworkConnection conn = null)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void SendItemField(int fieldIndex, string value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReceiveItemField(int fieldIndex, string value)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendNPCField(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendNPCField(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveNPCField(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		[ObserversRpc]
+		private void ReceiveNPCField(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendObjectField(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendObjectField(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveObjectField(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		[ObserversRpc]
+		private void ReceiveObjectField(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendObjectListField(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendObjectListField(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveObjectListField(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		[ObserversRpc]
+		private void ReceiveObjectListField(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void SendRecipeField(int fieldIndex, int recipeIndex)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReceiveRecipeField(int fieldIndex, int recipeIndex)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void SendNumberField(int fieldIndex, float value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReceiveNumberField(int fieldIndex, float value)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendRouteListField(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendRouteListField(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveRouteListField(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		[ObserversRpc]
+		private void ReceiveRouteListField(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendQualityField(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality quality)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendQualityField(int fieldIndex, EQuality quality)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveQualityField(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality value)
+		[ObserversRpc]
+		private void ReceiveQualityField(int fieldIndex, EQuality value)
 		{
 		}
 
@@ -112,7 +120,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Server_SendItemField_2801973956(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendItemField_2801973956(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -124,79 +132,79 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveItemField_2801973956(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveItemField_2801973956(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendNPCField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		private void RpcWriter___Server_SendNPCField_1687693739(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		private void RpcLogic___SendNPCField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		private void RpcLogic___SendNPCField_1687693739(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		private void RpcReader___Server_SendNPCField_1687693739(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendNPCField_1687693739(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveNPCField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		private void RpcWriter___Observers_ReceiveNPCField_1687693739(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		private void RpcLogic___ReceiveNPCField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject npcObject)
+		private void RpcLogic___ReceiveNPCField_1687693739(int fieldIndex, NetworkObject npcObject)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveNPCField_1687693739(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveNPCField_1687693739(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendObjectField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		private void RpcWriter___Server_SendObjectField_1687693739(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		private void RpcLogic___SendObjectField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		private void RpcLogic___SendObjectField_1687693739(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		private void RpcReader___Server_SendObjectField_1687693739(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendObjectField_1687693739(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveObjectField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		private void RpcWriter___Observers_ReceiveObjectField_1687693739(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		private void RpcLogic___ReceiveObjectField_1687693739(int fieldIndex, global::FishNet.Object.NetworkObject obj)
+		private void RpcLogic___ReceiveObjectField_1687693739(int fieldIndex, NetworkObject obj)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveObjectField_1687693739(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveObjectField_1687693739(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendObjectListField_690244341(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		private void RpcWriter___Server_SendObjectListField_690244341(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		private void RpcLogic___SendObjectListField_690244341(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		private void RpcLogic___SendObjectListField_690244341(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		private void RpcReader___Server_SendObjectListField_690244341(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendObjectListField_690244341(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveObjectListField_690244341(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		private void RpcWriter___Observers_ReceiveObjectListField_690244341(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		private void RpcLogic___ReceiveObjectListField_690244341(int fieldIndex, global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objects)
+		private void RpcLogic___ReceiveObjectListField_690244341(int fieldIndex, List<NetworkObject> objects)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveObjectListField_690244341(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveObjectListField_690244341(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -208,7 +216,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Server_SendRecipeField_1692629761(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendRecipeField_1692629761(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -220,7 +228,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveRecipeField_1692629761(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveRecipeField_1692629761(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -232,7 +240,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Server_SendNumberField_1293284375(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendNumberField_1293284375(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -244,55 +252,55 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveNumberField_1293284375(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveNumberField_1293284375(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendRouteListField_3226448297(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		private void RpcWriter___Server_SendRouteListField_3226448297(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		private void RpcLogic___SendRouteListField_3226448297(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		private void RpcLogic___SendRouteListField_3226448297(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		private void RpcReader___Server_SendRouteListField_3226448297(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendRouteListField_3226448297(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveRouteListField_3226448297(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		private void RpcWriter___Observers_ReceiveRouteListField_3226448297(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		private void RpcLogic___ReceiveRouteListField_3226448297(int fieldIndex, global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData[] value)
+		private void RpcLogic___ReceiveRouteListField_3226448297(int fieldIndex, AdvancedTransitRouteData[] value)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveRouteListField_3226448297(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveRouteListField_3226448297(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendQualityField_3536682170(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality quality)
+		private void RpcWriter___Server_SendQualityField_3536682170(int fieldIndex, EQuality quality)
 		{
 		}
 
-		private void RpcLogic___SendQualityField_3536682170(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality quality)
+		private void RpcLogic___SendQualityField_3536682170(int fieldIndex, EQuality quality)
 		{
 		}
 
-		private void RpcReader___Server_SendQualityField_3536682170(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendQualityField_3536682170(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveQualityField_3536682170(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality value)
+		private void RpcWriter___Observers_ReceiveQualityField_3536682170(int fieldIndex, EQuality value)
 		{
 		}
 
-		private void RpcLogic___ReceiveQualityField_3536682170(int fieldIndex, global::ScheduleOne.ItemFramework.EQuality value)
+		private void RpcLogic___ReceiveQualityField_3536682170(int fieldIndex, EQuality value)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveQualityField_3536682170(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveQualityField_3536682170(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

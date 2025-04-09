@@ -1,13 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.Management.UI;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ChemistryStationConfigPanel : global::ScheduleOne.Management.UI.ConfigPanel
+	public class ChemistryStationConfigPanel : ConfigPanel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Management.StationRecipeFieldUI RecipeUI;
+		[Header("References")]
+		public StationRecipeFieldUI RecipeUI;
 
-		public global::ScheduleOne.UI.Management.ObjectFieldUI DestinationUI;
+		public ObjectFieldUI DestinationUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		public override void Bind(List<EntityConfiguration> configs)
 		{
 		}
 	}

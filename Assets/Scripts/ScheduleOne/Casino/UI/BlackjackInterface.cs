@@ -1,65 +1,71 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Casino.UI
 {
-	public class BlackjackInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Casino.UI.BlackjackInterface>
+	public class BlackjackInterface : Singleton<BlackjackInterface>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::ScheduleOne.Casino.UI.CasinoGamePlayerDisplay PlayerDisplay;
+		public CasinoGamePlayerDisplay PlayerDisplay;
 
-		public global::UnityEngine.RectTransform BetContainer;
+		public RectTransform BetContainer;
 
-		public global::TMPro.TextMeshProUGUI BetTitleLabel;
+		public TextMeshProUGUI BetTitleLabel;
 
-		public global::UnityEngine.UI.Slider BetSlider;
+		public Slider BetSlider;
 
-		public global::TMPro.TextMeshProUGUI BetAmount;
+		public TextMeshProUGUI BetAmount;
 
-		public global::UnityEngine.UI.Button ReadyButton;
+		public Button ReadyButton;
 
-		public global::TMPro.TextMeshProUGUI ReadyLabel;
+		public TextMeshProUGUI ReadyLabel;
 
-		public global::UnityEngine.RectTransform WaitingContainer;
+		public RectTransform WaitingContainer;
 
-		public global::TMPro.TextMeshProUGUI WaitingLabel;
+		public TextMeshProUGUI WaitingLabel;
 
-		public global::TMPro.TextMeshProUGUI DealerScoreLabel;
+		public TextMeshProUGUI DealerScoreLabel;
 
-		public global::TMPro.TextMeshProUGUI PlayerScoreLabel;
+		public TextMeshProUGUI PlayerScoreLabel;
 
-		public global::UnityEngine.UI.Button HitButton;
+		public Button HitButton;
 
-		public global::UnityEngine.UI.Button StandButton;
+		public Button StandButton;
 
-		public global::UnityEngine.Animation InputContainerAnimation;
+		public Animation InputContainerAnimation;
 
-		public global::UnityEngine.CanvasGroup InputContainerCanvasGroup;
+		public CanvasGroup InputContainerCanvasGroup;
 
-		public global::UnityEngine.AnimationClip InputContainerFadeIn;
+		public AnimationClip InputContainerFadeIn;
 
-		public global::UnityEngine.AnimationClip InputContainerFadeOut;
+		public AnimationClip InputContainerFadeOut;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::UnityEngine.Animation ScoresContainerAnimation;
+		public Animation ScoresContainerAnimation;
 
-		public global::UnityEngine.CanvasGroup ScoresContainerCanvasGroup;
+		public CanvasGroup ScoresContainerCanvasGroup;
 
-		public global::TMPro.TextMeshProUGUI PositiveOutcomeLabel;
+		public TextMeshProUGUI PositiveOutcomeLabel;
 
-		public global::TMPro.TextMeshProUGUI PayoutLabel;
+		public TextMeshProUGUI PayoutLabel;
 
-		public global::UnityEngine.Events.UnityEvent onBust;
+		public UnityEvent onBust;
 
-		public global::UnityEngine.Events.UnityEvent onBlackjack;
+		public UnityEvent onBlackjack;
 
-		public global::UnityEngine.Events.UnityEvent onWin;
+		public UnityEvent onWin;
 
-		public global::UnityEngine.Events.UnityEvent onLose;
+		public UnityEvent onLose;
 
-		public global::UnityEngine.Events.UnityEvent onPush;
+		public UnityEvent onPush;
 
-		public global::ScheduleOne.Casino.BlackjackGameController CurrentGame { get; private set; }
+		public BlackjackGameController CurrentGame { get; private set; }
 
 		protected override void Awake()
 		{
@@ -69,7 +75,7 @@ namespace ScheduleOne.Casino.UI
 		{
 		}
 
-		public void Open(global::ScheduleOne.Casino.BlackjackGameController game)
+		public void Open(BlackjackGameController game)
 		{
 		}
 
@@ -126,7 +132,7 @@ namespace ScheduleOne.Casino.UI
 		{
 		}
 
-		private void OnLocalPlayerRoundCompleted(global::ScheduleOne.Casino.BlackjackGameController.EPayoutType payout)
+		private void OnLocalPlayerRoundCompleted(BlackjackGameController.EPayoutType payout)
 		{
 		}
 	}

@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Keith : global::ScheduleOne.NPCs.NPC
+	public class Keith : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EKeithAssembly_002DCSharp_002Edll_Excuted;
 

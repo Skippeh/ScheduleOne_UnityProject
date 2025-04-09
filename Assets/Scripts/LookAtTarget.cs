@@ -1,12 +1,14 @@
-public class LookAtTarget : global::UnityEngine.MonoBehaviour
-{
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Transform _target;
+using UnityEngine;
 
-	[global::UnityEngine.SerializeField]
+public class LookAtTarget : MonoBehaviour
+{
+	[SerializeField]
+	private Transform _target;
+
+	[SerializeField]
 	private float _speed;
 
-	private global::UnityEngine.Vector3 _lookAtTarget;
+	private Vector3 _lookAtTarget;
 
 	private void Update()
 	{

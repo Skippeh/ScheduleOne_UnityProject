@@ -1,7 +1,12 @@
+using System;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.ObjectScripts.WateringCan
 {
-	[global::System.Serializable]
-	public class WateringCanInstance : global::ScheduleOne.Storage.StorableItemInstance
+	[Serializable]
+	public class WateringCanInstance : StorableItemInstance
 	{
 		public float CurrentFillAmount;
 
@@ -9,11 +14,11 @@ namespace ScheduleOne.ObjectScripts.WateringCan
 		{
 		}
 
-		public WateringCanInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, float fillAmount)
+		public WateringCanInstance(ItemDefinition definition, int quantity, float fillAmount)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
@@ -22,7 +27,7 @@ namespace ScheduleOne.ObjectScripts.WateringCan
 		{
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}

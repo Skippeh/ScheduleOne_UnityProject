@@ -1,41 +1,46 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	public class PropertyUtility : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Product.PropertyUtility>
+	public class PropertyUtility : Singleton<PropertyUtility>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class PropertyData
 		{
-			public global::ScheduleOne.Product.EProperty Property;
+			public EProperty Property;
 
 			public string Name;
 
 			public string Description;
 
-			public global::UnityEngine.Color Color;
+			public Color Color;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class DrugTypeData
 		{
-			public global::ScheduleOne.Product.EDrugType DrugType;
+			public EDrugType DrugType;
 
 			public string Name;
 
-			public global::UnityEngine.Color Color;
+			public Color Color;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyUtility.PropertyData> PropertyDatas;
+		public List<PropertyData> PropertyDatas;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyUtility.DrugTypeData> DrugTypeDatas;
+		public List<DrugTypeData> DrugTypeDatas;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> AllProperties;
+		public List<ScheduleOne.Properties.Property> AllProperties;
 
-		[global::UnityEngine.Header("Test Mixing")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> Products;
+		[Header("Test Mixing")]
+		public List<ProductDefinition> Products;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyItemDefinition> Properties;
+		public List<PropertyItemDefinition> Properties;
 
-		private global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Properties.Property> PropertiesDict;
+		private Dictionary<string, ScheduleOne.Properties.Property> PropertiesDict;
 
 		protected override void Awake()
 		{
@@ -45,27 +50,27 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetProperties(int tier)
+		public List<ScheduleOne.Properties.Property> GetProperties(int tier)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetProperties(global::System.Collections.Generic.List<string> ids)
+		public List<ScheduleOne.Properties.Property> GetProperties(List<string> ids)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.PropertyUtility.PropertyData GetPropertyData(global::ScheduleOne.Product.EProperty property)
+		public static PropertyData GetPropertyData(EProperty property)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.PropertyUtility.DrugTypeData GetDrugTypeData(global::ScheduleOne.Product.EDrugType drugType)
+		public static DrugTypeData GetDrugTypeData(EDrugType drugType)
 		{
 			return null;
 		}
 
-		public static global::System.Collections.Generic.List<global::UnityEngine.Color32> GetOrderedPropertyColors(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static List<Color32> GetOrderedPropertyColors(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}

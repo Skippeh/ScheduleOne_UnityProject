@@ -1,33 +1,41 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class WorldStorageEntity : global::ScheduleOne.Storage.StorageEntity, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
+	public class WorldStorageEntity : StorageEntity, IGUIDRegisterable, ISaveable
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Storage.WorldStorageEntity> All;
+		public static List<WorldStorageEntity> All;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EWorldStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EStorage_002EWorldStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -40,7 +48,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -54,7 +62,7 @@ namespace ScheduleOne.Storage
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.WorldStorageEntityData data)
+		public virtual void Load(WorldStorageEntityData data)
 		{
 		}
 

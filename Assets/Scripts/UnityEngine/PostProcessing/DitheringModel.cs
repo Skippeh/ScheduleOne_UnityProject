@@ -1,23 +1,26 @@
+using System;
+using System.Runtime.InteropServices;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class DitheringModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class DitheringModel : PostProcessingModel
 	{
-		[global::System.Serializable]
-		[global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential, Size = 1)]
+		[Serializable]
+		[StructLayout(LayoutKind.Sequential, Size = 1)]
 		public struct Settings
 		{
-			public static global::UnityEngine.PostProcessing.DitheringModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.DitheringModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.DitheringModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.DitheringModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.DitheringModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

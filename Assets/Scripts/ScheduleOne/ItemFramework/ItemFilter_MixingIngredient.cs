@@ -1,8 +1,8 @@
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemFilter_MixingIngredient : global::ScheduleOne.ItemFramework.ItemFilter
+	public class ItemFilter_MixingIngredient : ItemFilter
 	{
-		public override bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}

@@ -1,33 +1,37 @@
+using ScheduleOne.Quests;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class JournalApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.JournalApp>
+	public class JournalApp : App<JournalApp>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform EntryContainer;
+		[Header("References")]
+		public RectTransform EntryContainer;
 
-		public global::UnityEngine.UI.Text NoTasksLabel;
+		public Text NoTasksLabel;
 
-		public global::UnityEngine.UI.Text NoDetailsLabel;
+		public Text NoDetailsLabel;
 
-		public global::UnityEngine.RectTransform DetailsPanelContainer;
+		public RectTransform DetailsPanelContainer;
 
-		[global::UnityEngine.Header("Entry prefabs")]
-		public global::UnityEngine.GameObject GenericEntry;
+		[Header("Entry prefabs")]
+		public GameObject GenericEntry;
 
-		[global::UnityEngine.Header("Details panel prefabs")]
-		public global::UnityEngine.GameObject GenericDetailsPanel;
+		[Header("Details panel prefabs")]
+		public GameObject GenericDetailsPanel;
 
-		[global::UnityEngine.Header("Quest Entry prefab")]
-		public global::UnityEngine.GameObject GenericQuestEntry;
+		[Header("Quest Entry prefab")]
+		public GameObject GenericQuestEntry;
 
-		[global::UnityEngine.Header("HUD entry prefabs")]
-		public global::ScheduleOne.UI.QuestHUDUI QuestHUDUIPrefab;
+		[Header("HUD entry prefabs")]
+		public QuestHUDUI QuestHUDUIPrefab;
 
-		public global::ScheduleOne.UI.QuestEntryHUDUI QuestEntryHUDUIPrefab;
+		public QuestEntryHUDUI QuestEntryHUDUIPrefab;
 
-		protected global::ScheduleOne.Quests.Quest currentDetailsPanelQuest;
+		protected Quest currentDetailsPanelQuest;
 
-		protected global::UnityEngine.RectTransform currentDetailsPanel;
+		protected RectTransform currentDetailsPanel;
 
 		protected override void Awake()
 		{

@@ -1,10 +1,14 @@
+using System;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class CountdownText : global::UnityEngine.MonoBehaviour
+	public class CountdownText : MonoBehaviour
 	{
-		public global::TMPro.TextMeshProUGUI TimeLabel;
+		public TextMeshProUGUI TimeLabel;
 
-		[global::UnityEngine.Header("Date Setting")]
+		[Header("Date Setting")]
 		public int Year;
 
 		public int Month;
@@ -17,7 +21,7 @@ namespace ScheduleOne.Tools
 
 		public int Second;
 
-		private global::System.DateTime targetPDTDate;
+		private DateTime targetPDTDate;
 
 		private void Start()
 		{
@@ -31,7 +35,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private string FormatTime(global::System.TimeSpan timeSpan)
+		private string FormatTime(TimeSpan timeSpan)
 		{
 			return null;
 		}

@@ -1,44 +1,52 @@
+using System;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ScriptableObjects;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class CallInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Phone.CallInterface>
+	public class CallInterface : Singleton<CallInterface>
 	{
 		public const float TIME_PER_CHAR = 0.015f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.UI.Image ProfilePicture;
+		public Image ProfilePicture;
 
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		public TextMeshProUGUI NameLabel;
 
-		public global::TMPro.TextMeshProUGUI MainText;
+		public TextMeshProUGUI MainText;
 
-		public global::UnityEngine.RectTransform ContinuePrompt;
+		public RectTransform ContinuePrompt;
 
-		public global::UnityEngine.Animation OpenAnim;
+		public Animation OpenAnim;
 
-		public global::ScheduleOne.Audio.AudioSourceController TypewriterEffectSound;
+		public AudioSourceController TypewriterEffectSound;
 
-		public global::UnityEngine.CanvasGroup CanvasGroup;
+		public CanvasGroup CanvasGroup;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Color Highlight1Color;
+		[Header("Settings")]
+		public Color Highlight1Color;
 
 		private int currentCallStage;
 
-		private global::UnityEngine.Coroutine slideRoutine;
+		private Coroutine slideRoutine;
 
 		private bool skipRollout;
 
-		private global::UnityEngine.Coroutine rolloutRoutine;
+		private Coroutine rolloutRoutine;
 
 		private string highlight1Hex;
 
-		public global::System.Action<global::ScheduleOne.ScriptableObjects.PhoneCallData> CallCompleted;
+		public Action<PhoneCallData> CallCompleted;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCallData { get; private set; }
+		public PhoneCallData ActiveCallData { get; private set; }
 
 		public bool IsOpen { get; protected set; }
 
@@ -50,11 +58,11 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		private void Exit(ExitAction exit)
 		{
 		}
 
-		public void StartCall(global::ScheduleOne.ScriptableObjects.PhoneCallData data, global::ScheduleOne.ScriptableObjects.CallerID caller, int startStage = 0)
+		public void StartCall(PhoneCallData data, CallerID caller, int startStage = 0)
 		{
 		}
 

@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class LaunderOperationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class LaunderOperationData : SaveData
 	{
 		public float Amount;
 

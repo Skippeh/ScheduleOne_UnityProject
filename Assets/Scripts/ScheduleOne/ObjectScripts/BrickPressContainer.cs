@@ -1,16 +1,20 @@
+using ScheduleOne.Packaging;
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class BrickPressContainer : global::UnityEngine.MonoBehaviour
+	public class BrickPressContainer : MonoBehaviour
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public FilledPackagingVisuals Visuals;
 
-		public global::UnityEngine.Transform ContentsContainer;
+		public Transform ContentsContainer;
 
-		public global::UnityEngine.Transform Contents_Min;
+		public Transform Contents_Min;
 
-		public global::UnityEngine.Transform Contents_Max;
+		public Transform Contents_Max;
 
-		public void SetContents(global::ScheduleOne.Product.ProductItemInstance product, float fillLevel)
+		public void SetContents(ProductItemInstance product, float fillLevel)
 		{
 		}
 	}

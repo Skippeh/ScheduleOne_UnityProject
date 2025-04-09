@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class ActivateDuringBuild : global::UnityEngine.MonoBehaviour
+	public class ActivateDuringBuild : MonoBehaviour
 	{
 	}
 }

@@ -1,26 +1,46 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Delivery;
+using ScheduleOne.Employees;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Interaction;
+using ScheduleOne.Management;
+using ScheduleOne.Map;
+using ScheduleOne.Misc;
+using ScheduleOne.Money;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Property
 {
-	public class Property : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable
+	public class Property : NetworkBehaviour, ISaveable
 	{
-		public delegate void PropertyChange(global::ScheduleOne.Property.Property property);
+		public delegate void PropertyChange(Property property);
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Property> Properties;
+		public static List<Property> Properties;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Property> UnownedProperties;
+		public static List<Property> UnownedProperties;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Property> OwnedProperties;
+		public static List<Property> OwnedProperties;
 
-		public static global::ScheduleOne.Property.Property.PropertyChange onPropertyAcquired;
+		public static PropertyChange onPropertyAcquired;
 
-		public global::UnityEngine.Events.UnityEvent onThisPropertyAcquired;
+		public UnityEvent onThisPropertyAcquired;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected string propertyName;
 
 		public bool AvailableInDemo;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string propertyCode;
 
 		public float Price;
@@ -35,54 +55,54 @@ namespace ScheduleOne.Property
 
 		public string IsOwnedVariable;
 
-		[global::UnityEngine.Header("Culling Settings")]
+		[Header("Culling Settings")]
 		public bool ContentCullingEnabled;
 
 		public float MinimumCullingDistance;
 
-		public global::UnityEngine.GameObject[] ObjectsToCull;
+		public GameObject[] ObjectsToCull;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Property.PropertyContentsContainer Container;
+		[Header("References")]
+		public PropertyContentsContainer Container;
 
-		public global::UnityEngine.Transform EmployeeContainer;
+		public Transform EmployeeContainer;
 
-		public global::UnityEngine.Transform SpawnPoint;
+		public Transform SpawnPoint;
 
-		public global::UnityEngine.Transform InteriorSpawnPoint;
+		public Transform InteriorSpawnPoint;
 
-		public global::UnityEngine.GameObject ForSaleSign;
+		public GameObject ForSaleSign;
 
-		public global::UnityEngine.GameObject BoundingBox;
+		public GameObject BoundingBox;
 
-		public global::ScheduleOne.Map.POI PoI;
+		public POI PoI;
 
-		public global::UnityEngine.Transform ListingPoster;
+		public Transform ListingPoster;
 
-		public global::UnityEngine.Transform NPCSpawnPoint;
+		public Transform NPCSpawnPoint;
 
-		public global::UnityEngine.Transform[] EmployeeIdlePoints;
+		public Transform[] EmployeeIdlePoints;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Misc.ModularSwitch> Switches;
+		public List<ModularSwitch> Switches;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Interaction.InteractableToggleable> Toggleables;
+		public List<InteractableToggleable> Toggleables;
 
-		public global::ScheduleOne.Property.PropertyDisposalArea DisposalArea;
+		public PropertyDisposalArea DisposalArea;
 
-		public global::ScheduleOne.Delivery.LoadingDock[] LoadingDocks;
+		public LoadingDock[] LoadingDocks;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> BuildableItems;
+		[HideInInspector]
+		public List<BuildableItem> BuildableItems;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> Configurables;
+		public List<IConfigurable> Configurables;
 
-		private global::UnityEngine.BoxCollider[] propertyBoundsColliders;
+		private BoxCollider[] propertyBoundsColliders;
 
-		private global::ScheduleOne.Persistence.Loaders.PropertyLoader loader;
+		private PropertyLoader loader;
 
-		private global::System.Collections.Generic.List<string> savedObjectPaths;
+		private List<string> savedObjectPaths;
 
-		private global::System.Collections.Generic.List<string> savedEmployeePaths;
+		private List<string> savedEmployeePaths;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EPropertyAssembly_002DCSharp_002Edll_Excuted;
 
@@ -90,9 +110,9 @@ namespace ScheduleOne.Property
 
 		public bool IsOwned { get; protected set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> Employees { get; protected set; }
+		public List<Employee> Employees { get; protected set; }
 
-		public global::UnityEngine.RectTransform WorldspaceUIContainer { get; protected set; }
+		public RectTransform WorldspaceUIContainer { get; protected set; }
 
 		public bool IsContentCulled { get; set; }
 
@@ -106,13 +126,13 @@ namespace ScheduleOne.Property
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -132,11 +152,11 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public void AddConfigurable(global::ScheduleOne.Management.IConfigurable configurable)
+		public void AddConfigurable(IConfigurable configurable)
 		{
 		}
 
-		public void RemoveConfigurable(global::ScheduleOne.Management.IConfigurable configurable)
+		public void RemoveConfigurable(IConfigurable configurable)
 		{
 		}
 
@@ -144,7 +164,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -152,7 +172,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		protected virtual void GetNetworth(global::ScheduleOne.Money.MoneyManager.FloatContainer container)
+		protected virtual void GetNetworth(MoneyManager.FloatContainer container)
 		{
 		}
 
@@ -160,12 +180,12 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		protected void SetOwned_Server()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, BufferLast = true)]
+		[ObserversRpc(RunLocally = true, BufferLast = true)]
 		private void ReceiveOwned_Networked()
 		{
 		}
@@ -191,27 +211,27 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public int RegisterEmployee(global::ScheduleOne.Employees.Employee emp)
+		public int RegisterEmployee(Employee emp)
 		{
 			return 0;
 		}
 
-		public void DeregisterEmployee(global::ScheduleOne.Employees.Employee emp)
+		public void DeregisterEmployee(Employee emp)
 		{
 		}
 
-		private void ToggleableActioned(global::ScheduleOne.Interaction.InteractableToggleable toggleable)
+		private void ToggleableActioned(InteractableToggleable toggleable)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SendToggleableState(int index, bool state)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		public void SetToggleableState(global::FishNet.Connection.NetworkConnection conn, int index, bool state)
+		[ObserversRpc]
+		[TargetRpc]
+		public void SetToggleableState(NetworkConnection conn, int index, bool state)
 		{
 		}
 
@@ -220,7 +240,7 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -229,21 +249,21 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string containerPath)
+		public virtual void Load(PropertyData propertyData, string containerPath)
 		{
 		}
 
-		public bool DoBoundsContainPoint(global::UnityEngine.Vector3 point)
-		{
-			return false;
-		}
-
-		private bool IsPointInsideBox(global::UnityEngine.Vector3 worldPoint, global::UnityEngine.BoxCollider box)
+		public bool DoBoundsContainPoint(Vector3 point)
 		{
 			return false;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Bed> GetUnassignedBeds()
+		private bool IsPointInsideBox(Vector3 worldPoint, BoxCollider box)
+		{
+			return false;
+		}
+
+		public List<Bed> GetUnassignedBeds()
 		{
 			return null;
 		}
@@ -268,7 +288,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		private void RpcReader___Server_SetOwned_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetOwned_Server_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -280,7 +300,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveOwned_Networked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveOwned_Networked_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -292,27 +312,27 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		private void RpcReader___Server_SendToggleableState_3658436649(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendToggleableState_3658436649(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetToggleableState_338960014(global::FishNet.Connection.NetworkConnection conn, int index, bool state)
+		private void RpcWriter___Observers_SetToggleableState_338960014(NetworkConnection conn, int index, bool state)
 		{
 		}
 
-		public void RpcLogic___SetToggleableState_338960014(global::FishNet.Connection.NetworkConnection conn, int index, bool state)
+		public void RpcLogic___SetToggleableState_338960014(NetworkConnection conn, int index, bool state)
 		{
 		}
 
-		private void RpcReader___Observers_SetToggleableState_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetToggleableState_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetToggleableState_338960014(global::FishNet.Connection.NetworkConnection conn, int index, bool state)
+		private void RpcWriter___Target_SetToggleableState_338960014(NetworkConnection conn, int index, bool state)
 		{
 		}
 
-		private void RpcReader___Target_SetToggleableState_338960014(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetToggleableState_338960014(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

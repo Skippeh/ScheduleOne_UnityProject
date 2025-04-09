@@ -1,65 +1,75 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Object;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Growing;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne
 {
-	public class Registry : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Registry>
+	public class Registry : PersistentSingleton<Registry>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ObjectRegister
 		{
 			public string ID;
 
 			public string AssetPath;
 
-			public global::FishNet.Object.NetworkObject Prefab;
+			public NetworkObject Prefab;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class ItemRegister
 		{
 			public string ID;
 
 			public string AssetPath;
 
-			public global::ScheduleOne.ItemFramework.ItemDefinition Definition;
+			public ItemDefinition Definition;
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Registry.ObjectRegister> ObjectRegistry;
+		[SerializeField]
+		private List<ObjectRegister> ObjectRegistry;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Registry.ItemRegister> ItemRegistry;
+		[SerializeField]
+		private List<ItemRegister> ItemRegistry;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Registry.ItemRegister> ItemsAddedAtRuntime;
+		[SerializeField]
+		private List<ItemRegister> ItemsAddedAtRuntime;
 
-		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.Registry.ItemRegister> ItemDictionary;
+		private Dictionary<int, ItemRegister> ItemDictionary;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.SeedDefinition> Seeds;
+		public List<SeedDefinition> Seeds;
 
 		protected override void Awake()
 		{
 		}
 
-		public static global::UnityEngine.GameObject GetPrefab(string id)
+		public static GameObject GetPrefab(string id)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.ItemFramework.ItemDefinition GetItem(string ID)
+		public static ItemDefinition GetItem(string ID)
 		{
 			return null;
 		}
 
-		public static T GetItem<T>(string ID) where T : global::ScheduleOne.ItemFramework.ItemDefinition
+		public static T GetItem<T>(string ID) where T : ItemDefinition
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemDefinition _GetItem(string ID)
+		public ItemDefinition _GetItem(string ID)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.ConstructableScripts.Constructable GetConstructable(string id)
+		public static Constructable GetConstructable(string id)
 		{
 			return null;
 		}
@@ -78,15 +88,15 @@ namespace ScheduleOne
 		{
 		}
 
-		public void AddToRegistry(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public void AddToRegistry(ItemDefinition item)
 		{
 		}
 
-		private void AddToItemDictionary(global::ScheduleOne.Registry.ItemRegister reg)
+		private void AddToItemDictionary(ItemRegister reg)
 		{
 		}
 
-		private void RemoveItemFromDictionary(global::ScheduleOne.Registry.ItemRegister reg)
+		private void RemoveItemFromDictionary(ItemRegister reg)
 		{
 		}
 
@@ -94,11 +104,11 @@ namespace ScheduleOne
 		{
 		}
 
-		public void RemoveFromRegistry(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public void RemoveFromRegistry(ItemDefinition item)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void LogOrderedUnlocks()
 		{
 		}

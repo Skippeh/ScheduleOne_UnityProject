@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Materials
 {
-	public class MaterialTag : global::UnityEngine.MonoBehaviour
+	public class MaterialTag : MonoBehaviour
 	{
-		public global::ScheduleOne.Materials.EMaterialType MaterialType;
+		public EMaterialType MaterialType;
 	}
 }

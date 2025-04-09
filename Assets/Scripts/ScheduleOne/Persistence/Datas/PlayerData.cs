@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class PlayerData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class PlayerData : SaveData
 	{
 		public string PlayerCode;
 
-		public global::UnityEngine.Vector3 Position;
+		public Vector3 Position;
 
 		public float Rotation;
 
 		public bool IntroCompleted;
 
-		public PlayerData(string playerCode, global::UnityEngine.Vector3 playerPos, float playerRot, bool introCompleted)
+		public PlayerData(string playerCode, Vector3 playerPos, float playerRot, bool introCompleted)
 		{
 		}
 

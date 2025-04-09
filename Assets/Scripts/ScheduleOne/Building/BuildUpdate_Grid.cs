@@ -1,19 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Building
 {
-	public class BuildUpdate_Grid : global::ScheduleOne.Building.BuildUpdate_Base
+	public class BuildUpdate_Grid : BuildUpdate_Base
 	{
-		public global::UnityEngine.GameObject GhostModel;
+		public GameObject GhostModel;
 
-		public global::ScheduleOne.EntityFramework.GridItem BuildableItemClass;
+		public GridItem BuildableItemClass;
 
-		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance;
+		public ItemInstance ItemInstance;
 
 		public float CurrentRotation;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float detectionRange;
 
-		public global::UnityEngine.LayerMask detectionMask;
+		public LayerMask detectionMask;
 
 		public float rotation_Smoothing;
 
@@ -21,9 +28,9 @@ namespace ScheduleOne.Building
 
 		protected bool validPosition;
 
-		protected global::UnityEngine.Material currentGhostMaterial;
+		protected Material currentGhostMaterial;
 
-		protected global::ScheduleOne.Building.TileIntersection closestIntersection;
+		protected TileIntersection closestIntersection;
 
 		private float verticalOffset;
 
@@ -51,7 +58,7 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Building.TileIntersection> GetRelevantIntersections(global::ScheduleOne.Tiles.FootprintTile tile)
+		private List<TileIntersection> GetRelevantIntersections(FootprintTile tile)
 		{
 			return null;
 		}
@@ -68,12 +75,12 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		private global::UnityEngine.Vector2 GetOriginCoordinate()
+		private Vector2 GetOriginCoordinate()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 
-		private global::ScheduleOne.Tiles.Grid GetHoveredGrid()
+		private Grid GetHoveredGrid()
 		{
 			return null;
 		}

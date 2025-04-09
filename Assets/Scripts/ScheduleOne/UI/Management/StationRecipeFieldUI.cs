@@ -1,23 +1,29 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.StationFramework;
+using ScheduleOne.UI.Stations;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class StationRecipeFieldUI : global::UnityEngine.MonoBehaviour
+	public class StationRecipeFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Stations.StationRecipeEntry RecipeEntry;
+		[Header("References")]
+		public StationRecipeEntry RecipeEntry;
 
-		public global::UnityEngine.GameObject None;
+		public GameObject None;
 
-		public global::UnityEngine.GameObject Mixed;
+		public GameObject Mixed;
 
-		public global::UnityEngine.GameObject ClearButton;
+		public GameObject ClearButton;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.StationRecipeField> Fields { get; protected set; }
+		public List<StationRecipeField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.StationRecipeField> field)
+		public void Bind(List<StationRecipeField> field)
 		{
 		}
 
-		private void Refresh(global::ScheduleOne.StationFramework.StationRecipe newVal)
+		private void Refresh(StationRecipe newVal)
 		{
 		}
 
@@ -30,7 +36,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void OptionSelected(global::ScheduleOne.StationFramework.StationRecipe option)
+		private void OptionSelected(StationRecipe option)
 		{
 		}
 

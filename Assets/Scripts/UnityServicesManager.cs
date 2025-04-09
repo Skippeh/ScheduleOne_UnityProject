@@ -1,4 +1,6 @@
-public class UnityServicesManager : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class UnityServicesManager : MonoBehaviour
 {
 	private void Start()
 	{

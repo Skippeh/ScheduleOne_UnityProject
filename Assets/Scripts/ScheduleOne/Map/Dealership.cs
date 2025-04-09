@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class Dealership : global::UnityEngine.MonoBehaviour
+	public class Dealership : MonoBehaviour
 	{
-		public global::UnityEngine.Transform[] SpawnPoints;
+		public Transform[] SpawnPoints;
 
 		public void SpawnVehicle(string vehicleCode)
 		{

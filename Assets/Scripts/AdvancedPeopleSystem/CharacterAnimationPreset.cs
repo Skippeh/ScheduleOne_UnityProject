@@ -1,23 +1,27 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterAnimationPreset
 	{
 		public string name;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.BlendshapeEmotionValue> blendshapes;
+		public List<BlendshapeEmotionValue> blendshapes;
 
 		public bool UseGlobalBlendCurve;
 
-		public global::UnityEngine.AnimationCurve GlobalBlendAnimationCurve;
+		public AnimationCurve GlobalBlendAnimationCurve;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float AnimationPlayDuration;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float weightPower;
 
-		[global::UnityEngine.Header("May decrease performance")]
+		[Header("May decrease performance")]
 		public bool applyToAllCharacterMeshes;
 	}
 }

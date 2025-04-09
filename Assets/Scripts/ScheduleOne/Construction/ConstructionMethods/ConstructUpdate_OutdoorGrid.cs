@@ -1,21 +1,24 @@
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public class ConstructUpdate_OutdoorGrid : global::ScheduleOne.Construction.ConstructionMethods.ConstructUpdate_Base
+	public class ConstructUpdate_OutdoorGrid : ConstructUpdate_Base
 	{
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask detectionMask;
+		[Header("Settings")]
+		public LayerMask detectionMask;
 
-		public global::ScheduleOne.ConstructableScripts.Constructable_GridBased ConstructableClass;
+		public Constructable_GridBased ConstructableClass;
 
-		public global::UnityEngine.Transform GhostModel;
+		public Transform GhostModel;
 
 		protected bool validPosition;
 
 		public float currentRotation;
 
-		protected global::UnityEngine.Material currentGhostMaterial;
+		protected Material currentGhostMaterial;
 
-		protected global::ScheduleOne.Construction.ConstructionManager.WorldIntersection closestIntersection;
+		protected ConstructionManager.WorldIntersection closestIntersection;
 
 		private float listingPrice;
 
@@ -52,7 +55,7 @@ namespace ScheduleOne.Construction.ConstructionMethods
 			return false;
 		}
 
-		protected virtual global::ScheduleOne.ConstructableScripts.Constructable_GridBased PlaceNewConstructable()
+		protected virtual Constructable_GridBased PlaceNewConstructable()
 		{
 			return null;
 		}
@@ -61,9 +64,9 @@ namespace ScheduleOne.Construction.ConstructionMethods
 		{
 		}
 
-		private global::UnityEngine.Vector2 GetOriginCoordinate()
+		private Vector2 GetOriginCoordinate()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 	}
 }

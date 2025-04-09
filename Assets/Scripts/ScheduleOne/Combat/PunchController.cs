@@ -1,6 +1,10 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Combat
 {
-	public class PunchController : global::UnityEngine.MonoBehaviour
+	public class PunchController : MonoBehaviour
 	{
 		public const float MAX_PUNCH_LOAD = 1f;
 
@@ -12,8 +16,8 @@ namespace ScheduleOne.Combat
 
 		public const float PUNCH_DEBOUNCE = 0.1f;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Vector3 ViewmodelAvatarOffset;
+		[Header("Settings")]
+		public Vector3 ViewmodelAvatarOffset;
 
 		public float MinPunchDamage;
 
@@ -23,23 +27,23 @@ namespace ScheduleOne.Combat
 
 		public float MaxPunchForce;
 
-		[global::UnityEngine.Header("Stamina Settings")]
+		[Header("Stamina Settings")]
 		public float MinStaminaCost;
 
 		public float MaxStaminaCost;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController PunchSound;
+		[Header("References")]
+		public AudioSourceController PunchSound;
 
-		public global::UnityEngine.RuntimeAnimatorController PunchAnimator;
+		public RuntimeAnimatorController PunchAnimator;
 
 		private float punchLoad;
 
 		private float remainingCooldown;
 
-		private global::ScheduleOne.PlayerScripts.Player player;
+		private Player player;
 
-		private global::UnityEngine.Coroutine punchRoutine;
+		private Coroutine punchRoutine;
 
 		private bool itemEquippedLastFrame;
 

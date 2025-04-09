@@ -1,12 +1,15 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class CategoryButton : global::UnityEngine.MonoBehaviour
+	public class CategoryButton : MonoBehaviour
 	{
-		public global::ScheduleOne.UI.Shop.EShopCategory Category;
+		public EShopCategory Category;
 
-		private global::UnityEngine.UI.Button button;
+		private Button button;
 
-		private global::ScheduleOne.UI.Shop.ShopInterface shop;
+		private ShopInterface shop;
 
 		public bool isSelected { get; protected set; }
 

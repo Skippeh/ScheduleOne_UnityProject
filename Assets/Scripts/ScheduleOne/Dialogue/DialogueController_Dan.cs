@@ -1,8 +1,14 @@
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_Dan : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_Dan : DialogueController
 	{
-		public global::ScheduleOne.ItemFramework.ItemDefinition ItemToGive;
+		public ItemDefinition ItemToGive;
+
+		protected override void Start()
+		{
+		}
 
 		public override string ModifyDialogueText(string dialogueLabel, string dialogueText)
 		{

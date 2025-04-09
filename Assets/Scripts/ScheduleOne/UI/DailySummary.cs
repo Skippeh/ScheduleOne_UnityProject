@@ -1,27 +1,36 @@
+using System.Collections.Generic;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class DailySummary : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.UI.DailySummary>
+	public class DailySummary : NetworkSingleton<DailySummary>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::TMPro.TextMeshProUGUI TitleLabel;
+		public TextMeshProUGUI TitleLabel;
 
-		public global::UnityEngine.RectTransform[] ProductEntries;
+		public RectTransform[] ProductEntries;
 
-		public global::TMPro.TextMeshProUGUI PlayerEarningsLabel;
+		public TextMeshProUGUI PlayerEarningsLabel;
 
-		public global::TMPro.TextMeshProUGUI DealerEarningsLabel;
+		public TextMeshProUGUI DealerEarningsLabel;
 
-		public global::TMPro.TextMeshProUGUI XPGainedLabel;
+		public TextMeshProUGUI XPGainedLabel;
 
-		public global::UnityEngine.Events.UnityEvent onClosed;
+		public UnityEvent onClosed;
 
-		private global::System.Collections.Generic.Dictionary<string, int> itemsSoldByPlayer;
+		private Dictionary<string, int> itemsSoldByPlayer;
 
 		private float moneyEarnedByPlayer;
 
@@ -51,22 +60,22 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void AddSoldItem(string id, int amount)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void AddPlayerMoney(float amount)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void AddDealerMoney(float amount)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void AddXP(int xp)
 		{
 		}
@@ -95,7 +104,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void RpcReader___Observers_AddSoldItem_3643459082(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddSoldItem_3643459082(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -107,7 +116,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void RpcReader___Observers_AddPlayerMoney_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddPlayerMoney_431000436(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -119,7 +128,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void RpcReader___Observers_AddDealerMoney_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddDealerMoney_431000436(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -131,7 +140,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void RpcReader___Observers_AddXP_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddXP_3316948804(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

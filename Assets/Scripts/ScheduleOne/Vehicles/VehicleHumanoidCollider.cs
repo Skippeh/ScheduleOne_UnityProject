@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleHumanoidCollider : global::UnityEngine.MonoBehaviour
+	public class VehicleHumanoidCollider : MonoBehaviour
 	{
-		public global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		public LandVehicle vehicle;
 
 		private void Start()
 		{
 		}
 
-		private void OnCollisionStay(global::UnityEngine.Collision collision)
+		private void OnCollisionStay(Collision collision)
 		{
 		}
 	}

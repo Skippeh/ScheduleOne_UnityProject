@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class AudioSettings
 	{
 		public float MasterVolume;

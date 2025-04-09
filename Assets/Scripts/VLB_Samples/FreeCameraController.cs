@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace VLB_Samples
 {
-	public class FreeCameraController : global::UnityEngine.MonoBehaviour
+	public class FreeCameraController : MonoBehaviour
 	{
 		public float cameraSensitivity;
 

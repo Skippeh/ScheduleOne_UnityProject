@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleObstacle : global::UnityEngine.MonoBehaviour
+	public class VehicleObstacle : MonoBehaviour
 	{
 		public enum EObstacleType
 		{
@@ -8,11 +10,11 @@ namespace ScheduleOne.Vehicles
 			TrafficLight = 1
 		}
 
-		public global::UnityEngine.Collider col;
+		public Collider col;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool twoSided;
 
-		public global::ScheduleOne.Vehicles.VehicleObstacle.EObstacleType type;
+		public EObstacleType type;
 	}
 }

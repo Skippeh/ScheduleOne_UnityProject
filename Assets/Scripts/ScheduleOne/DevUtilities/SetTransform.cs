@@ -1,26 +1,28 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class SetTransform : global::UnityEngine.MonoBehaviour
+	public class SetTransform : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Frequency Settings")]
+		[Header("Frequency Settings")]
 		public bool SetOnAwake;
 
 		public bool SetOnUpdate;
 
 		public bool SetOnLateUpdate;
 
-		[global::UnityEngine.Header("Transform Settings")]
+		[Header("Transform Settings")]
 		public bool SetPosition;
 
-		public global::UnityEngine.Vector3 LocalPosition;
+		public Vector3 LocalPosition;
 
 		public bool SetRotation;
 
-		public global::UnityEngine.Vector3 LocalRotation;
+		public Vector3 LocalRotation;
 
 		public bool SetScale;
 
-		public global::UnityEngine.Vector3 LocalScale;
+		public Vector3 LocalScale;
 
 		private void Awake()
 		{

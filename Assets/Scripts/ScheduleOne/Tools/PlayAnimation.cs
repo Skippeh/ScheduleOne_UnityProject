@@ -1,8 +1,11 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class PlayAnimation : global::UnityEngine.MonoBehaviour
+	public class PlayAnimation : MonoBehaviour
 	{
-		[global::EasyButtons.Button]
+		[Button]
 		public void Play()
 		{
 		}

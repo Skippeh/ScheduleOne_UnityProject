@@ -1,11 +1,21 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Packaging;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.StationFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "ProductDefinition", menuName = "ScriptableObjects/ProductDefinition", order = 1)]
-	public class ProductDefinition : global::ScheduleOne.Product.PropertyItemDefinition, global::ScheduleOne.Persistence.ISaveable
+	[Serializable]
+	[CreateAssetMenu(fileName = "ProductDefinition", menuName = "ScriptableObjects/ProductDefinition", order = 1)]
+	public class ProductDefinition : PropertyItemDefinition, ISaveable
 	{
-		[global::UnityEngine.Header("Product Settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.DrugTypeContainer> DrugTypes;
+		[Header("Product Settings")]
+		public List<DrugTypeContainer> DrugTypes;
 
 		public float LawIntensityChange;
 
@@ -13,37 +23,37 @@ namespace ScheduleOne.Product
 
 		public float MarketValue;
 
-		public global::ScheduleOne.Packaging.FunctionalProduct FunctionalProduct;
+		public FunctionalProduct FunctionalProduct;
 
 		public int EffectsDuration;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float BaseAddictiveness;
 
-		[global::UnityEngine.Header("Packaging that can be applied to this product. MUST BE ORDERED FROm LOWEST TO HIGHEST QUANTITY")]
-		public global::ScheduleOne.Product.Packaging.PackagingDefinition[] ValidPackaging;
+		[Header("Packaging that can be applied to this product. MUST BE ORDERED FROm LOWEST TO HIGHEST QUANTITY")]
+		public PackagingDefinition[] ValidPackaging;
 
-		public global::ScheduleOne.Product.EDrugType DrugType => default(global::ScheduleOne.Product.EDrugType);
+		public EDrugType DrugType => default(EDrugType);
 
 		public float Price => 0f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> Recipes { get; private set; }
+		public List<StationRecipe> Recipes { get; private set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
 		public bool HasChanged { get; set; }
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public override ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}
@@ -52,7 +62,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes)
+		public void Initialize(List<ScheduleOne.Properties.Property> properties, List<EDrugType> drugTypes)
 		{
 		}
 
@@ -69,7 +79,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public void AddRecipe(global::ScheduleOne.StationFramework.StationRecipe recipe)
+		public void AddRecipe(StationRecipe recipe)
 		{
 		}
 

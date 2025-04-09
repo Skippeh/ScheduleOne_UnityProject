@@ -1,6 +1,11 @@
+using System;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class Settings : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.DevUtilities.Settings>
+	public class Settings : PersistentSingleton<Settings>
 	{
 		public enum UnitType
 		{
@@ -10,43 +15,43 @@ namespace ScheduleOne.DevUtilities
 
 		public const float MinYPos = -20f;
 
-		public global::ScheduleOne.DevUtilities.DisplaySettings DisplaySettings;
+		public DisplaySettings DisplaySettings;
 
-		public global::ScheduleOne.DevUtilities.DisplaySettings UnappliedDisplaySettings;
+		public DisplaySettings UnappliedDisplaySettings;
 
-		public global::ScheduleOne.DevUtilities.GraphicsSettings GraphicsSettings;
+		public GraphicsSettings GraphicsSettings;
 
-		public global::ScheduleOne.DevUtilities.AudioSettings AudioSettings;
+		public AudioSettings AudioSettings;
 
-		public global::ScheduleOne.DevUtilities.InputSettings InputSettings;
+		public InputSettings InputSettings;
 
-		public global::UnityEngine.InputSystem.InputActionAsset InputActions;
+		public InputActionAsset InputActions;
 
-		public global::ScheduleOne.GameInput GameInput;
+		public GameInput GameInput;
 
-		public global::UnityEngine.Rendering.Universal.ScriptableRendererFeature SSAO;
+		public ScriptableRendererFeature SSAO;
 
-		public global::UnityEngine.Rendering.Universal.ScriptableRendererFeature GodRays;
+		public ScriptableRendererFeature GodRays;
 
-		[global::UnityEngine.Header("Camera")]
+		[Header("Camera")]
 		public float LookSensitivity;
 
 		public bool InvertMouse;
 
 		public float CameraFOV;
 
-		public global::ScheduleOne.DevUtilities.InputSettings.EActionMode SprintMode;
+		public InputSettings.EActionMode SprintMode;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float CameraBobIntensity;
 
-		private global::UnityEngine.InputSystem.InputActionMap playerControls;
+		private InputActionMap playerControls;
 
-		public global::System.Action onDisplayChanged;
+		public Action onDisplayChanged;
 
-		public global::System.Action onInputsApplied;
+		public Action onInputsApplied;
 
-		public global::ScheduleOne.DevUtilities.Settings.UnitType unitType { get; protected set; }
+		public UnitType unitType { get; protected set; }
 
 		public bool PausingFreezesTime => false;
 
@@ -58,11 +63,11 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void ApplyDisplaySettings(global::ScheduleOne.DevUtilities.DisplaySettings settings)
+		public void ApplyDisplaySettings(DisplaySettings settings)
 		{
 		}
 
-		private void MoveMainWindowTo(global::UnityEngine.DisplayInfo displayInfo)
+		private void MoveMainWindowTo(DisplayInfo displayInfo)
 		{
 		}
 
@@ -70,7 +75,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void ApplyGraphicsSettings(global::ScheduleOne.DevUtilities.GraphicsSettings settings)
+		public void ApplyGraphicsSettings(GraphicsSettings settings)
 		{
 		}
 
@@ -78,7 +83,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void ApplyAudioSettings(global::ScheduleOne.DevUtilities.AudioSettings settings)
+		public void ApplyAudioSettings(AudioSettings settings)
 		{
 		}
 
@@ -86,42 +91,42 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public void ApplyInputSettings(global::ScheduleOne.DevUtilities.InputSettings settings)
+		public void ApplyInputSettings(InputSettings settings)
 		{
 		}
 
-		public void WriteDisplaySettings(global::ScheduleOne.DevUtilities.DisplaySettings settings)
+		public void WriteDisplaySettings(DisplaySettings settings)
 		{
 		}
 
-		public global::ScheduleOne.DevUtilities.DisplaySettings ReadDisplaySettings()
+		public DisplaySettings ReadDisplaySettings()
 		{
-			return default(global::ScheduleOne.DevUtilities.DisplaySettings);
+			return default(DisplaySettings);
 		}
 
-		public void WriteGraphicsSettings(global::ScheduleOne.DevUtilities.GraphicsSettings settings)
-		{
-		}
-
-		public global::ScheduleOne.DevUtilities.GraphicsSettings ReadGraphicsSettings()
-		{
-			return null;
-		}
-
-		public void WriteAudioSettings(global::ScheduleOne.DevUtilities.AudioSettings settings)
+		public void WriteGraphicsSettings(GraphicsSettings settings)
 		{
 		}
 
-		public global::ScheduleOne.DevUtilities.AudioSettings ReadAudioSettings()
+		public GraphicsSettings ReadGraphicsSettings()
 		{
 			return null;
 		}
 
-		public void WriteInputSettings(global::ScheduleOne.DevUtilities.InputSettings settings)
+		public void WriteAudioSettings(AudioSettings settings)
 		{
 		}
 
-		public global::ScheduleOne.DevUtilities.InputSettings ReadInputSettings()
+		public AudioSettings ReadAudioSettings()
+		{
+			return null;
+		}
+
+		public void WriteInputSettings(InputSettings settings)
+		{
+		}
+
+		public InputSettings ReadInputSettings()
 		{
 			return null;
 		}

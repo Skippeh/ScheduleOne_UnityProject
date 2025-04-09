@@ -1,16 +1,19 @@
+using System;
+using UnityEngine;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public struct RenderLayer
 	{
-		public global::UnityEngine.LayerMask mask;
+		public LayerMask mask;
 
-		public global::UnityEngine.Color color;
+		public Color color;
 
-		public RenderLayer(global::UnityEngine.LayerMask mask, global::UnityEngine.Color color)
+		public RenderLayer(LayerMask mask, Color color)
 		{
-			this.mask = default(global::UnityEngine.LayerMask);
-			this.color = default(global::UnityEngine.Color);
+			this.mask = mask;
+			this.color = color;
 		}
 	}
 }

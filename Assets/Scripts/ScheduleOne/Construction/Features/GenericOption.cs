@@ -1,22 +1,25 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Construction.Features
 {
-	public class GenericOption : global::UnityEngine.MonoBehaviour
+	public class GenericOption : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Interface settings")]
+		[Header("Interface settings")]
 		public string optionName;
 
-		public global::UnityEngine.Color optionButtonColor;
+		public Color optionButtonColor;
 
 		public float optionPrice;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onInstalled;
+		[Header("Events")]
+		public UnityEvent onInstalled;
 
-		public global::UnityEngine.Events.UnityEvent onUninstalled;
+		public UnityEvent onUninstalled;
 
-		public global::UnityEngine.Events.UnityEvent onSetVisible;
+		public UnityEvent onSetVisible;
 
-		public global::UnityEngine.Events.UnityEvent onSetInvisible;
+		public UnityEvent onSetInvisible;
 
 		public virtual void Install()
 		{

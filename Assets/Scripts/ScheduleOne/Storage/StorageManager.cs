@@ -1,11 +1,17 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Storage.StorageManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class StorageManager : NetworkSingleton<StorageManager>, IBaseSaveable, ISaveable
 	{
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject PalletPrefab;
+		[Header("Prefabs")]
+		public GameObject PalletPrefab;
 
-		private global::ScheduleOne.Persistence.Loaders.StorageLoader loader;
+		private StorageLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EStorageManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -15,13 +21,13 @@ namespace ScheduleOne.Storage
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -29,7 +35,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public global::ScheduleOne.Storage.Pallet CreatePallet(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string initialSlotGuid = "")
+		public Pallet CreatePallet(Vector3 position, Quaternion rotation, string initialSlotGuid = "")
 		{
 			return null;
 		}
@@ -43,7 +49,7 @@ namespace ScheduleOne.Storage
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}

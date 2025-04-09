@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class SaveIndicator : global::UnityEngine.MonoBehaviour
+	public class SaveIndicator : MonoBehaviour
 	{
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Icon;
+		public RectTransform Icon;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
 		public void Awake()
 		{

@@ -1,22 +1,25 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class PongBall : global::UnityEngine.MonoBehaviour
+	public class PongBall : MonoBehaviour
 	{
-		public global::ScheduleOne.TV.Pong Game;
+		public Pong Game;
 
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
-		public global::UnityEngine.Rigidbody RB;
+		public Rigidbody RB;
 
 		public float RandomForce;
 
-		public global::UnityEngine.Events.UnityEvent onHit;
+		public UnityEvent onHit;
 
 		private void FixedUpdate()
 		{
 		}
 
-		private void OnCollisionEnter(global::UnityEngine.Collision collision)
+		private void OnCollisionEnter(Collision collision)
 		{
 		}
 	}

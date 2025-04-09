@@ -1,39 +1,47 @@
-public class FirebaseManager : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class FirebaseManager : MonoBehaviour
 {
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CFetchActiveVote_003Ed__0 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CFetchActiveVote_003Ed__0 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
 		private object _003C_003E2__current;
 
-		private global::UnityEngine.Networking.UnityWebRequest _003Crequest_003E5__2;
+		private UnityWebRequest _003Crequest_003E5__2;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CFetchActiveVote_003Ed__0(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -42,7 +50,7 @@ public class FirebaseManager : global::UnityEngine.MonoBehaviour
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
@@ -52,14 +60,14 @@ public class FirebaseManager : global::UnityEngine.MonoBehaviour
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(FirebaseManager._003CFetchActiveVote_003Ed__0))]
-	private global::System.Collections.IEnumerator FetchActiveVote()
+	[IteratorStateMachine(typeof(_003CFetchActiveVote_003Ed__0))]
+	private IEnumerator FetchActiveVote()
 	{
 		return null;
 	}

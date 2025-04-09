@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class ResolutionDropdown : global::ScheduleOne.UI.Settings.SettingsDropdown
+	public class ResolutionDropdown : SettingsDropdown
 	{
 		protected override void Awake()
 		{

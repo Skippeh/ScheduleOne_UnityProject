@@ -1,49 +1,55 @@
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCustomization
 {
-	public class CharacterCustomizationUI : global::UnityEngine.MonoBehaviour
+	public class CharacterCustomizationUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Title;
 
-		public global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationCategory[] Categories;
+		public CharacterCustomizationCategory[] Categories;
 
 		public bool LoadAvatarSettingsNaked;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform MainContainer;
+		public RectTransform MainContainer;
 
-		public global::UnityEngine.RectTransform MenuContainer;
+		public RectTransform MenuContainer;
 
-		public global::TMPro.TextMeshProUGUI TitleText;
+		public TextMeshProUGUI TitleText;
 
-		public global::UnityEngine.RectTransform ButtonContainer;
+		public RectTransform ButtonContainer;
 
-		public global::UnityEngine.UI.Button ExitButton;
+		public Button ExitButton;
 
-		public global::UnityEngine.UI.Slider RigRotationSlider;
+		public Slider RigRotationSlider;
 
-		public global::UnityEngine.Transform CameraPosition;
+		public Transform CameraPosition;
 
-		public global::UnityEngine.Transform RigContainer;
+		public Transform RigContainer;
 
-		public global::ScheduleOne.AvatarFramework.Avatar AvatarRig;
+		public ScheduleOne.AvatarFramework.Avatar AvatarRig;
 
-		public global::UnityEngine.RectTransform PreviewIndicator;
+		public RectTransform PreviewIndicator;
 
-		[global::UnityEngine.Header("Prefab")]
-		public global::UnityEngine.UI.Button CategoryButtonPrefab;
+		[Header("Prefab")]
+		public Button CategoryButtonPrefab;
 
 		private float rigTargetY;
 
-		private global::UnityEngine.Coroutine openCloseRoutine;
+		private Coroutine openCloseRoutine;
 
-		protected global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings currentSettings;
+		protected BasicAvatarSettings currentSettings;
 
 		public bool IsOpen { get; private set; }
 
-		public global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationCategory ActiveCategory { get; private set; }
+		public CharacterCustomizationCategory ActiveCategory { get; private set; }
 
 		private void OnValidate()
 		{
@@ -57,24 +63,24 @@ namespace ScheduleOne.UI.CharacterCustomization
 		{
 		}
 
-		public void SetActiveCategory(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationCategory category)
+		public void SetActiveCategory(CharacterCustomizationCategory category)
 		{
 		}
 
-		public virtual bool IsOptionCurrentlyApplied(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public virtual bool IsOptionCurrentlyApplied(CharacterCustomizationOption option)
 		{
 			return false;
 		}
 
-		public virtual void OptionSelected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public virtual void OptionSelected(CharacterCustomizationOption option)
 		{
 		}
 
-		public virtual void OptionDeselected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public virtual void OptionDeselected(CharacterCustomizationOption option)
 		{
 		}
 
-		public virtual void OptionPurchased(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public virtual void OptionPurchased(CharacterCustomizationOption option)
 		{
 		}
 
@@ -82,7 +88,7 @@ namespace ScheduleOne.UI.CharacterCustomization
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 

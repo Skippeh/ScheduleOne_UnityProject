@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SafeBalanceActivationZone : global::UnityEngine.MonoBehaviour
+	public class SafeBalanceActivationZone : MonoBehaviour
 	{
 		public const float ActivationDistance = 30f;
 
-		public global::ScheduleOne.Storage.Safe Safe;
+		public Safe Safe;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Collider> exclude;
+		private List<Collider> exclude;
 
-		private global::UnityEngine.Collider[] colliders;
+		private Collider[] colliders;
 
 		private bool active;
 
@@ -24,7 +28,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

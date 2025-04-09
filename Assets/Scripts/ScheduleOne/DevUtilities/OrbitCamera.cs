@@ -1,15 +1,18 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class OrbitCamera : global::UnityEngine.MonoBehaviour
+	public class OrbitCamera : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform cameraStartPoint;
+		[Header("References")]
+		[SerializeField]
+		protected Transform cameraStartPoint;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform centrePoint;
+		[SerializeField]
+		protected Transform centrePoint;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float targetFollowSpeed;
 
 		public float yMinLimit;
@@ -20,7 +23,7 @@ namespace ScheduleOne.DevUtilities
 
 		public static float ySpeed;
 
-		private global::UnityEngine.Vector3 rotationOriginPoint;
+		private Vector3 rotationOriginPoint;
 
 		private float distance;
 
@@ -30,11 +33,11 @@ namespace ScheduleOne.DevUtilities
 
 		private float y;
 
-		private global::UnityEngine.Transform targetTransform;
+		private Transform targetTransform;
 
 		public bool isEnabled { get; protected set; }
 
-		protected global::UnityEngine.Transform cam => null;
+		protected Transform cam => null;
 
 		protected virtual void Awake()
 		{
@@ -52,7 +55,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Enable()
 		{
 		}

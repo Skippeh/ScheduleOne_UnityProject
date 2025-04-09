@@ -1,18 +1,23 @@
+using ScheduleOne.Map;
+using ScheduleOne.Misc;
+using ScheduleOne.NPCs.CharacterClasses;
+using ScheduleOne.Property;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_UnfavourableAgreements : global::ScheduleOne.Quests.Quest
+	public class Quest_UnfavourableAgreements : Quest
 	{
 		public const float WEEKLY_DELIVERY_HOURS = 168f;
 
 		public const float REMINDER_THRESHOLD = 144f;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.Thomas Thomas;
+		public Thomas Thomas;
 
-		public global::ScheduleOne.Map.ManorGate Gate;
+		public ManorGate Gate;
 
-		public global::ScheduleOne.Misc.ModularSwitch Switch;
+		public ModularSwitch Switch;
 
-		public global::ScheduleOne.Property.RV RV;
+		public RV RV;
 
 		public string QuestEntryTitle;
 

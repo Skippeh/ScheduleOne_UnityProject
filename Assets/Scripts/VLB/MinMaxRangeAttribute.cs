@@ -1,6 +1,8 @@
+using System;
+
 namespace VLB
 {
-	public class MinMaxRangeAttribute : global::System.Attribute
+	public class MinMaxRangeAttribute : Attribute
 	{
 		public float minValue { get; private set; }
 

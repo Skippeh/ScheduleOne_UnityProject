@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class SprintModeDropdown : global::ScheduleOne.UI.Settings.SettingsDropdown
+	public class SprintModeDropdown : SettingsDropdown
 	{
 		protected override void Awake()
 		{

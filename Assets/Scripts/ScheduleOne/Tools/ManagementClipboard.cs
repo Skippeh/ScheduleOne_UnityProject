@@ -1,34 +1,42 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Management;
+using ScheduleOne.UI.Management;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class ManagementClipboard : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Tools.ManagementClipboard>
+	public class ManagementClipboard : Singleton<ManagementClipboard>
 	{
 		public bool IsEquipped;
 
 		public const float OpenTime = 0.06f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform ClipboardTransform;
+		[Header("References")]
+		public Transform ClipboardTransform;
 
-		public global::UnityEngine.Camera OverlayCamera;
+		public Camera OverlayCamera;
 
-		public global::UnityEngine.Light OverlayLight;
+		public Light OverlayLight;
 
-		public global::ScheduleOne.UI.Management.SelectionInfoUI SelectionInfo;
+		public SelectionInfoUI SelectionInfo;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ClosedOffset;
 
-		public global::UnityEngine.Events.UnityEvent onClipboardEquipped;
+		public UnityEvent onClipboardEquipped;
 
-		public global::UnityEngine.Events.UnityEvent onClipboardUnequipped;
+		public UnityEvent onClipboardUnequipped;
 
-		public global::UnityEngine.Events.UnityEvent onOpened;
+		public UnityEvent onOpened;
 
-		public global::UnityEngine.Events.UnityEvent onClosed;
+		public UnityEvent onClosed;
 
-		private global::UnityEngine.Coroutine lerpRoutine;
+		private Coroutine lerpRoutine;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> CurrentConfigurables;
+		private List<IConfigurable> CurrentConfigurables;
 
 		public bool IsOpen { get; protected set; }
 
@@ -42,11 +50,11 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exitAction)
+		private void Exit(ExitAction exitAction)
 		{
 		}
 
-		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> selection, global::ScheduleOne.Tools.ManagementClipboard_Equippable equippable)
+		public void Open(List<IConfigurable> selection, ManagementClipboard_Equippable equippable)
 		{
 		}
 
@@ -54,7 +62,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void LerpToVerticalPosition(bool open, global::System.Action callback)
+		private void LerpToVerticalPosition(bool open, Action callback)
 		{
 		}
 	}

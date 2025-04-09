@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class ContinueScreen : global::ScheduleOne.UI.MainMenu.MainMenuScreen
+	public class ContinueScreen : MainMenuScreen
 	{
-		public global::UnityEngine.RectTransform NotHostWarning;
+		public RectTransform NotHostWarning;
 
 		private void Update()
 		{

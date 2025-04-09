@@ -1,4 +1,6 @@
-public class FlockWaypointTrigger : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class FlockWaypointTrigger : MonoBehaviour
 {
 	public float _timer;
 

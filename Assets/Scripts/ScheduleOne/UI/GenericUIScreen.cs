@@ -1,8 +1,12 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI
 {
-	public class GenericUIScreen : global::UnityEngine.MonoBehaviour
+	public class GenericUIScreen : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Name;
 
 		public bool UseExitActions;
@@ -17,9 +21,9 @@ namespace ScheduleOne.UI
 
 		public bool ReenableEquippingOnClose;
 
-		public global::UnityEngine.Events.UnityEvent onOpen;
+		public UnityEvent onOpen;
 
-		public global::UnityEngine.Events.UnityEvent onClose;
+		public UnityEvent onClose;
 
 		public bool IsOpen { get; private set; }
 
@@ -35,7 +39,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 	}

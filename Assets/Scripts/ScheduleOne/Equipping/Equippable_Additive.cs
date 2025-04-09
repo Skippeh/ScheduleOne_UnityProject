@@ -1,18 +1,21 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Additive : global::ScheduleOne.Equipping.Equippable_Pourable
+	public class Equippable_Additive : Equippable_Pourable
 	{
-		private global::ScheduleOne.ItemFramework.AdditiveDefinition additiveDef;
+		private AdditiveDefinition additiveDef;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
-		protected override void StartPourTask(global::ScheduleOne.ObjectScripts.Pot pot)
+		protected override void StartPourTask(Pot pot)
 		{
 		}
 
-		protected override bool CanPour(global::ScheduleOne.ObjectScripts.Pot pot, out string reason)
+		protected override bool CanPour(Pot pot, out string reason)
 		{
 			reason = null;
 			return false;

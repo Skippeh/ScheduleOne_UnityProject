@@ -1,12 +1,15 @@
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public class ConstructStart_OutdoorGrid : global::ScheduleOne.Construction.ConstructionMethods.ConstructStart_Base
+	public class ConstructStart_OutdoorGrid : ConstructStart_Base
 	{
-		private global::ScheduleOne.ConstructableScripts.Constructable_GridBased constructable;
+		private Constructable_GridBased constructable;
 
-		private global::UnityEngine.Transform ghostModel;
+		private Transform ghostModel;
 
-		public override void StartConstruction(string constructableID, global::ScheduleOne.ConstructableScripts.Constructable_GridBased movedConstructable = null)
+		public override void StartConstruction(string constructableID, Constructable_GridBased movedConstructable = null)
 		{
 		}
 

@@ -1,8 +1,10 @@
-public class RandomMaterial : global::UnityEngine.MonoBehaviour
-{
-	public global::UnityEngine.Renderer targetRenderer;
+using UnityEngine;
 
-	public global::UnityEngine.Material[] materials;
+public class RandomMaterial : MonoBehaviour
+{
+	public Renderer targetRenderer;
+
+	public Material[] materials;
 
 	public void Start()
 	{

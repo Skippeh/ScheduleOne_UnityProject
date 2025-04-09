@@ -1,43 +1,51 @@
+using System;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.NPCs;
+using ScheduleOne.Packaging;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Product.Packaging;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	public class MethInstance : global::ScheduleOne.Product.ProductItemInstance
+	[Serializable]
+	public class MethInstance : ProductItemInstance
 	{
 		public MethInstance()
 		{
 		}
 
-		public MethInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality, global::ScheduleOne.Product.Packaging.PackagingDefinition packaging = null)
+		public MethInstance(ItemDefinition definition, int quantity, EQuality quality, PackagingDefinition packaging = null)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
-		{
-			return null;
-		}
-
-		public override void SetupPackagingVisuals(global::ScheduleOne.Packaging.FilledPackagingVisuals visuals)
-		{
-		}
-
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
 
-		public override void ApplyEffectsToNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override void SetupPackagingVisuals(FilledPackagingVisuals visuals)
 		{
 		}
 
-		public override void ClearEffectsFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		public override ItemData GetItemData()
+		{
+			return null;
+		}
+
+		public override void ApplyEffectsToNPC(NPC npc)
 		{
 		}
 
-		public override void ApplyEffectsToPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		public override void ClearEffectsFromNPC(NPC npc)
 		{
 		}
 
-		public override void ClearEffectsFromPlayer(global::ScheduleOne.PlayerScripts.Player Player)
+		public override void ApplyEffectsToPlayer(Player player)
+		{
+		}
+
+		public override void ClearEffectsFromPlayer(Player Player)
 		{
 		}
 	}

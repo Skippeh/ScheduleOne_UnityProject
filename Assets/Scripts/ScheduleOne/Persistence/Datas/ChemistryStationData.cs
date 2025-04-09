@@ -1,23 +1,28 @@
+using System;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	public class ChemistryStationData : global::ScheduleOne.Persistence.Datas.GridItemData
+	public class ChemistryStationData : GridItemData
 	{
-		public global::ScheduleOne.Persistence.Datas.ItemSet InputContents;
+		public ItemSet InputContents;
 
-		public global::ScheduleOne.Persistence.Datas.ItemSet OutputContents;
+		public ItemSet OutputContents;
 
 		public string CurrentRecipeID;
 
-		public global::ScheduleOne.ItemFramework.EQuality ProductQuality;
+		public EQuality ProductQuality;
 
-		public global::UnityEngine.Color StartLiquidColor;
+		public Color StartLiquidColor;
 
 		public float LiquidLevel;
 
 		public int CurrentTime;
 
-		public ChemistryStationData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, global::ScheduleOne.Persistence.Datas.ItemSet inputContents, global::ScheduleOne.Persistence.Datas.ItemSet outputContents, string currentRecipeID, global::ScheduleOne.ItemFramework.EQuality productQuality, global::UnityEngine.Color startLiquidColor, float liquidLevel, int currentTime)
-			: base(default(global::System.Guid), null, 0, null, default(global::UnityEngine.Vector2), 0)
+		public ChemistryStationData(Guid guid, ItemInstance item, int loadOrder, Grid grid, Vector2 originCoordinate, int rotation, ItemSet inputContents, ItemSet outputContents, string currentRecipeID, EQuality productQuality, Color startLiquidColor, float liquidLevel, int currentTime)
+			: base(default(Guid), null, 0, null, default(Vector2), 0)
 		{
 		}
 	}

@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.Dialogue
 {
-	public class ControlledDialogueHandler : global::ScheduleOne.Dialogue.DialogueHandler
+	public class ControlledDialogueHandler : DialogueHandler
 	{
-		private global::ScheduleOne.Dialogue.DialogueController controller;
+		private DialogueController controller;
 
 		protected override void Awake()
 		{
@@ -18,7 +20,7 @@ namespace ScheduleOne.Dialogue
 			return null;
 		}
 
-		protected override void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		protected override void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 

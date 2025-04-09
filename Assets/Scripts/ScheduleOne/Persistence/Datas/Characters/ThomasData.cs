@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Datas.Characters
 {
-	public class ThomasData : global::ScheduleOne.Persistence.Datas.NPCData
+	public class ThomasData : NPCData
 	{
 		public bool MeetingReminderSent;
 

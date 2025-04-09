@@ -1,39 +1,44 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Product
 {
-	public class ProductEntry : global::UnityEngine.MonoBehaviour
+	public class ProductEntry : MonoBehaviour
 	{
-		public global::UnityEngine.Color SelectedColor;
+		public Color SelectedColor;
 
-		public global::UnityEngine.Color DeselectedColor;
+		public Color DeselectedColor;
 
-		public global::UnityEngine.Color FavouritedColor;
+		public Color FavouritedColor;
 
-		public global::UnityEngine.Color UnfavouritedColor;
+		public Color UnfavouritedColor;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Button Button;
+		[Header("References")]
+		public Button Button;
 
-		public global::UnityEngine.UI.Image Frame;
+		public Image Frame;
 
-		public global::UnityEngine.UI.Image Icon;
+		public Image Icon;
 
-		public global::UnityEngine.RectTransform Tick;
+		public RectTransform Tick;
 
-		public global::UnityEngine.RectTransform Cross;
+		public RectTransform Cross;
 
-		public global::UnityEngine.EventSystems.EventTrigger Trigger;
+		public EventTrigger Trigger;
 
-		public global::UnityEngine.UI.Button FavouriteButton;
+		public Button FavouriteButton;
 
-		public global::UnityEngine.UI.Image FavouriteIcon;
+		public Image FavouriteIcon;
 
-		public global::UnityEngine.Events.UnityEvent onHovered;
+		public UnityEvent onHovered;
 
 		private bool destroyed;
 
-		public global::ScheduleOne.Product.ProductDefinition Definition { get; private set; }
+		public ProductDefinition Definition { get; private set; }
 
-		public void Initialize(global::ScheduleOne.Product.ProductDefinition definition)
+		public void Initialize(ProductDefinition definition)
 		{
 		}
 
@@ -53,7 +58,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void ProductListedOrDelisted(global::ScheduleOne.Product.ProductDefinition def)
+		private void ProductListedOrDelisted(ProductDefinition def)
 		{
 		}
 
@@ -61,7 +66,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void ProductFavouritedOrUnFavourited(global::ScheduleOne.Product.ProductDefinition def)
+		private void ProductFavouritedOrUnFavourited(ProductDefinition def)
 		{
 		}
 
@@ -69,7 +74,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public void UpdateDiscovered(global::ScheduleOne.Product.ProductDefinition def)
+		public void UpdateDiscovered(ProductDefinition def)
 		{
 		}
 	}

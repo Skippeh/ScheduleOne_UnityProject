@@ -1,30 +1,38 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+using ScheduleOne.Trash;
+
 namespace ScheduleOne.ObjectScripts.WateringCan
 {
-	[global::System.Serializable]
-	public class TrashGrabberInstance : global::ScheduleOne.Storage.StorableItemInstance
+	[Serializable]
+	public class TrashGrabberInstance : StorableItemInstance
 	{
 		public const int TRASH_CAPACITY = 20;
 
-		private global::ScheduleOne.Trash.TrashContent Content;
+		private TrashContent Content;
 
 		public TrashGrabberInstance()
 		{
 		}
 
-		public TrashGrabberInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+		public TrashGrabberInstance(ItemDefinition definition, int quantity)
 		{
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
 
-		public void LoadContentData(global::ScheduleOne.Persistence.TrashContentData content)
+		public void LoadContentData(TrashContentData content)
 		{
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}
@@ -46,17 +54,17 @@ namespace ScheduleOne.ObjectScripts.WateringCan
 			return 0;
 		}
 
-		public global::System.Collections.Generic.List<string> GetTrashIDs()
+		public List<string> GetTrashIDs()
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<int> GetTrashQuantities()
+		public List<int> GetTrashQuantities()
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<ushort> GetTrashUshortQuantities()
+		public List<ushort> GetTrashUshortQuantities()
 		{
 			return null;
 		}

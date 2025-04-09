@@ -1,41 +1,49 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class FinalizeLabOven : global::ScheduleOne.PlayerTasks.Task
+	public class FinalizeLabOven : Task
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CStartSequence_003Ed__14 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CStartSequence_003Ed__14 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerTasks.FinalizeLabOven _003C_003E4__this;
+			public FinalizeLabOven _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CStartSequence_003Ed__14(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,14 +52,14 @@ namespace ScheduleOne.PlayerTasks
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -62,17 +70,17 @@ namespace ScheduleOne.PlayerTasks
 
 		public const int REQUIRED_IMPACTS = 3;
 
-		private global::UnityEngine.Coroutine startSequence;
+		private Coroutine startSequence;
 
-		private global::ScheduleOne.ObjectScripts.LabOvenHammer hammer;
+		private LabOvenHammer hammer;
 
 		private int impactCount;
 
 		private float timeSinceLastImpact;
 
-		public global::ScheduleOne.ObjectScripts.LabOven Oven { get; private set; }
+		public LabOven Oven { get; private set; }
 
-		public FinalizeLabOven(global::ScheduleOne.ObjectScripts.LabOven oven)
+		public FinalizeLabOven(LabOven oven)
 		{
 		}
 
@@ -84,13 +92,13 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerTasks.FinalizeLabOven._003CStartSequence_003Ed__14))]
-		private global::System.Collections.IEnumerator StartSequence()
+		[IteratorStateMachine(typeof(_003CStartSequence_003Ed__14))]
+		private IEnumerator StartSequence()
 		{
 			return null;
 		}
 
-		public void Collision(global::UnityEngine.Collision col)
+		public void Collision(Collision col)
 		{
 		}
 

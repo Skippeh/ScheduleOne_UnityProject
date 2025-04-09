@@ -1,12 +1,15 @@
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class NPCPresenceAccessZone : global::ScheduleOne.Map.AccessZone
+	public class NPCPresenceAccessZone : AccessZone
 	{
 		public const float CooldownTime = 0.5f;
 
-		public global::UnityEngine.Collider DetectionZone;
+		public Collider DetectionZone;
 
-		public global::ScheduleOne.NPCs.NPC TargetNPC;
+		public NPC TargetNPC;
 
 		private float timeSinceNPCSensed;
 

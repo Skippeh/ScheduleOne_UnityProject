@@ -1,17 +1,24 @@
+using System;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Packaging;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Product.Packaging
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "PackagingDefinition", menuName = "ScriptableObjects/Item Definitions/PackagingDefinition", order = 1)]
-	public class PackagingDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "PackagingDefinition", menuName = "ScriptableObjects/Item Definitions/PackagingDefinition", order = 1)]
+	public class PackagingDefinition : StorableItemDefinition
 	{
 		public int Quantity;
 
-		public global::ScheduleOne.Product.Packaging.EStealthLevel StealthLevel;
+		public EStealthLevel StealthLevel;
 
-		public global::ScheduleOne.Packaging.FunctionalPackaging FunctionalPackaging;
+		public FunctionalPackaging FunctionalPackaging;
 
-		public global::ScheduleOne.Equipping.Equippable Equippable_Filled;
+		public Equippable Equippable_Filled;
 
-		public global::ScheduleOne.Storage.StoredItem StoredItem_Filled;
+		public StoredItem StoredItem_Filled;
 	}
 }

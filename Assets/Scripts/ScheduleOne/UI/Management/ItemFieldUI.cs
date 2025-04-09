@@ -1,27 +1,34 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ItemFieldUI : global::UnityEngine.MonoBehaviour
+	public class ItemFieldUI : MonoBehaviour
 	{
 		public bool ShowNoneAsAny;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		[Header("References")]
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.UI.Image IconImg;
+		public Image IconImg;
 
-		public global::TMPro.TextMeshProUGUI SelectionLabel;
+		public TextMeshProUGUI SelectionLabel;
 
-		public global::UnityEngine.GameObject NoneSelected;
+		public GameObject NoneSelected;
 
-		public global::UnityEngine.GameObject MultipleSelected;
+		public GameObject MultipleSelected;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.ItemField> Fields { get; protected set; }
+		public List<ItemField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.ItemField> field)
+		public void Bind(List<ItemField> field)
 		{
 		}
 
-		private void Refresh(global::ScheduleOne.ItemFramework.ItemDefinition newVal)
+		private void Refresh(ItemDefinition newVal)
 		{
 		}
 
@@ -34,7 +41,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void OptionSelected(global::ScheduleOne.UI.Management.ItemSelector.Option option)
+		private void OptionSelected(ItemSelector.Option option)
 		{
 		}
 	}

@@ -1,6 +1,18 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Tools;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerCamera : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerCamera>
+	public class PlayerCamera : PlayerSingleton<PlayerCamera>
 	{
 		public enum ECameraMode
 		{
@@ -9,14 +21,14 @@ namespace ScheduleOne.PlayerScripts
 			Skateboard = 2
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CILerpCamera_003Ed__114 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CILerpCamera_003Ed__115 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerScripts.PlayerCamera _003C_003E4__this;
+			public PlayerCamera _003C_003E4__this;
 
 			public bool worldSpace;
 
@@ -24,43 +36,43 @@ namespace ScheduleOne.PlayerScripts
 
 			public float lerpTime;
 
-			public global::UnityEngine.Vector3 endPos;
+			public Vector3 endPos;
 
-			public global::UnityEngine.Quaternion endRot;
+			public Quaternion endRot;
 
 			public bool reenableLook;
 
-			private global::UnityEngine.Vector3 _003CstartPos_003E5__2;
+			private Vector3 _003CstartPos_003E5__2;
 
-			private global::UnityEngine.Quaternion _003CstartRot_003E5__3;
+			private Quaternion _003CstartRot_003E5__3;
 
 			private float _003Celapsed_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			public _003CILerpCamera_003Ed__114(int _003C_003E1__state)
+			[DebuggerHidden]
+			public _003CILerpCamera_003Ed__115(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -69,26 +81,26 @@ namespace ScheduleOne.PlayerScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CILerpFOV_003Ed__125 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CILerpFOV_003Ed__126 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerScripts.PlayerCamera _003C_003E4__this;
+			public PlayerCamera _003C_003E4__this;
 
 			public float endFov;
 
@@ -98,31 +110,31 @@ namespace ScheduleOne.PlayerScripts
 
 			private float _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			public _003CILerpFOV_003Ed__125(int _003C_003E1__state)
+			[DebuggerHidden]
+			public _003CILerpFOV_003Ed__126(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -131,20 +143,20 @@ namespace ScheduleOne.PlayerScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpDoF_003Ed__122 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CLerpDoF_003Ed__123 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -152,7 +164,7 @@ namespace ScheduleOne.PlayerScripts
 
 			public bool active;
 
-			public global::ScheduleOne.PlayerScripts.PlayerCamera _003C_003E4__this;
+			public PlayerCamera _003C_003E4__this;
 
 			public float lerpTime;
 
@@ -162,31 +174,31 @@ namespace ScheduleOne.PlayerScripts
 
 			private float _003Ci_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			public _003CLerpDoF_003Ed__122(int _003C_003E1__state)
+			[DebuggerHidden]
+			public _003CLerpDoF_003Ed__123(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -195,21 +207,21 @@ namespace ScheduleOne.PlayerScripts
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
 		public const float CAMERA_SHAKE_MULTIPLIER = 0.1f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float cameraOffsetFromTop;
 
 		public float SprintFoVBoost;
@@ -222,9 +234,9 @@ namespace ScheduleOne.PlayerScripts
 
 		public float BobRate;
 
-		public global::UnityEngine.AnimationCurve HorizontalBobCurve;
+		public AnimationCurve HorizontalBobCurve;
 
-		public global::UnityEngine.AnimationCurve VerticalBobCurve;
+		public AnimationCurve VerticalBobCurve;
 
 		public float FreeCamSpeed;
 
@@ -234,51 +246,53 @@ namespace ScheduleOne.PlayerScripts
 
 		public float SmoothLookSpeed;
 
-		public global::ScheduleOne.Tools.FloatSmoother FoVChangeSmoother;
+		public FloatSmoother FoVChangeSmoother;
 
-		public global::ScheduleOne.Tools.FloatSmoother SmoothLookSmoother;
+		public FloatSmoother SmoothLookSmoother;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform CameraContainer;
+		[Header("References")]
+		public Transform CameraContainer;
 
-		public global::UnityEngine.Camera Camera;
+		public Camera Camera;
 
-		public global::UnityEngine.Animator Animator;
+		public Camera OverlayCamera;
 
-		public global::UnityEngine.AnimationClip[] JoltClips;
+		public Animator Animator;
 
-		public global::UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset[] URPAssets;
+		public AnimationClip[] JoltClips;
 
-		public global::UnityEngine.Transform ViewAvatarCameraPosition;
+		public UniversalRenderPipelineAsset[] URPAssets;
 
-		public global::ScheduleOne.Audio.HeartbeatSoundController HeartbeatSoundController;
+		public Transform ViewAvatarCameraPosition;
 
-		public global::UnityEngine.ParticleSystem Flies;
+		public HeartbeatSoundController HeartbeatSoundController;
 
-		public global::ScheduleOne.Audio.AudioSourceController MethRumble;
+		public ParticleSystem Flies;
 
-		public global::ScheduleOne.Audio.RandomizedAudioSourceController SchizoVoices;
+		public AudioSourceController MethRumble;
 
-		[global::UnityEngine.HideInInspector]
+		public RandomizedAudioSourceController SchizoVoices;
+
+		[HideInInspector]
 		public bool blockNextStopTransformOverride;
 
-		private global::UnityEngine.Rendering.Volume globalVolume;
+		private Volume globalVolume;
 
-		private global::UnityEngine.Rendering.Universal.DepthOfField DoF;
+		private DepthOfField DoF;
 
-		private global::UnityEngine.Coroutine cameraShakeCoroutine;
+		private Coroutine cameraShakeCoroutine;
 
-		private global::UnityEngine.Vector3 cameraLocalPos;
+		private Vector3 cameraLocalPos;
 
-		private global::UnityEngine.Vector3 freeCamMovement;
+		private Vector3 freeCamMovement;
 
-		private global::UnityEngine.Coroutine focusRoutine;
+		private Coroutine focusRoutine;
 
 		private float focusMouseX;
 
 		private float focusMouseY;
 
-		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.PlayerScripts.PlayerMovement.MovementEvent> movementEvents;
+		private Dictionary<int, PlayerMovement.MovementEvent> movementEvents;
 
 		private float freeCamSpeed;
 
@@ -286,27 +300,27 @@ namespace ScheduleOne.PlayerScripts
 
 		private float mouseY;
 
-		private global::UnityEngine.Vector2 seizureJitter;
+		private Vector2 seizureJitter;
 
 		private float schizoFoV;
 
 		private float timeUntilNextSchizoVoice;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Vector3> gizmos;
+		private List<Vector3> gizmos;
 
-		private global::UnityEngine.Vector3 cameralocalPos_PriorOverride;
+		private Vector3 cameralocalPos_PriorOverride;
 
-		private global::UnityEngine.Quaternion cameraLocalRot_PriorOverride;
+		private Quaternion cameraLocalRot_PriorOverride;
 
-		public global::UnityEngine.Coroutine ILerpCamera_Coroutine;
+		public Coroutine ILerpCamera_Coroutine;
 
-		private global::UnityEngine.Coroutine lookRoutine;
+		private Coroutine lookRoutine;
 
-		private global::UnityEngine.Coroutine DoFCoroutine;
+		private Coroutine DoFCoroutine;
 
-		private global::UnityEngine.Coroutine ILerpCameraFOV_Coroutine;
+		private Coroutine ILerpCameraFOV_Coroutine;
 
-		public static global::ScheduleOne.DevUtilities.GraphicsSettings.EAntiAliasingMode AntiAliasingMode { get; private set; }
+		public static ScheduleOne.DevUtilities.GraphicsSettings.EAntiAliasingMode AntiAliasingMode { get; private set; }
 
 		public bool canLook { get; protected set; }
 
@@ -320,7 +334,7 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool ViewingAvatar { get; private set; }
 
-		public global::ScheduleOne.PlayerScripts.PlayerCamera.ECameraMode CameraMode { get; protected set; }
+		public ECameraMode CameraMode { get; protected set; }
 
 		public bool MethVisuals { get; set; }
 
@@ -328,7 +342,7 @@ namespace ScheduleOne.PlayerScripts
 
 		public float FovJitter { get; private set; }
 
-		public global::System.Collections.Generic.List<string> activeUIElements { get; protected set; }
+		public List<string> activeUIElements { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -346,7 +360,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public static void SetAntialiasingMode(global::ScheduleOne.DevUtilities.GraphicsSettings.EAntiAliasingMode mode)
+		public static void SetAntialiasingMode(ScheduleOne.DevUtilities.GraphicsSettings.EAntiAliasingMode mode)
 		{
 		}
 
@@ -366,7 +380,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -375,7 +389,7 @@ namespace ScheduleOne.PlayerScripts
 			return 0f;
 		}
 
-		public void SetCameraMode(global::ScheduleOne.PlayerScripts.PlayerCamera.ECameraMode mode)
+		public void SetCameraMode(ECameraMode mode)
 		{
 		}
 
@@ -391,15 +405,15 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool LookRaycast(float range, out global::UnityEngine.RaycastHit hit, global::UnityEngine.LayerMask layerMask, bool includeTriggers = true, float radius = 0f)
+		public bool LookRaycast(float range, out RaycastHit hit, LayerMask layerMask, bool includeTriggers = true, float radius = 0f)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		public bool LookRaycast_ExcludeBuildables(float range, out global::UnityEngine.RaycastHit hit, global::UnityEngine.LayerMask layerMask, bool includeTriggers = true)
+		public bool LookRaycast_ExcludeBuildables(float range, out RaycastHit hit, LayerMask layerMask, bool includeTriggers = true)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
@@ -407,30 +421,30 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool Raycast_ExcludeBuildables(global::UnityEngine.Vector3 origin, global::UnityEngine.Vector3 direction, float range, out global::UnityEngine.RaycastHit hit, global::UnityEngine.LayerMask layerMask, bool includeTriggers = false, float radius = 0f, float maxAngleDifference = 0f)
+		public bool Raycast_ExcludeBuildables(Vector3 origin, Vector3 direction, float range, out RaycastHit hit, LayerMask layerMask, bool includeTriggers = false, float radius = 0f, float maxAngleDifference = 0f)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		public bool MouseRaycast(float range, out global::UnityEngine.RaycastHit hit, global::UnityEngine.LayerMask layerMask, bool includeTriggers = true, float radius = 0f)
+		public bool MouseRaycast(float range, out RaycastHit hit, LayerMask layerMask, bool includeTriggers = true, float radius = 0f)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		public bool LookSpherecast(float range, float radius, out global::UnityEngine.RaycastHit hit, global::UnityEngine.LayerMask layerMask)
+		public bool LookSpherecast(float range, float radius, out RaycastHit hit, LayerMask layerMask)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		public void OverrideTransform(global::UnityEngine.Vector3 worldPos, global::UnityEngine.Quaternion rot, float lerpTime, bool keepParented = false)
+		public void OverrideTransform(Vector3 worldPos, Quaternion rot, float lerpTime, bool keepParented = false)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpCamera_003Ed__114))]
-		protected global::System.Collections.IEnumerator ILerpCamera(global::UnityEngine.Vector3 endPos, global::UnityEngine.Quaternion endRot, float lerpTime, bool worldSpace, bool returnToRestingPosition = false, bool reenableLook = false)
+		[IteratorStateMachine(typeof(_003CILerpCamera_003Ed__115))]
+		protected IEnumerator ILerpCamera(Vector3 endPos, Quaternion endRot, float lerpTime, bool worldSpace, bool returnToRestingPosition = false, bool reenableLook = false)
 		{
 			return null;
 		}
@@ -439,7 +453,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void LookAt(global::UnityEngine.Vector3 point, float duration = 0.25f)
+		public void LookAt(Vector3 point, float duration = 0.25f)
 		{
 		}
 
@@ -455,8 +469,8 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CLerpDoF_003Ed__122))]
-		private global::System.Collections.IEnumerator LerpDoF(bool active, float lerpTime)
+		[IteratorStateMachine(typeof(_003CLerpDoF_003Ed__123))]
+		private IEnumerator LerpDoF(bool active, float lerpTime)
 		{
 			return null;
 		}
@@ -465,8 +479,8 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerCamera._003CILerpFOV_003Ed__125))]
-		protected global::System.Collections.IEnumerator ILerpFOV(float endFov, float lerpTime)
+		[IteratorStateMachine(typeof(_003CILerpFOV_003Ed__126))]
+		protected IEnumerator ILerpFOV(float endFov, float lerpTime)
 		{
 			return null;
 		}
@@ -483,11 +497,11 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void RegisterMovementEvent(int threshold, global::System.Action action)
+		public void RegisterMovementEvent(int threshold, Action action)
 		{
 		}
 
-		public void DeregisterMovementEvent(global::System.Action action)
+		public void DeregisterMovementEvent(Action action)
 		{
 		}
 
@@ -507,7 +521,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool PointInCameraView(global::UnityEngine.Vector3 point)
+		public bool PointInCameraView(Vector3 point)
 		{
 			return false;
 		}
@@ -521,7 +535,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void FocusCameraOnTarget(global::UnityEngine.Transform target)
+		public void FocusCameraOnTarget(Transform target)
 		{
 		}
 

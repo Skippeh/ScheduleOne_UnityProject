@@ -1,8 +1,13 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_SkateboardSeller : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_SkateboardSeller : DialogueController
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Option
 		{
 			public string Name;
@@ -13,14 +18,14 @@ namespace ScheduleOne.Dialogue
 
 			public string NotAvailableReason;
 
-			public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+			public ItemDefinition Item;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_SkateboardSeller.Option> Options;
+		public List<Option> Options;
 
-		private global::ScheduleOne.Dialogue.DialogueController_SkateboardSeller.Option chosenWeapon;
+		private Option chosenWeapon;
 
-		public global::UnityEngine.Events.UnityEvent onPurchase;
+		public UnityEvent onPurchase;
 
 		private void Awake()
 		{
@@ -30,11 +35,11 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		public override void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		public override void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> GetChoices(global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_SkateboardSeller.Option> options)
+		private List<DialogueChoiceData> GetChoices(List<Option> options)
 		{
 			return null;
 		}

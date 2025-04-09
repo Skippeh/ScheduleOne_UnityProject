@@ -1,77 +1,83 @@
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.FX;
+using ScheduleOne.Tools;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class AvatarEffects : global::UnityEngine.MonoBehaviour
+	public class AvatarEffects : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		[Header("References")]
+		public Avatar Avatar;
 
-		public global::UnityEngine.ParticleSystem[] StinkParticles;
+		public ParticleSystem[] StinkParticles;
 
-		public global::UnityEngine.ParticleSystem VomitParticles;
+		public ParticleSystem VomitParticles;
 
-		public global::UnityEngine.ParticleSystem HeadPoofParticles;
+		public ParticleSystem HeadPoofParticles;
 
-		public global::UnityEngine.ParticleSystem FartParticles;
+		public ParticleSystem FartParticles;
 
-		public global::UnityEngine.ParticleSystem AntiGravParticles;
+		public ParticleSystem AntiGravParticles;
 
-		public global::UnityEngine.ParticleSystem FireParticles;
+		public ParticleSystem FireParticles;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight FireLight;
+		public OptimizedLight FireLight;
 
-		public global::UnityEngine.ParticleSystem FoggyEffects;
+		public ParticleSystem FoggyEffects;
 
-		public global::UnityEngine.Transform HeadBone;
+		public Transform HeadBone;
 
-		public global::UnityEngine.Transform NeckBone;
+		public Transform NeckBone;
 
-		public global::ScheduleOne.AvatarFramework.AvatarEffects[] MirrorEffectsTo;
+		public AvatarEffects[] MirrorEffectsTo;
 
-		public global::UnityEngine.ParticleSystem ZapParticles;
+		public ParticleSystem ZapParticles;
 
-		public global::ScheduleOne.FX.CountdownExplosion CountdownExplosion;
+		public CountdownExplosion CountdownExplosion;
 
-		public global::UnityEngine.GameObject[] ObjectsToCull;
+		public GameObject[] ObjectsToCull;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DisableHead;
 
-		[global::UnityEngine.Header("Sounds")]
-		public global::ScheduleOne.Audio.AudioSourceController GurgleSound;
+		[Header("Sounds")]
+		public AudioSourceController GurgleSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController VomitSound;
+		public AudioSourceController VomitSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController PoofSound;
+		public AudioSourceController PoofSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController FartSound;
+		public AudioSourceController FartSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController FireSound;
+		public AudioSourceController FireSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController ZapSound;
+		public AudioSourceController ZapSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController ZapLoopSound;
+		public AudioSourceController ZapLoopSound;
 
-		[global::UnityEngine.Header("Smoothers")]
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Tools.FloatSmoother AdditionalWeightController;
+		[Header("Smoothers")]
+		[SerializeField]
+		private FloatSmoother AdditionalWeightController;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Tools.FloatSmoother AdditionalGenderController;
+		[SerializeField]
+		private FloatSmoother AdditionalGenderController;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Tools.FloatSmoother HeadSizeBoost;
+		[SerializeField]
+		private FloatSmoother HeadSizeBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Tools.FloatSmoother NeckSizeBoost;
+		[SerializeField]
+		private FloatSmoother NeckSizeBoost;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Tools.ColorSmoother SkinColorSmoother;
+		[SerializeField]
+		private ColorSmoother SkinColorSmoother;
 
 		private bool laxativeEnabled;
 
-		private global::UnityEngine.Color currentEmission;
+		private Color currentEmission;
 
-		private global::UnityEngine.Color targetEmission;
+		private Color targetEmission;
 
 		private bool isCulled;
 
@@ -115,7 +121,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void OverrideHairColor(global::UnityEngine.Color color, bool mirror = true)
+		public void OverrideHairColor(Color color, bool mirror = true)
 		{
 		}
 
@@ -123,7 +129,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void OverrideEyeColor(global::UnityEngine.Color color, float emission = 0.115f, bool mirror = true)
+		public void OverrideEyeColor(Color color, float emission = 0.115f, bool mirror = true)
 		{
 		}
 
@@ -131,7 +137,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetEyeLightEmission(float intensity, global::UnityEngine.Color color, bool mirror = true)
+		public void SetEyeLightEmission(float intensity, Color color, bool mirror = true)
 		{
 		}
 
@@ -179,7 +185,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetGlowingOn(global::UnityEngine.Color color, bool mirror = true)
+		public void SetGlowingOn(Color color, bool mirror = true)
 		{
 		}
 

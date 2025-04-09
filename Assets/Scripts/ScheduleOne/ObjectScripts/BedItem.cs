@@ -1,12 +1,16 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class BedItem : global::ScheduleOne.ObjectScripts.PlaceableStorageEntity
+	public class BedItem : PlaceableStorageEntity
 	{
-		public global::ScheduleOne.ObjectScripts.Bed Bed;
+		public Bed Bed;
 
-		public global::ScheduleOne.Storage.StorageEntity Storage;
+		public StorageEntity Storage;
 
-		public global::UnityEngine.GameObject Briefcase;
+		public GameObject Briefcase;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EBedItemAssembly_002DCSharp_002Edll_Excuted;
 
@@ -16,7 +20,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public static bool IsBedValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public static bool IsBedValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

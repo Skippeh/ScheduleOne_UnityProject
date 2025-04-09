@@ -1,10 +1,13 @@
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Packaging
 {
-	public class FilledPackaging_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class FilledPackaging_Equippable : Equippable_Viewmodel
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public FilledPackagingVisuals Visuals;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 	}

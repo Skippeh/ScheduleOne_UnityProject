@@ -1,4 +1,6 @@
-public class TestSetup : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class TestSetup : MonoBehaviour
 {
 	private void Start()
 	{

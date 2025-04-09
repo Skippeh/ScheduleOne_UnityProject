@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class ActiveOnMeshVisible : global::UnityEngine.MonoBehaviour
+	public class ActiveOnMeshVisible : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer Mesh;
+		public MeshRenderer Mesh;
 
-		public global::UnityEngine.GameObject[] ObjectsToActivate;
+		public GameObject[] ObjectsToActivate;
 
 		public bool Reverse;
 

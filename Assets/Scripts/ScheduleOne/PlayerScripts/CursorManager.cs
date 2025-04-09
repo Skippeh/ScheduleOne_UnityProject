@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class CursorManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.PlayerScripts.CursorManager>
+	public class CursorManager : Singleton<CursorManager>
 	{
 		public enum ECursorType
 		{
@@ -11,24 +16,24 @@ namespace ScheduleOne.PlayerScripts
 			Scissors = 4
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class CursorConfig
 		{
-			public global::ScheduleOne.PlayerScripts.CursorManager.ECursorType CursorType;
+			public ECursorType CursorType;
 
-			public global::UnityEngine.Texture2D Texture;
+			public Texture2D Texture;
 
-			public global::UnityEngine.Vector2 HotSpot;
+			public Vector2 HotSpot;
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.CursorManager.CursorConfig> Cursors;
+		[Header("References")]
+		public List<CursorConfig> Cursors;
 
 		protected override void Awake()
 		{
 		}
 
-		public void SetCursorAppearance(global::ScheduleOne.PlayerScripts.CursorManager.ECursorType type)
+		public void SetCursorAppearance(ECursorType type)
 		{
 		}
 	}

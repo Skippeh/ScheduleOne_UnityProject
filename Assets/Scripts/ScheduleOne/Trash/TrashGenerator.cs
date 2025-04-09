@@ -1,25 +1,32 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Trash
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.BoxCollider))]
-	public class TrashGenerator : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
+	[RequireComponent(typeof(BoxCollider))]
+	public class TrashGenerator : MonoBehaviour, IGUIDRegisterable, ISaveable
 	{
 		public const float TRASH_GENERATION_FRACTION = 0.2f;
 
 		public const float DEFAULT_TRASH_PER_M2 = 0.015f;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashGenerator> AllGenerators;
+		public static List<TrashGenerator> AllGenerators;
 
-		[global::UnityEngine.Range(1f, 200f)]
-		[global::UnityEngine.SerializeField]
+		[Range(1f, 200f)]
+		[SerializeField]
 		private int MaxTrashCount;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> generatedTrash;
+		[SerializeField]
+		private List<TrashItem> generatedTrash;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask GroundCheckMask;
+		[Header("Settings")]
+		public LayerMask GroundCheckMask;
 
-		private global::UnityEngine.BoxCollider boxCollider;
+		private BoxCollider boxCollider;
 
 		public string StaticGUID;
 
@@ -27,19 +34,19 @@ namespace ScheduleOne.Trash
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -67,25 +74,25 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		public void AddGeneratedTrash(global::ScheduleOne.Trash.TrashItem item)
+		public void AddGeneratedTrash(TrashItem item)
 		{
 		}
 
-		public void RemoveGeneratedTrash(global::ScheduleOne.Trash.TrashItem item)
+		public void RemoveGeneratedTrash(TrashItem item)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void RegenerateGUID()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void AutoCalculateTrashCount()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void GenerateMaxTrash()
 		{
 		}

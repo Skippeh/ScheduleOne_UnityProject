@@ -1,6 +1,18 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Dialogue;
+using ScheduleOne.Economy;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.UI.Handover;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class RequestProductBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class RequestProductBehaviour : Behaviour
 	{
 		public enum EState
 		{
@@ -16,30 +28,30 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private int minsSinceLastDialogue;
 
-		private global::ScheduleOne.Dialogue.DialogueController.GreetingOverride requestGreeting;
+		private DialogueController.GreetingOverride requestGreeting;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice acceptRequestChoice;
+		private DialogueController.DialogueChoice acceptRequestChoice;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice followChoice;
+		private DialogueController.DialogueChoice followChoice;
 
-		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice rejectChoice;
+		private DialogueController.DialogueChoice rejectChoice;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002ERequestProductBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002ERequestProductBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; private set; }
+		public Player TargetPlayer { get; private set; }
 
-		public global::ScheduleOne.NPCs.Behaviour.RequestProductBehaviour.EState State { get; private set; }
+		public EState State { get; private set; }
 
-		private global::ScheduleOne.Economy.Customer customer => null;
+		private Customer customer => null;
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void AssignTarget(global::FishNet.Object.NetworkObject plr)
+		[ObserversRpc(RunLocally = true)]
+		public void AssignTarget(NetworkObject plr)
 		{
 		}
 
-		public override void Awake()
+		protected virtual void Start()
 		{
 		}
 
@@ -64,13 +76,13 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private bool GetNewDestination(out global::UnityEngine.Vector3 dest)
+		private bool GetNewDestination(out Vector3 dest)
 		{
-			dest = default(global::UnityEngine.Vector3);
+			dest = default(Vector3);
 			return false;
 		}
 
-		public static bool IsTargetValid(global::ScheduleOne.PlayerScripts.Player player)
+		public static bool IsTargetValid(Player player)
 		{
 			return false;
 		}
@@ -84,22 +96,22 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendStartInitialDialogue()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void StartInitialDialogue()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		private void SendStartFollowUpDialogue()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void StartFollowUpDialogue()
 		{
 		}
@@ -113,7 +125,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void HandoverClosed(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, float askingPrice)
+		private void HandoverClosed(HandoverScreen.EHandoverOutcome outcome, List<ItemInstance> items, float askingPrice)
 		{
 		}
 
@@ -137,15 +149,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcWriter___Observers_AssignTarget_3323014238(global::FishNet.Object.NetworkObject plr)
+		private void RpcWriter___Observers_AssignTarget_3323014238(NetworkObject plr)
 		{
 		}
 
-		public void RpcLogic___AssignTarget_3323014238(global::FishNet.Object.NetworkObject plr)
+		public void RpcLogic___AssignTarget_3323014238(NetworkObject plr)
 		{
 		}
 
-		private void RpcReader___Observers_AssignTarget_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AssignTarget_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -157,7 +169,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_SendStartInitialDialogue_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendStartInitialDialogue_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -169,7 +181,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_StartInitialDialogue_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartInitialDialogue_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -181,7 +193,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_SendStartFollowUpDialogue_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendStartFollowUpDialogue_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -193,11 +205,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_StartFollowUpDialogue_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartFollowUpDialogue_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		protected virtual void Awake_UserLogic_ScheduleOne_002ENPCs_002EBehaviour_002ERequestProductBehaviour_Assembly_002DCSharp_002Edll()
+		public override void Awake()
 		{
 		}
 	}

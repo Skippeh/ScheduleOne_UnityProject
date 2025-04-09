@@ -1,18 +1,21 @@
+using FishNet.Connection;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Variables
 {
 	public abstract class BaseVariable
 	{
-		public global::ScheduleOne.Variables.EVariableReplicationMode ReplicationMode;
+		public EVariableReplicationMode ReplicationMode;
 
 		public string Name;
 
 		public bool Persistent;
 
-		public global::ScheduleOne.Variables.EVariableMode VariableMode;
+		public EVariableMode VariableMode;
 
-		public global::ScheduleOne.PlayerScripts.Player Owner { get; private set; }
+		public Player Owner { get; private set; }
 
-		public BaseVariable(string name, global::ScheduleOne.Variables.EVariableReplicationMode replicationMode, bool persistent, global::ScheduleOne.Variables.EVariableMode mode, global::ScheduleOne.PlayerScripts.Player owner)
+		public BaseVariable(string name, EVariableReplicationMode replicationMode, bool persistent, EVariableMode mode, Player owner)
 		{
 		}
 
@@ -20,9 +23,9 @@ namespace ScheduleOne.Variables
 
 		public abstract void SetValue(object value, bool replicate = true);
 
-		public abstract void ReplicateValue(global::FishNet.Connection.NetworkConnection conn);
+		public abstract void ReplicateValue(NetworkConnection conn);
 
-		public virtual bool EvaluateCondition(global::ScheduleOne.Variables.Condition.EConditionType operation, string value)
+		public virtual bool EvaluateCondition(Condition.EConditionType operation, string value)
 		{
 			return false;
 		}

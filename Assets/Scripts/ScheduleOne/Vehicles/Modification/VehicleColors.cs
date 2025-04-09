@@ -1,29 +1,34 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.Modification
 {
-	public class VehicleColors : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Vehicles.Modification.VehicleColors>
+	public class VehicleColors : Singleton<VehicleColors>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class VehicleColorData
 		{
-			public global::ScheduleOne.Vehicles.Modification.EVehicleColor color;
+			public EVehicleColor color;
 
 			public string colorName;
 
-			public global::UnityEngine.Material material;
+			public Material material;
 
-			public global::UnityEngine.Color32 UIColor;
+			public Color32 UIColor;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Modification.VehicleColors.VehicleColorData> colorLibrary;
+		public List<VehicleColorData> colorLibrary;
 
-		public string GetColorName(global::ScheduleOne.Vehicles.Modification.EVehicleColor c)
+		public string GetColorName(EVehicleColor c)
 		{
 			return null;
 		}
 
-		public global::UnityEngine.Color32 GetColorUIColor(global::ScheduleOne.Vehicles.Modification.EVehicleColor c)
+		public Color32 GetColorUIColor(EVehicleColor c)
 		{
-			return default(global::UnityEngine.Color32);
+			return default(Color32);
 		}
 	}
 }

@@ -1,61 +1,71 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Product;
+using ScheduleOne.Storage;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class CreateMixInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.CreateMixInterface>
+	public class CreateMixInterface : Singleton<CreateMixInterface>
 	{
 		public const int BEAN_REQUIREMENT = 5;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::ScheduleOne.UI.ItemSlotUI BeansSlot;
+		public ItemSlotUI BeansSlot;
 
-		public global::ScheduleOne.UI.ItemSlotUI ProductSlot;
+		public ItemSlotUI ProductSlot;
 
-		public global::ScheduleOne.UI.ItemSlotUI MixerSlot;
+		public ItemSlotUI MixerSlot;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlot;
+		public ItemSlotUI OutputSlot;
 
-		public global::UnityEngine.UI.Image OutputIcon;
+		public Image OutputIcon;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
-		public global::ScheduleOne.Storage.WorldStorageEntity Storage;
+		public WorldStorageEntity Storage;
 
-		public global::TMPro.TextMeshProUGUI ProductPropertiesLabel;
+		public TextMeshProUGUI ProductPropertiesLabel;
 
-		public global::TMPro.TextMeshProUGUI OutputPropertiesLabel;
+		public TextMeshProUGUI OutputPropertiesLabel;
 
-		public global::TMPro.TextMeshProUGUI BeanProblemLabel;
+		public TextMeshProUGUI BeanProblemLabel;
 
-		public global::TMPro.TextMeshProUGUI ProductProblemLabel;
+		public TextMeshProUGUI ProductProblemLabel;
 
-		public global::TMPro.TextMeshProUGUI MixerProblemLabel;
+		public TextMeshProUGUI MixerProblemLabel;
 
-		public global::TMPro.TextMeshProUGUI OutputProblemLabel;
+		public TextMeshProUGUI OutputProblemLabel;
 
-		public global::UnityEngine.Transform CameraPosition;
+		public Transform CameraPosition;
 
-		public global::UnityEngine.RectTransform UnknownOutputIcon;
+		public RectTransform UnknownOutputIcon;
 
-		public global::UnityEngine.Events.UnityEvent onOpen;
+		public UnityEvent onOpen;
 
-		public global::UnityEngine.Events.UnityEvent onClose;
+		public UnityEvent onClose;
 
 		public bool IsOpen { get; private set; }
 
-		private global::ScheduleOne.ItemFramework.ItemSlot beanSlot => null;
+		private ItemSlot beanSlot => null;
 
-		private global::ScheduleOne.ItemFramework.ItemSlot mixerSlot => null;
+		private ItemSlot mixerSlot => null;
 
-		private global::ScheduleOne.ItemFramework.ItemSlot outputSlot => null;
+		private ItemSlot outputSlot => null;
 
-		private global::ScheduleOne.ItemFramework.ItemSlot productSlot => null;
+		private ItemSlot productSlot => null;
 
 		protected override void Awake()
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -79,23 +89,23 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetOutputProperties(global::ScheduleOne.Product.ProductDefinition product, global::ScheduleOne.Product.PropertyItemDefinition mixer)
+		private List<ScheduleOne.Properties.Property> GetOutputProperties(ProductDefinition product, PropertyItemDefinition mixer)
 		{
 			return null;
 		}
 
-		private bool IsOutputKnown(out global::ScheduleOne.Product.ProductDefinition knownProduct)
+		private bool IsOutputKnown(out ProductDefinition knownProduct)
 		{
 			knownProduct = null;
 			return false;
 		}
 
-		private string GetPropertyListString(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		private string GetPropertyListString(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}
 
-		private string GetPropertyString(global::ScheduleOne.Properties.Property property)
+		private string GetPropertyString(ScheduleOne.Properties.Property property)
 		{
 			return null;
 		}
@@ -124,12 +134,12 @@ namespace ScheduleOne.UI
 			return false;
 		}
 
-		private global::ScheduleOne.Product.ProductDefinition GetProduct()
+		private ProductDefinition GetProduct()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.Product.PropertyItemDefinition GetMixer()
+		private PropertyItemDefinition GetMixer()
 		{
 			return null;
 		}

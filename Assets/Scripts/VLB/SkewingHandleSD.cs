@@ -1,43 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-skewinghandle-sd/")]
-	public class SkewingHandleSD : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-skewinghandle-sd/")]
+	public class SkewingHandleSD : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CCoUpdate_003Ed__9 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CCoUpdate_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::VLB.SkewingHandleSD _003C_003E4__this;
+			public SkewingHandleSD _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CCoUpdate_003Ed__9(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -46,21 +53,21 @@ namespace VLB
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
 		public const string ClassName = "SkewingHandleSD";
 
-		public global::VLB.VolumetricLightBeamSD volumetricLightBeam;
+		public VolumetricLightBeamSD volumetricLightBeam;
 
 		public bool shouldUpdateEachFrame;
 
@@ -92,8 +99,8 @@ namespace VLB
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::VLB.SkewingHandleSD._003CCoUpdate_003Ed__9))]
-		private global::System.Collections.IEnumerator CoUpdate()
+		[IteratorStateMachine(typeof(_003CCoUpdate_003Ed__9))]
+		private IEnumerator CoUpdate()
 		{
 			return null;
 		}

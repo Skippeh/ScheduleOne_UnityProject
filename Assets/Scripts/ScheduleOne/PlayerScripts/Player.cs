@@ -1,152 +1,185 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.AvatarFramework;
+using ScheduleOne.AvatarFramework.Animation;
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.Combat;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Map;
+using ScheduleOne.Money;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.PlayerScripts.Health;
+using ScheduleOne.Product;
+using ScheduleOne.Property;
+using ScheduleOne.Skating;
+using ScheduleOne.Stealth;
+using ScheduleOne.Tools;
+using ScheduleOne.UI;
+using ScheduleOne.Variables;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class Player : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.IDamageable
+	public class Player : NetworkBehaviour, ISaveable, IDamageable
 	{
-		public delegate void VehicleEvent(global::ScheduleOne.Vehicles.LandVehicle vehicle);
+		public delegate void VehicleEvent(LandVehicle vehicle);
 
-		public delegate void VehicleTransformEvent(global::ScheduleOne.Vehicles.LandVehicle vehicle, global::UnityEngine.Transform exitPoint);
+		public delegate void VehicleTransformEvent(LandVehicle vehicle, Transform exitPoint);
 
 		public const string OWNER_PLAYER_CODE = "Local";
 
 		public const float CapColDefaultHeight = 2f;
 
-		public global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objectsTemporarilyOwnedByPlayer;
+		public List<NetworkObject> objectsTemporarilyOwnedByPlayer;
 
-		public static global::System.Action onLocalPlayerSpawned;
+		public static Action onLocalPlayerSpawned;
 
-		public static global::System.Action<global::ScheduleOne.PlayerScripts.Player> onPlayerSpawned;
+		public static Action<Player> onPlayerSpawned;
 
-		public static global::System.Action<global::ScheduleOne.PlayerScripts.Player> onPlayerDespawned;
+		public static Action<Player> onPlayerDespawned;
 
-		public static global::ScheduleOne.PlayerScripts.Player Local;
+		public static Player Local;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> PlayerList;
+		public static List<Player> PlayerList;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject LocalGameObject;
+		[Header("References")]
+		public GameObject LocalGameObject;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Anim;
+		public AvatarAnimation Anim;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
+		public SmoothedVelocityCalculator VelocityCalculator;
 
-		public global::UnityEngine.Vector3 EyePosition;
+		public Vector3 EyePosition;
 
-		public global::ScheduleOne.AvatarFramework.AvatarSettings TestAvatarSettings;
+		public AvatarSettings TestAvatarSettings;
 
-		public global::ScheduleOne.PlayerScripts.PlayerVisualState VisualState;
+		public PlayerVisualState VisualState;
 
-		public global::ScheduleOne.Stealth.PlayerVisibility Visibility;
+		public PlayerVisibility Visibility;
 
-		public global::UnityEngine.CapsuleCollider CapCol;
+		public CapsuleCollider CapCol;
 
-		public global::ScheduleOne.Map.POI PoI;
+		public POI PoI;
 
-		public global::ScheduleOne.PlayerScripts.Health.PlayerHealth Health;
+		public PlayerHealth Health;
 
-		public global::ScheduleOne.PlayerScripts.PlayerCrimeData CrimeData;
+		public PlayerCrimeData CrimeData;
 
-		public global::ScheduleOne.PlayerScripts.PlayerEnergy Energy;
+		public PlayerEnergy Energy;
 
-		public global::UnityEngine.Transform MimicCamera;
+		public Transform MimicCamera;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarFootstepDetector FootstepDetector;
+		public AvatarFootstepDetector FootstepDetector;
 
-		public global::ScheduleOne.PlayerScripts.LocalPlayerFootstepGenerator LocalFootstepDetector;
+		public LocalPlayerFootstepGenerator LocalFootstepDetector;
 
-		public global::UnityEngine.CharacterController CharacterController;
+		public CharacterController CharacterController;
 
-		public global::ScheduleOne.Audio.AudioSourceController PunchSound;
+		public AudioSourceController PunchSound;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight ThirdPersonFlashlight;
+		public OptimizedLight ThirdPersonFlashlight;
 
-		public global::ScheduleOne.UI.WorldspaceDialogueRenderer NameLabel;
+		public WorldspaceDialogueRenderer NameLabel;
 
-		public global::ScheduleOne.PlayerScripts.PlayerClothing Clothing;
+		public PlayerClothing Clothing;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		[Header("Settings")]
+		public LayerMask GroundDetectionMask;
 
 		public float AvatarOffset_Standing;
 
 		public float AvatarOffset_Crouched;
 
-		[global::UnityEngine.Header("Movement mapping")]
-		public global::UnityEngine.AnimationCurve WalkingMapCurve;
+		[Header("Movement mapping")]
+		public AnimationCurve WalkingMapCurve;
 
-		public global::UnityEngine.AnimationCurve CrouchWalkMapCurve;
+		public AnimationCurve CrouchWalkMapCurve;
 
-		public global::FishNet.Connection.NetworkConnection Connection;
+		public NetworkConnection Connection;
 
-		public global::ScheduleOne.PlayerScripts.Player.VehicleEvent onEnterVehicle;
+		public VehicleEvent onEnterVehicle;
 
-		public global::ScheduleOne.PlayerScripts.Player.VehicleTransformEvent onExitVehicle;
+		public VehicleTransformEvent onExitVehicle;
 
-		public global::ScheduleOne.Vehicles.LandVehicle LastDrivenVehicle;
+		public LandVehicle LastDrivenVehicle;
 
-		public global::System.Action<global::ScheduleOne.Skating.Skateboard> onSkateboardMounted;
+		public Action<Skateboard> onSkateboardMounted;
 
-		public global::System.Action onSkateboardDismounted;
+		public Action onSkateboardDismounted;
 
 		public bool HasCompletedIntro;
 
-		public global::ScheduleOne.ItemFramework.ItemSlot[] Inventory;
+		public ItemSlot[] Inventory;
 
-		[global::UnityEngine.Header("Appearance debugging")]
-		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings DebugAvatarSettings;
+		[Header("Appearance debugging")]
+		public BasicAvatarSettings DebugAvatarSettings;
 
-		private global::ScheduleOne.Persistence.Loaders.PlayerLoader loader;
+		private PlayerLoader loader;
 
-		public global::UnityEngine.Events.UnityEvent onRagdoll;
+		public UnityEvent onRagdoll;
 
-		public global::UnityEngine.Events.UnityEvent onRagdollEnd;
+		public UnityEvent onRagdollEnd;
 
-		public global::UnityEngine.Events.UnityEvent onArrested;
+		public UnityEvent onArrested;
 
-		public global::UnityEngine.Events.UnityEvent onFreed;
+		public UnityEvent onFreed;
 
-		public global::UnityEngine.Events.UnityEvent onTased;
+		public UnityEvent onTased;
 
-		public global::UnityEngine.Events.UnityEvent onTasedEnd;
+		public UnityEvent onTasedEnd;
 
-		public global::UnityEngine.Events.UnityEvent onPassedOut;
+		public UnityEvent onPassedOut;
 
-		public global::UnityEngine.Events.UnityEvent onPassOutRecovery;
+		public UnityEvent onPassOutRecovery;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Variables.BaseVariable> PlayerVariables;
+		public List<BaseVariable> PlayerVariables;
 
-		public global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Variables.BaseVariable> VariableDict;
+		public Dictionary<string, BaseVariable> VariableDict;
 
 		private float standingScale;
 
 		private float timeAirborne;
 
-		private global::UnityEngine.Coroutine taseCoroutine;
+		private Coroutine taseCoroutine;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.ConstantForce> ragdollForceComponents;
+		private List<ConstantForce> ragdollForceComponents;
 
-		private global::System.Collections.Generic.List<int> impactHistory;
+		private List<int> impactHistory;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Quaternion> seizureRotations;
+		private List<Quaternion> seizureRotations;
 
-		private global::System.Collections.Generic.List<int> equippableMessageIDHistory;
+		private List<int> equippableMessageIDHistory;
 
-		private global::UnityEngine.Coroutine lerpScaleRoutine;
+		private Coroutine lerpScaleRoutine;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<string> syncVar____003CPlayerName_003Ek__BackingField;
+		public SyncVar<string> syncVar____003CPlayerName_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<string> syncVar____003CPlayerCode_003Ek__BackingField;
+		public SyncVar<string> syncVar____003CPlayerCode_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentVehicle_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CCurrentVehicle_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentBed_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CCurrentBed_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CIsReadyToSleep_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CIsReadyToSleep_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::UnityEngine.Vector3> syncVar____003CCameraPosition_003Ek__BackingField;
+		public SyncVar<Vector3> syncVar____003CCameraPosition_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::UnityEngine.Quaternion> syncVar____003CCameraRotation_003Ek__BackingField;
+		public SyncVar<Quaternion> syncVar____003CCameraRotation_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPlayerScripts_002EPlayerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -154,84 +187,40 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool IsLocalPlayer => false;
 
-		public string PlayerName
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public string PlayerName { get; protected set; }
 
-		public string PlayerCode
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			protected set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public string PlayerCode { get; protected set; }
 
-		public global::FishNet.Object.NetworkObject CurrentVehicle
+		[field: SyncVar(OnChange = "CurrentVehicleChanged")]
+		public NetworkObject CurrentVehicle
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
-			set
-			{
-			}
+			get; [ServerRpc(RunLocally = true)]
+			set;
 		}
 
 		public float TimeSinceVehicleExit { get; protected set; }
 
 		public bool Crouched { get; private set; }
 
-		public global::FishNet.Object.NetworkObject CurrentBed
+		[field: SyncVar]
+		public NetworkObject CurrentBed
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc]
-			set
-			{
-			}
-		}
-
-		public bool IsReadyToSleep
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			private set
-			{
-			}
-		}
-
-		public bool IsSkating
-		{
-			get; [global::FishNet.Object.ServerRpc]
+			get; [ServerRpc]
 			set;
 		}
 
-		public global::ScheduleOne.Skating.Skateboard ActiveSkateboard { get; private set; }
+		[field: SyncVar]
+		public bool IsReadyToSleep { get; private set; }
+
+		public bool IsSkating
+		{
+			get; [ServerRpc]
+			set;
+		}
+
+		public Skateboard ActiveSkateboard { get; private set; }
 
 		public bool IsSleeping { get; protected set; }
 
@@ -245,45 +234,31 @@ namespace ScheduleOne.PlayerScripts
 
 		public float Scale { get; private set; }
 
-		public global::ScheduleOne.Property.Property CurrentProperty { get; protected set; }
+		public ScheduleOne.Property.Property CurrentProperty { get; protected set; }
 
-		public global::ScheduleOne.Property.Property LastVisitedProperty { get; protected set; }
+		public ScheduleOne.Property.Property LastVisitedProperty { get; protected set; }
 
-		public global::ScheduleOne.Property.Business CurrentBusiness { get; protected set; }
+		public Business CurrentBusiness { get; protected set; }
 
-		public global::UnityEngine.Vector3 PlayerBasePosition => default(global::UnityEngine.Vector3);
+		public Vector3 PlayerBasePosition => default(Vector3);
 
-		public global::UnityEngine.Vector3 CameraPosition
+		[field: SyncVar(Channel = Channel.Unreliable, SendRate = 0.1f)]
+		public Vector3 CameraPosition
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return default(global::UnityEngine.Vector3);
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc]
-			set
-			{
-			}
+			get; [ServerRpc]
+			set;
 		}
 
-		public global::UnityEngine.Quaternion CameraRotation
+		[field: SyncVar(Channel = Channel.Unreliable, SendRate = 0.1f)]
+		public Quaternion CameraRotation
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return default(global::UnityEngine.Quaternion);
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc]
-			set
-			{
-			}
+			get; [ServerRpc]
+			set;
 		}
 
-		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings CurrentAvatarSettings { get; protected set; }
+		public BasicAvatarSettings CurrentAvatarSettings { get; protected set; }
 
-		public global::ScheduleOne.Product.ProductItemInstance ConsumedProduct { get; private set; }
+		public ProductItemInstance ConsumedProduct { get; private set; }
 
 		public int TimeSinceProductConsumed { get; private set; }
 
@@ -291,13 +266,13 @@ namespace ScheduleOne.PlayerScripts
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -343,7 +318,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentVehicle_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CCurrentVehicle_003Ek__BackingField
 		{
 			get
 			{
@@ -354,7 +329,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentBed_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CCurrentBed_003Ek__BackingField
 		{
 			get
 			{
@@ -376,44 +351,44 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
-		public global::UnityEngine.Vector3 SyncAccessor__003CCameraPosition_003Ek__BackingField
+		public Vector3 SyncAccessor__003CCameraPosition_003Ek__BackingField
 		{
 			get
 			{
-				return default(global::UnityEngine.Vector3);
+				return default(Vector3);
 			}
 			set
 			{
 			}
 		}
 
-		public global::UnityEngine.Quaternion SyncAccessor__003CCameraRotation_003Ek__BackingField
+		public Quaternion SyncAccessor__003CCameraRotation_003Ek__BackingField
 		{
 			get
 			{
-				return default(global::UnityEngine.Quaternion);
+				return default(Quaternion);
 			}
 			set
 			{
 			}
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void LoadDebugAvatarSettings()
 		{
 		}
 
-		public static global::ScheduleOne.PlayerScripts.Player GetPlayer(global::FishNet.Connection.NetworkConnection conn)
+		public static Player GetPlayer(NetworkConnection conn)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.PlayerScripts.Player GetRandomPlayer(bool excludeArrestedOrDead = true, bool excludeSleeping = true)
+		public static Player GetRandomPlayer(bool excludeArrestedOrDead = true, bool excludeSleeping = true)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.PlayerScripts.Player GetPlayer(string playerCode)
+		public static Player GetPlayer(string playerCode)
 		{
 			return null;
 		}
@@ -442,48 +417,48 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void RequestSavePlayer()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		private void ReturnSaveRequest(global::FishNet.Connection.NetworkConnection conn, bool successful)
+		[ObserversRpc]
+		[TargetRpc]
+		private void ReturnSaveRequest(NetworkConnection conn, bool successful)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void HostExitedGame()
 		{
 		}
 
-		private void ClientConnectionStateChanged(global::FishNet.Transporting.ClientConnectionStateArgs args)
+		private void ClientConnectionStateChanged(ClientConnectionStateArgs args)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendPlayerNameData(string playerName, ulong id)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void RequestPlayerData(string playerCode)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void MarkPlayerInitialized()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void ReceivePlayerData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void ReceivePlayerData(NetworkConnection conn, PlayerData data, string inventoryString, string appearanceString, string clothigString, VariableData[] vars)
 		{
 		}
 
@@ -491,9 +466,9 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void ReceivePlayerNameData(global::FishNet.Connection.NetworkConnection conn, string playerName, string id)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void ReceivePlayerNameData(NetworkConnection conn, string playerName, string id)
 		{
 		}
 
@@ -501,12 +476,12 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		private void SendFlashlightOnNetworked(bool on)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetFlashlightOn(bool on)
 		{
 		}
@@ -547,7 +522,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void PlayJumpAnimation()
 		{
 		}
@@ -557,7 +532,7 @@ namespace ScheduleOne.PlayerScripts
 			return false;
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SendCrouched(bool crouched)
 		{
 		}
@@ -566,40 +541,40 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void ReceiveCrouched(global::FishNet.Connection.NetworkConnection conn, bool crouched)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		private void ReceiveCrouched(NetworkConnection conn, bool crouched)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void SendAvatarSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		[ServerRpc(RunLocally = true)]
+		public void SendAvatarSettings(AvatarSettings settings)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(BufferLast = true, RunLocally = true)]
-		public void SetAvatarSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		[ObserversRpc(BufferLast = true, RunLocally = true)]
+		public void SetAvatarSettings(AvatarSettings settings)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void SetVisible_Networked(bool vis)
 		{
 		}
 
-		public void EnterVehicle(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void EnterVehicle(LandVehicle vehicle)
 		{
 		}
 
-		public void ExitVehicle(global::UnityEngine.Transform exitPoint)
+		public void ExitVehicle(Transform exitPoint)
 		{
 		}
 
-		private void PreDestroyClientObjects(global::FishNet.Connection.NetworkConnection conn)
+		private void PreDestroyClientObjects(NetworkConnection conn)
 		{
 		}
 
-		private void CurrentVehicleChanged(global::FishNet.Object.NetworkObject oldVeh, global::FishNet.Object.NetworkObject newVeh, bool asServer)
+		private void CurrentVehicleChanged(NetworkObject oldVeh, NetworkObject newVeh, bool asServer)
 		{
 		}
 
@@ -612,7 +587,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetReadyToSleep(bool ready)
 		{
 		}
@@ -637,32 +612,32 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void SetPlayerCode(string code)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc]
+		[ServerRpc]
 		public void SendPunch()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void Punch()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		private void MarkIntroCompleted(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings appearance)
+		[ServerRpc(RunLocally = true)]
+		private void MarkIntroCompleted(BasicAvatarSettings appearance)
 		{
 		}
 
-		public bool IsPointVisibleToPlayer(global::UnityEngine.Vector3 point, float maxDistance_Visible = 30f, float minDistance_Invisible = 5f)
+		public bool IsPointVisibleToPlayer(Vector3 point, float maxDistance_Visible = 30f, float minDistance_Invisible = 5f)
 		{
 			return false;
 		}
 
-		public static global::ScheduleOne.PlayerScripts.Player GetClosestPlayer(global::UnityEngine.Vector3 point, out float distance, global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> exclude = null)
+		public static Player GetClosestPlayer(Vector3 point, out float distance, List<Player> exclude = null)
 		{
 			distance = default(float);
 			return null;
@@ -689,12 +664,12 @@ namespace ScheduleOne.PlayerScripts
 			return null;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.PlayerData GetPlayerData()
+		public PlayerData GetPlayerData()
 		{
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -714,11 +689,11 @@ namespace ScheduleOne.PlayerScripts
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PlayerData data, string containerPath)
+		public virtual void Load(PlayerData data, string containerPath)
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PlayerData data)
+		public virtual void Load(PlayerData data)
 		{
 		}
 
@@ -738,17 +713,17 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public virtual void SendImpact(global::ScheduleOne.Combat.Impact impact)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public virtual void SendImpact(Impact impact)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void ReceiveImpact(global::ScheduleOne.Combat.Impact impact)
+		[ObserversRpc(RunLocally = true)]
+		public virtual void ReceiveImpact(Impact impact)
 		{
 		}
 
-		public virtual void ProcessImpactForce(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDirection, float force)
+		public virtual void ProcessImpactForce(Vector3 forcePoint, Vector3 forceDirection, float force)
 		{
 		}
 
@@ -760,7 +735,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void Arrest()
 		{
 		}
@@ -769,64 +744,64 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendPassOut()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, ExcludeOwner = true)]
+		[ObserversRpc(RunLocally = true, ExcludeOwner = true)]
 		public void PassOut()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendPassOutRecovery()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, ExcludeOwner = true)]
+		[ObserversRpc(RunLocally = true, ExcludeOwner = true)]
 		public void PassOutRecovery()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SendEquippable_Networked(string assetPath)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetEquippable_Networked(string assetPath)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendEquippableMessage_Networked(string message, int receipt)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ReceiveEquippableMessage_Networked(string message, int receipt)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void SendEquippableMessage_Networked_Vector(string message, int receipt, global::UnityEngine.Vector3 data)
+		[ServerRpc(RunLocally = true)]
+		public void SendEquippableMessage_Networked_Vector(string message, int receipt, Vector3 data)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void ReceiveEquippableMessage_Networked_Vector(string message, int receipt, global::UnityEngine.Vector3 data)
+		[ObserversRpc(RunLocally = true)]
+		private void ReceiveEquippableMessage_Networked_Vector(string message, int receipt, Vector3 data)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendAnimationTrigger(string trigger)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetAnimationTrigger_Networked(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetAnimationTrigger_Networked(NetworkConnection conn, string trigger)
 		{
 		}
 
@@ -834,9 +809,9 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void ResetAnimationTrigger_Networked(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void ResetAnimationTrigger_Networked(NetworkConnection conn, string trigger)
 		{
 		}
 
@@ -844,51 +819,51 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		[ServerRpc(RunLocally = true)]
 		public void SendAnimationBool(string name, bool val)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void SetAnimationBool(string name, bool val)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void Taze()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void SetInventoryItem(int index, global::ScheduleOne.ItemFramework.ItemInstance item)
+		[ServerRpc(RunLocally = true)]
+		public void SetInventoryItem(int index, ItemInstance item)
 		{
 		}
 
-		private void GetNetworth(global::ScheduleOne.Money.MoneyManager.FloatContainer container)
+		private void GetNetworth(MoneyManager.FloatContainer container)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void SendAppearance(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings)
+		[ServerRpc(RunLocally = true)]
+		public void SendAppearance(BasicAvatarSettings settings)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void SetAppearance(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings, bool refreshClothing)
+		[ObserversRpc(RunLocally = true)]
+		public void SetAppearance(BasicAvatarSettings settings, bool refreshClothing)
 		{
 		}
 
-		public void MountSkateboard(global::ScheduleOne.Skating.Skateboard board)
+		public void MountSkateboard(Skateboard board)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		private void SendMountedSkateboard(global::FishNet.Object.NetworkObject skateboardObj)
+		[ServerRpc(RunLocally = true)]
+		private void SendMountedSkateboard(NetworkObject skateboardObj)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetMountedSkateboard(global::FishNet.Object.NetworkObject skateboardObj)
+		[ObserversRpc(RunLocally = true)]
+		private void SetMountedSkateboard(NetworkObject skateboardObj)
 		{
 		}
 
@@ -896,21 +871,21 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void ConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product)
+		public void ConsumeProduct(ProductItemInstance product)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SendConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product)
+		[ServerRpc(RequireOwnership = false)]
+		private void SendConsumeProduct(ProductItemInstance product)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product)
+		[ObserversRpc]
+		private void ReceiveConsumeProduct(ProductItemInstance product)
 		{
 		}
 
-		private void ConsumeProductInternal(global::ScheduleOne.Product.ProductItemInstance product)
+		private void ConsumeProductInternal(ProductItemInstance product)
 		{
 		}
 
@@ -922,7 +897,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public global::ScheduleOne.Variables.BaseVariable GetVariable(string variableName)
+		public BaseVariable GetVariable(string variableName)
 		{
 			return null;
 		}
@@ -936,17 +911,17 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void AddVariable(global::ScheduleOne.Variables.BaseVariable variable)
+		public void AddVariable(BaseVariable variable)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendValue(string variableName, string value, bool sendToOwner)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveValue(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		[TargetRpc]
+		private void ReceiveValue(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
@@ -954,7 +929,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void LoadVariable(global::ScheduleOne.Persistence.Datas.VariableData data)
+		public void LoadVariable(VariableData data)
 		{
 		}
 
@@ -970,29 +945,29 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_set_CurrentVehicle_3323014238(global::FishNet.Object.NetworkObject value)
+		private void RpcWriter___Server_set_CurrentVehicle_3323014238(NetworkObject value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		public void RpcLogic___set_CurrentVehicle_3323014238(global::FishNet.Object.NetworkObject value)
+		[SpecialName]
+		public void RpcLogic___set_CurrentVehicle_3323014238(NetworkObject value)
 		{
 		}
 
-		private void RpcReader___Server_set_CurrentVehicle_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_CurrentVehicle_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_set_CurrentBed_3323014238(global::FishNet.Object.NetworkObject value)
+		private void RpcWriter___Server_set_CurrentBed_3323014238(NetworkObject value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		public void RpcLogic___set_CurrentBed_3323014238(global::FishNet.Object.NetworkObject value)
+		[SpecialName]
+		public void RpcLogic___set_CurrentBed_3323014238(NetworkObject value)
 		{
 		}
 
-		private void RpcReader___Server_set_CurrentBed_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_CurrentBed_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1000,38 +975,38 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
+		[SpecialName]
 		public void RpcLogic___set_IsSkating_1140765316(bool value)
 		{
 		}
 
-		private void RpcReader___Server_set_IsSkating_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_IsSkating_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_set_CameraPosition_4276783012(global::UnityEngine.Vector3 value)
+		private void RpcWriter___Server_set_CameraPosition_4276783012(Vector3 value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		public void RpcLogic___set_CameraPosition_4276783012(global::UnityEngine.Vector3 value)
+		[SpecialName]
+		public void RpcLogic___set_CameraPosition_4276783012(Vector3 value)
 		{
 		}
 
-		private void RpcReader___Server_set_CameraPosition_4276783012(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_CameraPosition_4276783012(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_set_CameraRotation_3429297120(global::UnityEngine.Quaternion value)
+		private void RpcWriter___Server_set_CameraRotation_3429297120(Quaternion value)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.SpecialName]
-		public void RpcLogic___set_CameraRotation_3429297120(global::UnityEngine.Quaternion value)
+		[SpecialName]
+		public void RpcLogic___set_CameraRotation_3429297120(Quaternion value)
 		{
 		}
 
-		private void RpcReader___Server_set_CameraRotation_3429297120(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_set_CameraRotation_3429297120(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1043,27 +1018,27 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_RequestSavePlayer_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RequestSavePlayer_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReturnSaveRequest_214505783(global::FishNet.Connection.NetworkConnection conn, bool successful)
+		private void RpcWriter___Observers_ReturnSaveRequest_214505783(NetworkConnection conn, bool successful)
 		{
 		}
 
-		private void RpcLogic___ReturnSaveRequest_214505783(global::FishNet.Connection.NetworkConnection conn, bool successful)
+		private void RpcLogic___ReturnSaveRequest_214505783(NetworkConnection conn, bool successful)
 		{
 		}
 
-		private void RpcReader___Observers_ReturnSaveRequest_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReturnSaveRequest_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReturnSaveRequest_214505783(global::FishNet.Connection.NetworkConnection conn, bool successful)
+		private void RpcWriter___Target_ReturnSaveRequest_214505783(NetworkConnection conn, bool successful)
 		{
 		}
 
-		private void RpcReader___Target_ReturnSaveRequest_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReturnSaveRequest_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1075,7 +1050,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_HostExitedGame_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_HostExitedGame_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1087,7 +1062,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPlayerNameData_586648380(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPlayerNameData_586648380(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1099,7 +1074,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_RequestPlayerData_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RequestPlayerData_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1111,47 +1086,47 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_MarkPlayerInitialized_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_MarkPlayerInitialized_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceivePlayerData_3244732873(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
+		private void RpcWriter___Observers_ReceivePlayerData_3244732873(NetworkConnection conn, PlayerData data, string inventoryString, string appearanceString, string clothigString, VariableData[] vars)
 		{
 		}
 
-		public void RpcLogic___ReceivePlayerData_3244732873(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
+		public void RpcLogic___ReceivePlayerData_3244732873(NetworkConnection conn, PlayerData data, string inventoryString, string appearanceString, string clothigString, VariableData[] vars)
 		{
 		}
 
-		private void RpcReader___Observers_ReceivePlayerData_3244732873(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceivePlayerData_3244732873(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceivePlayerData_3244732873(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
+		private void RpcWriter___Target_ReceivePlayerData_3244732873(NetworkConnection conn, PlayerData data, string inventoryString, string appearanceString, string clothigString, VariableData[] vars)
 		{
 		}
 
-		private void RpcReader___Target_ReceivePlayerData_3244732873(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceivePlayerData_3244732873(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceivePlayerNameData_3895153758(global::FishNet.Connection.NetworkConnection conn, string playerName, string id)
+		private void RpcWriter___Observers_ReceivePlayerNameData_3895153758(NetworkConnection conn, string playerName, string id)
 		{
 		}
 
-		private void RpcLogic___ReceivePlayerNameData_3895153758(global::FishNet.Connection.NetworkConnection conn, string playerName, string id)
+		private void RpcLogic___ReceivePlayerNameData_3895153758(NetworkConnection conn, string playerName, string id)
 		{
 		}
 
-		private void RpcReader___Observers_ReceivePlayerNameData_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceivePlayerNameData_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceivePlayerNameData_3895153758(global::FishNet.Connection.NetworkConnection conn, string playerName, string id)
+		private void RpcWriter___Target_ReceivePlayerNameData_3895153758(NetworkConnection conn, string playerName, string id)
 		{
 		}
 
-		private void RpcReader___Target_ReceivePlayerNameData_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceivePlayerNameData_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1163,7 +1138,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendFlashlightOnNetworked_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendFlashlightOnNetworked_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1175,7 +1150,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetFlashlightOn_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetFlashlightOn_1140765316(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1187,7 +1162,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_PlayJumpAnimation_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlayJumpAnimation_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1199,51 +1174,51 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendCrouched_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendCrouched_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveCrouched_214505783(global::FishNet.Connection.NetworkConnection conn, bool crouched)
+		private void RpcWriter___Target_ReceiveCrouched_214505783(NetworkConnection conn, bool crouched)
 		{
 		}
 
-		private void RpcLogic___ReceiveCrouched_214505783(global::FishNet.Connection.NetworkConnection conn, bool crouched)
+		private void RpcLogic___ReceiveCrouched_214505783(NetworkConnection conn, bool crouched)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveCrouched_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveCrouched_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveCrouched_214505783(global::FishNet.Connection.NetworkConnection conn, bool crouched)
+		private void RpcWriter___Observers_ReceiveCrouched_214505783(NetworkConnection conn, bool crouched)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveCrouched_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveCrouched_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendAvatarSettings_4281687581(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		private void RpcWriter___Server_SendAvatarSettings_4281687581(AvatarSettings settings)
 		{
 		}
 
-		public void RpcLogic___SendAvatarSettings_4281687581(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void RpcLogic___SendAvatarSettings_4281687581(AvatarSettings settings)
 		{
 		}
 
-		private void RpcReader___Server_SendAvatarSettings_4281687581(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAvatarSettings_4281687581(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetAvatarSettings_4281687581(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		private void RpcWriter___Observers_SetAvatarSettings_4281687581(AvatarSettings settings)
 		{
 		}
 
-		public void RpcLogic___SetAvatarSettings_4281687581(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void RpcLogic___SetAvatarSettings_4281687581(AvatarSettings settings)
 		{
 		}
 
-		private void RpcReader___Observers_SetAvatarSettings_4281687581(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetAvatarSettings_4281687581(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1255,7 +1230,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetVisible_Networked_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetVisible_Networked_1140765316(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1267,7 +1242,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SetReadyToSleep_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetReadyToSleep_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1279,7 +1254,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetPlayerCode_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetPlayerCode_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1291,7 +1266,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPunch_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPunch_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1303,43 +1278,43 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_Punch_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Punch_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_MarkIntroCompleted_3281254764(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings appearance)
+		private void RpcWriter___Server_MarkIntroCompleted_3281254764(BasicAvatarSettings appearance)
 		{
 		}
 
-		private void RpcLogic___MarkIntroCompleted_3281254764(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings appearance)
+		private void RpcLogic___MarkIntroCompleted_3281254764(BasicAvatarSettings appearance)
 		{
 		}
 
-		private void RpcReader___Server_MarkIntroCompleted_3281254764(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_MarkIntroCompleted_3281254764(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SendImpact_427288424(global::ScheduleOne.Combat.Impact impact)
+		private void RpcWriter___Server_SendImpact_427288424(Impact impact)
 		{
 		}
 
-		public virtual void RpcLogic___SendImpact_427288424(global::ScheduleOne.Combat.Impact impact)
+		public virtual void RpcLogic___SendImpact_427288424(Impact impact)
 		{
 		}
 
-		private void RpcReader___Server_SendImpact_427288424(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendImpact_427288424(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveImpact_427288424(global::ScheduleOne.Combat.Impact impact)
+		private void RpcWriter___Observers_ReceiveImpact_427288424(Impact impact)
 		{
 		}
 
-		public virtual void RpcLogic___ReceiveImpact_427288424(global::ScheduleOne.Combat.Impact impact)
+		public virtual void RpcLogic___ReceiveImpact_427288424(Impact impact)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveImpact_427288424(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveImpact_427288424(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1351,7 +1326,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_Arrest_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Arrest_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1363,7 +1338,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPassOut_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPassOut_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1375,7 +1350,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_PassOut_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PassOut_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1387,7 +1362,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendPassOutRecovery_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPassOutRecovery_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1399,7 +1374,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_PassOutRecovery_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PassOutRecovery_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1411,7 +1386,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendEquippable_Networked_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEquippable_Networked_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1423,7 +1398,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetEquippable_Networked_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetEquippable_Networked_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1435,7 +1410,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendEquippableMessage_Networked_3643459082(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEquippableMessage_Networked_3643459082(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1447,31 +1422,31 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveEquippableMessage_Networked_3643459082(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveEquippableMessage_Networked_3643459082(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendEquippableMessage_Networked_Vector_3190074053(string message, int receipt, global::UnityEngine.Vector3 data)
+		private void RpcWriter___Server_SendEquippableMessage_Networked_Vector_3190074053(string message, int receipt, Vector3 data)
 		{
 		}
 
-		public void RpcLogic___SendEquippableMessage_Networked_Vector_3190074053(string message, int receipt, global::UnityEngine.Vector3 data)
+		public void RpcLogic___SendEquippableMessage_Networked_Vector_3190074053(string message, int receipt, Vector3 data)
 		{
 		}
 
-		private void RpcReader___Server_SendEquippableMessage_Networked_Vector_3190074053(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEquippableMessage_Networked_Vector_3190074053(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveEquippableMessage_Networked_Vector_3190074053(string message, int receipt, global::UnityEngine.Vector3 data)
+		private void RpcWriter___Observers_ReceiveEquippableMessage_Networked_Vector_3190074053(string message, int receipt, Vector3 data)
 		{
 		}
 
-		private void RpcLogic___ReceiveEquippableMessage_Networked_Vector_3190074053(string message, int receipt, global::UnityEngine.Vector3 data)
+		private void RpcLogic___ReceiveEquippableMessage_Networked_Vector_3190074053(string message, int receipt, Vector3 data)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveEquippableMessage_Networked_Vector_3190074053(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveEquippableMessage_Networked_Vector_3190074053(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1483,47 +1458,47 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendAnimationTrigger_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAnimationTrigger_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		private void RpcWriter___Observers_SetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		public void RpcLogic___SetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		public void RpcLogic___SetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		private void RpcReader___Observers_SetAnimationTrigger_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetAnimationTrigger_Networked_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		private void RpcWriter___Target_SetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		private void RpcReader___Target_SetAnimationTrigger_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetAnimationTrigger_Networked_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ResetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		private void RpcWriter___Observers_ResetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		public void RpcLogic___ResetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		public void RpcLogic___ResetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		private void RpcReader___Observers_ResetAnimationTrigger_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ResetAnimationTrigger_Networked_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ResetAnimationTrigger_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string trigger)
+		private void RpcWriter___Target_ResetAnimationTrigger_Networked_2971853958(NetworkConnection conn, string trigger)
 		{
 		}
 
-		private void RpcReader___Target_ResetAnimationTrigger_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ResetAnimationTrigger_Networked_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1535,7 +1510,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendAnimationBool_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAnimationBool_310431262(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -1547,7 +1522,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_SetAnimationBool_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetAnimationBool_310431262(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1559,91 +1534,91 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Observers_Taze_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Taze_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetInventoryItem_2317364410(int index, global::ScheduleOne.ItemFramework.ItemInstance item)
+		private void RpcWriter___Server_SetInventoryItem_2317364410(int index, ItemInstance item)
 		{
 		}
 
-		public void RpcLogic___SetInventoryItem_2317364410(int index, global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void RpcLogic___SetInventoryItem_2317364410(int index, ItemInstance item)
 		{
 		}
 
-		private void RpcReader___Server_SetInventoryItem_2317364410(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetInventoryItem_2317364410(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SendAppearance_3281254764(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings)
+		private void RpcWriter___Server_SendAppearance_3281254764(BasicAvatarSettings settings)
 		{
 		}
 
-		public void RpcLogic___SendAppearance_3281254764(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings)
+		public void RpcLogic___SendAppearance_3281254764(BasicAvatarSettings settings)
 		{
 		}
 
-		private void RpcReader___Server_SendAppearance_3281254764(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendAppearance_3281254764(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetAppearance_2139595489(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings, bool refreshClothing)
+		private void RpcWriter___Observers_SetAppearance_2139595489(BasicAvatarSettings settings, bool refreshClothing)
 		{
 		}
 
-		public void RpcLogic___SetAppearance_2139595489(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings settings, bool refreshClothing)
+		public void RpcLogic___SetAppearance_2139595489(BasicAvatarSettings settings, bool refreshClothing)
 		{
 		}
 
-		private void RpcReader___Observers_SetAppearance_2139595489(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetAppearance_2139595489(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendMountedSkateboard_3323014238(global::FishNet.Object.NetworkObject skateboardObj)
+		private void RpcWriter___Server_SendMountedSkateboard_3323014238(NetworkObject skateboardObj)
 		{
 		}
 
-		private void RpcLogic___SendMountedSkateboard_3323014238(global::FishNet.Object.NetworkObject skateboardObj)
+		private void RpcLogic___SendMountedSkateboard_3323014238(NetworkObject skateboardObj)
 		{
 		}
 
-		private void RpcReader___Server_SendMountedSkateboard_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendMountedSkateboard_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetMountedSkateboard_3323014238(global::FishNet.Object.NetworkObject skateboardObj)
+		private void RpcWriter___Observers_SetMountedSkateboard_3323014238(NetworkObject skateboardObj)
 		{
 		}
 
-		private void RpcLogic___SetMountedSkateboard_3323014238(global::FishNet.Object.NetworkObject skateboardObj)
+		private void RpcLogic___SetMountedSkateboard_3323014238(NetworkObject skateboardObj)
 		{
 		}
 
-		private void RpcReader___Observers_SetMountedSkateboard_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetMountedSkateboard_3323014238(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcWriter___Server_SendConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		private void RpcLogic___SendConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcLogic___SendConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		private void RpcReader___Server_SendConsumeProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendConsumeProduct_2622925554(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcWriter___Observers_ReceiveConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		private void RpcLogic___ReceiveConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcLogic___ReceiveConsumeProduct_2622925554(ProductItemInstance product)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveConsumeProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveConsumeProduct_2622925554(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -1655,23 +1630,23 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcReader___Server_SendValue_3589193952(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendValue_3589193952(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		private void RpcWriter___Target_ReceiveValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		private void RpcLogic___ReceiveValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		private void RpcLogic___ReceiveValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveValue_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveValue_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EPlayerScripts_002EPlayer(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EPlayerScripts_002EPlayer(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

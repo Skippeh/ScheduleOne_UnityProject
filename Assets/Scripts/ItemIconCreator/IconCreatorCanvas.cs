@@ -1,18 +1,21 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ItemIconCreator
 {
-	public class IconCreatorCanvas : global::UnityEngine.MonoBehaviour
+	public class IconCreatorCanvas : MonoBehaviour
 	{
-		public global::UnityEngine.UI.Text textLabel;
+		public Text textLabel;
 
-		public global::UnityEngine.GameObject borders;
+		public GameObject borders;
 
-		public static global::ItemIconCreator.IconCreatorCanvas instance;
+		public static IconCreatorCanvas instance;
 
 		private void Awake()
 		{
 		}
 
-		public void SetInfo(int totalItens, int currentItem, string itemName, bool isRecording, global::UnityEngine.KeyCode key)
+		public void SetInfo(int totalItens, int currentItem, string itemName, bool isRecording, KeyCode key)
 		{
 		}
 

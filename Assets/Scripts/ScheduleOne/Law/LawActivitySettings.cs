@@ -1,17 +1,19 @@
+using System;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class LawActivitySettings
 	{
-		public global::ScheduleOne.Law.PatrolInstance[] Patrols;
+		public PatrolInstance[] Patrols;
 
-		public global::ScheduleOne.Law.CheckpointInstance[] Checkpoints;
+		public CheckpointInstance[] Checkpoints;
 
-		public global::ScheduleOne.Law.CurfewInstance[] Curfews;
+		public CurfewInstance[] Curfews;
 
-		public global::ScheduleOne.Law.VehiclePatrolInstance[] VehiclePatrols;
+		public VehiclePatrolInstance[] VehiclePatrols;
 
-		public global::ScheduleOne.Law.SentryInstance[] Sentries;
+		public SentryInstance[] Sentries;
 
 		public void Evaluate()
 		{

@@ -1,6 +1,14 @@
+using System;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Economy;
+using ScheduleOne.Messaging;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	public class DealWindowSelector : global::UnityEngine.MonoBehaviour
+	public class DealWindowSelector : MonoBehaviour
 	{
 		public const float TIME_ARM_ROTATION_0000 = 0f;
 
@@ -8,26 +16,26 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public const int WINDOW_CUTOFF_MINS = 120;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Economy.EDealWindow> OnSelected;
+		public UnityEvent<EDealWindow> OnSelected;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject Container;
+		[Header("References")]
+		public GameObject Container;
 
-		public global::ScheduleOne.UI.Phone.Messages.WindowSelectorButton MorningButton;
+		public WindowSelectorButton MorningButton;
 
-		public global::ScheduleOne.UI.Phone.Messages.WindowSelectorButton AfternoonButton;
+		public WindowSelectorButton AfternoonButton;
 
-		public global::ScheduleOne.UI.Phone.Messages.WindowSelectorButton NightButton;
+		public WindowSelectorButton NightButton;
 
-		public global::ScheduleOne.UI.Phone.Messages.WindowSelectorButton LateNightButton;
+		public WindowSelectorButton LateNightButton;
 
-		public global::UnityEngine.RectTransform CurrentTimeArm;
+		public RectTransform CurrentTimeArm;
 
-		public global::UnityEngine.UI.Text CurrentTimeLabel;
+		public Text CurrentTimeLabel;
 
-		private global::System.Action<global::ScheduleOne.Economy.EDealWindow> callback;
+		private Action<EDealWindow> callback;
 
-		private global::ScheduleOne.UI.Phone.Messages.WindowSelectorButton[] buttons;
+		private WindowSelectorButton[] buttons;
 
 		private bool hintShown;
 
@@ -37,7 +45,7 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		public void Exit(ExitAction action)
 		{
 		}
 
@@ -45,7 +53,7 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public void SetIsOpen(bool open, global::ScheduleOne.Messaging.MSGConversation conversation, global::System.Action<global::ScheduleOne.Economy.EDealWindow> callback = null)
+		public void SetIsOpen(bool open, MSGConversation conversation, Action<EDealWindow> callback = null)
 		{
 		}
 
@@ -65,7 +73,7 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		private void ButtonClicked(global::ScheduleOne.Economy.EDealWindow window)
+		private void ButtonClicked(EDealWindow window)
 		{
 		}
 	}

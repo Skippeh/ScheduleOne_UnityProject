@@ -1,13 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.Management.UI;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class CleanerConfigPanel : global::ScheduleOne.Management.UI.ConfigPanel
+	public class CleanerConfigPanel : ConfigPanel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Management.ObjectFieldUI BedUI;
+		[Header("References")]
+		public ObjectFieldUI BedUI;
 
-		public global::ScheduleOne.UI.Management.ObjectListFieldUI BinsUI;
+		public ObjectListFieldUI BinsUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		public override void Bind(List<EntityConfiguration> configs)
 		{
 		}
 	}

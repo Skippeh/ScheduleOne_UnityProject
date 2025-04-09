@@ -1,13 +1,16 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Casino.UI
 {
-	public class CasinoGamePlayerDisplay : global::UnityEngine.MonoBehaviour
+	public class CasinoGamePlayerDisplay : MonoBehaviour
 	{
-		public global::ScheduleOne.Casino.CasinoGamePlayers BindedPlayers;
+		public CasinoGamePlayers BindedPlayers;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI TitleLabel;
+		[Header("References")]
+		public TextMeshProUGUI TitleLabel;
 
-		public global::UnityEngine.RectTransform[] PlayerEntries;
+		public RectTransform[] PlayerEntries;
 
 		public void RefreshPlayers()
 		{
@@ -17,7 +20,7 @@ namespace ScheduleOne.Casino.UI
 		{
 		}
 
-		public void Bind(global::ScheduleOne.Casino.CasinoGamePlayers players)
+		public void Bind(CasinoGamePlayers players)
 		{
 		}
 

@@ -1,8 +1,10 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_SecuringSupplies : global::ScheduleOne.Quests.Quest
+	public class Quest_SecuringSupplies : Quest
 	{
-		public global::ScheduleOne.Economy.Supplier Supplier;
+		public Supplier Supplier;
 
 		protected override void MinPass()
 		{

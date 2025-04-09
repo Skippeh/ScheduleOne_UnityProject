@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemGiver : global::UnityEngine.MonoBehaviour
+	public class ItemGiver : MonoBehaviour
 	{
-		public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+		public ItemDefinition Item;
 
 		public int Quantity;
 

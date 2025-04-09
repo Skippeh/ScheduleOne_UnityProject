@@ -1,26 +1,30 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class BrickPressHandle : global::UnityEngine.MonoBehaviour
+	public class BrickPressHandle : MonoBehaviour
 	{
 		private float lastClickPosition;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MoveSpeed;
 
 		public bool Locked;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform PlaneNormal;
+		[Header("References")]
+		public Transform PlaneNormal;
 
-		public global::UnityEngine.Transform RaisedTransform;
+		public Transform RaisedTransform;
 
-		public global::UnityEngine.Transform LoweredTransform;
+		public Transform LoweredTransform;
 
-		public global::ScheduleOne.PlayerTasks.Clickable HandleClickable;
+		public Clickable HandleClickable;
 
-		public global::ScheduleOne.Audio.AudioSourceController ClickSound;
+		public AudioSourceController ClickSound;
 
-		private global::UnityEngine.Vector3 clickOffset;
+		private Vector3 clickOffset;
 
 		private bool isMoving;
 
@@ -54,7 +58,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 
@@ -62,9 +66,9 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlaneHit()
+		private Vector3 GetPlaneHit()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 	}
 }

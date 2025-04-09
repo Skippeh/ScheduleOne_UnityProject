@@ -1,46 +1,49 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "NewCharacterGenerator", menuName = "Advanced People Pack/CharacterGenerator", order = 1)]
-	public class CharacterGeneratorSettings : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(fileName = "NewCharacterGenerator", menuName = "Advanced People Pack/CharacterGenerator", order = 1)]
+	public class CharacterGeneratorSettings : ScriptableObject
 	{
-		public global::AdvancedPeopleSystem.MinMaxIndex hair;
+		public MinMaxIndex hair;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex beard;
+		public MinMaxIndex beard;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex hat;
+		public MinMaxIndex hat;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex accessory;
+		public MinMaxIndex accessory;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex shirt;
+		public MinMaxIndex shirt;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex pants;
+		public MinMaxIndex pants;
 
-		public global::AdvancedPeopleSystem.MinMaxIndex shoes;
+		public MinMaxIndex shoes;
 
-		[global::UnityEngine.Space(10f)]
-		public global::AdvancedPeopleSystem.MinMaxColor skinColors;
+		[Space(10f)]
+		public MinMaxColor skinColors;
 
-		public global::AdvancedPeopleSystem.MinMaxColor eyeColors;
+		public MinMaxColor eyeColors;
 
-		public global::AdvancedPeopleSystem.MinMaxColor hairColors;
+		public MinMaxColor hairColors;
 
-		[global::UnityEngine.Space(10f)]
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes headSize;
+		[Space(10f)]
+		public MinMaxBlendshapes headSize;
 
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes headOffset;
+		public MinMaxBlendshapes headOffset;
 
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes height;
+		public MinMaxBlendshapes height;
 
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes fat;
+		public MinMaxBlendshapes fat;
 
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes muscles;
+		public MinMaxBlendshapes muscles;
 
-		public global::AdvancedPeopleSystem.MinMaxBlendshapes thin;
+		public MinMaxBlendshapes thin;
 
-		[global::UnityEngine.Space(15f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.MinMaxFacialBlendshapes> facialBlendshapes;
+		[Space(15f)]
+		public List<MinMaxFacialBlendshapes> facialBlendshapes;
 
-		[global::UnityEngine.Space(15f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.GeneratorExclude> excludes;
+		[Space(15f)]
+		public List<GeneratorExclude> excludes;
 	}
 }

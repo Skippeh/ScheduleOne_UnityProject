@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class FootPatrolBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class FootPatrolBehaviour : Behaviour
 	{
 		public const float MOVE_SPEED = 0.08f;
 
@@ -18,7 +18,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EFootPatrolBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.NPCs.Behaviour.PatrolGroup Group { get; protected set; }
+		public PatrolGroup Group { get; protected set; }
 
 		protected override void Begin()
 		{
@@ -44,7 +44,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void SetGroup(global::ScheduleOne.NPCs.Behaviour.PatrolGroup group)
+		public void SetGroup(PatrolGroup group)
 		{
 		}
 

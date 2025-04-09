@@ -1,8 +1,12 @@
+using System;
+using ScheduleOne.EntityFramework;
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "BuildableItemDefinition", menuName = "ScriptableObjects/BuildableItemDefinition", order = 1)]
-	public class BuildableItemDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "BuildableItemDefinition", menuName = "ScriptableObjects/BuildableItemDefinition", order = 1)]
+	public class BuildableItemDefinition : StorableItemDefinition
 	{
 		public enum EBuildSoundType
 		{
@@ -11,8 +15,8 @@ namespace ScheduleOne.ItemFramework
 			Metal = 2
 		}
 
-		public global::ScheduleOne.EntityFramework.BuildableItem BuiltItem;
+		public BuildableItem BuiltItem;
 
-		public global::ScheduleOne.ItemFramework.BuildableItemDefinition.EBuildSoundType BuildSoundType;
+		public EBuildSoundType BuildSoundType;
 	}
 }

@@ -1,11 +1,13 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class PackagingStationConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class PackagingStationConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Destination;
+		public ObjectFieldData Destination;
 
-		public PackagingStationConfigurationData(global::ScheduleOne.Persistence.Datas.ObjectFieldData destination)
+		public PackagingStationConfigurationData(ObjectFieldData destination)
 		{
 		}
 	}

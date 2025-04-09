@@ -1,10 +1,13 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class OptimizedColliderGroup : global::UnityEngine.MonoBehaviour
+	public class OptimizedColliderGroup : MonoBehaviour
 	{
 		public const int UPDATE_DISTANCE = 5;
 
-		public global::UnityEngine.Collider[] Colliders;
+		public Collider[] Colliders;
 
 		public float ColliderEnableMaxDistance;
 
@@ -24,7 +27,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void GetColliders()
 		{
 		}

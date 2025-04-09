@@ -1,60 +1,68 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Map;
+using ScheduleOne.NPCs;
+using ScheduleOne.UI.Relations;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.ContactsApp
 {
-	public class ContactsApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.ContactsApp.ContactsApp>
+	public class ContactsApp : App<ContactsApp>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class RegionUI
 		{
-			public global::ScheduleOne.Map.EMapRegion Region;
+			public EMapRegion Region;
 
-			public global::UnityEngine.UI.Button Button;
+			public Button Button;
 
-			public global::UnityEngine.RectTransform Container;
+			public RectTransform Container;
 
-			public global::UnityEngine.RectTransform ConnectionsContainer;
+			public RectTransform ConnectionsContainer;
 
-			public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> npcs { get; set; }
+			public List<NPC> npcs { get; set; }
 		}
 
-		public global::ScheduleOne.Map.EMapRegion SelectedRegion;
+		public EMapRegion SelectedRegion;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Map.EMapRegion, global::ScheduleOne.UI.Phone.ContactsApp.ContactsApp.RegionUI> RegionDict;
+		private Dictionary<EMapRegion, RegionUI> RegionDict;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform CirclesContainer;
+		[Header("References")]
+		public RectTransform CirclesContainer;
 
-		public global::UnityEngine.RectTransform DemoCirclesContainer;
+		public RectTransform DemoCirclesContainer;
 
-		public global::UnityEngine.RectTransform TutorialCirclesContainer;
+		public RectTransform TutorialCirclesContainer;
 
-		public global::UnityEngine.RectTransform ConnectionsContainer;
+		public RectTransform ConnectionsContainer;
 
-		public global::UnityEngine.RectTransform ContentRect;
+		public RectTransform ContentRect;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::ScheduleOne.UI.Phone.ContactsApp.ContactsDetailPanel DetailPanel;
+		public ContactsDetailPanel DetailPanel;
 
-		public global::ScheduleOne.UI.Phone.ContactsApp.ContactsApp.RegionUI[] RegionUIs;
+		public RegionUI[] RegionUIs;
 
-		public global::UnityEngine.RectTransform RegionSelectionContainer;
+		public RectTransform RegionSelectionContainer;
 
-		public global::UnityEngine.RectTransform RegionSelectionIndicator;
+		public RectTransform RegionSelectionIndicator;
 
-		public global::UnityEngine.RectTransform LockedRegionContainer;
+		public RectTransform LockedRegionContainer;
 
-		public global::UnityEngine.UI.Text RegionRankRequirementLabel;
+		public Text RegionRankRequirementLabel;
 
-		public global::UnityEngine.UI.Image SelectedRegionIcon;
+		public Image SelectedRegionIcon;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject ConnectionPrefab;
+		[Header("Prefabs")]
+		public GameObject ConnectionPrefab;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Relations.RelationCircle> RelationCircles;
+		private List<RelationCircle> RelationCircles;
 
-		private global::UnityEngine.Coroutine contentMoveRoutine;
+		private Coroutine contentMoveRoutine;
 
-		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.NPCs.NPC, global::ScheduleOne.NPCs.NPC>> connections;
+		private List<Tuple<NPC, NPC>> connections;
 
 		protected override void Start()
 		{
@@ -64,24 +72,24 @@ namespace ScheduleOne.UI.Phone.ContactsApp
 		{
 		}
 
-		private global::ScheduleOne.UI.Relations.RelationCircle GetRelationCircle(string npcID)
+		private RelationCircle GetRelationCircle(string npcID)
 		{
 			return null;
 		}
 
-		private void CircleClicked(global::ScheduleOne.UI.Relations.RelationCircle circ)
+		private void CircleClicked(RelationCircle circ)
 		{
 		}
 
-		private void Select(global::ScheduleOne.UI.Relations.RelationCircle circ)
+		private void Select(RelationCircle circ)
 		{
 		}
 
-		public void SetSelectedRegion(global::ScheduleOne.Map.EMapRegion region)
+		public void SetSelectedRegion(EMapRegion region)
 		{
 		}
 
-		private void ZoomToRect(global::UnityEngine.RectTransform rect)
+		private void ZoomToRect(RectTransform rect)
 		{
 		}
 

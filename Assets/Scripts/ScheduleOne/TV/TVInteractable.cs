@@ -1,10 +1,13 @@
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.TV
 {
-	public class TVInteractable : global::UnityEngine.MonoBehaviour
+	public class TVInteractable : MonoBehaviour
 	{
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::ScheduleOne.TV.TVInterface Interface;
+		public TVInterface Interface;
 
 		private void Start()
 		{

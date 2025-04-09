@@ -1,18 +1,24 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Police;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class OffenceNoticeUI : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.OffenceNoticeUI>
+	public class OffenceNoticeUI : Singleton<OffenceNoticeUI>
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject container;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject container;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.UI.Text> charges;
+		[SerializeField]
+		protected List<Text> charges;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.UI.Text> penalties;
+		[SerializeField]
+		protected List<Text> penalties;
 
-		public void ShowOffenceNotice(global::ScheduleOne.Police.Offense offence)
+		public void ShowOffenceNotice(Offense offence)
 		{
 		}
 

@@ -1,6 +1,8 @@
+using UnityEngine.Rendering;
+
 namespace UnityEngine.PostProcessing
 {
-	public sealed class ScreenSpaceReflectionComponent : global::UnityEngine.PostProcessing.PostProcessingComponentCommandBuffer<global::UnityEngine.PostProcessing.ScreenSpaceReflectionModel>
+	public sealed class ScreenSpaceReflectionComponent : PostProcessingComponentCommandBuffer<ScreenSpaceReflectionModel>
 	{
 		private static class Uniforms
 		{
@@ -100,9 +102,9 @@ namespace UnityEngine.PostProcessing
 
 		public override bool active => false;
 
-		public override global::UnityEngine.DepthTextureMode GetCameraFlags()
+		public override DepthTextureMode GetCameraFlags()
 		{
-			return default(global::UnityEngine.DepthTextureMode);
+			return default(DepthTextureMode);
 		}
 
 		public override void OnEnable()
@@ -114,12 +116,12 @@ namespace UnityEngine.PostProcessing
 			return null;
 		}
 
-		public override global::UnityEngine.Rendering.CameraEvent GetCameraEvent()
+		public override CameraEvent GetCameraEvent()
 		{
-			return default(global::UnityEngine.Rendering.CameraEvent);
+			return default(CameraEvent);
 		}
 
-		public override void PopulateCommandBuffer(global::UnityEngine.Rendering.CommandBuffer cb)
+		public override void PopulateCommandBuffer(CommandBuffer cb)
 		{
 		}
 	}

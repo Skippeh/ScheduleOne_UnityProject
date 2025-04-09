@@ -1,21 +1,27 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Interaction;
+using ScheduleOne.Map;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	public class StaticDoor : global::UnityEngine.MonoBehaviour
+	public class StaticDoor : MonoBehaviour
 	{
 		public const float KNOCK_COOLDOWN = 2f;
 
 		public const float SUMMON_DURATION = 8f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform AccessPoint;
+		[Header("References")]
+		public Transform AccessPoint;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::ScheduleOne.Audio.AudioSourceController KnockSound;
+		public AudioSourceController KnockSound;
 
-		public global::ScheduleOne.Map.NPCEnterableBuilding Building;
+		public NPCEnterableBuilding Building;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool Usable;
 
 		public bool CanKnock;
@@ -57,7 +63,7 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		protected virtual void NPCSelected(global::ScheduleOne.NPCs.NPC npc)
+		protected virtual void NPCSelected(NPC npc)
 		{
 		}
 	}

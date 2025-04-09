@@ -1,26 +1,29 @@
-[global::UnityEngine.ExecuteInEditMode]
-public class ACpipeModular : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class ACpipeModular : MonoBehaviour
 {
-	[global::UnityEngine.HideInInspector]
-	public global::System.Collections.Generic.List<global::UnityEngine.GameObject> itemsList;
+	[HideInInspector]
+	public List<GameObject> itemsList;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject largeACPipe;
+	[HideInInspector]
+	public GameObject largeACPipe;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject smallACpipe;
+	[HideInInspector]
+	public GameObject smallACpipe;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject innerCorner;
+	[HideInInspector]
+	public GameObject innerCorner;
 
-	[global::UnityEngine.HideInInspector]
-	public global::UnityEngine.GameObject outerCorner;
+	[HideInInspector]
+	public GameObject outerCorner;
 
 	private void Start()
 	{
 	}
 
-	public void BuildNextItem(global::UnityEngine.GameObject item)
+	public void BuildNextItem(GameObject item)
 	{
 	}
 

@@ -1,9 +1,16 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace ItemIconCreator
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Camera))]
-	[global::UnityEngine.DisallowMultipleComponent]
-	public class IconCreator : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[RequireComponent(typeof(Camera))]
+	[DisallowMultipleComponent]
+	public class IconCreator : MonoBehaviour
 	{
 		public enum SaveLocation
 		{
@@ -19,44 +26,44 @@ namespace ItemIconCreator
 			Manual = 1
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CCaptureFrame_003Ed__30 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CCaptureFrame_003Ed__30 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ItemIconCreator.IconCreator _003C_003E4__this;
+			public IconCreator _003C_003E4__this;
 
 			public string objectName;
 
 			public int i;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CCaptureFrame_003Ed__30(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -65,14 +72,14 @@ namespace ItemIconCreator
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -85,9 +92,9 @@ namespace ItemIconCreator
 
 		public string iconFileName;
 
-		public global::ItemIconCreator.IconCreator.SaveLocation pathLocation;
+		public SaveLocation pathLocation;
 
-		public global::ItemIconCreator.IconCreator.Mode mode;
+		public Mode mode;
 
 		public string folderName;
 
@@ -101,29 +108,29 @@ namespace ItemIconCreator
 
 		protected string finalPath;
 
-		private global::UnityEngine.Vector3 mousePostion;
+		private Vector3 mousePostion;
 
-		public global::UnityEngine.KeyCode nextIconKey;
+		public KeyCode nextIconKey;
 
 		protected bool CanMove;
 
 		public bool preview;
 
-		protected global::UnityEngine.Camera whiteCam;
+		protected Camera whiteCam;
 
-		protected global::UnityEngine.Camera blackCam;
+		protected Camera blackCam;
 
-		public global::UnityEngine.Camera mainCam;
+		public Camera mainCam;
 
-		protected global::UnityEngine.Texture2D texBlack;
+		protected Texture2D texBlack;
 
-		protected global::UnityEngine.Texture2D texWhite;
+		protected Texture2D texWhite;
 
-		protected global::UnityEngine.Texture2D finalTexture;
+		protected Texture2D finalTexture;
 
-		private global::UnityEngine.CameraClearFlags originalClearFlags;
+		private CameraClearFlags originalClearFlags;
 
-		protected global::UnityEngine.Transform currentObject;
+		protected Transform currentObject;
 
 		private void Awake()
 		{
@@ -141,8 +148,8 @@ namespace ItemIconCreator
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ItemIconCreator.IconCreator._003CCaptureFrame_003Ed__30))]
-		protected global::System.Collections.IEnumerator CaptureFrame(string objectName, int i)
+		[IteratorStateMachine(typeof(_003CCaptureFrame_003Ed__30))]
+		protected IEnumerator CaptureFrame(string objectName, int i)
 		{
 			return null;
 		}
@@ -151,7 +158,7 @@ namespace ItemIconCreator
 		{
 		}
 
-		private void RenderCamToTexture(global::UnityEngine.Camera cam, global::UnityEngine.Texture2D tex)
+		private void RenderCamToTexture(Camera cam, Texture2D tex)
 		{
 		}
 
@@ -168,7 +175,7 @@ namespace ItemIconCreator
 			return null;
 		}
 
-		private void WriteScreenImageToTexture(global::UnityEngine.Texture2D tex)
+		private void WriteScreenImageToTexture(Texture2D tex)
 		{
 		}
 
@@ -189,7 +196,7 @@ namespace ItemIconCreator
 		{
 		}
 
-		protected void UpdateFOV(global::UnityEngine.GameObject targetItem)
+		protected void UpdateFOV(GameObject targetItem)
 		{
 		}
 
@@ -197,23 +204,23 @@ namespace ItemIconCreator
 		{
 		}
 
-		protected void LookAtTargetCenter(global::UnityEngine.GameObject targetItem)
+		protected void LookAtTargetCenter(GameObject targetItem)
 		{
 		}
 
-		private float GetTargetFov(global::UnityEngine.GameObject a)
+		private float GetTargetFov(GameObject a)
 		{
 			return 0f;
 		}
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Renderer> GetRenderers(global::UnityEngine.GameObject obj)
+		private List<Renderer> GetRenderers(GameObject obj)
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Vector3 GetMeshCenter(global::UnityEngine.GameObject a)
+		private Vector3 GetMeshCenter(GameObject a)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		protected void RevealInFinder()

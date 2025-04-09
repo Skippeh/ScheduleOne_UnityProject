@@ -1,18 +1,21 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Noise
 {
-	public class Listener : global::UnityEngine.MonoBehaviour
+	public class Listener : MonoBehaviour
 	{
-		public delegate void HearingEvent(global::ScheduleOne.Noise.NoiseEvent nEvent);
+		public delegate void HearingEvent(NoiseEvent nEvent);
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Noise.Listener> listeners;
+		public static List<Listener> listeners;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Range(0.1f, 5f)]
+		[Header("Settings")]
+		[Range(0.1f, 5f)]
 		public float Sensitivity;
 
-		public global::UnityEngine.Transform HearingOrigin;
+		public Transform HearingOrigin;
 
-		public global::ScheduleOne.Noise.Listener.HearingEvent onNoiseHeard;
+		public HearingEvent onNoiseHeard;
 
 		public float SquaredHearingRange { get; protected set; }
 
@@ -28,7 +31,7 @@ namespace ScheduleOne.Noise
 		{
 		}
 
-		public void Notify(global::ScheduleOne.Noise.NoiseEvent nEvent)
+		public void Notify(NoiseEvent nEvent)
 		{
 		}
 	}

@@ -1,10 +1,13 @@
+using System;
+using System.Collections.Generic;
+
 namespace UnityEngine.PostProcessing
 {
-	public sealed class MaterialFactory : global::System.IDisposable
+	public sealed class MaterialFactory : IDisposable
 	{
-		private global::System.Collections.Generic.Dictionary<string, global::UnityEngine.Material> m_Materials;
+		private Dictionary<string, Material> m_Materials;
 
-		public global::UnityEngine.Material Get(string shaderName)
+		public Material Get(string shaderName)
 		{
 			return null;
 		}

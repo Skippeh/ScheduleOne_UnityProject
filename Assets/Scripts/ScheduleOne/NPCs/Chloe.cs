@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs
 {
-	public class Chloe : global::ScheduleOne.NPCs.NPC
+	public class Chloe : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EChloeAssembly_002DCSharp_002Edll_Excuted;
 

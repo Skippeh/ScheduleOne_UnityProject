@@ -1,18 +1,22 @@
+using ScheduleOne.Materials;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class LocalPlayerFootstepGenerator : global::UnityEngine.MonoBehaviour
+	public class LocalPlayerFootstepGenerator : MonoBehaviour
 	{
 		public float DistancePerStep;
 
-		public global::UnityEngine.Transform ReferencePoint;
+		public Transform ReferencePoint;
 
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		public LayerMask GroundDetectionMask;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Materials.EMaterialType, float> onStep;
+		public UnityEvent<EMaterialType, float> onStep;
 
 		private float currentDistance;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private Vector3 lastFramePosition;
 
 		private void LateUpdate()
 		{
@@ -22,9 +26,9 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool IsGrounded(out global::ScheduleOne.Materials.EMaterialType surfaceType)
+		public bool IsGrounded(out EMaterialType surfaceType)
 		{
-			surfaceType = default(global::ScheduleOne.Materials.EMaterialType);
+			surfaceType = default(EMaterialType);
 			return false;
 		}
 	}

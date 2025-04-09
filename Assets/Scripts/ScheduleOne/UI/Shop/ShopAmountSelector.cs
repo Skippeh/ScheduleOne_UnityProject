@@ -1,13 +1,17 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ShopAmountSelector : global::UnityEngine.MonoBehaviour
+	public class ShopAmountSelector : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::TMPro.TMP_InputField InputField;
+		public TMP_InputField InputField;
 
-		public global::UnityEngine.Events.UnityEvent<int> onSubmitted;
+		public UnityEvent<int> onSubmitted;
 
 		public bool IsOpen { get; private set; }
 

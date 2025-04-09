@@ -1,64 +1,67 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class BlendSkyProfiles : global::UnityEngine.MonoBehaviour
+	public class BlendSkyProfiles : MonoBehaviour
 	{
-		[global::UnityEngine.Tooltip("Called when blending finishes.")]
-		public global::System.Action<global::Funly.SkyStudio.BlendSkyProfiles> onBlendComplete;
+		[Tooltip("Called when blending finishes.")]
+		public Action<BlendSkyProfiles> onBlendComplete;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		private float m_StartTime;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		private float m_EndTime;
 
-		[global::UnityEngine.Tooltip("Blender used for basic sky background properties.")]
-		public global::Funly.SkyStudio.FeatureBlender skyBlender;
+		[Tooltip("Blender used for basic sky background properties.")]
+		public FeatureBlender skyBlender;
 
-		[global::UnityEngine.Tooltip("Blender used for the sun properties.")]
-		public global::Funly.SkyStudio.FeatureBlender sunBlender;
+		[Tooltip("Blender used for the sun properties.")]
+		public FeatureBlender sunBlender;
 
-		[global::UnityEngine.Tooltip("Blender used moon properties.")]
-		public global::Funly.SkyStudio.FeatureBlender moonBlender;
+		[Tooltip("Blender used moon properties.")]
+		public FeatureBlender moonBlender;
 
-		[global::UnityEngine.Tooltip("Blender used cloud properties.")]
-		public global::Funly.SkyStudio.FeatureBlender cloudBlender;
+		[Tooltip("Blender used cloud properties.")]
+		public FeatureBlender cloudBlender;
 
-		[global::UnityEngine.Tooltip("Blender used star layer 1 properties.")]
-		public global::Funly.SkyStudio.FeatureBlender starLayer1Blender;
+		[Tooltip("Blender used star layer 1 properties.")]
+		public FeatureBlender starLayer1Blender;
 
-		[global::UnityEngine.Tooltip("Blender used star layer 2 properties.")]
-		public global::Funly.SkyStudio.FeatureBlender starLayer2Blender;
+		[Tooltip("Blender used star layer 2 properties.")]
+		public FeatureBlender starLayer2Blender;
 
-		[global::UnityEngine.Tooltip("Blender used star layer 3 properties.")]
-		public global::Funly.SkyStudio.FeatureBlender starLayer3Blender;
+		[Tooltip("Blender used star layer 3 properties.")]
+		public FeatureBlender starLayer3Blender;
 
-		[global::UnityEngine.Tooltip("Blender used by the rain downfall feature.")]
-		public global::Funly.SkyStudio.FeatureBlender rainBlender;
+		[Tooltip("Blender used by the rain downfall feature.")]
+		public FeatureBlender rainBlender;
 
-		[global::UnityEngine.Tooltip("Blender used by the rain splash feature.")]
-		public global::Funly.SkyStudio.FeatureBlender rainSplashBlender;
+		[Tooltip("Blender used by the rain splash feature.")]
+		public FeatureBlender rainSplashBlender;
 
-		[global::UnityEngine.Tooltip("Blender used for lightning feature properties.")]
-		public global::Funly.SkyStudio.FeatureBlender lightningBlender;
+		[Tooltip("Blender used for lightning feature properties.")]
+		public FeatureBlender lightningBlender;
 
-		[global::UnityEngine.Tooltip("Blender used for fog properties.")]
-		public global::Funly.SkyStudio.FeatureBlender fogBlender;
+		[Tooltip("Blender used for fog properties.")]
+		public FeatureBlender fogBlender;
 
 		private bool m_IsBlendingFirstHalf;
 
-		private global::Funly.SkyStudio.ProfileBlendingState m_State;
+		private ProfileBlendingState m_State;
 
-		private global::Funly.SkyStudio.TimeOfDayController m_TimeOfDayController;
+		private TimeOfDayController m_TimeOfDayController;
 
-		private global::Funly.SkyStudio.BlendingHelper blendingHelper;
+		private BlendingHelper blendingHelper;
 
-		public global::Funly.SkyStudio.SkyProfile fromProfile { get; private set; }
+		public SkyProfile fromProfile { get; private set; }
 
-		public global::Funly.SkyStudio.SkyProfile toProfile { get; private set; }
+		public SkyProfile toProfile { get; private set; }
 
-		public global::Funly.SkyStudio.SkyProfile blendedProfile { get; private set; }
+		public SkyProfile blendedProfile { get; private set; }
 
-		public global::Funly.SkyStudio.SkyProfile StartBlending(global::Funly.SkyStudio.TimeOfDayController controller, global::Funly.SkyStudio.SkyProfile fromProfile, global::Funly.SkyStudio.SkyProfile toProfile, float duration)
+		public SkyProfile StartBlending(TimeOfDayController controller, SkyProfile fromProfile, SkyProfile toProfile, float duration)
 		{
 			return null;
 		}
@@ -79,7 +82,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private float PercentForMode(global::Funly.SkyStudio.ProfileFeatureBlendingMode mode, float percent)
+		private float PercentForMode(ProfileFeatureBlendingMode mode, float percent)
 		{
 			return 0f;
 		}

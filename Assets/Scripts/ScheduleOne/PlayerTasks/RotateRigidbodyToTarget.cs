@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class RotateRigidbodyToTarget : global::UnityEngine.MonoBehaviour
+	public class RotateRigidbodyToTarget : MonoBehaviour
 	{
-		public global::UnityEngine.Rigidbody Rigidbody;
+		public Rigidbody Rigidbody;
 
-		public global::UnityEngine.Vector3 TargetRotation;
+		public Vector3 TargetRotation;
 
 		public float RotationForce;
 
-		public global::UnityEngine.Transform CuntAssFuckingBitch;
+		public Transform CuntAssFuckingBitch;
 
 		public void FixedUpdate()
 		{

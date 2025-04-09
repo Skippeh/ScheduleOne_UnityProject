@@ -1,21 +1,24 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class PropertySelector : global::UnityEngine.MonoBehaviour
+	public class PropertySelector : MonoBehaviour
 	{
-		public delegate void PropertySelected(global::ScheduleOne.Property.Property p);
+		public delegate void PropertySelected(ScheduleOne.Property.Property p);
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject container;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject container;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform buttonContainer;
+		[SerializeField]
+		protected RectTransform buttonContainer;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject buttonPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject buttonPrefab;
 
-		private global::ScheduleOne.UI.PropertySelector.PropertySelected pCallback;
+		private PropertySelected pCallback;
 
 		public bool isOpen => false;
 
@@ -27,19 +30,19 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public virtual void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public virtual void Exit(ExitAction exit)
 		{
 		}
 
-		public void OpenSelector(global::ScheduleOne.UI.PropertySelector.PropertySelected p)
+		public void OpenSelector(PropertySelected p)
 		{
 		}
 
-		private void PropertyAcquired(global::ScheduleOne.Property.Property p)
+		private void PropertyAcquired(ScheduleOne.Property.Property p)
 		{
 		}
 
-		private void SelectProperty(global::ScheduleOne.Property.Property p)
+		private void SelectProperty(ScheduleOne.Property.Property p)
 		{
 		}
 

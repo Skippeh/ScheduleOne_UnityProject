@@ -1,14 +1,21 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ScriptableObjects;
+
 namespace ScheduleOne.Calling
 {
-	public class CallManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Calling.CallManager>
+	public class CallManager : Singleton<CallManager>
 	{
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData QueuedCallData { get; private set; }
+		public PhoneCallData QueuedCallData { get; private set; }
 
 		protected override void Start()
 		{
 		}
 
-		public void QueueCall(global::ScheduleOne.ScriptableObjects.PhoneCallData data)
+		protected override void OnDestroy()
+		{
+		}
+
+		public void QueueCall(PhoneCallData data)
 		{
 		}
 
@@ -16,7 +23,7 @@ namespace ScheduleOne.Calling
 		{
 		}
 
-		private void CallCompleted(global::ScheduleOne.ScriptableObjects.PhoneCallData call)
+		private void CallCompleted(PhoneCallData call)
 		{
 		}
 	}

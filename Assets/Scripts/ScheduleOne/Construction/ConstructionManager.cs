@@ -1,29 +1,38 @@
+using System;
+using FishNet.Object;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Tiles;
+using ScheduleOne.UI.Construction;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Construction
 {
-	public class ConstructionManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Construction.ConstructionManager>
+	public class ConstructionManager : Singleton<ConstructionManager>
 	{
 		public class WorldIntersection
 		{
-			public global::ScheduleOne.Tiles.FootprintTile footprint;
+			public FootprintTile footprint;
 
-			public global::ScheduleOne.Tiles.Tile tile;
+			public Tile tile;
 		}
 
-		public delegate void ConstructableNotification(global::ScheduleOne.ConstructableScripts.Constructable c);
+		public delegate void ConstructableNotification(Constructable c);
 
-		public global::FishNet.Object.NetworkObject networkObject;
+		public NetworkObject networkObject;
 
-		public global::System.Action onConstructionModeEnabled;
+		public Action onConstructionModeEnabled;
 
-		public global::System.Action onConstructionModeDisabled;
+		public Action onConstructionModeDisabled;
 
-		public global::UnityEngine.GameObject constructHandler;
+		public GameObject constructHandler;
 
-		public global::ScheduleOne.Construction.ConstructionManager.ConstructableNotification onNewConstructableBuilt;
+		public ConstructableNotification onNewConstructableBuilt;
 
-		public global::ScheduleOne.Construction.ConstructionManager.ConstructableNotification onConstructableMoved;
+		public ConstructableNotification onConstructableMoved;
 
-		public global::ScheduleOne.Property.Property currentProperty;
+		public ScheduleOne.Property.Property currentProperty;
 
 		public bool constructionModeEnabled { get; protected set; }
 
@@ -35,7 +44,7 @@ namespace ScheduleOne.Construction
 		{
 		}
 
-		public void EnterConstructionMode(global::ScheduleOne.Property.Property prop)
+		public void EnterConstructionMode(ScheduleOne.Property.Property prop)
 		{
 		}
 
@@ -43,7 +52,7 @@ namespace ScheduleOne.Construction
 		{
 		}
 
-		public void DeployConstructable(global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuListing listing)
+		public void DeployConstructable(ConstructionMenu.ConstructionMenuListing listing)
 		{
 		}
 
@@ -51,7 +60,7 @@ namespace ScheduleOne.Construction
 		{
 		}
 
-		public void MoveConstructable(global::ScheduleOne.ConstructableScripts.Constructable_GridBased c)
+		public void MoveConstructable(Constructable_GridBased c)
 		{
 		}
 
@@ -59,16 +68,16 @@ namespace ScheduleOne.Construction
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		private void Exit(ExitAction exit)
 		{
 		}
 
-		public global::ScheduleOne.ConstructableScripts.Constructable_GridBased CreateConstructable_GridBased(string ID, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, float rotation)
+		public Constructable_GridBased CreateConstructable_GridBased(string ID, Grid grid, Vector2 originCoordinate, float rotation)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.ConstructableScripts.Constructable CreateConstructable(string prefabID)
+		public Constructable CreateConstructable(string prefabID)
 		{
 			return null;
 		}

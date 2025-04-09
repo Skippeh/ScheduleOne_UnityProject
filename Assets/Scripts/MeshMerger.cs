@@ -1,4 +1,6 @@
-public class MeshMerger : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class MeshMerger : MonoBehaviour
 {
 	private void Start()
 	{

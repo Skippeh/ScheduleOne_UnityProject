@@ -1,10 +1,14 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class GameSettingsWindow : global::UnityEngine.MonoBehaviour
+	public class GameSettingsWindow : MonoBehaviour
 	{
-		public global::UnityEngine.UI.Toggle ConsoleToggle;
+		public Toggle ConsoleToggle;
 
-		public global::UnityEngine.GameObject Blocker;
+		public GameObject Blocker;
 
 		private void Awake()
 		{
@@ -14,7 +18,7 @@ namespace ScheduleOne.UI.Settings
 		{
 		}
 
-		public void ApplySettings(global::ScheduleOne.DevUtilities.GameSettings settings)
+		public void ApplySettings(GameSettings settings)
 		{
 		}
 

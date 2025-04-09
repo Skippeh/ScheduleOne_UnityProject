@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 namespace ScheduleOne.Trash
 {
-	public class TrashBag_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class TrashBag_Equippable : Equippable_Viewmodel
 	{
 		public const float TRASH_CONTAINER_INTERACT_DISTANCE = 2.75f;
 
@@ -10,18 +17,18 @@ namespace ScheduleOne.Trash
 
 		public const float PICKUP_AREA_RADIUS = 0.5f;
 
-		public global::UnityEngine.LayerMask PickupLookMask;
+		public LayerMask PickupLookMask;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rendering.Universal.DecalProjector PickupAreaProjector;
+		[Header("References")]
+		public DecalProjector PickupAreaProjector;
 
-		public global::ScheduleOne.Audio.AudioSourceController RustleSound;
+		public AudioSourceController RustleSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController BagSound;
+		public AudioSourceController BagSound;
 
 		private float _bagTrashTime;
 
-		private global::ScheduleOne.Trash.TrashContainer _baggedContainer;
+		private TrashContainer _baggedContainer;
 
 		private float _pickupTrashTime;
 
@@ -31,7 +38,7 @@ namespace ScheduleOne.Trash
 
 		public bool IsPickingUpTrash { get; private set; }
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
@@ -43,28 +50,28 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		private global::ScheduleOne.Trash.TrashContainer GetHoveredTrashContainer()
+		private TrashContainer GetHoveredTrashContainer()
 		{
 			return null;
 		}
 
-		private bool RaycastLook(out global::UnityEngine.RaycastHit hit)
+		private bool RaycastLook(out RaycastHit hit)
 		{
-			hit = default(global::UnityEngine.RaycastHit);
+			hit = default(RaycastHit);
 			return false;
 		}
 
-		private bool IsPickupLocationValid(global::UnityEngine.RaycastHit hit)
+		private bool IsPickupLocationValid(RaycastHit hit)
 		{
 			return false;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> GetTrashItemsAtPoint(global::UnityEngine.Vector3 pos)
+		private List<TrashItem> GetTrashItemsAtPoint(Vector3 pos)
 		{
 			return null;
 		}
 
-		private void StartBagTrash(global::ScheduleOne.Trash.TrashContainer container)
+		private void StartBagTrash(TrashContainer container)
 		{
 		}
 

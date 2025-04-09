@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class VignetteComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.VignetteModel>
+	public sealed class VignetteComponent : PostProcessingComponentRenderTexture<VignetteModel>
 	{
 		private static class Uniforms
 		{
@@ -17,7 +17,7 @@ namespace UnityEngine.PostProcessing
 
 		public override bool active => false;
 
-		public override void Prepare(global::UnityEngine.Material uberMaterial)
+		public override void Prepare(Material uberMaterial)
 		{
 		}
 	}

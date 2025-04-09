@@ -1,14 +1,17 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class RoadCracksRandomizer : global::UnityEngine.MonoBehaviour
+	public class RoadCracksRandomizer : MonoBehaviour
 	{
-		public global::UnityEngine.Transform[] Cracks;
+		public Transform[] Cracks;
 
 		public int MinCount;
 
 		public int MaxCount;
 
-		[global::EasyButtons.Button]
+		[Button]
 		private void Randomize()
 		{
 		}

@@ -1,11 +1,13 @@
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts.HandheldBin
 {
-	public class HandheldBin_Functional : global::UnityEngine.MonoBehaviour
+	public class HandheldBin_Functional : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform trash;
+		[Header("References")]
+		public Transform trash;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float trash_MinY;
 
 		public float trash_MaxY;

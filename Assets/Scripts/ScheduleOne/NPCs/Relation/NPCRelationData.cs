@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Relation
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class NPCRelationData
 	{
 		public enum EUnlockType
@@ -15,15 +20,15 @@ namespace ScheduleOne.NPCs.Relation
 
 		public const float DEFAULT_RELATION_DELTA = 2f;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> FullGameConnections;
+		[SerializeField]
+		protected List<NPC> FullGameConnections;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> DemoConnections;
+		[SerializeField]
+		protected List<NPC> DemoConnections;
 
-		public global::System.Action<float> onRelationshipChange;
+		public Action<float> onRelationshipChange;
 
-		public global::System.Action<global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType, bool> onUnlocked;
+		public Action<EUnlockType, bool> onUnlocked;
 
 		public float RelationDelta { get; protected set; }
 
@@ -31,17 +36,17 @@ namespace ScheduleOne.NPCs.Relation
 
 		public bool Unlocked { get; protected set; }
 
-		public global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType UnlockType { get; protected set; }
+		public EUnlockType UnlockType { get; protected set; }
 
-		public global::ScheduleOne.NPCs.NPC NPC { get; protected set; }
+		public NPC NPC { get; protected set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> Connections => null;
+		public List<NPC> Connections => null;
 
-		public void SetNPC(global::ScheduleOne.NPCs.NPC npc)
+		public void SetNPC(NPC npc)
 		{
 		}
 
-		public void Init(global::ScheduleOne.NPCs.NPC npc)
+		public void Init(NPC npc)
 		{
 		}
 
@@ -53,7 +58,7 @@ namespace ScheduleOne.NPCs.Relation
 		{
 		}
 
-		public virtual void Unlock(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType type, bool notify = true)
+		public virtual void Unlock(EUnlockType type, bool notify = true)
 		{
 		}
 
@@ -61,7 +66,7 @@ namespace ScheduleOne.NPCs.Relation
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.RelationshipData GetSaveData()
+		public RelationshipData GetSaveData()
 		{
 			return null;
 		}
@@ -81,17 +86,17 @@ namespace ScheduleOne.NPCs.Relation
 			return false;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> GetLockedConnections(bool excludeCustomers = false)
+		public List<NPC> GetLockedConnections(bool excludeCustomers = false)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> GetLockedDealers(bool excludeRecommended)
+		public List<NPC> GetLockedDealers(bool excludeRecommended)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> GetLockedSuppliers()
+		public List<NPC> GetLockedSuppliers()
 		{
 			return null;
 		}

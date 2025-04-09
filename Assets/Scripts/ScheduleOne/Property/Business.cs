@@ -1,23 +1,35 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Money;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.Property
 {
-	public class Business : global::ScheduleOne.Property.Property, global::ScheduleOne.Persistence.ISaveable
+	public class Business : Property, ISaveable
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Business> Businesses;
+		public static List<Business> Businesses;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Business> UnownedBusinesses;
+		public static List<Business> UnownedBusinesses;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Property.Business> OwnedBusinesses;
+		public static List<Business> OwnedBusinesses;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float LaunderCapacity;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Property.LaunderingOperation> LaunderingOperations;
+		public List<LaunderingOperation> LaunderingOperations;
 
-		public static global::System.Action<global::ScheduleOne.Property.LaunderingOperation> onOperationStarted;
+		public static Action<LaunderingOperation> onOperationStarted;
 
-		public static global::System.Action<global::ScheduleOne.Property.LaunderingOperation> onOperationFinished;
+		public static Action<LaunderingOperation> onOperationFinished;
 
-		private global::ScheduleOne.Persistence.Loaders.BusinessLoader loader;
+		private BusinessLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EBusinessAssembly_002DCSharp_002Edll_Excuted;
 
@@ -29,7 +41,7 @@ namespace ScheduleOne.Property
 
 		public new string SaveFileName => null;
 
-		public new global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public new Loader Loader => null;
 
 		public override void Awake()
 		{
@@ -43,11 +55,11 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		protected override void GetNetworth(global::ScheduleOne.Money.MoneyManager.FloatContainer container)
+		protected override void GetNetworth(MoneyManager.FloatContainer container)
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -68,7 +80,7 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.BusinessData businessData, string containerPath)
+		public virtual void Load(BusinessData businessData, string containerPath)
 		{
 		}
 
@@ -76,18 +88,18 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void StartLaunderingOperation(float amount, int minutesSinceStarted = 0)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc]
-		private void ReceiveLaunderingOperation(global::FishNet.Connection.NetworkConnection conn, float amount, int minutesSinceStarted = 0)
+		[TargetRpc]
+		[ObserversRpc]
+		private void ReceiveLaunderingOperation(NetworkConnection conn, float amount, int minutesSinceStarted = 0)
 		{
 		}
 
-		protected void CompleteOperation(global::ScheduleOne.Property.LaunderingOperation op)
+		protected void CompleteOperation(LaunderingOperation op)
 		{
 		}
 
@@ -111,27 +123,27 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		private void RpcReader___Server_StartLaunderingOperation_1481775633(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_StartLaunderingOperation_1481775633(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveLaunderingOperation_1001022388(global::FishNet.Connection.NetworkConnection conn, float amount, int minutesSinceStarted = 0)
+		private void RpcWriter___Target_ReceiveLaunderingOperation_1001022388(NetworkConnection conn, float amount, int minutesSinceStarted = 0)
 		{
 		}
 
-		private void RpcLogic___ReceiveLaunderingOperation_1001022388(global::FishNet.Connection.NetworkConnection conn, float amount, int minutesSinceStarted = 0)
+		private void RpcLogic___ReceiveLaunderingOperation_1001022388(NetworkConnection conn, float amount, int minutesSinceStarted = 0)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveLaunderingOperation_1001022388(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveLaunderingOperation_1001022388(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveLaunderingOperation_1001022388(global::FishNet.Connection.NetworkConnection conn, float amount, int minutesSinceStarted = 0)
+		private void RpcWriter___Observers_ReceiveLaunderingOperation_1001022388(NetworkConnection conn, float amount, int minutesSinceStarted = 0)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveLaunderingOperation_1001022388(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveLaunderingOperation_1001022388(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

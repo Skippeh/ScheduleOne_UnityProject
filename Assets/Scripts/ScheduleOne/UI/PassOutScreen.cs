@@ -1,23 +1,27 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class PassOutScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.PassOutScreen>
+	public class PassOutScreen : Singleton<PassOutScreen>
 	{
 		public const float CASH_LOSS_MIN = 50f;
 
 		public const float CASH_LOSS_MAX = 500f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::UnityEngine.Transform RecoveryPointsContainer;
+		public Transform RecoveryPointsContainer;
 
-		public global::TMPro.TextMeshProUGUI MainLabel;
+		public TextMeshProUGUI MainLabel;
 
-		public global::TMPro.TextMeshProUGUI ContextLabel;
+		public TextMeshProUGUI ContextLabel;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
 		private float cashLoss;
 

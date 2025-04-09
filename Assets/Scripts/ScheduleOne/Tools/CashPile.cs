@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class CashPile : global::UnityEngine.MonoBehaviour
+	public class CashPile : MonoBehaviour
 	{
 		public const float MAX_AMOUNT = 100000f;
 
-		public global::UnityEngine.Transform Container;
+		public Transform Container;
 
-		private global::UnityEngine.Transform[] CashInstances;
+		private Transform[] CashInstances;
 
 		private void Awake()
 		{

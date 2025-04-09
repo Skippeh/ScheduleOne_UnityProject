@@ -1,20 +1,26 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Property
 {
-	public class BusinessManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Property.BusinessManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class BusinessManager : Singleton<BusinessManager>, IBaseSaveable, ISaveable
 	{
-		private global::ScheduleOne.Persistence.Loaders.BusinessesLoader loader;
+		private BusinessesLoader loader;
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -31,12 +37,12 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public void LoadBusiness(global::ScheduleOne.Persistence.Datas.BusinessData businessData, string containerPath)
+		public void LoadBusiness(BusinessData businessData, string containerPath)
 		{
 		}
 	}

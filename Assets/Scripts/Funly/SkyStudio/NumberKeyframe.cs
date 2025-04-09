@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class NumberKeyframe : global::Funly.SkyStudio.BaseKeyframe
+	[Serializable]
+	public class NumberKeyframe : BaseKeyframe
 	{
 		public float value;
 
@@ -10,7 +12,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public NumberKeyframe(global::Funly.SkyStudio.NumberKeyframe keyframe)
+		public NumberKeyframe(NumberKeyframe keyframe)
 			: base(0f)
 		{
 		}

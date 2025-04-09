@@ -1,24 +1,30 @@
+using System;
+using ScheduleOne.Map;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VehiclePatrolInstance
 	{
-		public global::ScheduleOne.NPCs.Behaviour.VehiclePatrolRoute Route;
+		public VehiclePatrolRoute Route;
 
 		public int StartTime;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public int IntensityRequirement;
 
 		public bool OnlyIfCurfewEnabled;
 
-		private global::ScheduleOne.Police.PoliceOfficer activeOfficer;
+		private PoliceOfficer activeOfficer;
 
 		private int latestStartTime;
 
 		private bool startedThisCycle;
 
-		private global::ScheduleOne.Map.PoliceStation nearestStation => null;
+		private PoliceStation nearestStation => null;
 
 		public void Evaluate()
 		{

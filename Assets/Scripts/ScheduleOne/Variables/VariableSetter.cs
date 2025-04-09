@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Variables
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VariableSetter
 	{
 		public string VariableName;

@@ -1,60 +1,66 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Casino.UI
 {
-	public class RTBInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Casino.UI.RTBInterface>
+	public class RTBInterface : Singleton<RTBInterface>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::ScheduleOne.Casino.UI.CasinoGamePlayerDisplay PlayerDisplay;
+		public CasinoGamePlayerDisplay PlayerDisplay;
 
-		public global::TMPro.TextMeshProUGUI StatusLabel;
+		public TextMeshProUGUI StatusLabel;
 
-		public global::UnityEngine.RectTransform BetContainer;
+		public RectTransform BetContainer;
 
-		public global::TMPro.TextMeshProUGUI BetTitleLabel;
+		public TextMeshProUGUI BetTitleLabel;
 
-		public global::UnityEngine.UI.Slider BetSlider;
+		public Slider BetSlider;
 
-		public global::TMPro.TextMeshProUGUI BetAmount;
+		public TextMeshProUGUI BetAmount;
 
-		public global::UnityEngine.UI.Button ReadyButton;
+		public Button ReadyButton;
 
-		public global::TMPro.TextMeshProUGUI ReadyLabel;
+		public TextMeshProUGUI ReadyLabel;
 
-		public global::TMPro.TextMeshProUGUI WinningsMultiplierLabel;
+		public TextMeshProUGUI WinningsMultiplierLabel;
 
-		[global::UnityEngine.Header("Question and answers")]
-		public global::UnityEngine.RectTransform QuestionContainer;
+		[Header("Question and answers")]
+		public RectTransform QuestionContainer;
 
-		public global::TMPro.TextMeshProUGUI QuestionLabel;
+		public TextMeshProUGUI QuestionLabel;
 
-		public global::UnityEngine.UI.Slider TimerSlider;
+		public Slider TimerSlider;
 
-		public global::UnityEngine.UI.Button[] AnswerButtons;
+		public Button[] AnswerButtons;
 
-		public global::TMPro.TextMeshProUGUI[] AnswerLabels;
+		public TextMeshProUGUI[] AnswerLabels;
 
-		public global::UnityEngine.UI.Button ForfeitButton;
+		public Button ForfeitButton;
 
-		public global::TMPro.TextMeshProUGUI ForfeitLabel;
+		public TextMeshProUGUI ForfeitLabel;
 
-		public global::UnityEngine.Animation QuestionContainerAnimation;
+		public Animation QuestionContainerAnimation;
 
-		public global::UnityEngine.AnimationClip QuestionContainerFadeIn;
+		public AnimationClip QuestionContainerFadeIn;
 
-		public global::UnityEngine.AnimationClip QuestionContainerFadeOut;
+		public AnimationClip QuestionContainerFadeOut;
 
-		public global::UnityEngine.CanvasGroup QuestionCanvasGroup;
+		public CanvasGroup QuestionCanvasGroup;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::UnityEngine.Events.UnityEvent onCorrect;
+		public UnityEvent onCorrect;
 
-		public global::UnityEngine.Events.UnityEvent onFinalCorrect;
+		public UnityEvent onFinalCorrect;
 
-		public global::UnityEngine.Events.UnityEvent onIncorrect;
+		public UnityEvent onIncorrect;
 
-		public global::ScheduleOne.Casino.RTBGameController CurrentGame { get; private set; }
+		public RTBGameController CurrentGame { get; private set; }
 
 		protected override void Awake()
 		{
@@ -69,7 +75,7 @@ namespace ScheduleOne.Casino.UI
 			return null;
 		}
 
-		public void Open(global::ScheduleOne.Casino.RTBGameController game)
+		public void Open(RTBGameController game)
 		{
 		}
 

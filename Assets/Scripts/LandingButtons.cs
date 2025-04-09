@@ -1,4 +1,6 @@
-public class LandingButtons : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class LandingButtons : MonoBehaviour
 {
 	public LandingSpotController _landingSpotController;
 

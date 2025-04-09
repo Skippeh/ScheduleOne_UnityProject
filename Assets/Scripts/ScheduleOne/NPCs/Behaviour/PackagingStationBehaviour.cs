@@ -1,16 +1,22 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class PackagingStationBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class PackagingStationBehaviour : Behaviour
 	{
 		public const float BASE_PACKAGING_TIME = 5f;
 
-		private global::UnityEngine.Coroutine packagingRoutine;
+		private Coroutine packagingRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EPackagingStationBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EPackagingStationBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.PackagingStation Station { get; protected set; }
+		public PackagingStation Station { get; protected set; }
 
 		public bool PackagingInProgress { get; protected set; }
 
@@ -42,7 +48,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void AssignStation(global::ScheduleOne.ObjectScripts.PackagingStation station)
+		public void AssignStation(PackagingStation station)
 		{
 		}
 
@@ -55,7 +61,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void BeginPackaging()
 		{
 		}
@@ -64,7 +70,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public bool IsStationReady(global::ScheduleOne.ObjectScripts.PackagingStation station)
+		public bool IsStationReady(PackagingStation station)
 		{
 			return false;
 		}
@@ -89,7 +95,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_BeginPackaging_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginPackaging_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

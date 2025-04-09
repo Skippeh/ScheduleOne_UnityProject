@@ -1,25 +1,27 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Relation
 {
 	public class RelationshipCategory
 	{
-		public static global::UnityEngine.Color32 Hostile_Color;
+		public static Color32 Hostile_Color;
 
-		public static global::UnityEngine.Color32 Unfriendly_Color;
+		public static Color32 Unfriendly_Color;
 
-		public static global::UnityEngine.Color32 Neutral_Color;
+		public static Color32 Neutral_Color;
 
-		public static global::UnityEngine.Color32 Friendly_Color;
+		public static Color32 Friendly_Color;
 
-		public static global::UnityEngine.Color32 Loyal_Color;
+		public static Color32 Loyal_Color;
 
-		public static global::ScheduleOne.NPCs.Relation.ERelationshipCategory GetCategory(float delta)
+		public static ERelationshipCategory GetCategory(float delta)
 		{
-			return default(global::ScheduleOne.NPCs.Relation.ERelationshipCategory);
+			return default(ERelationshipCategory);
 		}
 
-		public static global::UnityEngine.Color32 GetColor(global::ScheduleOne.NPCs.Relation.ERelationshipCategory category)
+		public static Color32 GetColor(ERelationshipCategory category)
 		{
-			return default(global::UnityEngine.Color32);
+			return default(Color32);
 		}
 	}
 }

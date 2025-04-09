@@ -1,3 +1,6 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Persistence
 {
 	public class SaveInfo
@@ -8,17 +11,17 @@ namespace ScheduleOne.Persistence
 
 		public string OrganisationName;
 
-		public global::System.DateTime DateCreated;
+		public DateTime DateCreated;
 
-		public global::System.DateTime DateLastPlayed;
+		public DateTime DateLastPlayed;
 
 		public float Networth;
 
 		public string SaveVersion;
 
-		public global::ScheduleOne.Persistence.Datas.MetaData MetaData;
+		public MetaData MetaData;
 
-		public SaveInfo(string savePath, int saveSlotNumber, string organisationName, global::System.DateTime dateCreated, global::System.DateTime dateLastPlayed, float networth, string saveVersion, global::ScheduleOne.Persistence.Datas.MetaData metaData)
+		public SaveInfo(string savePath, int saveSlotNumber, string organisationName, DateTime dateCreated, DateTime dateLastPlayed, float networth, string saveVersion, MetaData metaData)
 		{
 		}
 	}

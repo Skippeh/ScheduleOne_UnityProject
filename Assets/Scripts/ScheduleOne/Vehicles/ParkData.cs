@@ -1,12 +1,14 @@
+using System;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ParkData
 	{
-		public global::System.Guid lotGUID;
+		public Guid lotGUID;
 
 		public int spotIndex;
 
-		public global::ScheduleOne.Vehicles.EParkingAlignment alignment;
+		public EParkingAlignment alignment;
 	}
 }

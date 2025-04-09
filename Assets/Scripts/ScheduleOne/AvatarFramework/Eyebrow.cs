@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	public class Eyebrow : global::UnityEngine.MonoBehaviour
+	public class Eyebrow : MonoBehaviour
 	{
 		public enum ESide
 		{
@@ -10,32 +12,32 @@ namespace ScheduleOne.AvatarFramework
 
 		private const float eyebrowHeightMultiplier = 0.01f;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 EyebrowDefaultScale;
+		[SerializeField]
+		private Vector3 EyebrowDefaultScale;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Vector3 EyebrowDefaultLocalPos;
+		[SerializeField]
+		private Vector3 EyebrowDefaultLocalPos;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.AvatarFramework.Eyebrow.ESide Side;
+		[SerializeField]
+		protected ESide Side;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform Model;
+		[SerializeField]
+		protected Transform Model;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer Rend;
+		[SerializeField]
+		protected MeshRenderer Rend;
 
-		[global::UnityEngine.Header("Eyebrow Data - Readonly")]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Color col;
+		[Header("Eyebrow Data - Readonly")]
+		[SerializeField]
+		private Color col;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float scale;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float thickness;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float restingAngle;
 
 		public void SetScale(float _scale)
@@ -54,7 +56,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetColor(global::UnityEngine.Color _col)
+		public void SetColor(Color _col)
 		{
 		}
 	}

@@ -1,10 +1,14 @@
+using ScheduleOne.NPCs;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class AssignedWorkerDisplay : global::UnityEngine.MonoBehaviour
+	public class AssignedWorkerDisplay : MonoBehaviour
 	{
-		public global::UnityEngine.UI.Image Icon;
+		public Image Icon;
 
-		public void Set(global::ScheduleOne.NPCs.NPC npc)
+		public void Set(NPC npc)
 		{
 		}
 	}

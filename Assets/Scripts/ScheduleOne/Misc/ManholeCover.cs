@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class ManholeCover : global::UnityEngine.MonoBehaviour
+	public class ManholeCover : MonoBehaviour
 	{
-		public global::UnityEngine.ParticleSystem SteamParticles;
+		public ParticleSystem SteamParticles;
 
-		public global::UnityEngine.Gradient SteamColor;
+		public Gradient SteamColor;
 
-		public global::UnityEngine.AnimationCurve SteamAlpha;
+		public AnimationCurve SteamAlpha;
 
 		private void Start()
 		{

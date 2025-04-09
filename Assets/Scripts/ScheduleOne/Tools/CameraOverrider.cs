@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class CameraOverrider : global::UnityEngine.MonoBehaviour
+	public class CameraOverrider : MonoBehaviour
 	{
 		public float FOV;
 

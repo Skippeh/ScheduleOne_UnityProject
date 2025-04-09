@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace VLB_Samples
 {
-	public class FeaturesNotSupportedMessage : global::UnityEngine.MonoBehaviour
+	public class FeaturesNotSupportedMessage : MonoBehaviour
 	{
 		private void Start()
 		{

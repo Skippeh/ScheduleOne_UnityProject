@@ -1,42 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class EyeController : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class EyeController : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CBlinkRoutine_003Ed__48 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CBlinkRoutine_003Ed__48 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.AvatarFramework.EyeController _003C_003E4__this;
+			public EyeController _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CBlinkRoutine_003Ed__48(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -45,14 +53,14 @@ namespace ScheduleOne.AvatarFramework
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -61,66 +69,66 @@ namespace ScheduleOne.AvatarFramework
 
 		public bool DEBUG;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		public global::ScheduleOne.AvatarFramework.Eye leftEye;
+		[Header("References")]
+		[SerializeField]
+		public Eye leftEye;
 
-		[global::UnityEngine.SerializeField]
-		public global::ScheduleOne.AvatarFramework.Eye rightEye;
+		[SerializeField]
+		public Eye rightEye;
 
-		[global::UnityEngine.Header("Location Settings")]
-		[global::UnityEngine.Range(0f, 45f)]
-		[global::UnityEngine.SerializeField]
+		[Header("Location Settings")]
+		[Range(0f, 45f)]
+		[SerializeField]
 		protected float eyeSpacing;
 
-		[global::UnityEngine.Range(-1f, 1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(-1f, 1f)]
+		[SerializeField]
 		protected float eyeHeight;
 
-		[global::UnityEngine.Range(0.5f, 1.5f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0.5f, 1.5f)]
+		[SerializeField]
 		protected float eyeSize;
 
-		[global::UnityEngine.Header("Eyelid Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color leftEyeLidColor;
+		[Header("Eyelid Settings")]
+		[SerializeField]
+		protected Color leftEyeLidColor;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color rightEyeLidColor;
+		[SerializeField]
+		protected Color rightEyeLidColor;
 
-		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration LeftRestingEyeState;
+		public Eye.EyeLidConfiguration LeftRestingEyeState;
 
-		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration RightRestingEyeState;
+		public Eye.EyeLidConfiguration RightRestingEyeState;
 
-		[global::UnityEngine.Header("Eyeball Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material eyeBallMaterial;
+		[Header("Eyeball Settings")]
+		[SerializeField]
+		protected Material eyeBallMaterial;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color eyeBallColor;
+		[SerializeField]
+		protected Color eyeBallColor;
 
-		[global::UnityEngine.Header("Pupil State")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Pupil State")]
+		[Range(0f, 1f)]
 		public float PupilDilation;
 
-		[global::UnityEngine.Header("Blinking Settings")]
+		[Header("Blinking Settings")]
 		public bool BlinkingEnabled;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 10f)]
+		[SerializeField]
+		[Range(0f, 10f)]
 		protected float blinkInterval;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 2f)]
+		[SerializeField]
+		[Range(0f, 2f)]
 		protected float blinkIntervalSpread;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0f, 1f)]
+		[SerializeField]
+		[Range(0f, 1f)]
 		protected float blinkDuration;
 
-		private global::ScheduleOne.AvatarFramework.Avatar avatar;
+		private Avatar avatar;
 
-		private global::UnityEngine.Coroutine blinkRoutine;
+		private Coroutine blinkRoutine;
 
 		private float timeUntilNextBlink;
 
@@ -128,9 +136,9 @@ namespace ScheduleOne.AvatarFramework
 
 		private bool eyeLidOverridden;
 
-		private global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration defaultLeftEyeRestingState;
+		private Eye.EyeLidConfiguration defaultLeftEyeRestingState;
 
-		private global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration defaultRightEyeRestingState;
+		private Eye.EyeLidConfiguration defaultRightEyeRestingState;
 
 		private float defaultDilation;
 
@@ -148,16 +156,16 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void ApplySettings()
 		{
 		}
 
-		public void SetEyeballTint(global::UnityEngine.Color col)
+		public void SetEyeballTint(Color col)
 		{
 		}
 
-		public void OverrideEyeballTint(global::UnityEngine.Color col)
+		public void OverrideEyeballTint(Color col)
 		{
 		}
 
@@ -165,7 +173,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void OverrideEyeLids(global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration eyeLidConfiguration)
+		public void OverrideEyeLids(Eye.EyeLidConfiguration eyeLidConfiguration)
 		{
 		}
 
@@ -201,16 +209,16 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetLeftEyeRestingLidState(global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration config)
+		public void SetLeftEyeRestingLidState(Eye.EyeLidConfiguration config)
 		{
 		}
 
-		public void SetRightEyeRestingLidState(global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration config)
+		public void SetRightEyeRestingLidState(Eye.EyeLidConfiguration config)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.EyeController._003CBlinkRoutine_003Ed__48))]
-		private global::System.Collections.IEnumerator BlinkRoutine()
+		[IteratorStateMachine(typeof(_003CBlinkRoutine_003Ed__48))]
+		private IEnumerator BlinkRoutine()
 		{
 			return null;
 		}
@@ -219,7 +227,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void LookAt(global::UnityEngine.Vector3 position, bool instant = false)
+		public void LookAt(Vector3 position, bool instant = false)
 		{
 		}
 	}

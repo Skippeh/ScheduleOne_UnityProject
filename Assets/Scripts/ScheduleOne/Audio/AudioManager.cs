@@ -1,48 +1,53 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Audio
 {
-	public class AudioManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Audio.AudioManager>
+	public class AudioManager : PersistentSingleton<AudioManager>
 	{
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float masterVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float ambientVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float footstepsVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float fxVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float uiVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float musicVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float voiceVolume;
 
-		public global::UnityEngine.Events.UnityEvent onSettingsChanged;
+		public UnityEvent onSettingsChanged;
 
-		[global::UnityEngine.Header("Generic Door Sounds")]
-		public global::ScheduleOne.Audio.AudioSourceController DoorOpen;
+		[Header("Generic Door Sounds")]
+		public AudioSourceController DoorOpen;
 
-		public global::ScheduleOne.Audio.AudioSourceController DoorClose;
+		public AudioSourceController DoorClose;
 
-		[global::UnityEngine.Header("Mixers")]
-		public global::UnityEngine.Audio.AudioMixerGroup MainGameMixer;
+		[Header("Mixers")]
+		public AudioMixerGroup MainGameMixer;
 
-		public global::UnityEngine.Audio.AudioMixerGroup MenuMixer;
+		public AudioMixerGroup MenuMixer;
 
-		public global::UnityEngine.Audio.AudioMixerGroup MusicMixer;
+		public AudioMixerGroup MusicMixer;
 
 		private float currentGameVolume;
 
@@ -52,9 +57,9 @@ namespace ScheduleOne.Audio
 
 		private float gameVolumeMultiplier;
 
-		public global::UnityEngine.Audio.AudioMixerSnapshot DefaultSnapshot;
+		public AudioMixerSnapshot DefaultSnapshot;
 
-		public global::UnityEngine.Audio.AudioMixerSnapshot DistortedSnapshot;
+		public AudioMixerSnapshot DistortedSnapshot;
 
 		public float MasterVolume => 0f;
 
@@ -106,7 +111,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public float GetVolume(global::ScheduleOne.Audio.EAudioType audioType, bool scaled = true)
+		public float GetVolume(EAudioType audioType, bool scaled = true)
 		{
 			return 0f;
 		}
@@ -115,7 +120,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public void SetVolume(global::ScheduleOne.Audio.EAudioType type, float volume)
+		public void SetVolume(EAudioType type, float volume)
 		{
 		}
 	}

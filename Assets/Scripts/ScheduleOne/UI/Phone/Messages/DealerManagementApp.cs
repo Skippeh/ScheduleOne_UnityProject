@@ -1,43 +1,48 @@
+using System.Collections.Generic;
+using ScheduleOne.Economy;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	public class DealerManagementApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.Messages.DealerManagementApp>
+	public class DealerManagementApp : App<DealerManagementApp>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Text NoDealersLabel;
+		[Header("References")]
+		public Text NoDealersLabel;
 
-		public global::UnityEngine.RectTransform Content;
+		public RectTransform Content;
 
-		public global::ScheduleOne.UI.Phone.CustomerSelector CustomerSelector;
+		public CustomerSelector CustomerSelector;
 
-		[global::UnityEngine.Header("Selector")]
-		public global::UnityEngine.UI.Image SelectorImage;
+		[Header("Selector")]
+		public Image SelectorImage;
 
-		public global::UnityEngine.UI.Text SelectorTitle;
+		public Text SelectorTitle;
 
-		public global::UnityEngine.UI.Button BackButton;
+		public Button BackButton;
 
-		public global::UnityEngine.UI.Button NextButton;
+		public Button NextButton;
 
-		[global::UnityEngine.Header("Basic Info")]
-		public global::UnityEngine.UI.Text CashLabel;
+		[Header("Basic Info")]
+		public Text CashLabel;
 
-		public global::UnityEngine.UI.Text CutLabel;
+		public Text CutLabel;
 
-		public global::UnityEngine.UI.Text HomeLabel;
+		public Text HomeLabel;
 
-		[global::UnityEngine.Header("Inventory")]
-		public global::UnityEngine.RectTransform[] InventoryEntries;
+		[Header("Inventory")]
+		public RectTransform[] InventoryEntries;
 
-		[global::UnityEngine.Header("Customers")]
-		public global::UnityEngine.UI.Text CustomerTitleLabel;
+		[Header("Customers")]
+		public Text CustomerTitleLabel;
 
-		public global::UnityEngine.RectTransform[] CustomerEntries;
+		public RectTransform[] CustomerEntries;
 
-		public global::UnityEngine.UI.Button AssignCustomerButton;
+		public Button AssignCustomerButton;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Economy.Dealer> dealers;
+		private List<Dealer> dealers;
 
-		public global::ScheduleOne.Economy.Dealer SelectedDealer { get; private set; }
+		public Dealer SelectedDealer { get; private set; }
 
 		protected override void Awake()
 		{
@@ -55,19 +60,19 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public void SetDisplayedDealer(global::ScheduleOne.Economy.Dealer dealer)
+		public void SetDisplayedDealer(Dealer dealer)
 		{
 		}
 
-		private void AddDealer(global::ScheduleOne.Economy.Dealer dealer)
+		private void AddDealer(Dealer dealer)
 		{
 		}
 
-		private void AddCustomer(global::ScheduleOne.Economy.Customer customer)
+		private void AddCustomer(Customer customer)
 		{
 		}
 
-		private void RemoveCustomer(global::ScheduleOne.Economy.Customer customer)
+		private void RemoveCustomer(Customer customer)
 		{
 		}
 

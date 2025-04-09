@@ -1,25 +1,30 @@
+using ScheduleOne.Construction.Features;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Construction
 {
-	public class FeatureIcon : global::UnityEngine.MonoBehaviour
+	public class FeatureIcon : MonoBehaviour
 	{
-		public static global::ScheduleOne.UI.Construction.FeatureIcon selectedFeatureIcon;
+		public static FeatureIcon selectedFeatureIcon;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform rectTransform;
+		[Header("References")]
+		public RectTransform rectTransform;
 
-		public global::UnityEngine.UI.Image icon;
+		public Image icon;
 
-		public global::TMPro.TextMeshProUGUI text;
+		public TextMeshProUGUI text;
 
-		public global::UnityEngine.UI.Image background;
+		public Image background;
 
 		private bool hovered;
 
-		public global::ScheduleOne.Construction.Features.Feature feature { get; protected set; }
+		public Feature feature { get; protected set; }
 
 		public bool isSelected { get; protected set; }
 
-		public void AssignFeature(global::ScheduleOne.Construction.Features.Feature _feature)
+		public void AssignFeature(Feature _feature)
 		{
 		}
 

@@ -1,10 +1,13 @@
+using ScheduleOne.Clothing;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class ClothingSlotUI : global::ScheduleOne.UI.ItemSlotUI
+	public class ClothingSlotUI : ItemSlotUI
 	{
-		public global::ScheduleOne.Clothing.EClothingSlot SlotType;
+		public EClothingSlot SlotType;
 
-		public global::UnityEngine.UI.Image SlotTypeImage;
+		public Image SlotTypeImage;
 
 		private void Start()
 		{

@@ -1,22 +1,32 @@
+using System.Collections.Generic;
+using FishNet.Object;
+using ScheduleOne.Audio;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Growing
 {
-	public class Plant : global::UnityEngine.MonoBehaviour
+	public class Plant : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform VisualsContainer;
+		[Header("References")]
+		public Transform VisualsContainer;
 
-		public global::ScheduleOne.Growing.PlantGrowthStage[] GrowthStages;
+		public PlantGrowthStage[] GrowthStages;
 
-		public global::UnityEngine.Collider Collider;
+		public Collider Collider;
 
-		public global::ScheduleOne.Audio.AudioSourceController SnipSound;
+		public AudioSourceController SnipSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController DestroySound;
+		public AudioSourceController DestroySound;
 
-		public global::UnityEngine.ParticleSystem FullyGrownParticles;
+		public ParticleSystem FullyGrownParticles;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Growing.SeedDefinition SeedDefinition;
+		[Header("Settings")]
+		public SeedDefinition SeedDefinition;
 
 		public int GrowthTime;
 
@@ -26,28 +36,28 @@ namespace ScheduleOne.Growing
 
 		public string HarvestTarget;
 
-		[global::UnityEngine.Header("Trash")]
-		public global::ScheduleOne.Trash.TrashItem PlantScrapPrefab;
+		[Header("Trash")]
+		public TrashItem PlantScrapPrefab;
 
-		public global::UnityEngine.Events.UnityEvent onGrowthDone;
+		public UnityEvent onGrowthDone;
 
-		[global::UnityEngine.Header("Plant data")]
+		[Header("Plant data")]
 		public float YieldLevel;
 
 		public float QualityLevel;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<int> ActiveHarvestables;
+		[HideInInspector]
+		public List<int> ActiveHarvestables;
 
-		public global::ScheduleOne.ObjectScripts.Pot Pot { get; protected set; }
+		public Pot Pot { get; protected set; }
 
 		public float NormalizedGrowthProgress { get; protected set; }
 
 		public bool IsFullyGrown => false;
 
-		public global::ScheduleOne.Growing.PlantGrowthStage FinalGrowthStage => null;
+		public PlantGrowthStage FinalGrowthStage => null;
 
-		public virtual void Initialize(global::FishNet.Object.NetworkObject pot, float growthProgress = 0f, float yieldLevel = 0f, float qualityLevel = 0f)
+		public virtual void Initialize(NetworkObject pot, float growthProgress = 0f, float yieldLevel = 0f, float qualityLevel = 0f)
 		{
 		}
 
@@ -80,7 +90,7 @@ namespace ScheduleOne.Growing
 		{
 		}
 
-		private global::System.Collections.Generic.List<int> GenerateUniqueIntegers(int min, int max, int count)
+		private List<int> GenerateUniqueIntegers(int min, int max, int count)
 		{
 			return null;
 		}
@@ -89,12 +99,12 @@ namespace ScheduleOne.Growing
 		{
 		}
 
-		public virtual global::ScheduleOne.ItemFramework.ItemInstance GetHarvestedProduct(int quantity = 1)
+		public virtual ItemInstance GetHarvestedProduct(int quantity = 1)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.PlantData GetPlantData()
+		public PlantData GetPlantData()
 		{
 			return null;
 		}

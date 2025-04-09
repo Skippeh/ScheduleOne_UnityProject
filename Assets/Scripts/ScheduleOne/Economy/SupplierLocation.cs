@@ -1,26 +1,33 @@
+using System.Collections.Generic;
+using ScheduleOne.Map;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	public class SupplierLocation : global::UnityEngine.MonoBehaviour
+	public class SupplierLocation : MonoBehaviour
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.SupplierLocation> AllLocations;
+		public static List<SupplierLocation> AllLocations;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string LocationName;
 
 		public string LocationDescription;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform GenericContainer;
+		[Header("References")]
+		public Transform GenericContainer;
 
-		public global::UnityEngine.Transform SupplierStandPoint;
+		public Transform SupplierStandPoint;
 
-		public global::ScheduleOne.Storage.WorldStorageEntity[] DeliveryBays;
+		public WorldStorageEntity[] DeliveryBays;
 
-		private global::ScheduleOne.Economy.SupplierLocationConfiguration[] configs;
+		public POI PoI;
+
+		private SupplierLocationConfiguration[] configs;
 
 		public bool IsOccupied => false;
 
-		public global::ScheduleOne.Economy.Supplier ActiveSupplier { get; private set; }
+		public Supplier ActiveSupplier { get; private set; }
 
 		public void Awake()
 		{
@@ -30,7 +37,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public void SetActiveSupplier(global::ScheduleOne.Economy.Supplier supplier)
+		public void SetActiveSupplier(Supplier supplier)
 		{
 		}
 	}

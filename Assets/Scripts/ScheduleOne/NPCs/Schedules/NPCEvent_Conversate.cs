@@ -1,8 +1,15 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCEvent_Conversate : global::ScheduleOne.NPCs.Schedules.NPCEvent
+	public class NPCEvent_Conversate : NPCEvent
 	{
-		private global::ScheduleOne.VoiceOver.EVOLineType[] ConversationLines;
+		private EVOLineType[] ConversationLines;
 
 		private string[] AnimationTriggers;
 
@@ -10,17 +17,17 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public const float TIME_BEFORE_WAIT_START = 3f;
 
-		public global::ScheduleOne.NPCs.Schedules.ConversationLocation Location;
+		public ConversationLocation Location;
 
 		private bool IsConversating;
 
-		private global::UnityEngine.Coroutine conversateRoutine;
+		private Coroutine conversateRoutine;
 
 		private bool IsWaiting;
 
-		public global::UnityEngine.Events.UnityEvent OnWaitStart;
+		public UnityEvent OnWaitStart;
 
-		public global::UnityEngine.Events.UnityEvent OnWaitEnd;
+		public UnityEvent OnWaitEnd;
 
 		private float timeAtDestination;
 
@@ -30,7 +37,7 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public new string ActionName => null;
 
-		private global::UnityEngine.Transform StandPoint => null;
+		private Transform StandPoint => null;
 
 		public override string GetName()
 		{
@@ -83,26 +90,26 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void StartWait()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void EndWait()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void StartConversate()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void EndConversate()
 		{
 		}
@@ -127,7 +134,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_StartWait_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartWait_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -139,7 +146,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_EndWait_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EndWait_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -151,7 +158,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_StartConversate_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartConversate_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -163,7 +170,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_EndConversate_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EndConversate_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

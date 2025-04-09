@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Peggy : global::ScheduleOne.NPCs.NPC
+	public class Peggy : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EPeggyAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,27 +1,32 @@
+using System.Collections.Generic;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class PlayerDetector : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class PlayerDetector : MonoBehaviour
 	{
 		public const float ACTIVATION_DISTANCE_SQ = 400f;
 
 		public bool DetectPlayerInVehicle;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onPlayerEnter;
+		public UnityEvent<Player> onPlayerEnter;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onPlayerExit;
+		public UnityEvent<Player> onPlayerExit;
 
-		public global::UnityEngine.Events.UnityEvent onLocalPlayerEnter;
+		public UnityEvent onLocalPlayerEnter;
 
-		public global::UnityEngine.Events.UnityEvent onLocalPlayerExit;
+		public UnityEvent onLocalPlayerExit;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> DetectedPlayers;
+		public List<Player> DetectedPlayers;
 
 		private bool ignoreExit;
 
 		private bool collidersEnabled;
 
-		private global::UnityEngine.Collider[] detectionColliders;
+		private Collider[] detectionColliders;
 
 		public bool IgnoreNewDetections { get; protected set; }
 
@@ -41,7 +46,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(Collider other)
 		{
 		}
 
@@ -49,7 +54,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerExit(global::UnityEngine.Collider other)
+		private void OnTriggerExit(Collider other)
 		{
 		}
 

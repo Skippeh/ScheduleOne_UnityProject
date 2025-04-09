@@ -1,26 +1,32 @@
+using System;
+using FishNet.Object;
+using FishNet.Serializing.Helping;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Combat
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Impact
 	{
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::UnityEngine.RaycastHit Hit;
+		[CodegenExclude]
+		public RaycastHit Hit;
 
-		public global::UnityEngine.Vector3 HitPoint;
+		public Vector3 HitPoint;
 
-		public global::UnityEngine.Vector3 ImpactForceDirection;
+		public Vector3 ImpactForceDirection;
 
 		public float ImpactForce;
 
 		public float ImpactDamage;
 
-		public global::ScheduleOne.Combat.EImpactType ImpactType;
+		public EImpactType ImpactType;
 
-		public global::FishNet.Object.NetworkObject ImpactSource;
+		public NetworkObject ImpactSource;
 
 		public int ImpactID;
 
-		public Impact(global::UnityEngine.RaycastHit hit, global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::ScheduleOne.PlayerScripts.Player impactSource, int impactID)
+		public Impact(RaycastHit hit, Vector3 hitPoint, Vector3 impactForceDirection, float impactForce, float impactDamage, EImpactType impactType, Player impactSource, int impactID)
 		{
 		}
 
@@ -28,12 +34,12 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		public static bool IsLethal(global::ScheduleOne.Combat.EImpactType impactType)
+		public static bool IsLethal(EImpactType impactType)
 		{
 			return false;
 		}
 
-		public bool IsPlayerImpact(out global::ScheduleOne.PlayerScripts.Player player)
+		public bool IsPlayerImpact(out Player player)
 		{
 			player = null;
 			return false;

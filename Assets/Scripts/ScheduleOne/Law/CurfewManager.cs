@@ -1,6 +1,16 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Law
 {
-	public class CurfewManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Law.CurfewManager>
+	public class CurfewManager : NetworkSingleton<CurfewManager>
 	{
 		public const int WARNING_TIME = 2030;
 
@@ -8,20 +18,20 @@ namespace ScheduleOne.Law
 
 		public const int CURFEW_END_TIME = 500;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.ObjectScripts.VMSBoard[] VMSBoards;
+		[Header("References")]
+		public VMSBoard[] VMSBoards;
 
-		public global::ScheduleOne.Audio.AudioSourceController CurfewWarningSound;
+		public AudioSourceController CurfewWarningSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController CurfewAlarmSound;
+		public AudioSourceController CurfewAlarmSound;
 
-		public global::UnityEngine.Events.UnityEvent onCurfewEnabled;
+		public UnityEvent onCurfewEnabled;
 
-		public global::UnityEngine.Events.UnityEvent onCurfewDisabled;
+		public UnityEvent onCurfewDisabled;
 
-		public global::UnityEngine.Events.UnityEvent onCurfewHint;
+		public UnityEvent onCurfewHint;
 
-		public global::UnityEngine.Events.UnityEvent onCurfewWarning;
+		public UnityEvent onCurfewWarning;
 
 		private bool warningPlayed;
 
@@ -39,17 +49,17 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		public void Enable(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc]
+		[TargetRpc]
+		public void Enable(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		public void Disable()
 		{
 		}
@@ -70,23 +80,23 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		private void RpcWriter___Observers_Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Enable_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Enable_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Enable_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Enable_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Enable_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Enable_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -98,7 +108,7 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		private void RpcReader___Observers_Disable_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Disable_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

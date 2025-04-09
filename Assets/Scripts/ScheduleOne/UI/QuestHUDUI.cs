@@ -1,25 +1,31 @@
+using System;
+using ScheduleOne.Quests;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class QuestHUDUI : global::UnityEngine.MonoBehaviour
+	public class QuestHUDUI : MonoBehaviour
 	{
 		public string CriticalTimeColor;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform EntryContainer;
+		[Header("References")]
+		public RectTransform EntryContainer;
 
-		public global::TMPro.TextMeshProUGUI MainLabel;
+		public TextMeshProUGUI MainLabel;
 
-		public global::UnityEngine.UI.VerticalLayoutGroup hudUILayout;
+		public VerticalLayoutGroup hudUILayout;
 
-		public global::UnityEngine.Animation Animation;
+		public Animation Animation;
 
-		public global::UnityEngine.RectTransform Shade;
+		public RectTransform Shade;
 
-		public global::System.Action onUpdateUI;
+		public Action onUpdateUI;
 
-		public global::ScheduleOne.Quests.Quest Quest { get; private set; }
+		public Quest Quest { get; private set; }
 
-		public void Initialize(global::ScheduleOne.Quests.Quest quest)
+		public void Initialize(Quest quest)
 		{
 		}
 
@@ -51,7 +57,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void EntryEnded(global::ScheduleOne.Quests.EQuestState endState)
+		private void EntryEnded(EQuestState endState)
 		{
 		}
 

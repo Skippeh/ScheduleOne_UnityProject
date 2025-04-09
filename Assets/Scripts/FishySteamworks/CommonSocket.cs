@@ -1,29 +1,35 @@
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using FishNet.Transporting;
+using Steamworks;
+
 namespace FishySteamworks
 {
 	public abstract class CommonSocket
 	{
-		private global::FishNet.Transporting.LocalConnectionState _connectionState;
+		private LocalConnectionState _connectionState;
 
 		protected bool PeerToPeer;
 
-		protected global::FishNet.Transporting.Transport Transport;
+		protected Transport Transport;
 
-		protected global::System.IntPtr[] MessagePointers;
+		protected IntPtr[] MessagePointers;
 
 		protected byte[] InboundBuffer;
 
 		protected const int MAX_MESSAGES = 256;
 
-		internal global::FishNet.Transporting.LocalConnectionState GetLocalConnectionState()
+		internal LocalConnectionState GetLocalConnectionState()
 		{
-			return default(global::FishNet.Transporting.LocalConnectionState);
+			return default(LocalConnectionState);
 		}
 
-		protected virtual void SetLocalConnectionState(global::FishNet.Transporting.LocalConnectionState connectionState, bool server)
+		protected virtual void SetLocalConnectionState(LocalConnectionState connectionState, bool server)
 		{
 		}
 
-		internal virtual void Initialize(global::FishNet.Transporting.Transport t)
+		internal virtual void Initialize(Transport t)
 		{
 		}
 
@@ -32,22 +38,22 @@ namespace FishySteamworks
 			return null;
 		}
 
-		protected global::Steamworks.EResult Send(global::Steamworks.HSteamNetConnection steamConnection, global::System.ArraySegment<byte> segment, byte channelId)
+		protected EResult Send(HSteamNetConnection steamConnection, ArraySegment<byte> segment, byte channelId)
 		{
-			return default(global::Steamworks.EResult);
+			return default(EResult);
 		}
 
-		internal void ClearQueue(global::System.Collections.Concurrent.ConcurrentQueue<global::FishySteamworks.LocalPacket> queue)
-		{
-		}
-
-		internal void ClearQueue(global::System.Collections.Generic.Queue<global::FishySteamworks.LocalPacket> queue)
+		internal void ClearQueue(ConcurrentQueue<LocalPacket> queue)
 		{
 		}
 
-		protected void GetMessage(global::System.IntPtr ptr, byte[] buffer, out global::System.ArraySegment<byte> segment, out byte channel)
+		internal void ClearQueue(Queue<LocalPacket> queue)
 		{
-			segment = default(global::System.ArraySegment<byte>);
+		}
+
+		protected void GetMessage(IntPtr ptr, byte[] buffer, out ArraySegment<byte> segment, out byte channel)
+		{
+			segment = default(ArraySegment<byte>);
 			channel = default(byte);
 		}
 	}

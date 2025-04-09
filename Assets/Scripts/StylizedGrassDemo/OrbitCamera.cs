@@ -1,11 +1,13 @@
+using UnityEngine;
+
 namespace StylizedGrassDemo
 {
-	public class OrbitCamera : global::UnityEngine.MonoBehaviour
+	public class OrbitCamera : MonoBehaviour
 	{
-		[global::UnityEngine.Space]
-		public global::UnityEngine.Transform pivot;
+		[Space]
+		public Transform pivot;
 
-		[global::UnityEngine.Space]
+		[Space]
 		public bool enableMouse;
 
 		public float idleRotationSpeed;
@@ -16,7 +18,7 @@ namespace StylizedGrassDemo
 
 		public float scrollSmoothSpeed;
 
-		private global::UnityEngine.Transform cam;
+		private Transform cam;
 
 		private float cameraRotSide;
 

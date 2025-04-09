@@ -1,6 +1,12 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne
 {
-	public class Console : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Console>
+	public class Console : Singleton<Console>
 	{
 		public abstract class ConsoleCommand
 		{
@@ -10,10 +16,10 @@ namespace ScheduleOne
 
 			public abstract string ExampleUsage { get; }
 
-			public abstract void Execute(global::System.Collections.Generic.List<string> args);
+			public abstract void Execute(List<string> args);
 		}
 
-		public class SetTimeCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class SetTimeCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -21,12 +27,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SpawnVehicleCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class SpawnVehicleCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -34,12 +40,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class AddItemToInventoryCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class AddItemToInventoryCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -47,12 +53,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ClearInventoryCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class ClearInventoryCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -60,12 +66,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ChangeCashCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class ChangeCashCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -73,12 +79,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ChangeOnlineBalanceCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class ChangeOnlineBalanceCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -86,12 +92,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetMoveSpeedCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class SetMoveSpeedCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -99,12 +105,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetJumpMultiplier : global::ScheduleOne.Console.ConsoleCommand
+		public class SetJumpMultiplier : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -112,12 +118,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetPropertyOwned : global::ScheduleOne.Console.ConsoleCommand
+		public class SetPropertyOwned : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -125,12 +131,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Teleport : global::ScheduleOne.Console.ConsoleCommand
+		public class Teleport : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -138,12 +144,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class PackageProduct : global::ScheduleOne.Console.ConsoleCommand
+		public class PackageProduct : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -151,12 +157,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetStaminaReserve : global::ScheduleOne.Console.ConsoleCommand
+		public class SetStaminaReserve : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -164,12 +170,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class RaisedWanted : global::ScheduleOne.Console.ConsoleCommand
+		public class RaisedWanted : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -177,12 +183,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class LowerWanted : global::ScheduleOne.Console.ConsoleCommand
+		public class LowerWanted : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -190,12 +196,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ClearWanted : global::ScheduleOne.Console.ConsoleCommand
+		public class ClearWanted : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -203,12 +209,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetHealth : global::ScheduleOne.Console.ConsoleCommand
+		public class SetHealth : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -216,12 +222,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetEnergy : global::ScheduleOne.Console.ConsoleCommand
+		public class SetEnergy : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -229,12 +235,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class FreeCamCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class FreeCamCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -242,12 +248,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Save : global::ScheduleOne.Console.ConsoleCommand
+		public class Save : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -255,12 +261,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetTimeScale : global::ScheduleOne.Console.ConsoleCommand
+		public class SetTimeScale : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -268,12 +274,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetVariableValue : global::ScheduleOne.Console.ConsoleCommand
+		public class SetVariableValue : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -281,12 +287,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetQuestState : global::ScheduleOne.Console.ConsoleCommand
+		public class SetQuestState : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -294,12 +300,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetQuestEntryState : global::ScheduleOne.Console.ConsoleCommand
+		public class SetQuestEntryState : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -307,12 +313,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetEmotion : global::ScheduleOne.Console.ConsoleCommand
+		public class SetEmotion : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -320,12 +326,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetUnlocked : global::ScheduleOne.Console.ConsoleCommand
+		public class SetUnlocked : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -333,12 +339,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetRelationship : global::ScheduleOne.Console.ConsoleCommand
+		public class SetRelationship : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -346,12 +352,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class AddEmployeeCommand : global::ScheduleOne.Console.ConsoleCommand
+		public class AddEmployeeCommand : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -359,12 +365,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetDiscovered : global::ScheduleOne.Console.ConsoleCommand
+		public class SetDiscovered : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -372,12 +378,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class GrowPlants : global::ScheduleOne.Console.ConsoleCommand
+		public class GrowPlants : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -385,12 +391,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetLawIntensity : global::ScheduleOne.Console.ConsoleCommand
+		public class SetLawIntensity : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -398,12 +404,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class SetQuality : global::ScheduleOne.Console.ConsoleCommand
+		public class SetQuality : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -411,12 +417,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Bind : global::ScheduleOne.Console.ConsoleCommand
+		public class Bind : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -424,12 +430,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Unbind : global::ScheduleOne.Console.ConsoleCommand
+		public class Unbind : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -437,12 +443,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ClearBinds : global::ScheduleOne.Console.ConsoleCommand
+		public class ClearBinds : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -450,12 +456,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class HideUI : global::ScheduleOne.Console.ConsoleCommand
+		public class HideUI : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -463,12 +469,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class GiveXP : global::ScheduleOne.Console.ConsoleCommand
+		public class GiveXP : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -476,12 +482,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Disable : global::ScheduleOne.Console.ConsoleCommand
+		public class Disable : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -489,12 +495,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class Enable : global::ScheduleOne.Console.ConsoleCommand
+		public class Enable : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -502,12 +508,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class EndTutorial : global::ScheduleOne.Console.ConsoleCommand
+		public class EndTutorial : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -515,12 +521,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class DisableNPCAsset : global::ScheduleOne.Console.ConsoleCommand
+		public class DisableNPCAsset : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -528,12 +534,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ShowFPS : global::ScheduleOne.Console.ConsoleCommand
+		public class ShowFPS : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -541,12 +547,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class HideFPS : global::ScheduleOne.Console.ConsoleCommand
+		public class HideFPS : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -554,12 +560,12 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		public class ClearTrash : global::ScheduleOne.Console.ConsoleCommand
+		public class ClearTrash : ConsoleCommand
 		{
 			public override string CommandWord => null;
 
@@ -567,33 +573,33 @@ namespace ScheduleOne
 
 			public override string ExampleUsage => null;
 
-			public override void Execute(global::System.Collections.Generic.List<string> args)
+			public override void Execute(List<string> args)
 			{
 			}
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class LabelledGameObject
 		{
 			public string Label;
 
-			public global::UnityEngine.GameObject GameObject;
+			public GameObject GameObject;
 		}
 
-		public global::UnityEngine.Transform TeleportPointsContainer;
+		public Transform TeleportPointsContainer;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Console.LabelledGameObject> LabelledGameObjectList;
+		public List<LabelledGameObject> LabelledGameObjectList;
 
-		[global::UnityEngine.Tooltip("Commands that run on startup (Editor only)")]
-		public global::System.Collections.Generic.List<string> startupCommands;
+		[Tooltip("Commands that run on startup (Editor only)")]
+		public List<string> startupCommands;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Console.ConsoleCommand> Commands;
+		public static List<ConsoleCommand> Commands;
 
-		private static global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Console.ConsoleCommand> commands;
+		private static Dictionary<string, ConsoleCommand> commands;
 
-		private global::System.Collections.Generic.Dictionary<global::UnityEngine.KeyCode, string> keyBindings;
+		private Dictionary<KeyCode, string> keyBindings;
 
-		private static global::ScheduleOne.PlayerScripts.Player player => null;
+		private static Player player => null;
 
 		private static void LogCommandError(string error)
 		{
@@ -611,22 +617,22 @@ namespace ScheduleOne
 		{
 		}
 
-		[global::UnityEngine.HideInCallstack]
-		public static void Log(object message, global::UnityEngine.Object context = null)
+		[HideInCallstack]
+		public static void Log(object message, UnityEngine.Object context = null)
 		{
 		}
 
-		[global::UnityEngine.HideInCallstack]
-		public static void LogWarning(object message, global::UnityEngine.Object context = null)
+		[HideInCallstack]
+		public static void LogWarning(object message, UnityEngine.Object context = null)
 		{
 		}
 
-		[global::UnityEngine.HideInCallstack]
-		public static void LogError(object message, global::UnityEngine.Object context = null)
+		[HideInCallstack]
+		public static void LogError(object message, UnityEngine.Object context = null)
 		{
 		}
 
-		public static void SubmitCommand(global::System.Collections.Generic.List<string> args)
+		public static void SubmitCommand(List<string> args)
 		{
 		}
 
@@ -634,11 +640,11 @@ namespace ScheduleOne
 		{
 		}
 
-		public void AddBinding(global::UnityEngine.KeyCode key, string command)
+		public void AddBinding(KeyCode key, string command)
 		{
 		}
 
-		public void RemoveBinding(global::UnityEngine.KeyCode key)
+		public void RemoveBinding(KeyCode key)
 		{
 		}
 

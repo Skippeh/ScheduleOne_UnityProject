@@ -1,10 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_Fixer : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_Fixer : DialogueController
 	{
-		private global::ScheduleOne.Employees.EEmployeeType selectedEmployeeType;
+		private EEmployeeType selectedEmployeeType;
 
-		private global::ScheduleOne.Property.Property selectedProperty;
+		private ScheduleOne.Property.Property selectedProperty;
 
 		private bool lastConfirmationWasInitial;
 
@@ -12,7 +15,7 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		public override void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		public override void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 

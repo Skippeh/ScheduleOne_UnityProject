@@ -1,22 +1,28 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Map;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class RegionUnlockedCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.RegionUnlockedCanvas>, global::ScheduleOne.UI.IPostSleepEvent
+	public class RegionUnlockedCanvas : Singleton<RegionUnlockedCanvas>, IPostSleepEvent
 	{
-		public global::UnityEngine.Animation OpenCloseAnim;
+		public Animation OpenCloseAnim;
 
-		public global::TMPro.TextMeshProUGUI RegionLabel;
+		public TextMeshProUGUI RegionLabel;
 
-		public global::TMPro.TextMeshProUGUI RegionDescription;
+		public TextMeshProUGUI RegionDescription;
 
-		public global::UnityEngine.UI.Image RegionImage;
+		public Image RegionImage;
 
-		private global::ScheduleOne.Map.EMapRegion region;
+		private EMapRegion region;
 
 		public bool IsRunning { get; private set; }
 
 		public int Order { get; private set; }
 
-		public void QueueUnlocked(global::ScheduleOne.Map.EMapRegion _region)
+		public void QueueUnlocked(EMapRegion _region)
 		{
 		}
 

@@ -1,10 +1,13 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Lighting
 {
-	public class LightExposureNode : global::UnityEngine.MonoBehaviour
+	public class LightExposureNode : MonoBehaviour
 	{
 		public float ambientExposure;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Lighting.UsableLightSource, float> sources;
+		public Dictionary<UsableLightSource, float> sources;
 
 		public float GetTotalExposure(out float growSpeedMultiplier)
 		{
@@ -12,11 +15,11 @@ namespace ScheduleOne.Lighting
 			return 0f;
 		}
 
-		public void AddSource(global::ScheduleOne.Lighting.UsableLightSource source, float lightAmount)
+		public void AddSource(UsableLightSource source, float lightAmount)
 		{
 		}
 
-		public void RemoveSource(global::ScheduleOne.Lighting.UsableLightSource source)
+		public void RemoveSource(UsableLightSource source)
 		{
 		}
 

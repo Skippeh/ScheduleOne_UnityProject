@@ -1,10 +1,13 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class SettingsDropdown : global::UnityEngine.MonoBehaviour
+	public class SettingsDropdown : MonoBehaviour
 	{
 		public string[] DefaultOptions;
 
-		protected global::TMPro.TMP_Dropdown dropdown;
+		protected TMP_Dropdown dropdown;
 
 		protected virtual void Awake()
 		{

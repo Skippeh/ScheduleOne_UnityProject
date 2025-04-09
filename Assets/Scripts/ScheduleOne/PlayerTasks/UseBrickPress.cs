@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Packaging;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class UseBrickPress : global::ScheduleOne.PlayerTasks.Task
+	public class UseBrickPress : Task
 	{
 		public enum EStep
 		{
@@ -11,19 +16,19 @@ namespace ScheduleOne.PlayerTasks
 
 		public const float PRODUCT_SCALE = 0.75f;
 
-		protected global::ScheduleOne.PlayerTasks.UseBrickPress.EStep currentStep;
+		protected EStep currentStep;
 
-		protected global::ScheduleOne.ObjectScripts.BrickPress press;
+		protected BrickPress press;
 
-		protected global::ScheduleOne.Product.ProductItemInstance product;
+		protected ProductItemInstance product;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> products;
+		protected List<FunctionalProduct> products;
 
-		protected global::ScheduleOne.PlayerTasks.Draggable container;
+		protected Draggable container;
 
 		public override string TaskName { get; protected set; }
 
-		public UseBrickPress(global::ScheduleOne.ObjectScripts.BrickPress _press, global::ScheduleOne.Product.ProductItemInstance _product)
+		public UseBrickPress(BrickPress _press, ProductItemInstance _product)
 		{
 		}
 

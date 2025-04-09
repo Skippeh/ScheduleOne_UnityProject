@@ -1,17 +1,22 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "PropertyItemDefinition", menuName = "ScriptableObjects/PropertyItemDefinition", order = 1)]
-	public class PropertyItemDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "PropertyItemDefinition", menuName = "ScriptableObjects/PropertyItemDefinition", order = 1)]
+	public class PropertyItemDefinition : StorableItemDefinition
 	{
-		[global::UnityEngine.Header("Properties")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> Properties;
+		[Header("Properties")]
+		public List<ScheduleOne.Properties.Property> Properties;
 
-		public virtual void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public virtual void Initialize(List<ScheduleOne.Properties.Property> properties)
 		{
 		}
 
-		public bool HasProperty(global::ScheduleOne.Properties.Property property)
+		public bool HasProperty(ScheduleOne.Properties.Property property)
 		{
 			return false;
 		}

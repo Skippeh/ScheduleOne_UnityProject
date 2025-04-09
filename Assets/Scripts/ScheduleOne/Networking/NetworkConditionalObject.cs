@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Networking
 {
-	public class NetworkConditionalObject : global::UnityEngine.MonoBehaviour
+	public class NetworkConditionalObject : MonoBehaviour
 	{
 		public enum ECondition
 		{
@@ -8,7 +10,7 @@ namespace ScheduleOne.Networking
 			HostOnly = 1
 		}
 
-		public global::ScheduleOne.Networking.NetworkConditionalObject.ECondition condition;
+		public ECondition condition;
 
 		private void Awake()
 		{

@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.Clothing;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorColor : global::ScheduleOne.UI.CharacterCreator.CharacterCreatorField<global::UnityEngine.Color>
+	public class CharacterCreatorColor : CharacterCreatorField<Color>
 	{
-		public static global::ScheduleOne.Clothing.EClothingColor[] ClothingColorsToUse;
+		public static EClothingColor[] ClothingColorsToUse;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform OptionContainer;
+		[Header("References")]
+		public RectTransform OptionContainer;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool UseClothingColors;
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Color> Colors;
+		public List<Color> Colors;
 
-		public global::UnityEngine.GameObject OptionPrefab;
+		public GameObject OptionPrefab;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.UI.Button> optionButtons;
+		private List<Button> optionButtons;
 
-		private global::UnityEngine.UI.Button selectedButton;
+		private Button selectedButton;
 
 		protected override void Awake()
 		{
@@ -26,7 +31,7 @@ namespace ScheduleOne.UI.CharacterCreator
 		{
 		}
 
-		public void OptionClicked(global::UnityEngine.Color color)
+		public void OptionClicked(Color color)
 		{
 		}
 	}

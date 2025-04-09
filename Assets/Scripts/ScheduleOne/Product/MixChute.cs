@@ -1,11 +1,14 @@
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	public class MixChute : global::UnityEngine.MonoBehaviour
+	public class MixChute : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Animation DoorAnim;
+		public Animation DoorAnim;
 
 		private bool isDoorOpen;
 

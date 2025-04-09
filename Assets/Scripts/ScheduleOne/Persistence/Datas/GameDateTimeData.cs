@@ -1,7 +1,10 @@
+using System;
+using ScheduleOne.GameTime;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class GameDateTimeData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class GameDateTimeData : SaveData
 	{
 		public int ElapsedDays;
 
@@ -11,7 +14,7 @@ namespace ScheduleOne.Persistence.Datas
 		{
 		}
 
-		public GameDateTimeData(global::ScheduleOne.GameTime.GameDateTime gameDateTime)
+		public GameDateTimeData(GameDateTime gameDateTime)
 		{
 		}
 	}

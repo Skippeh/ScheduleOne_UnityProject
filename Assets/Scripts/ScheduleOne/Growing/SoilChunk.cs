@@ -1,18 +1,21 @@
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class SoilChunk : global::ScheduleOne.PlayerTasks.Clickable
+	public class SoilChunk : Clickable
 	{
-		public global::UnityEngine.Transform EndTransform;
+		public Transform EndTransform;
 
 		public float LerpTime;
 
-		private global::UnityEngine.Vector3 localPos_Start;
+		private Vector3 localPos_Start;
 
-		private global::UnityEngine.Vector3 localEulerAngles_Start;
+		private Vector3 localEulerAngles_Start;
 
-		private global::UnityEngine.Vector3 localScale_Start;
+		private Vector3 localScale_Start;
 
-		private global::UnityEngine.Coroutine lerpRoutine;
+		private Coroutine lerpRoutine;
 
 		public float CurrentLerp { get; protected set; }
 
@@ -24,7 +27,7 @@ namespace ScheduleOne.Growing
 		{
 		}
 
-		public override void StartClick(global::UnityEngine.RaycastHit hit)
+		public override void StartClick(RaycastHit hit)
 		{
 		}
 

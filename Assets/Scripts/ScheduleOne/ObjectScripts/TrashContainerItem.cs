@@ -1,28 +1,38 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.ObjectScripts
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Trash.TrashContainer))]
-	public class TrashContainerItem : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.Management.ITransitEntity
+	[RequireComponent(typeof(TrashContainer))]
+	public class TrashContainerItem : GridItem, ITransitEntity
 	{
 		public const float MAX_VERTICAL_OFFSET = 2f;
 
-		public global::ScheduleOne.Trash.TrashContainer Container;
+		public TrashContainer Container;
 
-		public global::UnityEngine.ParticleSystem Flies;
+		public ParticleSystem Flies;
 
-		public global::ScheduleOne.Audio.AudioSourceController TrashAddedSound;
+		public AudioSourceController TrashAddedSound;
 
-		public global::UnityEngine.Rendering.Universal.DecalProjector PickupAreaProjector;
+		public DecalProjector PickupAreaProjector;
 
-		public global::UnityEngine.Transform[] accessPoints;
+		public Transform[] accessPoints;
 
-		[global::UnityEngine.Header("Pickup settings")]
+		[Header("Pickup settings")]
 		public bool UsableByCleaners;
 
 		public float PickupRadius;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> TrashItemsInRadius;
+		public List<TrashItem> TrashItemsInRadius;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashBag> TrashBagsInRadius;
+		public List<TrashBag> TrashBagsInRadius;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ETrashContainerItemAssembly_002DCSharp_002Edll_Excuted;
 
@@ -30,13 +40,13 @@ namespace ScheduleOne.ObjectScripts
 
 		public string Name => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> InputSlots { get; set; }
+		public List<ItemSlot> InputSlots { get; set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> OutputSlots { get; set; }
+		public List<ItemSlot> OutputSlots { get; set; }
 
-		public global::UnityEngine.Transform LinkOrigin => null;
+		public Transform LinkOrigin => null;
 
-		public global::UnityEngine.Transform[] AccessPoints => null;
+		public Transform[] AccessPoints => null;
 
 		public bool Selectable { get; }
 
@@ -50,7 +60,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void InitializeGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		public override void InitializeGridItem(ItemInstance instance, Grid grid, Vector2 originCoordinate, int rotation, string GUID)
 		{
 		}
 
@@ -73,7 +83,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void ShowOutline(global::UnityEngine.Color color)
+		public override void ShowOutline(Color color)
 		{
 		}
 
@@ -85,28 +95,28 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void AddTrashToRadius(global::ScheduleOne.Trash.TrashItem trashItem)
+		private void AddTrashToRadius(TrashItem trashItem)
 		{
 		}
 
-		private void AddTrashBagToRadius(global::ScheduleOne.Trash.TrashBag trashBag)
+		private void AddTrashBagToRadius(TrashBag trashBag)
 		{
 		}
 
-		private void RemoveTrashItemFromRadius(global::ScheduleOne.Trash.TrashItem trashItem)
+		private void RemoveTrashItemFromRadius(TrashItem trashItem)
 		{
 		}
 
-		private void RemoveTrashBagFromRadius(global::ScheduleOne.Trash.TrashBag trashBag)
+		private void RemoveTrashBagFromRadius(TrashBag trashBag)
 		{
 		}
 
-		private bool IsTrashValid(global::ScheduleOne.Trash.TrashItem trashItem)
+		private bool IsTrashValid(TrashItem trashItem)
 		{
 			return false;
 		}
 
-		public bool IsPointInRadius(global::UnityEngine.Vector3 point)
+		public bool IsPointInRadius(Vector3 point)
 		{
 			return false;
 		}

@@ -1,14 +1,17 @@
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Trash
 {
-	public class TrashBag : global::ScheduleOne.Trash.TrashItem
+	public class TrashBag : TrashItem
 	{
-		public global::ScheduleOne.Trash.TrashContent Content { get; private set; }
+		public TrashContent Content { get; private set; }
 
-		public void LoadContent(global::ScheduleOne.Persistence.TrashContentData data)
+		public void LoadContent(TrashContentData data)
 		{
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.TrashItemData GetData()
+		public override TrashItemData GetData()
 		{
 			return null;
 		}

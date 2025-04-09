@@ -2,7 +2,7 @@ namespace ScheduleOne.DevUtilities
 {
 	public class ExitAction
 	{
-		public global::ScheduleOne.DevUtilities.ExitType exitType;
+		public ExitType exitType;
 
 		public bool used;
 	}

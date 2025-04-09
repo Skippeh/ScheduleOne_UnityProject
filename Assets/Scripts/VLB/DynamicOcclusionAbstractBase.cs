@@ -1,9 +1,14 @@
+using System;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace VLB
 {
-	[global::UnityEngine.AddComponentMenu("")]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamSD))]
-	public abstract class DynamicOcclusionAbstractBase : global::UnityEngine.MonoBehaviour
+	[AddComponentMenu("")]
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(VolumetricLightBeamSD))]
+	public abstract class DynamicOcclusionAbstractBase : MonoBehaviour
 	{
 		protected enum ProcessOcclusionSource
 		{
@@ -15,30 +20,30 @@ namespace VLB
 
 		public const string ClassName = "DynamicOcclusionAbstractBase";
 
-		public global::VLB.DynamicOcclusionUpdateRate updateRate;
+		public DynamicOcclusionUpdateRate updateRate;
 
-		[global::UnityEngine.Serialization.FormerlySerializedAs("waitFrameCount")]
+		[FormerlySerializedAs("waitFrameCount")]
 		public int waitXFrames;
 
 		public static bool _INTERNAL_ApplyRandomFrameOffset;
 
-		private global::VLB.TransformUtils.Packed m_TransformPacked;
+		private TransformUtils.Packed m_TransformPacked;
 
 		private int m_LastFrameRendered;
 
-		protected global::VLB.VolumetricLightBeamSD m_Master;
+		protected VolumetricLightBeamSD m_Master;
 
-		protected global::VLB.MaterialModifier.Callback m_MaterialModifierCallbackCached;
+		protected MaterialModifier.Callback m_MaterialModifierCallbackCached;
 
 		public int _INTERNAL_LastFrameRendered => 0;
 
-		public event global::System.Action onOcclusionProcessed
+		public event Action onOcclusionProcessed
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
@@ -48,17 +53,17 @@ namespace VLB
 		{
 		}
 
-		protected void ProcessOcclusion(global::VLB.DynamicOcclusionAbstractBase.ProcessOcclusionSource source)
+		protected void ProcessOcclusion(ProcessOcclusionSource source)
 		{
 		}
 
 		protected abstract string GetShaderKeyword();
 
-		protected abstract global::VLB.MaterialManager.SD.DynamicOcclusion GetDynamicOcclusionMode();
+		protected abstract MaterialManager.SD.DynamicOcclusion GetDynamicOcclusionMode();
 
-		protected abstract bool OnProcessOcclusion(global::VLB.DynamicOcclusionAbstractBase.ProcessOcclusionSource source);
+		protected abstract bool OnProcessOcclusion(ProcessOcclusionSource source);
 
-		protected abstract void OnModifyMaterialCallback(global::VLB.MaterialModifier.Interface owner);
+		protected abstract void OnModifyMaterialCallback(MaterialModifier.Interface owner);
 
 		protected abstract void OnEnablePostValidate();
 
@@ -82,7 +87,7 @@ namespace VLB
 		{
 		}
 
-		private void OnWillCameraRender(global::UnityEngine.Camera cam)
+		private void OnWillCameraRender(Camera cam)
 		{
 		}
 

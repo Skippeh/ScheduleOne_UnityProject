@@ -1,10 +1,13 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class VehicleSaleSign : global::UnityEngine.MonoBehaviour
+	public class VehicleSaleSign : MonoBehaviour
 	{
-		public global::TMPro.TextMeshPro NameLabel;
+		public TextMeshPro NameLabel;
 
-		public global::TMPro.TextMeshPro PriceLabel;
+		public TextMeshPro PriceLabel;
 
 		private void Awake()
 		{

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class ChemistryStationLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class ChemistryStationLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

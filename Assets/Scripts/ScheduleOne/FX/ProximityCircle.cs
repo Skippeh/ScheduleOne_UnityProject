@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 namespace ScheduleOne.FX
 {
-	public class ProximityCircle : global::UnityEngine.MonoBehaviour
+	public class ProximityCircle : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rendering.Universal.DecalProjector Circle;
+		[Header("References")]
+		public DecalProjector Circle;
 
 		private bool enabledThisFrame;
 
@@ -19,7 +22,7 @@ namespace ScheduleOne.FX
 		{
 		}
 
-		public void SetColor(global::UnityEngine.Color col)
+		public void SetColor(Color col)
 		{
 		}
 	}

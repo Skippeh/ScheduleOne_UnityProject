@@ -1,6 +1,12 @@
+using System.Collections.Generic;
+using ScheduleOne.UI;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.TV
 {
-	public class RunnerGame : global::ScheduleOne.TV.TVApp
+	public class RunnerGame : TVApp
 	{
 		public float GameSpeed;
 
@@ -20,27 +26,27 @@ namespace ScheduleOne.TV
 
 		public float DropForce;
 
-		public global::UnityEngine.RectTransform Character;
+		public RectTransform Character;
 
-		public global::ScheduleOne.UI.Flipboard CharacterFlipboard;
+		public Flipboard CharacterFlipboard;
 
-		public global::ScheduleOne.UI.SlidingRect Ground;
+		public SlidingRect Ground;
 
-		public global::ScheduleOne.UI.UISpawner CloudSpawner;
+		public UISpawner CloudSpawner;
 
-		public global::ScheduleOne.UI.UISpawner ObstacleSpawner;
+		public UISpawner ObstacleSpawner;
 
-		public global::TMPro.TextMeshProUGUI ScoreLabel;
+		public TextMeshProUGUI ScoreLabel;
 
-		public global::TMPro.TextMeshProUGUI HighScoreLabel;
+		public TextMeshProUGUI HighScoreLabel;
 
-		public global::UnityEngine.GameObject StartScreen;
+		public GameObject StartScreen;
 
-		public global::UnityEngine.GameObject GameOverScreen;
+		public GameObject GameOverScreen;
 
-		public global::UnityEngine.Animation NewHighScoreAnimation;
+		public Animation NewHighScoreAnimation;
 
-		public global::UnityEngine.Sprite JumpSprite;
+		public Sprite JumpSprite;
 
 		private bool isJumping;
 
@@ -54,15 +60,15 @@ namespace ScheduleOne.TV
 
 		private float defaultCharacterY;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.UIMover> clouds;
+		private List<UIMover> clouds;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.UIMover> obstacles;
+		private List<UIMover> obstacles;
 
-		public global::UnityEngine.Events.UnityEvent onJump;
+		public UnityEvent onJump;
 
-		public global::UnityEngine.Events.UnityEvent onHit;
+		public UnityEvent onHit;
 
-		public global::UnityEngine.Events.UnityEvent onNewHighScore;
+		public UnityEvent onNewHighScore;
 
 		protected override void Awake()
 		{
@@ -84,11 +90,11 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		private void CloudSpawned(global::UnityEngine.GameObject cloud)
+		private void CloudSpawned(GameObject cloud)
 		{
 		}
 
-		private void ObstacleSpawned(global::UnityEngine.GameObject obstacle)
+		private void ObstacleSpawned(GameObject obstacle)
 		{
 		}
 

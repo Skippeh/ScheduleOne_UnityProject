@@ -1,23 +1,28 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class SentryInstance
 	{
-		public global::ScheduleOne.Law.SentryLocation Location;
+		public SentryLocation Location;
 
 		public int Members;
 
-		[global::UnityEngine.Header("Timing")]
+		[Header("Timing")]
 		public int StartTime;
 
 		public int EndTime;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public int IntensityRequirement;
 
 		public bool OnlyIfCurfewEnabled;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> officers;
+		private List<PoliceOfficer> officers;
 
 		public void Evaluate()
 		{

@@ -1,18 +1,22 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine.Audio;
+
 namespace ScheduleOne.Audio
 {
-	public class MusicPlayer : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Audio.MusicPlayer>
+	public class MusicPlayer : PersistentSingleton<MusicPlayer>
 	{
 		public static float TimeSinceLastAmbientTrack;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.MusicTrack> Tracks;
+		public List<MusicTrack> Tracks;
 
-		public global::UnityEngine.Audio.AudioMixerGroup MusicMixer;
+		public AudioMixerGroup MusicMixer;
 
-		public global::UnityEngine.Audio.AudioMixerSnapshot DefaultSnapshot;
+		public AudioMixerSnapshot DefaultSnapshot;
 
-		public global::UnityEngine.Audio.AudioMixerSnapshot DistortedSnapshot;
+		public AudioMixerSnapshot DistortedSnapshot;
 
-		private global::ScheduleOne.Audio.MusicTrack _currentTrack;
+		private MusicTrack _currentTrack;
 
 		public bool IsPlaying => false;
 

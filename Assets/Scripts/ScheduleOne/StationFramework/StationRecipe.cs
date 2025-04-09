@@ -1,56 +1,62 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "StationRecipe", menuName = "StationFramework/StationRecipe", order = 1)]
-	public class StationRecipe : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "StationRecipe", menuName = "StationFramework/StationRecipe", order = 1)]
+	public class StationRecipe : ScriptableObject
 	{
 		public enum EQualityCalculationMethod
 		{
 			Additive = 0
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class ItemQuantity
 		{
-			public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+			public ItemDefinition Item;
 
 			public int Quantity;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class IngredientQuantity
 		{
-			public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemDefinition> Items;
+			public List<ItemDefinition> Items;
 
 			public int Quantity;
 
-			public global::ScheduleOne.ItemFramework.ItemDefinition Item => null;
+			public ItemDefinition Item => null;
 		}
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool IsDiscovered;
 
 		public string RecipeTitle;
 
 		public bool Unlocked;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe.IngredientQuantity> Ingredients;
+		public List<IngredientQuantity> Ingredients;
 
-		public global::ScheduleOne.StationFramework.StationRecipe.ItemQuantity Product;
+		public ItemQuantity Product;
 
-		public global::UnityEngine.Color FinalLiquidColor;
+		public Color FinalLiquidColor;
 
-		[global::UnityEngine.Tooltip("The time it takes to cook this recipe in minutes")]
+		[Tooltip("The time it takes to cook this recipe in minutes")]
 		public int CookTime_Mins;
 
-		[global::UnityEngine.Tooltip("The temperature at which this recipe should be cooked")]
-		[global::UnityEngine.Range(0f, 500f)]
+		[Tooltip("The temperature at which this recipe should be cooked")]
+		[Range(0f, 500f)]
 		public float CookTemperature;
 
-		[global::UnityEngine.Range(0f, 100f)]
+		[Range(0f, 100f)]
 		public float CookTemperatureTolerance;
 
-		public global::ScheduleOne.StationFramework.StationRecipe.EQualityCalculationMethod QualityCalculationMethod;
+		public EQualityCalculationMethod QualityCalculationMethod;
 
 		public float CookTemperatureLowerBound => 0f;
 
@@ -58,24 +64,24 @@ namespace ScheduleOne.StationFramework
 
 		public string RecipeID => null;
 
-		public global::ScheduleOne.Storage.StorableItemInstance GetProductInstance(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> ingredients)
+		public StorableItemInstance GetProductInstance(List<ItemInstance> ingredients)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Storage.StorableItemInstance GetProductInstance(global::ScheduleOne.ItemFramework.EQuality quality)
+		public StorableItemInstance GetProductInstance(EQuality quality)
 		{
 			return null;
 		}
 
-		public bool DoIngredientsSuffice(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> ingredients)
+		public bool DoIngredientsSuffice(List<ItemInstance> ingredients)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.ItemFramework.EQuality CalculateQuality(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> ingredients)
+		public EQuality CalculateQuality(List<ItemInstance> ingredients)
 		{
-			return default(global::ScheduleOne.ItemFramework.EQuality);
+			return default(EQuality);
 		}
 	}
 }

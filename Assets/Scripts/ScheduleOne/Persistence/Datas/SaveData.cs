@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class SaveData
 	{
 		public string DataType;

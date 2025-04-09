@@ -1,14 +1,17 @@
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class VialCap : global::ScheduleOne.PlayerTasks.Clickable
+	public class VialCap : Clickable
 	{
-		public global::UnityEngine.Collider Collider;
+		public Collider Collider;
 
-		private global::UnityEngine.Rigidbody RigidBody;
+		private Rigidbody RigidBody;
 
 		public bool Removed { get; protected set; }
 
-		public override void StartClick(global::UnityEngine.RaycastHit hit)
+		public override void StartClick(RaycastHit hit)
 		{
 		}
 

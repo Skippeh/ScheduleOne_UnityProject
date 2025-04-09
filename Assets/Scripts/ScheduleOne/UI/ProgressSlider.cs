@@ -1,15 +1,20 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class ProgressSlider : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.ProgressSlider>
+	public class ProgressSlider : Singleton<ProgressSlider>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.GameObject Container;
+		[Header("References")]
+		public GameObject Container;
 
-		public global::TMPro.TextMeshProUGUI Label;
+		public TextMeshProUGUI Label;
 
-		public global::UnityEngine.UI.Slider Slider;
+		public Slider Slider;
 
-		public global::UnityEngine.UI.Image SliderFill;
+		public Image SliderFill;
 
 		private bool progressSetThisFrame;
 
@@ -21,7 +26,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Configure(string label, global::UnityEngine.Color sliderFillColor)
+		public void Configure(string label, Color sliderFillColor)
 		{
 		}
 	}

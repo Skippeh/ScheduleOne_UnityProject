@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Lucy : global::ScheduleOne.NPCs.NPC
+	public class Lucy : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ELucyAssembly_002DCSharp_002Edll_Excuted;
 

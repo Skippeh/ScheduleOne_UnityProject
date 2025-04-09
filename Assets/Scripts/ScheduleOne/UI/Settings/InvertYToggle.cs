@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class InvertYToggle : global::ScheduleOne.UI.Settings.SettingsToggle
+	public class InvertYToggle : SettingsToggle
 	{
 		protected virtual void Start()
 		{

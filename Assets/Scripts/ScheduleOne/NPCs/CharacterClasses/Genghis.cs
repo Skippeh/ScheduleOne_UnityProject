@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Genghis : global::ScheduleOne.NPCs.NPC
+	public class Genghis : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EGenghisAssembly_002DCSharp_002Edll_Excuted;
 

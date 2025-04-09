@@ -1,6 +1,9 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.FX
 {
-	public class CountdownExplosion : global::UnityEngine.MonoBehaviour
+	public class CountdownExplosion : MonoBehaviour
 	{
 		public const float COUNTDOWN = 30f;
 
@@ -8,9 +11,9 @@ namespace ScheduleOne.FX
 
 		public const float TICK_SPACING_MIN = 0.1f;
 
-		public global::ScheduleOne.Audio.AudioSourceController TickSound;
+		public AudioSourceController TickSound;
 
-		private global::UnityEngine.Coroutine countdownRoutine;
+		private Coroutine countdownRoutine;
 
 		public void Trigger()
 		{

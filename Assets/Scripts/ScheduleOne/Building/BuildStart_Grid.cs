@@ -1,12 +1,15 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Building
 {
-	public class BuildStart_Grid : global::ScheduleOne.Building.BuildStart_Base
+	public class BuildStart_Grid : BuildStart_Base
 	{
-		public override void StartBuilding(global::ScheduleOne.ItemFramework.ItemInstance itemInstance)
+		public override void StartBuilding(ItemInstance itemInstance)
 		{
 		}
 
-		protected virtual global::ScheduleOne.EntityFramework.GridItem CreateGhostModel(global::ScheduleOne.ItemFramework.BuildableItemDefinition itemDefinition)
+		protected virtual GridItem CreateGhostModel(BuildableItemDefinition itemDefinition)
 		{
 			return null;
 		}

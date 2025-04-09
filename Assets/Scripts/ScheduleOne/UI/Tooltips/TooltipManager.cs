@@ -1,22 +1,29 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Tooltips
 {
-	public class TooltipManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Tooltips.TooltipManager>
+	public class TooltipManager : Singleton<TooltipManager>
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.RectTransform anchor;
+		[Header("References")]
+		[SerializeField]
+		private RectTransform anchor;
 
-		[global::UnityEngine.SerializeField]
-		private global::TMPro.TextMeshProUGUI tooltipLabel;
+		[SerializeField]
+		private TextMeshProUGUI tooltipLabel;
 
-		[global::UnityEngine.Header("Canvas")]
-		public global::System.Collections.Generic.List<global::UnityEngine.Canvas> canvases;
+		[Header("Canvas")]
+		public List<Canvas> canvases;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Canvas> sortedCanvases;
+		private List<Canvas> sortedCanvases;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.UI.GraphicRaycaster> raycasters;
+		private List<GraphicRaycaster> raycasters;
 
-		private global::UnityEngine.EventSystems.EventSystem eventSystem;
+		private EventSystem eventSystem;
 
 		private bool tooltipShownThisFrame;
 
@@ -32,7 +39,7 @@ namespace ScheduleOne.UI.Tooltips
 		{
 		}
 
-		public void AddCanvas(global::UnityEngine.Canvas canvas)
+		public void AddCanvas(Canvas canvas)
 		{
 		}
 
@@ -40,7 +47,7 @@ namespace ScheduleOne.UI.Tooltips
 		{
 		}
 
-		public void ShowTooltip(string text, global::UnityEngine.Vector2 position, bool worldspace)
+		public void ShowTooltip(string text, Vector2 position, bool worldspace)
 		{
 		}
 	}

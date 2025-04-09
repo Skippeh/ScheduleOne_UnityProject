@@ -1,43 +1,52 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Employees;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
 	public interface IStorageEntity
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CClearReserve_003Ed__12 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CClearReserve_003Ed__12 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Storage.StoredItem item;
+			public StoredItem item;
 
-			public global::ScheduleOne.Storage.IStorageEntity _003C_003E4__this;
+			public IStorageEntity _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CClearReserve_003Ed__12(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -46,61 +55,61 @@ namespace ScheduleOne.Storage
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		global::UnityEngine.Transform storedItemContainer { get; }
+		Transform storedItemContainer { get; }
 
-		global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> reservedItems { get; }
+		Dictionary<StoredItem, Employee> reservedItems { get; }
 
-		global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetStoredItems();
+		List<StoredItem> GetStoredItems();
 
-		global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> GetStorageGrids();
+		List<StorageGrid> GetStorageGrids();
 
-		global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetStoredItemsByID(string ID)
+		List<StoredItem> GetStoredItemsByID(string ID)
 		{
 			return null;
 		}
 
-		void ReserveItem(global::ScheduleOne.Storage.StoredItem item, global::ScheduleOne.Employees.Employee employee)
+		void ReserveItem(StoredItem item, Employee employee)
 		{
 		}
 
-		void DereserveItem(global::ScheduleOne.Storage.StoredItem item)
+		void DereserveItem(StoredItem item)
 		{
 		}
 
-		bool IsItemReserved(global::ScheduleOne.Storage.StoredItem item)
+		bool IsItemReserved(StoredItem item)
 		{
 			return false;
 		}
 
-		global::ScheduleOne.Employees.Employee WhoIsReserving(global::ScheduleOne.Storage.StoredItem item)
+		Employee WhoIsReserving(StoredItem item)
 		{
 			return null;
 		}
 
-		global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetNonReservedItemsByPrefabID(string prefabID, global::ScheduleOne.Employees.Employee whosAskin)
+		List<StoredItem> GetNonReservedItemsByPrefabID(string prefabID, Employee whosAskin)
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Storage.IStorageEntity._003CClearReserve_003Ed__12))]
-		global::System.Collections.IEnumerator ClearReserve(global::ScheduleOne.Storage.StoredItem item)
+		[IteratorStateMachine(typeof(_003CClearReserve_003Ed__12))]
+		IEnumerator ClearReserve(StoredItem item)
 		{
 			return null;
 		}
 
-		bool TryFitItem(int sizeX, int sizeY, out global::ScheduleOne.Storage.StorageGrid grid, out global::ScheduleOne.Tiles.Coordinate originCoordinate, out float rotation)
+		bool TryFitItem(int sizeX, int sizeY, out StorageGrid grid, out Coordinate originCoordinate, out float rotation)
 		{
 			grid = null;
 			originCoordinate = null;

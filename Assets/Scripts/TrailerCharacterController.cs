@@ -1,25 +1,28 @@
-public class TrailerCharacterController : global::UnityEngine.MonoBehaviour
+using EasyButtons;
+using UnityEngine;
+
+public class TrailerCharacterController : MonoBehaviour
 {
-	public global::UnityEngine.Transform StartPos;
+	public Transform StartPos;
 
-	public global::UnityEngine.Transform EndPos;
+	public Transform EndPos;
 
-	public global::UnityEngine.Transform Character;
+	public Transform Character;
 
 	public float WalkSpeed;
 
-	private global::UnityEngine.Coroutine routine;
+	private Coroutine routine;
 
 	private void Awake()
 	{
 	}
 
-	[global::EasyButtons.Button]
+	[Button]
 	public void Play()
 	{
 	}
 
-	[global::EasyButtons.Button]
+	[Button]
 	public void Stop()
 	{
 	}

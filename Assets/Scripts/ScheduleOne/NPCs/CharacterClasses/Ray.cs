@@ -1,8 +1,12 @@
+using ScheduleOne.Dialogue;
+using ScheduleOne.Levelling;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Ray : global::ScheduleOne.NPCs.NPC
+	public class Ray : NPC
 	{
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 
@@ -10,8 +14,8 @@ namespace ScheduleOne.NPCs.CharacterClasses
 
 		public string IntroSentVariable;
 
-		[global::UnityEngine.Header("Intro message conditions")]
-		public global::ScheduleOne.Levelling.FullRank IntroRank;
+		[Header("Intro message conditions")]
+		public FullRank IntroRank;
 
 		public int IntroDaysPlayed;
 

@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class FxaaComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.AntialiasingModel>
+	public sealed class FxaaComponent : PostProcessingComponentRenderTexture<AntialiasingModel>
 	{
 		private static class Uniforms
 		{
@@ -11,7 +11,7 @@ namespace UnityEngine.PostProcessing
 
 		public override bool active => false;
 
-		public void Render(global::UnityEngine.RenderTexture source, global::UnityEngine.RenderTexture destination)
+		public void Render(RenderTexture source, RenderTexture destination)
 		{
 		}
 	}

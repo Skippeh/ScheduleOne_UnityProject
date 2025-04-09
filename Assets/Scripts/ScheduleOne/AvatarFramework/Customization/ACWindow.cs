@@ -1,16 +1,20 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACWindow : global::UnityEngine.MonoBehaviour
+	public class ACWindow : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string WindowTitle;
 
-		public global::ScheduleOne.AvatarFramework.Customization.ACWindow Predecessor;
+		public ACWindow Predecessor;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI TitleText;
+		[Header("References")]
+		public TextMeshProUGUI TitleText;
 
-		public global::UnityEngine.UI.Button BackButton;
+		public Button BackButton;
 
 		private void Start()
 		{

@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Property.Utilities.Power;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public class ConstructUpdate_PowerLine : global::ScheduleOne.Construction.ConstructionMethods.ConstructUpdate_Base
+	public class ConstructUpdate_PowerLine : ConstructUpdate_Base
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material ghostPowerLine_Material;
+		[Header("Settings")]
+		[SerializeField]
+		protected Material ghostPowerLine_Material;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject cosmeticPowerNode;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject cosmeticPowerNode;
 
-		protected global::UnityEngine.Transform tempPowerLineContainer;
+		protected Transform tempPowerLineContainer;
 
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode hoveredPowerNode;
+		protected PowerNode hoveredPowerNode;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> tempSegments;
+		protected List<Transform> tempSegments;
 
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode startNode;
+		protected PowerNode startNode;
 
 		protected float powerLineInitialDistance;
 
@@ -28,7 +33,7 @@ namespace ScheduleOne.Construction.ConstructionMethods
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public void Exit(ExitAction exit)
 		{
 		}
 
@@ -40,12 +45,12 @@ namespace ScheduleOne.Construction.ConstructionMethods
 		{
 		}
 
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode GetHoveredPowerNode()
+		protected PowerNode GetHoveredPowerNode()
 		{
 			return null;
 		}
 
-		private void CompletePowerLine(global::ScheduleOne.Property.Utilities.Power.PowerNode target)
+		private void CompletePowerLine(PowerNode target)
 		{
 		}
 

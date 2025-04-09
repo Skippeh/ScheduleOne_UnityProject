@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
-	public class FailureToComply : global::ScheduleOne.Law.Crime
+	[Serializable]
+	public class FailureToComply : Crime
 	{
 		public override string CrimeName { get; protected set; }
 	}

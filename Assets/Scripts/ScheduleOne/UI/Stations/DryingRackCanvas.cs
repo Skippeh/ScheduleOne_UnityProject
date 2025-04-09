@@ -1,34 +1,42 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.UI.Stations.Drying_rack;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class DryingRackCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.DryingRackCanvas>
+	public class DryingRackCanvas : Singleton<DryingRackCanvas>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::ScheduleOne.UI.ItemSlotUI InputSlotUI;
+		public ItemSlotUI InputSlotUI;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::TMPro.TextMeshProUGUI CapacityLabel;
+		public TextMeshProUGUI CapacityLabel;
 
-		public global::UnityEngine.UI.Button InsertButton;
+		public Button InsertButton;
 
-		public global::UnityEngine.RectTransform IndicatorContainer;
+		public RectTransform IndicatorContainer;
 
-		public global::UnityEngine.RectTransform[] IndicatorAlignments;
+		public RectTransform[] IndicatorAlignments;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Stations.Drying_rack.DryingOperationUI IndicatorPrefab;
+		[Header("Prefabs")]
+		public DryingOperationUI IndicatorPrefab;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Stations.Drying_rack.DryingOperationUI> operationUIs;
+		private List<DryingOperationUI> operationUIs;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.DryingRack Rack { get; protected set; }
+		public DryingRack Rack { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -58,15 +66,15 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void SetIsOpen(global::ScheduleOne.ObjectScripts.DryingRack rack, bool open)
+		public void SetIsOpen(DryingRack rack, bool open)
 		{
 		}
 
-		private void CreateOperationUI(global::ScheduleOne.ObjectScripts.DryingOperation operation)
+		private void CreateOperationUI(DryingOperation operation)
 		{
 		}
 
-		private void DestroyOperationUI(global::ScheduleOne.ObjectScripts.DryingOperation operation)
+		private void DestroyOperationUI(DryingOperation operation)
 		{
 		}
 

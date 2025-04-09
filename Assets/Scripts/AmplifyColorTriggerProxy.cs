@@ -1,11 +1,13 @@
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.SphereCollider))]
-[global::UnityEngine.AddComponentMenu("")]
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SphereCollider))]
+[AddComponentMenu("")]
 public class AmplifyColorTriggerProxy : AmplifyColorTriggerProxyBase
 {
-	private global::UnityEngine.SphereCollider sphereCollider;
+	private SphereCollider sphereCollider;
 
-	private global::UnityEngine.Rigidbody rigidBody;
+	private Rigidbody rigidBody;
 
 	private void Start()
 	{

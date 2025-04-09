@@ -2,7 +2,7 @@ namespace ScheduleOne.ItemFramework
 {
 	public class ItemFilter
 	{
-		public virtual bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public virtual bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}

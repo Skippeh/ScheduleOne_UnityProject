@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Object;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
 	public interface ITransitEntity
@@ -11,13 +18,13 @@ namespace ScheduleOne.Management
 
 		string Name { get; }
 
-		global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> InputSlots { get; set; }
+		List<ItemSlot> InputSlots { get; set; }
 
-		global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> OutputSlots { get; set; }
+		List<ItemSlot> OutputSlots { get; set; }
 
-		global::UnityEngine.Transform LinkOrigin { get; }
+		Transform LinkOrigin { get; }
 
-		global::UnityEngine.Transform[] AccessPoints { get; }
+		Transform[] AccessPoints { get; }
 
 		bool Selectable { get; }
 
@@ -25,50 +32,50 @@ namespace ScheduleOne.Management
 
 		bool IsDestroyed { get; }
 
-		global::System.Guid GUID { get; }
+		Guid GUID { get; }
 
-		void ShowOutline(global::UnityEngine.Color color);
+		void ShowOutline(Color color);
 
 		void HideOutline();
 
-		void InsertItemIntoInput(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC inserter = null)
+		void InsertItemIntoInput(ItemInstance item, NPC inserter = null)
 		{
 		}
 
-		void InsertItemIntoOutput(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC inserter = null)
+		void InsertItemIntoOutput(ItemInstance item, NPC inserter = null)
 		{
 		}
 
-		int GetInputCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC asker = null)
-		{
-			return 0;
-		}
-
-		int GetOutputCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC asker = null)
+		int GetInputCapacityForItem(ItemInstance item, NPC asker = null)
 		{
 			return 0;
 		}
 
-		global::ScheduleOne.ItemFramework.ItemSlot GetOutputItemContainer(global::ScheduleOne.ItemFramework.ItemInstance item)
+		int GetOutputCapacityForItem(ItemInstance item, NPC asker = null)
+		{
+			return 0;
+		}
+
+		ItemSlot GetOutputItemContainer(ItemInstance item)
 		{
 			return null;
 		}
 
-		global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> ReserveInputSlotsForItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::FishNet.Object.NetworkObject locker)
+		List<ItemSlot> ReserveInputSlotsForItem(ItemInstance item, NetworkObject locker)
 		{
 			return null;
 		}
 
-		void RemoveSlotLocks(global::FishNet.Object.NetworkObject locker)
+		void RemoveSlotLocks(NetworkObject locker)
 		{
 		}
 
-		global::ScheduleOne.ItemFramework.ItemSlot GetFirstSlotContainingItem(string id, global::ScheduleOne.Management.ITransitEntity.ESlotType searchType)
+		ItemSlot GetFirstSlotContainingItem(string id, ESlotType searchType)
 		{
 			return null;
 		}
 
-		global::ScheduleOne.ItemFramework.ItemSlot GetFirstSlotContainingTemplateItem(global::ScheduleOne.ItemFramework.ItemInstance templateItem, global::ScheduleOne.Management.ITransitEntity.ESlotType searchType)
+		ItemSlot GetFirstSlotContainingTemplateItem(ItemInstance templateItem, ESlotType searchType)
 		{
 			return null;
 		}

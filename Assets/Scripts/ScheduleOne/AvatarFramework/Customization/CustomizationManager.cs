@@ -1,21 +1,25 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class CustomizationManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.AvatarFramework.Customization.CustomizationManager>
+	public class CustomizationManager : Singleton<CustomizationManager>
 	{
-		public delegate void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings settings);
+		public delegate void AvatarSettingsChanged(AvatarSettings settings);
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.AvatarFramework.AvatarSettings ActiveSettings;
+		[SerializeField]
+		private AvatarSettings ActiveSettings;
 
-		public global::ScheduleOne.AvatarFramework.Avatar TemplateAvatar;
+		public Avatar TemplateAvatar;
 
-		public global::TMPro.TMP_InputField SaveInputField;
+		public TMP_InputField SaveInputField;
 
-		public global::TMPro.TMP_InputField LoadInputField;
+		public TMP_InputField LoadInputField;
 
-		public global::ScheduleOne.AvatarFramework.Customization.CustomizationManager.AvatarSettingsChanged OnAvatarSettingsChanged;
+		public AvatarSettingsChanged OnAvatarSettingsChanged;
 
-		public global::ScheduleOne.AvatarFramework.AvatarSettings DefaultSettings;
+		public AvatarSettings DefaultSettings;
 
 		private bool isEditingOriginal;
 
@@ -31,7 +35,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public void LoadSettings(global::ScheduleOne.AvatarFramework.AvatarSettings loadedSettings)
+		public void LoadSettings(AvatarSettings loadedSettings)
 		{
 		}
 
@@ -39,7 +43,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		private void ApplyDefaultSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		private void ApplyDefaultSettings(AvatarSettings settings)
 		{
 		}
 
@@ -59,19 +63,19 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public void SkinColorChanged(global::UnityEngine.Color col)
+		public void SkinColorChanged(Color col)
 		{
 		}
 
-		public void HairChanged(global::ScheduleOne.AvatarFramework.Accessory newHair)
+		public void HairChanged(Accessory newHair)
 		{
 		}
 
-		public void HairColorChanged(global::UnityEngine.Color newCol)
+		public void HairColorChanged(Color newCol)
 		{
 		}
 
-		public void EyeBallTintChanged(global::UnityEngine.Color col)
+		public void EyeBallTintChanged(Color col)
 		{
 		}
 
@@ -103,27 +107,27 @@ namespace ScheduleOne.AvatarFramework.Customization
 		{
 		}
 
-		public void FaceLayerChanged(global::ScheduleOne.AvatarFramework.FaceLayer layer, int index)
+		public void FaceLayerChanged(FaceLayer layer, int index)
 		{
 		}
 
-		public void FaceLayerColorChanged(global::UnityEngine.Color col, int index)
+		public void FaceLayerColorChanged(Color col, int index)
 		{
 		}
 
-		public void BodyLayerChanged(global::ScheduleOne.AvatarFramework.AvatarLayer layer, int index)
+		public void BodyLayerChanged(AvatarLayer layer, int index)
 		{
 		}
 
-		public void BodyLayerColorChanged(global::UnityEngine.Color col, int index)
+		public void BodyLayerColorChanged(Color col, int index)
 		{
 		}
 
-		public void AccessoryChanged(global::ScheduleOne.AvatarFramework.Accessory acc, int index)
+		public void AccessoryChanged(Accessory acc, int index)
 		{
 		}
 
-		public void AccessoryColorChanged(global::UnityEngine.Color col, int index)
+		public void AccessoryColorChanged(Color col, int index)
 		{
 		}
 	}

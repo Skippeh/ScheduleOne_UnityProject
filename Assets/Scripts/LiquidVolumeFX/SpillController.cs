@@ -1,41 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class SpillController : global::UnityEngine.MonoBehaviour
+	public class SpillController : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDestroySpill_003Ed__7 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CDestroySpill_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::UnityEngine.GameObject spill;
+			public GameObject spill;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CDestroySpill_003Ed__7(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,23 +51,23 @@ namespace LiquidVolumeFX
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		public global::UnityEngine.GameObject spill;
+		public GameObject spill;
 
-		private global::LiquidVolumeFX.LiquidVolume lv;
+		private LiquidVolume lv;
 
-		private global::UnityEngine.GameObject[] dropTemplates;
+		private GameObject[] dropTemplates;
 
 		private const int DROP_TEMPLATES_COUNT = 10;
 
@@ -76,8 +83,8 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::LiquidVolumeFX.SpillController._003CDestroySpill_003Ed__7))]
-		private global::System.Collections.IEnumerator DestroySpill(global::UnityEngine.GameObject spill)
+		[IteratorStateMachine(typeof(_003CDestroySpill_003Ed__7))]
+		private IEnumerator DestroySpill(GameObject spill)
 		{
 			return null;
 		}

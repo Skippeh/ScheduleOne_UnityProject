@@ -1,20 +1,25 @@
+using System;
+using FishNet.Serializing.Helping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.StationFramework;
+
 namespace ScheduleOne.ObjectScripts
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class OvenCookOperation
 	{
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		private global::ScheduleOne.ItemFramework.StorableItemDefinition _itemDefinition;
+		[CodegenExclude]
+		private StorableItemDefinition _itemDefinition;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		private global::ScheduleOne.ItemFramework.StorableItemDefinition _productionDefinition;
+		[CodegenExclude]
+		private StorableItemDefinition _productionDefinition;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		private global::ScheduleOne.StationFramework.CookableModule _cookable;
+		[CodegenExclude]
+		private CookableModule _cookable;
 
 		public string IngredientID;
 
-		public global::ScheduleOne.ItemFramework.EQuality IngredientQuality;
+		public EQuality IngredientQuality;
 
 		public int IngredientQuantity;
 
@@ -22,23 +27,23 @@ namespace ScheduleOne.ObjectScripts
 
 		public int CookProgress;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		private int cookDuration;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Ingredient => null;
+		[CodegenExclude]
+		public StorableItemDefinition Ingredient => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Product => null;
+		[CodegenExclude]
+		public StorableItemDefinition Product => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.StationFramework.CookableModule Cookable => null;
+		[CodegenExclude]
+		public CookableModule Cookable => null;
 
-		public OvenCookOperation(string ingredientID, global::ScheduleOne.ItemFramework.EQuality ingredientQuality, int ingredientQuantity, string productID)
+		public OvenCookOperation(string ingredientID, EQuality ingredientQuality, int ingredientQuantity, string productID)
 		{
 		}
 
-		public OvenCookOperation(string ingredientID, global::ScheduleOne.ItemFramework.EQuality ingredientQuality, int ingredientQuantity, string productID, int progress)
+		public OvenCookOperation(string ingredientID, EQuality ingredientQuality, int ingredientQuantity, string productID, int progress)
 		{
 		}
 
@@ -55,7 +60,7 @@ namespace ScheduleOne.ObjectScripts
 			return 0;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemInstance GetProductItem(int quantity)
+		public ItemInstance GetProductItem(int quantity)
 		{
 			return null;
 		}

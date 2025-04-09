@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class CameraBobSlider : global::ScheduleOne.UI.Settings.SettingsSlider
+	public class CameraBobSlider : SettingsSlider
 	{
 		protected virtual void Start()
 		{

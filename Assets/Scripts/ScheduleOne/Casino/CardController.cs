@@ -1,10 +1,17 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+
 namespace ScheduleOne.Casino
 {
-	public class CardController : global::FishNet.Object.NetworkBehaviour
+	public class CardController : NetworkBehaviour
 	{
-		private global::System.Collections.Generic.List<global::ScheduleOne.Casino.PlayingCard> cards;
+		private List<PlayingCard> cards;
 
-		private global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Casino.PlayingCard> cardDictionary;
+		private Dictionary<string, PlayingCard> cardDictionary;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ECasino_002ECardControllerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -14,37 +21,37 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendCardValue(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendCardValue(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetCardValue(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		[ObserversRpc(RunLocally = true)]
+		private void SetCardValue(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendCardFaceUp(string cardId, bool faceUp)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void SetCardFaceUp(string cardId, bool faceUp)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendCardGlide(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendCardGlide(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetCardGlide(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		[ObserversRpc(RunLocally = true)]
+		private void SetCardGlide(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		private global::ScheduleOne.Casino.PlayingCard GetCard(string cardId)
+		private PlayingCard GetCard(string cardId)
 		{
 			return null;
 		}
@@ -61,27 +68,27 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcWriter___Server_SendCardValue_3709737967(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		private void RpcWriter___Server_SendCardValue_3709737967(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		public void RpcLogic___SendCardValue_3709737967(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		public void RpcLogic___SendCardValue_3709737967(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		private void RpcReader___Server_SendCardValue_3709737967(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendCardValue_3709737967(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetCardValue_3709737967(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		private void RpcWriter___Observers_SetCardValue_3709737967(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		private void RpcLogic___SetCardValue_3709737967(string cardId, global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+		private void RpcLogic___SetCardValue_3709737967(string cardId, PlayingCard.ECardSuit suit, PlayingCard.ECardValue value)
 		{
 		}
 
-		private void RpcReader___Observers_SetCardValue_3709737967(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetCardValue_3709737967(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -93,7 +100,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Server_SendCardFaceUp_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendCardFaceUp_310431262(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -105,31 +112,31 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		private void RpcReader___Observers_SetCardFaceUp_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetCardFaceUp_310431262(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendCardGlide_2833372058(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		private void RpcWriter___Server_SendCardGlide_2833372058(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		public void RpcLogic___SendCardGlide_2833372058(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		public void RpcLogic___SendCardGlide_2833372058(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		private void RpcReader___Server_SendCardGlide_2833372058(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendCardGlide_2833372058(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetCardGlide_2833372058(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		private void RpcWriter___Observers_SetCardGlide_2833372058(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		private void RpcLogic___SetCardGlide_2833372058(string cardId, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float glideTime)
+		private void RpcLogic___SetCardGlide_2833372058(string cardId, Vector3 position, Quaternion rotation, float glideTime)
 		{
 		}
 
-		private void RpcReader___Observers_SetCardGlide_2833372058(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetCardGlide_2833372058(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

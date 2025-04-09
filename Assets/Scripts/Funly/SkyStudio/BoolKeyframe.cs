@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class BoolKeyframe : global::Funly.SkyStudio.BaseKeyframe
+	[Serializable]
+	public class BoolKeyframe : BaseKeyframe
 	{
 		public bool value;
 
@@ -10,7 +12,7 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		public BoolKeyframe(global::Funly.SkyStudio.BoolKeyframe keyframe)
+		public BoolKeyframe(BoolKeyframe keyframe)
 			: base(0f)
 		{
 		}

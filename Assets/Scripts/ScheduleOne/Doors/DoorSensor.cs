@@ -1,17 +1,20 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class DoorSensor : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class DoorSensor : MonoBehaviour
 	{
 		public const float ActivationDistance = 30f;
 
-		public global::ScheduleOne.Doors.EDoorSide DetectorSide;
+		public EDoorSide DetectorSide;
 
-		public global::ScheduleOne.Doors.DoorController Door;
+		public DoorController Door;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Collider> exclude;
+		private List<Collider> exclude;
 
-		private global::UnityEngine.Collider collider;
+		private Collider collider;
 
 		private void Awake()
 		{
@@ -21,7 +24,7 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

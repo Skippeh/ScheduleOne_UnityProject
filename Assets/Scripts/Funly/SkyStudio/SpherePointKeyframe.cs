@@ -1,16 +1,18 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class SpherePointKeyframe : global::Funly.SkyStudio.BaseKeyframe
+	[Serializable]
+	public class SpherePointKeyframe : BaseKeyframe
 	{
-		public global::Funly.SkyStudio.SpherePoint spherePoint;
+		public SpherePoint spherePoint;
 
-		public SpherePointKeyframe(global::Funly.SkyStudio.SpherePoint spherePoint, float time)
+		public SpherePointKeyframe(SpherePoint spherePoint, float time)
 			: base(0f)
 		{
 		}
 
-		public SpherePointKeyframe(global::Funly.SkyStudio.SpherePointKeyframe keyframe)
+		public SpherePointKeyframe(SpherePointKeyframe keyframe)
 			: base(0f)
 		{
 		}

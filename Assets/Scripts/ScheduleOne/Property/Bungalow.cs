@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Property
 {
-	public class Bungalow : global::ScheduleOne.Property.Property
+	public class Bungalow : Property
 	{
-		public global::UnityEngine.Transform ModelContainer;
+		public Transform ModelContainer;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EBungalowAssembly_002DCSharp_002Edll_Excuted;
 

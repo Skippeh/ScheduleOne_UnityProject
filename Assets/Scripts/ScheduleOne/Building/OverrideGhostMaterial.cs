@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class OverrideGhostMaterial : global::UnityEngine.MonoBehaviour
+	public class OverrideGhostMaterial : MonoBehaviour
 	{
 	}
 }

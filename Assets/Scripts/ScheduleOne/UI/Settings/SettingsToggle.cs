@@ -1,8 +1,11 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Settings
 {
-	public class SettingsToggle : global::UnityEngine.MonoBehaviour
+	public class SettingsToggle : MonoBehaviour
 	{
-		protected global::UnityEngine.UI.Toggle toggle;
+		protected Toggle toggle;
 
 		protected virtual void Awake()
 		{

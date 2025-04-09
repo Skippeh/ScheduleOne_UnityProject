@@ -1,6 +1,8 @@
+using ScheduleOne.Equipping;
+
 namespace ScheduleOne.Tools
 {
-	public class Flashlight : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Flashlight : Equippable_Viewmodel
 	{
 	}
 }

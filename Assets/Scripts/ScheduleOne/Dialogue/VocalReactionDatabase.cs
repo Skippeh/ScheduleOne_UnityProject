@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VocalReactionDatabase
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Entry
 		{
 			public string Key;
@@ -18,9 +21,9 @@ namespace ScheduleOne.Dialogue
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.VocalReactionDatabase.Entry> Entries;
+		public List<Entry> Entries;
 
-		public global::ScheduleOne.Dialogue.VocalReactionDatabase.Entry GetEntry(string key)
+		public Entry GetEntry(string key)
 		{
 			return null;
 		}

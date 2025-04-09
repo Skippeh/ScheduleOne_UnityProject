@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class PackingAlgorithm : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.DevUtilities.PackingAlgorithm>
+	public class PackingAlgorithm : Singleton<PackingAlgorithm>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Rectangle
 		{
 			public string name;
@@ -22,9 +26,9 @@ namespace ScheduleOne.DevUtilities
 			}
 		}
 
-		public class StoredItemData : global::ScheduleOne.DevUtilities.PackingAlgorithm.Rectangle
+		public class StoredItemData : Rectangle
 		{
-			public global::ScheduleOne.ItemFramework.ItemInstance item;
+			public ItemInstance item;
 
 			public int xPos;
 
@@ -32,7 +36,7 @@ namespace ScheduleOne.DevUtilities
 
 			public float rotation => 0f;
 
-			public StoredItemData(string _name, int x, int y, global::ScheduleOne.ItemFramework.ItemInstance _item)
+			public StoredItemData(string _name, int x, int y, ItemInstance _item)
 				: base(null, 0, 0)
 			{
 			}
@@ -44,45 +48,45 @@ namespace ScheduleOne.DevUtilities
 
 			public int y;
 
-			public global::ScheduleOne.DevUtilities.PackingAlgorithm.Rectangle occupant;
+			public Rectangle occupant;
 
 			public Coordinate(int _x, int _y)
 			{
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.PackingAlgorithm.Rectangle> rectsToPack;
+		public List<Rectangle> rectsToPack;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.PackingAlgorithm.StoredItemData> PackItems(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> datas, int gridX, int gridY)
+		public List<StoredItemData> PackItems(List<ItemInstance> datas, int gridX, int gridY)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.PackingAlgorithm.StoredItemData> AttemptPack(global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.PackingAlgorithm.StoredItemData> rects, int gridX, int gridY)
+		public List<StoredItemData> AttemptPack(List<StoredItemData> rects, int gridX, int gridY)
 		{
 			return null;
 		}
 
-		private bool DoesCoordinateHaveOccupiedAdjacent(global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate[,] grid, global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate coord, int gridX, int gridY)
+		private bool DoesCoordinateHaveOccupiedAdjacent(Coordinate[,] grid, Coordinate coord, int gridX, int gridY)
 		{
 			return false;
 		}
 
-		private bool IsCoordinateInBounds(global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate coord, int gridX, int gridY)
+		private bool IsCoordinateInBounds(Coordinate coord, int gridX, int gridY)
 		{
 			return false;
 		}
 
-		private void PrintGrid(global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate[,] grid, int gridX, int gridY)
+		private void PrintGrid(Coordinate[,] grid, int gridX, int gridY)
 		{
 		}
 
-		private int GetRegionSize(global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate[,] grid, int gridX, int gridY)
+		private int GetRegionSize(Coordinate[,] grid, int gridX, int gridY)
 		{
 			return 0;
 		}
 
-		private global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate TransformCoordinatePoint(global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate[,] grid, global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate baseCoordinate, global::ScheduleOne.DevUtilities.PackingAlgorithm.Coordinate offset, int gridX, int gridY)
+		private Coordinate TransformCoordinatePoint(Coordinate[,] grid, Coordinate baseCoordinate, Coordinate offset, int gridX, int gridY)
 		{
 			return null;
 		}

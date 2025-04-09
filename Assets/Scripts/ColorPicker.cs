@@ -1,22 +1,25 @@
-public class ColorPicker : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ColorPicker : MonoBehaviour
 {
-	private global::UnityEngine.UI.Image mainImage;
+	private Image mainImage;
 
-	public global::UnityEngine.RectTransform pickerIcon;
+	public RectTransform pickerIcon;
 
-	public global::UnityEngine.UI.Image colorPreview;
+	public Image colorPreview;
 
 	private bool _activeCursor;
 
-	public global::UnityEngine.Vector2 offset;
+	public Vector2 offset;
 
 	public UIControllerDEMO UIControllerDEMO;
 
-	public global::UnityEngine.Canvas Canvas;
+	public Canvas Canvas;
 
-	private global::UnityEngine.Color _findColor;
+	private Color _findColor;
 
-	public global::UnityEngine.Vector2 realSize;
+	public Vector2 realSize;
 
 	private void Awake()
 	{

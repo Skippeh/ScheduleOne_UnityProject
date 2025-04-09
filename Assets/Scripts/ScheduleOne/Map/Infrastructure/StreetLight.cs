@@ -1,32 +1,35 @@
+using ScheduleOne.Lighting;
+using UnityEngine;
+
 namespace ScheduleOne.Map.Infrastructure
 {
-	public class StreetLight : global::UnityEngine.MonoBehaviour
+	public class StreetLight : MonoBehaviour
 	{
-		public static global::UnityEngine.Vector3 POWER_ORIGIN;
+		public static Vector3 POWER_ORIGIN;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer LightRend;
+		[Header("References")]
+		[SerializeField]
+		protected MeshRenderer LightRend;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Light Light;
+		[SerializeField]
+		protected Light Light;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Lighting.VolumetricLightTracker BeamTracker;
+		[SerializeField]
+		protected VolumetricLightTracker BeamTracker;
 
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material LightOnMat;
+		[Header("Materials")]
+		public Material LightOnMat;
 
-		public global::UnityEngine.Material LightOffMat;
+		public Material LightOffMat;
 
-		[global::UnityEngine.Header("Timing")]
+		[Header("Timing")]
 		public int StartTime;
 
 		public int EndTime;
 
 		public int StartTimeOffset;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool ShadowsEnabled;
 
 		public float LightMaxDistance;

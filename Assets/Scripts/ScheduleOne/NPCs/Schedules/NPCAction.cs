@@ -1,21 +1,25 @@
+using System;
+using FishNet.Object;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	[global::System.Serializable]
-	public abstract class NPCAction : global::FishNet.Object.NetworkBehaviour
+	[Serializable]
+	public abstract class NPCAction : NetworkBehaviour
 	{
 		public const int MAX_CONSECUTIVE_PATHING_FAILURES = 5;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int priority;
 
-		[global::UnityEngine.Header("Timing Settings")]
+		[Header("Timing Settings")]
 		public int StartTime;
 
-		protected global::ScheduleOne.NPCs.NPC npc;
+		protected NPC npc;
 
-		protected global::ScheduleOne.NPCs.NPCScheduleManager schedule;
+		protected NPCScheduleManager schedule;
 
-		public global::System.Action onEnded;
+		public Action onEnded;
 
 		protected int consecutivePathingFailures;
 
@@ -35,7 +39,7 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public virtual int Priority => 0;
 
-		protected global::ScheduleOne.NPCs.NPCMovement movement => null;
+		protected NPCMovement movement => null;
 
 		public virtual void Awake()
 		{
@@ -112,11 +116,11 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public abstract int GetEndTime();
 
-		protected void SetDestination(global::UnityEngine.Vector3 position, bool teleportIfFail = true)
+		protected void SetDestination(Vector3 position, bool teleportIfFail = true)
 		{
 		}
 
-		protected virtual void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected virtual void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 

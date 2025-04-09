@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities.Power
 {
-	public class PowerNode : global::UnityEngine.MonoBehaviour
+	public class PowerNode : MonoBehaviour
 	{
 		public bool poweredNode;
 
@@ -8,15 +11,15 @@ namespace ScheduleOne.Property.Utilities.Power
 
 		public bool isConnectedToPower;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform connectionPoint;
+		[Header("References")]
+		[SerializeField]
+		protected Transform connectionPoint;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Property.Utilities.Power.PowerLine> connections;
+		public List<PowerLine> connections;
 
-		public global::UnityEngine.Transform pConnectionPoint => null;
+		public Transform pConnectionPoint => null;
 
-		public bool IsConnectedTo(global::ScheduleOne.Property.Utilities.Power.PowerNode node)
+		public bool IsConnectedTo(PowerNode node)
 		{
 			return false;
 		}
@@ -25,7 +28,7 @@ namespace ScheduleOne.Property.Utilities.Power
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Property.Utilities.Power.PowerNode> GetConnectedNodes(global::System.Collections.Generic.List<global::ScheduleOne.Property.Utilities.Power.PowerNode> exclusions)
+		public List<PowerNode> GetConnectedNodes(List<PowerNode> exclusions)
 		{
 			return null;
 		}

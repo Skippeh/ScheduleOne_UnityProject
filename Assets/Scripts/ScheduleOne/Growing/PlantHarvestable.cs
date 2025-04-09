@@ -1,8 +1,11 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class PlantHarvestable : global::UnityEngine.MonoBehaviour
+	public class PlantHarvestable : MonoBehaviour
 	{
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition Product;
+		public StorableItemDefinition Product;
 
 		public int ProductQuantity;
 

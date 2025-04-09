@@ -1,13 +1,16 @@
+using ScheduleOne.Employees;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class PackagerUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class PackagerUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform[] StationRects;
+		[Header("References")]
+		public RectTransform[] StationRects;
 
-		public global::ScheduleOne.Employees.Packager AssignedPackager { get; protected set; }
+		public Packager AssignedPackager { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.Employees.Packager packager)
+		public void Initialize(Packager packager)
 		{
 		}
 

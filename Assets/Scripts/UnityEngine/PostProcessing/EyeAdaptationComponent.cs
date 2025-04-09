@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class EyeAdaptationComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.EyeAdaptationModel>
+	public sealed class EyeAdaptationComponent : PostProcessingComponentRenderTexture<EyeAdaptationModel>
 	{
 		private static class Uniforms
 		{
@@ -17,17 +17,17 @@ namespace UnityEngine.PostProcessing
 			internal static readonly int _DebugWidth;
 		}
 
-		private global::UnityEngine.ComputeShader m_EyeCompute;
+		private ComputeShader m_EyeCompute;
 
-		private global::UnityEngine.ComputeBuffer m_HistogramBuffer;
+		private ComputeBuffer m_HistogramBuffer;
 
-		private readonly global::UnityEngine.RenderTexture[] m_AutoExposurePool;
+		private readonly RenderTexture[] m_AutoExposurePool;
 
 		private int m_AutoExposurePingPing;
 
-		private global::UnityEngine.RenderTexture m_CurrentAutoExposure;
+		private RenderTexture m_CurrentAutoExposure;
 
-		private global::UnityEngine.RenderTexture m_DebugHistogram;
+		private RenderTexture m_DebugHistogram;
 
 		private static uint[] s_EmptyHistogramBuffer;
 
@@ -53,12 +53,12 @@ namespace UnityEngine.PostProcessing
 		{
 		}
 
-		private global::UnityEngine.Vector4 GetHistogramScaleOffsetRes()
+		private Vector4 GetHistogramScaleOffsetRes()
 		{
-			return default(global::UnityEngine.Vector4);
+			return default(Vector4);
 		}
 
-		public global::UnityEngine.Texture Prepare(global::UnityEngine.RenderTexture source, global::UnityEngine.Material uberMaterial)
+		public Texture Prepare(RenderTexture source, Material uberMaterial)
 		{
 			return null;
 		}

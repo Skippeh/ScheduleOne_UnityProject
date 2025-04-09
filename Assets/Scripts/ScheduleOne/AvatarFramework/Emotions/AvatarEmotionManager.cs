@@ -1,34 +1,37 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Emotions
 {
-	public class AvatarEmotionManager : global::UnityEngine.MonoBehaviour
+	public class AvatarEmotionManager : MonoBehaviour
 	{
 		public const float MAX_UPDATE_DISTANCE = 30f;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset> EmotionPresetList;
+		[Header("Settings")]
+		public List<AvatarEmotionPreset> EmotionPresetList;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		[Header("References")]
+		public Avatar Avatar;
 
-		public global::ScheduleOne.AvatarFramework.EyeController EyeController;
+		public EyeController EyeController;
 
-		public global::ScheduleOne.AvatarFramework.EyebrowController EyebrowController;
+		public EyebrowController EyebrowController;
 
-		private global::ScheduleOne.AvatarFramework.Emotions.EmotionOverride activeEmotionOverride;
+		private EmotionOverride activeEmotionOverride;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.AvatarFramework.Emotions.EmotionOverride> overrideStack;
+		private List<EmotionOverride> overrideStack;
 
-		private global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset neutralPreset;
+		private AvatarEmotionPreset neutralPreset;
 
-		private global::UnityEngine.Coroutine emotionLerpRoutine;
+		private Coroutine emotionLerpRoutine;
 
-		private global::System.Collections.Generic.Dictionary<string, global::UnityEngine.Coroutine> emotionRemovalRoutines;
+		private Dictionary<string, Coroutine> emotionRemovalRoutines;
 
 		private int tempIndex;
 
 		public string CurrentEmotion { get; protected set; }
 
-		public global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset CurrentEmotionPreset { get; protected set; }
+		public AvatarEmotionPreset CurrentEmotionPreset { get; protected set; }
 
 		public bool IsSwitchingEmotion => false;
 
@@ -44,7 +47,7 @@ namespace ScheduleOne.AvatarFramework.Emotions
 		{
 		}
 
-		public void ConfigureNeutralFace(global::UnityEngine.Texture2D faceTex, float restingBrowHeight, float restingBrowAngle, global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration leftEyelidConfig, global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration rightEyelidConfig)
+		public void ConfigureNeutralFace(Texture2D faceTex, float restingBrowHeight, float restingBrowAngle, Eye.EyeLidConfiguration leftEyelidConfig, Eye.EyeLidConfiguration rightEyelidConfig)
 		{
 		}
 
@@ -64,16 +67,16 @@ namespace ScheduleOne.AvatarFramework.Emotions
 		{
 		}
 
-		public global::ScheduleOne.AvatarFramework.Emotions.EmotionOverride GetHighestPriorityOverride()
+		public EmotionOverride GetHighestPriorityOverride()
 		{
 			return null;
 		}
 
-		private void LerpEmotion(global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset preset, float animationTime = 0.2f)
+		private void LerpEmotion(AvatarEmotionPreset preset, float animationTime = 0.2f)
 		{
 		}
 
-		private void SetEmotion(global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset preset)
+		private void SetEmotion(AvatarEmotionPreset preset)
 		{
 		}
 
@@ -82,7 +85,7 @@ namespace ScheduleOne.AvatarFramework.Emotions
 			return false;
 		}
 
-		public global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionPreset GetEmotion(string emotion)
+		public AvatarEmotionPreset GetEmotion(string emotion)
 		{
 			return null;
 		}

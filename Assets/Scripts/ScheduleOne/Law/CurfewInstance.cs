@@ -1,14 +1,17 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CurfewInstance
 	{
-		public static global::ScheduleOne.Law.CurfewInstance ActiveInstance;
+		public static CurfewInstance ActiveInstance;
 
-		[global::UnityEngine.Range(1f, 10f)]
+		[Range(1f, 10f)]
 		public int IntensityRequirement;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool shouldDisable;
 
 		public bool Enabled { get; protected set; }

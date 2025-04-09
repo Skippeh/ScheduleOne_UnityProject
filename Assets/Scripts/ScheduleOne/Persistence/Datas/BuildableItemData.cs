@@ -1,7 +1,10 @@
+using System;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class BuildableItemData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class BuildableItemData : SaveData
 	{
 		public string GUID;
 
@@ -9,7 +12,7 @@ namespace ScheduleOne.Persistence.Datas
 
 		public int LoadOrder;
 
-		public BuildableItemData(global::System.Guid guid, global::ScheduleOne.ItemFramework.ItemInstance item, int loadOrder)
+		public BuildableItemData(Guid guid, ItemInstance item, int loadOrder)
 		{
 		}
 	}

@@ -1,16 +1,23 @@
+using ScheduleOne.Clothing;
+using ScheduleOne.ItemFramework;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ShopColorPicker : global::UnityEngine.MonoBehaviour
+	public class ShopColorPicker : MonoBehaviour
 	{
-		public global::UnityEngine.UI.Image AssetIconImage;
+		public Image AssetIconImage;
 
-		public global::TMPro.TextMeshProUGUI ColorLabel;
+		public TextMeshProUGUI ColorLabel;
 
-		public global::UnityEngine.RectTransform ColorButtonParent;
+		public RectTransform ColorButtonParent;
 
-		public global::UnityEngine.GameObject ColorButtonPrefab;
+		public GameObject ColorButtonPrefab;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Clothing.EClothingColor> onColorPicked;
+		public UnityEvent<EClothingColor> onColorPicked;
 
 		public bool IsOpen => false;
 
@@ -18,11 +25,11 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void ColorPicked(global::ScheduleOne.Clothing.EClothingColor color)
+		private void ColorPicked(EClothingColor color)
 		{
 		}
 
-		public void Open(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public void Open(ItemDefinition item)
 		{
 		}
 
@@ -30,7 +37,7 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void ColorHovered(global::ScheduleOne.Clothing.EClothingColor color)
+		private void ColorHovered(EClothingColor color)
 		{
 		}
 	}

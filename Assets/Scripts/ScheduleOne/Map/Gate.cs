@@ -1,29 +1,33 @@
+using EasyButtons;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class Gate : global::UnityEngine.MonoBehaviour
+	public class Gate : MonoBehaviour
 	{
-		public global::UnityEngine.Transform Gate1;
+		public Transform Gate1;
 
-		public global::UnityEngine.Vector3 Gate1Open;
+		public Vector3 Gate1Open;
 
-		public global::UnityEngine.Vector3 Gate1Closed;
+		public Vector3 Gate1Closed;
 
-		public global::UnityEngine.Transform Gate2;
+		public Transform Gate2;
 
-		public global::UnityEngine.Vector3 Gate2Open;
+		public Vector3 Gate2Open;
 
-		public global::UnityEngine.Vector3 Gate2Closed;
+		public Vector3 Gate2Closed;
 
 		public float OpenSpeed;
 
 		public float Acceleration;
 
-		[global::UnityEngine.Header("Sound")]
-		public global::ScheduleOne.Audio.AudioSourceController[] StartSounds;
+		[Header("Sound")]
+		public AudioSourceController[] StartSounds;
 
-		public global::ScheduleOne.Audio.AudioSourceController[] LoopSounds;
+		public AudioSourceController[] LoopSounds;
 
-		public global::ScheduleOne.Audio.AudioSourceController[] StopSounds;
+		public AudioSourceController[] StopSounds;
 
 		private float Momentum;
 
@@ -35,12 +39,12 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Open()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Close()
 		{
 		}

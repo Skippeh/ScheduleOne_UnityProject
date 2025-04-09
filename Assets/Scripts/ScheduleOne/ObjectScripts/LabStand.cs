@@ -1,38 +1,42 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LabStand : global::UnityEngine.MonoBehaviour
+	public class LabStand : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MoveSpeed;
 
 		public bool FunnelEnabled;
 
 		public float FunnelThreshold;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animation Anim;
+		[Header("References")]
+		public Animation Anim;
 
-		public global::UnityEngine.Transform GripTransform;
+		public Transform GripTransform;
 
-		public global::UnityEngine.Transform SpinnyThingy;
+		public Transform SpinnyThingy;
 
-		public global::UnityEngine.Transform RaisedTransform;
+		public Transform RaisedTransform;
 
-		public global::UnityEngine.Transform LoweredTransform;
+		public Transform LoweredTransform;
 
-		public global::UnityEngine.Transform PlaneNormal;
+		public Transform PlaneNormal;
 
-		public global::ScheduleOne.PlayerTasks.Clickable HandleClickable;
+		public Clickable HandleClickable;
 
-		public global::UnityEngine.Transform Funnel;
+		public Transform Funnel;
 
-		public global::UnityEngine.GameObject Highlight;
+		public GameObject Highlight;
 
-		public global::ScheduleOne.Audio.AudioSourceController LowerSound;
+		public AudioSourceController LowerSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController RaiseSound;
+		public AudioSourceController RaiseSound;
 
-		private global::UnityEngine.Vector3 clickOffset;
+		private Vector3 clickOffset;
 
 		private bool isMoving;
 
@@ -64,13 +68,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlaneHit()
+		private Vector3 GetPlaneHit()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void ClickEnd()

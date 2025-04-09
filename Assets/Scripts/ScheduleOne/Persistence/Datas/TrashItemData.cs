@@ -1,19 +1,22 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class TrashItemData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class TrashItemData : SaveData
 	{
 		public string TrashID;
 
 		public string GUID;
 
-		public global::UnityEngine.Vector3 Position;
+		public Vector3 Position;
 
-		public global::UnityEngine.Quaternion Rotation;
+		public Quaternion Rotation;
 
-		public global::ScheduleOne.Persistence.TrashContentData Contents;
+		public TrashContentData Contents;
 
-		public TrashItemData(string trashID, string guid, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		public TrashItemData(string trashID, string guid, Vector3 position, Quaternion rotation)
 		{
 		}
 	}

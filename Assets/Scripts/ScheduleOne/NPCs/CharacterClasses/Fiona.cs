@@ -1,10 +1,13 @@
+using ScheduleOne.UI.Shop;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Fiona : global::ScheduleOne.NPCs.NPC
+	public class Fiona : NPC
 	{
-		public global::ScheduleOne.UI.Shop.ShopInterface ShopInterface;
+		public ShopInterface ShopInterface;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string[] OrderCompletedLines;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EFionaAssembly_002DCSharp_002Edll_Excuted;

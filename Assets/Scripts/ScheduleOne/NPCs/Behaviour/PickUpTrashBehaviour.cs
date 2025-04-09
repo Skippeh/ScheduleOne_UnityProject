@@ -1,24 +1,32 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Employees;
+using ScheduleOne.Trash;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class PickUpTrashBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class PickUpTrashBehaviour : Behaviour
 	{
 		public const float ACTION_MAX_DISTANCE = 2f;
 
 		public const string EQUIPPABLE_ASSET_PATH = "Tools/TrashGrabber/TrashGrabber_AvatarEquippable";
 
-		private global::UnityEngine.Coroutine actionCoroutine;
+		private Coroutine actionCoroutine;
 
-		public global::UnityEngine.Events.UnityEvent onPerfomAction;
+		public UnityEvent onPerfomAction;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EPickUpTrashBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EPickUpTrashBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Trash.TrashItem TargetTrash { get; private set; }
+		public TrashItem TargetTrash { get; private set; }
 
-		private global::ScheduleOne.Employees.Cleaner Cleaner => null;
+		private Cleaner Cleaner => null;
 
-		public void SetTargetTrash(global::ScheduleOne.Trash.TrashItem trash)
+		public void SetTargetTrash(TrashItem trash)
 		{
 		}
 
@@ -58,7 +66,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void PerformAction()
 		{
 		}
@@ -93,7 +101,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_PerformAction_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PerformAction_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

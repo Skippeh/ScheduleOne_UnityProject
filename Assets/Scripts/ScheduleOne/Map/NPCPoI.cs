@@ -1,14 +1,16 @@
+using ScheduleOne.NPCs;
+
 namespace ScheduleOne.Map
 {
-	public class NPCPoI : global::ScheduleOne.Map.POI
+	public class NPCPoI : POI
 	{
-		public global::ScheduleOne.NPCs.NPC NPC { get; private set; }
+		public NPC NPC { get; private set; }
 
 		public override void InitializeUI()
 		{
 		}
 
-		public void SetNPC(global::ScheduleOne.NPCs.NPC npc)
+		public void SetNPC(NPC npc)
 		{
 		}
 	}

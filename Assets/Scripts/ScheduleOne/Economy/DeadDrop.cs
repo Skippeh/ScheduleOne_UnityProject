@@ -1,27 +1,35 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Map;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	public class DeadDrop : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class DeadDrop : MonoBehaviour, IGUIDRegisterable
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.DeadDrop> DeadDrops;
+		public static List<DeadDrop> DeadDrops;
 
 		public string DeadDropName;
 
 		public string DeadDropDescription;
 
-		public global::ScheduleOne.Storage.StorageEntity Storage;
+		public StorageEntity Storage;
 
-		public global::ScheduleOne.Map.POI PoI;
+		public POI PoI;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight Light;
+		public OptimizedLight Light;
 
 		public string ItemCountVariable;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -38,7 +46,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -46,7 +54,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public static global::ScheduleOne.Economy.DeadDrop GetRandomEmptyDrop(global::UnityEngine.Vector3 origin)
+		public static DeadDrop GetRandomEmptyDrop(Vector3 origin)
 		{
 			return null;
 		}

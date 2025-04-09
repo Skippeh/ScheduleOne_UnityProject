@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace UnityTemplateProjects
 {
-	public class SimpleCameraController : global::UnityEngine.MonoBehaviour
+	public class SimpleCameraController : MonoBehaviour
 	{
 		private class CameraState
 		{
@@ -16,53 +18,53 @@ namespace UnityTemplateProjects
 
 			public float z;
 
-			public void SetFromTransform(global::UnityEngine.Transform t)
+			public void SetFromTransform(Transform t)
 			{
 			}
 
-			public void Translate(global::UnityEngine.Vector3 translation)
+			public void Translate(Vector3 translation)
 			{
 			}
 
-			public void LerpTowards(global::UnityTemplateProjects.SimpleCameraController.CameraState target, float positionLerpPct, float rotationLerpPct)
+			public void LerpTowards(CameraState target, float positionLerpPct, float rotationLerpPct)
 			{
 			}
 
-			public void UpdateTransform(global::UnityEngine.Transform t)
+			public void UpdateTransform(Transform t)
 			{
 			}
 		}
 
-		private global::UnityTemplateProjects.SimpleCameraController.CameraState m_TargetCameraState;
+		private CameraState m_TargetCameraState;
 
-		private global::UnityTemplateProjects.SimpleCameraController.CameraState m_InterpolatingCameraState;
+		private CameraState m_InterpolatingCameraState;
 
-		[global::UnityEngine.Header("Movement Settings")]
-		[global::UnityEngine.Tooltip("Exponential boost factor on translation, controllable by mouse wheel.")]
+		[Header("Movement Settings")]
+		[Tooltip("Exponential boost factor on translation, controllable by mouse wheel.")]
 		public float boost;
 
-		[global::UnityEngine.Tooltip("Time it takes to interpolate camera position 99% of the way to the target.")]
-		[global::UnityEngine.Range(0.001f, 1f)]
+		[Tooltip("Time it takes to interpolate camera position 99% of the way to the target.")]
+		[Range(0.001f, 1f)]
 		public float positionLerpTime;
 
-		[global::UnityEngine.Header("Rotation Settings")]
-		[global::UnityEngine.Tooltip("X = Change in mouse position.\nY = Multiplicative factor for camera rotation.")]
-		public global::UnityEngine.AnimationCurve mouseSensitivityCurve;
+		[Header("Rotation Settings")]
+		[Tooltip("X = Change in mouse position.\nY = Multiplicative factor for camera rotation.")]
+		public AnimationCurve mouseSensitivityCurve;
 
-		[global::UnityEngine.Tooltip("Time it takes to interpolate camera rotation 99% of the way to the target.")]
-		[global::UnityEngine.Range(0.001f, 1f)]
+		[Tooltip("Time it takes to interpolate camera rotation 99% of the way to the target.")]
+		[Range(0.001f, 1f)]
 		public float rotationLerpTime;
 
-		[global::UnityEngine.Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
+		[Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
 		public bool invertY;
 
 		private void OnEnable()
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetInputTranslationDirection()
+		private Vector3 GetInputTranslationDirection()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private void Update()

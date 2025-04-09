@@ -1,24 +1,30 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Map;
+using ScheduleOne.Quests;
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	public class DeliveryLocation : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class DeliveryLocation : MonoBehaviour, IGUIDRegisterable
 	{
 		public string LocationName;
 
 		public string LocationDescription;
 
-		public global::UnityEngine.Transform CustomerStandPoint;
+		public Transform CustomerStandPoint;
 
-		public global::UnityEngine.Transform TeleportPoint;
+		public Transform TeleportPoint;
 
-		public global::ScheduleOne.Map.POI PoI;
+		public POI PoI;
 
 		public string StaticGUID;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract> ScheduledContracts;
+		public List<Contract> ScheduledContracts;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 

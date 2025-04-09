@@ -1,72 +1,75 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Management;
+using ScheduleOne.NPCs.Behaviour;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.ObjectScripts.WateringCan;
+using ScheduleOne.UI.Management;
+using UnityEngine;
+
 namespace ScheduleOne.Employees
 {
-	public class Cleaner : global::ScheduleOne.Employees.Employee, global::ScheduleOne.Management.IConfigurable
+	public class Cleaner : Employee, IConfigurable
 	{
 		public const int MAX_ASSIGNED_BINS = 3;
 
-		public global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberDefinition TrashGrabberDef;
+		public TrashGrabberDefinition TrashGrabberDef;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.Behaviour.PickUpTrashBehaviour PickUpTrashBehaviour;
+		[Header("References")]
+		public PickUpTrashBehaviour PickUpTrashBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.EmptyTrashGrabberBehaviour EmptyTrashGrabberBehaviour;
+		public EmptyTrashGrabberBehaviour EmptyTrashGrabberBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.BagTrashCanBehaviour BagTrashCanBehaviour;
+		public BagTrashCanBehaviour BagTrashCanBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.DisposeTrashBagBehaviour DisposeTrashBagBehaviour;
+		public DisposeTrashBagBehaviour DisposeTrashBagBehaviour;
 
-		public global::UnityEngine.Sprite typeIcon;
+		public Sprite typeIcon;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
+		[SerializeField]
+		protected ConfigurationReplicator configReplicator;
 
-		[global::UnityEngine.Header("UI")]
-		public global::ScheduleOne.UI.Management.CleanerUIElement WorldspaceUIPrefab;
+		[Header("UI")]
+		public CleanerUIElement WorldspaceUIPrefab;
 
-		public global::UnityEngine.Transform uiPoint;
+		public Transform uiPoint;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEmployees_002ECleanerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EEmployees_002ECleanerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance trashGrabberInstance { get; private set; }
+		public TrashGrabberInstance trashGrabberInstance { get; private set; }
 
-		public global::ScheduleOne.Management.EntityConfiguration Configuration => null;
+		public EntityConfiguration Configuration => null;
 
-		protected global::ScheduleOne.Management.CleanerConfiguration configuration { get; set; }
+		protected CleanerConfiguration configuration { get; set; }
 
-		public global::ScheduleOne.Management.ConfigurationReplicator ConfigReplicator => null;
+		public ConfigurationReplicator ConfigReplicator => null;
 
-		public global::ScheduleOne.Management.EConfigurableType ConfigurableType => default(global::ScheduleOne.Management.EConfigurableType);
+		public EConfigurableType ConfigurableType => default(EConfigurableType);
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement WorldspaceUI { get; set; }
+		public WorldspaceUIElement WorldspaceUI { get; set; }
 
-		public global::FishNet.Object.NetworkObject CurrentPlayerConfigurer
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar]
+		public NetworkObject CurrentPlayerConfigurer { get; set; }
 
-		public global::UnityEngine.Sprite TypeIcon => null;
+		public Sprite TypeIcon => null;
 
-		public global::UnityEngine.Transform Transform => null;
+		public Transform Transform => null;
 
-		public global::UnityEngine.Transform UIPoint => null;
+		public Transform UIPoint => null;
 
 		public bool CanBeSelected => false;
 
-		public global::ScheduleOne.Property.Property ParentProperty => null;
+		public ScheduleOne.Property.Property ParentProperty => null;
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
 		{
 			get
 			{
@@ -77,12 +80,12 @@ namespace ScheduleOne.Employees
 			}
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetConfigurer(global::FishNet.Object.NetworkObject player)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetConfigurer(NetworkObject player)
 		{
 		}
 
-		protected override void AssignProperty(global::ScheduleOne.Property.Property prop)
+		protected override void AssignProperty(ScheduleOne.Property.Property prop)
 		{
 		}
 
@@ -90,11 +93,11 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void SendConfigurationToClient(global::FishNet.Connection.NetworkConnection conn)
+		public void SendConfigurationToClient(NetworkConnection conn)
 		{
 		}
 
@@ -106,7 +109,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private global::ScheduleOne.ObjectScripts.TrashContainerItem GetFirstNonFullBin(global::ScheduleOne.ObjectScripts.TrashContainerItem[] bins)
+		private TrashContainerItem GetFirstNonFullBin(TrashContainerItem[] bins)
 		{
 			return null;
 		}
@@ -115,12 +118,12 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private global::ScheduleOne.ObjectScripts.TrashContainerItem[] GetTrashContainersOrderedByDistance()
+		private TrashContainerItem[] GetTrashContainersOrderedByDistance()
 		{
 			return null;
 		}
 
-		public override global::ScheduleOne.ObjectScripts.BedItem GetBed()
+		public override BedItem GetBed()
 		{
 			return null;
 		}
@@ -139,7 +142,7 @@ namespace ScheduleOne.Employees
 			return 0;
 		}
 
-		public global::ScheduleOne.UI.Management.WorldspaceUIElement CreateWorldspaceUI()
+		public WorldspaceUIElement CreateWorldspaceUI()
 		{
 			return null;
 		}
@@ -153,7 +156,7 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		public override global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public override List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -170,19 +173,19 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void RpcWriter___Server_SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		private void RpcWriter___Server_SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		public void RpcLogic___SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		public void RpcLogic___SetConfigurer_3323014238(NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Server_SetConfigurer_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetConfigurer_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002ECleaner(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEmployees_002ECleaner(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

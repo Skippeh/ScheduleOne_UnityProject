@@ -1,6 +1,10 @@
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Properties
 {
-	public abstract class Property : global::UnityEngine.ScriptableObject
+	public abstract class Property : ScriptableObject
 	{
 		public string Name;
 
@@ -8,39 +12,39 @@ namespace ScheduleOne.Properties
 
 		public string ID;
 
-		[global::UnityEngine.Range(1f, 5f)]
+		[Range(1f, 5f)]
 		public int Tier;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float Addictiveness;
 
-		public global::UnityEngine.Color ProductColor;
+		public Color ProductColor;
 
-		public global::UnityEngine.Color LabelColor;
+		public Color LabelColor;
 
 		public bool ImplementedPriorMixingRework;
 
-		[global::UnityEngine.Header("Value")]
-		[global::UnityEngine.Range(-100f, 100f)]
+		[Header("Value")]
+		[Range(-100f, 100f)]
 		public int ValueChange;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float ValueMultiplier;
 
-		[global::UnityEngine.Range(-1f, 1f)]
+		[Range(-1f, 1f)]
 		public float AddBaseValueMultiple;
 
-		public global::UnityEngine.Vector2 MixDirection;
+		public Vector2 MixDirection;
 
 		public float MixMagnitude;
 
-		public abstract void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc);
+		public abstract void ApplyToNPC(NPC npc);
 
-		public abstract void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc);
+		public abstract void ClearFromNPC(NPC npc);
 
-		public abstract void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player);
+		public abstract void ApplyToPlayer(Player player);
 
-		public abstract void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player);
+		public abstract void ClearFromPlayer(Player player);
 
 		public void OnValidate()
 		{

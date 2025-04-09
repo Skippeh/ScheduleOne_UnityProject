@@ -1,9 +1,16 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Lighting;
+using UnityEngine;
+
 namespace ScheduleOne.Tiles
 {
-	[global::System.Serializable]
-	public class Tile : global::UnityEngine.MonoBehaviour
+	[Serializable]
+	public class Tile : MonoBehaviour
 	{
-		public delegate void TileChange(global::ScheduleOne.Tiles.Tile thisTile);
+		public delegate void TileChange(Tile thisTile);
 
 		public static float TileSize;
 
@@ -11,40 +18,40 @@ namespace ScheduleOne.Tiles
 
 		public int y;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float AvailableOffset;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Tiles.Grid OwnerGrid;
+		[Header("References")]
+		public Grid OwnerGrid;
 
-		public global::ScheduleOne.Lighting.LightExposureNode LightExposureNode;
+		public LightExposureNode LightExposureNode;
 
-		[global::UnityEngine.Header("Occupants")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.GridItem> BuildableOccupants;
+		[Header("Occupants")]
+		public List<GridItem> BuildableOccupants;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ConstructableScripts.Constructable_GridBased> ConstructableOccupants;
+		public List<Constructable_GridBased> ConstructableOccupants;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.FootprintTile> OccupantTiles;
+		public List<FootprintTile> OccupantTiles;
 
-		public global::ScheduleOne.Tiles.Tile.TileChange onTileChanged;
+		public TileChange onTileChanged;
 
-		public void InitializePropertyTile(int _x, int _y, float _available_Offset, global::ScheduleOne.Tiles.Grid _ownerGrid)
+		public void InitializePropertyTile(int _x, int _y, float _available_Offset, Grid _ownerGrid)
 		{
 		}
 
-		public void AddOccupant(global::ScheduleOne.EntityFramework.GridItem occ, global::ScheduleOne.Tiles.FootprintTile tile)
+		public void AddOccupant(GridItem occ, FootprintTile tile)
 		{
 		}
 
-		public void AddOccupant(global::ScheduleOne.ConstructableScripts.Constructable_GridBased occ, global::ScheduleOne.Tiles.FootprintTile tile)
+		public void AddOccupant(Constructable_GridBased occ, FootprintTile tile)
 		{
 		}
 
-		public void RemoveOccupant(global::ScheduleOne.EntityFramework.GridItem occ, global::ScheduleOne.Tiles.FootprintTile tile)
+		public void RemoveOccupant(GridItem occ, FootprintTile tile)
 		{
 		}
 
-		public void RemoveOccupant(global::ScheduleOne.ConstructableScripts.Constructable_GridBased occ, global::ScheduleOne.Tiles.FootprintTile tile)
+		public void RemoveOccupant(Constructable_GridBased occ, FootprintTile tile)
 		{
 		}
 
@@ -53,7 +60,7 @@ namespace ScheduleOne.Tiles
 			return false;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> GetSurroundingTiles()
+		public List<Tile> GetSurroundingTiles()
 		{
 			return null;
 		}

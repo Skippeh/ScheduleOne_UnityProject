@@ -1,17 +1,19 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
-	public class AmbientLoop : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(AudioSourceController))]
+	public class AmbientLoop : MonoBehaviour
 	{
 		public const float MUSIC_FADE_MULTIPLIER = 0.3f;
 
 		public const float MUSIC_FADE_TIME = 4f;
 
-		public global::UnityEngine.AnimationCurve VolumeCurve;
+		public AnimationCurve VolumeCurve;
 
 		public bool FadeDuringMusic;
 
-		private global::ScheduleOne.Audio.AudioSourceController audioSourceController;
+		private AudioSourceController audioSourceController;
 
 		private float musicScale;
 

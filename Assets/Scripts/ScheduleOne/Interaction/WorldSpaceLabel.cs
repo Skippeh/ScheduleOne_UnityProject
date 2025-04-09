@@ -1,22 +1,25 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Interaction
 {
 	public class WorldSpaceLabel
 	{
 		public string text;
 
-		public global::UnityEngine.Color32 color;
+		public Color32 color;
 
-		public global::UnityEngine.Vector3 position;
+		public Vector3 position;
 
 		public float scale;
 
-		public global::UnityEngine.RectTransform rect;
+		public RectTransform rect;
 
-		public global::UnityEngine.UI.Text textComp;
+		public Text textComp;
 
 		public bool active;
 
-		public WorldSpaceLabel(string _text, global::UnityEngine.Vector3 _position)
+		public WorldSpaceLabel(string _text, Vector3 _position)
 		{
 		}
 

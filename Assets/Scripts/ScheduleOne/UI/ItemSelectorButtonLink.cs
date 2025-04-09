@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class ItemSelectorButtonLink : global::UnityEngine.MonoBehaviour
+	public class ItemSelectorButtonLink : MonoBehaviour
 	{
 	}
 }

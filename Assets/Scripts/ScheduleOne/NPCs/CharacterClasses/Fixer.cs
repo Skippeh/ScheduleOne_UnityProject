@@ -1,6 +1,8 @@
+using ScheduleOne.Dialogue;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Fixer : global::ScheduleOne.NPCs.NPC
+	public class Fixer : NPC
 	{
 		public const int ADDITIONAL_SIGNING_FEE_1 = 100;
 
@@ -10,7 +12,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 
 		public const int ADDITIONAL_FEE_THRESHOLD = 5;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
+		public DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
 

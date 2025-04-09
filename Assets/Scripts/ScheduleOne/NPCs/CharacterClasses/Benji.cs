@@ -1,8 +1,11 @@
+using ScheduleOne.Economy;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Benji : global::ScheduleOne.Economy.Dealer
+	public class Benji : Dealer
 	{
-		public global::UnityEngine.Events.UnityEvent onRecruitmentRequested;
+		public UnityEvent onRecruitmentRequested;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EBenjiAssembly_002DCSharp_002Edll_Excuted;
 
@@ -12,11 +15,11 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		protected override void AddCustomer(global::ScheduleOne.Economy.Customer customer)
+		protected override void AddCustomer(Customer customer)
 		{
 		}
 
-		public override void RemoveCustomer(global::ScheduleOne.Economy.Customer customer)
+		public override void RemoveCustomer(Customer customer)
 		{
 		}
 

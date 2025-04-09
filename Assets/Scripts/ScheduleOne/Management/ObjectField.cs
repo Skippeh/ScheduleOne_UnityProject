@@ -1,23 +1,30 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI.Management;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class ObjectField : global::ScheduleOne.Management.ConfigField
+	public class ObjectField : ConfigField
 	{
-		public global::ScheduleOne.EntityFramework.BuildableItem SelectedObject;
+		public BuildableItem SelectedObject;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.EntityFramework.BuildableItem> onObjectChanged;
+		public UnityEvent<BuildableItem> onObjectChanged;
 
-		public global::ScheduleOne.UI.Management.ObjectSelector.ObjectFilter objectFilter;
+		public ObjectSelector.ObjectFilter objectFilter;
 
-		public global::System.Collections.Generic.List<global::System.Type> TypeRequirements;
+		public List<Type> TypeRequirements;
 
 		public bool DrawTransitLine;
 
-		public ObjectField(global::ScheduleOne.Management.EntityConfiguration parentConfig)
+		public ObjectField(EntityConfiguration parentConfig)
 			: base(null)
 		{
 		}
 
-		public void SetObject(global::ScheduleOne.EntityFramework.BuildableItem obj, bool network)
+		public void SetObject(BuildableItem obj, bool network)
 		{
 		}
 
@@ -30,11 +37,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.ObjectFieldData data)
+		public void Load(ObjectFieldData data)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData GetData()
+		public ObjectFieldData GetData()
 		{
 			return null;
 		}

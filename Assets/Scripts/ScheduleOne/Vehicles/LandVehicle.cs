@@ -1,21 +1,52 @@
+using System;
+using System.Collections.Generic;
+using EPOOutline;
+using FishNet.Component.Ownership;
+using FishNet.Component.Transforming;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using Pathfinding;
+using ScheduleOne.Combat;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Interaction;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Map;
+using ScheduleOne.Money;
+using ScheduleOne.NPCs;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Storage;
+using ScheduleOne.Tools;
+using ScheduleOne.Vehicles.AI;
+using ScheduleOne.Vehicles.Modification;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.VehicleCamera))]
-	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Transforming.NetworkTransform))]
-	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Ownership.PredictedOwner))]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.VehicleCollisionDetector))]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Combat.PhysicsDamageable))]
-	public class LandVehicle : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
+	[RequireComponent(typeof(VehicleCamera))]
+	[RequireComponent(typeof(NetworkTransform))]
+	[RequireComponent(typeof(PredictedOwner))]
+	[RequireComponent(typeof(VehicleCollisionDetector))]
+	[RequireComponent(typeof(PhysicsDamageable))]
+	public class LandVehicle : NetworkBehaviour, IGUIDRegisterable, ISaveable
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class BodyMesh
 		{
-			public global::UnityEngine.MeshRenderer Renderer;
+			public MeshRenderer Renderer;
 
 			public int MaterialIndex;
 		}
 
-		public delegate void VehiclePlayerEvent(global::ScheduleOne.PlayerScripts.Player player);
+		public delegate void VehiclePlayerEvent(Player player);
 
 		public const float KINEMATIC_THRESHOLD_DISTANCE = 30f;
 
@@ -29,137 +60,137 @@ namespace ScheduleOne.Vehicles
 
 		public bool DEBUG;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected string vehicleName;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string vehicleCode;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float vehiclePrice;
 
 		public bool UseHumanoidCollider;
 
 		public bool SpawnAsPlayerOwned;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject vehicleModel;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject vehicleModel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.WheelCollider[] driveWheels;
+		[SerializeField]
+		protected WheelCollider[] driveWheels;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.WheelCollider[] steerWheels;
+		[SerializeField]
+		protected WheelCollider[] steerWheels;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.WheelCollider[] handbrakeWheels;
+		[SerializeField]
+		protected WheelCollider[] handbrakeWheels;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Wheel> wheels;
+		[HideInInspector]
+		public List<Wheel> wheels;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> exitPoints;
+		[SerializeField]
+		protected List<Transform> exitPoints;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Rigidbody rb;
+		[SerializeField]
+		protected Rigidbody rb;
 
-		public global::ScheduleOne.Vehicles.VehicleSeat[] Seats;
+		public VehicleSeat[] Seats;
 
-		public global::UnityEngine.BoxCollider boundingBox;
+		public BoxCollider boundingBox;
 
-		public global::ScheduleOne.Vehicles.AI.VehicleAgent Agent;
+		public VehicleAgent Agent;
 
-		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
+		public SmoothedVelocityCalculator VelocityCalculator;
 
-		public global::ScheduleOne.Storage.StorageDoorAnimation Trunk;
+		public StorageDoorAnimation Trunk;
 
-		public global::UnityEngine.AI.NavMeshObstacle NavMeshObstacle;
+		public NavMeshObstacle NavMeshObstacle;
 
-		public global::Pathfinding.NavmeshCut NavmeshCut;
+		public NavmeshCut NavmeshCut;
 
-		public global::ScheduleOne.Vehicles.VehicleHumanoidCollider HumanoidColliderContainer;
+		public VehicleHumanoidCollider HumanoidColliderContainer;
 
-		public global::ScheduleOne.Map.POI POI;
+		public POI POI;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform centerOfMass;
+		[SerializeField]
+		protected Transform centerOfMass;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform cameraOrigin;
+		[SerializeField]
+		protected Transform cameraOrigin;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Vehicles.VehicleLights lights;
+		[SerializeField]
+		protected VehicleLights lights;
 
-		[global::UnityEngine.Header("Steer settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Steer settings")]
+		[SerializeField]
 		protected float maxSteeringAngle;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float steerRate;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected bool flipSteer;
 
-		[global::UnityEngine.Header("Drive settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve motorTorque;
+		[Header("Drive settings")]
+		[SerializeField]
+		protected AnimationCurve motorTorque;
 
 		public float TopSpeed;
 
-		[global::UnityEngine.Range(2f, 16f)]
-		[global::UnityEngine.SerializeField]
+		[Range(2f, 16f)]
+		[SerializeField]
 		protected float diffGearing;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float handBrakeForce;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve brakeForce;
+		[SerializeField]
+		protected AnimationCurve brakeForce;
 
-		[global::UnityEngine.Range(0.5f, 10f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0.5f, 10f)]
+		[SerializeField]
 		protected float downforce;
 
-		[global::UnityEngine.Range(0f, 1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 1f)]
+		[SerializeField]
 		protected float reverseMultiplier;
 
-		[global::UnityEngine.Header("Color Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Vehicles.LandVehicle.BodyMesh[] BodyMeshes;
+		[Header("Color Settings")]
+		[SerializeField]
+		protected BodyMesh[] BodyMeshes;
 
-		public global::ScheduleOne.Vehicles.Modification.EVehicleColor DefaultColor;
+		public EVehicleColor DefaultColor;
 
-		private global::ScheduleOne.Vehicles.Modification.EVehicleColor DisplayedColor;
+		private EVehicleColor DisplayedColor;
 
-		[global::UnityEngine.Header("Outline settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> outlineRenderers;
+		[Header("Outline settings")]
+		[SerializeField]
+		protected List<GameObject> outlineRenderers;
 
-		protected global::EPOOutline.Outlinable outlineEffect;
+		protected Outlinable outlineEffect;
 
-		[global::UnityEngine.Header("Control overrides")]
+		[Header("Control overrides")]
 		public bool overrideControls;
 
 		public float throttleOverride;
 
 		public float steerOverride;
 
-		[global::UnityEngine.Header("Storage settings")]
-		public global::ScheduleOne.Storage.StorageEntity Storage;
+		[Header("Storage settings")]
+		public StorageEntity Storage;
 
-		private global::ScheduleOne.Vehicles.VehicleSeat localPlayerSeat;
+		private VehicleSeat localPlayerSeat;
 
-		private global::System.Collections.Generic.List<float> previousSpeeds;
+		private List<float> previousSpeeds;
 
 		private int previousSpeedsSampleSize;
 
-		[global::FishNet.Object.Synchronizing.SyncVar(Channel = global::FishNet.Transporting.Channel.Unreliable, SendRate = 0.05f, WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
+		[SyncVar(Channel = Channel.Unreliable, SendRate = 0.05f, WritePermissions = WritePermission.ClientUnsynchronized)]
 		public float currentSteerAngle;
 
 		private float lastFrameSteerAngle;
@@ -168,32 +199,32 @@ namespace ScheduleOne.Vehicles
 
 		private bool justExitedVehicle;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private Vector3 lastFramePosition;
 
-		private global::UnityEngine.Transform closestExitPoint;
+		private Transform closestExitPoint;
 
-		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.Vehicles.ParkData CurrentParkData;
+		[HideInInspector]
+		public ParkData CurrentParkData;
 
-		private global::ScheduleOne.Persistence.Loaders.VehicleLoader loader;
+		private VehicleLoader loader;
 
-		public global::ScheduleOne.Vehicles.LandVehicle.VehiclePlayerEvent onPlayerEnterVehicle;
+		public VehiclePlayerEvent onPlayerEnterVehicle;
 
-		public global::ScheduleOne.Vehicles.LandVehicle.VehiclePlayerEvent onPlayerExitVehicle;
+		public VehiclePlayerEvent onPlayerExitVehicle;
 
-		public global::UnityEngine.Events.UnityEvent onVehicleStart;
+		public UnityEvent onVehicleStart;
 
-		public global::UnityEngine.Events.UnityEvent onVehicleStop;
+		public UnityEvent onVehicleStop;
 
-		public global::UnityEngine.Events.UnityEvent onHandbrakeApplied;
+		public UnityEvent onHandbrakeApplied;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collision> onCollision;
+		public UnityEvent<Collision> onCollision;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___currentSteerAngle;
+		public SyncVar<float> syncVar___currentSteerAngle;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CbrakesApplied_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CbrakesApplied_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CisReversing_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CisReversing_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002ELandVehicleAssembly_002DCSharp_002Edll_Excuted;
 
@@ -209,15 +240,15 @@ namespace ScheduleOne.Vehicles
 
 		public bool IsVisible { get; protected set; }
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		public float DistanceToLocalCamera { get; private set; }
 
-		public global::UnityEngine.Vector3 boundingBoxDimensions => default(global::UnityEngine.Vector3);
+		public Vector3 boundingBoxDimensions => default(Vector3);
 
-		public global::UnityEngine.Transform driverEntryPoint => null;
+		public Transform driverEntryPoint => null;
 
-		public global::UnityEngine.Rigidbody Rb => null;
+		public Rigidbody Rb => null;
 
 		public float ActualMaxSteeringAngle => 0f;
 
@@ -225,7 +256,7 @@ namespace ScheduleOne.Vehicles
 
 		public float OverriddenMaxSteerAngle { get; private set; }
 
-		public global::ScheduleOne.Vehicles.Modification.EVehicleColor OwnedColor { get; private set; }
+		public EVehicleColor OwnedColor { get; private set; }
 
 		public int Capacity => 0;
 
@@ -237,11 +268,11 @@ namespace ScheduleOne.Vehicles
 
 		public bool isOccupied { get; private set; }
 
-		public global::ScheduleOne.PlayerScripts.Player DriverPlayer => null;
+		public Player DriverPlayer => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> OccupantPlayers => null;
+		public List<Player> OccupantPlayers => null;
 
-		public global::ScheduleOne.NPCs.NPC[] OccupantNPCs { get; protected set; }
+		public NPC[] OccupantNPCs { get; protected set; }
 
 		public float speed_Kmh { get; protected set; }
 
@@ -251,31 +282,11 @@ namespace ScheduleOne.Vehicles
 
 		public float currentThrottle { get; protected set; }
 
-		public bool brakesApplied
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar(Channel = Channel.Unreliable, SendRate = 0.1f, WritePermissions = WritePermission.ClientUnsynchronized)]
+		public bool brakesApplied { get; set; }
 
-		public bool isReversing
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar(Channel = Channel.Unreliable, SendRate = 0.1f, WritePermissions = WritePermission.ClientUnsynchronized)]
+		public bool isReversing { get; set; }
 
 		public bool isStatic { get; protected set; }
 
@@ -285,21 +296,21 @@ namespace ScheduleOne.Vehicles
 
 		public bool isParked => false;
 
-		public global::ScheduleOne.Map.ParkingLot CurrentParkingLot { get; protected set; }
+		public ParkingLot CurrentParkingLot { get; protected set; }
 
-		public global::ScheduleOne.Map.ParkingSpot CurrentParkingSpot { get; protected set; }
+		public ParkingSpot CurrentParkingSpot { get; protected set; }
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -348,7 +359,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -356,9 +367,9 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetIsPlayerOwned(global::FishNet.Connection.NetworkConnection conn, bool playerOwned)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetIsPlayerOwned(NetworkConnection conn, bool playerOwned)
 		{
 		}
 
@@ -366,7 +377,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -374,7 +385,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -382,7 +393,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void GetNetworth(global::ScheduleOne.Money.MoneyManager.FloatContainer container)
+		private void GetNetworth(MoneyManager.FloatContainer container)
 		{
 		}
 
@@ -406,27 +417,27 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void OnCollisionEnter(global::UnityEngine.Collision collision)
+		private void OnCollisionEnter(Collision collision)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		protected virtual void SetOwner(global::FishNet.Connection.NetworkConnection conn)
+		[ServerRpc(RequireOwnership = false)]
+		protected virtual void SetOwner(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		protected virtual void OnOwnerChanged()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetTransform_Server(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetTransform_Server(Vector3 pos, Quaternion rot)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void SetTransform(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		[ObserversRpc(RunLocally = true)]
+		public void SetTransform(Vector3 pos, Quaternion rot)
 		{
 		}
 
@@ -446,7 +457,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void SetSteeringAngle(float sa)
 		{
 		}
@@ -467,11 +478,11 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public void AlignTo(global::UnityEngine.Transform target, global::ScheduleOne.Vehicles.EParkingAlignment type, bool network = false)
+		public void AlignTo(Transform target, EParkingAlignment type, bool network = false)
 		{
 		}
 
-		public global::System.Tuple<global::UnityEngine.Vector3, global::UnityEngine.Quaternion> GetAlignmentTransform(global::UnityEngine.Transform target, global::ScheduleOne.Vehicles.EParkingAlignment type)
+		public Tuple<Vector3, Quaternion> GetAlignmentTransform(Transform target, EParkingAlignment type)
 		{
 			return null;
 		}
@@ -493,19 +504,19 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public global::ScheduleOne.Vehicles.VehicleSeat GetFirstFreeSeat()
+		public VehicleSeat GetFirstFreeSeat()
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void SetSeatOccupant(global::FishNet.Connection.NetworkConnection conn, int seatIndex, global::FishNet.Connection.NetworkConnection occupant)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void SetSeatOccupant(NetworkConnection conn, int seatIndex, NetworkConnection occupant)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void SetSeatOccupant_Server(int seatIndex, global::FishNet.Connection.NetworkConnection conn)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void SetSeatOccupant_Server(int seatIndex, NetworkConnection conn)
 		{
 		}
 
@@ -529,26 +540,26 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public global::UnityEngine.Transform GetExitPoint(int seatIndex = 0)
+		public Transform GetExitPoint(int seatIndex = 0)
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Transform GetClosestExitPoint(global::UnityEngine.Vector3 pos)
+		private Transform GetClosestExitPoint(Vector3 pos)
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Transform GetValidExitPoint(global::System.Collections.Generic.List<global::UnityEngine.Transform> possibleExitPoints)
+		private Transform GetValidExitPoint(List<Transform> possibleExitPoints)
 		{
 			return null;
 		}
 
-		public void AddNPCOccupant(global::ScheduleOne.NPCs.NPC npc)
+		public void AddNPCOccupant(NPC npc)
 		{
 		}
 
-		public void RemoveNPCOccupant(global::ScheduleOne.NPCs.NPC npc)
+		public void RemoveNPCOccupant(NPC npc)
 		{
 		}
 
@@ -561,18 +572,18 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendOwnedColor(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendOwnedColor(EVehicleColor col)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		protected virtual void SetOwnedColor(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		protected virtual void SetOwnedColor(NetworkConnection conn, EVehicleColor col)
 		{
 		}
 
-		public virtual void ApplyColor(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		public virtual void ApplyColor(EVehicleColor col)
 		{
 		}
 
@@ -580,7 +591,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public void ShowOutline(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor color)
+		public void ShowOutline(BuildableItem.EOutlineColor color)
 		{
 		}
 
@@ -588,19 +599,19 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void Park_Networked(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.ParkData parkData)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void Park_Networked(NetworkConnection conn, ParkData parkData)
 		{
 		}
 
-		public void Park(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.ParkData parkData, bool network)
+		public void Park(NetworkConnection conn, ParkData parkData, bool network)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void ExitPark_Networked(global::FishNet.Connection.NetworkConnection conn, bool moveToExitPoint = true)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void ExitPark_Networked(NetworkConnection conn, bool moveToExitPoint = true)
 		{
 		}
 
@@ -612,7 +623,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> GetContents()
+		public List<ItemInstance> GetContents()
 		{
 			return null;
 		}
@@ -622,12 +633,12 @@ namespace ScheduleOne.Vehicles
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.VehicleData data, string containerPath)
+		public virtual void Load(VehicleData data, string containerPath)
 		{
 		}
 
@@ -643,35 +654,35 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void RpcWriter___Observers_SetIsPlayerOwned_214505783(global::FishNet.Connection.NetworkConnection conn, bool playerOwned)
+		private void RpcWriter___Observers_SetIsPlayerOwned_214505783(NetworkConnection conn, bool playerOwned)
 		{
 		}
 
-		public void RpcLogic___SetIsPlayerOwned_214505783(global::FishNet.Connection.NetworkConnection conn, bool playerOwned)
+		public void RpcLogic___SetIsPlayerOwned_214505783(NetworkConnection conn, bool playerOwned)
 		{
 		}
 
-		private void RpcReader___Observers_SetIsPlayerOwned_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetIsPlayerOwned_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetIsPlayerOwned_214505783(global::FishNet.Connection.NetworkConnection conn, bool playerOwned)
+		private void RpcWriter___Target_SetIsPlayerOwned_214505783(NetworkConnection conn, bool playerOwned)
 		{
 		}
 
-		private void RpcReader___Target_SetIsPlayerOwned_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetIsPlayerOwned_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetOwner_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Server_SetOwner_328543758(NetworkConnection conn)
 		{
 		}
 
-		protected virtual void RpcLogic___SetOwner_328543758(global::FishNet.Connection.NetworkConnection conn)
+		protected virtual void RpcLogic___SetOwner_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Server_SetOwner_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetOwner_328543758(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -683,31 +694,31 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void RpcReader___Observers_OnOwnerChanged_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_OnOwnerChanged_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetTransform_Server_3848837105(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		private void RpcWriter___Server_SetTransform_Server_3848837105(Vector3 pos, Quaternion rot)
 		{
 		}
 
-		public void RpcLogic___SetTransform_Server_3848837105(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		public void RpcLogic___SetTransform_Server_3848837105(Vector3 pos, Quaternion rot)
 		{
 		}
 
-		private void RpcReader___Server_SetTransform_Server_3848837105(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetTransform_Server_3848837105(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetTransform_3848837105(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		private void RpcWriter___Observers_SetTransform_3848837105(Vector3 pos, Quaternion rot)
 		{
 		}
 
-		public void RpcLogic___SetTransform_3848837105(global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot)
+		public void RpcLogic___SetTransform_3848837105(Vector3 pos, Quaternion rot)
 		{
 		}
 
-		private void RpcReader___Observers_SetTransform_3848837105(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetTransform_3848837105(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -719,115 +730,115 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void RpcReader___Server_SetSteeringAngle_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetSteeringAngle_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetSeatOccupant_3428404692(global::FishNet.Connection.NetworkConnection conn, int seatIndex, global::FishNet.Connection.NetworkConnection occupant)
+		private void RpcWriter___Observers_SetSeatOccupant_3428404692(NetworkConnection conn, int seatIndex, NetworkConnection occupant)
 		{
 		}
 
-		private void RpcLogic___SetSeatOccupant_3428404692(global::FishNet.Connection.NetworkConnection conn, int seatIndex, global::FishNet.Connection.NetworkConnection occupant)
+		private void RpcLogic___SetSeatOccupant_3428404692(NetworkConnection conn, int seatIndex, NetworkConnection occupant)
 		{
 		}
 
-		private void RpcReader___Observers_SetSeatOccupant_3428404692(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetSeatOccupant_3428404692(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetSeatOccupant_3428404692(global::FishNet.Connection.NetworkConnection conn, int seatIndex, global::FishNet.Connection.NetworkConnection occupant)
+		private void RpcWriter___Target_SetSeatOccupant_3428404692(NetworkConnection conn, int seatIndex, NetworkConnection occupant)
 		{
 		}
 
-		private void RpcReader___Target_SetSeatOccupant_3428404692(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetSeatOccupant_3428404692(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SetSeatOccupant_Server_3266232555(int seatIndex, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Server_SetSeatOccupant_Server_3266232555(int seatIndex, NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___SetSeatOccupant_Server_3266232555(int seatIndex, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcLogic___SetSeatOccupant_Server_3266232555(int seatIndex, NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Server_SetSeatOccupant_Server_3266232555(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetSeatOccupant_Server_3266232555(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SendOwnedColor_911055161(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		private void RpcWriter___Server_SendOwnedColor_911055161(EVehicleColor col)
 		{
 		}
 
-		public void RpcLogic___SendOwnedColor_911055161(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		public void RpcLogic___SendOwnedColor_911055161(EVehicleColor col)
 		{
 		}
 
-		private void RpcReader___Server_SendOwnedColor_911055161(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendOwnedColor_911055161(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_SetOwnedColor_1679996372(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		private void RpcWriter___Target_SetOwnedColor_1679996372(NetworkConnection conn, EVehicleColor col)
 		{
 		}
 
-		protected virtual void RpcLogic___SetOwnedColor_1679996372(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		protected virtual void RpcLogic___SetOwnedColor_1679996372(NetworkConnection conn, EVehicleColor col)
 		{
 		}
 
-		private void RpcReader___Target_SetOwnedColor_1679996372(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetOwnedColor_1679996372(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetOwnedColor_1679996372(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		private void RpcWriter___Observers_SetOwnedColor_1679996372(NetworkConnection conn, EVehicleColor col)
 		{
 		}
 
-		private void RpcReader___Observers_SetOwnedColor_1679996372(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetOwnedColor_1679996372(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_Park_Networked_2633993806(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.ParkData parkData)
+		private void RpcWriter___Observers_Park_Networked_2633993806(NetworkConnection conn, ParkData parkData)
 		{
 		}
 
-		private void RpcLogic___Park_Networked_2633993806(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.ParkData parkData)
+		private void RpcLogic___Park_Networked_2633993806(NetworkConnection conn, ParkData parkData)
 		{
 		}
 
-		private void RpcReader___Observers_Park_Networked_2633993806(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Park_Networked_2633993806(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Park_Networked_2633993806(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Vehicles.ParkData parkData)
+		private void RpcWriter___Target_Park_Networked_2633993806(NetworkConnection conn, ParkData parkData)
 		{
 		}
 
-		private void RpcReader___Target_Park_Networked_2633993806(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Park_Networked_2633993806(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_ExitPark_Networked_214505783(global::FishNet.Connection.NetworkConnection conn, bool moveToExitPoint = true)
+		private void RpcWriter___Observers_ExitPark_Networked_214505783(NetworkConnection conn, bool moveToExitPoint = true)
 		{
 		}
 
-		public void RpcLogic___ExitPark_Networked_214505783(global::FishNet.Connection.NetworkConnection conn, bool moveToExitPoint = true)
+		public void RpcLogic___ExitPark_Networked_214505783(NetworkConnection conn, bool moveToExitPoint = true)
 		{
 		}
 
-		private void RpcReader___Observers_ExitPark_Networked_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ExitPark_Networked_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ExitPark_Networked_214505783(global::FishNet.Connection.NetworkConnection conn, bool moveToExitPoint = true)
+		private void RpcWriter___Target_ExitPark_Networked_214505783(NetworkConnection conn, bool moveToExitPoint = true)
 		{
 		}
 
-		private void RpcReader___Target_ExitPark_Networked_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ExitPark_Networked_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002ELandVehicle(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EVehicles_002ELandVehicle(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

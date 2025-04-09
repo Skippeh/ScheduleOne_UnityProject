@@ -1,15 +1,17 @@
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Economy
 {
 	public static class StandardsMethod
 	{
-		public static string GetName(this global::ScheduleOne.Economy.ECustomerStandard property)
+		public static string GetName(this ECustomerStandard property)
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.ItemFramework.EQuality GetCorrespondingQuality(this global::ScheduleOne.Economy.ECustomerStandard property)
+		public static EQuality GetCorrespondingQuality(this ECustomerStandard property)
 		{
-			return default(global::ScheduleOne.ItemFramework.EQuality);
+			return default(EQuality);
 		}
 	}
 }

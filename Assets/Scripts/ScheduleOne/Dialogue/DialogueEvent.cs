@@ -1,12 +1,15 @@
+using System;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DialogueEvent
 	{
-		public global::ScheduleOne.Dialogue.DialogueContainer Dialogue;
+		public DialogueContainer Dialogue;
 
-		public global::UnityEngine.Events.UnityEvent onDialogueEnded;
+		public UnityEvent onDialogueEnded;
 
-		public global::ScheduleOne.Dialogue.DialogueNodeEvent[] NodeEvents;
+		public DialogueNodeEvent[] NodeEvents;
 	}
 }

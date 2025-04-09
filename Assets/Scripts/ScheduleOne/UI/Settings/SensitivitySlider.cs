@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class SensitivitySlider : global::ScheduleOne.UI.Settings.SettingsSlider
+	public class SensitivitySlider : SettingsSlider
 	{
 		public const float MULTIPLIER = 1f / 30f;
 

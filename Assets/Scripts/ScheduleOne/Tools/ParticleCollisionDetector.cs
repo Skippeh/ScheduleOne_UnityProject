@@ -1,16 +1,19 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class ParticleCollisionDetector : global::UnityEngine.MonoBehaviour
+	public class ParticleCollisionDetector : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.GameObject> onCollision;
+		public UnityEvent<GameObject> onCollision;
 
-		private global::UnityEngine.ParticleSystem ps;
+		private ParticleSystem ps;
 
 		private void Awake()
 		{
 		}
 
-		public void OnParticleCollision(global::UnityEngine.GameObject other)
+		public void OnParticleCollision(GameObject other)
 		{
 		}
 

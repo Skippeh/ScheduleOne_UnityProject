@@ -1,25 +1,28 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.Sound
 {
-	public class VehicleSound : global::UnityEngine.MonoBehaviour
+	public class VehicleSound : MonoBehaviour
 	{
 		public const float COLLISION_SOUND_COOLDOWN = 0.5f;
 
 		public float VolumeMultiplier;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController EngineStartSource;
+		[Header("References")]
+		public AudioSourceController EngineStartSource;
 
-		public global::ScheduleOne.Audio.AudioSourceController EngineIdleSource;
+		public AudioSourceController EngineIdleSource;
 
-		public global::ScheduleOne.Audio.AudioSourceController EngineLoopSource;
+		public AudioSourceController EngineLoopSource;
 
-		public global::ScheduleOne.Audio.AudioSourceController HandbrakeSource;
+		public AudioSourceController HandbrakeSource;
 
-		public global::ScheduleOne.Audio.AudioSourceController HonkSource;
+		public AudioSourceController HonkSource;
 
-		public global::ScheduleOne.Audio.AudioSourceController ImpactSound;
+		public AudioSourceController ImpactSound;
 
-		[global::UnityEngine.Header("Impact Sounds")]
+		[Header("Impact Sounds")]
 		public float MinCollisionMomentum;
 
 		public float MaxCollisionMomentum;
@@ -32,12 +35,12 @@ namespace ScheduleOne.Vehicles.Sound
 
 		public float MaxCollisionPitch;
 
-		[global::UnityEngine.Header("Engine Loop Settings")]
-		public global::UnityEngine.AnimationCurve EngineLoopPitchCurve;
+		[Header("Engine Loop Settings")]
+		public AnimationCurve EngineLoopPitchCurve;
 
 		public float EngineLoopPitchMultiplier;
 
-		public global::UnityEngine.AnimationCurve EngineLoopVolumeCurve;
+		public AnimationCurve EngineLoopVolumeCurve;
 
 		private float currentIdleVolume;
 
@@ -45,7 +48,7 @@ namespace ScheduleOne.Vehicles.Sound
 
 		private float lastCollisionMomentum;
 
-		public global::ScheduleOne.Vehicles.LandVehicle Vehicle { get; private set; }
+		public LandVehicle Vehicle { get; private set; }
 
 		protected virtual void Awake()
 		{
@@ -71,7 +74,7 @@ namespace ScheduleOne.Vehicles.Sound
 		{
 		}
 
-		private void OnCollision(global::UnityEngine.Collision collision)
+		private void OnCollision(Collision collision)
 		{
 		}
 	}

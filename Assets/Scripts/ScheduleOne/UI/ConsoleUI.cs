@@ -1,13 +1,17 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class ConsoleUI : global::UnityEngine.MonoBehaviour
+	public class ConsoleUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::TMPro.TMP_InputField InputField;
+		public TMP_InputField InputField;
 
-		public global::UnityEngine.GameObject Container;
+		public GameObject Container;
 
 		public bool IS_CONSOLE_ENABLED => false;
 
@@ -19,7 +23,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exitAction)
+		private void Exit(ExitAction exitAction)
 		{
 		}
 

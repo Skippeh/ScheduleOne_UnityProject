@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class TrackballAttribute : global::UnityEngine.PropertyAttribute
+	public sealed class TrackballAttribute : PropertyAttribute
 	{
 		public readonly string method;
 

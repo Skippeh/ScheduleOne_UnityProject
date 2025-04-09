@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class FootPatrolRoute : global::UnityEngine.MonoBehaviour
+	public class FootPatrolRoute : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string RouteName;
 
-		public global::UnityEngine.Color PathColor;
+		public Color PathColor;
 
-		public global::UnityEngine.Transform[] Waypoints;
+		public Transform[] Waypoints;
 
 		public int StartWaypointIndex;
 

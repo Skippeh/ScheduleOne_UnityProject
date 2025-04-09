@@ -1,21 +1,26 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Materials;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class FootstepSounds : global::UnityEngine.MonoBehaviour
+	public class FootstepSounds : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class FootstepSoundGroup
 		{
-			[global::System.Serializable]
+			[Serializable]
 			public class MaterialType
 			{
-				public global::ScheduleOne.Materials.EMaterialType type;
+				public EMaterialType type;
 			}
 
 			public string name;
 
-			public global::System.Collections.Generic.List<global::UnityEngine.AudioClip> clips;
+			public List<AudioClip> clips;
 
-			public global::System.Collections.Generic.List<global::ScheduleOne.Audio.FootstepSounds.FootstepSoundGroup.MaterialType> appliesTo;
+			public List<MaterialType> appliesTo;
 
 			public float PitchMin;
 
@@ -26,11 +31,11 @@ namespace ScheduleOne.Audio
 
 		public const float COOLDOWN_TIME = 0.15f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> sources;
+		public List<AudioSourceController> sources;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.FootstepSounds.FootstepSoundGroup> soundGroups;
+		public List<FootstepSoundGroup> soundGroups;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Materials.EMaterialType, global::ScheduleOne.Audio.FootstepSounds.FootstepSoundGroup> materialFootstepSounds;
+		private Dictionary<EMaterialType, FootstepSoundGroup> materialFootstepSounds;
 
 		private float lastStepTime;
 
@@ -42,11 +47,11 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public void Step(global::ScheduleOne.Materials.EMaterialType materialType, float hardness)
+		public void Step(EMaterialType materialType, float hardness)
 		{
 		}
 
-		public global::ScheduleOne.Audio.AudioSourceController GetFreeSource()
+		public AudioSourceController GetFreeSource()
 		{
 			return null;
 		}

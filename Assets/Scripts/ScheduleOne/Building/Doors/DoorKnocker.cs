@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace ScheduleOne.Building.Doors
 {
-	public class DoorKnocker : global::UnityEngine.MonoBehaviour
+	public class DoorKnocker : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animation Anim;
+		[Header("References")]
+		public Animation Anim;
 
 		public string KnockingSoundClipName;
 
-		public global::UnityEngine.AudioSource KnockingSound;
+		public AudioSource KnockingSound;
 
 		public void Knock()
 		{

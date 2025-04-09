@@ -1,6 +1,6 @@
 namespace ScheduleOne.Property
 {
-	public class MotelRoom : global::ScheduleOne.Property.Property
+	public class MotelRoom : Property
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EMotelRoomAssembly_002DCSharp_002Edll_Excuted;
 

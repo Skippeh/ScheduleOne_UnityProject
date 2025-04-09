@@ -1,22 +1,25 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts.WateringCan
 {
-	public class WateringCanVisuals : global::UnityEngine.MonoBehaviour
+	public class WateringCanVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.ParticleSystem OverflowParticles;
+		public ParticleSystem OverflowParticles;
 
-		public global::UnityEngine.Transform WaterTransform;
+		public Transform WaterTransform;
 
 		public float WaterMaxY;
 
 		public float WaterMinY;
 
-		public global::UnityEngine.Transform SideWaterTransform;
+		public Transform SideWaterTransform;
 
 		public float SideWaterMinScale;
 
 		public float SideWaterMaxScale;
 
-		public global::ScheduleOne.Audio.AudioSourceController FillSound;
+		public AudioSourceController FillSound;
 
 		public virtual void SetFillLevel(float normalizedFillLevel)
 		{

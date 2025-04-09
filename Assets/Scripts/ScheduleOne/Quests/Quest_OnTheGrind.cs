@@ -1,8 +1,8 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_OnTheGrind : global::ScheduleOne.Quests.Quest
+	public class Quest_OnTheGrind : Quest
 	{
-		public global::ScheduleOne.Quests.QuestEntry CompleteDealsEntry;
+		public QuestEntry CompleteDealsEntry;
 
 		protected override void MinPass()
 		{

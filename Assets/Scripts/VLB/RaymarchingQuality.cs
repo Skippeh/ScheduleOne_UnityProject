@@ -1,16 +1,19 @@
+using System;
+using UnityEngine;
+
 namespace VLB
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class RaymarchingQuality
 	{
 		public string name;
 
 		public int stepCount;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int _UniqueID;
 
-		private static global::VLB.RaymarchingQuality ms_DefaultInstance;
+		private static RaymarchingQuality ms_DefaultInstance;
 
 		private const int kRandomUniqueIdMinRange = 4;
 
@@ -18,23 +21,23 @@ namespace VLB
 
 		public bool hasValidUniqueID => false;
 
-		public static global::VLB.RaymarchingQuality defaultInstance => null;
+		public static RaymarchingQuality defaultInstance => null;
 
 		private RaymarchingQuality(int uniqueID)
 		{
 		}
 
-		public static global::VLB.RaymarchingQuality New()
+		public static RaymarchingQuality New()
 		{
 			return null;
 		}
 
-		public static global::VLB.RaymarchingQuality New(string name, int forcedUniqueID, int stepCount)
+		public static RaymarchingQuality New(string name, int forcedUniqueID, int stepCount)
 		{
 			return null;
 		}
 
-		private static bool HasRaymarchingQualityWithSameUniqueID(global::VLB.RaymarchingQuality[] values, int id)
+		private static bool HasRaymarchingQualityWithSameUniqueID(RaymarchingQuality[] values, int id)
 		{
 			return false;
 		}

@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class DestroyUIAtBounds : global::UnityEngine.MonoBehaviour
+	public class DestroyUIAtBounds : MonoBehaviour
 	{
-		public global::UnityEngine.RectTransform Rect;
+		public RectTransform Rect;
 
-		public global::UnityEngine.Vector2 MinBounds;
+		public Vector2 MinBounds;
 
-		public global::UnityEngine.Vector2 MaxBounds;
+		public Vector2 MaxBounds;
 
 		public void Update()
 		{

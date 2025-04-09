@@ -1,6 +1,10 @@
+using System;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DialogueNodeData
 	{
 		public string Guid;
@@ -9,13 +13,13 @@ namespace ScheduleOne.Dialogue
 
 		public string DialogueNodeLabel;
 
-		public global::UnityEngine.Vector2 Position;
+		public Vector2 Position;
 
-		public global::ScheduleOne.Dialogue.DialogueChoiceData[] choices;
+		public DialogueChoiceData[] choices;
 
-		public global::ScheduleOne.VoiceOver.EVOLineType VoiceLine;
+		public EVOLineType VoiceLine;
 
-		public global::ScheduleOne.Dialogue.DialogueNodeData GetCopy()
+		public DialogueNodeData GetCopy()
 		{
 			return null;
 		}

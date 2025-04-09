@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class GameVolumeSetter : global::UnityEngine.MonoBehaviour
+	public class GameVolumeSetter : MonoBehaviour
 	{
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float VolumeMultiplier;
 
 		private void Update()

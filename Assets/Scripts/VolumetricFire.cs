@@ -1,30 +1,33 @@
-[global::UnityEngine.ExecuteAlways]
-public class VolumetricFire : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+using UnityEngine.Rendering;
+
+[ExecuteAlways]
+public class VolumetricFire : MonoBehaviour
 {
-	private global::UnityEngine.Mesh mesh;
+	private Mesh mesh;
 
-	private global::UnityEngine.Material material;
+	private Material material;
 
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.Range(1f, 20f)]
-	[global::UnityEngine.Tooltip("Controls the number of additional meshes to render in front of and behind the original mesh")]
+	[SerializeField]
+	[Range(1f, 20f)]
+	[Tooltip("Controls the number of additional meshes to render in front of and behind the original mesh")]
 	private int thickness;
 
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.Range(0.01f, 1f)]
-	[global::UnityEngine.Tooltip("Controls the total distance between the frontmost mesh and the backmost mesh")]
+	[SerializeField]
+	[Range(0.01f, 1f)]
+	[Tooltip("Controls the total distance between the frontmost mesh and the backmost mesh")]
 	private float spread;
 
-	[global::UnityEngine.SerializeField]
+	[SerializeField]
 	private bool billboard;
 
-	private global::UnityEngine.MaterialPropertyBlock materialPropertyBlock;
+	private MaterialPropertyBlock materialPropertyBlock;
 
 	private int internalCount;
 
 	private float randomStatic;
 
-	private global::UnityEngine.Collider boundaryCollider;
+	private Collider boundaryCollider;
 
 	private void Start()
 	{
@@ -38,12 +41,12 @@ public class VolumetricFire : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private static bool IsVisible(global::UnityEngine.Camera camera, global::UnityEngine.Bounds bounds)
+	private static bool IsVisible(Camera camera, Bounds bounds)
 	{
 		return false;
 	}
 
-	private void RenderFlames(global::UnityEngine.Rendering.ScriptableRenderContext context, global::UnityEngine.Camera camera)
+	private void RenderFlames(ScriptableRenderContext context, Camera camera)
 	{
 	}
 
@@ -51,7 +54,7 @@ public class VolumetricFire : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private void CreateItem(float spacing, float item, global::UnityEngine.Camera camera)
+	private void CreateItem(float spacing, float item, Camera camera)
 	{
 	}
 }

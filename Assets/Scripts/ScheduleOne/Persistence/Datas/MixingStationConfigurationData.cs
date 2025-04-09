@@ -1,13 +1,15 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class MixingStationConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class MixingStationConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Destination;
+		public ObjectFieldData Destination;
 
-		public global::ScheduleOne.Persistence.Datas.NumberFieldData Threshold;
+		public NumberFieldData Threshold;
 
-		public MixingStationConfigurationData(global::ScheduleOne.Persistence.Datas.ObjectFieldData destination, global::ScheduleOne.Persistence.Datas.NumberFieldData threshold)
+		public MixingStationConfigurationData(ObjectFieldData destination, NumberFieldData threshold)
 		{
 		}
 	}

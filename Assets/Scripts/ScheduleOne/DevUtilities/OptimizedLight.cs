@@ -1,18 +1,20 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Light))]
-	[global::UnityEngine.ExecuteInEditMode]
-	public class OptimizedLight : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Light))]
+	[ExecuteInEditMode]
+	public class OptimizedLight : MonoBehaviour
 	{
 		public bool Enabled;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool DisabledForOptimization;
 
-		[global::UnityEngine.Range(10f, 500f)]
+		[Range(10f, 500f)]
 		public float MaxDistance;
 
-		public global::UnityEngine.Light _Light;
+		public Light _Light;
 
 		private bool culled;
 

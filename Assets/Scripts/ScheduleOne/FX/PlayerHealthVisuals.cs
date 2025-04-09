@@ -1,33 +1,36 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace ScheduleOne.FX
 {
-	public class PlayerHealthVisuals : global::UnityEngine.MonoBehaviour
+	public class PlayerHealthVisuals : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rendering.Volume GlobalVolume;
+		[Header("References")]
+		public Volume GlobalVolume;
 
-		[global::UnityEngine.Header("Vignette")]
+		[Header("Vignette")]
 		public float VignetteAlpha_MaxHealth;
 
 		public float VignetteAlpha_MinHealth;
 
-		public global::UnityEngine.AnimationCurve OuterRingCurve;
+		public AnimationCurve OuterRingCurve;
 
-		[global::UnityEngine.Header("Saturation")]
+		[Header("Saturation")]
 		public float Saturation_MaxHealth;
 
 		public float Saturation_MinHealth;
 
-		[global::UnityEngine.Header("Chromatic Abberation")]
+		[Header("Chromatic Abberation")]
 		public float ChromAb_MaxHealth;
 
 		public float ChromAb_MinHealth;
 
-		[global::UnityEngine.Header("Lens Dirt")]
+		[Header("Lens Dirt")]
 		public float LensDirt_MaxHealth;
 
 		public float LensDirt_MinHealth;
 
-		private global::Beautify.Universal.Beautify _beautifySettings;
+		private Beautify.Universal.Beautify _beautifySettings;
 
 		private void Awake()
 		{

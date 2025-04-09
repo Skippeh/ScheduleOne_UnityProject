@@ -1,11 +1,14 @@
+using System;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class QualityFieldData
 	{
-		public global::ScheduleOne.ItemFramework.EQuality Value;
+		public EQuality Value;
 
-		public QualityFieldData(global::ScheduleOne.ItemFramework.EQuality value)
+		public QualityFieldData(EQuality value)
 		{
 		}
 	}

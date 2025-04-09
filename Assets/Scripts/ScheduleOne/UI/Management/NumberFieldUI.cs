@@ -1,21 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class NumberFieldUI : global::UnityEngine.MonoBehaviour
+	public class NumberFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		[Header("References")]
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.UI.Slider Slider;
+		public Slider Slider;
 
-		public global::TMPro.TextMeshProUGUI ValueLabel;
+		public TextMeshProUGUI ValueLabel;
 
-		public global::TMPro.TextMeshProUGUI MinValueLabel;
+		public TextMeshProUGUI MinValueLabel;
 
-		public global::TMPro.TextMeshProUGUI MaxValueLabel;
+		public TextMeshProUGUI MaxValueLabel;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.NumberField> Fields { get; protected set; }
+		public List<NumberField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.NumberField> field)
+		public void Bind(List<NumberField> field)
 		{
 		}
 

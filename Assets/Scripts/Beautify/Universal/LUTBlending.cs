@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace Beautify.Universal
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	public class LUTBlending : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	public class LUTBlending : MonoBehaviour
 	{
 		private static class ShaderParams
 		{
@@ -10,26 +12,26 @@ namespace Beautify.Universal
 			public static int Phase;
 		}
 
-		public global::UnityEngine.Texture2D LUT1;
+		public Texture2D LUT1;
 
-		public global::UnityEngine.Texture2D LUT2;
+		public Texture2D LUT2;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float LUT1Intensity;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float LUT2Intensity;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float phase;
 
-		public global::UnityEngine.Shader lerpShader;
+		public Shader lerpShader;
 
 		private float oldPhase;
 
-		private global::UnityEngine.RenderTexture rt;
+		private RenderTexture rt;
 
-		private global::UnityEngine.Material lerpMat;
+		private Material lerpMat;
 
 		private void OnEnable()
 		{

@@ -1,10 +1,13 @@
-[global::UnityEngine.ExecuteAlways]
-public class CircularTextMeshPro : global::UnityEngine.MonoBehaviour
-{
-	[global::UnityEngine.SerializeField]
-	private global::TMPro.TMP_Text text;
+using TMPro;
+using UnityEngine;
 
-	public global::UnityEngine.AnimationCurve vertexCurve;
+[ExecuteAlways]
+public class CircularTextMeshPro : MonoBehaviour
+{
+	[SerializeField]
+	private TMP_Text text;
+
+	public AnimationCurve vertexCurve;
 
 	public float yCurveScaling;
 
@@ -30,7 +33,7 @@ public class CircularTextMeshPro : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private void ReactToTextChanged(global::UnityEngine.Object obj)
+	private void ReactToTextChanged(Object obj)
 	{
 	}
 

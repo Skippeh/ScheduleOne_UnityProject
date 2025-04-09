@@ -1,12 +1,15 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class OnlineBalanceActivationZone : global::UnityEngine.MonoBehaviour
+	public class OnlineBalanceActivationZone : MonoBehaviour
 	{
 		public const float ActivationDistance = 20f;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Collider> exclude;
+		private List<Collider> exclude;
 
-		private global::UnityEngine.Collider collider;
+		private Collider collider;
 
 		private void Awake()
 		{
@@ -16,7 +19,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

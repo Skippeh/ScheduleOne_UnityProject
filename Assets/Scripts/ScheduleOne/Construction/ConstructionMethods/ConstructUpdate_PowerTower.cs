@@ -1,25 +1,32 @@
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Property.Utilities.Power;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public class ConstructUpdate_PowerTower : global::ScheduleOne.Construction.ConstructionMethods.ConstructUpdate_OutdoorGrid
+	public class ConstructUpdate_PowerTower : ConstructUpdate_OutdoorGrid
 	{
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material specialMat;
+		[Header("Materials")]
+		public Material specialMat;
 
-		public global::UnityEngine.Material powerLine_GhostMat;
+		public Material powerLine_GhostMat;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject cosmeticPowerNode;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject cosmeticPowerNode;
 
 		public float LengthFactor;
 
-		protected global::UnityEngine.Transform tempPowerLineContainer;
+		protected Transform tempPowerLineContainer;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> tempSegments;
+		protected List<Transform> tempSegments;
 
-		private global::ScheduleOne.Property.Utilities.Power.PowerNode hoveredPowerNode;
+		private PowerNode hoveredPowerNode;
 
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode startNode;
+		protected PowerNode startNode;
 
 		protected float powerLineInitialDistance;
 
@@ -39,26 +46,26 @@ namespace ScheduleOne.Construction.ConstructionMethods
 		{
 		}
 
-		public void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public void Exit(ExitAction exit)
 		{
 		}
 
-		private global::ScheduleOne.ObjectScripts.PowerTower GetHoveredPowerTower()
-		{
-			return null;
-		}
-
-		protected global::ScheduleOne.Property.Utilities.Power.PowerNode GetHoveredPowerNode()
+		private PowerTower GetHoveredPowerTower()
 		{
 			return null;
 		}
 
-		protected override global::ScheduleOne.ConstructableScripts.Constructable_GridBased PlaceNewConstructable()
+		protected PowerNode GetHoveredPowerNode()
 		{
 			return null;
 		}
 
-		private void CompletePowerLine(global::ScheduleOne.Property.Utilities.Power.PowerNode target)
+		protected override Constructable_GridBased PlaceNewConstructable()
+		{
+			return null;
+		}
+
+		private void CompletePowerLine(PowerNode target)
 		{
 		}
 

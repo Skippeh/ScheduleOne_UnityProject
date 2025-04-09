@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Management
 {
-	public class VisibilityController : global::UnityEngine.MonoBehaviour
+	public class VisibilityController : MonoBehaviour
 	{
 		public bool visibleOnlyInFullscreen;
 

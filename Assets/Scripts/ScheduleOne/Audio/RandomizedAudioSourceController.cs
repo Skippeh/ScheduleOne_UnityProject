@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class RandomizedAudioSourceController : global::ScheduleOne.Audio.AudioSourceController
+	public class RandomizedAudioSourceController : AudioSourceController
 	{
-		public global::UnityEngine.AudioClip[] Clips;
+		public AudioClip[] Clips;
 
 		public override void Play()
 		{

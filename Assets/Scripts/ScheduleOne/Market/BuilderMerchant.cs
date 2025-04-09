@@ -1,20 +1,24 @@
+using ScheduleOne.Interaction;
+using ScheduleOne.UI;
+using UnityEngine;
+
 namespace ScheduleOne.Market
 {
-	public class BuilderMerchant : global::UnityEngine.MonoBehaviour
+	public class BuilderMerchant : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected int openTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int closeTime;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.UI.PropertySelector selector;
+		[SerializeField]
+		private PropertySelector selector;
 
 		public void Hovered()
 		{
@@ -24,7 +28,7 @@ namespace ScheduleOne.Market
 		{
 		}
 
-		private void PropertySelected(global::ScheduleOne.Property.Property p)
+		private void PropertySelected(ScheduleOne.Property.Property p)
 		{
 		}
 	}

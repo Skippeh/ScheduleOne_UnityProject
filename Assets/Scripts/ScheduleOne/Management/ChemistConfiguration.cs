@@ -1,26 +1,31 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class ChemistConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class ChemistConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public ObjectField Bed;
 
-		public global::ScheduleOne.Management.ObjectListField Stations;
+		public ObjectListField Stations;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.ChemistryStation> ChemStations;
+		public List<ChemistryStation> ChemStations;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.LabOven> LabOvens;
+		public List<LabOven> LabOvens;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Cauldron> Cauldrons;
+		public List<Cauldron> Cauldrons;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.MixingStation> MixStations;
+		public List<MixingStation> MixStations;
 
 		public int TotalStations => 0;
 
-		public global::ScheduleOne.Employees.Chemist chemist { get; protected set; }
+		public Chemist chemist { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public BedItem bedItem { get; private set; }
 
-		public ChemistConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Chemist _chemist)
+		public ChemistConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Chemist _chemist)
 			: base(null, null)
 		{
 		}
@@ -29,13 +34,13 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private bool IsStationValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool IsStationValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void AssignedStationsChanged(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objects)
+		public void AssignedStationsChanged(List<BuildableItem> objects)
 		{
 		}
 
@@ -49,7 +54,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void BedChanged(BuildableItem newItem)
 		{
 		}
 	}

@@ -1,8 +1,10 @@
+using ScheduleOne.Interaction;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageEntityInteractable : global::ScheduleOne.Interaction.InteractableObject
+	public class StorageEntityInteractable : InteractableObject
 	{
-		private global::ScheduleOne.Storage.StorageEntity StorageEntity;
+		private StorageEntity StorageEntity;
 
 		private void Awake()
 		{

@@ -1,19 +1,24 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class PlayerEnergyUI : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.PlayerEnergyUI>
+	public class PlayerEnergyUI : Singleton<PlayerEnergyUI>
 	{
-		public global::UnityEngine.UI.Slider Slider;
+		public Slider Slider;
 
-		public global::UnityEngine.RectTransform SliderRect;
+		public RectTransform SliderRect;
 
-		public global::UnityEngine.UI.Image FillImage;
+		public Image FillImage;
 
-		public global::TMPro.TextMeshProUGUI Label;
+		public TextMeshProUGUI Label;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Color SliderColor_Green;
+		[Header("Settings")]
+		public Color SliderColor_Green;
 
-		public global::UnityEngine.Color SliderColor_Red;
+		public Color SliderColor_Red;
 
 		private float displayedValue;
 

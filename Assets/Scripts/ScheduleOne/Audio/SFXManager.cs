@@ -1,11 +1,16 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class SFXManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Audio.SFXManager>
+	public class SFXManager : Singleton<SFXManager>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ImpactType
 		{
-			public global::ScheduleOne.Audio.ImpactSoundEntity.EMaterial Material;
+			public ImpactSoundEntity.EMaterial Material;
 
 			public float MinVolume;
 
@@ -15,21 +20,21 @@ namespace ScheduleOne.Audio
 
 			public float MaxPitch;
 
-			public global::UnityEngine.AudioClip[] Clips;
+			public AudioClip[] Clips;
 		}
 
 		public const float MAX_PLAYER_DISTANCE = 40f;
 
 		public const float SQR_MAX_PLAYER_DISTANCE = 1600f;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.SFXManager.ImpactType> ImpactTypes;
+		public List<ImpactType> ImpactTypes;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> soundPool;
+		[SerializeField]
+		private List<AudioSourceController> soundPool;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> soundsInUse;
+		private List<AudioSourceController> soundsInUse;
 
-		public void PlayImpactSound(global::ScheduleOne.Audio.ImpactSoundEntity.EMaterial material, global::UnityEngine.Vector3 position, float momentum)
+		public void PlayImpactSound(ImpactSoundEntity.EMaterial material, Vector3 position, float momentum)
 		{
 		}
 
@@ -37,7 +42,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		private global::ScheduleOne.Audio.AudioSourceController GetSource()
+		private AudioSourceController GetSource()
 		{
 			return null;
 		}

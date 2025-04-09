@@ -1,7 +1,9 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class NumberGroupDictionary : global::Funly.SkyStudio.SerializableDictionary<string, global::Funly.SkyStudio.NumberKeyframeGroup>
+	[Serializable]
+	public class NumberGroupDictionary : SerializableDictionary<string, NumberKeyframeGroup>
 	{
 	}
 }

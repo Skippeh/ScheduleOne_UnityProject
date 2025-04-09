@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamHD))]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-shadow-hd/")]
-	public class VolumetricShadowHD : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(VolumetricLightBeamHD))]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-shadow-hd/")]
+	public class VolumetricShadowHD : MonoBehaviour
 	{
 		private enum ProcessOcclusionSource
 		{
@@ -16,31 +18,31 @@ namespace VLB
 
 		public const string ClassName = "VolumetricShadowHD";
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_Strength;
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.ShadowUpdateRate m_UpdateRate;
+		[SerializeField]
+		private ShadowUpdateRate m_UpdateRate;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_WaitXFrames;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.LayerMask m_LayerMask;
+		[SerializeField]
+		private LayerMask m_LayerMask;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool m_UseOcclusionCulling;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_DepthMapResolution;
 
-		private global::VLB.VolumetricLightBeamHD m_Master;
+		private VolumetricLightBeamHD m_Master;
 
-		private global::VLB.TransformUtils.Packed m_TransformPacked;
+		private TransformUtils.Packed m_TransformPacked;
 
 		private int m_LastFrameRendered;
 
-		private global::UnityEngine.Camera m_DepthCamera;
+		private Camera m_DepthCamera;
 
 		private bool m_NeedToUpdateOcclusionNextFrame;
 
@@ -57,11 +59,11 @@ namespace VLB
 			}
 		}
 
-		public global::VLB.ShadowUpdateRate updateRate
+		public ShadowUpdateRate updateRate
 		{
 			get
 			{
-				return default(global::VLB.ShadowUpdateRate);
+				return default(ShadowUpdateRate);
 			}
 			set
 			{
@@ -79,11 +81,11 @@ namespace VLB
 			}
 		}
 
-		public global::UnityEngine.LayerMask layerMask
+		public LayerMask layerMask
 		{
 			get
 			{
-				return default(global::UnityEngine.LayerMask);
+				return default(LayerMask);
 			}
 			set
 			{
@@ -122,11 +124,11 @@ namespace VLB
 		{
 		}
 
-		private void ProcessOcclusion(global::VLB.VolumetricShadowHD.ProcessOcclusionSource source)
+		private void ProcessOcclusion(ProcessOcclusionSource source)
 		{
 		}
 
-		public static void ApplyMaterialProperties(global::VLB.VolumetricShadowHD instance, global::VLB.BeamGeometryHD geom)
+		public static void ApplyMaterialProperties(VolumetricShadowHD instance, BeamGeometryHD geom)
 		{
 		}
 
@@ -154,7 +156,7 @@ namespace VLB
 		{
 		}
 
-		public void OnWillCameraRenderThisBeam(global::UnityEngine.Camera cam, global::VLB.BeamGeometryHD beamGeom)
+		public void OnWillCameraRenderThisBeam(Camera cam, BeamGeometryHD beamGeom)
 		{
 		}
 

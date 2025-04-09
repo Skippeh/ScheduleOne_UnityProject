@@ -1,16 +1,19 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class CauldronConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class CauldronConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.NPCField AssignedChemist;
+		public NPCField AssignedChemist;
 
-		public global::ScheduleOne.Management.ObjectField Destination;
+		public ObjectField Destination;
 
-		public global::ScheduleOne.ObjectScripts.Cauldron Station { get; protected set; }
+		public Cauldron Station { get; protected set; }
 
-		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
+		public TransitRoute DestinationRoute { get; protected set; }
 
-		public CauldronConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.Cauldron cauldron)
+		public CauldronConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Cauldron cauldron)
 			: base(null, null)
 		{
 		}
@@ -19,11 +22,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void DestinationChanged(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void DestinationChanged(BuildableItem item)
 		{
 		}
 
-		public bool DestinationFilter(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public bool DestinationFilter(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

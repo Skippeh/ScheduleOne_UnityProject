@@ -1,10 +1,13 @@
+using ScheduleOne.AvatarFramework.Equipping;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Other
 {
-	public class DrinkItem : global::UnityEngine.MonoBehaviour
+	public class DrinkItem : MonoBehaviour
 	{
-		public global::ScheduleOne.NPCs.NPC Npc;
+		public NPC Npc;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable DrinkPrefab;
+		public AvatarEquippable DrinkPrefab;
 
 		public bool active { get; protected set; }
 

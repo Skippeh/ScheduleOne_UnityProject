@@ -1,42 +1,50 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Misc;
+using UnityEngine;
+
 namespace ScheduleOne.Lighting
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Misc.ToggleableLight))]
-	public class BlinkingLight : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(ToggleableLight))]
+	public class BlinkingLight : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CBlink_003Ed__7 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CBlink_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Lighting.BlinkingLight _003C_003E4__this;
+			public BlinkingLight _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CBlink_003Ed__7(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -45,14 +53,14 @@ namespace ScheduleOne.Lighting
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -63,9 +71,9 @@ namespace ScheduleOne.Lighting
 
 		public float OffTime;
 
-		private global::ScheduleOne.Misc.ToggleableLight light;
+		private ToggleableLight light;
 
-		private global::UnityEngine.Coroutine blinkRoutine;
+		private Coroutine blinkRoutine;
 
 		private void Awake()
 		{
@@ -75,8 +83,8 @@ namespace ScheduleOne.Lighting
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Lighting.BlinkingLight._003CBlink_003Ed__7))]
-		private global::System.Collections.IEnumerator Blink()
+		[IteratorStateMachine(typeof(_003CBlink_003Ed__7))]
+		private IEnumerator Blink()
 		{
 			return null;
 		}

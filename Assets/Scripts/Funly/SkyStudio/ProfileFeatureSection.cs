@@ -1,6 +1,8 @@
+using System;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ProfileFeatureSection
 	{
 		public string sectionTitle;
@@ -9,9 +11,9 @@ namespace Funly.SkyStudio
 
 		public string sectionIcon;
 
-		public global::Funly.SkyStudio.ProfileFeatureDefinition[] featureDefinitions;
+		public ProfileFeatureDefinition[] featureDefinitions;
 
-		public ProfileFeatureSection(string sectionTitle, string sectionKey, global::Funly.SkyStudio.ProfileFeatureDefinition[] featureDefinitions)
+		public ProfileFeatureSection(string sectionTitle, string sectionKey, ProfileFeatureDefinition[] featureDefinitions)
 		{
 		}
 	}

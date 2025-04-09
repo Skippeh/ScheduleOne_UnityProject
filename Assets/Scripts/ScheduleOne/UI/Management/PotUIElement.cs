@@ -1,21 +1,25 @@
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class PotUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class PotUIElement : WorldspaceUIElement
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image SeedIcon;
+		[Header("References")]
+		public Image SeedIcon;
 
-		public global::UnityEngine.GameObject NoSeed;
+		public GameObject NoSeed;
 
-		public global::UnityEngine.UI.Image Additive1Icon;
+		public Image Additive1Icon;
 
-		public global::UnityEngine.UI.Image Additive2Icon;
+		public Image Additive2Icon;
 
-		public global::UnityEngine.UI.Image Additive3Icon;
+		public Image Additive3Icon;
 
-		public global::ScheduleOne.ObjectScripts.Pot AssignedPot { get; protected set; }
+		public Pot AssignedPot { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.Pot pot)
+		public void Initialize(Pot pot)
 		{
 		}
 

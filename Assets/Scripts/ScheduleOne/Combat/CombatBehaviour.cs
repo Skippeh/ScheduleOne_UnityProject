@@ -1,41 +1,55 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Vision;
+using UnityEngine;
+
 namespace ScheduleOne.Combat
 {
-	public class CombatBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class CombatBehaviour : ScheduleOne.NPCs.Behaviour.Behaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSearchRoutine_003Ed__68 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CSearchRoutine_003Ed__68 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Combat.CombatBehaviour _003C_003E4__this;
+			public CombatBehaviour _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CSearchRoutine_003Ed__68(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,14 +58,14 @@ namespace ScheduleOne.Combat
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -68,7 +82,7 @@ namespace ScheduleOne.Combat
 
 		public const float REACHED_DESTINATION_DISTANCE = 2f;
 
-		[global::UnityEngine.Header("General Setttings")]
+		[Header("General Setttings")]
 		public float GiveUpRange;
 
 		public float GiveUpTime;
@@ -77,16 +91,16 @@ namespace ScheduleOne.Combat
 
 		public bool PlayAngryVO;
 
-		[global::UnityEngine.Header("Movement settings")]
-		[global::UnityEngine.Range(0f, 1f)]
+		[Header("Movement settings")]
+		[Range(0f, 1f)]
 		public float DefaultMovementSpeed;
 
-		[global::UnityEngine.Header("Weapon settings")]
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon DefaultWeapon;
+		[Header("Weapon settings")]
+		public AvatarWeapon DefaultWeapon;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarMeleeWeapon VirtualPunchWeapon;
+		public AvatarMeleeWeapon VirtualPunchWeapon;
 
-		[global::UnityEngine.Header("Search settings")]
+		[Header("Search settings")]
 		public float DefaultSearchTime;
 
 		protected bool overrideTargetDistance;
@@ -101,19 +115,19 @@ namespace ScheduleOne.Combat
 
 		protected float playerSightedDuration;
 
-		protected global::UnityEngine.Vector3 lastKnownTargetPosition;
+		protected Vector3 lastKnownTargetPosition;
 
-		protected global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon currentWeapon;
+		protected AvatarWeapon currentWeapon;
 
 		protected int successfulHits;
 
 		protected int consecutiveMissedShots;
 
-		protected global::UnityEngine.Coroutine rangedWeaponRoutine;
+		protected Coroutine rangedWeaponRoutine;
 
-		protected global::UnityEngine.Coroutine searchRoutine;
+		protected Coroutine searchRoutine;
 
-		protected global::UnityEngine.Vector3 currentSearchDestination;
+		protected Vector3 currentSearchDestination;
 
 		protected bool hasSearchDestination;
 
@@ -123,7 +137,7 @@ namespace ScheduleOne.Combat
 
 		private bool NetworkInitialize__LateScheduleOne_002ECombat_002ECombatBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; protected set; }
+		public Player TargetPlayer { get; protected set; }
 
 		public bool IsSearching { get; protected set; }
 
@@ -133,12 +147,12 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void SetTarget(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		[ObserversRpc(RunLocally = true)]
+		public virtual void SetTarget(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
@@ -190,12 +204,12 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void SetWeapon(string weaponPath)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected void ClearWeapon()
 		{
 		}
@@ -205,7 +219,7 @@ namespace ScheduleOne.Combat
 			return false;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void Attack()
 		{
 		}
@@ -227,7 +241,7 @@ namespace ScheduleOne.Combat
 			return false;
 		}
 
-		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 
@@ -244,15 +258,15 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CSearchRoutine_003Ed__68))]
-		private global::System.Collections.IEnumerator SearchRoutine()
+		[IteratorStateMachine(typeof(_003CSearchRoutine_003Ed__68))]
+		private IEnumerator SearchRoutine()
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Vector3 GetNextSearchLocation()
+		private Vector3 GetNextSearchLocation()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		protected bool IsTargetValid()
@@ -260,13 +274,13 @@ namespace ScheduleOne.Combat
 			return false;
 		}
 
-		private void RepositionToTargetRange(global::UnityEngine.Vector3 origin)
+		private void RepositionToTargetRange(Vector3 origin)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetRandomReachablePointNear(global::UnityEngine.Vector3 point, float randomRadius, float minDistance = 0f)
+		private Vector3 GetRandomReachablePointNear(Vector3 point, float randomRadius, float minDistance = 0f)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		protected float GetMinTargetDistance()
@@ -279,7 +293,7 @@ namespace ScheduleOne.Combat
 			return 0f;
 		}
 
-		protected bool IsTargetInRange(global::UnityEngine.Vector3 origin = default(global::UnityEngine.Vector3))
+		protected bool IsTargetInRange(Vector3 origin = default(Vector3))
 		{
 			return false;
 		}
@@ -296,15 +310,15 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		private void RpcWriter___Observers_SetTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		private void RpcWriter___Observers_SetTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		public virtual void RpcLogic___SetTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		public virtual void RpcLogic___SetTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		private void RpcReader___Observers_SetTarget_1824087381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetTarget_1824087381(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -316,7 +330,7 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		private void RpcReader___Observers_SetWeapon_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetWeapon_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -328,7 +342,7 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		private void RpcReader___Observers_ClearWeapon_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ClearWeapon_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -340,7 +354,7 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		private void RpcReader___Observers_Attack_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Attack_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

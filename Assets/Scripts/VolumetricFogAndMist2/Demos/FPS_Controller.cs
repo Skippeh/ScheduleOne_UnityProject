@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace VolumetricFogAndMist2.Demos
 {
-	public class FPS_Controller : global::UnityEngine.MonoBehaviour
+	public class FPS_Controller : MonoBehaviour
 	{
-		private global::UnityEngine.CharacterController characterController;
+		private CharacterController characterController;
 
-		private global::UnityEngine.Transform mainCamera;
+		private Transform mainCamera;
 
 		private float inputHor;
 
@@ -22,7 +24,7 @@ namespace VolumetricFogAndMist2.Demos
 
 		private bool isGrounded;
 
-		private global::UnityEngine.Vector3 jumpDirection;
+		private Vector3 jumpDirection;
 
 		private float sprint;
 

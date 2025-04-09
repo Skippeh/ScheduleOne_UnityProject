@@ -1,39 +1,43 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	[global::System.Serializable]
-	public class DialogueContainer : global::UnityEngine.ScriptableObject
+	[Serializable]
+	public class DialogueContainer : ScriptableObject
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.NodeLinkData> NodeLinks;
+		public List<NodeLinkData> NodeLinks;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueNodeData> DialogueNodeData;
+		public List<DialogueNodeData> DialogueNodeData;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.BranchNodeData> BranchNodeData;
+		public List<BranchNodeData> BranchNodeData;
 
 		public bool allowExit { get; private set; }
 
 		public bool AllowExit => false;
 
-		public global::ScheduleOne.Dialogue.DialogueNodeData GetDialogueNodeByLabel(string dialogueNodeLabel)
+		public DialogueNodeData GetDialogueNodeByLabel(string dialogueNodeLabel)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Dialogue.BranchNodeData GetBranchNodeByLabel(string branchLabel)
+		public BranchNodeData GetBranchNodeByLabel(string branchLabel)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Dialogue.DialogueNodeData GetDialogueNodeByGUID(string dialogueNodeGUID)
+		public DialogueNodeData GetDialogueNodeByGUID(string dialogueNodeGUID)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Dialogue.BranchNodeData GetBranchNodeByGUID(string branchGUID)
+		public BranchNodeData GetBranchNodeByGUID(string branchGUID)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Dialogue.NodeLinkData GetLink(string baseChoiceOrOptionGUID)
+		public NodeLinkData GetLink(string baseChoiceOrOptionGUID)
 		{
 			return null;
 		}

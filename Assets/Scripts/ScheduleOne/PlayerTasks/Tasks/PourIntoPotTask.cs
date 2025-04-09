@@ -1,12 +1,15 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class PourIntoPotTask : global::ScheduleOne.PlayerTasks.Task
+	public class PourIntoPotTask : Task
 	{
-		protected global::ScheduleOne.ObjectScripts.Pot pot;
+		protected Pot pot;
 
-		protected global::ScheduleOne.ItemFramework.ItemInstance item;
+		protected ItemInstance item;
 
-		protected global::ScheduleOne.PlayerTasks.Pourable pourable;
+		protected Pourable pourable;
 
 		protected bool removeItemAfterInitialPour;
 
@@ -16,9 +19,9 @@ namespace ScheduleOne.PlayerTasks.Tasks
 
 		protected virtual bool FailOnEmpty { get; }
 
-		protected virtual global::ScheduleOne.ObjectScripts.Pot.ECameraPosition CameraPosition { get; }
+		protected virtual Pot.ECameraPosition CameraPosition { get; }
 
-		public PourIntoPotTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public PourIntoPotTask(Pot _pot, ItemInstance _itemInstance, Pourable _pourablePrefab)
 		{
 		}
 

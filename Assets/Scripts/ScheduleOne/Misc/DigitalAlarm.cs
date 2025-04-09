@@ -1,23 +1,26 @@
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class DigitalAlarm : global::UnityEngine.MonoBehaviour
+	public class DigitalAlarm : MonoBehaviour
 	{
 		public const float FLASH_FREQUENCY = 4f;
 
-		public global::UnityEngine.MeshRenderer ScreenMesh;
+		public MeshRenderer ScreenMesh;
 
 		public int ScreenMeshMaterialIndex;
 
-		public global::TMPro.TextMeshPro ScreenText;
+		public TextMeshPro ScreenText;
 
 		public bool FlashScreen;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DisplayCurrentTime;
 
-		public global::UnityEngine.Material ScreenOffMat;
+		public Material ScreenOffMat;
 
-		public global::UnityEngine.Material ScreenOnMat;
+		public Material ScreenOnMat;
 
 		private void Start()
 		{

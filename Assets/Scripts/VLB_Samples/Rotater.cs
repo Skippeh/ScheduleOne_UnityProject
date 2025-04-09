@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace VLB_Samples
 {
-	public class Rotater : global::UnityEngine.MonoBehaviour
+	public class Rotater : MonoBehaviour
 	{
-		[global::UnityEngine.Serialization.FormerlySerializedAs("m_EulerSpeed")]
-		public global::UnityEngine.Vector3 EulerSpeed;
+		[FormerlySerializedAs("m_EulerSpeed")]
+		public Vector3 EulerSpeed;
 
 		private void Update()
 		{

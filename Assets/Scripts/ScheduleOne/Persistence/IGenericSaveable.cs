@@ -1,15 +1,18 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+
 namespace ScheduleOne.Persistence
 {
 	public interface IGenericSaveable
 	{
-		global::System.Guid GUID { get; }
+		Guid GUID { get; }
 
 		void InitializeSaveable()
 		{
 		}
 
-		void Load(global::ScheduleOne.Persistence.Datas.GenericSaveData data);
+		void Load(GenericSaveData data);
 
-		global::ScheduleOne.Persistence.Datas.GenericSaveData GetSaveData();
+		GenericSaveData GetSaveData();
 	}
 }

@@ -1,6 +1,8 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Salvador : global::ScheduleOne.Economy.Supplier
+	public class Salvador : Supplier
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ESalvadorAssembly_002DCSharp_002Edll_Excuted;
 

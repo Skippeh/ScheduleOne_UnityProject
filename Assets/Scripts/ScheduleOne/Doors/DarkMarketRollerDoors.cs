@@ -1,6 +1,6 @@
 namespace ScheduleOne.Doors
 {
-	public class DarkMarketRollerDoors : global::ScheduleOne.Doors.SensorRollerDoors
+	public class DarkMarketRollerDoors : SensorRollerDoors
 	{
 		protected override bool CanOpen()
 		{

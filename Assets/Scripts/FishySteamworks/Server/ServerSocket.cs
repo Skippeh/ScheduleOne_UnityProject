@@ -1,59 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using FishNet.Transporting;
+using FishySteamworks.Client;
+using Steamworks;
+
 namespace FishySteamworks.Server
 {
-	public class ServerSocket : global::FishySteamworks.CommonSocket
+	public class ServerSocket : CommonSocket
 	{
 		public struct ConnectionChange
 		{
 			public int ConnectionId;
 
-			public global::Steamworks.HSteamNetConnection SteamConnection;
+			public HSteamNetConnection SteamConnection;
 
-			public global::Steamworks.CSteamID SteamId;
+			public CSteamID SteamId;
 
 			public bool IsConnect => false;
 
 			public ConnectionChange(int id)
 			{
-				ConnectionId = 0;
-				SteamConnection = default(global::Steamworks.HSteamNetConnection);
-				SteamId = default(global::Steamworks.CSteamID);
+				ConnectionId = id;
+				SteamId = CSteamID.Nil;
+				SteamConnection = default(HSteamNetConnection);
 			}
 
-			public ConnectionChange(int id, global::Steamworks.HSteamNetConnection steamConnection, global::Steamworks.CSteamID steamId)
+			public ConnectionChange(int id, HSteamNetConnection steamConnection, CSteamID steamId)
 			{
-				ConnectionId = 0;
-				SteamConnection = default(global::Steamworks.HSteamNetConnection);
-				SteamId = default(global::Steamworks.CSteamID);
+				ConnectionId = id;
+				SteamConnection = steamConnection;
+				SteamId = steamId;
 			}
 		}
 
-		private global::FishySteamworks.BidirectionalDictionary<global::Steamworks.HSteamNetConnection, int> _steamConnections;
+		private BidirectionalDictionary<HSteamNetConnection, int> _steamConnections;
 
-		private global::FishySteamworks.BidirectionalDictionary<global::Steamworks.CSteamID, int> _steamIds;
+		private BidirectionalDictionary<CSteamID, int> _steamIds;
 
 		private int _maximumClients;
 
 		private int _nextConnectionId;
 
-		private global::Steamworks.HSteamListenSocket _socket;
+		private HSteamListenSocket _socket;
 
-		private global::System.Collections.Generic.Queue<global::FishySteamworks.LocalPacket> _clientHostIncoming;
+		private Queue<LocalPacket> _clientHostIncoming;
 
 		private bool _clientHostStarted;
 
-		private global::Steamworks.Callback<global::Steamworks.SteamNetConnectionStatusChangedCallback_t> _onRemoteConnectionStateCallback;
+		private Callback<SteamNetConnectionStatusChangedCallback_t> _onRemoteConnectionStateCallback;
 
-		private global::System.Collections.Generic.Queue<int> _cachedConnectionIds;
+		private Queue<int> _cachedConnectionIds;
 
-		private global::FishySteamworks.Client.ClientHostSocket _clientHost;
+		private ClientHostSocket _clientHost;
 
 		private bool _iteratingConnections;
 
-		private global::System.Collections.Generic.List<global::FishySteamworks.Server.ServerSocket.ConnectionChange> _pendingConnectionChanges;
+		private List<ConnectionChange> _pendingConnectionChanges;
 
-		internal global::FishNet.Transporting.RemoteConnectionState GetConnectionState(int connectionId)
+		internal RemoteConnectionState GetConnectionState(int connectionId)
 		{
-			return default(global::FishNet.Transporting.RemoteConnectionState);
+			return default(RemoteConnectionState);
 		}
 
 		internal void ResetInvalidSocket()
@@ -75,17 +82,17 @@ namespace FishySteamworks.Server
 			return false;
 		}
 
-		private bool StopConnection(int connectionId, global::Steamworks.HSteamNetConnection socket)
+		private bool StopConnection(int connectionId, HSteamNetConnection socket)
 		{
 			return false;
 		}
 
-		[global::System.Runtime.CompilerServices.MethodImpl(global::System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		private void OnRemoteConnectionState(global::Steamworks.SteamNetConnectionStatusChangedCallback_t args)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private void OnRemoteConnectionState(SteamNetConnectionStatusChangedCallback_t args)
 		{
 		}
 
-		private void AddConnection(int connectionId, global::Steamworks.HSteamNetConnection steamConnection, global::Steamworks.CSteamID steamId)
+		private void AddConnection(int connectionId, HSteamNetConnection steamConnection, CSteamID steamId)
 		{
 		}
 
@@ -105,7 +112,7 @@ namespace FishySteamworks.Server
 		{
 		}
 
-		internal void SendToClient(byte channelId, global::System.ArraySegment<byte> segment, int connectionId)
+		internal void SendToClient(byte channelId, ArraySegment<byte> segment, int connectionId)
 		{
 		}
 
@@ -123,7 +130,7 @@ namespace FishySteamworks.Server
 			return 0;
 		}
 
-		internal void SetClientHostSocket(global::FishySteamworks.Client.ClientHostSocket socket)
+		internal void SetClientHostSocket(ClientHostSocket socket)
 		{
 		}
 
@@ -131,7 +138,7 @@ namespace FishySteamworks.Server
 		{
 		}
 
-		internal void ReceivedFromClientHost(global::FishySteamworks.LocalPacket packet)
+		internal void ReceivedFromClientHost(LocalPacket packet)
 		{
 		}
 	}

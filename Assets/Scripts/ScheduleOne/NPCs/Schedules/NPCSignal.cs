@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal : global::ScheduleOne.NPCs.Schedules.NPCAction
+	public class NPCSignal : NPCAction
 	{
 		public int MaxDuration;
 

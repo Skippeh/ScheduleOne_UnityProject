@@ -1,7 +1,10 @@
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public abstract class BuildStart_Base : global::UnityEngine.MonoBehaviour
+	public abstract class BuildStart_Base : MonoBehaviour
 	{
-		public abstract void StartBuilding(global::ScheduleOne.ItemFramework.ItemInstance item);
+		public abstract void StartBuilding(ItemInstance item);
 	}
 }

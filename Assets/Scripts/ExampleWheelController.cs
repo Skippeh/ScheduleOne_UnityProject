@@ -1,4 +1,6 @@
-public class ExampleWheelController : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class ExampleWheelController : MonoBehaviour
 {
 	private static class Uniforms
 	{
@@ -7,9 +9,9 @@ public class ExampleWheelController : global::UnityEngine.MonoBehaviour
 
 	public float acceleration;
 
-	public global::UnityEngine.Renderer motionVectorRenderer;
+	public Renderer motionVectorRenderer;
 
-	private global::UnityEngine.Rigidbody m_Rigidbody;
+	private Rigidbody m_Rigidbody;
 
 	private void Start()
 	{

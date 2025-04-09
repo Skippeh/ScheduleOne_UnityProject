@@ -10,14 +10,14 @@ namespace ScheduleOne.Combat
 
 		public float MaxPushForce;
 
-		public static readonly global::ScheduleOne.Combat.ExplosionData DefaultSmall;
+		public static readonly ExplosionData DefaultSmall = new ExplosionData(6f, 200f, 500f);
 
 		public ExplosionData(float damageRadius, float maxDamage, float maxPushForce)
 		{
-			DamageRadius = 0f;
-			MaxDamage = 0f;
-			PushForceRadius = 0f;
-			MaxPushForce = 0f;
+			this.DamageRadius = damageRadius;
+			this.MaxDamage = maxDamage;
+			this.PushForceRadius = maxPushForce;
+			this.MaxPushForce = maxPushForce;
 		}
 	}
 }

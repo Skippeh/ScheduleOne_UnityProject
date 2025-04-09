@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class GodRaysToggle : global::ScheduleOne.UI.Settings.SettingsToggle
+	public class GodRaysToggle : SettingsToggle
 	{
 		protected virtual void Start()
 		{

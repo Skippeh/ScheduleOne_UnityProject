@@ -1,13 +1,15 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Light), typeof(global::VLB.VolumetricLightBeamHD))]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-trackrealtimechanges-hd/")]
-	public class TrackRealtimeChangesOnLightHD : global::UnityEngine.MonoBehaviour
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(Light), typeof(VolumetricLightBeamHD))]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-trackrealtimechanges-hd/")]
+	public class TrackRealtimeChangesOnLightHD : MonoBehaviour
 	{
 		public const string ClassName = "TrackRealtimeChangesOnLightHD";
 
-		private global::VLB.VolumetricLightBeamHD m_Master;
+		private VolumetricLightBeamHD m_Master;
 
 		private void Awake()
 		{

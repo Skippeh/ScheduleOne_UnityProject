@@ -1,96 +1,101 @@
-public class UIControllerDEMO : global::UnityEngine.MonoBehaviour
+using System.Collections.Generic;
+using AdvancedPeopleSystem;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIControllerDEMO : MonoBehaviour
 {
-	[global::UnityEngine.Space(5f)]
-	[global::UnityEngine.Header("I do not recommend using it in your projects")]
-	[global::UnityEngine.Header("This script was created to demonstrate api")]
-	public global::AdvancedPeopleSystem.CharacterCustomization CharacterCustomization;
+	[Space(5f)]
+	[Header("I do not recommend using it in your projects")]
+	[Header("This script was created to demonstrate api")]
+	public CharacterCustomization CharacterCustomization;
 
-	[global::UnityEngine.Space(15f)]
-	public global::UnityEngine.UI.Text playbutton_text;
+	[Space(15f)]
+	public Text playbutton_text;
 
-	public global::UnityEngine.UI.Text bake_text;
+	public Text bake_text;
 
-	public global::UnityEngine.UI.Text lod_text;
+	public Text lod_text;
 
-	public global::UnityEngine.UI.Text panelNameText;
+	public Text panelNameText;
 
-	public global::UnityEngine.UI.Slider fatSlider;
+	public Slider fatSlider;
 
-	public global::UnityEngine.UI.Slider musclesSlider;
+	public Slider musclesSlider;
 
-	public global::UnityEngine.UI.Slider thinSlider;
+	public Slider thinSlider;
 
-	public global::UnityEngine.UI.Slider slimnessSlider;
+	public Slider slimnessSlider;
 
-	public global::UnityEngine.UI.Slider breastSlider;
+	public Slider breastSlider;
 
-	public global::UnityEngine.UI.Slider heightSlider;
+	public Slider heightSlider;
 
-	public global::UnityEngine.UI.Slider legSlider;
+	public Slider legSlider;
 
-	public global::UnityEngine.UI.Slider headSizeSlider;
+	public Slider headSizeSlider;
 
-	public global::UnityEngine.UI.Slider headOffsetSlider;
+	public Slider headOffsetSlider;
 
-	public global::UnityEngine.UI.Slider[] faceShapeSliders;
+	public Slider[] faceShapeSliders;
 
-	public global::UnityEngine.RectTransform HairPanel;
+	public RectTransform HairPanel;
 
-	public global::UnityEngine.RectTransform BeardPanel;
+	public RectTransform BeardPanel;
 
-	public global::UnityEngine.RectTransform ShirtPanel;
+	public RectTransform ShirtPanel;
 
-	public global::UnityEngine.RectTransform PantsPanel;
+	public RectTransform PantsPanel;
 
-	public global::UnityEngine.RectTransform ShoesPanel;
+	public RectTransform ShoesPanel;
 
-	public global::UnityEngine.RectTransform HatPanel;
+	public RectTransform HatPanel;
 
-	public global::UnityEngine.RectTransform AccessoryPanel;
+	public RectTransform AccessoryPanel;
 
-	public global::UnityEngine.RectTransform BackpackPanel;
+	public RectTransform BackpackPanel;
 
-	public global::UnityEngine.RectTransform FaceEditPanel;
+	public RectTransform FaceEditPanel;
 
-	public global::UnityEngine.RectTransform BaseEditPanel;
+	public RectTransform BaseEditPanel;
 
-	public global::UnityEngine.RectTransform SkinColorPanel;
+	public RectTransform SkinColorPanel;
 
-	public global::UnityEngine.RectTransform EyeColorPanel;
+	public RectTransform EyeColorPanel;
 
-	public global::UnityEngine.RectTransform HairColorPanel;
+	public RectTransform HairColorPanel;
 
-	public global::UnityEngine.RectTransform UnderpantsColorPanel;
+	public RectTransform UnderpantsColorPanel;
 
-	public global::UnityEngine.RectTransform EmotionsPanel;
+	public RectTransform EmotionsPanel;
 
-	public global::UnityEngine.RectTransform SavesPanel;
+	public RectTransform SavesPanel;
 
-	public global::UnityEngine.RectTransform SavesPanelList;
+	public RectTransform SavesPanelList;
 
-	public global::UnityEngine.RectTransform SavesPrefab;
+	public RectTransform SavesPrefab;
 
-	public global::System.Collections.Generic.List<global::UnityEngine.RectTransform> SavesList;
+	public List<RectTransform> SavesList;
 
-	public global::UnityEngine.UI.Image SkinColorButtonColor;
+	public Image SkinColorButtonColor;
 
-	public global::UnityEngine.UI.Image EyeColorButtonColor;
+	public Image EyeColorButtonColor;
 
-	public global::UnityEngine.UI.Image HairColorButtonColor;
+	public Image HairColorButtonColor;
 
-	public global::UnityEngine.UI.Image UnderpantsColorButtonColor;
+	public Image UnderpantsColorButtonColor;
 
-	public global::UnityEngine.Vector3[] CameraPositionForPanels;
+	public Vector3[] CameraPositionForPanels;
 
-	public global::UnityEngine.Vector3[] CameraEulerForPanels;
+	public Vector3[] CameraEulerForPanels;
 
 	private int currentPanelIndex;
 
-	public global::UnityEngine.Camera Camera;
+	public Camera Camera;
 
-	public global::UnityEngine.RectTransform femaleUI;
+	public RectTransform femaleUI;
 
-	public global::UnityEngine.RectTransform maleUI;
+	public RectTransform maleUI;
 
 	private int lodIndex;
 
@@ -150,19 +155,19 @@ public class UIControllerDEMO : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	public void SetNewSkinColor(global::UnityEngine.Color color)
+	public void SetNewSkinColor(Color color)
 	{
 	}
 
-	public void SetNewEyeColor(global::UnityEngine.Color color)
+	public void SetNewEyeColor(Color color)
 	{
 	}
 
-	public void SetNewHairColor(global::UnityEngine.Color color)
+	public void SetNewHairColor(Color color)
 	{
 	}
 
-	public void SetNewUnderpantsColor(global::UnityEngine.Color color)
+	public void SetNewUnderpantsColor(Color color)
 	{
 	}
 

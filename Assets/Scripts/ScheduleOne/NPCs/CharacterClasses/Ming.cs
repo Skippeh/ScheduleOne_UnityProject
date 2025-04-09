@@ -1,8 +1,8 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Ming : global::ScheduleOne.NPCs.NPC
+	public class Ming : NPC
 	{
-		public global::ScheduleOne.Property.Property Property;
+		public ScheduleOne.Property.Property Property;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EMingAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Javier : global::ScheduleOne.NPCs.NPC
+	public class Javier : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EJavierAssembly_002DCSharp_002Edll_Excuted;
 

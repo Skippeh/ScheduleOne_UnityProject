@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public abstract class App<T> : global::ScheduleOne.DevUtilities.PlayerSingleton<T> where T : global::ScheduleOne.DevUtilities.PlayerSingleton<T>
+	public abstract class App<T> : PlayerSingleton<T> where T : PlayerSingleton<T>
 	{
 		public enum EOrientation
 		{
@@ -8,32 +13,32 @@ namespace ScheduleOne.UI
 			Vertical = 1
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.UI.App<T>> Apps;
+		public static List<App<T>> Apps;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string AppName;
 
 		public string IconLabel;
 
-		public global::UnityEngine.Sprite AppIcon;
+		public Sprite AppIcon;
 
-		public global::ScheduleOne.UI.App<T>.EOrientation Orientation;
+		public EOrientation Orientation;
 
 		public bool AvailableInTutorial;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform appContainer;
+		[Header("References")]
+		[SerializeField]
+		protected RectTransform appContainer;
 
-		protected global::UnityEngine.RectTransform notificationContainer;
+		protected RectTransform notificationContainer;
 
-		protected global::UnityEngine.UI.Text notificationText;
+		protected Text notificationText;
 
-		protected global::UnityEngine.UI.Button appIconButton;
+		protected Button appIconButton;
 
 		public bool isOpen { get; protected set; }
 
-		public static global::ScheduleOne.UI.App<T> GetApp(int index)
+		public static App<T> GetApp(int index)
 		{
 			return null;
 		}
@@ -75,7 +80,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public virtual void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		public virtual void Exit(ExitAction exit)
 		{
 		}
 

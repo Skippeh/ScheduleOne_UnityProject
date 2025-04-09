@@ -1,25 +1,27 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class FogModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class FogModel : PostProcessingModel
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public struct Settings
 		{
-			[global::UnityEngine.Tooltip("Should the fog affect the skybox?")]
+			[Tooltip("Should the fog affect the skybox?")]
 			public bool excludeSkybox;
 
-			public static global::UnityEngine.PostProcessing.FogModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.FogModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.FogModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.FogModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.FogModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

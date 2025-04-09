@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "BasicAvatarSettings", menuName = "ScriptableObjects/BasicAvatarSettings", order = 1)]
-	public class BasicAvatarSettings : global::UnityEngine.ScriptableObject
+	[Serializable]
+	[CreateAssetMenu(fileName = "BasicAvatarSettings", menuName = "ScriptableObjects/BasicAvatarSettings", order = 1)]
+	public class BasicAvatarSettings : ScriptableObject
 	{
 		public const float GENDER_MULTIPLIER = 0.7f;
 
@@ -14,11 +18,11 @@ namespace ScheduleOne.AvatarFramework.Customization
 
 		public float Weight;
 
-		public global::UnityEngine.Color SkinColor;
+		public Color SkinColor;
 
 		public string HairStyle;
 
-		public global::UnityEngine.Color HairColor;
+		public Color HairColor;
 
 		public string Mouth;
 
@@ -28,7 +32,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 
 		public float FacialDetailsIntensity;
 
-		public global::UnityEngine.Color EyeballColor;
+		public Color EyeballColor;
 
 		public float UpperEyeLidRestingPosition;
 
@@ -46,25 +50,25 @@ namespace ScheduleOne.AvatarFramework.Customization
 
 		public string Top;
 
-		public global::UnityEngine.Color TopColor;
+		public Color TopColor;
 
 		public string Bottom;
 
-		public global::UnityEngine.Color BottomColor;
+		public Color BottomColor;
 
 		public string Shoes;
 
-		public global::UnityEngine.Color ShoesColor;
+		public Color ShoesColor;
 
 		public string Headwear;
 
-		public global::UnityEngine.Color HeadwearColor;
+		public Color HeadwearColor;
 
 		public string Eyewear;
 
-		public global::UnityEngine.Color EyewearColor;
+		public Color EyewearColor;
 
-		public global::System.Collections.Generic.List<string> Tattoos;
+		public List<string> Tattoos;
 
 		public T SetValue<T>(string fieldName, T value)
 		{
@@ -76,7 +80,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 			return default(T);
 		}
 
-		public global::ScheduleOne.AvatarFramework.AvatarSettings GetAvatarSettings()
+		public AvatarSettings GetAvatarSettings()
 		{
 			return null;
 		}

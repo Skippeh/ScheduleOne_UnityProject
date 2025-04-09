@@ -1,16 +1,19 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Impostors
 {
-	public class ImpostorGenerator : global::UnityEngine.MonoBehaviour
+	public class ImpostorGenerator : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Camera ImpostorCamera;
+		[Header("References")]
+		public Camera ImpostorCamera;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public Avatar Avatar;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.AvatarFramework.AvatarSettings> GenerationQueue;
+		[Header("Settings")]
+		public List<AvatarSettings> GenerationQueue;
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.Texture2D output;
+		[SerializeField]
+		private Texture2D output;
 	}
 }

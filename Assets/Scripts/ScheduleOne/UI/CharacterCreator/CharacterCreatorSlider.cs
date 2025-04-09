@@ -1,9 +1,12 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorSlider : global::ScheduleOne.UI.CharacterCreator.CharacterCreatorField<float>
+	public class CharacterCreatorSlider : CharacterCreatorField<float>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Slider Slider;
+		[Header("References")]
+		public Slider Slider;
 
 		protected override void Awake()
 		{

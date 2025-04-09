@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Datas
 {
-	public class TrashGeneratorData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class TrashGeneratorData : SaveData
 	{
 		public string GUID;
 

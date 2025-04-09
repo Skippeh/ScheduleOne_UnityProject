@@ -1,98 +1,106 @@
+using System;
+using System.Runtime.CompilerServices;
+using FishNet.Managing;
+using FishNet.Transporting;
+using FishySteamworks.Client;
+using FishySteamworks.Server;
+using UnityEngine;
+
 namespace FishySteamworks
 {
-	public class FishySteamworks : global::FishNet.Transporting.Transport
+	public class FishySteamworks : Transport
 	{
-		[global::System.NonSerialized]
+		[NonSerialized]
 		public ulong LocalUserSteamID;
 
-		[global::UnityEngine.Tooltip("Address server should bind to.")]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("Address server should bind to.")]
+		[SerializeField]
 		private string _serverBindAddress;
 
-		[global::UnityEngine.Tooltip("Port to use.")]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("Port to use.")]
+		[SerializeField]
 		private ushort _port;
 
-		[global::UnityEngine.Tooltip("Maximum number of players which may be connected at once.")]
-		[global::UnityEngine.Range(1f, 65535f)]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("Maximum number of players which may be connected at once.")]
+		[Range(1f, 65535f)]
+		[SerializeField]
 		private ushort _maximumClients;
 
-		[global::UnityEngine.Tooltip("True if using peer to peer socket.")]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("True if using peer to peer socket.")]
+		[SerializeField]
 		private bool _peerToPeer;
 
-		[global::UnityEngine.Tooltip("Address client should connect to.")]
-		[global::UnityEngine.SerializeField]
+		[Tooltip("Address client should connect to.")]
+		[SerializeField]
 		private string _clientAddress;
 
 		private int[] _mtus;
 
-		private global::FishySteamworks.Client.ClientSocket _client;
+		private ClientSocket _client;
 
-		private global::FishySteamworks.Client.ClientHostSocket _clientHost;
+		private ClientHostSocket _clientHost;
 
-		private global::FishySteamworks.Server.ServerSocket _server;
+		private ServerSocket _server;
 
 		private bool _shutdownCalled;
 
 		internal const int CLIENT_HOST_ID = 32767;
 
-		public override event global::System.Action<global::FishNet.Transporting.ClientConnectionStateArgs> OnClientConnectionState
+		public override event Action<ClientConnectionStateArgs> OnClientConnectionState
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
 		}
 
-		public override event global::System.Action<global::FishNet.Transporting.ServerConnectionStateArgs> OnServerConnectionState
+		public override event Action<ServerConnectionStateArgs> OnServerConnectionState
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
 		}
 
-		public override event global::System.Action<global::FishNet.Transporting.RemoteConnectionStateArgs> OnRemoteConnectionState
+		public override event Action<RemoteConnectionStateArgs> OnRemoteConnectionState
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
 		}
 
-		public override event global::System.Action<global::FishNet.Transporting.ClientReceivedDataArgs> OnClientReceivedData
+		public override event Action<ClientReceivedDataArgs> OnClientReceivedData
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
 		}
 
-		public override event global::System.Action<global::FishNet.Transporting.ServerReceivedDataArgs> OnServerReceivedData
+		public override event Action<ServerReceivedDataArgs> OnServerReceivedData
 		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			add
 			{
 			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			[CompilerGenerated]
 			remove
 			{
 			}
@@ -102,7 +110,7 @@ namespace FishySteamworks
 		{
 		}
 
-		public override void Initialize(global::FishNet.Managing.NetworkManager networkManager, int transportIndex)
+		public override void Initialize(NetworkManager networkManager, int transportIndex)
 		{
 		}
 
@@ -133,25 +141,25 @@ namespace FishySteamworks
 			return null;
 		}
 
-		public override global::FishNet.Transporting.LocalConnectionState GetConnectionState(bool server)
+		public override LocalConnectionState GetConnectionState(bool server)
 		{
-			return default(global::FishNet.Transporting.LocalConnectionState);
+			return default(LocalConnectionState);
 		}
 
-		public override global::FishNet.Transporting.RemoteConnectionState GetConnectionState(int connectionId)
+		public override RemoteConnectionState GetConnectionState(int connectionId)
 		{
-			return default(global::FishNet.Transporting.RemoteConnectionState);
+			return default(RemoteConnectionState);
 		}
 
-		public override void HandleClientConnectionState(global::FishNet.Transporting.ClientConnectionStateArgs connectionStateArgs)
-		{
-		}
-
-		public override void HandleServerConnectionState(global::FishNet.Transporting.ServerConnectionStateArgs connectionStateArgs)
+		public override void HandleClientConnectionState(ClientConnectionStateArgs connectionStateArgs)
 		{
 		}
 
-		public override void HandleRemoteConnectionState(global::FishNet.Transporting.RemoteConnectionStateArgs connectionStateArgs)
+		public override void HandleServerConnectionState(ServerConnectionStateArgs connectionStateArgs)
+		{
+		}
+
+		public override void HandleRemoteConnectionState(RemoteConnectionStateArgs connectionStateArgs)
 		{
 		}
 
@@ -163,19 +171,19 @@ namespace FishySteamworks
 		{
 		}
 
-		public override void HandleClientReceivedDataArgs(global::FishNet.Transporting.ClientReceivedDataArgs receivedDataArgs)
+		public override void HandleClientReceivedDataArgs(ClientReceivedDataArgs receivedDataArgs)
 		{
 		}
 
-		public override void HandleServerReceivedDataArgs(global::FishNet.Transporting.ServerReceivedDataArgs receivedDataArgs)
+		public override void HandleServerReceivedDataArgs(ServerReceivedDataArgs receivedDataArgs)
 		{
 		}
 
-		public override void SendToServer(byte channelId, global::System.ArraySegment<byte> segment)
+		public override void SendToServer(byte channelId, ArraySegment<byte> segment)
 		{
 		}
 
-		public override void SendToClient(byte channelId, global::System.ArraySegment<byte> segment, int connectionId)
+		public override void SendToClient(byte channelId, ArraySegment<byte> segment, int connectionId)
 		{
 		}
 
@@ -192,7 +200,7 @@ namespace FishySteamworks
 		{
 		}
 
-		public override void SetServerBindAddress(string address, global::FishNet.Transporting.IPAddressType addressType)
+		public override void SetServerBindAddress(string address, IPAddressType addressType)
 		{
 		}
 

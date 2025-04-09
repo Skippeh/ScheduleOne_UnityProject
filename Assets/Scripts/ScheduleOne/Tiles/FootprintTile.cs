@@ -1,10 +1,14 @@
+using System.Collections.Generic;
+using ScheduleOne.Building;
+using UnityEngine;
+
 namespace ScheduleOne.Tiles
 {
-	public class FootprintTile : global::UnityEngine.MonoBehaviour
+	public class FootprintTile : MonoBehaviour
 	{
-		public global::ScheduleOne.Tiles.TileAppearance tileAppearance;
+		public TileAppearance tileAppearance;
 
-		public global::ScheduleOne.Tiles.TileDetector tileDetector;
+		public TileDetector tileDetector;
 
 		public int X;
 
@@ -12,19 +16,19 @@ namespace ScheduleOne.Tiles
 
 		public float RequiredOffset;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Building.CornerObstacle> Corners;
+		public List<CornerObstacle> Corners;
 
-		public global::ScheduleOne.Tiles.Tile MatchedStandardTile { get; protected set; }
+		public Tile MatchedStandardTile { get; protected set; }
 
 		protected virtual void Awake()
 		{
 		}
 
-		public virtual void Initialize(global::ScheduleOne.Tiles.Tile matchedTile)
+		public virtual void Initialize(Tile matchedTile)
 		{
 		}
 
-		public bool AreCornerObstaclesBlocked(global::ScheduleOne.Tiles.Tile proposedTile)
+		public bool AreCornerObstaclesBlocked(Tile proposedTile)
 		{
 			return false;
 		}

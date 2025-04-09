@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Anna : global::ScheduleOne.NPCs.NPC
+	public class Anna : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EAnnaAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,12 +1,16 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts.WateringCan;
+using TMPro;
+
 namespace ScheduleOne.UI.Items
 {
-	public class TrashGrabberItemUI : global::ScheduleOne.UI.Items.ItemUI
+	public class TrashGrabberItemUI : ItemUI
 	{
-		public global::TMPro.TextMeshProUGUI ValueLabel;
+		public TextMeshProUGUI ValueLabel;
 
-		protected global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberInstance trashGrabberInstance;
+		protected TrashGrabberInstance trashGrabberInstance;
 
-		public override void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Setup(ItemInstance item)
 		{
 		}
 

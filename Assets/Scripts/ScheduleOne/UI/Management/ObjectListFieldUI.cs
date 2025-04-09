@@ -1,35 +1,42 @@
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Management;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Management
 {
-	public class ObjectListFieldUI : global::UnityEngine.MonoBehaviour
+	public class ObjectListFieldUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
+		[Header("References")]
 		public string FieldText;
 
 		public string InstructionText;
 
 		public string ExtendedInstructionText;
 
-		public global::TMPro.TextMeshProUGUI FieldLabel;
+		public TextMeshProUGUI FieldLabel;
 
-		public global::UnityEngine.GameObject NoneSelected;
+		public GameObject NoneSelected;
 
-		public global::UnityEngine.GameObject MultipleSelected;
+		public GameObject MultipleSelected;
 
-		public global::UnityEngine.RectTransform[] Entries;
+		public RectTransform[] Entries;
 
-		public global::UnityEngine.UI.Button Button;
+		public Button Button;
 
-		public global::UnityEngine.GameObject EditIcon;
+		public GameObject EditIcon;
 
-		public global::UnityEngine.GameObject NoMultiEdit;
+		public GameObject NoMultiEdit;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.ObjectListField> Fields { get; protected set; }
+		public List<ObjectListField> Fields { get; protected set; }
 
-		public void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.ObjectListField> field)
+		public void Bind(List<ObjectListField> field)
 		{
 		}
 
-		private void Refresh(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> newVal)
+		private void Refresh(List<BuildableItem> newVal)
 		{
 		}
 
@@ -42,13 +49,13 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private bool ObjectValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool ObjectValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void ObjectsSelected(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objs)
+		public void ObjectsSelected(List<BuildableItem> objs)
 		{
 		}
 	}

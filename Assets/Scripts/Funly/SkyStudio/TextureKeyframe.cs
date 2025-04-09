@@ -1,16 +1,19 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class TextureKeyframe : global::Funly.SkyStudio.BaseKeyframe
+	[Serializable]
+	public class TextureKeyframe : BaseKeyframe
 	{
-		public global::UnityEngine.Texture texture;
+		public Texture texture;
 
-		public TextureKeyframe(global::UnityEngine.Texture texture, float time)
+		public TextureKeyframe(Texture texture, float time)
 			: base(0f)
 		{
 		}
 
-		public TextureKeyframe(global::Funly.SkyStudio.TextureKeyframe keyframe)
+		public TextureKeyframe(TextureKeyframe keyframe)
 			: base(0f)
 		{
 		}

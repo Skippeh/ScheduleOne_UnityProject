@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence.ItemLoaders;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.UI.MainMenu;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Persistence
 {
-	public class LoadManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Persistence.LoadManager>
+	public class LoadManager : PersistentSingleton<LoadManager>
 	{
 		public enum ELoadStatus
 		{
@@ -20,27 +27,27 @@ namespace ScheduleOne.Persistence
 
 		public const float NETWORK_TIMEOUT = 30f;
 
-		public static global::System.Collections.Generic.List<string> LoadHistory;
+		public static List<string> LoadHistory;
 
-		public static global::ScheduleOne.Persistence.SaveInfo[] SaveGames;
+		public static SaveInfo[] SaveGames;
 
-		public static global::ScheduleOne.Persistence.SaveInfo LastPlayedGame;
+		public static SaveInfo LastPlayedGame;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Persistence.LoadRequest> loadRequests;
+		private List<LoadRequest> loadRequests;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.ItemLoaders.ItemLoader> ItemLoaders;
+		public List<ItemLoader> ItemLoaders;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Loaders.BuildableItemLoader> ObjectLoaders;
+		public List<BuildableItemLoader> ObjectLoaders;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Loaders.NPCLoader> NPCLoaders;
+		public List<NPCLoader> NPCLoaders;
 
-		public global::UnityEngine.Events.UnityEvent onPreSceneChange;
+		public UnityEvent onPreSceneChange;
 
-		public global::UnityEngine.Events.UnityEvent onPreLoad;
+		public UnityEvent onPreLoad;
 
-		public global::UnityEngine.Events.UnityEvent onLoadComplete;
+		public UnityEvent onLoadComplete;
 
-		public global::UnityEngine.Events.UnityEvent onSaveInfoLoaded;
+		public UnityEvent onSaveInfoLoaded;
 
 		public string DefaultTutorialSaveFolder => null;
 
@@ -52,13 +59,13 @@ namespace ScheduleOne.Persistence
 
 		public bool DebugMode { get; protected set; }
 
-		public global::ScheduleOne.Persistence.LoadManager.ELoadStatus LoadStatus { get; protected set; }
+		public ELoadStatus LoadStatus { get; protected set; }
 
 		public string LoadedGameFolderPath { get; protected set; }
 
-		public global::ScheduleOne.Persistence.SaveInfo ActiveSaveInfo { get; private set; }
+		public SaveInfo ActiveSaveInfo { get; private set; }
 
-		public global::ScheduleOne.Persistence.SaveInfo StoredSaveInfo { get; private set; }
+		public SaveInfo StoredSaveInfo { get; private set; }
 
 		protected override void Awake()
 		{
@@ -88,25 +95,25 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void QueueLoadRequest(global::ScheduleOne.Persistence.LoadRequest request)
+		public void QueueLoadRequest(LoadRequest request)
 		{
 		}
 
-		public void DequeueLoadRequest(global::ScheduleOne.Persistence.LoadRequest request)
+		public void DequeueLoadRequest(LoadRequest request)
 		{
 		}
 
-		public global::ScheduleOne.Persistence.ItemLoaders.ItemLoader GetItemLoader(string itemType)
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.Persistence.Loaders.BuildableItemLoader GetObjectLoader(string objectType)
+		public ItemLoader GetItemLoader(string itemType)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Persistence.Loaders.NPCLoader GetNPCLoader(string npcType)
+		public BuildableItemLoader GetObjectLoader(string objectType)
+		{
+			return null;
+		}
+
+		public NPCLoader GetNPCLoader(string npcType)
 		{
 			return null;
 		}
@@ -116,7 +123,7 @@ namespace ScheduleOne.Persistence
 			return null;
 		}
 
-		public void StartGame(global::ScheduleOne.Persistence.SaveInfo info, bool allowLoadStacking = false)
+		public void StartGame(SaveInfo info, bool allowLoadStacking = false)
 		{
 		}
 
@@ -144,7 +151,7 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void ExitToMenu(global::ScheduleOne.Persistence.SaveInfo autoLoadSave = null, global::ScheduleOne.UI.MainMenu.MainMenuPopup.Data mainMenuPopup = null, bool preventLeaveLobby = false)
+		public void ExitToMenu(SaveInfo autoLoadSave = null, MainMenuPopup.Data mainMenuPopup = null, bool preventLeaveLobby = false)
 		{
 		}
 

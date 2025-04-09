@@ -1,21 +1,26 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Transporting;
+using FishySteamworks.Server;
+
 namespace FishySteamworks.Client
 {
-	public class ClientHostSocket : global::FishySteamworks.CommonSocket
+	public class ClientHostSocket : CommonSocket
 	{
-		private global::FishySteamworks.Server.ServerSocket _server;
+		private ServerSocket _server;
 
-		private global::System.Collections.Generic.Queue<global::FishySteamworks.LocalPacket> _incoming;
+		private Queue<LocalPacket> _incoming;
 
 		internal void CheckSetStarted()
 		{
 		}
 
-		internal bool StartConnection(global::FishySteamworks.Server.ServerSocket serverSocket)
+		internal bool StartConnection(ServerSocket serverSocket)
 		{
 			return false;
 		}
 
-		protected override void SetLocalConnectionState(global::FishNet.Transporting.LocalConnectionState connectionState, bool server)
+		protected override void SetLocalConnectionState(LocalConnectionState connectionState, bool server)
 		{
 		}
 
@@ -28,11 +33,11 @@ namespace FishySteamworks.Client
 		{
 		}
 
-		internal void ReceivedFromLocalServer(global::FishySteamworks.LocalPacket packet)
+		internal void ReceivedFromLocalServer(LocalPacket packet)
 		{
 		}
 
-		internal void SendToServer(byte channelId, global::System.ArraySegment<byte> segment)
+		internal void SendToServer(byte channelId, ArraySegment<byte> segment)
 		{
 		}
 	}

@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class WeatherEnclosureDetector : global::UnityEngine.MonoBehaviour
+	public class WeatherEnclosureDetector : MonoBehaviour
 	{
-		[global::UnityEngine.Tooltip("Default enclosure used when not inside the trigger of another enclosure area.")]
-		public global::Funly.SkyStudio.WeatherEnclosure mainEnclosure;
+		[Tooltip("Default enclosure used when not inside the trigger of another enclosure area.")]
+		public WeatherEnclosure mainEnclosure;
 
-		private global::System.Collections.Generic.List<global::Funly.SkyStudio.WeatherEnclosure> triggeredEnclosures;
+		private List<WeatherEnclosure> triggeredEnclosures;
 
-		public global::Funly.SkyStudio.RainDownfallController rainController;
+		public RainDownfallController rainController;
 
-		public global::System.Action<global::Funly.SkyStudio.WeatherEnclosure> enclosureChangedCallback;
+		public Action<WeatherEnclosure> enclosureChangedCallback;
 
 		private void Start()
 		{
@@ -19,11 +23,11 @@ namespace Funly.SkyStudio
 		{
 		}
 
-		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(Collider other)
 		{
 		}
 
-		private void OnTriggerExit(global::UnityEngine.Collider other)
+		private void OnTriggerExit(Collider other)
 		{
 		}
 

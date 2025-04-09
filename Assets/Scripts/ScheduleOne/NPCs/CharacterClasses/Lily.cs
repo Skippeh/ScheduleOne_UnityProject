@@ -1,13 +1,17 @@
+using ScheduleOne.NPCs.Relation;
+using ScheduleOne.Variables;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Lily : global::ScheduleOne.NPCs.NPC
+	public class Lily : NPC
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform TutorialScheduleGroup;
+		[Header("References")]
+		public Transform TutorialScheduleGroup;
 
-		public global::UnityEngine.Transform RegularScheduleGroup;
+		public Transform RegularScheduleGroup;
 
-		public global::ScheduleOne.Variables.Conditions TutorialConditions;
+		public Conditions TutorialConditions;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ELilyAssembly_002DCSharp_002Edll_Excuted;
 
@@ -17,7 +21,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		private void Unlocked(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType type, bool b)
+		private void Unlocked(NPCRelationData.EUnlockType type, bool b)
 		{
 		}
 

@@ -1,6 +1,13 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Interaction
 {
-	public class NetworkedInteractableToggleable : global::FishNet.Object.NetworkBehaviour
+	public class NetworkedInteractableToggleable : NetworkBehaviour
 	{
 		public string ActivateMessage;
 
@@ -8,14 +15,14 @@ namespace ScheduleOne.Interaction
 
 		public float CoolDown;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Events.UnityEvent onToggle;
+		public UnityEvent onToggle;
 
-		public global::UnityEngine.Events.UnityEvent onActivate;
+		public UnityEvent onActivate;
 
-		public global::UnityEngine.Events.UnityEvent onDeactivate;
+		public UnityEvent onDeactivate;
 
 		private float lastActivated;
 
@@ -29,7 +36,7 @@ namespace ScheduleOne.Interaction
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -41,14 +48,14 @@ namespace ScheduleOne.Interaction
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendToggle()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetState(global::FishNet.Connection.NetworkConnection conn, bool activated)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetState(NetworkConnection conn, bool activated)
 		{
 		}
 
@@ -76,27 +83,27 @@ namespace ScheduleOne.Interaction
 		{
 		}
 
-		private void RpcReader___Server_SendToggle_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendToggle_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetState_214505783(global::FishNet.Connection.NetworkConnection conn, bool activated)
+		private void RpcWriter___Observers_SetState_214505783(NetworkConnection conn, bool activated)
 		{
 		}
 
-		public void RpcLogic___SetState_214505783(global::FishNet.Connection.NetworkConnection conn, bool activated)
+		public void RpcLogic___SetState_214505783(NetworkConnection conn, bool activated)
 		{
 		}
 
-		private void RpcReader___Observers_SetState_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetState_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetState_214505783(global::FishNet.Connection.NetworkConnection conn, bool activated)
+		private void RpcWriter___Target_SetState_214505783(NetworkConnection conn, bool activated)
 		{
 		}
 
-		private void RpcReader___Target_SetState_214505783(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetState_214505783(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

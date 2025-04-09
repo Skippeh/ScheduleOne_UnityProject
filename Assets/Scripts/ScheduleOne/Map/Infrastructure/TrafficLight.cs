@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Map.Infrastructure
 {
-	public class TrafficLight : global::UnityEngine.MonoBehaviour
+	public class TrafficLight : MonoBehaviour
 	{
 		public enum State
 		{
@@ -11,39 +13,39 @@ namespace ScheduleOne.Map.Infrastructure
 
 		public static float amberTime;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer redMesh;
+		[Header("References")]
+		[SerializeField]
+		protected MeshRenderer redMesh;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer orangeMesh;
+		[SerializeField]
+		protected MeshRenderer orangeMesh;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer greenMesh;
+		[SerializeField]
+		protected MeshRenderer greenMesh;
 
-		[global::UnityEngine.Header("Materials")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redOn_Mat;
+		[Header("Materials")]
+		[SerializeField]
+		protected Material redOn_Mat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redOff_Mat;
+		[SerializeField]
+		protected Material redOff_Mat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material orangeOn_Mat;
+		[SerializeField]
+		protected Material orangeOn_Mat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material orangeOff_Mat;
+		[SerializeField]
+		protected Material orangeOff_Mat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenOn_Mat;
+		[SerializeField]
+		protected Material greenOn_Mat;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenOff_Mat;
+		[SerializeField]
+		protected Material greenOff_Mat;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Map.Infrastructure.TrafficLight.State state;
+		[Header("Settings")]
+		public State state;
 
-		private global::ScheduleOne.Map.Infrastructure.TrafficLight.State appliedState;
+		private State appliedState;
 
 		protected virtual void Start()
 		{

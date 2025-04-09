@@ -1,6 +1,6 @@
 namespace ScheduleOne.ConstructableScripts
 {
-	public class EmployeeTrailer : global::ScheduleOne.ConstructableScripts.Constructable_GridBased
+	public class EmployeeTrailer : Constructable_GridBased
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstructableScripts_002EEmployeeTrailerAssembly_002DCSharp_002Edll_Excuted;
 

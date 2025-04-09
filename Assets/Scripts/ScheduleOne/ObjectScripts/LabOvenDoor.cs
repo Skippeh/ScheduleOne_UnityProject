@@ -1,6 +1,10 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class LabOvenDoor : global::UnityEngine.MonoBehaviour
+	public class LabOvenDoor : MonoBehaviour
 	{
 		public const float HIT_OFFSET_MAX = 0.24f;
 
@@ -10,26 +14,26 @@ namespace ScheduleOne.ObjectScripts
 
 		public const float DOOR_ANGLE_OPEN = 10f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerTasks.Clickable HandleClickable;
+		[Header("References")]
+		public Clickable HandleClickable;
 
-		public global::UnityEngine.Transform Door;
+		public Transform Door;
 
-		public global::UnityEngine.Transform PlaneNormal;
+		public Transform PlaneNormal;
 
-		public global::UnityEngine.AnimationCurve HitMapCurve;
+		public AnimationCurve HitMapCurve;
 
-		[global::UnityEngine.Header("Sounds")]
-		public global::ScheduleOne.Audio.AudioSourceController OpenSound;
+		[Header("Sounds")]
+		public AudioSourceController OpenSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController CloseSound;
+		public AudioSourceController CloseSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController ShutSound;
+		public AudioSourceController ShutSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float DoorMoveSpeed;
 
-		private global::UnityEngine.Vector3 clickOffset;
+		private Vector3 clickOffset;
 
 		private bool isMoving;
 
@@ -59,13 +63,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlaneHit()
+		private Vector3 GetPlaneHit()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void ClickEnd()

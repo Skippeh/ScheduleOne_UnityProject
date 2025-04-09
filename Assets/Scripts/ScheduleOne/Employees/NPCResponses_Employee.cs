@@ -1,20 +1,24 @@
+using ScheduleOne.Combat;
+using ScheduleOne.NPCs.Responses;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Employees
 {
-	public class NPCResponses_Employee : global::ScheduleOne.NPCs.Responses.NPCResponses
+	public class NPCResponses_Employee : NPCResponses
 	{
-		protected override void RespondToFirstNonLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToFirstNonLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		protected override void RespondToLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		protected override void RespondToRepeatedNonLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToRepeatedNonLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		private void Ow(global::ScheduleOne.PlayerScripts.Player perpetrator)
+		private void Ow(Player perpetrator)
 		{
 		}
 	}

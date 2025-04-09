@@ -1,22 +1,31 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Construction
 {
-	public class ConstructionMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Construction.ConstructionMenu>
+	public class ConstructionMenu : Singleton<ConstructionMenu>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ConstructionMenuCategory
 		{
 			public string categoryName;
 
-			public global::UnityEngine.Sprite categoryIcon;
+			public Sprite categoryIcon;
 
-			[global::UnityEngine.HideInInspector]
-			public global::UnityEngine.UI.Button button;
+			[HideInInspector]
+			public Button button;
 
-			[global::UnityEngine.HideInInspector]
-			public global::UnityEngine.RectTransform container;
+			[HideInInspector]
+			public RectTransform container;
 
-			[global::UnityEngine.HideInInspector]
-			public global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuListing> listings;
+			[HideInInspector]
+			public List<ConstructionMenuListing> listings;
 		}
 
 		public class ConstructionMenuListing
@@ -25,13 +34,13 @@ namespace ScheduleOne.UI.Construction
 
 			public float price;
 
-			public global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuCategory category;
+			public ConstructionMenuCategory category;
 
-			public global::UnityEngine.RectTransform entry;
+			public RectTransform entry;
 
 			public bool isSelected;
 
-			public ConstructionMenuListing(string id, float _price, global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuCategory _cat)
+			public ConstructionMenuListing(string id, float _price, ConstructionMenuCategory _cat)
 			{
 			}
 
@@ -52,80 +61,80 @@ namespace ScheduleOne.UI.Construction
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuCategory> categories;
+		public List<ConstructionMenuCategory> categories;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		[SerializeField]
+		protected Canvas canvas;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.GraphicRaycaster raycaster;
+		[SerializeField]
+		protected GraphicRaycaster raycaster;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform categoryButtonContainer;
+		[SerializeField]
+		protected Transform categoryButtonContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform categoryContainer;
+		[SerializeField]
+		protected RectTransform categoryContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text categoryNameDisplay;
+		[SerializeField]
+		protected Text categoryNameDisplay;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform infoPopup;
+		[SerializeField]
+		protected RectTransform infoPopup;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI infoPopup_ConstructableName;
+		[SerializeField]
+		protected TextMeshProUGUI infoPopup_ConstructableName;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.EventSystems.EventSystem eventSystem;
+		[SerializeField]
+		protected EventSystem eventSystem;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button destroyButton;
+		[SerializeField]
+		protected Button destroyButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button customizeButton;
+		[SerializeField]
+		protected Button customizeButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button moveButton;
+		[SerializeField]
+		protected Button moveButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI infoPopup_Description;
+		[SerializeField]
+		protected TextMeshProUGUI infoPopup_Description;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject categoryButtonPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject categoryButtonPrefab;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject categoryContainerPrefab;
+		[SerializeField]
+		protected GameObject categoryContainerPrefab;
 
-		public global::UnityEngine.GameObject listingPrefab;
+		public GameObject listingPrefab;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color iconColor_Unselected;
+		[Header("Settings")]
+		[SerializeField]
+		protected Color iconColor_Unselected;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color iconColor_Selected;
+		[SerializeField]
+		protected Color iconColor_Selected;
 
-		public global::UnityEngine.Color listingOutlineColor_Unselected;
+		public Color listingOutlineColor_Unselected;
 
-		public global::UnityEngine.Color listingOutlineColor_Selected;
+		public Color listingOutlineColor_Selected;
 
-		private global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuCategory selectedCategory;
+		private ConstructionMenuCategory selectedCategory;
 
-		private global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuListing selectedListing;
+		private ConstructionMenuListing selectedListing;
 
-		private global::ScheduleOne.ConstructableScripts.Constructable selectedConstructable;
+		private Constructable selectedConstructable;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ConstructableScripts.Constructable SelectedConstructable => null;
+		public Constructable SelectedConstructable => null;
 
 		protected override void Start()
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		private void Exit(ExitAction exit)
 		{
 		}
 
@@ -145,7 +154,7 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		private void OnConstructableBuilt(global::ScheduleOne.ConstructableScripts.Constructable c)
+		private void OnConstructableBuilt(Constructable c)
 		{
 		}
 
@@ -153,7 +162,7 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		public void ListingClicked(global::ScheduleOne.UI.Construction.ConstructionMenu.ConstructionMenuListing listing)
+		public void ListingClicked(ConstructionMenuListing listing)
 		{
 		}
 
@@ -178,15 +187,15 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		public void SelectConstructable(global::ScheduleOne.ConstructableScripts.Constructable c)
+		public void SelectConstructable(Constructable c)
 		{
 		}
 
-		public void SelectConstructable(global::ScheduleOne.ConstructableScripts.Constructable c, bool focusCameraTo)
+		public void SelectConstructable(Constructable c, bool focusCameraTo)
 		{
 		}
 
-		private void SetButtonInteractable(global::UnityEngine.UI.Button b, bool interactable, global::UnityEngine.Color32 iconDefaultColor)
+		private void SetButtonInteractable(Button b, bool interactable, Color32 iconDefaultColor)
 		{
 		}
 
@@ -194,7 +203,7 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		private global::ScheduleOne.ConstructableScripts.Constructable GetHoveredConstructable()
+		private Constructable GetHoveredConstructable()
 		{
 			return null;
 		}

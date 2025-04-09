@@ -1,11 +1,14 @@
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueHandler_Police : global::ScheduleOne.Dialogue.ControlledDialogueHandler
+	public class DialogueHandler_Police : ControlledDialogueHandler
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Dialogue.DialogueContainer CheckpointRequestDialogue;
+		[Header("References")]
+		public DialogueContainer CheckpointRequestDialogue;
 
-		private global::ScheduleOne.Police.PoliceOfficer officer;
+		private PoliceOfficer officer;
 
 		protected override void Awake()
 		{

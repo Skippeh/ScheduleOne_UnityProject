@@ -1,6 +1,10 @@
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.StationFramework;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class Beaker : global::ScheduleOne.StationFramework.StationItem
+	public class Beaker : StationItem
 	{
 		public float ClampAngle_MaxLiquid;
 
@@ -10,28 +14,28 @@ namespace ScheduleOne.ObjectScripts
 
 		public float AngleToPour_MinLiquid;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerTasks.Draggable Draggable;
+		[Header("References")]
+		public Draggable Draggable;
 
-		public global::ScheduleOne.PlayerTasks.DraggableConstraint Constraint;
+		public DraggableConstraint Constraint;
 
-		public global::UnityEngine.Collider ConcaveCollider;
+		public Collider ConcaveCollider;
 
-		public global::UnityEngine.Collider ConvexCollider;
+		public Collider ConvexCollider;
 
-		public global::UnityEngine.Transform CenterOfMass;
+		public Transform CenterOfMass;
 
-		public global::UnityEngine.ConfigurableJoint Joint;
+		public ConfigurableJoint Joint;
 
-		public global::UnityEngine.Rigidbody Anchor;
+		public Rigidbody Anchor;
 
-		public global::ScheduleOne.StationFramework.LiquidContainer Container;
+		public LiquidContainer Container;
 
-		public global::ScheduleOne.StationFramework.Fillable Fillable;
+		public Fillable Fillable;
 
-		public global::ScheduleOne.StationFramework.PourableModule Pourable;
+		public PourableModule Pourable;
 
-		public global::UnityEngine.GameObject FilterPaper;
+		public GameObject FilterPaper;
 
 		private void Start()
 		{

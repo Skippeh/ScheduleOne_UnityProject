@@ -1,8 +1,11 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class GUIDUtility : global::UnityEngine.MonoBehaviour
+	public class GUIDUtility : MonoBehaviour
 	{
-		[global::EasyButtons.Button]
+		[Button]
 		public void GenerateGUID()
 		{
 		}

@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Vision
 {
-	[global::System.Serializable]
-	public class UniqueVisibilityAttribute : global::ScheduleOne.Vision.VisibilityAttribute
+	[Serializable]
+	public class UniqueVisibilityAttribute : VisibilityAttribute
 	{
 		public string uniquenessCode;
 

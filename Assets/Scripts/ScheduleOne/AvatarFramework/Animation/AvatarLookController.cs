@@ -1,6 +1,11 @@
+using RootMotion.FinalIK;
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarLookController : global::UnityEngine.MonoBehaviour
+	public class AvatarLookController : MonoBehaviour
 	{
 		public const float LookAtPlayerRange = 4f;
 
@@ -10,21 +15,21 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public bool DEBUG;
 
-		[global::UnityEngine.Header("References")]
-		public global::RootMotion.FinalIK.AimIK Aim;
+		[Header("References")]
+		public AimIK Aim;
 
-		public global::UnityEngine.Transform HeadBone;
+		public Transform HeadBone;
 
-		public global::UnityEngine.Transform LookForwardTarget;
+		public Transform LookForwardTarget;
 
-		public global::UnityEngine.Transform LookOrigin;
+		public Transform LookOrigin;
 
-		public global::ScheduleOne.AvatarFramework.EyeController Eyes;
+		public EyeController Eyes;
 
-		[global::UnityEngine.Header("Optional NPC reference")]
-		public global::ScheduleOne.NPCs.NPC NPC;
+		[Header("Optional NPC reference")]
+		public NPC NPC;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool AutoLookAtPlayer;
 
 		public float LookLerpSpeed;
@@ -33,33 +38,33 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public float BodyRotationSpeed;
 
-		private global::ScheduleOne.AvatarFramework.Avatar avatar;
+		private Avatar avatar;
 
-		private global::UnityEngine.Vector3 lookAtPos;
+		private Vector3 lookAtPos;
 
-		private global::UnityEngine.Transform lookAtTarget;
+		private Transform lookAtTarget;
 
-		private global::UnityEngine.Vector3 lastFrameOffset;
+		private Vector3 lastFrameOffset;
 
 		private bool overrideLookAt;
 
-		private global::UnityEngine.Vector3 overriddenLookTarget;
+		private Vector3 overriddenLookTarget;
 
 		private int overrideLookPriority;
 
 		private bool overrideRotateBody;
 
-		private global::UnityEngine.Vector3 lastFrameLookOriginPos;
+		private Vector3 lastFrameLookOriginPos;
 
-		private global::UnityEngine.Vector3 lastFrameLookOriginForward;
+		private Vector3 lastFrameLookOriginForward;
 
-		public global::UnityEngine.Transform ForceLookTarget;
+		public Transform ForceLookTarget;
 
 		public bool ForceLookRotateBody;
 
 		private float defaultIKWeight;
 
-		private global::ScheduleOne.PlayerScripts.Player nearestPlayer;
+		private Player nearestPlayer;
 
 		private float nearestPlayerDist;
 
@@ -83,7 +88,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		public void OverrideLookTarget(global::UnityEngine.Vector3 targetPosition, int priority, bool rotateBody = false)
+		public void OverrideLookTarget(Vector3 targetPosition, int priority, bool rotateBody = false)
 		{
 		}
 
@@ -95,12 +100,12 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		private global::ScheduleOne.PlayerScripts.Player GetNearestPlayer()
+		private Player GetNearestPlayer()
 		{
 			return null;
 		}
 
-		private bool CanLookAt(global::UnityEngine.Vector3 position)
+		private bool CanLookAt(Vector3 position)
 		{
 			return false;
 		}

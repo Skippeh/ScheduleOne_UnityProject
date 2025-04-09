@@ -1,38 +1,44 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class ParkingLot : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class ParkingLot : MonoBehaviour, IGUIDRegisterable
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		[global::UnityEngine.Header("READONLY")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Map.ParkingSpot> ParkingSpots;
+		[Header("READONLY")]
+		public List<ParkingSpot> ParkingSpots;
 
-		[global::UnityEngine.Header("Entry")]
-		public global::UnityEngine.Transform EntryPoint;
+		[Header("Entry")]
+		public Transform EntryPoint;
 
-		public global::UnityEngine.Transform HiddenVehicleAccessPoint;
+		public Transform HiddenVehicleAccessPoint;
 
-		[global::UnityEngine.Header("Exit")]
+		[Header("Exit")]
 		public bool UseExitPoint;
 
-		public global::ScheduleOne.Vehicles.EParkingAlignment ExitAlignment;
+		public EParkingAlignment ExitAlignment;
 
-		public global::UnityEngine.Transform ExitPoint;
+		public Transform ExitPoint;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector ExitPointVehicleDetector;
+		public VehicleDetector ExitPointVehicleDetector;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		private void Awake()
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
-		public global::ScheduleOne.Map.ParkingSpot GetRandomFreeSpot()
+		public ParkingSpot GetRandomFreeSpot()
 		{
 			return null;
 		}
@@ -42,7 +48,7 @@ namespace ScheduleOne.Map
 			return 0;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Map.ParkingSpot> GetFreeParkingSpots()
+		public List<ParkingSpot> GetFreeParkingSpots()
 		{
 			return null;
 		}

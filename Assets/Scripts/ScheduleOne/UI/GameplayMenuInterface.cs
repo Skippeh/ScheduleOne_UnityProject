@@ -1,18 +1,22 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class GameplayMenuInterface : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.GameplayMenuInterface>
+	public class GameplayMenuInterface : Singleton<GameplayMenuInterface>
 	{
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::UnityEngine.UI.Button PhoneButton;
+		public Button PhoneButton;
 
-		public global::UnityEngine.UI.Button CharacterButton;
+		public Button CharacterButton;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		public global::ScheduleOne.UI.CharacterInterface CharacterInterface;
+		public CharacterInterface CharacterInterface;
 
-		private global::UnityEngine.Coroutine selectionLerp;
+		private Coroutine selectionLerp;
 
 		protected override void Awake()
 		{
@@ -34,7 +38,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void SetSelected(global::ScheduleOne.UI.GameplayMenu.EGameplayScreen screen)
+		public void SetSelected(GameplayMenu.EGameplayScreen screen)
 		{
 		}
 	}

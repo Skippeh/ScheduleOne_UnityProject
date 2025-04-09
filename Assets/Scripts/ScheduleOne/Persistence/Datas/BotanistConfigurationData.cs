@@ -1,15 +1,17 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class BotanistConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class BotanistConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Bed;
+		public ObjectFieldData Bed;
 
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Supplies;
+		public ObjectFieldData Supplies;
 
-		public global::ScheduleOne.Persistence.Datas.ObjectListFieldData Pots;
+		public ObjectListFieldData Pots;
 
-		public BotanistConfigurationData(global::ScheduleOne.Persistence.Datas.ObjectFieldData bed, global::ScheduleOne.Persistence.Datas.ObjectFieldData supplies, global::ScheduleOne.Persistence.Datas.ObjectListFieldData pots)
+		public BotanistConfigurationData(ObjectFieldData bed, ObjectFieldData supplies, ObjectListFieldData pots)
 		{
 		}
 	}

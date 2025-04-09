@@ -1,36 +1,44 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.Levelling;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class RankUpCanvas : global::UnityEngine.MonoBehaviour, global::ScheduleOne.UI.IPostSleepEvent
+	public class RankUpCanvas : MonoBehaviour, IPostSleepEvent
 	{
-		public global::UnityEngine.Animation OpenCloseAnim;
+		public Animation OpenCloseAnim;
 
-		public global::UnityEngine.Animation RankUpAnim;
+		public Animation RankUpAnim;
 
-		public global::TMPro.TextMeshProUGUI OldRankLabel;
+		public TextMeshProUGUI OldRankLabel;
 
-		public global::TMPro.TextMeshProUGUI NewRankLabel;
+		public TextMeshProUGUI NewRankLabel;
 
-		public global::UnityEngine.Canvas Canvas;
+		public Canvas Canvas;
 
-		public global::UnityEngine.GameObject UnlockedItemsContainer;
+		public GameObject UnlockedItemsContainer;
 
-		public global::UnityEngine.RectTransform[] UnlockedItems;
+		public RectTransform[] UnlockedItems;
 
-		public global::TMPro.TextMeshProUGUI ExtraUnlocksLabel;
+		public TextMeshProUGUI ExtraUnlocksLabel;
 
-		public global::ScheduleOne.Audio.AudioSourceController SoundEffect;
+		public AudioSourceController SoundEffect;
 
-		public global::UnityEngine.UI.Slider ProgressSlider;
+		public Slider ProgressSlider;
 
-		public global::TMPro.TextMeshProUGUI ProgressLabel;
+		public TextMeshProUGUI ProgressLabel;
 
-		public global::ScheduleOne.Audio.AudioSourceController BlipSound;
+		public AudioSourceController BlipSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController ClickSound;
+		public AudioSourceController ClickSound;
 
-		private global::UnityEngine.Coroutine coroutine;
+		private Coroutine coroutine;
 
-		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Levelling.FullRank, global::ScheduleOne.Levelling.FullRank>> queuedRankUps;
+		private List<Tuple<FullRank, FullRank>> queuedRankUps;
 
 		public bool IsRunning { get; private set; }
 
@@ -52,11 +60,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void RankUp(global::ScheduleOne.Levelling.FullRank oldRank, global::ScheduleOne.Levelling.FullRank newRank)
+		public void RankUp(FullRank oldRank, FullRank newRank)
 		{
 		}
 
-		private void PlayRankupAnimation(global::ScheduleOne.Levelling.FullRank oldRank, global::ScheduleOne.Levelling.FullRank newRank, bool playSound)
+		private void PlayRankupAnimation(FullRank oldRank, FullRank newRank, bool playSound)
 		{
 		}
 	}

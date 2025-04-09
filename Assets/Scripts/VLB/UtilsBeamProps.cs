@@ -1,83 +1,85 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public static class UtilsBeamProps
 	{
-		public static bool CanChangeDuringPlaytime(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static bool CanChangeDuringPlaytime(VolumetricLightBeamAbstractBase self)
 		{
 			return false;
 		}
 
-		public static global::UnityEngine.Quaternion GetInternalLocalRotation(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static Quaternion GetInternalLocalRotation(VolumetricLightBeamAbstractBase self)
 		{
-			return default(global::UnityEngine.Quaternion);
+			return default(Quaternion);
 		}
 
-		public static float GetThickness(global::VLB.VolumetricLightBeamAbstractBase self)
-		{
-			return 0f;
-		}
-
-		public static float GetFallOffEnd(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetThickness(VolumetricLightBeamAbstractBase self)
 		{
 			return 0f;
 		}
 
-		public static global::VLB.ColorMode GetColorMode(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetFallOffEnd(VolumetricLightBeamAbstractBase self)
 		{
-			return default(global::VLB.ColorMode);
+			return 0f;
 		}
 
-		public static global::UnityEngine.Color GetColorFlat(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static ColorMode GetColorMode(VolumetricLightBeamAbstractBase self)
 		{
-			return default(global::UnityEngine.Color);
+			return default(ColorMode);
 		}
 
-		public static global::UnityEngine.Gradient GetColorGradient(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static Color GetColorFlat(VolumetricLightBeamAbstractBase self)
+		{
+			return default(Color);
+		}
+
+		public static Gradient GetColorGradient(VolumetricLightBeamAbstractBase self)
 		{
 			return null;
 		}
 
-		public static float GetConeAngle(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetConeAngle(VolumetricLightBeamAbstractBase self)
 		{
 			return 0f;
 		}
 
-		public static float GetConeRadiusStart(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetConeRadiusStart(VolumetricLightBeamAbstractBase self)
 		{
 			return 0f;
 		}
 
-		public static float GetConeRadiusEnd(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetConeRadiusEnd(VolumetricLightBeamAbstractBase self)
 		{
 			return 0f;
 		}
 
-		public static int GetSortingLayerID(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static int GetSortingLayerID(VolumetricLightBeamAbstractBase self)
 		{
 			return 0;
 		}
 
-		public static int GetSortingOrder(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static int GetSortingOrder(VolumetricLightBeamAbstractBase self)
 		{
 			return 0;
 		}
 
-		public static bool GetFadeOutEnabled(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static bool GetFadeOutEnabled(VolumetricLightBeamAbstractBase self)
 		{
 			return false;
 		}
 
-		public static float GetFadeOutEnd(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static float GetFadeOutEnd(VolumetricLightBeamAbstractBase self)
 		{
 			return 0f;
 		}
 
-		public static global::VLB.Dimensions GetDimensions(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static Dimensions GetDimensions(VolumetricLightBeamAbstractBase self)
 		{
-			return default(global::VLB.Dimensions);
+			return default(Dimensions);
 		}
 
-		public static int GetGeomSides(global::VLB.VolumetricLightBeamAbstractBase self)
+		public static int GetGeomSides(VolumetricLightBeamAbstractBase self)
 		{
 			return 0;
 		}

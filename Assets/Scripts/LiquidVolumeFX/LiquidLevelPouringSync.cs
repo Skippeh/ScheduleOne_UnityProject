@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class LiquidLevelPouringSync : global::UnityEngine.MonoBehaviour
+	public class LiquidLevelPouringSync : MonoBehaviour
 	{
 		public float fillSpeed;
 
 		public float sinkFactor;
 
-		private global::LiquidVolumeFX.LiquidVolume lv;
+		private LiquidVolume lv;
 
-		private global::UnityEngine.Rigidbody rb;
+		private Rigidbody rb;
 
 		private void Start()
 		{
 		}
 
-		private void OnParticleCollision(global::UnityEngine.GameObject other)
+		private void OnParticleCollision(GameObject other)
 		{
 		}
 

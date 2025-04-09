@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using FluffyUnderware.Curvy;
+using UnityEngine;
+
 namespace ScheduleOne.Math
 {
-	public class PathSmoothingUtility : global::UnityEngine.MonoBehaviour
+	public class PathSmoothingUtility : MonoBehaviour
 	{
 		public class SmoothedPath
 		{
 			public const float MARGIN = 10f;
 
-			public global::System.Collections.Generic.List<global::UnityEngine.Vector3> vectorPath;
+			public List<Vector3> vectorPath;
 
-			public global::System.Collections.Generic.List<global::UnityEngine.Bounds> segmentBounds;
+			public List<Bounds> segmentBounds;
 
 			public void InitializePath()
 			{
@@ -17,22 +21,22 @@ namespace ScheduleOne.Math
 
 		public const float MinControlPointDistance = 0.5f;
 
-		private static global::FluffyUnderware.Curvy.CurvySpline spline;
+		private static CurvySpline spline;
 
 		private void Awake()
 		{
 		}
 
-		public static global::ScheduleOne.Math.PathSmoothingUtility.SmoothedPath CalculateSmoothedPath(global::System.Collections.Generic.List<global::UnityEngine.Vector3> controlPoints, float maxCPDistance = 5f)
+		public static SmoothedPath CalculateSmoothedPath(List<Vector3> controlPoints, float maxCPDistance = 5f)
 		{
 			return null;
 		}
 
-		public static void DrawPath(global::ScheduleOne.Math.PathSmoothingUtility.SmoothedPath path, global::UnityEngine.Color col, float duration)
+		public static void DrawPath(SmoothedPath path, Color col, float duration)
 		{
 		}
 
-		private static global::System.Collections.Generic.List<global::UnityEngine.Vector3> InsertIntermediatePoints(global::System.Collections.Generic.List<global::UnityEngine.Vector3> points, float maxDistance)
+		private static List<Vector3> InsertIntermediatePoints(List<Vector3> points, float maxDistance)
 		{
 			return null;
 		}

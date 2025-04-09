@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Walter : global::ScheduleOne.NPCs.NPC
+	public class Walter : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EWalterAssembly_002DCSharp_002Edll_Excuted;
 

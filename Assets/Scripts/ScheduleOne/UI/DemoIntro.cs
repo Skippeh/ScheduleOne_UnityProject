@@ -1,28 +1,35 @@
+using EasyButtons;
+using ScheduleOne.AvatarFramework.Customization;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class DemoIntro : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.DemoIntro>
+	public class DemoIntro : Singleton<DemoIntro>
 	{
 		public const float SKIP_TIME = 0.5f;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::UnityEngine.Transform PlayerInitialPosition;
+		public Transform PlayerInitialPosition;
 
-		public global::UnityEngine.GameObject SkipContainer;
+		public GameObject SkipContainer;
 
-		public global::UnityEngine.UI.Image SkipDial;
+		public Image SkipDial;
 
 		public int SkipEvents;
 
-		public global::UnityEngine.Events.UnityEvent onStart;
+		public UnityEvent onStart;
 
-		public global::UnityEngine.Events.UnityEvent onStartAsServer;
+		public UnityEvent onStartAsServer;
 
-		public global::UnityEngine.Events.UnityEvent onCutsceneDone;
+		public UnityEvent onCutsceneDone;
 
-		public global::UnityEngine.Events.UnityEvent onIntroDone;
+		public UnityEvent onIntroDone;
 
-		public global::UnityEngine.Events.UnityEvent onIntroDoneAsServer;
+		public UnityEvent onIntroDoneAsServer;
 
 		private int CurrentStep;
 
@@ -40,7 +47,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Play()
 		{
 		}
@@ -61,7 +68,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void CharacterCreationDone(global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings avatar)
+		public void CharacterCreationDone(BasicAvatarSettings avatar)
 		{
 		}
 	}

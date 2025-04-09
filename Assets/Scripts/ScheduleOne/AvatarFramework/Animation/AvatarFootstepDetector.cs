@@ -1,28 +1,32 @@
+using ScheduleOne.Materials;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarFootstepDetector : global::UnityEngine.MonoBehaviour
+	public class AvatarFootstepDetector : MonoBehaviour
 	{
 		public const float MAX_DETECTION_RANGE = 20f;
 
 		public const float GROUND_DETECTION_RANGE = 0.25f;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public Avatar Avatar;
 
-		public global::UnityEngine.Transform ReferencePoint;
+		public Transform ReferencePoint;
 
-		public global::UnityEngine.Transform LeftBone;
+		public Transform LeftBone;
 
-		public global::UnityEngine.Transform RightBone;
+		public Transform RightBone;
 
 		public float StepThreshold;
 
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		public LayerMask GroundDetectionMask;
 
 		private bool leftDown;
 
 		private bool rightDown;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Materials.EMaterialType, float> onStep;
+		public UnityEvent<EMaterialType, float> onStep;
 
 		private void LateUpdate()
 		{
@@ -32,9 +36,9 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		public bool IsGrounded(out global::ScheduleOne.Materials.EMaterialType surfaceType)
+		public bool IsGrounded(out EMaterialType surfaceType)
 		{
-			surfaceType = default(global::ScheduleOne.Materials.EMaterialType);
+			surfaceType = default(EMaterialType);
 			return false;
 		}
 	}

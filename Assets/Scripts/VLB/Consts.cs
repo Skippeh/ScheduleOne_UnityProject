@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public static class Consts
@@ -47,7 +49,7 @@ namespace VLB
 		{
 			public static readonly bool ProceduralObjectsVisibleInEditor;
 
-			public static global::UnityEngine.HideFlags ProceduralObjectsHideFlags => default(global::UnityEngine.HideFlags);
+			public static HideFlags ProceduralObjectsHideFlags => default(HideFlags);
 		}
 
 		public static class Beam
@@ -66,16 +68,16 @@ namespace VLB
 
 				public const float GlareMax = 1f;
 
-				public static readonly global::UnityEngine.Vector2 TiltDefault;
+				public static readonly Vector2 TiltDefault;
 
-				public static readonly global::UnityEngine.Vector3 SkewingLocalForwardDirectionDefault;
+				public static readonly Vector3 SkewingLocalForwardDirectionDefault;
 
-				public const global::UnityEngine.Transform ClippingPlaneTransformDefault = null;
+				public const Transform ClippingPlaneTransformDefault = null;
 			}
 
 			public static class HD
 			{
-				public const global::VLB.AttenuationEquationHD AttenuationEquationDefault = global::VLB.AttenuationEquationHD.Quadratic;
+				public const AttenuationEquationHD AttenuationEquationDefault = AttenuationEquationHD.Quadratic;
 
 				public const float SideSoftnessDefault = 1f;
 
@@ -93,12 +95,12 @@ namespace VLB
 
 				public const int JitteringFrameRateMax = 120;
 
-				public static readonly global::VLB.MinMaxRangeFloat JitteringLerpRange;
+				public static readonly MinMaxRangeFloat JitteringLerpRange;
 			}
 
-			public static readonly global::UnityEngine.Color FlatColor;
+			public static readonly Color FlatColor;
 
-			public const global::VLB.ColorMode ColorModeDefault = global::VLB.ColorMode.Flat;
+			public const ColorMode ColorModeDefault = ColorMode.Flat;
 
 			public const float MultiplierDefault = 1f;
 
@@ -122,7 +124,7 @@ namespace VLB
 
 			public const float ConeRadiusStart = 0.1f;
 
-			public const global::VLB.MeshType GeomMeshType = global::VLB.MeshType.Shared;
+			public const MeshType GeomMeshType = MeshType.Shared;
 
 			public const int GeomSidesDefault = 18;
 
@@ -140,7 +142,7 @@ namespace VLB
 
 			public const bool ScalableDefault = true;
 
-			public const global::VLB.AttenuationEquation AttenuationEquationDefault = global::VLB.AttenuationEquation.Quadratic;
+			public const AttenuationEquation AttenuationEquationDefault = AttenuationEquation.Quadratic;
 
 			public const float AttenuationCustomBlendingDefault = 0.5f;
 
@@ -158,7 +160,7 @@ namespace VLB
 
 			public const float CameraClippingDistance = 0.5f;
 
-			public const global::VLB.NoiseMode NoiseModeDefault = global::VLB.NoiseMode.Disabled;
+			public const NoiseMode NoiseModeDefault = NoiseMode.Disabled;
 
 			public const float NoiseIntensityMin = 0f;
 
@@ -172,17 +174,17 @@ namespace VLB
 
 			public const float NoiseScaleDefault = 0.5f;
 
-			public static readonly global::UnityEngine.Vector3 NoiseVelocityDefault;
+			public static readonly Vector3 NoiseVelocityDefault;
 
-			public const global::VLB.BlendingMode BlendingModeDefault = global::VLB.BlendingMode.Additive;
+			public const BlendingMode BlendingModeDefault = BlendingMode.Additive;
 
-			public const global::VLB.ShaderAccuracy ShaderAccuracyDefault = global::VLB.ShaderAccuracy.Fast;
+			public const ShaderAccuracy ShaderAccuracyDefault = ShaderAccuracy.Fast;
 
 			public const float FadeOutBeginDefault = -150f;
 
 			public const float FadeOutEndDefault = -200f;
 
-			public const global::VLB.Dimensions DimensionsDefault = global::VLB.Dimensions.Dim3D;
+			public const Dimensions DimensionsDefault = Dimensions.Dim3D;
 		}
 
 		public static class DustParticles
@@ -191,9 +193,9 @@ namespace VLB
 
 			public const float SizeDefault = 0.01f;
 
-			public const global::VLB.ParticlesDirection DirectionDefault = global::VLB.ParticlesDirection.Random;
+			public const ParticlesDirection DirectionDefault = ParticlesDirection.Random;
 
-			public static readonly global::UnityEngine.Vector3 VelocityDefault;
+			public static readonly Vector3 VelocityDefault;
 
 			public const float DensityDefault = 5f;
 
@@ -201,7 +203,7 @@ namespace VLB
 
 			public const float DensityMax = 1000f;
 
-			public static readonly global::VLB.MinMaxRangeFloat SpawnDistanceRangeDefault;
+			public static readonly MinMaxRangeFloat SpawnDistanceRangeDefault;
 
 			public const bool CullingEnabledDefault = false;
 
@@ -212,13 +214,13 @@ namespace VLB
 
 		public static class DynOcclusion
 		{
-			public static readonly global::UnityEngine.LayerMask LayerMaskDefault;
+			public static readonly LayerMask LayerMaskDefault;
 
-			public const global::VLB.DynamicOcclusionUpdateRate UpdateRateDefault = global::VLB.DynamicOcclusionUpdateRate.EveryXFrames;
+			public const DynamicOcclusionUpdateRate UpdateRateDefault = DynamicOcclusionUpdateRate.EveryXFrames;
 
 			public const int WaitFramesCountDefault = 3;
 
-			public const global::VLB.Dimensions RaycastingDimensionsDefault = global::VLB.Dimensions.Dim3D;
+			public const Dimensions RaycastingDimensionsDefault = Dimensions.Dim3D;
 
 			public const bool RaycastingConsiderTriggersDefault = false;
 
@@ -236,7 +238,7 @@ namespace VLB
 
 			public const float RaycastingMaxSurfaceAngleMax = 90f;
 
-			public const global::VLB.PlaneAlignment RaycastingPlaneAlignmentDefault = global::VLB.PlaneAlignment.Surface;
+			public const PlaneAlignment RaycastingPlaneAlignmentDefault = PlaneAlignment.Surface;
 
 			public const float RaycastingPlaneOffsetDefault = 0.1f;
 
@@ -251,7 +253,7 @@ namespace VLB
 
 		public static class Effects
 		{
-			public const global::VLB.EffectAbstractBase.ComponentsToChange ComponentsToChangeDefault = (global::VLB.EffectAbstractBase.ComponentsToChange)2147483647;
+			public const EffectAbstractBase.ComponentsToChange ComponentsToChangeDefault = (EffectAbstractBase.ComponentsToChange)2147483647;
 
 			public const bool RestoreIntensityOnDisableDefault = true;
 
@@ -261,11 +263,11 @@ namespace VLB
 
 			public const bool RestoreIntensityOnPauseDefault = false;
 
-			public static readonly global::VLB.MinMaxRangeFloat FlickeringDurationDefault;
+			public static readonly MinMaxRangeFloat FlickeringDurationDefault;
 
-			public static readonly global::VLB.MinMaxRangeFloat PauseDurationDefault;
+			public static readonly MinMaxRangeFloat PauseDurationDefault;
 
-			public static readonly global::VLB.MinMaxRangeFloat IntensityAmplitudeDefault;
+			public static readonly MinMaxRangeFloat IntensityAmplitudeDefault;
 
 			public const float SmoothingDefault = 0.05f;
 		}
@@ -278,9 +280,9 @@ namespace VLB
 
 			public const float StrengthMax = 1f;
 
-			public static readonly global::UnityEngine.LayerMask LayerMaskDefault;
+			public static readonly LayerMask LayerMaskDefault;
 
-			public const global::VLB.ShadowUpdateRate UpdateRateDefault = global::VLB.ShadowUpdateRate.EveryXFrames;
+			public const ShadowUpdateRate UpdateRateDefault = ShadowUpdateRate.EveryXFrames;
 
 			public const int WaitFramesCountDefault = 3;
 
@@ -288,7 +290,7 @@ namespace VLB
 
 			public const bool OcclusionCullingDefault = true;
 
-			public static string GetErrorChangeRuntimeDepthMapResolution(global::VLB.VolumetricShadowHD comp)
+			public static string GetErrorChangeRuntimeDepthMapResolution(VolumetricShadowHD comp)
 			{
 				return null;
 			}
@@ -302,24 +304,24 @@ namespace VLB
 
 			public const float ContributionMax = 1f;
 
-			public const global::UnityEngine.Texture CookieTextureDefault = null;
+			public const Texture CookieTextureDefault = null;
 
-			public const global::VLB.CookieChannel ChannelDefault = global::VLB.CookieChannel.Alpha;
+			public const CookieChannel ChannelDefault = CookieChannel.Alpha;
 
 			public const bool NegativeDefault = false;
 
-			public static readonly global::UnityEngine.Vector2 TranslationDefault;
+			public static readonly Vector2 TranslationDefault;
 
 			public const float RotationDefault = 0f;
 
-			public static readonly global::UnityEngine.Vector2 ScaleDefault;
+			public static readonly Vector2 ScaleDefault;
 		}
 
 		public static class Config
 		{
 			public static class HD
 			{
-				public const global::VLB.RenderQueue GeometryRenderQueueDefault = (global::VLB.RenderQueue)3100;
+				public const RenderQueue GeometryRenderQueueDefault = (RenderQueue)3100;
 
 				public const float CameraBlendingDistance = 0.5f;
 
@@ -334,11 +336,11 @@ namespace VLB
 
 			public const string FadeOutCameraTagDefault = "MainCamera";
 
-			public const global::VLB.RenderQueue GeometryRenderQueueDefault = global::VLB.RenderQueue.Transparent;
+			public const RenderQueue GeometryRenderQueueDefault = RenderQueue.Transparent;
 
-			public const global::VLB.RenderPipeline GeometryRenderPipelineDefault = global::VLB.RenderPipeline.BuiltIn;
+			public const RenderPipeline GeometryRenderPipelineDefault = RenderPipeline.BuiltIn;
 
-			public const global::VLB.RenderingMode GeometryRenderingModeDefault = global::VLB.RenderingMode.Default;
+			public const RenderingMode GeometryRenderingModeDefault = RenderingMode.Default;
 
 			public const int Noise3DSizeDefault = 64;
 
@@ -348,7 +350,7 @@ namespace VLB
 
 			public const bool FeatureEnabledDefault = true;
 
-			public const global::VLB.FeatureEnabledColorGradient FeatureEnabledColorGradientDefault = global::VLB.FeatureEnabledColorGradient.HighOnly;
+			public const FeatureEnabledColorGradient FeatureEnabledColorGradientDefault = FeatureEnabledColorGradient.HighOnly;
 
 			public const int SharedMeshSidesDefault = 24;
 

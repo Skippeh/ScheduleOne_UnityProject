@@ -1,30 +1,36 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Clothing;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorOptionList : global::ScheduleOne.UI.CharacterCreator.CharacterCreatorField<string>
+	public class CharacterCreatorOptionList : CharacterCreatorField<string>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Option
 		{
 			public string Label;
 
 			public string AssetPath;
 
-			public global::ScheduleOne.Clothing.ClothingDefinition ClothingItemEquivalent;
+			public ClothingDefinition ClothingItemEquivalent;
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform OptionContainer;
+		[Header("References")]
+		public RectTransform OptionContainer;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool CanSelectNone;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.CharacterCreator.CharacterCreatorOptionList.Option> Options;
+		public List<Option> Options;
 
-		public global::UnityEngine.GameObject OptionPrefab;
+		public GameObject OptionPrefab;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.UI.Button> optionButtons;
+		private List<Button> optionButtons;
 
-		private global::UnityEngine.UI.Button selectedButton;
+		private Button selectedButton;
 
 		protected override void Awake()
 		{

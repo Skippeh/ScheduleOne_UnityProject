@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Dean : global::ScheduleOne.NPCs.NPC
+	public class Dean : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EDeanAssembly_002DCSharp_002Edll_Excuted;
 

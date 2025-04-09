@@ -1,21 +1,27 @@
+using EasyButtons;
+using ScheduleOne.NPCs.CharacterClasses;
+using ScheduleOne.Property;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_WelcomeToHylandPoint : global::ScheduleOne.Quests.Quest
+	public class Quest_WelcomeToHylandPoint : Quest
 	{
-		public global::ScheduleOne.Quests.QuestEntry ReturnToRVQuest;
+		public QuestEntry ReturnToRVQuest;
 
-		public global::ScheduleOne.Quests.QuestEntry ReadMessagesQuest;
+		public QuestEntry ReadMessagesQuest;
 
-		public global::ScheduleOne.Property.RV RV;
+		public RV RV;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.UncleNelson Nelson;
+		public UncleNelson Nelson;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ExplosionMaxDist;
 
 		public float ExplosionMinDist;
 
-		public global::UnityEngine.Events.UnityEvent onExplode;
+		public UnityEvent onExplode;
 
 		private bool exploded;
 
@@ -29,12 +35,12 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Explode()
 		{
 		}
 
-		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public override void SetQuestState(EQuestState state, bool network = true)
 		{
 		}
 	}

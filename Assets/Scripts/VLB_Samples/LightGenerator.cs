@@ -1,25 +1,27 @@
+using UnityEngine;
+
 namespace VLB_Samples
 {
-	public class LightGenerator : global::UnityEngine.MonoBehaviour
+	public class LightGenerator : MonoBehaviour
 	{
-		[global::UnityEngine.Range(1f, 100f)]
-		[global::UnityEngine.SerializeField]
+		[Range(1f, 100f)]
+		[SerializeField]
 		private int CountX;
 
-		[global::UnityEngine.Range(1f, 100f)]
-		[global::UnityEngine.SerializeField]
+		[Range(1f, 100f)]
+		[SerializeField]
 		private int CountY;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float OffsetUnits;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float PositionY;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool NoiseEnabled;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private bool AddLight;
 
 		public void Generate()

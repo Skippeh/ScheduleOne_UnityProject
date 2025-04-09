@@ -1,13 +1,15 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class WorldStorageEntityData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class WorldStorageEntityData : SaveData
 	{
 		public string GUID;
 
-		public global::ScheduleOne.Persistence.Datas.ItemSet Contents;
+		public ItemSet Contents;
 
-		public WorldStorageEntityData(global::System.Guid guid, global::ScheduleOne.Persistence.Datas.ItemSet contents)
+		public WorldStorageEntityData(Guid guid, ItemSet contents)
 		{
 		}
 	}

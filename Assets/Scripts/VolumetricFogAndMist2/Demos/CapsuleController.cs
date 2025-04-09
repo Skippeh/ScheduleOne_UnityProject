@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace VolumetricFogAndMist2.Demos
 {
-	public class CapsuleController : global::UnityEngine.MonoBehaviour
+	public class CapsuleController : MonoBehaviour
 	{
-		public global::VolumetricFogAndMist2.VolumetricFog fogVolume;
+		public VolumetricFog fogVolume;
 
 		public float moveSpeed;
 
@@ -12,7 +14,7 @@ namespace VolumetricFogAndMist2.Demos
 
 		public float distanceCheck;
 
-		private global::UnityEngine.Vector3 lastPos;
+		private Vector3 lastPos;
 
 		private void Update()
 		{

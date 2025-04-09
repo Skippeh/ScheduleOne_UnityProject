@@ -1,14 +1,17 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+
 namespace ScheduleOne.Quests
 {
-	public abstract class Quest_Employees : global::ScheduleOne.Quests.Quest
+	public abstract class Quest_Employees : Quest
 	{
-		public global::ScheduleOne.Employees.EEmployeeType EmployeeType;
+		public EEmployeeType EmployeeType;
 
-		public global::ScheduleOne.Quests.QuestEntry AssignBedEntry;
+		public QuestEntry AssignBedEntry;
 
-		public global::ScheduleOne.Quests.QuestEntry PayEntry;
+		public QuestEntry PayEntry;
 
-		public abstract global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> GetEmployees();
+		public abstract List<Employee> GetEmployees();
 
 		protected override void MinPass()
 		{

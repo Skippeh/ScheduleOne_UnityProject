@@ -1,10 +1,13 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Misc
 {
-	public class TreeScaler : global::UnityEngine.MonoBehaviour
+	public class TreeScaler : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> branchMeshes;
+		[Header("References")]
+		[SerializeField]
+		protected List<Transform> branchMeshes;
 
 		public float minScale;
 

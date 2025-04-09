@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Variables
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class Conditions
 	{
 		public enum EEvaluationType
@@ -9,11 +11,11 @@ namespace ScheduleOne.Variables
 			Or = 1
 		}
 
-		public global::ScheduleOne.Variables.Conditions.EEvaluationType EvaluationType;
+		public EEvaluationType EvaluationType;
 
-		public global::ScheduleOne.Variables.Condition[] ConditionList;
+		public Condition[] ConditionList;
 
-		public global::ScheduleOne.Variables.QuestCondition[] QuestConditionList;
+		public QuestCondition[] QuestConditionList;
 
 		public bool Evaluate()
 		{

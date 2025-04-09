@@ -1,8 +1,15 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCEvent_LocationBasedAction : global::ScheduleOne.NPCs.Schedules.NPCEvent
+	public class NPCEvent_LocationBasedAction : NPCEvent
 	{
-		public global::UnityEngine.Transform Destination;
+		public Transform Destination;
 
 		public bool FaceDestinationDir;
 
@@ -12,9 +19,9 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public bool IsActionStarted;
 
-		public global::UnityEngine.Events.UnityEvent onStartAction;
+		public UnityEvent onStartAction;
 
-		public global::UnityEngine.Events.UnityEvent onEndAction;
+		public UnityEvent onEndAction;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCEvent_LocationBasedActionAssembly_002DCSharp_002Edll_Excuted;
 
@@ -27,7 +34,7 @@ namespace ScheduleOne.NPCs.Schedules
 			return null;
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -68,17 +75,17 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		protected virtual void StartAction(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		protected virtual void StartAction(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		protected virtual void EndAction()
 		{
 		}
@@ -95,23 +102,23 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcWriter___Observers_StartAction_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_StartAction_328543758(NetworkConnection conn)
 		{
 		}
 
-		protected virtual void RpcLogic___StartAction_328543758(global::FishNet.Connection.NetworkConnection conn)
+		protected virtual void RpcLogic___StartAction_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_StartAction_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartAction_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_StartAction_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_StartAction_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_StartAction_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_StartAction_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -123,7 +130,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_EndAction_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_EndAction_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

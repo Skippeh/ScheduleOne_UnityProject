@@ -1,10 +1,17 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.NPCs;
+using ScheduleOne.UI.Input;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class PickpocketScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.PickpocketScreen>
+	public class PickpocketScreen : Singleton<PickpocketScreen>
 	{
 		public const int PICKPOCKET_XP = 2;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float GreenAreaMaxWidth;
 
 		public float GreenAreaMinWidth;
@@ -17,32 +24,32 @@ namespace ScheduleOne.UI
 
 		public float Tolerance;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::ScheduleOne.UI.ItemSlotUI[] Slots;
+		public ItemSlotUI[] Slots;
 
-		public global::UnityEngine.RectTransform[] GreenAreas;
+		public RectTransform[] GreenAreas;
 
-		public global::UnityEngine.Animation TutorialAnimation;
+		public Animation TutorialAnimation;
 
-		public global::UnityEngine.RectTransform TutorialContainer;
+		public RectTransform TutorialContainer;
 
-		public global::UnityEngine.RectTransform SliderContainer;
+		public RectTransform SliderContainer;
 
-		public global::UnityEngine.UI.Slider Slider;
+		public Slider Slider;
 
-		public global::ScheduleOne.UI.Input.InputPrompt InputPrompt;
+		public InputPrompt InputPrompt;
 
-		public global::UnityEngine.Events.UnityEvent onFail;
+		public UnityEvent onFail;
 
-		public global::UnityEngine.Events.UnityEvent onStop;
+		public UnityEvent onStop;
 
-		public global::UnityEngine.Events.UnityEvent onHitGreen;
+		public UnityEvent onHitGreen;
 
-		private global::ScheduleOne.NPCs.NPC npc;
+		private NPC npc;
 
 		private bool isSliding;
 
@@ -62,11 +69,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Open(global::ScheduleOne.NPCs.NPC _npc)
+		public void Open(NPC _npc)
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -82,7 +89,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private global::ScheduleOne.UI.ItemSlotUI GetHoveredSlot()
+		private ItemSlotUI GetHoveredSlot()
 		{
 			return null;
 		}

@@ -1,8 +1,11 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "SoilDefinition", menuName = "ScriptableObjects/Item Definitions/SoilDefinition", order = 1)]
-	public class SoilDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "SoilDefinition", menuName = "ScriptableObjects/Item Definitions/SoilDefinition", order = 1)]
+	public class SoilDefinition : StorableItemDefinition
 	{
 		public enum ESoilQuality
 		{
@@ -10,13 +13,13 @@ namespace ScheduleOne.ItemFramework
 			Premium = 1
 		}
 
-		public global::ScheduleOne.ItemFramework.SoilDefinition.ESoilQuality SoilQuality;
+		public ESoilQuality SoilQuality;
 
-		public global::UnityEngine.Material DrySoilMat;
+		public Material DrySoilMat;
 
-		public global::UnityEngine.Material WetSoilMat;
+		public Material WetSoilMat;
 
-		public global::UnityEngine.Color ParticleColor;
+		public Color ParticleColor;
 
 		public int Uses;
 	}

@@ -1,27 +1,33 @@
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.UI.Tooltips;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations.Drying_rack
 {
-	public class DryingOperationUI : global::UnityEngine.MonoBehaviour
+	public class DryingOperationUI : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Rect;
+		[Header("References")]
+		public RectTransform Rect;
 
-		public global::UnityEngine.UI.Image Icon;
+		public Image Icon;
 
-		public global::TMPro.TextMeshProUGUI QuantityLabel;
+		public TextMeshProUGUI QuantityLabel;
 
-		public global::UnityEngine.UI.Button Button;
+		public Button Button;
 
-		public global::ScheduleOne.UI.Tooltips.Tooltip Tooltip;
+		public Tooltip Tooltip;
 
-		public global::ScheduleOne.ObjectScripts.DryingOperation AssignedOperation { get; protected set; }
+		public DryingOperation AssignedOperation { get; protected set; }
 
-		public global::UnityEngine.RectTransform Alignment { get; private set; }
+		public RectTransform Alignment { get; private set; }
 
-		public void SetOperation(global::ScheduleOne.ObjectScripts.DryingOperation operation)
+		public void SetOperation(DryingOperation operation)
 		{
 		}
 
-		public void SetAlignment(global::UnityEngine.RectTransform alignment)
+		public void SetAlignment(RectTransform alignment)
 		{
 		}
 

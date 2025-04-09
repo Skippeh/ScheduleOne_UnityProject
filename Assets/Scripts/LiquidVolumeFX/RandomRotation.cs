@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class RandomRotation : global::UnityEngine.MonoBehaviour
+	public class RandomRotation : MonoBehaviour
 	{
-		[global::UnityEngine.Range(1f, 50f)]
+		[Range(1f, 50f)]
 		public float speed;
 
-		[global::UnityEngine.Range(1f, 30f)]
+		[Range(1f, 30f)]
 		public float randomChangeInterval;
 
 		private float lastTime;
 
-		private global::UnityEngine.Vector3 v;
+		private Vector3 v;
 
 		private float randomization;
 

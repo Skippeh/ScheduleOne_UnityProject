@@ -1,6 +1,9 @@
+using System;
+using UnityEngine;
+
 namespace AmplifyColor
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class VersionInfo
 	{
 		public const byte Major = 1;
@@ -13,13 +16,13 @@ namespace AmplifyColor
 
 		private static string TrialSuffix;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_major;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_minor;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_release;
 
 		public static int FullNumber => 0;
@@ -44,12 +47,12 @@ namespace AmplifyColor
 		{
 		}
 
-		public static global::AmplifyColor.VersionInfo Current()
+		public static VersionInfo Current()
 		{
 			return null;
 		}
 
-		public static bool Matches(global::AmplifyColor.VersionInfo version)
+		public static bool Matches(VersionInfo version)
 		{
 			return false;
 		}

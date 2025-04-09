@@ -1,20 +1,25 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
-	[global::UnityEngine.CreateAssetMenu(fileName = "CocaineDefinition", menuName = "ScriptableObjects/Item Definitions/CocaineDefinition", order = 1)]
-	public class CocaineDefinition : global::ScheduleOne.Product.ProductDefinition
+	[Serializable]
+	[CreateAssetMenu(fileName = "CocaineDefinition", menuName = "ScriptableObjects/Item Definitions/CocaineDefinition", order = 1)]
+	public class CocaineDefinition : ProductDefinition
 	{
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material RockMaterial;
+		[Header("Materials")]
+		public Material RockMaterial;
 
-		public global::ScheduleOne.Product.CocaineAppearanceSettings AppearanceSettings { get; private set; }
+		public CocaineAppearanceSettings AppearanceSettings { get; private set; }
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
+		public override ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes, global::ScheduleOne.Product.CocaineAppearanceSettings _appearance)
+		public void Initialize(List<ScheduleOne.Properties.Property> properties, List<EDrugType> drugTypes, CocaineAppearanceSettings _appearance)
 		{
 		}
 
@@ -23,7 +28,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.CocaineAppearanceSettings GetAppearanceSettings(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static CocaineAppearanceSettings GetAppearanceSettings(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_Warehouse : global::ScheduleOne.Quests.Quest
+	public class Quest_Warehouse : Quest
 	{
 		protected override void MinPass()
 		{

@@ -1,11 +1,13 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class VehiclePatrolRoute : global::UnityEngine.MonoBehaviour
+	public class VehiclePatrolRoute : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string RouteName;
 
-		public global::UnityEngine.Transform[] Waypoints;
+		public Transform[] Waypoints;
 
 		public int StartWaypointIndex;
 

@@ -1,14 +1,20 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_UseVendingMachine : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_UseVendingMachine : NPCSignal
 	{
 		private const float destinationThreshold = 1f;
 
-		public global::ScheduleOne.ObjectScripts.VendingMachine MachineOverride;
+		public VendingMachine MachineOverride;
 
-		private global::ScheduleOne.ObjectScripts.VendingMachine TargetMachine;
+		private VendingMachine TargetMachine;
 
-		private global::UnityEngine.Coroutine purchaseCoroutine;
+		private Coroutine purchaseCoroutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_UseVendingMachineAssembly_002DCSharp_002Edll_Excuted;
 
@@ -50,16 +56,16 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		private global::ScheduleOne.ObjectScripts.VendingMachine GetTargetMachine()
+		private VendingMachine GetTargetMachine()
 		{
 			return null;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void Purchase()
 		{
 		}
@@ -93,7 +99,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_Purchase_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Purchase_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

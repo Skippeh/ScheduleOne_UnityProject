@@ -1,84 +1,65 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.Interaction;
+using ScheduleOne.Management;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities.Water
 {
-	public class Tap : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Management.IUsable
+	public class Tap : NetworkBehaviour, IUsable
 	{
 		public const float MaxFlowRate = 6f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Transform CameraPos;
+		public Transform CameraPos;
 
-		public global::UnityEngine.Transform WateringCamPos;
+		public Transform WateringCamPos;
 
-		public global::UnityEngine.Collider HandleCollider;
+		public Collider HandleCollider;
 
-		public global::UnityEngine.Transform Handle;
+		public Transform Handle;
 
-		public global::ScheduleOne.PlayerTasks.Clickable HandleClickable;
+		public Clickable HandleClickable;
 
-		public global::UnityEngine.ParticleSystem WaterParticles;
+		public ParticleSystem WaterParticles;
 
-		public global::ScheduleOne.Audio.AudioSourceController SqueakSound;
+		public AudioSourceController SqueakSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController WaterRunningSound;
+		public AudioSourceController WaterRunningSound;
 
 		private float tapFlow;
 
-		private global::UnityEngine.GameObject wateringCanModel;
+		private GameObject wateringCanModel;
 
 		private bool intObjSetThisFrame;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CIsHeldOpen_003Ek__BackingField;
+		public SyncVar<bool> syncVar____003CIsHeldOpen_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
+		public SyncVar<NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002EUtilities_002EWater_002ETapAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EProperty_002EUtilities_002EWater_002ETapAssembly_002DCSharp_002Edll_Excuted;
 
-		public bool IsHeldOpen
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return false;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public bool IsHeldOpen { get; set; }
 
 		public float ActualFlowRate => 0f;
 
-		public global::FishNet.Object.NetworkObject NPCUserObject
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public NetworkObject NPCUserObject { get; set; }
 
-		public global::FishNet.Object.NetworkObject PlayerUserObject
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return null;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public NetworkObject PlayerUserObject { get; set; }
 
 		public bool SyncAccessor__003CIsHeldOpen_003Ek__BackingField
 		{
@@ -91,7 +72,7 @@ namespace ScheduleOne.Property.Utilities.Water
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CNPCUserObject_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CNPCUserObject_003Ek__BackingField
 		{
 			get
 			{
@@ -102,7 +83,7 @@ namespace ScheduleOne.Property.Utilities.Water
 			}
 		}
 
-		public global::FishNet.Object.NetworkObject SyncAccessor__003CPlayerUserObject_003Ek__BackingField
+		public NetworkObject SyncAccessor__003CPlayerUserObject_003Ek__BackingField
 		{
 			get
 			{
@@ -121,7 +102,7 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		public void SetInteractableObject(string message, global::ScheduleOne.Interaction.InteractableObject.EInteractableState state)
+		public void SetInteractableObject(string message, InteractableObject.EInteractableState state)
 		{
 		}
 
@@ -141,17 +122,17 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetPlayerUser(global::FishNet.Object.NetworkObject playerObject)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetPlayerUser(NetworkObject playerObject)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetNPCUser(global::FishNet.Object.NetworkObject npcObject)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetNPCUser(NetworkObject npcObject)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetHeldOpen(bool open)
 		{
 		}
@@ -161,27 +142,27 @@ namespace ScheduleOne.Property.Utilities.Water
 			return false;
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SendWateringCanModel(string ID)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void CreateWateringCanModel(string ID)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SendClearWateringCanModelModel()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void ClearWateringCanModel()
 		{
 		}
 
-		public global::UnityEngine.GameObject CreateWateringCanModel_Local(string ID, bool force = false)
+		public GameObject CreateWateringCanModel_Local(string ID, bool force = false)
 		{
 			return null;
 		}
@@ -198,27 +179,27 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcWriter___Server_SetPlayerUser_3323014238(global::FishNet.Object.NetworkObject playerObject)
+		private void RpcWriter___Server_SetPlayerUser_3323014238(NetworkObject playerObject)
 		{
 		}
 
-		public void RpcLogic___SetPlayerUser_3323014238(global::FishNet.Object.NetworkObject playerObject)
+		public void RpcLogic___SetPlayerUser_3323014238(NetworkObject playerObject)
 		{
 		}
 
-		private void RpcReader___Server_SetPlayerUser_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetPlayerUser_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Server_SetNPCUser_3323014238(global::FishNet.Object.NetworkObject npcObject)
+		private void RpcWriter___Server_SetNPCUser_3323014238(NetworkObject npcObject)
 		{
 		}
 
-		public void RpcLogic___SetNPCUser_3323014238(global::FishNet.Object.NetworkObject npcObject)
+		public void RpcLogic___SetNPCUser_3323014238(NetworkObject npcObject)
 		{
 		}
 
-		private void RpcReader___Server_SetNPCUser_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetNPCUser_3323014238(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -230,7 +211,7 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcReader___Server_SetHeldOpen_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetHeldOpen_1140765316(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -242,7 +223,7 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcReader___Server_SendWateringCanModel_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendWateringCanModel_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -254,7 +235,7 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcReader___Observers_CreateWateringCanModel_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateWateringCanModel_3615296227(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -266,7 +247,7 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcReader___Server_SendClearWateringCanModelModel_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendClearWateringCanModelModel_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -278,11 +259,11 @@ namespace ScheduleOne.Property.Utilities.Water
 		{
 		}
 
-		private void RpcReader___Observers_ClearWateringCanModel_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ClearWateringCanModel_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EProperty_002EUtilities_002EWater_002ETap(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EProperty_002EUtilities_002EWater_002ETap(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 namespace ScheduleOne
 {
-	public class GameInput : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.GameInput>
+	public class GameInput : PersistentSingleton<GameInput>
 	{
 		public enum ButtonCode
 		{
@@ -35,30 +40,30 @@ namespace ScheduleOne
 
 		public class ExitListener
 		{
-			public global::ScheduleOne.GameInput.ExitDelegate listenerFunction;
+			public ExitDelegate listenerFunction;
 
 			public int priority;
 		}
 
-		public delegate void ExitDelegate(global::ScheduleOne.DevUtilities.ExitAction exitAction);
+		public delegate void ExitDelegate(ExitAction exitAction);
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ExitListener> exitListeners;
+		public static List<ExitListener> exitListeners;
 
-		public global::UnityEngine.InputSystem.PlayerInput PlayerInput;
+		public PlayerInput PlayerInput;
 
 		public static bool IsTyping;
 
-		public static global::UnityEngine.Vector2 MotionAxis;
+		public static Vector2 MotionAxis;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ButtonCode> buttonsDownThisFrame;
+		private List<ButtonCode> buttonsDownThisFrame;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ButtonCode> buttonsDown;
+		private List<ButtonCode> buttonsDown;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ButtonCode> buttonsUpThisFrame;
+		private List<ButtonCode> buttonsUpThisFrame;
 
-		public static global::UnityEngine.Vector2 MouseDelta => default(global::UnityEngine.Vector2);
+		public static Vector2 MouseDelta => default(Vector2);
 
-		public static global::UnityEngine.Vector3 MousePosition => default(global::UnityEngine.Vector3);
+		public static Vector3 MousePosition => default(Vector3);
 
 		public static float MouseScrollDelta => 0f;
 
@@ -74,17 +79,17 @@ namespace ScheduleOne
 		{
 		}
 
-		public static bool GetButton(global::ScheduleOne.GameInput.ButtonCode buttonCode)
+		public static bool GetButton(ButtonCode buttonCode)
 		{
 			return false;
 		}
 
-		public static bool GetButtonDown(global::ScheduleOne.GameInput.ButtonCode buttonCode)
+		public static bool GetButtonDown(ButtonCode buttonCode)
 		{
 			return false;
 		}
 
-		public static bool GetButtonUp(global::ScheduleOne.GameInput.ButtonCode buttonCode)
+		public static bool GetButtonUp(ButtonCode buttonCode)
 		{
 			return false;
 		}
@@ -93,7 +98,7 @@ namespace ScheduleOne
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitType type)
+		private void Exit(ExitType type)
 		{
 		}
 
@@ -105,7 +110,7 @@ namespace ScheduleOne
 		{
 		}
 
-		private void OnMotion(global::UnityEngine.InputSystem.InputValue value)
+		private void OnMotion(InputValue value)
 		{
 		}
 
@@ -201,15 +206,15 @@ namespace ScheduleOne
 		{
 		}
 
-		public static void RegisterExitListener(global::ScheduleOne.GameInput.ExitDelegate listener, int priority = 0)
+		public static void RegisterExitListener(ExitDelegate listener, int priority = 0)
 		{
 		}
 
-		public static void DeregisterExitListener(global::ScheduleOne.GameInput.ExitDelegate listener)
+		public static void DeregisterExitListener(ExitDelegate listener)
 		{
 		}
 
-		public global::UnityEngine.InputSystem.InputAction GetAction(global::ScheduleOne.GameInput.ButtonCode code)
+		public InputAction GetAction(ButtonCode code)
 		{
 			return null;
 		}

@@ -1,8 +1,10 @@
+using System;
+
 namespace ScheduleOne.DevUtilities
 {
 	public static class JsonHelper
 	{
-		[global::System.Serializable]
+		[Serializable]
 		private class Wrapper<T>
 		{
 			public T[] Items;

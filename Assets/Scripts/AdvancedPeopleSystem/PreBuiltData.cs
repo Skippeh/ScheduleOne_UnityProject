@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class PreBuiltData
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public string GroupName;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<global::UnityEngine.Mesh> meshes;
+		[SerializeField]
+		public List<Mesh> meshes;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<global::UnityEngine.Material> materials;
+		[SerializeField]
+		public List<Material> materials;
 	}
 }

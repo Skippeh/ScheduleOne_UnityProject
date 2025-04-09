@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace Beautify.Demos
 {
-	public class Demo : global::UnityEngine.MonoBehaviour
+	public class Demo : MonoBehaviour
 	{
-		public global::UnityEngine.Texture lutTexture;
+		public Texture lutTexture;
 
 		private void Start()
 		{

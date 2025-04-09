@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class CubeSpawn : global::UnityEngine.MonoBehaviour
+	public class CubeSpawn : MonoBehaviour
 	{
 		public int instances;
 

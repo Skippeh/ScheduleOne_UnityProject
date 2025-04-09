@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class CylinderManager : global::UnityEngine.MonoBehaviour
+	public class CylinderManager : MonoBehaviour
 	{
 		public float startingDelay;
 

@@ -1,10 +1,13 @@
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class LiquidMeth_Stored : global::ScheduleOne.Storage.StoredItem
+	public class LiquidMeth_Stored : StoredItem
 	{
-		public global::ScheduleOne.Product.LiquidMethVisuals Visuals;
+		public LiquidMethVisuals Visuals;
 
-		public override void InitializeStoredItem(global::ScheduleOne.Storage.StorableItemInstance _item, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 _originCoordinate, float _rotation)
+		public override void InitializeStoredItem(StorableItemInstance _item, StorageGrid grid, Vector2 _originCoordinate, float _rotation)
 		{
 		}
 	}

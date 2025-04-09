@@ -1,22 +1,25 @@
+using ScheduleOne.Quests;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueController_Ming : global::ScheduleOne.Dialogue.DialogueController
+	public class DialogueController_Ming : DialogueController
 	{
-		public global::ScheduleOne.Property.Property Property;
+		public ScheduleOne.Property.Property Property;
 
 		public float Price;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer BuyDialogue;
+		public DialogueContainer BuyDialogue;
 
 		public string BuyText;
 
 		public string RemindText;
 
-		public global::ScheduleOne.Dialogue.DialogueContainer RemindLocationDialogue;
+		public DialogueContainer RemindLocationDialogue;
 
-		public global::ScheduleOne.Quests.QuestEntry[] PurchaseRoomQuests;
+		public QuestEntry[] PurchaseRoomQuests;
 
-		public global::UnityEngine.Events.UnityEvent onPurchase;
+		public UnityEvent onPurchase;
 
 		protected override void Start()
 		{

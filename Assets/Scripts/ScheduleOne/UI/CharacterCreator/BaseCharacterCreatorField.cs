@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class BaseCharacterCreatorField : global::UnityEngine.MonoBehaviour
+	public class BaseCharacterCreatorField : MonoBehaviour
 	{
 		public string PropertyName;
 
-		public global::ScheduleOne.AvatarFramework.Customization.CharacterCreator.ECategory Category;
+		public ScheduleOne.AvatarFramework.Customization.CharacterCreator.ECategory Category;
 
-		private global::ScheduleOne.AvatarFramework.Customization.CharacterCreator Creator;
+		private ScheduleOne.AvatarFramework.Customization.CharacterCreator Creator;
 
 		protected virtual void Awake()
 		{

@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class VerticalBounce : global::UnityEngine.MonoBehaviour
+	public class VerticalBounce : MonoBehaviour
 	{
-		[global::UnityEngine.Range(0f, 0.1f)]
+		[Range(0f, 0.1f)]
 		public float acceleration;
 
 		private float direction;

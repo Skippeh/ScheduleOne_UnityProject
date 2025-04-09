@@ -1,17 +1,19 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.Tooltips
 {
-	public class Tooltip : global::UnityEngine.MonoBehaviour
+	public class Tooltip : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string text;
 
-		public global::UnityEngine.Vector2 labelOffset;
+		public Vector2 labelOffset;
 
-		private global::UnityEngine.RectTransform rect;
+		private RectTransform rect;
 
-		private global::UnityEngine.Canvas canvas;
+		private Canvas canvas;
 
-		public global::UnityEngine.Vector3 labelPosition => default(global::UnityEngine.Vector3);
+		public Vector3 labelPosition => default(Vector3);
 
 		public bool isWorldspace { get; private set; }
 

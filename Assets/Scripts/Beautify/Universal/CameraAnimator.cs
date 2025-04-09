@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Beautify.Universal
 {
-	public class CameraAnimator : global::UnityEngine.MonoBehaviour
+	public class CameraAnimator : MonoBehaviour
 	{
 		private void Update()
 		{

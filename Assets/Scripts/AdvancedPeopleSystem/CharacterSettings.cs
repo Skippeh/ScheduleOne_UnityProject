@@ -1,50 +1,53 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	[global::UnityEngine.CreateAssetMenu(fileName = "NewCharacterSettings", menuName = "Advanced People Pack/Settings", order = 1)]
-	public class CharacterSettings : global::UnityEngine.ScriptableObject
+	[CreateAssetMenu(fileName = "NewCharacterSettings", menuName = "Advanced People Pack/Settings", order = 1)]
+	public class CharacterSettings : ScriptableObject
 	{
-		public global::UnityEngine.GameObject OriginalMesh;
+		public GameObject OriginalMesh;
 
-		public global::UnityEngine.Material bodyMaterial;
+		public Material bodyMaterial;
 
-		[global::UnityEngine.Space(20f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterAnimationPreset> characterAnimationPresets;
+		[Space(20f)]
+		public List<CharacterAnimationPreset> characterAnimationPresets;
 
-		[global::UnityEngine.Space(20f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterBlendshapeData> characterBlendshapeDatas;
+		[Space(20f)]
+		public List<CharacterBlendshapeData> characterBlendshapeDatas;
 
-		[global::UnityEngine.Space(20f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> hairPresets;
+		[Space(20f)]
+		public List<CharacterElementsPreset> hairPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> beardPresets;
+		public List<CharacterElementsPreset> beardPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> hatsPresets;
+		public List<CharacterElementsPreset> hatsPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> accessoryPresets;
+		public List<CharacterElementsPreset> accessoryPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> shirtsPresets;
+		public List<CharacterElementsPreset> shirtsPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> pantsPresets;
+		public List<CharacterElementsPreset> pantsPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> shoesPresets;
+		public List<CharacterElementsPreset> shoesPresets;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterElementsPreset> item1Presets;
+		public List<CharacterElementsPreset> item1Presets;
 
-		[global::UnityEngine.Space(20f)]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterSettingsSelector> settingsSelectors;
+		[Space(20f)]
+		public List<CharacterSettingsSelector> settingsSelectors;
 
-		[global::UnityEngine.Space(20f)]
-		public global::UnityEngine.RuntimeAnimatorController Animator;
+		[Space(20f)]
+		public RuntimeAnimatorController Animator;
 
-		public global::UnityEngine.Avatar Avatar;
+		public Avatar Avatar;
 
-		[global::UnityEngine.Space(20f)]
-		public global::AdvancedPeopleSystem.CharacterGeneratorSettings generator;
+		[Space(20f)]
+		public CharacterGeneratorSettings generator;
 
-		[global::UnityEngine.Space(20f)]
-		public global::AdvancedPeopleSystem.CharacterSelectedElements DefaultSelectedElements;
+		[Space(20f)]
+		public CharacterSelectedElements DefaultSelectedElements;
 
-		[global::UnityEngine.Space(20f)]
+		[Space(20f)]
 		public bool DisableBlendshapeModifier;
 	}
 }

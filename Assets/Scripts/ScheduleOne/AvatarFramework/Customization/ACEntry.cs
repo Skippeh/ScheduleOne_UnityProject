@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACEntry : global::UnityEngine.MonoBehaviour
+	public class ACEntry : MonoBehaviour
 	{
 		public bool DevOnly;
 

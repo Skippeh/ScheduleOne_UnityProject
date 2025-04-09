@@ -1,9 +1,12 @@
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPCMovement))]
-	public class NPCWalkTo : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(NPCMovement))]
+	public class NPCWalkTo : MonoBehaviour
 	{
-		public global::UnityEngine.Transform Target;
+		public Transform Target;
 
 		public float RepathRate;
 

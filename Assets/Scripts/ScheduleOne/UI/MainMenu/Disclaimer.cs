@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class Disclaimer : global::UnityEngine.MonoBehaviour
+	public class Disclaimer : MonoBehaviour
 	{
 		public static bool Shown;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::UnityEngine.CanvasGroup TextGroup;
+		public CanvasGroup TextGroup;
 
 		public float Duration;
 

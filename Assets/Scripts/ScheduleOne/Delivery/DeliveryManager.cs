@@ -1,21 +1,30 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.UI.Phone.Delivery;
+using ScheduleOne.UI.Shop;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Delivery
 {
-	public class DeliveryManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Delivery.DeliveryManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class DeliveryManager : NetworkSingleton<DeliveryManager>, IBaseSaveable, ISaveable
 	{
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopInterface> AllShops;
+		public List<DeliveryInstance> Deliveries;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Delivery.DeliveryInstance> Deliveries;
+		public UnityEvent<DeliveryInstance> onDeliveryCreated;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCreated;
+		public UnityEvent<DeliveryInstance> onDeliveryCompleted;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCompleted;
+		private DeliveriesLoader loader;
 
-		private global::ScheduleOne.Persistence.Loaders.DeliveriesLoader loader;
+		private List<string> writtenVehicles;
 
-		private global::System.Collections.Generic.List<string> writtenVehicles;
-
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Delivery.DeliveryInstance, int> minsSinceVehicleEmpty;
+		private Dictionary<DeliveryInstance, int> minsSinceVehicleEmpty;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDelivery_002EDeliveryManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -25,13 +34,13 @@ namespace ScheduleOne.Delivery
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -47,7 +56,7 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -55,43 +64,43 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		public bool IsLoadingBayFree(global::ScheduleOne.Property.Property destination, int loadingDockIndex)
+		public bool IsLoadingBayFree(ScheduleOne.Property.Property destination, int loadingDockIndex)
 		{
 			return false;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendDelivery(global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		[ServerRpc(RequireOwnership = false)]
+		public void SendDelivery(DeliveryInstance delivery)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveDelivery(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		[ObserversRpc]
+		[TargetRpc]
+		private void ReceiveDelivery(NetworkConnection conn, DeliveryInstance delivery)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetDeliveryState(string deliveryID, global::ScheduleOne.Delivery.EDeliveryStatus status)
+		[ObserversRpc(RunLocally = true)]
+		private void SetDeliveryState(string deliveryID, EDeliveryStatus status)
 		{
 		}
 
-		private global::ScheduleOne.Delivery.DeliveryInstance GetDelivery(string deliveryID)
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.Delivery.DeliveryInstance GetDelivery(global::ScheduleOne.Property.Property destination)
+		private DeliveryInstance GetDelivery(string deliveryID)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Delivery.DeliveryInstance GetActiveShopDelivery(global::ScheduleOne.UI.Phone.Delivery.DeliveryShop shop)
+		public DeliveryInstance GetDelivery(ScheduleOne.Property.Property destination)
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.UI.Shop.ShopInterface GetShopInterface(string shopName)
+		public DeliveryInstance GetActiveShopDelivery(DeliveryShop shop)
+		{
+			return null;
+		}
+
+		public ShopInterface GetShopInterface(string shopName)
 		{
 			return null;
 		}
@@ -101,7 +110,7 @@ namespace ScheduleOne.Delivery
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -122,47 +131,47 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		private void RpcWriter___Server_SendDelivery_2813439055(global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		private void RpcWriter___Server_SendDelivery_2813439055(DeliveryInstance delivery)
 		{
 		}
 
-		public void RpcLogic___SendDelivery_2813439055(global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		public void RpcLogic___SendDelivery_2813439055(DeliveryInstance delivery)
 		{
 		}
 
-		private void RpcReader___Server_SendDelivery_2813439055(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDelivery_2813439055(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveDelivery_2795369214(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		private void RpcWriter___Observers_ReceiveDelivery_2795369214(NetworkConnection conn, DeliveryInstance delivery)
 		{
 		}
 
-		private void RpcLogic___ReceiveDelivery_2795369214(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		private void RpcLogic___ReceiveDelivery_2795369214(NetworkConnection conn, DeliveryInstance delivery)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveDelivery_2795369214(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveDelivery_2795369214(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveDelivery_2795369214(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		private void RpcWriter___Target_ReceiveDelivery_2795369214(NetworkConnection conn, DeliveryInstance delivery)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveDelivery_2795369214(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveDelivery_2795369214(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_SetDeliveryState_316609003(string deliveryID, global::ScheduleOne.Delivery.EDeliveryStatus status)
+		private void RpcWriter___Observers_SetDeliveryState_316609003(string deliveryID, EDeliveryStatus status)
 		{
 		}
 
-		private void RpcLogic___SetDeliveryState_316609003(string deliveryID, global::ScheduleOne.Delivery.EDeliveryStatus status)
+		private void RpcLogic___SetDeliveryState_316609003(string deliveryID, EDeliveryStatus status)
 		{
 		}
 
-		private void RpcReader___Observers_SetDeliveryState_316609003(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetDeliveryState_316609003(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

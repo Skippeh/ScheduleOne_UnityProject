@@ -1,30 +1,40 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.EntityFramework
 {
-	public class ProceduralGridItem : global::ScheduleOne.EntityFramework.BuildableItem
+	public class ProceduralGridItem : BuildableItem
 	{
 		public class FootprintTileMatch
 		{
-			public global::ScheduleOne.Tiles.FootprintTile footprint;
+			public FootprintTile footprint;
 
-			public global::ScheduleOne.Tiles.ProceduralTile matchedTile;
+			public ProceduralTile matchedTile;
 		}
 
-		[global::UnityEngine.Header("Grid item data")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
+		[Header("Grid item data")]
+		public List<CoordinateFootprintTilePair> CoordinateFootprintTilePairs;
 
-		public global::ScheduleOne.Tiles.ProceduralTile.EProceduralTileType ProceduralTileType;
+		public ProceduralTile.EProceduralTileType ProceduralTileType;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		[global::UnityEngine.HideInInspector]
+		[SyncVar]
+		[HideInInspector]
 		public int Rotation;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> footprintTileMatches;
+		[SyncVar]
+		[HideInInspector]
+		public List<CoordinateProceduralTilePair> footprintTileMatches;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<int> syncVar___Rotation;
+		public SyncVar<int> syncVar___Rotation;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair>> syncVar___footprintTileMatches;
+		public SyncVar<List<CoordinateProceduralTilePair>> syncVar___footprintTileMatches;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEntityFramework_002EProceduralGridItemAssembly_002DCSharp_002Edll_Excuted;
 
@@ -45,7 +55,7 @@ namespace ScheduleOne.EntityFramework
 			}
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> SyncAccessor_footprintTileMatches
+		public List<CoordinateProceduralTilePair> SyncAccessor_footprintTileMatches
 		{
 			get
 			{
@@ -64,26 +74,26 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		protected override void SendInitToClient(global::FishNet.Connection.NetworkConnection conn)
+		protected override void SendInitToClient(NetworkConnection conn)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendProceduralGridItemData(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		[ServerRpc(RequireOwnership = false)]
+		public void SendProceduralGridItemData(ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void InitializeProceduralGridItem(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		public virtual void InitializeProceduralGridItem(NetworkConnection conn, ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		public virtual void InitializeProceduralGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public virtual void InitializeProceduralGridItem(ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		protected virtual void SetProceduralGridData(int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches)
+		protected virtual void SetProceduralGridData(int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches)
 		{
 		}
 
@@ -99,7 +109,7 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		protected override global::ScheduleOne.Property.Property GetProperty(global::UnityEngine.Transform searchTransform = null)
+		protected override ScheduleOne.Property.Property GetProperty(Transform searchTransform = null)
 		{
 			return null;
 		}
@@ -112,7 +122,7 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public global::ScheduleOne.Tiles.FootprintTile GetFootprintTile(global::ScheduleOne.Tiles.Coordinate coord)
+		public FootprintTile GetFootprintTile(Coordinate coord)
 		{
 			return null;
 		}
@@ -134,39 +144,39 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		private void RpcWriter___Server_SendProceduralGridItemData_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Server_SendProceduralGridItemData_638911643(ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		public void RpcLogic___SendProceduralGridItemData_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public void RpcLogic___SendProceduralGridItemData_638911643(ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Server_SendProceduralGridItemData_638911643(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendProceduralGridItemData_638911643(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Target_InitializeProceduralGridItem_3164718044(NetworkConnection conn, ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		public virtual void RpcLogic___InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public virtual void RpcLogic___InitializeProceduralGridItem_3164718044(NetworkConnection conn, ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Target_InitializeProceduralGridItem_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_InitializeProceduralGridItem_3164718044(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Observers_InitializeProceduralGridItem_3164718044(NetworkConnection conn, ItemInstance instance, int _rotation, List<CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Observers_InitializeProceduralGridItem_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_InitializeProceduralGridItem_3164718044(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EEntityFramework_002EProceduralGridItem(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EEntityFramework_002EProceduralGridItem(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

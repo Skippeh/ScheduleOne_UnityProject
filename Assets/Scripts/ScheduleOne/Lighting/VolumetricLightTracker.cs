@@ -1,21 +1,25 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+using VLB;
+
 namespace ScheduleOne.Lighting
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Light))]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamSD))]
-	public class VolumetricLightTracker : global::UnityEngine.MonoBehaviour
+	[ExecuteInEditMode]
+	[RequireComponent(typeof(Light))]
+	[RequireComponent(typeof(VolumetricLightBeamSD))]
+	public class VolumetricLightTracker : MonoBehaviour
 	{
 		public bool Override;
 
 		public bool Enabled;
 
-		public global::UnityEngine.Light light;
+		public Light light;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight optimizedLight;
+		public OptimizedLight optimizedLight;
 
-		public global::VLB.VolumetricLightBeamSD beam;
+		public VolumetricLightBeamSD beam;
 
-		public global::VLB.VolumetricDustParticles dust;
+		public VolumetricDustParticles dust;
 
 		private void OnValidate()
 		{

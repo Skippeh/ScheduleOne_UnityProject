@@ -1,13 +1,17 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Property.Utilities.Power
 {
-	public class PowerManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Property.Utilities.Power.PowerManager>
+	public class PowerManager : Singleton<PowerManager>
 	{
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject powerLineSegmentPrefab;
+		[Header("Prefabs")]
+		public GameObject powerLineSegmentPrefab;
 
 		public static float pricePerkWh;
 
-		private global::System.Collections.Generic.Dictionary<int, float> usageAtTime;
+		private Dictionary<int, float> usageAtTime;
 
 		private float usageThisMinute;
 
@@ -32,7 +36,7 @@ namespace ScheduleOne.Property.Utilities.Power
 		{
 		}
 
-		public global::ScheduleOne.Property.Utilities.Power.PowerLine CreatePowerLine(global::ScheduleOne.Property.Utilities.Power.PowerNode nodeA, global::ScheduleOne.Property.Utilities.Power.PowerNode nodeB, global::ScheduleOne.Property.Property p)
+		public PowerLine CreatePowerLine(PowerNode nodeA, PowerNode nodeB, Property p)
 		{
 			return null;
 		}

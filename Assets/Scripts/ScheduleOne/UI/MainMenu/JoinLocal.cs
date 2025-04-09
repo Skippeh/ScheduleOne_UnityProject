@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class JoinLocal : global::UnityEngine.MonoBehaviour
+	public class JoinLocal : MonoBehaviour
 	{
 		private void Awake()
 		{

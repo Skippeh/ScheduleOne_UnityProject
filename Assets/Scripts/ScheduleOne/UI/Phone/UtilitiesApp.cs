@@ -1,42 +1,45 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class UtilitiesApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.UtilitiesApp>
+	public class UtilitiesApp : App<UtilitiesApp>
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text water_Usage;
+		[Header("References")]
+		[SerializeField]
+		protected Text water_Usage;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text water_Cost;
+		[SerializeField]
+		protected Text water_Cost;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text water_Total;
+		[SerializeField]
+		protected Text water_Total;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text electricity_Usage;
+		[SerializeField]
+		protected Text electricity_Usage;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text electricity_Cost;
+		[SerializeField]
+		protected Text electricity_Cost;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text electricity_Total;
+		[SerializeField]
+		protected Text electricity_Total;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text dumpster_Count;
+		[SerializeField]
+		protected Text dumpster_Count;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text dumpster_EmptyCost;
+		[SerializeField]
+		protected Text dumpster_EmptyCost;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text dumpster_Total;
+		[SerializeField]
+		protected Text dumpster_Total;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button dumpsterButton;
+		[SerializeField]
+		protected Button dumpsterButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.UI.PropertyDropdown propertySelector;
+		[SerializeField]
+		protected PropertyDropdown propertySelector;
 
-		private global::ScheduleOne.Property.Property selectedProperty;
+		private ScheduleOne.Property.Property selectedProperty;
 
 		protected override void Awake()
 		{

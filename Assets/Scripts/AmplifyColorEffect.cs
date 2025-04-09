@@ -1,8 +1,14 @@
-[global::UnityEngine.ImageEffectAllowedInSceneView]
-[global::UnityEngine.ImageEffectTransformsToLDR]
-[global::UnityEngine.ExecuteInEditMode]
-[global::UnityEngine.AddComponentMenu("Image Effects/Amplify Color")]
-public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections.Generic;
+using AmplifyColor;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+[ImageEffectAllowedInSceneView]
+[ImageEffectTransformsToLDR]
+[ExecuteInEditMode]
+[AddComponentMenu("Image Effects/Amplify Color")]
+public class AmplifyColorEffect : MonoBehaviour
 {
 	public const int LutSize = 32;
 
@@ -12,82 +18,82 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 
 	private const int DepthCurveLutRange = 1024;
 
-	public global::AmplifyColor.Tonemapping Tonemapper;
+	public Tonemapping Tonemapper;
 
 	public float Exposure;
 
 	public float LinearWhitePoint;
 
-	[global::UnityEngine.Serialization.FormerlySerializedAs("UseDithering")]
+	[FormerlySerializedAs("UseDithering")]
 	public bool ApplyDithering;
 
-	public global::AmplifyColor.Quality QualityLevel;
+	public Quality QualityLevel;
 
 	public float BlendAmount;
 
-	public global::UnityEngine.Texture LutTexture;
+	public Texture LutTexture;
 
-	public global::UnityEngine.Texture LutBlendTexture;
+	public Texture LutBlendTexture;
 
-	public global::UnityEngine.Texture MaskTexture;
+	public Texture MaskTexture;
 
 	public bool UseDepthMask;
 
-	public global::UnityEngine.AnimationCurve DepthMaskCurve;
+	public AnimationCurve DepthMaskCurve;
 
 	public bool UseVolumes;
 
 	public float ExitVolumeBlendTime;
 
-	public global::UnityEngine.Transform TriggerVolumeProxy;
+	public Transform TriggerVolumeProxy;
 
-	public global::UnityEngine.LayerMask VolumeCollisionMask;
+	public LayerMask VolumeCollisionMask;
 
-	private global::UnityEngine.Camera ownerCamera;
+	private Camera ownerCamera;
 
-	private global::UnityEngine.Shader shaderBase;
+	private Shader shaderBase;
 
-	private global::UnityEngine.Shader shaderBlend;
+	private Shader shaderBlend;
 
-	private global::UnityEngine.Shader shaderBlendCache;
+	private Shader shaderBlendCache;
 
-	private global::UnityEngine.Shader shaderMask;
+	private Shader shaderMask;
 
-	private global::UnityEngine.Shader shaderMaskBlend;
+	private Shader shaderMaskBlend;
 
-	private global::UnityEngine.Shader shaderDepthMask;
+	private Shader shaderDepthMask;
 
-	private global::UnityEngine.Shader shaderDepthMaskBlend;
+	private Shader shaderDepthMaskBlend;
 
-	private global::UnityEngine.Shader shaderProcessOnly;
+	private Shader shaderProcessOnly;
 
-	private global::UnityEngine.RenderTexture blendCacheLut;
+	private RenderTexture blendCacheLut;
 
-	private global::UnityEngine.Texture2D defaultLut;
+	private Texture2D defaultLut;
 
-	private global::UnityEngine.Texture2D depthCurveLut;
+	private Texture2D depthCurveLut;
 
-	private global::UnityEngine.Color32[] depthCurveColors;
+	private Color32[] depthCurveColors;
 
-	private global::UnityEngine.ColorSpace colorSpace;
+	private ColorSpace colorSpace;
 
-	private global::AmplifyColor.Quality qualityLevel;
+	private Quality qualityLevel;
 
-	private global::UnityEngine.Material materialBase;
+	private Material materialBase;
 
-	private global::UnityEngine.Material materialBlend;
+	private Material materialBlend;
 
-	private global::UnityEngine.Material materialBlendCache;
+	private Material materialBlendCache;
 
-	private global::UnityEngine.Material materialMask;
+	private Material materialMask;
 
-	private global::UnityEngine.Material materialMaskBlend;
+	private Material materialMaskBlend;
 
-	private global::UnityEngine.Material materialDepthMask;
+	private Material materialDepthMask;
 
-	private global::UnityEngine.Material materialDepthMaskBlend;
+	private Material materialDepthMaskBlend;
 
-	private global::UnityEngine.Material materialProcessOnly;
+	private Material materialProcessOnly;
 
 	private bool blending;
 
@@ -95,9 +101,9 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 
 	private float blendingTimeCountdown;
 
-	private global::System.Action onFinishBlend;
+	private Action onFinishBlend;
 
-	private global::UnityEngine.AnimationCurve prevDepthMaskCurve;
+	private AnimationCurve prevDepthMaskCurve;
 
 	private bool volumesBlending;
 
@@ -105,23 +111,23 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 
 	private float volumesBlendingTimeCountdown;
 
-	private global::UnityEngine.Texture volumesLutBlendTexture;
+	private Texture volumesLutBlendTexture;
 
 	private float volumesBlendAmount;
 
-	private global::UnityEngine.Texture worldLUT;
+	private Texture worldLUT;
 
 	private AmplifyColorVolumeBase currentVolumeLut;
 
-	private global::UnityEngine.RenderTexture midBlendLUT;
+	private RenderTexture midBlendLUT;
 
 	private bool blendingFromMidBlend;
 
-	private global::AmplifyColor.VolumeEffect worldVolumeEffects;
+	private VolumeEffect worldVolumeEffects;
 
-	private global::AmplifyColor.VolumeEffect currentVolumeEffects;
+	private VolumeEffect currentVolumeEffects;
 
-	private global::AmplifyColor.VolumeEffect blendVolumeEffects;
+	private VolumeEffect blendVolumeEffects;
 
 	private float worldExposure;
 
@@ -131,20 +137,20 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 
 	private float effectVolumesBlendAdjust;
 
-	private global::System.Collections.Generic.List<AmplifyColorVolumeBase> enteredVolumes;
+	private List<AmplifyColorVolumeBase> enteredVolumes;
 
 	private AmplifyColorTriggerProxyBase actualTriggerProxy;
 
-	[global::UnityEngine.HideInInspector]
-	public global::AmplifyColor.VolumeEffectFlags EffectFlags;
+	[HideInInspector]
+	public VolumeEffectFlags EffectFlags;
 
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.HideInInspector]
+	[SerializeField]
+	[HideInInspector]
 	private string sharedInstanceID;
 
 	private bool silentError;
 
-	public global::UnityEngine.Texture2D DefaultLut => null;
+	public Texture2D DefaultLut => null;
 
 	public bool IsBlending => false;
 
@@ -166,7 +172,7 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private bool CheckShader(global::UnityEngine.Shader s)
+	private bool CheckShader(Shader s)
 	{
 		return false;
 	}
@@ -189,11 +195,11 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private void VolumesBlendTo(global::UnityEngine.Texture blendTargetLUT, float blendTimeInSec)
+	private void VolumesBlendTo(Texture blendTargetLUT, float blendTimeInSec)
 	{
 	}
 
-	public void BlendTo(global::UnityEngine.Texture blendTargetLUT, float blendTimeInSec, global::System.Action onFinishBlend)
+	public void BlendTo(Texture blendTargetLUT, float blendTimeInSec, Action onFinishBlend)
 	{
 	}
 
@@ -229,12 +235,12 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private global::UnityEngine.Texture2D CreateDefaultLut()
+	private Texture2D CreateDefaultLut()
 	{
 		return null;
 	}
 
-	private global::UnityEngine.Texture2D CreateDepthCurveLut()
+	private Texture2D CreateDepthCurveLut()
 	{
 		return null;
 	}
@@ -251,7 +257,7 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private bool CheckMaterialAndShader(global::UnityEngine.Material material, string name)
+	private bool CheckMaterialAndShader(Material material, string name)
 	{
 		return false;
 	}
@@ -265,7 +271,7 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	private void SafeRelease<T>(ref T obj) where T : global::UnityEngine.Object
+	private void SafeRelease<T>(ref T obj) where T : UnityEngine.Object
 	{
 	}
 
@@ -273,7 +279,7 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	public static bool ValidateLutDimensions(global::UnityEngine.Texture lut)
+	public static bool ValidateLutDimensions(Texture lut)
 	{
 		return false;
 	}
@@ -287,7 +293,7 @@ public class AmplifyColorEffect : global::UnityEngine.MonoBehaviour
 		return 0;
 	}
 
-	private void OnRenderImage(global::UnityEngine.RenderTexture source, global::UnityEngine.RenderTexture destination)
+	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 	}
 }

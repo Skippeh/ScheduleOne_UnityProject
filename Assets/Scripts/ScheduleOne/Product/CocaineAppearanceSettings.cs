@@ -1,13 +1,16 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CocaineAppearanceSettings
 	{
-		public global::UnityEngine.Color32 MainColor;
+		public Color32 MainColor;
 
-		public global::UnityEngine.Color32 SecondaryColor;
+		public Color32 SecondaryColor;
 
-		public CocaineAppearanceSettings(global::UnityEngine.Color32 mainColor, global::UnityEngine.Color32 secondaryColor)
+		public CocaineAppearanceSettings(Color32 mainColor, Color32 secondaryColor)
 		{
 		}
 

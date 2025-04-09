@@ -1,6 +1,16 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class StartLabOvenTask : global::ScheduleOne.PlayerTasks.Task
+	public class StartLabOvenTask : Task
 	{
 		public enum EStep
 		{
@@ -10,44 +20,44 @@ namespace ScheduleOne.PlayerTasks
 			PressButton = 3
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CPlayPourAnimation_003Ed__24 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CPlayPourAnimation_003Ed__24 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.PlayerTasks.StartLabOvenTask _003C_003E4__this;
+			public StartLabOvenTask _003C_003E4__this;
 
 			private float _003CpourTime_003E5__2;
 
 			private float _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CPlayPourAnimation_003Ed__24(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -56,33 +66,33 @@ namespace ScheduleOne.PlayerTasks
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		private global::ScheduleOne.ItemFramework.ItemInstance ingredient;
+		private ItemInstance ingredient;
 
-		private global::UnityEngine.Coroutine pourRoutine;
+		private Coroutine pourRoutine;
 
-		private global::ScheduleOne.StationFramework.StationItem stationItem;
+		private StationItem stationItem;
 
-		private global::ScheduleOne.StationFramework.PourableModule pourableModule;
+		private PourableModule pourableModule;
 
 		private bool pourAnimDone;
 
-		public global::ScheduleOne.ObjectScripts.LabOven Oven { get; private set; }
+		public LabOven Oven { get; private set; }
 
-		public global::ScheduleOne.PlayerTasks.StartLabOvenTask.EStep CurrentStep { get; protected set; }
+		public EStep CurrentStep { get; protected set; }
 
-		public StartLabOvenTask(global::ScheduleOne.ObjectScripts.LabOven oven)
+		public StartLabOvenTask(LabOven oven)
 		{
 		}
 
@@ -122,13 +132,13 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerTasks.StartLabOvenTask._003CPlayPourAnimation_003Ed__24))]
-		private global::System.Collections.IEnumerator PlayPourAnimation()
+		[IteratorStateMachine(typeof(_003CPlayPourAnimation_003Ed__24))]
+		private IEnumerator PlayPourAnimation()
 		{
 			return null;
 		}
 
-		public static string GetStepInstruction(global::ScheduleOne.PlayerTasks.StartLabOvenTask.EStep step)
+		public static string GetStepInstruction(EStep step)
 		{
 			return null;
 		}

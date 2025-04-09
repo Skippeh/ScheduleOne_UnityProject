@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class UserLutComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.UserLutModel>
+	public sealed class UserLutComponent : PostProcessingComponentRenderTexture<UserLutModel>
 	{
 		private static class Uniforms
 		{
@@ -11,7 +11,7 @@ namespace UnityEngine.PostProcessing
 
 		public override bool active => false;
 
-		public override void Prepare(global::UnityEngine.Material uberMaterial)
+		public override void Prepare(Material uberMaterial)
 		{
 		}
 

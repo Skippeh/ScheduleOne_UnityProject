@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Property
 {
-	public class PropertyContentsContainer : global::UnityEngine.MonoBehaviour
+	public class PropertyContentsContainer : MonoBehaviour
 	{
-		public global::ScheduleOne.Property.Property Property;
+		public Property Property;
 	}
 }

@@ -1,34 +1,38 @@
+using System.Collections.Generic;
+using ScheduleOne.EntityFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Tiles
 {
-	public class ProceduralTile : global::UnityEngine.MonoBehaviour
+	public class ProceduralTile : MonoBehaviour
 	{
 		public enum EProceduralTileType
 		{
 			Rack = 0
 		}
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Tiles.ProceduralTile.EProceduralTileType TileType;
+		[Header("Settings")]
+		public EProceduralTileType TileType;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.EntityFramework.BuildableItem ParentBuildableItem;
+		[Header("References")]
+		public BuildableItem ParentBuildableItem;
 
-		public global::ScheduleOne.Tiles.FootprintTile MatchedFootprintTile;
+		public FootprintTile MatchedFootprintTile;
 
-		[global::UnityEngine.Header("Occupants")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.ProceduralGridItem> Occupants;
+		[Header("Occupants")]
+		public List<ProceduralGridItem> Occupants;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.FootprintTile> OccupantTiles;
+		public List<FootprintTile> OccupantTiles;
 
 		protected virtual void Awake()
 		{
 		}
 
-		public void AddOccupant(global::ScheduleOne.Tiles.FootprintTile footprint, global::ScheduleOne.EntityFramework.ProceduralGridItem item)
+		public void AddOccupant(FootprintTile footprint, ProceduralGridItem item)
 		{
 		}
 
-		public void RemoveOccupant(global::ScheduleOne.Tiles.FootprintTile footprint, global::ScheduleOne.EntityFramework.ProceduralGridItem item)
+		public void RemoveOccupant(FootprintTile footprint, ProceduralGridItem item)
 		{
 		}
 	}

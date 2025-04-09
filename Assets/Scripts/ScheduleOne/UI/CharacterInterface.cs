@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class CharacterInterface : global::UnityEngine.MonoBehaviour
+	public class CharacterInterface : MonoBehaviour
 	{
-		public global::ScheduleOne.UI.ClothingSlotUI[] ClothingSlots;
+		public ClothingSlotUI[] ClothingSlots;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.UI.Slider RotationSlider;
+		public Slider RotationSlider;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.UI.ClothingSlotUI, global::UnityEngine.Transform> SlotAlignmentPoints;
+		private Dictionary<ClothingSlotUI, Transform> SlotAlignmentPoints;
 
 		public bool IsOpen { get; private set; }
 

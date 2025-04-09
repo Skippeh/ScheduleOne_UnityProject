@@ -1,32 +1,35 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles.AI
 {
-	public class Sensor : global::UnityEngine.MonoBehaviour
+	public class Sensor : MonoBehaviour
 	{
-		public global::UnityEngine.Collider obstruction;
+		public Collider obstruction;
 
 		public float obstructionDistance;
 
 		public const float checkRate = 0.33f;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected float minDetectionRange;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float maxDetectionRange;
 
 		public float checkRadius;
 
-		public global::UnityEngine.LayerMask checkMask;
+		public LayerMask checkMask;
 
-		private global::ScheduleOne.Vehicles.LandVehicle vehicle;
+		private LandVehicle vehicle;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float calculatedDetectionRange;
 
-		private global::UnityEngine.RaycastHit hit;
+		private RaycastHit hit;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.RaycastHit> hits;
+		private List<RaycastHit> hits;
 
 		protected virtual void Start()
 		{

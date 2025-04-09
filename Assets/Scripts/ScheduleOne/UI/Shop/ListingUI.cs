@@ -1,49 +1,66 @@
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ListingUI : global::UnityEngine.MonoBehaviour
+	public class ListingUI : MonoBehaviour
 	{
-		public static global::UnityEngine.Color32 PriceLabelColor_Normal;
+		public static Color32 PriceLabelColor_Normal;
 
-		public static global::UnityEngine.Color32 PriceLabelColor_NoStock;
+		public static Color32 PriceLabelColor_NoStock;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image Icon;
+		[Header("Colors")]
+		public Color32 StockLabelDefault;
 
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		public Color32 StockLabelNone;
 
-		public global::TMPro.TextMeshProUGUI PriceLabel;
+		[Header("References")]
+		public Image Icon;
 
-		public global::UnityEngine.GameObject LockedContainer;
+		public TextMeshProUGUI NameLabel;
 
-		public global::UnityEngine.UI.Button BuyButton;
+		public TextMeshProUGUI PriceLabel;
 
-		public global::UnityEngine.UI.Button DropdownButton;
+		public TextMeshProUGUI StockLabel;
 
-		public global::UnityEngine.EventSystems.EventTrigger Trigger;
+		public GameObject LockedContainer;
 
-		public global::UnityEngine.RectTransform DetailPanelAnchor;
+		public Button BuyButton;
 
-		public global::UnityEngine.RectTransform DropdownAnchor;
+		public Button DropdownButton;
 
-		public global::UnityEngine.RectTransform TopDropdownAnchor;
+		public EventTrigger Trigger;
 
-		public global::System.Action hoverStart;
+		public RectTransform DetailPanelAnchor;
 
-		public global::System.Action hoverEnd;
+		public RectTransform DropdownAnchor;
 
-		public global::System.Action onClicked;
+		public RectTransform TopDropdownAnchor;
 
-		public global::System.Action onDropdownClicked;
+		public Action hoverStart;
 
-		public global::ScheduleOne.UI.Shop.ShopListing Listing { get; protected set; }
+		public Action hoverEnd;
 
-		public virtual void Initialize(global::ScheduleOne.UI.Shop.ShopListing listing)
+		public Action onClicked;
+
+		public Action onDropdownClicked;
+
+		public ShopListing Listing { get; protected set; }
+
+		public virtual void Initialize(ShopListing listing)
 		{
 		}
 
-		public virtual global::UnityEngine.RectTransform GetIconCopy(global::UnityEngine.RectTransform parent)
+		public virtual RectTransform GetIconCopy(RectTransform parent)
 		{
 			return null;
+		}
+
+		public void Update()
+		{
 		}
 
 		private void Clicked()
@@ -62,12 +79,25 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void QuantityChanged()
+		private void StockChanged()
 		{
 		}
 
 		private void UpdatePrice()
 		{
+		}
+
+		private void UpdateStock()
+		{
+		}
+
+		private void UpdateButtons()
+		{
+		}
+
+		public bool CanAddToCart()
+		{
+			return false;
 		}
 
 		public void UpdateLockStatus()

@@ -1,23 +1,27 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Shop
 {
-	public class ShopInterfaceDetailPanel : global::UnityEngine.MonoBehaviour
+	public class ShopInterfaceDetailPanel : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Panel;
+		[Header("References")]
+		public RectTransform Panel;
 
-		public global::UnityEngine.UI.VerticalLayoutGroup LayoutGroup;
+		public VerticalLayoutGroup LayoutGroup;
 
-		public global::TMPro.TextMeshProUGUI DescriptionLabel;
+		public TextMeshProUGUI DescriptionLabel;
 
-		public global::TMPro.TextMeshProUGUI UnlockLabel;
+		public TextMeshProUGUI UnlockLabel;
 
-		private global::ScheduleOne.UI.Shop.ListingUI listing;
+		private ListingUI listing;
 
 		private void Awake()
 		{
 		}
 
-		public void Open(global::ScheduleOne.UI.Shop.ListingUI _listing)
+		public void Open(ListingUI _listing)
 		{
 		}
 

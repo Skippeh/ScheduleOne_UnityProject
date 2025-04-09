@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class BloomComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.BloomModel>
+	public sealed class BloomComponent : PostProcessingComponentRenderTexture<BloomModel>
 	{
 		private static class Uniforms
 		{
@@ -27,13 +27,13 @@ namespace UnityEngine.PostProcessing
 
 		private const int k_MaxPyramidBlurLevel = 16;
 
-		private readonly global::UnityEngine.RenderTexture[] m_BlurBuffer1;
+		private readonly RenderTexture[] m_BlurBuffer1;
 
-		private readonly global::UnityEngine.RenderTexture[] m_BlurBuffer2;
+		private readonly RenderTexture[] m_BlurBuffer2;
 
 		public override bool active => false;
 
-		public void Prepare(global::UnityEngine.RenderTexture source, global::UnityEngine.Material uberMaterial, global::UnityEngine.Texture autoExposure)
+		public void Prepare(RenderTexture source, Material uberMaterial, Texture autoExposure)
 		{
 		}
 	}

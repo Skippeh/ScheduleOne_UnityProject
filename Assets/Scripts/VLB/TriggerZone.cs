@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamAbstractBase))]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-triggerzone/")]
-	public class TriggerZone : global::UnityEngine.MonoBehaviour
+	[DisallowMultipleComponent]
+	[RequireComponent(typeof(VolumetricLightBeamAbstractBase))]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-triggerzone/")]
+	public class TriggerZone : MonoBehaviour
 	{
 		private enum TriggerZoneUpdateRate
 		{
@@ -19,13 +21,13 @@ namespace VLB
 
 		private const int kMeshColliderNumSides = 8;
 
-		private global::VLB.VolumetricLightBeamAbstractBase m_Beam;
+		private VolumetricLightBeamAbstractBase m_Beam;
 
-		private global::VLB.DynamicOcclusionRaycasting m_DynamicOcclusionRaycasting;
+		private DynamicOcclusionRaycasting m_DynamicOcclusionRaycasting;
 
-		private global::UnityEngine.PolygonCollider2D m_PolygonCollider2D;
+		private PolygonCollider2D m_PolygonCollider2D;
 
-		private global::VLB.TriggerZone.TriggerZoneUpdateRate updateRate => default(global::VLB.TriggerZone.TriggerZoneUpdateRate);
+		private TriggerZoneUpdateRate updateRate => default(TriggerZoneUpdateRate);
 
 		private void OnEnable()
 		{

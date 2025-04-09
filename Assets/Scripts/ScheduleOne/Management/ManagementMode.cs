@@ -1,18 +1,23 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.Input;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
-	public class ManagementMode : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Management.ManagementMode>
+	public class ManagementMode : Singleton<ManagementMode>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Input.InputPrompt ManagementModeInputPrompt;
+		[Header("References")]
+		public InputPrompt ManagementModeInputPrompt;
 
-		[global::UnityEngine.Header("UI References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("UI References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.Events.UnityEvent OnEnterManagementMode;
+		public UnityEvent OnEnterManagementMode;
 
-		public global::UnityEngine.Events.UnityEvent onExitManagementMode;
+		public UnityEvent onExitManagementMode;
 
-		public global::ScheduleOne.Property.Property CurrentProperty { get; private set; }
+		public ScheduleOne.Property.Property CurrentProperty { get; private set; }
 
 		public bool isActive => false;
 
@@ -28,11 +33,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exitAction)
+		private void Exit(ExitAction exitAction)
 		{
 		}
 
-		public void EnterManagementMode(global::ScheduleOne.Property.Property property)
+		public void EnterManagementMode(ScheduleOne.Property.Property property)
 		{
 		}
 

@@ -1,23 +1,25 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vision
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Light))]
-	public class LightVisibilityAffector : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Light))]
+	public class LightVisibilityAffector : MonoBehaviour
 	{
 		public const float PointLightEffect = 15f;
 
 		public const float SpotLightEffect = 10f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float EffectMultiplier;
 
 		public string uniquenessCode;
 
-		[global::UnityEngine.Tooltip("How far does the player have to move for visibility to be recalculated?")]
+		[Tooltip("How far does the player have to move for visibility to be recalculated?")]
 		public int updateDistanceThreshold;
 
-		protected global::UnityEngine.Light light;
+		protected Light light;
 
-		protected global::ScheduleOne.Vision.VisibilityAttribute attribute;
+		protected VisibilityAttribute attribute;
 
 		protected virtual void Awake()
 		{

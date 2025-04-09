@@ -1,7 +1,14 @@
-public class GarageDoorController : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+public class GarageDoorController : MonoBehaviour
 {
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CRotate_003Ed__4 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CRotate_003Ed__4 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -9,43 +16,43 @@ public class GarageDoorController : global::UnityEngine.MonoBehaviour
 
 		public GarageDoorController _003C_003E4__this;
 
-		public global::UnityEngine.Vector3 axis;
+		public Vector3 axis;
 
 		public float angle;
 
 		public float duration;
 
-		private global::UnityEngine.Quaternion _003Cfrom_003E5__2;
+		private Quaternion _003Cfrom_003E5__2;
 
-		private global::UnityEngine.Quaternion _003Cto_003E5__3;
+		private Quaternion _003Cto_003E5__3;
 
 		private float _003Celapsed_003E5__4;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CRotate_003Ed__4(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -54,30 +61,30 @@ public class GarageDoorController : global::UnityEngine.MonoBehaviour
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
 	public GarageDoorStatus doorStatus;
 
-	public global::UnityEngine.Transform garageDoor;
+	public Transform garageDoor;
 
-	public global::UnityEngine.Quaternion targetRotation;
+	public Quaternion targetRotation;
 
-	private void OnTriggerStay(global::UnityEngine.Collider other)
+	private void OnTriggerStay(Collider other)
 	{
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(GarageDoorController._003CRotate_003Ed__4))]
-	private global::System.Collections.IEnumerator Rotate(global::UnityEngine.Vector3 axis, float angle, float duration = 1f)
+	[IteratorStateMachine(typeof(_003CRotate_003Ed__4))]
+	private IEnumerator Rotate(Vector3 axis, float angle, float duration = 1f)
 	{
 		return null;
 	}

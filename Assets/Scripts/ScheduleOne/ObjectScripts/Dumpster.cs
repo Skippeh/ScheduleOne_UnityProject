@@ -1,29 +1,33 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Interaction;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class Dumpster : global::ScheduleOne.EntityFramework.GridItem
+	public class Dumpster : GridItem
 	{
 		public static float capacity;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject lid_IntObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject lid_IntObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject inner_IntObj;
+		[SerializeField]
+		protected InteractableObject inner_IntObj;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform lid;
+		[SerializeField]
+		protected Transform lid;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform trash;
+		[SerializeField]
+		protected Transform trash;
 
-		public global::UnityEngine.Transform standPoint;
+		public Transform standPoint;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected float trash_MinY;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float trash_MaxY;
 
 		private float lid_CurrentAngle;

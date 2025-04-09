@@ -1,11 +1,14 @@
+using System;
+using System.Collections.Generic;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class RouteListData
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData> Routes;
+		public List<AdvancedTransitRouteData> Routes;
 
-		public RouteListData(global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.AdvancedTransitRouteData> routes)
+		public RouteListData(List<AdvancedTransitRouteData> routes)
 		{
 		}
 	}

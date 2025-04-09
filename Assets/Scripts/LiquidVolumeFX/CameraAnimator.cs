@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace LiquidVolumeFX
 {
-	public class CameraAnimator : global::UnityEngine.MonoBehaviour
+	public class CameraAnimator : MonoBehaviour
 	{
 		public float baseHeight;
 
@@ -12,7 +14,7 @@ namespace LiquidVolumeFX
 
 		public float distSpeed;
 
-		public global::UnityEngine.Vector3 lookAt;
+		public Vector3 lookAt;
 
 		private float y;
 

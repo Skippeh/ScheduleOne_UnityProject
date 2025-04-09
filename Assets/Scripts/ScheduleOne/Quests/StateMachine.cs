@@ -1,8 +1,11 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Quests
 {
-	public class StateMachine : global::UnityEngine.MonoBehaviour
+	public class StateMachine : MonoBehaviour
 	{
-		public static global::System.Action OnStateChange;
+		public static Action OnStateChange;
 
 		private static bool stateChanged;
 

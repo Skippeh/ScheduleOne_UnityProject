@@ -1,8 +1,13 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCSignal_WalkToLocation : global::ScheduleOne.NPCs.Schedules.NPCSignal
+	public class NPCSignal_WalkToLocation : NPCSignal
 	{
-		public global::UnityEngine.Transform Destination;
+		public Transform Destination;
 
 		public bool FaceDestinationDir;
 
@@ -50,11 +55,11 @@ namespace ScheduleOne.NPCs.Schedules
 			return false;
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReachedDestination()
 		{
 		}
@@ -79,7 +84,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_ReachedDestination_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReachedDestination_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,19 +1,22 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Market
 {
-	public class VendorZone : global::UnityEngine.MonoBehaviour
+	public class VendorZone : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.BoxCollider zoneCollider;
+		[Header("References")]
+		[SerializeField]
+		protected BoxCollider zoneCollider;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> doors;
+		[SerializeField]
+		protected List<GameObject> doors;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected int openTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected int closeTime;
 
 		public bool isOpen => false;

@@ -1,28 +1,33 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.UI.Items;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class ItemSlotUI : global::UnityEngine.MonoBehaviour
+	public class ItemSlotUI : MonoBehaviour
 	{
-		public global::UnityEngine.Color32 normalColor;
+		public Color32 normalColor;
 
-		public global::UnityEngine.Color32 highlightColor;
+		public Color32 highlightColor;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public bool IsBeingDragged;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Rect;
+		[Header("References")]
+		public RectTransform Rect;
 
-		public global::UnityEngine.UI.Image Background;
+		public Image Background;
 
-		public global::UnityEngine.GameObject LockContainer;
+		public GameObject LockContainer;
 
-		public global::UnityEngine.RectTransform ItemContainer;
+		public RectTransform ItemContainer;
 
-		public global::ScheduleOne.ItemFramework.ItemSlot assignedSlot { get; protected set; }
+		public ItemSlot assignedSlot { get; protected set; }
 
-		public global::ScheduleOne.UI.Items.ItemUI ItemUI { get; protected set; }
+		public ItemUI ItemUI { get; protected set; }
 
-		public virtual void AssignSlot(global::ScheduleOne.ItemFramework.ItemSlot s)
+		public virtual void AssignSlot(ItemSlot s)
 		{
 		}
 
@@ -42,11 +47,11 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void SetNormalColor(global::UnityEngine.Color color)
+		public void SetNormalColor(Color color)
 		{
 		}
 
-		public void SetHighlightColor(global::UnityEngine.Color color)
+		public void SetHighlightColor(Color color)
 		{
 		}
 
@@ -62,7 +67,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public global::UnityEngine.RectTransform DuplicateIcon(global::UnityEngine.Transform parent, int overriddenQuantity = -1)
+		public RectTransform DuplicateIcon(Transform parent, int overriddenQuantity = -1)
 		{
 			return null;
 		}

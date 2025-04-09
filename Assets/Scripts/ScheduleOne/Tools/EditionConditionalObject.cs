@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class EditionConditionalObject : global::UnityEngine.MonoBehaviour
+	public class EditionConditionalObject : MonoBehaviour
 	{
 		public enum EType
 		{
@@ -8,7 +10,7 @@ namespace ScheduleOne.Tools
 			ActiveInFullGame = 1
 		}
 
-		public global::ScheduleOne.Tools.EditionConditionalObject.EType type;
+		public EType type;
 
 		private void Awake()
 		{

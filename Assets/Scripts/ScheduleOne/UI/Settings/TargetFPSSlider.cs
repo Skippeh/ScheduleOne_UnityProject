@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class TargetFPSSlider : global::ScheduleOne.UI.Settings.SettingsSlider
+	public class TargetFPSSlider : SettingsSlider
 	{
 		protected virtual void OnEnable()
 		{

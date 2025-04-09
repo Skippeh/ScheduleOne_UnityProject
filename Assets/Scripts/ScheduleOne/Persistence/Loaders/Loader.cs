@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.IO;
+
 namespace ScheduleOne.Persistence.Loaders
 {
 	public class Loader
@@ -18,7 +21,7 @@ namespace ScheduleOne.Persistence.Loaders
 			return false;
 		}
 
-		protected global::System.Collections.Generic.List<global::System.IO.DirectoryInfo> GetDirectories(string parentPath)
+		protected List<DirectoryInfo> GetDirectories(string parentPath)
 		{
 			return null;
 		}

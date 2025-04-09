@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Shop
 {
-	public class CartEntry_Clothing : global::ScheduleOne.UI.Shop.CartEntry
+	public class CartEntry_Clothing : CartEntry
 	{
 		protected override void UpdateTitle()
 		{

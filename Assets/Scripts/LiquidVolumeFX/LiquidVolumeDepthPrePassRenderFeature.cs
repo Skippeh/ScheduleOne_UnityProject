@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 namespace LiquidVolumeFX
 {
-	public class LiquidVolumeDepthPrePassRenderFeature : global::UnityEngine.Rendering.Universal.ScriptableRendererFeature
+	public class LiquidVolumeDepthPrePassRenderFeature : ScriptableRendererFeature
 	{
 		private static class ShaderParams
 		{
@@ -25,67 +30,67 @@ namespace LiquidVolumeFX
 			FrontBuffer = 1
 		}
 
-		private class DepthPass : global::UnityEngine.Rendering.Universal.ScriptableRenderPass
+		private class DepthPass : ScriptableRenderPass
 		{
 			private class PassData
 			{
-				public global::UnityEngine.Camera cam;
+				public Camera cam;
 
-				public global::UnityEngine.Rendering.CommandBuffer cmd;
+				public CommandBuffer cmd;
 
-				public global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.DepthPass depthPass;
+				public DepthPass depthPass;
 
-				public global::UnityEngine.Material mat;
+				public Material mat;
 
-				public global::UnityEngine.Rendering.RTHandle source;
+				public RTHandle source;
 
-				public global::UnityEngine.Rendering.RTHandle depth;
+				public RTHandle depth;
 
-				public global::UnityEngine.RenderTextureDescriptor cameraTargetDescriptor;
+				public RenderTextureDescriptor cameraTargetDescriptor;
 			}
 
 			private const string profilerTag = "LiquidVolumeDepthPrePass";
 
-			private global::UnityEngine.Material mat;
+			private Material mat;
 
 			private int targetNameId;
 
-			private global::UnityEngine.Rendering.RTHandle targetRT;
+			private RTHandle targetRT;
 
 			private int passId;
 
-			private global::System.Collections.Generic.List<global::LiquidVolumeFX.LiquidVolume> lvRenderers;
+			private List<LiquidVolume> lvRenderers;
 
-			public global::UnityEngine.Rendering.Universal.ScriptableRenderer renderer;
+			public ScriptableRenderer renderer;
 
 			public bool interleavedRendering;
 
-			private static global::UnityEngine.Vector3 currentCameraPosition;
+			private static Vector3 currentCameraPosition;
 
-			private readonly global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.DepthPass.PassData passData;
+			private readonly PassData passData;
 
-			public DepthPass(global::UnityEngine.Material mat, global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.Pass pass, global::UnityEngine.Rendering.Universal.RenderPassEvent renderPassEvent)
+			public DepthPass(Material mat, Pass pass, RenderPassEvent renderPassEvent)
 			{
 			}
 
-			public void Setup(global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature feature, global::UnityEngine.Rendering.Universal.ScriptableRenderer renderer)
+			public void Setup(LiquidVolumeDepthPrePassRenderFeature feature, ScriptableRenderer renderer)
 			{
 			}
 
-			private int SortByDistanceToCamera(global::LiquidVolumeFX.LiquidVolume lv1, global::LiquidVolumeFX.LiquidVolume lv2)
+			private int SortByDistanceToCamera(LiquidVolume lv1, LiquidVolume lv2)
 			{
 				return 0;
 			}
 
-			public override void Configure(global::UnityEngine.Rendering.CommandBuffer cmd, global::UnityEngine.RenderTextureDescriptor cameraTextureDescriptor)
+			public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
 			{
 			}
 
-			public override void Execute(global::UnityEngine.Rendering.ScriptableRenderContext context, ref global::UnityEngine.Rendering.Universal.RenderingData renderingData)
+			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 			{
 			}
 
-			private static void ExecutePass(global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.DepthPass.PassData passData)
+			private static void ExecutePass(PassData passData)
 			{
 			}
 
@@ -94,40 +99,40 @@ namespace LiquidVolumeFX
 			}
 		}
 
-		public static readonly global::System.Collections.Generic.List<global::LiquidVolumeFX.LiquidVolume> lvBackRenderers;
+		public static readonly List<LiquidVolume> lvBackRenderers;
 
-		public static readonly global::System.Collections.Generic.List<global::LiquidVolumeFX.LiquidVolume> lvFrontRenderers;
+		public static readonly List<LiquidVolume> lvFrontRenderers;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.HideInInspector]
-		private global::UnityEngine.Shader shader;
+		[SerializeField]
+		[HideInInspector]
+		private Shader shader;
 
 		public static bool installed;
 
-		private global::UnityEngine.Material mat;
+		private Material mat;
 
-		private global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.DepthPass backPass;
+		private DepthPass backPass;
 
-		private global::LiquidVolumeFX.LiquidVolumeDepthPrePassRenderFeature.DepthPass frontPass;
+		private DepthPass frontPass;
 
-		[global::UnityEngine.Tooltip("Renders each irregular liquid volume completely before rendering the next one.")]
+		[Tooltip("Renders each irregular liquid volume completely before rendering the next one.")]
 		public bool interleavedRendering;
 
-		public global::UnityEngine.Rendering.Universal.RenderPassEvent renderPassEvent;
+		public RenderPassEvent renderPassEvent;
 
-		public static void AddLiquidToBackRenderers(global::LiquidVolumeFX.LiquidVolume lv)
+		public static void AddLiquidToBackRenderers(LiquidVolume lv)
 		{
 		}
 
-		public static void RemoveLiquidFromBackRenderers(global::LiquidVolumeFX.LiquidVolume lv)
+		public static void RemoveLiquidFromBackRenderers(LiquidVolume lv)
 		{
 		}
 
-		public static void AddLiquidToFrontRenderers(global::LiquidVolumeFX.LiquidVolume lv)
+		public static void AddLiquidToFrontRenderers(LiquidVolume lv)
 		{
 		}
 
-		public static void RemoveLiquidFromFrontRenderers(global::LiquidVolumeFX.LiquidVolume lv)
+		public static void RemoveLiquidFromFrontRenderers(LiquidVolume lv)
 		{
 		}
 
@@ -139,7 +144,7 @@ namespace LiquidVolumeFX
 		{
 		}
 
-		public override void AddRenderPasses(global::UnityEngine.Rendering.Universal.ScriptableRenderer renderer, ref global::UnityEngine.Rendering.Universal.RenderingData renderingData)
+		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
 		{
 		}
 	}

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Map
 {
-	public class DarkMarketAccessZone : global::ScheduleOne.Map.TimedAccessZone
+	public class DarkMarketAccessZone : TimedAccessZone
 	{
 		protected override bool GetIsOpen()
 		{

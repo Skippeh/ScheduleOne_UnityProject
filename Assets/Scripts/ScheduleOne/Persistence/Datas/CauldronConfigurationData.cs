@@ -1,11 +1,13 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class CauldronConfigurationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class CauldronConfigurationData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Destination;
+		public ObjectFieldData Destination;
 
-		public CauldronConfigurationData(global::ScheduleOne.Persistence.Datas.ObjectFieldData destination)
+		public CauldronConfigurationData(ObjectFieldData destination)
 		{
 		}
 	}

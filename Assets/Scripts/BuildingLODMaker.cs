@@ -1,18 +1,22 @@
-public class BuildingLODMaker : global::UnityEngine.MonoBehaviour
+using System;
+using EasyButtons;
+using UnityEngine;
+
+public class BuildingLODMaker : MonoBehaviour
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class LODGroupData
 	{
 		public string ObjectName;
 
-		public global::UnityEngine.GameObject LODObject;
+		public GameObject LODObject;
 	}
 
-	public BuildingLODMaker.LODGroupData[] LODGroups;
+	public LODGroupData[] LODGroups;
 
-	public global::UnityEngine.LODGroup LodGroup;
+	public LODGroup LodGroup;
 
-	[global::EasyButtons.Button]
+	[Button]
 	public void CreateLODs()
 	{
 	}

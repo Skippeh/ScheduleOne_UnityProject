@@ -1,24 +1,31 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Employees;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class StartMixingStationBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class StartMixingStationBehaviour : Behaviour
 	{
 		public const float INSERT_INGREDIENT_BASE_TIME = 1f;
 
-		private global::ScheduleOne.Employees.Chemist chemist;
+		private Chemist chemist;
 
-		private global::UnityEngine.Coroutine startRoutine;
+		private Coroutine startRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EStartMixingStationBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EStartMixingStationBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.MixingStation targetStation { get; private set; }
+		public MixingStation targetStation { get; private set; }
 
 		public override void Awake()
 		{
 		}
 
-		public void AssignStation(global::ScheduleOne.ObjectScripts.MixingStation station)
+		public void AssignStation(MixingStation station)
 		{
 		}
 
@@ -34,7 +41,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void StartCook()
 		{
 		}
@@ -48,9 +55,9 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetStationAccessPoint()
+		private Vector3 GetStationAccessPoint()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private bool IsAtStation()
@@ -78,7 +85,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_StartCook_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_StartCook_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

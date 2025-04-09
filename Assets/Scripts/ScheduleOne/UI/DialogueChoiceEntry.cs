@@ -1,18 +1,23 @@
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DialogueChoiceEntry
 	{
-		public global::UnityEngine.GameObject gameObject;
+		public GameObject gameObject;
 
-		public global::TMPro.TextMeshProUGUI text;
+		public TextMeshProUGUI text;
 
-		public global::UnityEngine.UI.Button button;
+		public Button button;
 
-		public global::UnityEngine.GameObject notPossibleGameObject;
+		public GameObject notPossibleGameObject;
 
-		public global::TMPro.TextMeshProUGUI notPossibleText;
+		public TextMeshProUGUI notPossibleText;
 
-		public global::UnityEngine.CanvasGroup canvasGroup;
+		public CanvasGroup canvasGroup;
 	}
 }

@@ -1,6 +1,12 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Messaging;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	public class MessageSenderInterface : global::UnityEngine.MonoBehaviour
+	public class MessageSenderInterface : MonoBehaviour
 	{
 		public enum EVisibility
 		{
@@ -9,29 +15,29 @@ namespace ScheduleOne.UI.Phone.Messages
 			Expanded = 2
 		}
 
-		public global::ScheduleOne.UI.Phone.Messages.MessageSenderInterface.EVisibility Visibility;
+		public EVisibility Visibility;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float DockedMenuYPos;
 
 		public float ExpandedMenuYPos;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Menu;
+		[Header("References")]
+		public RectTransform Menu;
 
-		public global::UnityEngine.RectTransform SendablesContainer;
+		public RectTransform SendablesContainer;
 
-		public global::UnityEngine.RectTransform[] DockedUIElements;
+		public RectTransform[] DockedUIElements;
 
-		public global::UnityEngine.RectTransform[] ExpandedUIElements;
+		public RectTransform[] ExpandedUIElements;
 
-		public global::UnityEngine.UI.Button ComposeButton;
+		public Button ComposeButton;
 
-		public global::UnityEngine.UI.Button[] CancelButtons;
+		public Button[] CancelButtons;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Messages.MessageBubble> sendableBubbles;
+		private List<MessageBubble> sendableBubbles;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.UI.Phone.Messages.MessageBubble, global::ScheduleOne.Messaging.SendableMessage> sendableMap;
+		private Dictionary<MessageBubble, SendableMessage> sendableMap;
 
 		public void Awake()
 		{
@@ -41,11 +47,11 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exit)
+		private void Exit(ExitAction exit)
 		{
 		}
 
-		public void SetVisibility(global::ScheduleOne.UI.Phone.Messages.MessageSenderInterface.EVisibility visibility)
+		public void SetVisibility(EVisibility visibility)
 		{
 		}
 
@@ -53,11 +59,11 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		public void AddSendable(global::ScheduleOne.Messaging.SendableMessage sendable)
+		public void AddSendable(SendableMessage sendable)
 		{
 		}
 
-		protected virtual void SendableSelected(global::ScheduleOne.Messaging.SendableMessage sendable)
+		protected virtual void SendableSelected(SendableMessage sendable)
 		{
 		}
 	}

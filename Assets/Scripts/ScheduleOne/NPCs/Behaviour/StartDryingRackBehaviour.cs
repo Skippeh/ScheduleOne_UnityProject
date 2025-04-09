@@ -1,16 +1,22 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class StartDryingRackBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class StartDryingRackBehaviour : Behaviour
 	{
 		public const float TIME_PER_ITEM = 1f;
 
-		private global::UnityEngine.Coroutine workRoutine;
+		private Coroutine workRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EStartDryingRackBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EStartDryingRackBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.ObjectScripts.DryingRack Rack { get; protected set; }
+		public DryingRack Rack { get; protected set; }
 
 		public bool WorkInProgress { get; protected set; }
 
@@ -42,7 +48,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void AssignRack(global::ScheduleOne.ObjectScripts.DryingRack rack)
+		public void AssignRack(DryingRack rack)
 		{
 		}
 
@@ -55,7 +61,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		public void BeginAction()
 		{
 		}
@@ -64,7 +70,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public bool IsRackReady(global::ScheduleOne.ObjectScripts.DryingRack rack)
+		public bool IsRackReady(DryingRack rack)
 		{
 			return false;
 		}
@@ -89,7 +95,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Observers_BeginAction_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_BeginAction_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

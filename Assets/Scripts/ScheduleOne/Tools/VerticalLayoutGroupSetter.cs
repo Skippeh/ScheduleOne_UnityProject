@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Tools
 {
-	public class VerticalLayoutGroupSetter : global::UnityEngine.MonoBehaviour
+	public class VerticalLayoutGroupSetter : MonoBehaviour
 	{
 		public float LeftSpacing;
 
-		private global::UnityEngine.UI.VerticalLayoutGroup layoutGroup;
+		private VerticalLayoutGroup layoutGroup;
 
 		private void Awake()
 		{

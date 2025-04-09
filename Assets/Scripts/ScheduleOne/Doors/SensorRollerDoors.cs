@@ -1,13 +1,16 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.Doors
 {
-	public class SensorRollerDoors : global::ScheduleOne.Doors.RollerDoor
+	public class SensorRollerDoors : RollerDoor
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.DevUtilities.VehicleDetector Detector;
+		[Header("References")]
+		public VehicleDetector Detector;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector ClipDetector;
+		public VehicleDetector ClipDetector;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool DetectPlayerOccupiedVehiclesOnly;
 
 		protected virtual void Update()

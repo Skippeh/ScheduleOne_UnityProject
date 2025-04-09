@@ -1,18 +1,21 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class RainSplashController : global::UnityEngine.MonoBehaviour, global::Funly.SkyStudio.ISkyModule
+	public class RainSplashController : MonoBehaviour, ISkyModule
 	{
-		private global::Funly.SkyStudio.SkyProfile m_SkyProfile;
+		private SkyProfile m_SkyProfile;
 
 		private float m_TimeOfDay;
 
-		private global::System.Collections.Generic.List<global::Funly.SkyStudio.RainSplashRenderer> m_SplashRenderers;
+		private List<RainSplashRenderer> m_SplashRenderers;
 
 		private void Start()
 		{
 		}
 
-		public void UpdateForTimeOfDay(global::Funly.SkyStudio.SkyProfile skyProfile, float timeOfDay)
+		public void UpdateForTimeOfDay(SkyProfile skyProfile, float timeOfDay)
 		{
 		}
 

@@ -12,9 +12,9 @@ namespace Funly.SkyStudio
 
 		public bool dependsOnValue;
 
-		public global::Funly.SkyStudio.ProfileGroupDefinition[] groups;
+		public ProfileGroupDefinition[] groups;
 
-		public ProfileGroupSection(string sectionTitle, string sectionKey, string sectionIcon, string dependsOnFeature, bool dependsOnValue, global::Funly.SkyStudio.ProfileGroupDefinition[] groups)
+		public ProfileGroupSection(string sectionTitle, string sectionKey, string sectionIcon, string dependsOnFeature, bool dependsOnValue, ProfileGroupDefinition[] groups)
 		{
 		}
 	}

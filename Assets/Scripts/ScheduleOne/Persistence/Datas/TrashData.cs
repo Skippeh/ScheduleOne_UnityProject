@@ -1,11 +1,13 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class TrashData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class TrashData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.TrashItemData[] Items;
+		public TrashItemData[] Items;
 
-		public TrashData(global::ScheduleOne.Persistence.Datas.TrashItemData[] trash)
+		public TrashData(TrashItemData[] trash)
 		{
 		}
 	}

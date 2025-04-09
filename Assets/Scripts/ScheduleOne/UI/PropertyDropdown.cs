@@ -1,22 +1,28 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class PropertyDropdown : global::UnityEngine.MonoBehaviour
+	public class PropertyDropdown : MonoBehaviour
 	{
-		public global::ScheduleOne.Property.Property selectedProperty;
+		public ScheduleOne.Property.Property selectedProperty;
 
-		private global::TMPro.TMP_Dropdown TMP_dropdown;
+		private TMP_Dropdown TMP_dropdown;
 
-		private global::UnityEngine.UI.Dropdown dropdown;
+		private Dropdown dropdown;
 
-		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.Property.Property> intToProperty;
+		private Dictionary<int, ScheduleOne.Property.Property> intToProperty;
 
-		public global::System.Action onSelectionChanged;
+		public Action onSelectionChanged;
 
 		protected virtual void Awake()
 		{
 		}
 
-		private void PropertyAcquired(global::ScheduleOne.Property.Property p)
+		private void PropertyAcquired(ScheduleOne.Property.Property p)
 		{
 		}
 

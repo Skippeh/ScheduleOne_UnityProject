@@ -1,13 +1,18 @@
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorMenu : global::UnityEngine.MonoBehaviour
+	public class CharacterCreatorMenu : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class Window
 		{
 			public string Name;
 
-			public global::UnityEngine.RectTransform Container;
+			public RectTransform Container;
 
 			public void Open()
 			{
@@ -18,18 +23,18 @@ namespace ScheduleOne.UI.CharacterCreator
 			}
 		}
 
-		public global::ScheduleOne.UI.CharacterCreator.CharacterCreatorMenu.Window[] Windows;
+		public Window[] Windows;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI CategoryLabel;
+		[Header("References")]
+		public TextMeshProUGUI CategoryLabel;
 
-		public global::UnityEngine.UI.Button BackButton;
+		public Button BackButton;
 
-		public global::UnityEngine.UI.Button NextButton;
+		public Button NextButton;
 
 		private int openWindowIndex;
 
-		private global::ScheduleOne.UI.CharacterCreator.CharacterCreatorMenu.Window openWindow;
+		private Window openWindow;
 
 		public void Start()
 		{

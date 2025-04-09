@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+
 namespace ScheduleOne.Management
 {
 	public class ManagementItemFilter
@@ -8,32 +11,32 @@ namespace ScheduleOne.Management
 			Blacklist = 1
 		}
 
-		public global::ScheduleOne.Management.ManagementItemFilter.EMode Mode { get; private set; }
+		public EMode Mode { get; private set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemDefinition> Items { get; private set; }
+		public List<ItemDefinition> Items { get; private set; }
 
-		public ManagementItemFilter(global::ScheduleOne.Management.ManagementItemFilter.EMode mode)
+		public ManagementItemFilter(EMode mode)
 		{
 		}
 
-		public void SetMode(global::ScheduleOne.Management.ManagementItemFilter.EMode mode)
+		public void SetMode(EMode mode)
 		{
 		}
 
-		public void AddItem(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public void AddItem(ItemDefinition item)
 		{
 		}
 
-		public void RemoveItem(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public void RemoveItem(ItemDefinition item)
 		{
 		}
 
-		public bool Contains(global::ScheduleOne.ItemFramework.ItemDefinition item)
+		public bool Contains(ItemDefinition item)
 		{
 			return false;
 		}
 
-		public bool DoesItemMeetFilter(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public bool DoesItemMeetFilter(ItemInstance item)
 		{
 			return false;
 		}

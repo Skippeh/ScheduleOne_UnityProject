@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class OrganisationData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class OrganisationData : SaveData
 	{
 		public string Name;
 

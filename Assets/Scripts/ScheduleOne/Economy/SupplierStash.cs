@@ -1,19 +1,25 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Interaction;
+using ScheduleOne.Map;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	public class SupplierStash : global::UnityEngine.MonoBehaviour
+	public class SupplierStash : MonoBehaviour
 	{
 		public string locationDescription;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Economy.Supplier Supplier;
+		[Header("References")]
+		public Supplier Supplier;
 
-		public global::ScheduleOne.Storage.StorageEntity Storage;
+		public StorageEntity Storage;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::ScheduleOne.DevUtilities.OptimizedLight Light;
+		public OptimizedLight Light;
 
-		public global::ScheduleOne.Map.POI StashPoI;
+		public POI StashPoI;
 
 		public float CashAmount { get; private set; }
 

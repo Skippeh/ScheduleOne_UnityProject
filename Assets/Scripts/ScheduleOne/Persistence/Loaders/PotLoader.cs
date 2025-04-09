@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class PotLoader : global::ScheduleOne.Persistence.Loaders.GridItemLoader
+	public class PotLoader : GridItemLoader
 	{
 		public override string ItemType => null;
 

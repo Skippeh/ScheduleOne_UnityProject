@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class GraphicsSettings
 	{
 		public enum EAntiAliasingMode
@@ -18,9 +20,9 @@ namespace ScheduleOne.DevUtilities
 			Ultra = 3
 		}
 
-		public global::ScheduleOne.DevUtilities.GraphicsSettings.EGraphicsQuality GraphicsQuality;
+		public EGraphicsQuality GraphicsQuality;
 
-		public global::ScheduleOne.DevUtilities.GraphicsSettings.EAntiAliasingMode AntiAliasingMode;
+		public EAntiAliasingMode AntiAliasingMode;
 
 		public float FOV;
 

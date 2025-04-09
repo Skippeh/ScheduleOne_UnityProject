@@ -1,7 +1,14 @@
-public class LandingSpot : global::UnityEngine.MonoBehaviour
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+public class LandingSpot : MonoBehaviour
 {
-	[global::System.Runtime.CompilerServices.CompilerGenerated]
-	private sealed class _003CGetFlockChild_003Ed__12 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+	[CompilerGenerated]
+	private sealed class _003CGetFlockChild_003Ed__12 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -13,31 +20,31 @@ public class LandingSpot : global::UnityEngine.MonoBehaviour
 
 		public LandingSpot _003C_003E4__this;
 
-		object global::System.Collections.Generic.IEnumerator<object>.Current
+		object IEnumerator<object>.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		object global::System.Collections.IEnumerator.Current
+		object IEnumerator.Current
 		{
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			get
 			{
 				return null;
 			}
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
+		[DebuggerHidden]
 		public _003CGetFlockChild_003Ed__12(int _003C_003E1__state)
 		{
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.IDisposable.Dispose()
+		[DebuggerHidden]
+		void IDisposable.Dispose()
 		{
 		}
 
@@ -46,32 +53,32 @@ public class LandingSpot : global::UnityEngine.MonoBehaviour
 			return false;
 		}
 
-		bool global::System.Collections.IEnumerator.MoveNext()
+		bool IEnumerator.MoveNext()
 		{
 			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
-		[global::System.Diagnostics.DebuggerHidden]
-		void global::System.Collections.IEnumerator.Reset()
+		[DebuggerHidden]
+		void IEnumerator.Reset()
 		{
 		}
 	}
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public FlockChild landingChild;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public bool landing;
 
 	private int lerpCounter;
 
-	[global::UnityEngine.HideInInspector]
+	[HideInInspector]
 	public LandingSpotController _controller;
 
 	private bool _idle;
 
-	public global::UnityEngine.Transform _thisT;
+	public Transform _thisT;
 
 	public bool _gotcha;
 
@@ -95,8 +102,8 @@ public class LandingSpot : global::UnityEngine.MonoBehaviour
 	{
 	}
 
-	[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(LandingSpot._003CGetFlockChild_003Ed__12))]
-	public global::System.Collections.IEnumerator GetFlockChild(float minDelay, float maxDelay)
+	[IteratorStateMachine(typeof(_003CGetFlockChild_003Ed__12))]
+	public IEnumerator GetFlockChild(float minDelay, float maxDelay)
 	{
 		return null;
 	}

@@ -1,48 +1,57 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vehicles.Modification;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class VehicleModMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.VehicleModMenu>
+	public class VehicleModMenu : Singleton<VehicleModMenu>
 	{
 		public static float repaintCost;
 
-		[global::UnityEngine.Header("UI References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Canvas canvas;
+		[Header("UI References")]
+		[SerializeField]
+		protected Canvas canvas;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform buttonContainer;
+		[SerializeField]
+		protected RectTransform buttonContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform tempIndicator;
+		[SerializeField]
+		protected RectTransform tempIndicator;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform permIndicator;
+		[SerializeField]
+		protected RectTransform permIndicator;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button confirmButton_Online;
+		[SerializeField]
+		protected Button confirmButton_Online;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI confirmText_Online;
+		[SerializeField]
+		protected TextMeshProUGUI confirmText_Online;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform CameraPosition;
+		[Header("References")]
+		public Transform CameraPosition;
 
-		public global::UnityEngine.Transform VehiclePosition;
+		public Transform VehiclePosition;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject buttonPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject buttonPrefab;
 
-		public global::UnityEngine.Events.UnityEvent onPaintPurchased;
+		public UnityEvent onPaintPurchased;
 
-		protected global::ScheduleOne.Vehicles.LandVehicle currentVehicle;
+		protected LandVehicle currentVehicle;
 
-		protected global::System.Collections.Generic.List<global::UnityEngine.RectTransform> colorButtons;
+		protected List<RectTransform> colorButtons;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Vehicles.Modification.EVehicleColor, global::UnityEngine.RectTransform> colorToButton;
+		protected Dictionary<EVehicleColor, RectTransform> colorToButton;
 
-		protected global::ScheduleOne.Vehicles.Modification.EVehicleColor selectedColor;
+		protected EVehicleColor selectedColor;
 
-		private global::UnityEngine.Coroutine openCloseRoutine;
+		private Coroutine openCloseRoutine;
 
 		public bool IsOpen { get; private set; }
 
@@ -54,7 +63,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -62,7 +71,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Open(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void Open(LandVehicle vehicle)
 		{
 		}
 
@@ -70,7 +79,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void ColorClicked(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		public void ColorClicked(EVehicleColor col)
 		{
 		}
 

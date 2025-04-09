@@ -1,8 +1,11 @@
+using ScheduleOne.ConstructableScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.ConstructionMethods
 {
-	public abstract class ConstructStart_Base : global::UnityEngine.MonoBehaviour
+	public abstract class ConstructStart_Base : MonoBehaviour
 	{
-		public virtual void StartConstruction(string constructableID, global::ScheduleOne.ConstructableScripts.Constructable_GridBased movedConstructable = null)
+		public virtual void StartConstruction(string constructableID, Constructable_GridBased movedConstructable = null)
 		{
 		}
 	}

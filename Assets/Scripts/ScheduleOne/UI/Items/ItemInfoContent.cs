@@ -1,20 +1,24 @@
+using ScheduleOne.ItemFramework;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemInfoContent : global::UnityEngine.MonoBehaviour
+	public class ItemInfoContent : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float Height;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		[Header("References")]
+		public TextMeshProUGUI NameLabel;
 
-		public global::TMPro.TextMeshProUGUI DescriptionLabel;
+		public TextMeshProUGUI DescriptionLabel;
 
-		public virtual void Initialize(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public virtual void Initialize(ItemInstance instance)
 		{
 		}
 
-		public virtual void Initialize(global::ScheduleOne.ItemFramework.ItemDefinition definition)
+		public virtual void Initialize(ItemDefinition definition)
 		{
 		}
 	}

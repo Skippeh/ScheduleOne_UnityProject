@@ -1,12 +1,16 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class PourableAdditive : global::ScheduleOne.PlayerTasks.Pourable
+	public class PourableAdditive : Pourable
 	{
 		public const float NormalizedAmountForSuccess = 0.8f;
 
-		public global::ScheduleOne.ItemFramework.AdditiveDefinition AdditiveDefinition;
+		public AdditiveDefinition AdditiveDefinition;
 
-		public global::UnityEngine.Color LiquidColor;
+		public Color LiquidColor;
 
 		private float pouredAmount;
 

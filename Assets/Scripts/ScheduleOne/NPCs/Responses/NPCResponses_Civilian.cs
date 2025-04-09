@@ -1,6 +1,12 @@
+using ScheduleOne.Combat;
+using ScheduleOne.Law;
+using ScheduleOne.Noise;
+using ScheduleOne.PlayerScripts;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Responses
 {
-	public class NPCResponses_Civilian : global::ScheduleOne.NPCs.Responses.NPCResponses
+	public class NPCResponses_Civilian : NPCResponses
 	{
 		public enum EAttackResponse
 		{
@@ -21,7 +27,7 @@ namespace ScheduleOne.NPCs.Responses
 
 		public bool CanCallPolice;
 
-		private global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse currentThreatResponse;
+		private EAttackResponse currentThreatResponse;
 
 		private float timeSinceLastThreat;
 
@@ -29,49 +35,49 @@ namespace ScheduleOne.NPCs.Responses
 		{
 		}
 
-		public override void GunshotHeard(global::ScheduleOne.Noise.NoiseEvent gunshotSound)
+		public override void GunshotHeard(NoiseEvent gunshotSound)
 		{
 		}
 
-		public override void ExplosionHeard(global::ScheduleOne.Noise.NoiseEvent explosionSound)
+		public override void ExplosionHeard(NoiseEvent explosionSound)
 		{
 		}
 
-		public override void PlayerFailedPickpocket(global::ScheduleOne.PlayerScripts.Player player)
+		public override void PlayerFailedPickpocket(Player player)
 		{
 		}
 
-		protected override void RespondToFirstNonLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToFirstNonLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		protected override void RespondToAnnoyingImpact(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToAnnoyingImpact(Player perpetrator, Impact impact)
 		{
 		}
 
-		protected override void RespondToLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		protected override void RespondToRepeatedNonLethalAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		protected override void RespondToRepeatedNonLethalAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		private void RespondToLethalOrRepeatedAttack(global::ScheduleOne.PlayerScripts.Player perpetrator, global::ScheduleOne.Combat.Impact impact)
+		private void RespondToLethalOrRepeatedAttack(Player perpetrator, Impact impact)
 		{
 		}
 
-		public override void RespondToAimedAt(global::ScheduleOne.PlayerScripts.Player player)
+		public override void RespondToAimedAt(Player player)
 		{
 		}
 
-		private void ExecuteThreatResponse(global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse response, global::ScheduleOne.PlayerScripts.Player target, global::UnityEngine.Vector3 threatOrigin, global::ScheduleOne.Law.Crime crime = null)
+		private void ExecuteThreatResponse(EAttackResponse response, Player target, Vector3 threatOrigin, Crime crime = null)
 		{
 		}
 
-		private global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse GetThreatResponse(global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EThreatType type, global::ScheduleOne.PlayerScripts.Player threatSource)
+		private EAttackResponse GetThreatResponse(EThreatType type, Player threatSource)
 		{
-			return default(global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse);
+			return default(EAttackResponse);
 		}
 	}
 }

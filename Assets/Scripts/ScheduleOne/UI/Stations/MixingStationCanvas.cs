@@ -1,52 +1,61 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.Product;
+using ScheduleOne.StationFramework;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Stations
 {
-	public class MixingStationCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Stations.MixingStationCanvas>
+	public class MixingStationCanvas : Singleton<MixingStationCanvas>
 	{
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.UI.Stations.StationRecipeEntry RecipeEntryPrefab;
+		[Header("Prefabs")]
+		public StationRecipeEntry RecipeEntryPrefab;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::ScheduleOne.UI.ItemSlotUI ProductSlotUI;
+		public ItemSlotUI ProductSlotUI;
 
-		public global::TMPro.TextMeshProUGUI ProductPropertiesLabel;
+		public TextMeshProUGUI ProductPropertiesLabel;
 
-		public global::ScheduleOne.UI.ItemSlotUI IngredientSlotUI;
+		public ItemSlotUI IngredientSlotUI;
 
-		public global::TMPro.TextMeshProUGUI IngredientProblemLabel;
+		public TextMeshProUGUI IngredientProblemLabel;
 
-		public global::ScheduleOne.UI.ItemSlotUI PreviewSlotUI;
+		public ItemSlotUI PreviewSlotUI;
 
-		public global::UnityEngine.UI.Image PreviewIcon;
+		public Image PreviewIcon;
 
-		public global::TMPro.TextMeshProUGUI PreviewLabel;
+		public TextMeshProUGUI PreviewLabel;
 
-		public global::UnityEngine.RectTransform UnknownOutputIcon;
+		public RectTransform UnknownOutputIcon;
 
-		public global::TMPro.TextMeshProUGUI PreviewPropertiesLabel;
+		public TextMeshProUGUI PreviewPropertiesLabel;
 
-		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;
+		public ItemSlotUI OutputSlotUI;
 
-		public global::TMPro.TextMeshProUGUI InstructionLabel;
+		public TextMeshProUGUI InstructionLabel;
 
-		public global::UnityEngine.RectTransform TitleContainer;
+		public RectTransform TitleContainer;
 
-		public global::UnityEngine.RectTransform MainContainer;
+		public RectTransform MainContainer;
 
-		public global::UnityEngine.UI.Button BeginButton;
+		public Button BeginButton;
 
-		public global::UnityEngine.RectTransform ProductHint;
+		public RectTransform ProductHint;
 
-		public global::UnityEngine.RectTransform MixerHint;
+		public RectTransform MixerHint;
 
-		private global::ScheduleOne.StationFramework.StationRecipe selectedRecipe;
+		private StationRecipe selectedRecipe;
 
 		public bool isOpen { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.MixingStation MixingStation { get; protected set; }
+		public MixingStation MixingStation { get; protected set; }
 
 		protected override void Awake()
 		{
@@ -56,7 +65,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -72,7 +81,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void Open(global::ScheduleOne.ObjectScripts.MixingStation station)
+		public void Open(MixingStation station)
 		{
 		}
 
@@ -100,22 +109,22 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		private string GetPropertyListString(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		private string GetPropertyListString(List<ScheduleOne.Properties.Property> properties)
 		{
 			return null;
 		}
 
-		private string GetPropertyString(global::ScheduleOne.Properties.Property property)
+		private string GetPropertyString(ScheduleOne.Properties.Property property)
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetOutputProperties(global::ScheduleOne.Product.ProductDefinition product, global::ScheduleOne.Product.PropertyItemDefinition mixer)
+		private List<ScheduleOne.Properties.Property> GetOutputProperties(ProductDefinition product, PropertyItemDefinition mixer)
 		{
 			return null;
 		}
 
-		private bool IsOutputKnown(out global::ScheduleOne.Product.ProductDefinition knownProduct)
+		private bool IsOutputKnown(out ProductDefinition knownProduct)
 		{
 			knownProduct = null;
 			return false;
@@ -129,7 +138,7 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		public void StartMixOperation(global::ScheduleOne.ObjectScripts.MixOperation mixOperation)
+		public void StartMixOperation(MixOperation mixOperation)
 		{
 		}
 

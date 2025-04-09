@@ -1,16 +1,19 @@
+using ScheduleOne.ScriptableObjects;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class PhoneCallUtility : global::UnityEngine.MonoBehaviour
+	public class PhoneCallUtility : MonoBehaviour
 	{
-		public void PromptCall(global::ScheduleOne.ScriptableObjects.PhoneCallData callData)
+		public void PromptCall(PhoneCallData callData)
 		{
 		}
 
-		public void StartCall(global::ScheduleOne.ScriptableObjects.PhoneCallData callData)
+		public void StartCall(PhoneCallData callData)
 		{
 		}
 
-		public void SetQueuedCall(global::ScheduleOne.ScriptableObjects.PhoneCallData callData)
+		public void SetQueuedCall(PhoneCallData callData)
 		{
 		}
 

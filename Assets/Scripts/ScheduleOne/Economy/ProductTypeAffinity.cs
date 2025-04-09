@@ -1,11 +1,15 @@
+using System;
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.Economy
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ProductTypeAffinity
 	{
-		public global::ScheduleOne.Product.EDrugType DrugType;
+		public EDrugType DrugType;
 
-		[global::UnityEngine.Range(-1f, 1f)]
+		[Range(-1f, 1f)]
 		public float Affinity;
 	}
 }

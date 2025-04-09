@@ -1,14 +1,18 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.ObjectScripts.WateringCan;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_WateringCan : global::ScheduleOne.Equipping.Equippable_Pourable
+	public class Equippable_WateringCan : Equippable_Pourable
 	{
-		public global::ScheduleOne.ObjectScripts.WateringCan.WateringCanVisuals Visuals;
+		public WateringCanVisuals Visuals;
 
-		private global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance WCInstance;
+		private WateringCanInstance WCInstance;
 
 		public override string InteractionLabel { get; set; }
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 
@@ -20,13 +24,13 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		protected override bool CanPour(global::ScheduleOne.ObjectScripts.Pot pot, out string reason)
+		protected override bool CanPour(Pot pot, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		protected override void StartPourTask(global::ScheduleOne.ObjectScripts.Pot pot)
+		protected override void StartPourTask(Pot pot)
 		{
 		}
 	}

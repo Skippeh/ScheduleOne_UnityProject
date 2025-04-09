@@ -1,11 +1,14 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.BoxCollider))]
-	public class SpeedZone : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(BoxCollider))]
+	public class SpeedZone : MonoBehaviour
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.SpeedZone> speedZones;
+		public static List<SpeedZone> speedZones;
 
-		public global::UnityEngine.BoxCollider col;
+		public BoxCollider col;
 
 		public float speed;
 
@@ -13,7 +16,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.SpeedZone> GetSpeedZones(global::UnityEngine.Vector3 point)
+		public static List<SpeedZone> GetSpeedZones(Vector3 point)
 		{
 			return null;
 		}

@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MoveItemData
 	{
 		public string TemplateItemJSON;
@@ -11,7 +13,7 @@ namespace ScheduleOne.Persistence.Datas
 
 		public string DestinationGUID;
 
-		public MoveItemData(string templateItemJson, int grabbedItemQuantity, global::System.Guid sourceGUID, global::System.Guid destinationGUID)
+		public MoveItemData(string templateItemJson, int grabbedItemQuantity, Guid sourceGUID, Guid destinationGUID)
 		{
 		}
 	}

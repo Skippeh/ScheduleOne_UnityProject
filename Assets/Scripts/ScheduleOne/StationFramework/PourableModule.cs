@@ -1,8 +1,12 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class PourableModule : global::ScheduleOne.StationFramework.ItemModule
+	public class PourableModule : ItemModule
 	{
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string LiquidType;
 
 		public float PourRate;
@@ -13,25 +17,25 @@ namespace ScheduleOne.StationFramework
 
 		public float LiquidCapacity_L;
 
-		public global::UnityEngine.Color LiquidColor;
+		public Color LiquidColor;
 
 		public float DefaultLiquid_L;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.ParticleSystem[] PourParticles;
+		[Header("References")]
+		public ParticleSystem[] PourParticles;
 
-		public global::UnityEngine.Transform PourPoint;
+		public Transform PourPoint;
 
-		public global::ScheduleOne.StationFramework.LiquidContainer LiquidContainer;
+		public LiquidContainer LiquidContainer;
 
-		public global::ScheduleOne.PlayerTasks.Draggable Draggable;
+		public Draggable Draggable;
 
-		public global::ScheduleOne.PlayerTasks.DraggableConstraint DraggableConstraint;
+		public DraggableConstraint DraggableConstraint;
 
-		public global::ScheduleOne.Audio.AudioSourceController PourSound;
+		public AudioSourceController PourSound;
 
-		[global::UnityEngine.Header("Particles")]
-		public global::UnityEngine.Color PourParticlesColor;
+		[Header("Particles")]
+		public Color PourParticlesColor;
 
 		public float ParticleMinMultiplier;
 
@@ -41,7 +45,7 @@ namespace ScheduleOne.StationFramework
 
 		private float[] particleMaxSizes;
 
-		private global::ScheduleOne.StationFramework.Fillable activeFillable;
+		private Fillable activeFillable;
 
 		private float timeSinceFillableHit;
 
@@ -57,7 +61,7 @@ namespace ScheduleOne.StationFramework
 		{
 		}
 
-		public override void ActivateModule(global::ScheduleOne.StationFramework.StationItem item)
+		public override void ActivateModule(StationItem item)
 		{
 		}
 
@@ -85,7 +89,7 @@ namespace ScheduleOne.StationFramework
 		{
 		}
 
-		private void ParticleCollision(global::UnityEngine.GameObject other)
+		private void ParticleCollision(GameObject other)
 		{
 		}
 

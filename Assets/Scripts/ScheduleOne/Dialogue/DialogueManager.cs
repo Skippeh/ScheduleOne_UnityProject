@@ -1,12 +1,15 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Dialogue.DialogueManager>
+	public class DialogueManager : Singleton<DialogueManager>
 	{
-		public global::ScheduleOne.Dialogue.DialogueDatabase DefaultDatabase;
+		public DialogueDatabase DefaultDatabase;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueModule> DefaultModules;
+		public List<DialogueModule> DefaultModules;
 
-		public global::ScheduleOne.Dialogue.DialogueModule Get(global::ScheduleOne.Dialogue.EDialogueModule moduleType)
+		public DialogueModule Get(EDialogueModule moduleType)
 		{
 			return null;
 		}

@@ -1,6 +1,10 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class LabOvenSolidTask : global::ScheduleOne.PlayerTasks.Task
+	public class LabOvenSolidTask : Task
 	{
 		public enum EStep
 		{
@@ -10,19 +14,19 @@ namespace ScheduleOne.PlayerTasks
 			PressButton = 3
 		}
 
-		private global::ScheduleOne.ItemFramework.ItemInstance ingredient;
+		private ItemInstance ingredient;
 
 		private int ingredientQuantity;
 
-		private global::ScheduleOne.StationFramework.StationItem[] stationItems;
+		private StationItem[] stationItems;
 
-		private global::ScheduleOne.PlayerTasks.Draggable[] stationDraggables;
+		private Draggable[] stationDraggables;
 
-		public global::ScheduleOne.ObjectScripts.LabOven Oven { get; private set; }
+		public LabOven Oven { get; private set; }
 
-		public global::ScheduleOne.PlayerTasks.LabOvenSolidTask.EStep CurrentStep { get; protected set; }
+		public EStep CurrentStep { get; protected set; }
 
-		public LabOvenSolidTask(global::ScheduleOne.ObjectScripts.LabOven oven)
+		public LabOvenSolidTask(LabOven oven)
 		{
 		}
 
@@ -62,7 +66,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		public static string GetStepInstruction(global::ScheduleOne.PlayerTasks.LabOvenSolidTask.EStep step)
+		public static string GetStepInstruction(EStep step)
 		{
 			return null;
 		}

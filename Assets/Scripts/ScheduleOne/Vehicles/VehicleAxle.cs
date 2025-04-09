@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	public class VehicleAxle : global::UnityEngine.MonoBehaviour
+	public class VehicleAxle : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Vehicles.Wheel wheel;
+		[Header("References")]
+		[SerializeField]
+		protected Wheel wheel;
 
-		private global::UnityEngine.Transform model;
+		private Transform model;
 
 		protected virtual void Awake()
 		{

@@ -1,24 +1,29 @@
+using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.UI.Button))]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.EventSystems.EventTrigger))]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
-	public class ButtonSound : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Button))]
+	[RequireComponent(typeof(EventTrigger))]
+	[RequireComponent(typeof(AudioSourceController))]
+	public class ButtonSound : MonoBehaviour
 	{
-		public global::ScheduleOne.Audio.AudioSourceController AudioSource;
+		public AudioSourceController AudioSource;
 
-		public global::UnityEngine.EventSystems.EventTrigger EventTrigger;
+		public EventTrigger EventTrigger;
 
-		[global::UnityEngine.Header("Clips")]
-		public global::UnityEngine.AudioClip HoverClip;
+		[Header("Clips")]
+		public AudioClip HoverClip;
 
 		public float HoverSoundVolume;
 
-		public global::UnityEngine.AudioClip ClickClip;
+		public AudioClip ClickClip;
 
 		public float ClickSoundVolume;
 
-		private global::UnityEngine.UI.Button Button;
+		private Button Button;
 
 		public void Awake()
 		{
@@ -28,7 +33,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public void AddEventTrigger(global::UnityEngine.EventSystems.EventTrigger eventTrigger, global::UnityEngine.EventSystems.EventTriggerType eventTriggerType, global::System.Action action)
+		public void AddEventTrigger(EventTrigger eventTrigger, EventTriggerType eventTriggerType, Action action)
 		{
 		}
 

@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.BoxCollider))]
-	public class PlayerPusher : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	[RequireComponent(typeof(BoxCollider))]
+	public class PlayerPusher : MonoBehaviour
 	{
-		private global::ScheduleOne.Vehicles.LandVehicle veh;
+		private LandVehicle veh;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float MinSpeedToPush;
 
 		public float MaxPushSpeed;
@@ -15,7 +17,7 @@ namespace ScheduleOne.Vehicles
 
 		public float MaxPushForce;
 
-		private global::UnityEngine.Collider collider;
+		private Collider collider;
 
 		private void Awake()
 		{
@@ -25,7 +27,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

@@ -1,70 +1,84 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.Properties.MixMaps;
+using ScheduleOne.StationFramework;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Product
 {
-	public class ProductManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Product.ProductManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class ProductManager : NetworkSingleton<ProductManager>, IBaseSaveable, ISaveable
 	{
 		public const int MIN_PRICE = 1;
 
 		public const int MAX_PRICE = 999;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductDiscovered;
+		public Action<ProductDefinition> onProductDiscovered;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> DiscoveredProducts;
+		public static List<ProductDefinition> DiscoveredProducts;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> ListedProducts;
+		public static List<ProductDefinition> ListedProducts;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> FavouritedProducts;
+		public static List<ProductDefinition> FavouritedProducts;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> AllProducts;
+		public List<ProductDefinition> AllProducts;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> DefaultKnownProducts;
+		public List<ProductDefinition> DefaultKnownProducts;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyItemDefinition> ValidMixIngredients;
+		public List<PropertyItemDefinition> ValidMixIngredients;
 
-		public global::UnityEngine.AnimationCurve SampleSuccessCurve;
+		public AnimationCurve SampleSuccessCurve;
 
-		[global::UnityEngine.Header("Default Products")]
-		public global::ScheduleOne.Product.WeedDefinition DefaultWeed;
+		[Header("Default Products")]
+		public WeedDefinition DefaultWeed;
 
-		public global::ScheduleOne.Product.CocaineDefinition DefaultCocaine;
+		public CocaineDefinition DefaultCocaine;
 
-		public global::ScheduleOne.Product.MethDefinition DefaultMeth;
+		public MethDefinition DefaultMeth;
 
-		[global::UnityEngine.Header("Mix Maps")]
-		public global::ScheduleOne.Properties.MixMaps.MixerMap WeedMixMap;
+		[Header("Mix Maps")]
+		public MixerMap WeedMixMap;
 
-		public global::ScheduleOne.Properties.MixMaps.MixerMap MethMixMap;
+		public MixerMap MethMixMap;
 
-		public global::ScheduleOne.Properties.MixMaps.MixerMap CokeMixMap;
+		public MixerMap CokeMixMap;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> createdProducts;
+		private List<ProductDefinition> createdProducts;
 
-		public global::System.Action<global::ScheduleOne.Product.NewMixOperation> onMixCompleted;
+		public Action<NewMixOperation> onMixCompleted;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onNewProductCreated;
+		public Action<ProductDefinition> onNewProductCreated;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductListed;
+		public Action<ProductDefinition> onProductListed;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductDelisted;
+		public Action<ProductDefinition> onProductDelisted;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductFavourited;
+		public Action<ProductDefinition> onProductFavourited;
 
-		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductUnfavourited;
+		public Action<ProductDefinition> onProductUnfavourited;
 
-		public global::UnityEngine.Events.UnityEvent onFirstSampleRejection;
+		public UnityEvent onFirstSampleRejection;
 
-		public global::UnityEngine.Events.UnityEvent onSecondUniqueProductCreated;
+		public UnityEvent onSecondUniqueProductCreated;
 
-		public global::System.Collections.Generic.List<string> ProductNames;
+		public List<string> ProductNames;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> mixRecipes;
+		private List<StationRecipe> mixRecipes;
 
-		public global::System.Action<global::ScheduleOne.StationFramework.StationRecipe> onMixRecipeAdded;
+		public Action<StationRecipe> onMixRecipeAdded;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Product.ProductDefinition, float> ProductPrices;
+		private Dictionary<ProductDefinition, float> ProductPrices;
 
-		private global::ScheduleOne.Product.ProductDefinition highestValueProduct;
+		private ProductDefinition highestValueProduct;
 
-		private global::ScheduleOne.Persistence.Loaders.ProductManagerLoader loader;
+		private ProductManagerLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProduct_002EProductManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -76,7 +90,7 @@ namespace ScheduleOne.Product
 
 		public static bool IsAcceptingOrders { get; private set; }
 
-		public global::ScheduleOne.Product.NewMixOperation CurrentMixOperation { get; private set; }
+		public NewMixOperation CurrentMixOperation { get; private set; }
 
 		public bool IsMixingInProgress => false;
 
@@ -88,13 +102,13 @@ namespace ScheduleOne.Product
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -122,12 +136,12 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SetMethDiscovered()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void SetCocaineDiscovered()
 		{
 		}
@@ -136,12 +150,12 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public global::ScheduleOne.Properties.MixMaps.MixerMap GetMixerMap(global::ScheduleOne.Product.EDrugType type)
+		public MixerMap GetMixerMap(EDrugType type)
 		{
 			return null;
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -153,36 +167,36 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetProductListed(string productID, bool listed)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetProductListed(global::FishNet.Connection.NetworkConnection conn, string productID, bool listed)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetProductListed(NetworkConnection conn, string productID, bool listed)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetProductFavourited(string productID, bool listed)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetProductFavourited(global::FishNet.Connection.NetworkConnection conn, string productID, bool fav)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetProductFavourited(NetworkConnection conn, string productID, bool fav)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void DiscoverProduct(string productID)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetProductDiscovered(global::FishNet.Connection.NetworkConnection conn, string productID, bool autoList)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetProductDiscovered(NetworkConnection conn, string productID, bool autoList)
 		{
 		}
 
@@ -190,36 +204,36 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void CreateWeed_Server(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void CreateWeed_Server(string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void CreateWeed(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		private void CreateWeed(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void CreateCocaine_Server(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void CreateCocaine_Server(string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void CreateCocaine(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		private void CreateCocaine(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void CreateMeth_Server(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void CreateMeth_Server(string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void CreateMeth(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		private void CreateMeth(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
@@ -227,60 +241,60 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendMixRecipe(string product, string mixer, string output)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void CreateMixRecipe(global::FishNet.Connection.NetworkConnection conn, string product, string mixer, string output)
+		[TargetRpc]
+		[ObserversRpc(RunLocally = true)]
+		public void CreateMixRecipe(NetworkConnection conn, string product, string mixer, string output)
 		{
 		}
 
-		public global::ScheduleOne.StationFramework.StationRecipe GetRecipe(string product, string mixer)
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.StationFramework.StationRecipe GetRecipe(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> productProperties, global::ScheduleOne.Properties.Property mixerProperty)
+		public StationRecipe GetRecipe(string product, string mixer)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		private void GiveItem(global::FishNet.Connection.NetworkConnection conn, string id)
-		{
-		}
-
-		public global::ScheduleOne.Product.ProductDefinition GetKnownProduct(global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public StationRecipe GetRecipe(List<ScheduleOne.Properties.Property> productProperties, ScheduleOne.Properties.Property mixerProperty)
 		{
 			return null;
 		}
 
-		public float GetPrice(global::ScheduleOne.Product.ProductDefinition product)
+		[TargetRpc]
+		private void GiveItem(NetworkConnection conn, string id)
+		{
+		}
+
+		public ProductDefinition GetKnownProduct(EDrugType type, List<ScheduleOne.Properties.Property> properties)
+		{
+			return null;
+		}
+
+		public float GetPrice(ProductDefinition product)
 		{
 			return 0f;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendPrice(string productID, float value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void SetPrice(global::FishNet.Connection.NetworkConnection conn, string productID, float value)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void SetPrice(NetworkConnection conn, string productID, float value)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendMixOperation(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendMixOperation(NewMixOperation operation, bool complete)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetMixOperation(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		[ObserversRpc(RunLocally = true)]
+		private void SetMixOperation(NewMixOperation operation, bool complete)
 		{
 		}
 
@@ -299,22 +313,22 @@ namespace ScheduleOne.Product
 			return false;
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void FinishAndNameMix(string productID, string ingredientID, string mixName, string mixID)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		private void SendFinishAndNameMix(string productID, string ingredientID, string mixName, string mixID)
 		{
 		}
 
-		public static float CalculateProductValue(global::ScheduleOne.Product.ProductDefinition product, float baseValue)
+		public static float CalculateProductValue(ProductDefinition product, float baseValue)
 		{
 			return 0f;
 		}
 
-		public static float CalculateProductValue(float baseValue, global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static float CalculateProductValue(float baseValue, List<ScheduleOne.Properties.Property> properties)
 		{
 			return 0f;
 		}
@@ -324,7 +338,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -349,7 +363,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SetMethDiscovered_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetMethDiscovered_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -361,7 +375,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SetCocaineDiscovered_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetCocaineDiscovered_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -373,27 +387,27 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SetProductListed_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetProductListed_310431262(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetProductListed_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool listed)
+		private void RpcWriter___Observers_SetProductListed_619441887(NetworkConnection conn, string productID, bool listed)
 		{
 		}
 
-		public void RpcLogic___SetProductListed_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool listed)
+		public void RpcLogic___SetProductListed_619441887(NetworkConnection conn, string productID, bool listed)
 		{
 		}
 
-		private void RpcReader___Observers_SetProductListed_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetProductListed_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetProductListed_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool listed)
+		private void RpcWriter___Target_SetProductListed_619441887(NetworkConnection conn, string productID, bool listed)
 		{
 		}
 
-		private void RpcReader___Target_SetProductListed_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetProductListed_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -405,27 +419,27 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SetProductFavourited_310431262(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetProductFavourited_310431262(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetProductFavourited_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool fav)
+		private void RpcWriter___Observers_SetProductFavourited_619441887(NetworkConnection conn, string productID, bool fav)
 		{
 		}
 
-		public void RpcLogic___SetProductFavourited_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool fav)
+		public void RpcLogic___SetProductFavourited_619441887(NetworkConnection conn, string productID, bool fav)
 		{
 		}
 
-		private void RpcReader___Observers_SetProductFavourited_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetProductFavourited_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetProductFavourited_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool fav)
+		private void RpcWriter___Target_SetProductFavourited_619441887(NetworkConnection conn, string productID, bool fav)
 		{
 		}
 
-		private void RpcReader___Target_SetProductFavourited_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetProductFavourited_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -437,123 +451,123 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_DiscoverProduct_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_DiscoverProduct_3615296227(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetProductDiscovered_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool autoList)
+		private void RpcWriter___Observers_SetProductDiscovered_619441887(NetworkConnection conn, string productID, bool autoList)
 		{
 		}
 
-		public void RpcLogic___SetProductDiscovered_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool autoList)
+		public void RpcLogic___SetProductDiscovered_619441887(NetworkConnection conn, string productID, bool autoList)
 		{
 		}
 
-		private void RpcReader___Observers_SetProductDiscovered_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetProductDiscovered_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetProductDiscovered_619441887(global::FishNet.Connection.NetworkConnection conn, string productID, bool autoList)
+		private void RpcWriter___Target_SetProductDiscovered_619441887(NetworkConnection conn, string productID, bool autoList)
 		{
 		}
 
-		private void RpcReader___Target_SetProductDiscovered_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetProductDiscovered_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_CreateWeed_Server_2331775230(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		private void RpcWriter___Server_CreateWeed_Server_2331775230(string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		public void RpcLogic___CreateWeed_Server_2331775230(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		public void RpcLogic___CreateWeed_Server_2331775230(string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Server_CreateWeed_Server_2331775230(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateWeed_Server_2331775230(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_CreateWeed_1777266891(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		private void RpcWriter___Target_CreateWeed_1777266891(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcLogic___CreateWeed_1777266891(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		private void RpcLogic___CreateWeed_1777266891(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Target_CreateWeed_1777266891(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateWeed_1777266891(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateWeed_1777266891(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.WeedAppearanceSettings appearance)
+		private void RpcWriter___Observers_CreateWeed_1777266891(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, WeedAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Observers_CreateWeed_1777266891(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateWeed_1777266891(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_CreateCocaine_Server_891166717(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		private void RpcWriter___Server_CreateCocaine_Server_891166717(string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		public void RpcLogic___CreateCocaine_Server_891166717(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		public void RpcLogic___CreateCocaine_Server_891166717(string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Server_CreateCocaine_Server_891166717(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateCocaine_Server_891166717(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_CreateCocaine_1327282946(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		private void RpcWriter___Target_CreateCocaine_1327282946(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcLogic___CreateCocaine_1327282946(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		private void RpcLogic___CreateCocaine_1327282946(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Target_CreateCocaine_1327282946(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateCocaine_1327282946(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateCocaine_1327282946(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.CocaineAppearanceSettings appearance)
+		private void RpcWriter___Observers_CreateCocaine_1327282946(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, CocaineAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Observers_CreateCocaine_1327282946(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateCocaine_1327282946(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_CreateMeth_Server_4251728555(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		private void RpcWriter___Server_CreateMeth_Server_4251728555(string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		public void RpcLogic___CreateMeth_Server_4251728555(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		public void RpcLogic___CreateMeth_Server_4251728555(string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Server_CreateMeth_Server_4251728555(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateMeth_Server_4251728555(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_CreateMeth_1869045686(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		private void RpcWriter___Target_CreateMeth_1869045686(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcLogic___CreateMeth_1869045686(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		private void RpcLogic___CreateMeth_1869045686(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Target_CreateMeth_1869045686(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateMeth_1869045686(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateMeth_1869045686(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.MethAppearanceSettings appearance)
+		private void RpcWriter___Observers_CreateMeth_1869045686(NetworkConnection conn, string name, string id, EDrugType type, List<string> properties, MethAppearanceSettings appearance)
 		{
 		}
 
-		private void RpcReader___Observers_CreateMeth_1869045686(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateMeth_1869045686(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -565,39 +579,39 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SendMixRecipe_852232071(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendMixRecipe_852232071(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_CreateMixRecipe_1410895574(global::FishNet.Connection.NetworkConnection conn, string product, string mixer, string output)
+		private void RpcWriter___Target_CreateMixRecipe_1410895574(NetworkConnection conn, string product, string mixer, string output)
 		{
 		}
 
-		public void RpcLogic___CreateMixRecipe_1410895574(global::FishNet.Connection.NetworkConnection conn, string product, string mixer, string output)
+		public void RpcLogic___CreateMixRecipe_1410895574(NetworkConnection conn, string product, string mixer, string output)
 		{
 		}
 
-		private void RpcReader___Target_CreateMixRecipe_1410895574(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateMixRecipe_1410895574(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateMixRecipe_1410895574(global::FishNet.Connection.NetworkConnection conn, string product, string mixer, string output)
+		private void RpcWriter___Observers_CreateMixRecipe_1410895574(NetworkConnection conn, string product, string mixer, string output)
 		{
 		}
 
-		private void RpcReader___Observers_CreateMixRecipe_1410895574(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateMixRecipe_1410895574(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_GiveItem_2971853958(global::FishNet.Connection.NetworkConnection conn, string id)
+		private void RpcWriter___Target_GiveItem_2971853958(NetworkConnection conn, string id)
 		{
 		}
 
-		private void RpcLogic___GiveItem_2971853958(global::FishNet.Connection.NetworkConnection conn, string id)
+		private void RpcLogic___GiveItem_2971853958(NetworkConnection conn, string id)
 		{
 		}
 
-		private void RpcReader___Target_GiveItem_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_GiveItem_2971853958(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -609,51 +623,51 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SendPrice_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendPrice_606697822(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetPrice_4077118173(global::FishNet.Connection.NetworkConnection conn, string productID, float value)
+		private void RpcWriter___Observers_SetPrice_4077118173(NetworkConnection conn, string productID, float value)
 		{
 		}
 
-		public void RpcLogic___SetPrice_4077118173(global::FishNet.Connection.NetworkConnection conn, string productID, float value)
+		public void RpcLogic___SetPrice_4077118173(NetworkConnection conn, string productID, float value)
 		{
 		}
 
-		private void RpcReader___Observers_SetPrice_4077118173(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetPrice_4077118173(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetPrice_4077118173(global::FishNet.Connection.NetworkConnection conn, string productID, float value)
+		private void RpcWriter___Target_SetPrice_4077118173(NetworkConnection conn, string productID, float value)
 		{
 		}
 
-		private void RpcReader___Target_SetPrice_4077118173(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetPrice_4077118173(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendMixOperation_3670976965(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		private void RpcWriter___Server_SendMixOperation_3670976965(NewMixOperation operation, bool complete)
 		{
 		}
 
-		public void RpcLogic___SendMixOperation_3670976965(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		public void RpcLogic___SendMixOperation_3670976965(NewMixOperation operation, bool complete)
 		{
 		}
 
-		private void RpcReader___Server_SendMixOperation_3670976965(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendMixOperation_3670976965(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetMixOperation_3670976965(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		private void RpcWriter___Observers_SetMixOperation_3670976965(NewMixOperation operation, bool complete)
 		{
 		}
 
-		private void RpcLogic___SetMixOperation_3670976965(global::ScheduleOne.Product.NewMixOperation operation, bool complete)
+		private void RpcLogic___SetMixOperation_3670976965(NewMixOperation operation, bool complete)
 		{
 		}
 
-		private void RpcReader___Observers_SetMixOperation_3670976965(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetMixOperation_3670976965(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -665,7 +679,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Observers_FinishAndNameMix_4237212381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_FinishAndNameMix_4237212381(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -677,7 +691,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcReader___Server_SendFinishAndNameMix_4237212381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendFinishAndNameMix_4237212381(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

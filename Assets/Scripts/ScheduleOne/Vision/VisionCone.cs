@@ -1,6 +1,19 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.NPCs;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.UI.WorldspacePopup;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Vision
 {
-	public class VisionCone : global::FishNet.Object.NetworkBehaviour
+	public class VisionCone : NetworkBehaviour
 	{
 		public enum EEventLevel
 		{
@@ -10,10 +23,10 @@ namespace ScheduleOne.Vision
 			Zero = 3
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public class StateContainer
 		{
-			public global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state;
+			public PlayerVisualState.EVisualState state;
 
 			public bool Enabled;
 
@@ -22,14 +35,14 @@ namespace ScheduleOne.Vision
 
 		public class PlayerSightData
 		{
-			public global::ScheduleOne.PlayerScripts.Player Player;
+			public Player Player;
 
 			public float VisionDelta;
 
 			public float TimeVisible;
 		}
 
-		public delegate void EventStateChange(global::ScheduleOne.Vision.VisionEventReceipt _event);
+		public delegate void EventStateChange(VisionEventReceipt _event);
 
 		public const float VISION_UPDATE_INTERVAL = 0.1f;
 
@@ -39,7 +52,7 @@ namespace ScheduleOne.Vision
 
 		public bool DisableSightUpdates;
 
-		[global::UnityEngine.Header("Frustrum Settings")]
+		[Header("Frustrum Settings")]
 		public float HorizontalFOV;
 
 		public float VerticalFOV;
@@ -50,58 +63,58 @@ namespace ScheduleOne.Vision
 
 		public float MinorHeight;
 
-		public global::UnityEngine.Transform VisionOrigin;
+		public Transform VisionOrigin;
 
 		public bool DEBUG_FRUSTRUM;
 
-		[global::UnityEngine.Header("Vision Settings")]
+		[Header("Vision Settings")]
 		public bool VisionEnabled;
 
-		public global::UnityEngine.AnimationCurve VisionFalloff;
+		public AnimationCurve VisionFalloff;
 
-		public global::UnityEngine.LayerMask VisibilityBlockingLayers;
+		public LayerMask VisibilityBlockingLayers;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float RangeMultiplier;
 
-		[global::UnityEngine.Header("Interest settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionCone.StateContainer> StatesOfInterest;
+		[Header("Interest settings")]
+		public List<StateContainer> StatesOfInterest;
 
-		[global::UnityEngine.Header("Notice Settings")]
+		[Header("Notice Settings")]
 		public float MinVisionDelta;
 
 		public float Attentiveness;
 
 		public float Memory;
 
-		[global::UnityEngine.Header("Worldspace Icons")]
+		[Header("Worldspace Icons")]
 		public bool WorldspaceIconsEnabled;
 
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopup QuestionMarkPopup;
+		public WorldspacePopup QuestionMarkPopup;
 
-		public global::ScheduleOne.UI.WorldspacePopup.WorldspacePopup ExclamationPointPopup;
+		public WorldspacePopup ExclamationPointPopup;
 
-		public global::ScheduleOne.Audio.AudioSourceController ExclamationSound;
+		public AudioSourceController ExclamationSound;
 
-		public global::ScheduleOne.Vision.VisionCone.EventStateChange onVisionEventStarted;
+		public EventStateChange onVisionEventStarted;
 
-		public global::ScheduleOne.Vision.VisionCone.EventStateChange onVisionEventHalf;
+		public EventStateChange onVisionEventHalf;
 
-		public global::ScheduleOne.Vision.VisionCone.EventStateChange onVisionEventFull;
+		public EventStateChange onVisionEventFull;
 
-		public global::ScheduleOne.Vision.VisionCone.EventStateChange onVisionEventExpired;
+		public EventStateChange onVisionEventExpired;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.Player, global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState, global::ScheduleOne.Vision.VisionCone.StateContainer>> StateSettings;
+		public Dictionary<Player, Dictionary<PlayerVisualState.EVisualState, StateContainer>> StateSettings;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionEvent> activeVisionEvents;
+		protected List<VisionEvent> activeVisionEvents;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.Player, global::ScheduleOne.Vision.VisionCone.PlayerSightData> playerSightDatas;
+		protected Dictionary<Player, PlayerSightData> playerSightDatas;
 
-		protected global::ScheduleOne.NPCs.NPC npc;
+		protected NPC npc;
 
 		private bool generalCrimeResponseActive;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> sightedPlayers;
+		private List<Player> sightedPlayers;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVision_002EVisionConeAssembly_002DCSharp_002Edll_Excuted;
 
@@ -113,7 +126,7 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		private void PlayerSpawned(global::ScheduleOne.PlayerScripts.Player plr)
+		private void PlayerSpawned(Player plr)
 		{
 		}
 
@@ -141,55 +154,55 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		public virtual void EventReachedZero(global::ScheduleOne.Vision.VisionEvent _event)
+		public virtual void EventReachedZero(VisionEvent _event)
 		{
 		}
 
-		public virtual void EventHalfNoticed(global::ScheduleOne.Vision.VisionEvent _event)
+		public virtual void EventHalfNoticed(VisionEvent _event)
 		{
 		}
 
-		public virtual void EventFullyNoticed(global::ScheduleOne.Vision.VisionEvent _event)
+		public virtual void EventFullyNoticed(VisionEvent _event)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		public void SendEventReceipt(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		[ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public void SendEventReceipt(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true, ExcludeOwner = true)]
-		public virtual void ReceiveEventReceipt(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		[ObserversRpc(RunLocally = true, ExcludeOwner = true)]
+		public virtual void ReceiveEventReceipt(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		public virtual bool IsPointWithinSight(global::UnityEngine.Vector3 point, bool ignoreLoS = false, global::ScheduleOne.Vehicles.LandVehicle vehicleToIgnore = null)
+		public virtual bool IsPointWithinSight(Vector3 point, bool ignoreLoS = false, LandVehicle vehicleToIgnore = null)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.Vision.VisionEvent GetEvent(global::ScheduleOne.PlayerScripts.Player target, global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState state)
+		public VisionEvent GetEvent(Player target, PlayerVisualState.VisualState state)
 		{
 			return null;
 		}
 
-		public bool IsPlayerVisible(global::ScheduleOne.PlayerScripts.Player player)
+		public bool IsPlayerVisible(Player player)
 		{
 			return false;
 		}
 
-		public float GetPlayerVisibility(global::ScheduleOne.PlayerScripts.Player player)
+		public float GetPlayerVisibility(Player player)
 		{
 			return 0f;
 		}
 
-		public bool IsPlayerVisible(global::ScheduleOne.PlayerScripts.Player player, out global::ScheduleOne.Vision.VisionCone.PlayerSightData data)
+		public bool IsPlayerVisible(Player player, out PlayerSightData data)
 		{
 			data = null;
 			return false;
 		}
 
-		public virtual void SetGeneralCrimeResponseActive(global::ScheduleOne.PlayerScripts.Player player, bool active)
+		public virtual void SetGeneralCrimeResponseActive(Player player, bool active)
 		{
 		}
 
@@ -201,12 +214,12 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		private global::UnityEngine.Vector3[] GetFrustumVertices()
+		private Vector3[] GetFrustumVertices()
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Plane[] GetFrustumPlanes()
+		private Plane[] GetFrustumPlanes()
 		{
 			return null;
 		}
@@ -223,27 +236,27 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		private void RpcWriter___Server_SendEventReceipt_3486014028(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		private void RpcWriter___Server_SendEventReceipt_3486014028(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		public void RpcLogic___SendEventReceipt_3486014028(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		public void RpcLogic___SendEventReceipt_3486014028(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		private void RpcReader___Server_SendEventReceipt_3486014028(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEventReceipt_3486014028(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveEventReceipt_3486014028(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		private void RpcWriter___Observers_ReceiveEventReceipt_3486014028(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		public virtual void RpcLogic___ReceiveEventReceipt_3486014028(global::ScheduleOne.Vision.VisionEventReceipt receipt, global::ScheduleOne.Vision.VisionCone.EEventLevel level)
+		public virtual void RpcLogic___ReceiveEventReceipt_3486014028(VisionEventReceipt receipt, EEventLevel level)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveEventReceipt_3486014028(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveEventReceipt_3486014028(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

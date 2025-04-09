@@ -1,16 +1,19 @@
+using ScheduleOne.Misc;
+using UnityEngine;
+
 namespace ScheduleOne.Lighting
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Misc.ToggleableLight))]
-	public class LightTimer : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(ToggleableLight))]
+	public class LightTimer : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Timing")]
+		[Header("Timing")]
 		public int StartTime;
 
 		public int EndTime;
 
 		public int StartTimeOffset;
 
-		private global::ScheduleOne.Misc.ToggleableLight toggleableLight;
+		private ToggleableLight toggleableLight;
 
 		protected virtual void Awake()
 		{

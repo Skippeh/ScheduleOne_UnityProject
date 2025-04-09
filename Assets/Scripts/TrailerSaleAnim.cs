@@ -1,6 +1,9 @@
-public class TrailerSaleAnim : global::UnityEngine.MonoBehaviour
+using ScheduleOne.NPCs;
+using UnityEngine;
+
+public class TrailerSaleAnim : MonoBehaviour
 {
-	public global::ScheduleOne.NPCs.NPC[] NPCs;
+	public NPC[] NPCs;
 
 	public void PlayAnim()
 	{

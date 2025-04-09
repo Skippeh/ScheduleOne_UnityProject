@@ -1,56 +1,61 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Combat;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.FX
 {
-	public class FXManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.FX.FXManager>
+	public class FXManager : Singleton<FXManager>
 	{
-		public global::UnityEngine.AudioClip[] PunchImpactsClips;
+		public AudioClip[] PunchImpactsClips;
 
-		public global::UnityEngine.AudioClip[] SlashImpactClips;
+		public AudioClip[] SlashImpactClips;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController[] ImpactSources;
+		[Header("References")]
+		public AudioSourceController[] ImpactSources;
 
-		[global::UnityEngine.Header("Particle Prefabs")]
-		public global::UnityEngine.GameObject PunchParticlePrefab;
+		[Header("Particle Prefabs")]
+		public GameObject PunchParticlePrefab;
 
-		[global::UnityEngine.Header("Trails")]
-		public global::UnityEngine.TrailRenderer BulletTrail;
+		[Header("Trails")]
+		public TrailRenderer BulletTrail;
 
 		protected override void Start()
 		{
 		}
 
-		public void CreateImpactFX(global::ScheduleOne.Combat.Impact impact)
+		public void CreateImpactFX(Impact impact)
 		{
 		}
 
-		public void CreateBulletTrail(global::UnityEngine.Vector3 start, global::UnityEngine.Vector3 dir, float speed, float range, global::UnityEngine.LayerMask mask)
+		public void CreateBulletTrail(Vector3 start, Vector3 dir, float speed, float range, LayerMask mask)
 		{
 		}
 
-		private void PlayImpact(global::UnityEngine.AudioClip clip, global::UnityEngine.Vector3 position, float volume)
+		private void PlayImpact(AudioClip clip, Vector3 position, float volume)
 		{
 		}
 
-		private void PlayParticles(global::UnityEngine.GameObject prefab, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
+		private void PlayParticles(GameObject prefab, Vector3 position, Quaternion rotation)
 		{
 		}
 
-		private global::UnityEngine.AudioClip GetImpactSound(global::ScheduleOne.Combat.Impact impact)
-		{
-			return null;
-		}
-
-		private global::UnityEngine.GameObject GetImpactParticles(global::ScheduleOne.Combat.Impact impact)
+		private AudioClip GetImpactSound(Impact impact)
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.Audio.AudioSourceController GetSource()
+		private GameObject GetImpactParticles(Impact impact)
 		{
 			return null;
 		}
 
-		private static global::UnityEngine.AudioClip GetRandomClip(global::UnityEngine.AudioClip[] clips)
+		private AudioSourceController GetSource()
+		{
+			return null;
+		}
+
+		private static AudioClip GetRandomClip(AudioClip[] clips)
 		{
 			return null;
 		}

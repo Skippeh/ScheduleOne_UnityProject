@@ -1,19 +1,23 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Object;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ItemSlot
 	{
-		public global::System.Action onItemDataChanged;
+		public Action onItemDataChanged;
 
-		public global::System.Action onItemInstanceChanged;
+		public Action onItemInstanceChanged;
 
-		public global::System.Action onLocked;
+		public Action onLocked;
 
-		public global::System.Action onUnlocked;
+		public Action onUnlocked;
 
-		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance { get; protected set; }
+		public ItemInstance ItemInstance { get; protected set; }
 
-		public global::ScheduleOne.ItemFramework.IItemSlotOwner SlotOwner { get; protected set; }
+		public IItemSlotOwner SlotOwner { get; protected set; }
 
 		private int SlotIndex => 0;
 
@@ -23,15 +27,15 @@ namespace ScheduleOne.ItemFramework
 
 		public bool IsLocked => false;
 
-		public global::ScheduleOne.ItemFramework.ItemSlotLock ActiveLock { get; protected set; }
+		public ItemSlotLock ActiveLock { get; protected set; }
 
 		public bool IsRemovalLocked { get; protected set; }
 
 		public bool IsAddLocked { get; protected set; }
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemFilter> Filters { get; set; }
+		protected List<ItemFilter> Filters { get; set; }
 
-		public void SetSlotOwner(global::ScheduleOne.ItemFramework.IItemSlotOwner owner)
+		public void SetSlotOwner(IItemSlotOwner owner)
 		{
 		}
 
@@ -39,15 +43,15 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public virtual void SetStoredItem(global::ScheduleOne.ItemFramework.ItemInstance instance, bool _internal = false)
+		public virtual void SetStoredItem(ItemInstance instance, bool _internal = false)
 		{
 		}
 
-		public virtual void InsertItem(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual void InsertItem(ItemInstance item)
 		{
 		}
 
-		public virtual void AddItem(global::ScheduleOne.ItemFramework.ItemInstance item, bool _internal = false)
+		public virtual void AddItem(ItemInstance item, bool _internal = false)
 		{
 		}
 
@@ -71,11 +75,11 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public void AddFilter(global::ScheduleOne.ItemFramework.ItemFilter filter)
+		public void AddFilter(ItemFilter filter)
 		{
 		}
 
-		public void ApplyLock(global::FishNet.Object.NetworkObject lockOwner, string lockReason, bool _internal = false)
+		public void ApplyLock(NetworkObject lockOwner, string lockReason, bool _internal = false)
 		{
 		}
 
@@ -91,12 +95,12 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public virtual bool DoesItemMatchFilters(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual bool DoesItemMatchFilters(ItemInstance item)
 		{
 			return false;
 		}
 
-		public virtual int GetCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual int GetCapacityForItem(ItemInstance item)
 		{
 			return 0;
 		}
@@ -106,7 +110,7 @@ namespace ScheduleOne.ItemFramework
 			return false;
 		}
 
-		public static bool TryInsertItemIntoSet(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> ItemSlots, global::ScheduleOne.ItemFramework.ItemInstance item)
+		public static bool TryInsertItemIntoSet(List<ItemSlot> ItemSlots, ItemInstance item)
 		{
 			return false;
 		}

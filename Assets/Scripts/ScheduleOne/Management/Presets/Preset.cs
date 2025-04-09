@@ -1,28 +1,30 @@
+using UnityEngine;
+
 namespace ScheduleOne.Management.Presets
 {
 	public abstract class Preset
 	{
 		public delegate void NameChange(string name);
 
-		public delegate void PresetDeletion(global::ScheduleOne.Management.Presets.Preset replacement);
+		public delegate void PresetDeletion(Preset replacement);
 
 		public string PresetName;
 
-		public global::UnityEngine.Color32 PresetColor;
+		public Color32 PresetColor;
 
-		public global::ScheduleOne.Management.ManageableObjectType ObjectType;
+		public ManageableObjectType ObjectType;
 
-		public global::ScheduleOne.Management.Presets.Preset.NameChange onNameChanged;
+		public NameChange onNameChanged;
 
-		public global::ScheduleOne.Management.Presets.Preset.PresetDeletion onDeleted;
+		public PresetDeletion onDeleted;
 
 		public Preset()
 		{
 		}
 
-		public abstract global::ScheduleOne.Management.Presets.Preset GetCopy();
+		public abstract Preset GetCopy();
 
-		public virtual void CopyTo(global::ScheduleOne.Management.Presets.Preset other)
+		public virtual void CopyTo(Preset other)
 		{
 		}
 
@@ -32,11 +34,11 @@ namespace ScheduleOne.Management.Presets
 		{
 		}
 
-		public void DeletePreset(global::ScheduleOne.Management.Presets.Preset replacement)
+		public void DeletePreset(Preset replacement)
 		{
 		}
 
-		public static global::ScheduleOne.Management.Presets.Preset GetDefault(global::ScheduleOne.Management.ManageableObjectType type)
+		public static Preset GetDefault(ManageableObjectType type)
 		{
 			return null;
 		}

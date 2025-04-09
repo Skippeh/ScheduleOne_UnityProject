@@ -1,8 +1,10 @@
-public class UnluckDistanceDisabler : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class UnluckDistanceDisabler : MonoBehaviour
 {
 	public int _distanceDisable;
 
-	public global::UnityEngine.Transform _distanceFrom;
+	public Transform _distanceFrom;
 
 	public bool _distanceFromMainCam;
 

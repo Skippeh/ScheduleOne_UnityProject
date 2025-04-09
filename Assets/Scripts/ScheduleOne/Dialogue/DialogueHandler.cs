@@ -1,6 +1,13 @@
+using System.Collections.Generic;
+using ScheduleOne.NPCs;
+using ScheduleOne.UI;
+using ScheduleOne.VoiceOver;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Dialogue
 {
-	public class DialogueHandler : global::UnityEngine.MonoBehaviour
+	public class DialogueHandler : MonoBehaviour
 	{
 		public const float TimePerChar = 0.2f;
 
@@ -8,37 +15,37 @@ namespace ScheduleOne.Dialogue
 
 		public const float WorldspaceDialogueMaxDuration = 5f;
 
-		public static global::ScheduleOne.Dialogue.DialogueContainer activeDialogue;
+		public static DialogueContainer activeDialogue;
 
-		public static global::ScheduleOne.Dialogue.DialogueNodeData activeDialogueNode;
+		public static DialogueNodeData activeDialogueNode;
 
-		public global::ScheduleOne.Dialogue.DialogueDatabase Database;
+		public DialogueDatabase Database;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform LookPosition;
+		[Header("References")]
+		public Transform LookPosition;
 
-		public global::ScheduleOne.UI.WorldspaceDialogueRenderer WorldspaceRend;
+		public WorldspaceDialogueRenderer WorldspaceRend;
 
-		public global::ScheduleOne.VoiceOver.VOEmitter VOEmitter;
+		public VOEmitter VOEmitter;
 
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> CurrentChoices;
+		[HideInInspector]
+		public List<DialogueChoiceData> CurrentChoices;
 
-		[global::UnityEngine.Header("Events")]
-		public global::ScheduleOne.Dialogue.DialogueEvent[] DialogueEvents;
+		[Header("Events")]
+		public DialogueEvent[] DialogueEvents;
 
-		public global::UnityEngine.Events.UnityEvent onConversationStart;
+		public UnityEvent onConversationStart;
 
-		public global::UnityEngine.Events.UnityEvent<string> onDialogueNodeDisplayed;
+		public UnityEvent<string> onDialogueNodeDisplayed;
 
-		public global::UnityEngine.Events.UnityEvent<string> onDialogueChoiceChosen;
+		public UnityEvent<string> onDialogueChoiceChosen;
 
 		protected string overrideText;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueContainer> dialogueContainers;
+		[SerializeField]
+		private List<DialogueContainer> dialogueContainers;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.NodeLinkData> TempLinks;
+		private List<NodeLinkData> TempLinks;
 
 		private bool skipNextDialogueBehaviourEnd;
 
@@ -46,21 +53,25 @@ namespace ScheduleOne.Dialogue
 
 		public bool IsPlaying { get; private set; }
 
-		public global::ScheduleOne.NPCs.NPC NPC { get; protected set; }
+		public NPC NPC { get; protected set; }
 
-		private global::ScheduleOne.UI.DialogueCanvas canvas => null;
+		private DialogueCanvas canvas => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueModule> runtimeModules { get; private set; }
+		public List<DialogueModule> runtimeModules { get; private set; }
 
 		protected virtual void Awake()
 		{
 		}
 
-		public void InitializeDialogue(global::ScheduleOne.Dialogue.DialogueContainer container)
+		protected virtual void Start()
 		{
 		}
 
-		public void InitializeDialogue(global::ScheduleOne.Dialogue.DialogueContainer dialogueContainer, bool enableDialogueBehaviour = true, string entryNodeLabel = "ENTRY")
+		public void InitializeDialogue(DialogueContainer container)
+		{
+		}
+
+		public void InitializeDialogue(DialogueContainer dialogueContainer, bool enableDialogueBehaviour = true, string entryNodeLabel = "ENTRY")
 		{
 		}
 
@@ -89,16 +100,16 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		protected virtual global::ScheduleOne.Dialogue.DialogueNodeData FinalizeDialogueNode(global::ScheduleOne.Dialogue.DialogueNodeData data)
+		protected virtual DialogueNodeData FinalizeDialogueNode(DialogueNodeData data)
 		{
 			return null;
 		}
 
-		public void ShowNode(global::ScheduleOne.Dialogue.DialogueNodeData node)
+		public void ShowNode(DialogueNodeData node)
 		{
 		}
 
-		private void EvaluateBranch(global::ScheduleOne.Dialogue.BranchNodeData node)
+		private void EvaluateBranch(BranchNodeData node)
 		{
 		}
 
@@ -144,7 +155,7 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		protected virtual void ModifyChoiceList(string dialogueLabel, ref global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> existingChoices)
+		protected virtual void ModifyChoiceList(string dialogueLabel, ref List<DialogueChoiceData> existingChoices)
 		{
 		}
 
@@ -152,7 +163,7 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		private global::ScheduleOne.Dialogue.NodeLinkData GetLink(string baseChoiceOrOptionGUID)
+		private NodeLinkData GetLink(string baseChoiceOrOptionGUID)
 		{
 			return null;
 		}

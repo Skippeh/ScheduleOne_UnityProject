@@ -1,27 +1,32 @@
+using System;
+using EasyButtons;
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Casino
 {
-	public class PlayingCard : global::UnityEngine.MonoBehaviour
+	public class PlayingCard : MonoBehaviour
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class CardSprite
 		{
-			public global::ScheduleOne.Casino.PlayingCard.ECardSuit Suit;
+			public ECardSuit Suit;
 
-			public global::ScheduleOne.Casino.PlayingCard.ECardValue Value;
+			public ECardValue Value;
 
-			public global::UnityEngine.Sprite Sprite;
+			public Sprite Sprite;
 		}
 
 		public struct CardData
 		{
-			public global::ScheduleOne.Casino.PlayingCard.ECardSuit Suit;
+			public ECardSuit Suit;
 
-			public global::ScheduleOne.Casino.PlayingCard.ECardValue Value;
+			public ECardValue Value;
 
-			public CardData(global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value)
+			public CardData(ECardSuit suit, ECardValue value)
 			{
-				Suit = default(global::ScheduleOne.Casino.PlayingCard.ECardSuit);
-				Value = default(global::ScheduleOne.Casino.PlayingCard.ECardValue);
+				this.Suit = suit;
+				this.Value = value;
 			}
 		}
 
@@ -53,43 +58,43 @@ namespace ScheduleOne.Casino
 
 		public string CardID;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.SpriteRenderer CardSpriteRenderer;
+		[Header("References")]
+		public SpriteRenderer CardSpriteRenderer;
 
-		public global::ScheduleOne.Casino.PlayingCard.CardSprite[] CardSprites;
+		public CardSprite[] CardSprites;
 
-		public global::UnityEngine.Animation FlipAnimation;
+		public Animation FlipAnimation;
 
-		public global::UnityEngine.AnimationClip FlipFaceUpClip;
+		public AnimationClip FlipFaceUpClip;
 
-		public global::UnityEngine.AnimationClip FlipFaceDownClip;
+		public AnimationClip FlipFaceDownClip;
 
-		[global::UnityEngine.Header("Sound")]
-		public global::ScheduleOne.Audio.AudioSourceController FlipSound;
+		[Header("Sound")]
+		public AudioSourceController FlipSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController LandSound;
+		public AudioSourceController LandSound;
 
-		private global::UnityEngine.Coroutine moveRoutine;
+		private Coroutine moveRoutine;
 
-		private global::System.Tuple<global::UnityEngine.Vector3, global::UnityEngine.Quaternion> lastGlideTarget;
+		private Tuple<Vector3, Quaternion> lastGlideTarget;
 
 		public bool IsFaceUp { get; private set; }
 
-		public global::ScheduleOne.Casino.PlayingCard.ECardSuit Suit { get; private set; }
+		public ECardSuit Suit { get; private set; }
 
-		public global::ScheduleOne.Casino.PlayingCard.ECardValue Value { get; private set; }
+		public ECardValue Value { get; private set; }
 
-		public global::ScheduleOne.Casino.CardController CardController { get; private set; }
+		public CardController CardController { get; private set; }
 
 		private void OnValidate()
 		{
 		}
 
-		public void SetCardController(global::ScheduleOne.Casino.CardController cardController)
+		public void SetCardController(CardController cardController)
 		{
 		}
 
-		public void SetCard(global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue value, bool network = true)
+		public void SetCard(ECardSuit suit, ECardValue value, bool network = true)
 		{
 		}
 
@@ -101,16 +106,16 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		public void GlideTo(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, float duration = 0.5f, bool network = true)
+		public void GlideTo(Vector3 position, Quaternion rotation, float duration = 0.5f, bool network = true)
 		{
 		}
 
-		private global::ScheduleOne.Casino.PlayingCard.CardSprite GetCardSprite(global::ScheduleOne.Casino.PlayingCard.ECardSuit suit, global::ScheduleOne.Casino.PlayingCard.ECardValue val)
+		private CardSprite GetCardSprite(ECardSuit suit, ECardValue val)
 		{
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void VerifyCardSprites()
 		{
 		}

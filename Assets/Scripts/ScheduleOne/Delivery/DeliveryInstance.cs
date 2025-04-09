@@ -1,6 +1,11 @@
+using System;
+using FishNet.Serializing.Helping;
+using ScheduleOne.DevUtilities;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Delivery
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class DeliveryInstance
 	{
 		public string DeliveryID;
@@ -11,26 +16,26 @@ namespace ScheduleOne.Delivery
 
 		public int LoadingDockIndex;
 
-		public global::ScheduleOne.DevUtilities.StringIntPair[] Items;
+		public StringIntPair[] Items;
 
-		public global::ScheduleOne.Delivery.EDeliveryStatus Status;
+		public EDeliveryStatus Status;
 
 		public int TimeUntilArrival;
 
-		[global::System.NonSerialized]
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::UnityEngine.Events.UnityEvent onDeliveryCompleted;
+		[NonSerialized]
+		[CodegenExclude]
+		public UnityEvent onDeliveryCompleted;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.Delivery.DeliveryVehicle ActiveVehicle { get; private set; }
+		[CodegenExclude]
+		public DeliveryVehicle ActiveVehicle { get; private set; }
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.Property.Property Destination => null;
+		[CodegenExclude]
+		public ScheduleOne.Property.Property Destination => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.Delivery.LoadingDock LoadingDock => null;
+		[CodegenExclude]
+		public LoadingDock LoadingDock => null;
 
-		public DeliveryInstance(string deliveryID, string storeName, string destinationCode, int loadingDockIndex, global::ScheduleOne.DevUtilities.StringIntPair[] items, global::ScheduleOne.Delivery.EDeliveryStatus status, int timeUntilArrival)
+		public DeliveryInstance(string deliveryID, string storeName, string destinationCode, int loadingDockIndex, StringIntPair[] items, EDeliveryStatus status, int timeUntilArrival)
 		{
 		}
 
@@ -43,7 +48,7 @@ namespace ScheduleOne.Delivery
 			return 0;
 		}
 
-		public void SetStatus(global::ScheduleOne.Delivery.EDeliveryStatus status)
+		public void SetStatus(EDeliveryStatus status)
 		{
 		}
 

@@ -1,6 +1,19 @@
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.PlayerScripts;
+
 namespace ScheduleOne.Variables
 {
-	public class VariableDatabase : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Variables.VariableDatabase>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class VariableDatabase : NetworkSingleton<VariableDatabase>, IBaseSaveable, ISaveable
 	{
 		public enum EVariableType
 		{
@@ -8,17 +21,17 @@ namespace ScheduleOne.Variables
 			Number = 1
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Variables.BaseVariable> VariableList;
+		public List<BaseVariable> VariableList;
 
-		public global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Variables.BaseVariable> VariableDict;
+		public Dictionary<string, BaseVariable> VariableDict;
 
-		private global::System.Collections.Generic.List<string> playerVariables;
+		private List<string> playerVariables;
 
-		public global::ScheduleOne.Variables.VariableCreator[] Creators;
+		public VariableCreator[] Creators;
 
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition[] ItemsToTrackAcquire;
+		public StorableItemDefinition[] ItemsToTrackAcquire;
 
-		private global::ScheduleOne.Persistence.Loaders.VariablesLoader loader;
+		private VariablesLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVariables_002EVariableDatabaseAssembly_002DCSharp_002Edll_Excuted;
 
@@ -28,13 +41,13 @@ namespace ScheduleOne.Variables
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -50,30 +63,30 @@ namespace ScheduleOne.Variables
 		{
 		}
 
-		public void CreatePlayerVariables(global::ScheduleOne.PlayerScripts.Player owner)
+		public void CreatePlayerVariables(Player owner)
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		public void CreateVariable(string name, global::ScheduleOne.Variables.VariableDatabase.EVariableType type, string initialValue, bool persistent, global::ScheduleOne.Variables.EVariableMode mode, global::ScheduleOne.PlayerScripts.Player owner, global::ScheduleOne.Variables.EVariableReplicationMode replicationMode = global::ScheduleOne.Variables.EVariableReplicationMode.Networked)
+		public void CreateVariable(string name, EVariableType type, string initialValue, bool persistent, EVariableMode mode, Player owner, EVariableReplicationMode replicationMode = EVariableReplicationMode.Networked)
 		{
 		}
 
-		public void AddVariable(global::ScheduleOne.Variables.BaseVariable variable)
+		public void AddVariable(BaseVariable variable)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendValue(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendValue(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		public void ReceiveValue(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		[ObserversRpc]
+		[TargetRpc]
+		public void ReceiveValue(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
@@ -81,7 +94,7 @@ namespace ScheduleOne.Variables
 		{
 		}
 
-		public global::ScheduleOne.Variables.BaseVariable GetVariable(string variableName)
+		public BaseVariable GetVariable(string variableName)
 		{
 			return null;
 		}
@@ -91,7 +104,7 @@ namespace ScheduleOne.Variables
 			return default(T);
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void PrintAllVariables()
 		{
 		}
@@ -109,12 +122,12 @@ namespace ScheduleOne.Variables
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.VariableData data)
+		public void Load(VariableData data)
 		{
 		}
 
@@ -130,35 +143,35 @@ namespace ScheduleOne.Variables
 		{
 		}
 
-		private void RpcWriter___Server_SendValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		private void RpcWriter___Server_SendValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		public void RpcLogic___SendValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		public void RpcLogic___SendValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		private void RpcReader___Server_SendValue_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendValue_3895153758(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		private void RpcWriter___Observers_ReceiveValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		public void RpcLogic___ReceiveValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		public void RpcLogic___ReceiveValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveValue_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveValue_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveValue_3895153758(global::FishNet.Connection.NetworkConnection conn, string variableName, string value)
+		private void RpcWriter___Target_ReceiveValue_3895153758(NetworkConnection conn, string variableName, string value)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveValue_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveValue_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

@@ -1,10 +1,13 @@
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Product;
+
 namespace ScheduleOne.Equipping
 {
-	public class LiquidMeth_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class LiquidMeth_Equippable : Equippable_Viewmodel
 	{
-		public global::ScheduleOne.Product.LiquidMethVisuals Visuals;
+		public LiquidMethVisuals Visuals;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 	}

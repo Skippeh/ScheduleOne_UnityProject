@@ -1,17 +1,20 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.Skating
 {
-	public class SkateboardAudio : global::UnityEngine.MonoBehaviour
+	public class SkateboardAudio : MonoBehaviour
 	{
-		public global::ScheduleOne.Skating.Skateboard Board;
+		public Skateboard Board;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Audio.AudioSourceController JumpAudio;
+		[Header("References")]
+		public AudioSourceController JumpAudio;
 
-		public global::ScheduleOne.Audio.AudioSourceController LandAudio;
+		public AudioSourceController LandAudio;
 
-		public global::ScheduleOne.Audio.AudioSourceController RollingAudio;
+		public AudioSourceController RollingAudio;
 
-		public global::ScheduleOne.Audio.AudioSourceController WindAudio;
+		public AudioSourceController WindAudio;
 
 		private void Awake()
 		{

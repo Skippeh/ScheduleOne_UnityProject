@@ -1,13 +1,19 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.Packaging;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class IconGenerator : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.DevUtilities.IconGenerator>
+	public class IconGenerator : Singleton<IconGenerator>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class PackagingVisuals
 		{
 			public string PackagingID;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+			public FilledPackagingVisuals Visuals;
 		}
 
 		public int IconSize;
@@ -16,34 +22,34 @@ namespace ScheduleOne.DevUtilities
 
 		public bool ModifyLighting;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Registry Registry;
+		[Header("References")]
+		public Registry Registry;
 
-		public global::UnityEngine.Camera CameraPosition;
+		public Camera CameraPosition;
 
-		public global::UnityEngine.Transform MainContainer;
+		public Transform MainContainer;
 
-		public global::UnityEngine.Transform ItemContainer;
+		public Transform ItemContainer;
 
-		public global::UnityEngine.GameObject Canvas;
+		public GameObject Canvas;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.IconGenerator.PackagingVisuals> Visuals;
+		public List<PackagingVisuals> Visuals;
 
 		protected override void Awake()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void GenerateIcon()
 		{
 		}
 
-		public global::UnityEngine.Texture2D GeneratePackagingIcon(string packagingID, string productID)
+		public Texture2D GeneratePackagingIcon(string packagingID, string productID)
 		{
 			return null;
 		}
 
-		public global::UnityEngine.Texture2D GetTexture(global::UnityEngine.Transform model)
+		public Texture2D GetTexture(Transform model)
 		{
 			return null;
 		}

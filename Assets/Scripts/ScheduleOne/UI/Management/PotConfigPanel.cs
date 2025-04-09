@@ -1,19 +1,24 @@
+using System.Collections.Generic;
+using ScheduleOne.Management;
+using ScheduleOne.Management.UI;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class PotConfigPanel : global::ScheduleOne.Management.UI.ConfigPanel
+	public class PotConfigPanel : ConfigPanel
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.UI.Management.ItemFieldUI SeedUI;
+		[Header("References")]
+		public ItemFieldUI SeedUI;
 
-		public global::ScheduleOne.UI.Management.ItemFieldUI Additive1UI;
+		public ItemFieldUI Additive1UI;
 
-		public global::ScheduleOne.UI.Management.ItemFieldUI Additive2UI;
+		public ItemFieldUI Additive2UI;
 
-		public global::ScheduleOne.UI.Management.ItemFieldUI Additive3UI;
+		public ItemFieldUI Additive3UI;
 
-		public global::ScheduleOne.UI.Management.ObjectFieldUI DestinationUI;
+		public ObjectFieldUI DestinationUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		public override void Bind(List<EntityConfiguration> configs)
 		{
 		}
 	}

@@ -1,6 +1,8 @@
+using UnityEngine.Rendering;
+
 namespace UnityEngine.PostProcessing
 {
-	public sealed class MotionBlurComponent : global::UnityEngine.PostProcessing.PostProcessingComponentCommandBuffer<global::UnityEngine.PostProcessing.MotionBlurModel>
+	public sealed class MotionBlurComponent : PostProcessingComponentCommandBuffer<MotionBlurModel>
 	{
 		private static class Uniforms
 		{
@@ -72,9 +74,9 @@ namespace UnityEngine.PostProcessing
 
 		public class ReconstructionFilter
 		{
-			private global::UnityEngine.RenderTextureFormat m_VectorRTFormat;
+			private RenderTextureFormat m_VectorRTFormat;
 
-			private global::UnityEngine.RenderTextureFormat m_PackedRTFormat;
+			private RenderTextureFormat m_PackedRTFormat;
 
 			private void CheckTextureFormatSupport()
 			{
@@ -85,7 +87,7 @@ namespace UnityEngine.PostProcessing
 				return false;
 			}
 
-			public void ProcessImage(global::UnityEngine.PostProcessing.PostProcessingContext context, global::UnityEngine.Rendering.CommandBuffer cb, ref global::UnityEngine.PostProcessing.MotionBlurModel.Settings settings, global::UnityEngine.Rendering.RenderTargetIdentifier source, global::UnityEngine.Rendering.RenderTargetIdentifier destination, global::UnityEngine.Material material)
+			public void ProcessImage(PostProcessingContext context, CommandBuffer cb, ref MotionBlurModel.Settings settings, RenderTargetIdentifier source, RenderTargetIdentifier destination, Material material)
 			{
 			}
 		}
@@ -94,13 +96,13 @@ namespace UnityEngine.PostProcessing
 		{
 			private struct Frame
 			{
-				public global::UnityEngine.RenderTexture lumaTexture;
+				public RenderTexture lumaTexture;
 
-				public global::UnityEngine.RenderTexture chromaTexture;
+				public RenderTexture chromaTexture;
 
 				private float m_Time;
 
-				private global::UnityEngine.Rendering.RenderTargetIdentifier[] m_MRT;
+				private RenderTargetIdentifier[] m_MRT;
 
 				public float CalculateWeight(float strength, float currentTime)
 				{
@@ -111,20 +113,20 @@ namespace UnityEngine.PostProcessing
 				{
 				}
 
-				public void MakeRecord(global::UnityEngine.Rendering.CommandBuffer cb, global::UnityEngine.Rendering.RenderTargetIdentifier source, int width, int height, global::UnityEngine.Material material)
+				public void MakeRecord(CommandBuffer cb, RenderTargetIdentifier source, int width, int height, Material material)
 				{
 				}
 
-				public void MakeRecordRaw(global::UnityEngine.Rendering.CommandBuffer cb, global::UnityEngine.Rendering.RenderTargetIdentifier source, int width, int height, global::UnityEngine.RenderTextureFormat format)
+				public void MakeRecordRaw(CommandBuffer cb, RenderTargetIdentifier source, int width, int height, RenderTextureFormat format)
 				{
 				}
 			}
 
 			private bool m_UseCompression;
 
-			private global::UnityEngine.RenderTextureFormat m_RawTextureFormat;
+			private RenderTextureFormat m_RawTextureFormat;
 
-			private global::UnityEngine.PostProcessing.MotionBlurComponent.FrameBlendingFilter.Frame[] m_FrameList;
+			private Frame[] m_FrameList;
 
 			private int m_LastFrameCount;
 
@@ -132,11 +134,11 @@ namespace UnityEngine.PostProcessing
 			{
 			}
 
-			public void PushFrame(global::UnityEngine.Rendering.CommandBuffer cb, global::UnityEngine.Rendering.RenderTargetIdentifier source, int width, int height, global::UnityEngine.Material material)
+			public void PushFrame(CommandBuffer cb, RenderTargetIdentifier source, int width, int height, Material material)
 			{
 			}
 
-			public void BlendFrames(global::UnityEngine.Rendering.CommandBuffer cb, float strength, global::UnityEngine.Rendering.RenderTargetIdentifier source, global::UnityEngine.Rendering.RenderTargetIdentifier destination, global::UnityEngine.Material material)
+			public void BlendFrames(CommandBuffer cb, float strength, RenderTargetIdentifier source, RenderTargetIdentifier destination, Material material)
 			{
 			}
 
@@ -145,26 +147,26 @@ namespace UnityEngine.PostProcessing
 				return false;
 			}
 
-			private static global::UnityEngine.RenderTextureFormat GetPreferredRenderTextureFormat()
+			private static RenderTextureFormat GetPreferredRenderTextureFormat()
 			{
-				return default(global::UnityEngine.RenderTextureFormat);
+				return default(RenderTextureFormat);
 			}
 
-			private global::UnityEngine.PostProcessing.MotionBlurComponent.FrameBlendingFilter.Frame GetFrameRelative(int offset)
+			private Frame GetFrameRelative(int offset)
 			{
-				return default(global::UnityEngine.PostProcessing.MotionBlurComponent.FrameBlendingFilter.Frame);
+				return default(Frame);
 			}
 		}
 
-		private global::UnityEngine.PostProcessing.MotionBlurComponent.ReconstructionFilter m_ReconstructionFilter;
+		private ReconstructionFilter m_ReconstructionFilter;
 
-		private global::UnityEngine.PostProcessing.MotionBlurComponent.FrameBlendingFilter m_FrameBlendingFilter;
+		private FrameBlendingFilter m_FrameBlendingFilter;
 
 		private bool m_FirstFrame;
 
-		public global::UnityEngine.PostProcessing.MotionBlurComponent.ReconstructionFilter reconstructionFilter => null;
+		public ReconstructionFilter reconstructionFilter => null;
 
-		public global::UnityEngine.PostProcessing.MotionBlurComponent.FrameBlendingFilter frameBlendingFilter => null;
+		public FrameBlendingFilter frameBlendingFilter => null;
 
 		public override bool active => false;
 
@@ -177,21 +179,21 @@ namespace UnityEngine.PostProcessing
 		{
 		}
 
-		public override global::UnityEngine.DepthTextureMode GetCameraFlags()
+		public override DepthTextureMode GetCameraFlags()
 		{
-			return default(global::UnityEngine.DepthTextureMode);
+			return default(DepthTextureMode);
 		}
 
-		public override global::UnityEngine.Rendering.CameraEvent GetCameraEvent()
+		public override CameraEvent GetCameraEvent()
 		{
-			return default(global::UnityEngine.Rendering.CameraEvent);
+			return default(CameraEvent);
 		}
 
 		public override void OnEnable()
 		{
 		}
 
-		public override void PopulateCommandBuffer(global::UnityEngine.Rendering.CommandBuffer cb)
+		public override void PopulateCommandBuffer(CommandBuffer cb)
 		{
 		}
 

@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 namespace ScheduleOne.Management.Settings
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ItemSelectionSetting
 	{
-		public global::System.Collections.Generic.List<string> SelectedItems { get; protected set; }
+		public List<string> SelectedItems { get; protected set; }
 	}
 }

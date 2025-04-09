@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Joyce : global::ScheduleOne.NPCs.NPC
+	public class Joyce : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EJoyceAssembly_002DCSharp_002Edll_Excuted;
 

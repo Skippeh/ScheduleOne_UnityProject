@@ -1,6 +1,8 @@
+using UnityEngine.Rendering;
+
 namespace UnityEngine.PostProcessing
 {
-	public sealed class BuiltinDebugViewsComponent : global::UnityEngine.PostProcessing.PostProcessingComponentCommandBuffer<global::UnityEngine.PostProcessing.BuiltinDebugViewsModel>
+	public sealed class BuiltinDebugViewsComponent : PostProcessingComponentCommandBuffer<BuiltinDebugViewsModel>
 	{
 		private static class Uniforms
 		{
@@ -30,7 +32,7 @@ namespace UnityEngine.PostProcessing
 
 		private class ArrowArray
 		{
-			public global::UnityEngine.Mesh mesh { get; private set; }
+			public Mesh mesh { get; private set; }
 
 			public int columnCount { get; private set; }
 
@@ -47,18 +49,18 @@ namespace UnityEngine.PostProcessing
 
 		private const string k_ShaderString = "Hidden/Post FX/Builtin Debug Views";
 
-		private global::UnityEngine.PostProcessing.BuiltinDebugViewsComponent.ArrowArray m_Arrows;
+		private ArrowArray m_Arrows;
 
 		public override bool active => false;
 
-		public override global::UnityEngine.DepthTextureMode GetCameraFlags()
+		public override DepthTextureMode GetCameraFlags()
 		{
-			return default(global::UnityEngine.DepthTextureMode);
+			return default(DepthTextureMode);
 		}
 
-		public override global::UnityEngine.Rendering.CameraEvent GetCameraEvent()
+		public override CameraEvent GetCameraEvent()
 		{
-			return default(global::UnityEngine.Rendering.CameraEvent);
+			return default(CameraEvent);
 		}
 
 		public override string GetName()
@@ -66,19 +68,19 @@ namespace UnityEngine.PostProcessing
 			return null;
 		}
 
-		public override void PopulateCommandBuffer(global::UnityEngine.Rendering.CommandBuffer cb)
+		public override void PopulateCommandBuffer(CommandBuffer cb)
 		{
 		}
 
-		private void DepthPass(global::UnityEngine.Rendering.CommandBuffer cb)
+		private void DepthPass(CommandBuffer cb)
 		{
 		}
 
-		private void DepthNormalsPass(global::UnityEngine.Rendering.CommandBuffer cb)
+		private void DepthNormalsPass(CommandBuffer cb)
 		{
 		}
 
-		private void MotionVectorsPass(global::UnityEngine.Rendering.CommandBuffer cb)
+		private void MotionVectorsPass(CommandBuffer cb)
 		{
 		}
 

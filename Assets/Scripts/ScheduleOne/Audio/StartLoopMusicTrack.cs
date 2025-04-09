@@ -1,8 +1,8 @@
 namespace ScheduleOne.Audio
 {
-	public class StartLoopMusicTrack : global::ScheduleOne.Audio.MusicTrack
+	public class StartLoopMusicTrack : MusicTrack
 	{
-		public global::ScheduleOne.Audio.AudioSourceController LoopSound;
+		public AudioSourceController LoopSound;
 
 		protected override void Awake()
 		{

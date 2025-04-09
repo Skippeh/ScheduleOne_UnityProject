@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using ScheduleOne.Employees;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class BotanistConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class BotanistConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public ObjectField Bed;
 
-		public global::ScheduleOne.Management.ObjectField Supplies;
+		public ObjectField Supplies;
 
-		public global::ScheduleOne.Management.ObjectListField AssignedStations;
+		public ObjectListField AssignedStations;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> AssignedPots;
+		public List<Pot> AssignedPots;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.DryingRack> AssignedRacks;
+		public List<DryingRack> AssignedRacks;
 
-		public global::ScheduleOne.Employees.Botanist botanist { get; protected set; }
+		public Botanist botanist { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public BedItem bedItem { get; private set; }
 
-		public BotanistConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Botanist _botanist)
+		public BotanistConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Botanist _botanist)
 			: base(null, null)
 		{
 		}
@@ -25,13 +30,13 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private bool IsStationValid(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		private bool IsStationValid(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;
 		}
 
-		public void AssignedPotsChanged(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objects)
+		public void AssignedPotsChanged(List<BuildableItem> objects)
 		{
 		}
 
@@ -45,7 +50,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void BedChanged(BuildableItem newItem)
 		{
 		}
 	}

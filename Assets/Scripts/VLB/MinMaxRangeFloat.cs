@@ -1,12 +1,15 @@
+using System;
+using UnityEngine;
+
 namespace VLB
 {
-	[global::System.Serializable]
-	public struct MinMaxRangeFloat : global::System.IEquatable<global::VLB.MinMaxRangeFloat>
+	[Serializable]
+	public struct MinMaxRangeFloat : IEquatable<MinMaxRangeFloat>
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_MinValue;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_MaxValue;
 
 		public float minValue => 0f;
@@ -15,7 +18,7 @@ namespace VLB
 
 		public float randomValue => 0f;
 
-		public global::UnityEngine.Vector2 asVector2 => default(global::UnityEngine.Vector2);
+		public Vector2 asVector2 => default(Vector2);
 
 		public float GetLerpedValue(float lerp01)
 		{
@@ -24,8 +27,8 @@ namespace VLB
 
 		public MinMaxRangeFloat(float min, float max)
 		{
-			m_MinValue = 0f;
-			m_MaxValue = 0f;
+			m_MinValue = min;
+			m_MaxValue = max;
 		}
 
 		public override bool Equals(object obj)
@@ -33,7 +36,7 @@ namespace VLB
 			return false;
 		}
 
-		public bool Equals(global::VLB.MinMaxRangeFloat other)
+		public bool Equals(MinMaxRangeFloat other)
 		{
 			return false;
 		}
@@ -43,12 +46,12 @@ namespace VLB
 			return 0;
 		}
 
-		public static bool operator ==(global::VLB.MinMaxRangeFloat lhs, global::VLB.MinMaxRangeFloat rhs)
+		public static bool operator ==(MinMaxRangeFloat lhs, MinMaxRangeFloat rhs)
 		{
 			return false;
 		}
 
-		public static bool operator !=(global::VLB.MinMaxRangeFloat lhs, global::VLB.MinMaxRangeFloat rhs)
+		public static bool operator !=(MinMaxRangeFloat lhs, MinMaxRangeFloat rhs)
 		{
 			return false;
 		}

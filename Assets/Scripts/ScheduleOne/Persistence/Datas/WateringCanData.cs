@@ -1,7 +1,9 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class WateringCanData : global::ScheduleOne.Persistence.Datas.ItemData
+	[Serializable]
+	public class WateringCanData : ItemData
 	{
 		public float CurrentFillAmount;
 

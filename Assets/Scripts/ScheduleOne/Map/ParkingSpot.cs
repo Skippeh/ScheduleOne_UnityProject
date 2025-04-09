@@ -1,17 +1,20 @@
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class ParkingSpot : global::UnityEngine.MonoBehaviour
+	public class ParkingSpot : MonoBehaviour
 	{
-		private global::ScheduleOne.Map.ParkingLot ParentLot;
+		private ParkingLot ParentLot;
 
-		public global::UnityEngine.Transform AlignmentPoint;
+		public Transform AlignmentPoint;
 
-		public global::ScheduleOne.Vehicles.EParkingAlignment Alignment;
+		public EParkingAlignment Alignment;
 
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.Vehicles.LandVehicle OccupantVehicle_Readonly;
+		[SerializeField]
+		private LandVehicle OccupantVehicle_Readonly;
 
-		public global::ScheduleOne.Vehicles.LandVehicle OccupantVehicle { get; protected set; }
+		public LandVehicle OccupantVehicle { get; protected set; }
 
 		private void Awake()
 		{
@@ -21,7 +24,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public void SetOccupant(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void SetOccupant(LandVehicle vehicle)
 		{
 		}
 	}

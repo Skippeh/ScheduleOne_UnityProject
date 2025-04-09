@@ -1,24 +1,27 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class PotConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class PotConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ItemField Seed;
+		public ItemField Seed;
 
-		public global::ScheduleOne.Management.ItemField Additive1;
+		public ItemField Additive1;
 
-		public global::ScheduleOne.Management.ItemField Additive2;
+		public ItemField Additive2;
 
-		public global::ScheduleOne.Management.ItemField Additive3;
+		public ItemField Additive3;
 
-		public global::ScheduleOne.Management.NPCField AssignedBotanist;
+		public NPCField AssignedBotanist;
 
-		public global::ScheduleOne.Management.ObjectField Destination;
+		public ObjectField Destination;
 
-		public global::ScheduleOne.ObjectScripts.Pot Pot { get; protected set; }
+		public Pot Pot { get; protected set; }
 
-		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
+		public TransitRoute DestinationRoute { get; protected set; }
 
-		public PotConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.Pot pot)
+		public PotConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, Pot pot)
 			: base(null, null)
 		{
 		}
@@ -27,11 +30,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void DestinationChanged(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void DestinationChanged(BuildableItem item)
 		{
 		}
 
-		public bool DestinationFilter(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public bool DestinationFilter(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

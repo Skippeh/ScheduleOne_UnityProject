@@ -1,6 +1,6 @@
 namespace ScheduleOne.Persistence.Loaders
 {
-	public class WeedProductLoader : global::ScheduleOne.Persistence.Loaders.Loader
+	public class WeedProductLoader : Loader
 	{
 		public override void Load(string mainPath)
 		{

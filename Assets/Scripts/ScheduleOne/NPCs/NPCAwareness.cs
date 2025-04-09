@@ -1,33 +1,41 @@
+using ScheduleOne.NPCs.Responses;
+using ScheduleOne.Noise;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vision;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCAwareness : global::UnityEngine.MonoBehaviour
+	public class NPCAwareness : MonoBehaviour
 	{
 		public const float PLAYER_AIM_DETECTION_RANGE = 15f;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Vision.VisionCone VisionCone;
+		[Header("References")]
+		public VisionCone VisionCone;
 
-		public global::ScheduleOne.Noise.Listener Listener;
+		public Listener Listener;
 
-		public global::ScheduleOne.NPCs.Responses.NPCResponses Responses;
+		public NPCResponses Responses;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onNoticedGeneralCrime;
+		public UnityEvent<Player> onNoticedGeneralCrime;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onNoticedPettyCrime;
+		public UnityEvent<Player> onNoticedPettyCrime;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onNoticedDrugDealing;
+		public UnityEvent<Player> onNoticedDrugDealing;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onNoticedPlayerViolatingCurfew;
+		public UnityEvent<Player> onNoticedPlayerViolatingCurfew;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.PlayerScripts.Player> onNoticedSuspiciousPlayer;
+		public UnityEvent<Player> onNoticedSuspiciousPlayer;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Noise.NoiseEvent> onGunshotHeard;
+		public UnityEvent<NoiseEvent> onGunshotHeard;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Noise.NoiseEvent> onExplosionHeard;
+		public UnityEvent<NoiseEvent> onExplosionHeard;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Vehicles.LandVehicle> onHitByCar;
+		public UnityEvent<LandVehicle> onHitByCar;
 
-		private global::ScheduleOne.NPCs.NPC npc;
+		private NPC npc;
 
 		protected virtual void Awake()
 		{
@@ -37,15 +45,15 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public void VisionEvent(global::ScheduleOne.Vision.VisionEventReceipt vEvent)
+		public void VisionEvent(VisionEventReceipt vEvent)
 		{
 		}
 
-		public void NoiseEvent(global::ScheduleOne.Noise.NoiseEvent nEvent)
+		public void NoiseEvent(NoiseEvent nEvent)
 		{
 		}
 
-		public void HitByCar(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void HitByCar(LandVehicle vehicle)
 		{
 		}
 	}

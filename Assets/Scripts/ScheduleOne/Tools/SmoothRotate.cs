@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SmoothRotate : global::UnityEngine.MonoBehaviour
+	public class SmoothRotate : MonoBehaviour
 	{
 		public bool Active;
 
@@ -8,7 +10,7 @@ namespace ScheduleOne.Tools
 
 		public float Aceleration;
 
-		public global::UnityEngine.Vector3 Axis;
+		public Vector3 Axis;
 
 		private float currentSpeed;
 

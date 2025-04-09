@@ -1,19 +1,22 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class BaseKeyframe : global::System.IComparable, global::Funly.SkyStudio.IBaseKeyframe
+	[Serializable]
+	public class BaseKeyframe : IComparable, IBaseKeyframe
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		public string m_Id;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float m_Time;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.InterpolationCurve m_InterpolationCurve;
+		[SerializeField]
+		private InterpolationCurve m_InterpolationCurve;
 
-		[global::UnityEngine.SerializeField]
-		private global::Funly.SkyStudio.InterpolationDirection m_InterpolationDirection;
+		[SerializeField]
+		private InterpolationDirection m_InterpolationDirection;
 
 		public string id
 		{
@@ -37,22 +40,22 @@ namespace Funly.SkyStudio
 			}
 		}
 
-		public global::Funly.SkyStudio.InterpolationCurve interpolationCurve
+		public InterpolationCurve interpolationCurve
 		{
 			get
 			{
-				return default(global::Funly.SkyStudio.InterpolationCurve);
+				return default(InterpolationCurve);
 			}
 			set
 			{
 			}
 		}
 
-		public global::Funly.SkyStudio.InterpolationDirection interpolationDirection
+		public InterpolationDirection interpolationDirection
 		{
 			get
 			{
-				return default(global::Funly.SkyStudio.InterpolationDirection);
+				return default(InterpolationDirection);
 			}
 			set
 			{

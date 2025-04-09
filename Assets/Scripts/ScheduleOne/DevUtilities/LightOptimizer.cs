@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class LightOptimizer : global::UnityEngine.MonoBehaviour
+	public class LightOptimizer : MonoBehaviour
 	{
 		public bool LightsEnabled;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.BoxCollider[] activationZones;
+		[Header("References")]
+		[SerializeField]
+		protected BoxCollider[] activationZones;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform[] viewPoints;
+		[SerializeField]
+		protected Transform[] viewPoints;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float checkRange;
 
-		protected global::ScheduleOne.DevUtilities.OptimizedLight[] lights;
+		protected OptimizedLight[] lights;
 
 		public void Awake()
 		{
@@ -28,7 +30,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public bool PointInCameraView(global::UnityEngine.Vector3 point)
+		public bool PointInCameraView(Vector3 point)
 		{
 			return false;
 		}

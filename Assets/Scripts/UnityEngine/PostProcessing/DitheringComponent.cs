@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class DitheringComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.DitheringModel>
+	public sealed class DitheringComponent : PostProcessingComponentRenderTexture<DitheringModel>
 	{
 		private static class Uniforms
 		{
@@ -9,7 +9,7 @@ namespace UnityEngine.PostProcessing
 			internal static readonly int _DitheringCoords;
 		}
 
-		private global::UnityEngine.Texture2D[] noiseTextures;
+		private Texture2D[] noiseTextures;
 
 		private int textureIndex;
 
@@ -25,7 +25,7 @@ namespace UnityEngine.PostProcessing
 		{
 		}
 
-		public override void Prepare(global::UnityEngine.Material uberMaterial)
+		public override void Prepare(Material uberMaterial)
 		{
 		}
 	}

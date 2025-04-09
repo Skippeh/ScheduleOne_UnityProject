@@ -1,7 +1,9 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
-	public class AmbientOcclusionModel : global::UnityEngine.PostProcessing.PostProcessingModel
+	[Serializable]
+	public class AmbientOcclusionModel : PostProcessingModel
 	{
 		public enum SampleCount
 		{
@@ -11,43 +13,43 @@ namespace UnityEngine.PostProcessing
 			High = 16
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		public struct Settings
 		{
-			[global::UnityEngine.Range(0f, 4f)]
-			[global::UnityEngine.Tooltip("Degree of darkness produced by the effect.")]
+			[Range(0f, 4f)]
+			[Tooltip("Degree of darkness produced by the effect.")]
 			public float intensity;
 
-			[global::UnityEngine.PostProcessing.Min(0.0001f)]
-			[global::UnityEngine.Tooltip("Radius of sample points, which affects extent of darkened areas.")]
+			[Min(0.0001f)]
+			[Tooltip("Radius of sample points, which affects extent of darkened areas.")]
 			public float radius;
 
-			[global::UnityEngine.Tooltip("Number of sample points, which affects quality and performance.")]
-			public global::UnityEngine.PostProcessing.AmbientOcclusionModel.SampleCount sampleCount;
+			[Tooltip("Number of sample points, which affects quality and performance.")]
+			public SampleCount sampleCount;
 
-			[global::UnityEngine.Tooltip("Halves the resolution of the effect to increase performance at the cost of visual quality.")]
+			[Tooltip("Halves the resolution of the effect to increase performance at the cost of visual quality.")]
 			public bool downsampling;
 
-			[global::UnityEngine.Tooltip("Forces compatibility with Forward rendered objects when working with the Deferred rendering path.")]
+			[Tooltip("Forces compatibility with Forward rendered objects when working with the Deferred rendering path.")]
 			public bool forceForwardCompatibility;
 
-			[global::UnityEngine.Tooltip("Enables the ambient-only mode in that the effect only affects ambient lighting. This mode is only available with the Deferred rendering path and HDR rendering.")]
+			[Tooltip("Enables the ambient-only mode in that the effect only affects ambient lighting. This mode is only available with the Deferred rendering path and HDR rendering.")]
 			public bool ambientOnly;
 
-			[global::UnityEngine.Tooltip("Toggles the use of a higher precision depth texture with the forward rendering path (may impact performances). Has no effect with the deferred rendering path.")]
+			[Tooltip("Toggles the use of a higher precision depth texture with the forward rendering path (may impact performances). Has no effect with the deferred rendering path.")]
 			public bool highPrecision;
 
-			public static global::UnityEngine.PostProcessing.AmbientOcclusionModel.Settings defaultSettings => default(global::UnityEngine.PostProcessing.AmbientOcclusionModel.Settings);
+			public static Settings defaultSettings => default(Settings);
 		}
 
-		[global::UnityEngine.SerializeField]
-		private global::UnityEngine.PostProcessing.AmbientOcclusionModel.Settings m_Settings;
+		[SerializeField]
+		private Settings m_Settings;
 
-		public global::UnityEngine.PostProcessing.AmbientOcclusionModel.Settings settings
+		public Settings settings
 		{
 			get
 			{
-				return default(global::UnityEngine.PostProcessing.AmbientOcclusionModel.Settings);
+				return default(Settings);
 			}
 			set
 			{

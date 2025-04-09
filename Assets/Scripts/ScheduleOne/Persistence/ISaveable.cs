@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using ScheduleOne.Persistence.Loaders;
+
 namespace ScheduleOne.Persistence
 {
 	public interface ISaveable
@@ -6,13 +9,13 @@ namespace ScheduleOne.Persistence
 
 		string SaveFileName { get; }
 
-		global::ScheduleOne.Persistence.Loaders.Loader Loader { get; }
+		Loader Loader { get; }
 
 		bool ShouldSaveUnderFolder { get; }
 
-		global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		List<string> LocalExtraFiles { get; set; }
 
-		global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		List<string> LocalExtraFolders { get; set; }
 
 		bool HasChanged { get; set; }
 
@@ -39,7 +42,7 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}

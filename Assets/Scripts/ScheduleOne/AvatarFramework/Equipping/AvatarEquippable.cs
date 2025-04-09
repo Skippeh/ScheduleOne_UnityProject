@@ -1,6 +1,9 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Equipping
 {
-	public class AvatarEquippable : global::UnityEngine.MonoBehaviour
+	public class AvatarEquippable : MonoBehaviour
 	{
 		public enum ETriggerType
 		{
@@ -14,23 +17,23 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			Right = 1
 		}
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Transform AlignmentPoint;
+		[Header("Settings")]
+		public Transform AlignmentPoint;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float Suspiciousness;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable.EHand Hand;
+		public EHand Hand;
 
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable.ETriggerType TriggerType;
+		public ETriggerType TriggerType;
 
 		public string AnimationTrigger;
 
 		public string AssetPath;
 
-		protected global::ScheduleOne.AvatarFramework.Avatar avatar;
+		protected Avatar avatar;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RecalculateAssetPath()
 		{
 		}
@@ -39,7 +42,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
-		public virtual void Equip(global::ScheduleOne.AvatarFramework.Avatar _avatar)
+		public virtual void Equip(Avatar _avatar)
 		{
 		}
 

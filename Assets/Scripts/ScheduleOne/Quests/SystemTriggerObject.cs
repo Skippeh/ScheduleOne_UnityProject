@@ -1,10 +1,13 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Quests
 {
-	public class SystemTriggerObject : global::UnityEngine.MonoBehaviour
+	public class SystemTriggerObject : MonoBehaviour
 	{
-		public global::ScheduleOne.Quests.SystemTrigger SystemTrigger;
+		public SystemTrigger SystemTrigger;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Trigger()
 		{
 		}

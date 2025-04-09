@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Product
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class WeedAppearanceSettings
 	{
-		public global::UnityEngine.Color32 MainColor;
+		public Color32 MainColor;
 
-		public global::UnityEngine.Color32 SecondaryColor;
+		public Color32 SecondaryColor;
 
-		public global::UnityEngine.Color32 LeafColor;
+		public Color32 LeafColor;
 
-		public global::UnityEngine.Color32 StemColor;
+		public Color32 StemColor;
 
-		public WeedAppearanceSettings(global::UnityEngine.Color32 mainColor, global::UnityEngine.Color32 secondaryColor, global::UnityEngine.Color32 leafColor, global::UnityEngine.Color32 stemColor)
+		public WeedAppearanceSettings(Color32 mainColor, Color32 secondaryColor, Color32 leafColor, Color32 stemColor)
 		{
 		}
 

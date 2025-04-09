@@ -1,33 +1,42 @@
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Economy;
+using ScheduleOne.Quests;
+using ScheduleOne.UI.Relations;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class DealCompletionPopup : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.DealCompletionPopup>
+	public class DealCompletionPopup : Singleton<DealCompletionPopup>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		public global::UnityEngine.Animation Anim;
+		public Animation Anim;
 
-		public global::TMPro.TextMeshProUGUI Title;
+		public TextMeshProUGUI Title;
 
-		public global::TMPro.TextMeshProUGUI PaymentLabel;
+		public TextMeshProUGUI PaymentLabel;
 
-		public global::TMPro.TextMeshProUGUI SatisfactionValueLabel;
+		public TextMeshProUGUI SatisfactionValueLabel;
 
-		public global::ScheduleOne.UI.Relations.RelationCircle RelationCircle;
+		public RelationCircle RelationCircle;
 
-		public global::TMPro.TextMeshProUGUI RelationshipLabel;
+		public TextMeshProUGUI RelationshipLabel;
 
-		public global::UnityEngine.Gradient SatisfactionGradient;
+		public Gradient SatisfactionGradient;
 
-		public global::ScheduleOne.Audio.AudioSourceController SoundEffect;
+		public AudioSourceController SoundEffect;
 
-		public global::TMPro.TextMeshProUGUI[] BonusLabels;
+		public TextMeshProUGUI[] BonusLabels;
 
-		private global::UnityEngine.Coroutine routine;
+		private Coroutine routine;
 
 		public bool IsPlaying { get; protected set; }
 
@@ -35,7 +44,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void PlayPopup(global::ScheduleOne.Economy.Customer customer, float satisfaction, float originalRelationshipDelta, float basePayment, global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract.BonusPayment> bonuses)
+		public void PlayPopup(Customer customer, float satisfaction, float originalRelationshipDelta, float basePayment, List<Contract.BonusPayment> bonuses)
 		{
 		}
 

@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class Additive : global::UnityEngine.MonoBehaviour
+	public class Additive : MonoBehaviour
 	{
 		public string AdditiveName;
 
 		public string AssetPath;
 
-		[global::UnityEngine.Header("Plant effector settings")]
+		[Header("Plant effector settings")]
 		public float QualityChange;
 
 		public float YieldChange;

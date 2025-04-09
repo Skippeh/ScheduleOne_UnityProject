@@ -1,8 +1,10 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.Doors
 {
-	public class DealerStaticDoor : global::ScheduleOne.Doors.StaticDoor
+	public class DealerStaticDoor : StaticDoor
 	{
-		public global::ScheduleOne.Economy.Dealer Dealer;
+		public Dealer Dealer;
 
 		protected override bool IsKnockValid(out string message)
 		{

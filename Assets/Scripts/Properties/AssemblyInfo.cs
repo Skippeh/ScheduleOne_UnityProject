@@ -1,1 +1,3 @@
-[assembly: global::System.Reflection.AssemblyVersion("0.0.0.0")]
+using System.Reflection;
+
+[assembly: AssemblyVersion("0.0.0.0")]

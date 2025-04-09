@@ -1,6 +1,22 @@
+using System.Collections.Generic;
+using EasyButtons;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Economy;
+using ScheduleOne.GameTime;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.Quests
 {
-	public class QuestManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Quests.QuestManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class QuestManager : NetworkSingleton<QuestManager>, IBaseSaveable, ISaveable
 	{
 		public enum EQuestAction
 		{
@@ -11,27 +27,27 @@ namespace ScheduleOne.Quests
 			Cancel = 4
 		}
 
-		public const global::ScheduleOne.Quests.EQuestState DEFAULT_QUEST_STATE = global::ScheduleOne.Quests.EQuestState.Inactive;
+		public const EQuestState DEFAULT_QUEST_STATE = EQuestState.Inactive;
 
-		public global::ScheduleOne.Quests.Quest[] DefaultQuests;
+		public Quest[] DefaultQuests;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform QuestContainer;
+		[Header("References")]
+		public Transform QuestContainer;
 
-		public global::UnityEngine.Transform ContractContainer;
+		public Transform ContractContainer;
 
-		public global::ScheduleOne.Audio.AudioSourceController QuestCompleteSound;
+		public AudioSourceController QuestCompleteSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController QuestEntryCompleteSound;
+		public AudioSourceController QuestEntryCompleteSound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.Quests.Contract ContractPrefab;
+		[Header("Prefabs")]
+		public Contract ContractPrefab;
 
-		public global::ScheduleOne.Quests.DeaddropQuest DeaddropCollectionPrefab;
+		public DeaddropQuest DeaddropCollectionPrefab;
 
-		private global::ScheduleOne.Persistence.Loaders.QuestsLoader loader;
+		private QuestsLoader loader;
 
-		private global::System.Collections.Generic.List<string> writtenContractFiles;
+		private List<string> writtenContractFiles;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EQuests_002EQuestManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -41,13 +57,13 @@ namespace ScheduleOne.Quests
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -63,7 +79,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -71,72 +87,72 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendContractAccepted(global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, bool track, string guid)
+		[ServerRpc(RequireOwnership = false)]
+		public void SendContractAccepted(NetworkObject customer, ContractInfo contractData, bool track, string guid)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void CreateContract_Networked(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked, global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, global::ScheduleOne.GameTime.GameDateTime expiry, global::ScheduleOne.GameTime.GameDateTime acceptTime, global::FishNet.Object.NetworkObject dealerObj = null)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void CreateContract_Networked(NetworkConnection conn, string guid, bool tracked, NetworkObject customer, ContractInfo contractData, GameDateTime expiry, GameDateTime acceptTime, NetworkObject dealerObj = null)
 		{
 		}
 
-		public global::ScheduleOne.Quests.Contract CreateContract_Local(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid, bool tracked, global::FishNet.Object.NetworkObject customer, float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, bool expires, global::ScheduleOne.GameTime.GameDateTime expiry, int pickupScheduleIndex, global::ScheduleOne.GameTime.GameDateTime acceptTime, global::ScheduleOne.Economy.Dealer dealer = null)
+		public Contract CreateContract_Local(string title, string description, QuestEntryData[] entries, string guid, bool tracked, NetworkObject customer, float payment, ProductList products, string deliveryLocationGUID, QuestWindowConfig deliveryWindow, bool expires, GameDateTime expiry, int pickupScheduleIndex, GameDateTime acceptTime, Dealer dealer = null)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendQuestAction(string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendQuestAction(string guid, EQuestAction action)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveQuestAction(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void ReceiveQuestAction(NetworkConnection conn, string guid, EQuestAction action)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendQuestState(string guid, global::ScheduleOne.Quests.EQuestState state)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendQuestState(string guid, EQuestState state)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveQuestState(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.EQuestState state)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void ReceiveQuestState(NetworkConnection conn, string guid, EQuestState state)
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		private void SetQuestTracked(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked)
+		[TargetRpc]
+		private void SetQuestTracked(NetworkConnection conn, string guid, bool tracked)
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendQuestEntryState(string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SendQuestEntryState(string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void ReceiveQuestEntryState(global::FishNet.Connection.NetworkConnection conn, string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void ReceiveQuestEntryState(NetworkConnection conn, string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void PrintQuestStates()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void CreateDeaddropCollectionQuest(global::FishNet.Connection.NetworkConnection conn, string dropGUID, string guidString = "")
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void CreateDeaddropCollectionQuest(NetworkConnection conn, string dropGUID, string guidString = "")
 		{
 		}
 
-		public global::ScheduleOne.Quests.DeaddropQuest CreateDeaddropCollectionQuest(string dropGUID, string guidString = "")
+		public DeaddropQuest CreateDeaddropCollectionQuest(string dropGUID, string guidString = "")
 		{
 			return null;
 		}
@@ -154,7 +170,7 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}
@@ -175,163 +191,163 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		private void RpcWriter___Server_SendContractAccepted_1030683829(global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, bool track, string guid)
+		private void RpcWriter___Server_SendContractAccepted_1030683829(NetworkObject customer, ContractInfo contractData, bool track, string guid)
 		{
 		}
 
-		public void RpcLogic___SendContractAccepted_1030683829(global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, bool track, string guid)
+		public void RpcLogic___SendContractAccepted_1030683829(NetworkObject customer, ContractInfo contractData, bool track, string guid)
 		{
 		}
 
-		private void RpcReader___Server_SendContractAccepted_1030683829(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendContractAccepted_1030683829(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateContract_Networked_1113640585(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked, global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, global::ScheduleOne.GameTime.GameDateTime expiry, global::ScheduleOne.GameTime.GameDateTime acceptTime, global::FishNet.Object.NetworkObject dealerObj = null)
+		private void RpcWriter___Observers_CreateContract_Networked_1113640585(NetworkConnection conn, string guid, bool tracked, NetworkObject customer, ContractInfo contractData, GameDateTime expiry, GameDateTime acceptTime, NetworkObject dealerObj = null)
 		{
 		}
 
-		public void RpcLogic___CreateContract_Networked_1113640585(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked, global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, global::ScheduleOne.GameTime.GameDateTime expiry, global::ScheduleOne.GameTime.GameDateTime acceptTime, global::FishNet.Object.NetworkObject dealerObj = null)
+		public void RpcLogic___CreateContract_Networked_1113640585(NetworkConnection conn, string guid, bool tracked, NetworkObject customer, ContractInfo contractData, GameDateTime expiry, GameDateTime acceptTime, NetworkObject dealerObj = null)
 		{
 		}
 
-		private void RpcReader___Observers_CreateContract_Networked_1113640585(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateContract_Networked_1113640585(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_CreateContract_Networked_1113640585(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked, global::FishNet.Object.NetworkObject customer, global::ScheduleOne.Quests.ContractInfo contractData, global::ScheduleOne.GameTime.GameDateTime expiry, global::ScheduleOne.GameTime.GameDateTime acceptTime, global::FishNet.Object.NetworkObject dealerObj = null)
+		private void RpcWriter___Target_CreateContract_Networked_1113640585(NetworkConnection conn, string guid, bool tracked, NetworkObject customer, ContractInfo contractData, GameDateTime expiry, GameDateTime acceptTime, NetworkObject dealerObj = null)
 		{
 		}
 
-		private void RpcReader___Target_CreateContract_Networked_1113640585(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateContract_Networked_1113640585(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendQuestAction_2848227116(string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		private void RpcWriter___Server_SendQuestAction_2848227116(string guid, EQuestAction action)
 		{
 		}
 
-		public void RpcLogic___SendQuestAction_2848227116(string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		public void RpcLogic___SendQuestAction_2848227116(string guid, EQuestAction action)
 		{
 		}
 
-		private void RpcReader___Server_SendQuestAction_2848227116(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendQuestAction_2848227116(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveQuestAction_920727549(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		private void RpcWriter___Observers_ReceiveQuestAction_920727549(NetworkConnection conn, string guid, EQuestAction action)
 		{
 		}
 
-		private void RpcLogic___ReceiveQuestAction_920727549(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		private void RpcLogic___ReceiveQuestAction_920727549(NetworkConnection conn, string guid, EQuestAction action)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveQuestAction_920727549(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveQuestAction_920727549(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveQuestAction_920727549(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.QuestManager.EQuestAction action)
+		private void RpcWriter___Target_ReceiveQuestAction_920727549(NetworkConnection conn, string guid, EQuestAction action)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveQuestAction_920727549(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveQuestAction_920727549(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendQuestState_4117703421(string guid, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Server_SendQuestState_4117703421(string guid, EQuestState state)
 		{
 		}
 
-		public void RpcLogic___SendQuestState_4117703421(string guid, global::ScheduleOne.Quests.EQuestState state)
+		public void RpcLogic___SendQuestState_4117703421(string guid, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Server_SendQuestState_4117703421(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendQuestState_4117703421(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveQuestState_3887376304(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Observers_ReceiveQuestState_3887376304(NetworkConnection conn, string guid, EQuestState state)
 		{
 		}
 
-		private void RpcLogic___ReceiveQuestState_3887376304(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcLogic___ReceiveQuestState_3887376304(NetworkConnection conn, string guid, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveQuestState_3887376304(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveQuestState_3887376304(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveQuestState_3887376304(global::FishNet.Connection.NetworkConnection conn, string guid, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Target_ReceiveQuestState_3887376304(NetworkConnection conn, string guid, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveQuestState_3887376304(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveQuestState_3887376304(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetQuestTracked_619441887(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked)
+		private void RpcWriter___Target_SetQuestTracked_619441887(NetworkConnection conn, string guid, bool tracked)
 		{
 		}
 
-		private void RpcLogic___SetQuestTracked_619441887(global::FishNet.Connection.NetworkConnection conn, string guid, bool tracked)
+		private void RpcLogic___SetQuestTracked_619441887(NetworkConnection conn, string guid, bool tracked)
 		{
 		}
 
-		private void RpcReader___Target_SetQuestTracked_619441887(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetQuestTracked_619441887(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Server_SendQuestEntryState_375159588(string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Server_SendQuestEntryState_375159588(string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		public void RpcLogic___SendQuestEntryState_375159588(string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		public void RpcLogic___SendQuestEntryState_375159588(string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Server_SendQuestEntryState_375159588(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendQuestEntryState_375159588(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveQuestEntryState_311789429(global::FishNet.Connection.NetworkConnection conn, string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Observers_ReceiveQuestEntryState_311789429(NetworkConnection conn, string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		private void RpcLogic___ReceiveQuestEntryState_311789429(global::FishNet.Connection.NetworkConnection conn, string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcLogic___ReceiveQuestEntryState_311789429(NetworkConnection conn, string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveQuestEntryState_311789429(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveQuestEntryState_311789429(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_ReceiveQuestEntryState_311789429(global::FishNet.Connection.NetworkConnection conn, string guid, int entryIndex, global::ScheduleOne.Quests.EQuestState state)
+		private void RpcWriter___Target_ReceiveQuestEntryState_311789429(NetworkConnection conn, string guid, int entryIndex, EQuestState state)
 		{
 		}
 
-		private void RpcReader___Target_ReceiveQuestEntryState_311789429(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_ReceiveQuestEntryState_311789429(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_CreateDeaddropCollectionQuest_3895153758(global::FishNet.Connection.NetworkConnection conn, string dropGUID, string guidString = "")
+		private void RpcWriter___Observers_CreateDeaddropCollectionQuest_3895153758(NetworkConnection conn, string dropGUID, string guidString = "")
 		{
 		}
 
-		public void RpcLogic___CreateDeaddropCollectionQuest_3895153758(global::FishNet.Connection.NetworkConnection conn, string dropGUID, string guidString = "")
+		public void RpcLogic___CreateDeaddropCollectionQuest_3895153758(NetworkConnection conn, string dropGUID, string guidString = "")
 		{
 		}
 
-		private void RpcReader___Observers_CreateDeaddropCollectionQuest_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_CreateDeaddropCollectionQuest_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_CreateDeaddropCollectionQuest_3895153758(global::FishNet.Connection.NetworkConnection conn, string dropGUID, string guidString = "")
+		private void RpcWriter___Target_CreateDeaddropCollectionQuest_3895153758(NetworkConnection conn, string dropGUID, string guidString = "")
 		{
 		}
 
-		private void RpcReader___Target_CreateDeaddropCollectionQuest_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_CreateDeaddropCollectionQuest_3895153758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

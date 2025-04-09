@@ -1,26 +1,33 @@
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Map;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Loaders;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs
 {
-	public class NPCManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.NPCs.NPCManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class NPCManager : NetworkSingleton<NPCManager>, IBaseSaveable, ISaveable
 	{
-		public static global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> NPCRegistry;
+		public static List<NPC> NPCRegistry;
 
-		public global::UnityEngine.Transform[] NPCWarpPoints;
+		public Transform[] NPCWarpPoints;
 
-		public global::UnityEngine.Transform NPCContainer;
+		public Transform NPCContainer;
 
-		[global::UnityEngine.Header("Employee Prefabs")]
-		public global::UnityEngine.GameObject BotanistPrefab;
+		[Header("Employee Prefabs")]
+		public GameObject BotanistPrefab;
 
-		public global::UnityEngine.GameObject PackagerPrefab;
+		public GameObject PackagerPrefab;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::ScheduleOne.Map.NPCPoI NPCPoIPrefab;
+		[Header("Prefabs")]
+		public NPCPoI NPCPoIPrefab;
 
-		public global::ScheduleOne.Map.NPCPoI PotentialCustomerPoIPrefab;
+		public NPCPoI PotentialCustomerPoIPrefab;
 
-		public global::ScheduleOne.Map.NPCPoI PotentialDealerPoIPrefab;
+		public NPCPoI PotentialDealerPoIPrefab;
 
-		private global::ScheduleOne.Persistence.Loaders.NPCsLoader loader;
+		private NPCsLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -30,13 +37,13 @@ namespace ScheduleOne.NPCs
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -56,12 +63,12 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public static global::ScheduleOne.NPCs.NPC GetNPC(string id)
+		public static NPC GetNPC(string id)
 		{
 			return null;
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> GetNPCsInRegion(global::ScheduleOne.Map.EMapRegion region)
+		public static List<NPC> GetNPCsInRegion(EMapRegion region)
 		{
 			return null;
 		}
@@ -71,12 +78,12 @@ namespace ScheduleOne.NPCs
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> GetOrderedDistanceWarpPoints(global::UnityEngine.Vector3 origin)
+		public List<Transform> GetOrderedDistanceWarpPoints(Vector3 origin)
 		{
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public virtual List<string> WriteData(string parentFolderPath)
 		{
 			return null;
 		}

@@ -1,10 +1,13 @@
+using ScheduleOne.Product;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class MethVisuals : global::UnityEngine.MonoBehaviour
+	public class MethVisuals : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer[] Meshes;
+		public MeshRenderer[] Meshes;
 
-		public void Setup(global::ScheduleOne.Product.MethDefinition definition)
+		public void Setup(MethDefinition definition)
 		{
 		}
 	}

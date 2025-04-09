@@ -1,10 +1,12 @@
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.UI.Management
 {
-	public class MixingStationUIElement : global::ScheduleOne.UI.Management.WorldspaceUIElement
+	public class MixingStationUIElement : WorldspaceUIElement
 	{
-		public global::ScheduleOne.ObjectScripts.MixingStation AssignedStation { get; protected set; }
+		public MixingStation AssignedStation { get; protected set; }
 
-		public void Initialize(global::ScheduleOne.ObjectScripts.MixingStation station)
+		public void Initialize(MixingStation station)
 		{
 		}
 

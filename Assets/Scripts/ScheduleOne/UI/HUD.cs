@@ -1,9 +1,20 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.DevUtilities;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class HUD : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.HUD>
+	public class HUD : Singleton<HUD>
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFadeBlackOverlay_003Ed__43 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CFadeBlackOverlay_003Ed__43 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -11,7 +22,7 @@ namespace ScheduleOne.UI
 
 			public bool visible;
 
-			public global::ScheduleOne.UI.HUD _003C_003E4__this;
+			public HUD _003C_003E4__this;
 
 			public float fadeTime;
 
@@ -21,31 +32,31 @@ namespace ScheduleOne.UI
 
 			private float _003Ci_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CFadeBlackOverlay_003Ed__43(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -54,92 +65,92 @@ namespace ScheduleOne.UI
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		public global::UnityEngine.RectTransform canvasRect;
+		public RectTransform canvasRect;
 
-		public global::UnityEngine.UI.Image crosshair;
+		public Image crosshair;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Image blackOverlay;
+		[SerializeField]
+		protected Image blackOverlay;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Image radialIndicator;
+		[SerializeField]
+		protected Image radialIndicator;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.GraphicRaycaster raycaster;
+		[SerializeField]
+		protected GraphicRaycaster raycaster;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI topScreenText;
+		[SerializeField]
+		protected TextMeshProUGUI topScreenText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform topScreenText_Background;
+		[SerializeField]
+		protected RectTransform topScreenText_Background;
 
-		public global::UnityEngine.UI.Text fpsLabel;
+		public Text fpsLabel;
 
-		public global::UnityEngine.RectTransform cashSlotContainer;
+		public RectTransform cashSlotContainer;
 
-		public global::UnityEngine.RectTransform cashSlotUI;
+		public RectTransform cashSlotUI;
 
-		public global::UnityEngine.RectTransform onlineBalanceContainer;
+		public RectTransform onlineBalanceContainer;
 
-		public global::UnityEngine.RectTransform onlineBalanceSlotUI;
+		public RectTransform onlineBalanceSlotUI;
 
-		public global::UnityEngine.RectTransform managementSlotContainer;
+		public RectTransform managementSlotContainer;
 
-		public global::ScheduleOne.UI.ItemSlotUI managementSlotUI;
+		public ItemSlotUI managementSlotUI;
 
-		public global::UnityEngine.RectTransform HotbarContainer;
+		public RectTransform HotbarContainer;
 
-		public global::UnityEngine.RectTransform SlotContainer;
+		public RectTransform SlotContainer;
 
-		public global::ScheduleOne.UI.ItemSlotUI discardSlot;
+		public ItemSlotUI discardSlot;
 
-		public global::UnityEngine.UI.Image discardSlotFill;
+		public Image discardSlotFill;
 
-		public global::TMPro.TextMeshProUGUI selectedItemLabel;
+		public TextMeshProUGUI selectedItemLabel;
 
-		public global::UnityEngine.RectTransform QuestEntryContainer;
+		public RectTransform QuestEntryContainer;
 
-		public global::TMPro.TextMeshProUGUI QuestEntryTitle;
+		public TextMeshProUGUI QuestEntryTitle;
 
-		public global::ScheduleOne.UI.CrimeStatusUI CrimeStatusUI;
+		public CrimeStatusUI CrimeStatusUI;
 
-		public global::ScheduleOne.UI.BalanceDisplay OnlineBalanceDisplay;
+		public BalanceDisplay OnlineBalanceDisplay;
 
-		public global::ScheduleOne.UI.BalanceDisplay SafeBalanceDisplay;
+		public BalanceDisplay SafeBalanceDisplay;
 
-		public global::ScheduleOne.UI.CrosshairText CrosshairText;
+		public CrosshairText CrosshairText;
 
-		public global::UnityEngine.RectTransform UnreadMessagesPrompt;
+		public RectTransform UnreadMessagesPrompt;
 
-		public global::TMPro.TextMeshProUGUI SleepPrompt;
+		public TextMeshProUGUI SleepPrompt;
 
-		public global::TMPro.TextMeshProUGUI CurfewPrompt;
+		public TextMeshProUGUI CurfewPrompt;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.Gradient RedGreenGradient;
+		[Header("Settings")]
+		public Gradient RedGreenGradient;
 
 		private int SampleSize;
 
-		private global::System.Collections.Generic.List<float> _previousFPS;
+		private List<float> _previousFPS;
 
-		private global::UnityEngine.EventSystems.EventSystem eventSystem;
+		private EventSystem eventSystem;
 
-		private global::UnityEngine.Coroutine blackOverlayFade;
+		private Coroutine blackOverlayFade;
 
 		private bool radialIndicatorSetThisFrame;
 
@@ -180,8 +191,8 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.HUD._003CFadeBlackOverlay_003Ed__43))]
-		protected global::System.Collections.IEnumerator FadeBlackOverlay(bool visible, float fadeTime)
+		[IteratorStateMachine(typeof(_003CFadeBlackOverlay_003Ed__43))]
+		protected IEnumerator FadeBlackOverlay(bool visible, float fadeTime)
 		{
 			return null;
 		}

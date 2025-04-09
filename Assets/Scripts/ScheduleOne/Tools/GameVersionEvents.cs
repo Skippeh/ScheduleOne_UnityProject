@@ -1,10 +1,13 @@
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class GameVersionEvents : global::UnityEngine.MonoBehaviour
+	public class GameVersionEvents : MonoBehaviour
 	{
-		public global::UnityEngine.Events.UnityEvent onFullGame;
+		public UnityEvent onFullGame;
 
-		public global::UnityEngine.Events.UnityEvent onDemoGame;
+		public UnityEvent onDemoGame;
 
 		private void Start()
 		{

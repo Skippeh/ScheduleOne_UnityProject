@@ -1,15 +1,18 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class FootprintMatchData
 	{
 		public string TileOwnerGUID;
 
 		public int TileIndex;
 
-		public global::UnityEngine.Vector2 FootprintCoordinate;
+		public Vector2 FootprintCoordinate;
 
-		public FootprintMatchData(string tileOwnerGUID, int tileIndex, global::UnityEngine.Vector2 footprintCoordinate)
+		public FootprintMatchData(string tileOwnerGUID, int tileIndex, Vector2 footprintCoordinate)
 		{
 		}
 	}

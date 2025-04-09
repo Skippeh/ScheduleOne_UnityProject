@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class NPCFieldData
 	{
 		public string NPCGuid;

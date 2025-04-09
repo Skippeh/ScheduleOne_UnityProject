@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace ScheduleOne.AvatarFramework.Impostors
 {
-	public class AvatarImpostor : global::UnityEngine.MonoBehaviour
+	public class AvatarImpostor : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer meshRenderer;
+		public MeshRenderer meshRenderer;
 
-		private global::UnityEngine.Transform cachedCamera;
+		private Transform cachedCamera;
 
 		public bool HasTexture { get; private set; }
 
-		private global::UnityEngine.Transform Camera => null;
+		private Transform Camera => null;
 
-		public void SetAvatarSettings(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void SetAvatarSettings(AvatarSettings settings)
 		{
 		}
 

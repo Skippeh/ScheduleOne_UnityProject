@@ -1,33 +1,41 @@
+using System.Collections.Generic;
+using ScheduleOne.ConstructableScripts;
+using ScheduleOne.Construction.Features;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.Construction.Features;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Construction
 {
-	public class FeaturesManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Construction.FeaturesManager>
+	public class FeaturesManager : Singleton<FeaturesManager>
 	{
-		public global::ScheduleOne.ConstructableScripts.Constructable activeConstructable;
+		public Constructable activeConstructable;
 
-		public global::ScheduleOne.Construction.Features.Feature selectedFeature;
+		public Feature selectedFeature;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform featureIconsContainer;
+		[Header("References")]
+		[SerializeField]
+		protected RectTransform featureIconsContainer;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform featureMenuRect;
+		[SerializeField]
+		protected RectTransform featureMenuRect;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI featureMenuTitleLabel;
+		[SerializeField]
+		protected TextMeshProUGUI featureMenuTitleLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform featureInterfaceContainer;
+		[SerializeField]
+		protected RectTransform featureInterfaceContainer;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject featureIconPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject featureIconPrefab;
 
-		private global::ScheduleOne.UI.Construction.Features.FI_Base currentFeatureInterface;
+		private FI_Base currentFeatureInterface;
 
 		private bool roofSetInvisible;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.FeatureIcon> featureIcons;
+		protected List<FeatureIcon> featureIcons;
 
 		public bool isActive => false;
 
@@ -39,7 +47,7 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		public void OpenFeatureMenu(global::ScheduleOne.Construction.Features.Feature feature)
+		public void OpenFeatureMenu(Feature feature)
 		{
 		}
 
@@ -51,7 +59,7 @@ namespace ScheduleOne.UI.Construction
 		{
 		}
 
-		public void Activate(global::ScheduleOne.ConstructableScripts.Constructable constructable)
+		public void Activate(Constructable constructable)
 		{
 		}
 

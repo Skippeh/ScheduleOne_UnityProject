@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class ScheduleBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class ScheduleBehaviour : Behaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.NPCs.NPCScheduleManager schedule;
+		[Header("References")]
+		public NPCScheduleManager schedule;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EScheduleBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

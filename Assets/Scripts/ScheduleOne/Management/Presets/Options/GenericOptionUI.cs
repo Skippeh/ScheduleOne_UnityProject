@@ -1,11 +1,15 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.Management.Presets.Options
 {
-	public class GenericOptionUI : global::UnityEngine.MonoBehaviour
+	public class GenericOptionUI : MonoBehaviour
 	{
-		public global::UnityEngine.UI.Button Button;
+		public Button Button;
 
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		public TextMeshProUGUI NameLabel;
 
-		public global::TMPro.TextMeshProUGUI ValueLabel;
+		public TextMeshProUGUI ValueLabel;
 	}
 }

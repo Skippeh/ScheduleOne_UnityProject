@@ -1,36 +1,40 @@
+using System.Collections.Generic;
+using ScheduleOne.Storage;
+using UnityEngine;
+
 namespace ScheduleOne.Tiles
 {
-	public class TileDetector : global::UnityEngine.MonoBehaviour
+	public class TileDetector : MonoBehaviour
 	{
 		public float detectionRadius;
 
-		public global::ScheduleOne.Tiles.ETileDetectionMode tileDetectionMode;
+		public ETileDetectionMode tileDetectionMode;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> intersectedTiles;
+		public List<Tile> intersectedTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> intersectedOutdoorTiles;
+		public List<Tile> intersectedOutdoorTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> intersectedIndoorTiles;
+		public List<Tile> intersectedIndoorTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> intersectedStorageTiles;
+		public List<StorageTile> intersectedStorageTiles;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.ProceduralTile> intersectedProceduralTiles;
+		public List<ProceduralTile> intersectedProceduralTiles;
 
 		public virtual void CheckIntersections(bool sort = true)
 		{
 		}
 
-		public global::System.Collections.Generic.List<T> OrderList<T>(global::System.Collections.Generic.List<T> list) where T : global::UnityEngine.MonoBehaviour
+		public List<T> OrderList<T>(List<T> list) where T : MonoBehaviour
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Tiles.Tile GetClosestTile()
+		public Tile GetClosestTile()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Tiles.ProceduralTile GetClosestProceduralTile()
+		public ProceduralTile GetClosestProceduralTile()
 		{
 			return null;
 		}

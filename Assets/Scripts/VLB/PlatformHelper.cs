@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace VLB
 {
 	public class PlatformHelper
@@ -7,7 +9,7 @@ namespace VLB
 			return null;
 		}
 
-		private static string GetPlatformSuffix(global::UnityEngine.RuntimePlatform platform)
+		private static string GetPlatformSuffix(RuntimePlatform platform)
 		{
 			return null;
 		}

@@ -1,6 +1,25 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Persistence;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Persistence.Loaders;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.Money
 {
-	public class MoneyManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Money.MoneyManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
+	public class MoneyManager : NetworkSingleton<MoneyManager>, IBaseSaveable, ISaveable
 	{
 		public class FloatContainer
 		{
@@ -11,16 +30,16 @@ namespace ScheduleOne.Money
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CShowCashChange_003Ed__58 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CShowCashChange_003Ed__58 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::UnityEngine.RectTransform changeDisplay;
+			public RectTransform changeDisplay;
 
-			private global::TMPro.TextMeshProUGUI _003Ctext_003E5__2;
+			private TextMeshProUGUI _003Ctext_003E5__2;
 
 			private float _003CstartVert_003E5__3;
 
@@ -30,31 +49,31 @@ namespace ScheduleOne.Money
 
 			private float _003Ci_003E5__6;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CShowCashChange_003Ed__58(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -63,28 +82,28 @@ namespace ScheduleOne.Money
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CShowOnlineBalanceChange_003Ed__55 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CShowOnlineBalanceChange_003Ed__55 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::UnityEngine.RectTransform changeDisplay;
+			public RectTransform changeDisplay;
 
-			private global::TMPro.TextMeshProUGUI _003Ctext_003E5__2;
+			private TextMeshProUGUI _003Ctext_003E5__2;
 
 			private float _003CstartVert_003E5__3;
 
@@ -94,31 +113,31 @@ namespace ScheduleOne.Money
 
 			private float _003Ci_003E5__6;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CShowOnlineBalanceChange_003Ed__55(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -127,14 +146,14 @@ namespace ScheduleOne.Money
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -145,32 +164,32 @@ namespace ScheduleOne.Money
 
 		public const string ONLINE_BALANCE_COLOR = "#4CBFFF";
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Money.Transaction> ledger;
+		public List<Transaction> ledger;
 
-		[global::FishNet.Object.Synchronizing.SyncVar(WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
+		[SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
 		public float onlineBalance;
 
-		[global::FishNet.Object.Synchronizing.SyncVar(WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
+		[SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
 		public float lifetimeEarnings;
 
-		public global::ScheduleOne.Audio.AudioSourceController CashSound;
+		public AudioSourceController CashSound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject moneyChangePrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject moneyChangePrefab;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject cashChangePrefab;
+		[SerializeField]
+		protected GameObject cashChangePrefab;
 
-		public global::UnityEngine.Sprite LaunderingNotificationIcon;
+		public Sprite LaunderingNotificationIcon;
 
-		public global::System.Action<global::ScheduleOne.Money.MoneyManager.FloatContainer> onNetworthCalculation;
+		public Action<FloatContainer> onNetworthCalculation;
 
-		private global::ScheduleOne.Persistence.Loaders.MoneyLoader loader;
+		private MoneyLoader loader;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___onlineBalance;
+		public SyncVar<float> syncVar___onlineBalance;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___lifetimeEarnings;
+		public SyncVar<float> syncVar___lifetimeEarnings;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EMoney_002EMoneyManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -182,19 +201,19 @@ namespace ScheduleOne.Money
 
 		public float cashBalance => 0f;
 
-		protected global::ScheduleOne.ItemFramework.CashInstance cashInstance => null;
+		protected CashInstance cashInstance => null;
 
 		public string SaveFolderName => null;
 
 		public string SaveFileName => null;
 
-		public global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
+		public Loader Loader => null;
 
 		public bool ShouldSaveUnderFolder => false;
 
-		public global::System.Collections.Generic.List<string> LocalExtraFiles { get; set; }
+		public List<string> LocalExtraFiles { get; set; }
 
-		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
+		public List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
 
@@ -256,28 +275,28 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		public global::ScheduleOne.ItemFramework.CashInstance GetCashInstance(float amount)
+		public CashInstance GetCashInstance(float amount)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void CreateOnlineTransaction(string _transaction_Name, float _unit_Amount, float _quantity, string _transaction_Note)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[ObserversRpc]
 		private void ReceiveOnlineTransaction(string _transaction_Name, float _unit_Amount, float _quantity, string _transaction_Note)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowOnlineBalanceChange_003Ed__55))]
-		protected global::System.Collections.IEnumerator ShowOnlineBalanceChange(global::UnityEngine.RectTransform changeDisplay)
+		[IteratorStateMachine(typeof(_003CShowOnlineBalanceChange_003Ed__55))]
+		protected IEnumerator ShowOnlineBalanceChange(RectTransform changeDisplay)
 		{
 			return null;
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[ServerRpc(RequireOwnership = false)]
 		public void ChangeLifetimeEarnings(float change)
 		{
 		}
@@ -286,8 +305,8 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowCashChange_003Ed__58))]
-		protected global::System.Collections.IEnumerator ShowCashChange(global::UnityEngine.RectTransform changeDisplay)
+		[IteratorStateMachine(typeof(_003CShowCashChange_003Ed__58))]
+		protected IEnumerator ShowCashChange(RectTransform changeDisplay)
 		{
 			return null;
 		}
@@ -302,7 +321,7 @@ namespace ScheduleOne.Money
 			return null;
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.MoneyData data)
+		public void Load(MoneyData data)
 		{
 		}
 
@@ -335,7 +354,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Server_CreateOnlineTransaction_1419830531(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CreateOnlineTransaction_1419830531(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
@@ -347,7 +366,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveOnlineTransaction_1419830531(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ReceiveOnlineTransaction_1419830531(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -359,11 +378,11 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		private void RpcReader___Server_ChangeLifetimeEarnings_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ChangeLifetimeEarnings_431000436(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002EMoney_002EMoneyManager(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002EMoney_002EMoneyManager(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

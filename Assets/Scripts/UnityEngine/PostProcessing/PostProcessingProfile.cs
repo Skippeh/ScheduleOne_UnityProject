@@ -1,35 +1,35 @@
 namespace UnityEngine.PostProcessing
 {
-	public class PostProcessingProfile : global::UnityEngine.ScriptableObject
+	public class PostProcessingProfile : ScriptableObject
 	{
-		public global::UnityEngine.PostProcessing.BuiltinDebugViewsModel debugViews;
+		public BuiltinDebugViewsModel debugViews;
 
-		public global::UnityEngine.PostProcessing.FogModel fog;
+		public FogModel fog;
 
-		public global::UnityEngine.PostProcessing.AntialiasingModel antialiasing;
+		public AntialiasingModel antialiasing;
 
-		public global::UnityEngine.PostProcessing.AmbientOcclusionModel ambientOcclusion;
+		public AmbientOcclusionModel ambientOcclusion;
 
-		public global::UnityEngine.PostProcessing.ScreenSpaceReflectionModel screenSpaceReflection;
+		public ScreenSpaceReflectionModel screenSpaceReflection;
 
-		public global::UnityEngine.PostProcessing.DepthOfFieldModel depthOfField;
+		public DepthOfFieldModel depthOfField;
 
-		public global::UnityEngine.PostProcessing.MotionBlurModel motionBlur;
+		public MotionBlurModel motionBlur;
 
-		public global::UnityEngine.PostProcessing.EyeAdaptationModel eyeAdaptation;
+		public EyeAdaptationModel eyeAdaptation;
 
-		public global::UnityEngine.PostProcessing.BloomModel bloom;
+		public BloomModel bloom;
 
-		public global::UnityEngine.PostProcessing.ColorGradingModel colorGrading;
+		public ColorGradingModel colorGrading;
 
-		public global::UnityEngine.PostProcessing.UserLutModel userLut;
+		public UserLutModel userLut;
 
-		public global::UnityEngine.PostProcessing.ChromaticAberrationModel chromaticAberration;
+		public ChromaticAberrationModel chromaticAberration;
 
-		public global::UnityEngine.PostProcessing.GrainModel grain;
+		public GrainModel grain;
 
-		public global::UnityEngine.PostProcessing.VignetteModel vignette;
+		public VignetteModel vignette;
 
-		public global::UnityEngine.PostProcessing.DitheringModel dithering;
+		public DitheringModel dithering;
 	}
 }

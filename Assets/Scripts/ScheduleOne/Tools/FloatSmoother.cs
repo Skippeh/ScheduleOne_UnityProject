@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class FloatSmoother
 	{
 		public class Override
@@ -12,13 +16,13 @@ namespace ScheduleOne.Tools
 			public string Label;
 		}
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float DefaultValue;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private float SmoothingSpeed;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Tools.FloatSmoother.Override> overrides;
+		private List<Override> overrides;
 
 		public float CurrentValue { get; private set; }
 

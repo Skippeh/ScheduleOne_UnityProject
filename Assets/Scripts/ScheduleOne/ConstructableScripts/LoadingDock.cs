@@ -1,44 +1,48 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.ConstructableScripts
 {
-	public class LoadingDock : global::ScheduleOne.ConstructableScripts.Constructable_GridBased
+	public class LoadingDock : Constructable_GridBased
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.DevUtilities.VehicleDetector vehicleDetector;
+		[Header("References")]
+		[SerializeField]
+		protected VehicleDetector vehicleDetector;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer[] redLightMeshes;
+		[SerializeField]
+		protected MeshRenderer[] redLightMeshes;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer[] greenLightMeshes;
+		[SerializeField]
+		protected MeshRenderer[] greenLightMeshes;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform[] sideWalls;
+		[SerializeField]
+		protected Transform[] sideWalls;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Animation gateAnim;
+		[SerializeField]
+		protected Animation gateAnim;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Collider reservationBlocker;
+		[SerializeField]
+		protected Collider reservationBlocker;
 
-		public global::UnityEngine.Transform vehiclePosition;
+		public Transform vehiclePosition;
 
-		[global::UnityEngine.Header("Materials")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redLightMat_On;
+		[Header("Materials")]
+		[SerializeField]
+		protected Material redLightMat_On;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redLightMat_Off;
+		[SerializeField]
+		protected Material redLightMat_Off;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenLightMat_On;
+		[SerializeField]
+		protected Material greenLightMat_On;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenLightMat_Off;
+		[SerializeField]
+		protected Material greenLightMat_Off;
 
 		private bool wallsOpen;
 
-		private global::ScheduleOne.Vehicles.LandVehicle currentOccupant;
+		private LandVehicle currentOccupant;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstructableScripts_002ELoadingDockAssembly_002DCSharp_002Edll_Excuted;
 
@@ -46,7 +50,7 @@ namespace ScheduleOne.ConstructableScripts
 
 		public bool isOccupied => false;
 
-		public global::ScheduleOne.Vehicles.LandVehicle reservant { get; protected set; }
+		public LandVehicle reservant { get; protected set; }
 
 		private void Start()
 		{
@@ -70,7 +74,7 @@ namespace ScheduleOne.ConstructableScripts
 		{
 		}
 
-		public void SetReservant(global::ScheduleOne.Vehicles.LandVehicle _res)
+		public void SetReservant(LandVehicle _res)
 		{
 		}
 

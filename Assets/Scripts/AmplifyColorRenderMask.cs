@@ -1,21 +1,25 @@
-[global::UnityEngine.ExecuteInEditMode]
-[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Camera))]
-[global::UnityEngine.RequireComponent(typeof(AmplifyColorEffect))]
-[global::UnityEngine.AddComponentMenu("Image Effects/Amplify Color Render Mask")]
-public class AmplifyColorRenderMask : global::UnityEngine.MonoBehaviour
+using AmplifyColor;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+[ExecuteInEditMode]
+[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(AmplifyColorEffect))]
+[AddComponentMenu("Image Effects/Amplify Color Render Mask")]
+public class AmplifyColorRenderMask : MonoBehaviour
 {
-	[global::UnityEngine.Serialization.FormerlySerializedAs("clearColor")]
-	public global::UnityEngine.Color ClearColor;
+	[FormerlySerializedAs("clearColor")]
+	public Color ClearColor;
 
-	[global::UnityEngine.Serialization.FormerlySerializedAs("renderLayers")]
-	public global::AmplifyColor.RenderLayer[] RenderLayers;
+	[FormerlySerializedAs("renderLayers")]
+	public RenderLayer[] RenderLayers;
 
-	[global::UnityEngine.Serialization.FormerlySerializedAs("debug")]
+	[FormerlySerializedAs("debug")]
 	public bool DebugMask;
 
-	private global::UnityEngine.Camera referenceCamera;
+	private Camera referenceCamera;
 
-	private global::UnityEngine.Camera maskCamera;
+	private Camera maskCamera;
 
 	private AmplifyColorEffect colorEffect;
 
@@ -23,9 +27,9 @@ public class AmplifyColorRenderMask : global::UnityEngine.MonoBehaviour
 
 	private int height;
 
-	private global::UnityEngine.RenderTexture maskTexture;
+	private RenderTexture maskTexture;
 
-	private global::UnityEngine.Shader colorMaskShader;
+	private Shader colorMaskShader;
 
 	private bool singlePassStereo;
 

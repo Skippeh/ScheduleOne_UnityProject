@@ -1,6 +1,9 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	public class MessageBubble : global::UnityEngine.MonoBehaviour
+	public class MessageBubble : MonoBehaviour
 	{
 		public enum Alignment
 		{
@@ -9,10 +12,10 @@ namespace ScheduleOne.UI.Phone.Messages
 			Right = 2
 		}
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string text;
 
-		public global::ScheduleOne.UI.Phone.Messages.MessageBubble.Alignment alignment;
+		public Alignment alignment;
 
 		public bool showTriangle;
 
@@ -28,38 +31,38 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		private bool triangleShown;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform container;
+		[Header("References")]
+		public RectTransform container;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Image bubble;
+		[SerializeField]
+		protected Image bubble;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Text content;
+		[SerializeField]
+		protected Text content;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Image triangle_Left;
+		[SerializeField]
+		protected Image triangle_Left;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Image triangle_Right;
+		[SerializeField]
+		protected Image triangle_Right;
 
-		public global::UnityEngine.UI.Button button;
+		public Button button;
 
 		public float height;
 
 		public float spacingAbove;
 
-		public static global::UnityEngine.Color32 backgroundColor_Left;
+		public static Color32 backgroundColor_Left;
 
-		public static global::UnityEngine.Color32 textColor_Left;
+		public static Color32 textColor_Left;
 
-		public static global::UnityEngine.Color32 backgroundColor_Right;
+		public static Color32 backgroundColor_Right;
 
-		public static global::UnityEngine.Color32 textColor_Right;
+		public static Color32 textColor_Right;
 
 		public static float baseBubbleSpacing;
 
-		public void SetupBubble(string _text, global::ScheduleOne.UI.Phone.Messages.MessageBubble.Alignment _alignment, bool alignCenter = false)
+		public void SetupBubble(string _text, Alignment _alignment, bool alignCenter = false)
 		{
 		}
 

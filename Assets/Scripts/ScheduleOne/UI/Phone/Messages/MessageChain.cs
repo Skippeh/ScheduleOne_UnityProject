@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Phone.Messages
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class MessageChain
 	{
-		[global::UnityEngine.TextArea(2, 10)]
-		public global::System.Collections.Generic.List<string> Messages;
+		[TextArea(2, 10)]
+		public List<string> Messages;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public int id;
 
-		public static global::ScheduleOne.UI.Phone.Messages.MessageChain Combine(global::ScheduleOne.UI.Phone.Messages.MessageChain a, global::ScheduleOne.UI.Phone.Messages.MessageChain b)
+		public static MessageChain Combine(MessageChain a, MessageChain b)
 		{
 			return null;
 		}

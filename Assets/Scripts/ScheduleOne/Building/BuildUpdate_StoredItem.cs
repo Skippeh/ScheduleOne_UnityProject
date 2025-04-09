@@ -1,26 +1,30 @@
+using ScheduleOne.Storage;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.Building
 {
-	public class BuildUpdate_StoredItem : global::ScheduleOne.Building.BuildUpdate_Base
+	public class BuildUpdate_StoredItem : BuildUpdate_Base
 	{
 		public class StorageTileIntersection
 		{
-			public global::ScheduleOne.Tiles.FootprintTile footprintTile;
+			public FootprintTile footprintTile;
 
-			public global::ScheduleOne.Storage.StorageTile storageTile;
+			public StorageTile storageTile;
 		}
 
-		public global::ScheduleOne.Storage.StorableItemInstance itemInstance;
+		public StorableItemInstance itemInstance;
 
-		public global::UnityEngine.GameObject ghostModel;
+		public GameObject ghostModel;
 
-		public global::ScheduleOne.Storage.StoredItem storedItemClass;
+		public StoredItem storedItemClass;
 
-		protected global::ScheduleOne.Building.BuildUpdate_StoredItem.StorageTileIntersection bestIntersection;
+		protected StorageTileIntersection bestIntersection;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float detectionRange;
 
-		public global::UnityEngine.LayerMask detectionMask;
+		public LayerMask detectionMask;
 
 		public float storedItemHoldDistance;
 
@@ -28,13 +32,13 @@ namespace ScheduleOne.Building
 
 		protected bool validPosition;
 
-		protected global::UnityEngine.Material currentGhostMaterial;
+		protected Material currentGhostMaterial;
 
 		protected bool mouseUpSinceStart;
 
 		protected bool mouseUpSincePlace;
 
-		private global::UnityEngine.Vector3 positionDuringLastValidPosition;
+		private Vector3 positionDuringLastValidPosition;
 
 		protected virtual void Update()
 		{
@@ -68,9 +72,9 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		protected global::UnityEngine.Vector2 GetOriginCoordinate()
+		protected Vector2 GetOriginCoordinate()
 		{
-			return default(global::UnityEngine.Vector2);
+			return default(Vector2);
 		}
 	}
 }

@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
 	public static class ColorBlendingExtensions
 	{
-		public static global::UnityEngine.Color Clear(this global::UnityEngine.Color color)
+		public static Color Clear(this Color color)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

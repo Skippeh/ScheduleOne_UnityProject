@@ -1,21 +1,26 @@
+using System;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Management
 {
-	public class NPCSelector : global::UnityEngine.MonoBehaviour
+	public class NPCSelector : MonoBehaviour
 	{
 		public const float SELECTION_RANGE = 5f;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask DetectionMask;
+		[Header("Settings")]
+		public LayerMask DetectionMask;
 
-		public global::UnityEngine.Color HoverOutlineColor;
+		public Color HoverOutlineColor;
 
-		private global::System.Type TypeRequirement;
+		private Type TypeRequirement;
 
-		private global::System.Action<global::ScheduleOne.NPCs.NPC> callback;
+		private Action<NPC> callback;
 
-		private global::ScheduleOne.NPCs.NPC hoveredNPC;
+		private NPC hoveredNPC;
 
-		private global::ScheduleOne.NPCs.NPC highlightedNPC;
+		private NPC highlightedNPC;
 
 		public bool IsOpen { get; protected set; }
 
@@ -23,7 +28,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		public virtual void Open(string selectionTitle, global::System.Type typeRequirement, global::System.Action<global::ScheduleOne.NPCs.NPC> _callback)
+		public virtual void Open(string selectionTitle, Type typeRequirement, Action<NPC> _callback)
 		{
 		}
 
@@ -35,17 +40,17 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private global::ScheduleOne.NPCs.NPC GetHoveredNPC()
+		private NPC GetHoveredNPC()
 		{
 			return null;
 		}
 
-		public bool IsNPCTypeValid(global::ScheduleOne.NPCs.NPC npc)
+		public bool IsNPCTypeValid(NPC npc)
 		{
 			return false;
 		}
 
-		public void NPCClicked(global::ScheduleOne.NPCs.NPC npc)
+		public void NPCClicked(NPC npc)
 		{
 		}
 
@@ -53,7 +58,7 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction exitAction)
+		private void Exit(ExitAction exitAction)
 		{
 		}
 	}

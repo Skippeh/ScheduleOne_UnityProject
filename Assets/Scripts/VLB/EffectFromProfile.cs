@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-effect-from-profile/")]
-	public class EffectFromProfile : global::UnityEngine.MonoBehaviour
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-effect-from-profile/")]
+	public class EffectFromProfile : MonoBehaviour
 	{
 		public const string ClassName = "EffectFromProfile";
 
-		[global::UnityEngine.SerializeField]
-		private global::VLB.EffectAbstractBase m_EffectProfile;
+		[SerializeField]
+		private EffectAbstractBase m_EffectProfile;
 
-		private global::VLB.EffectAbstractBase m_EffectInstance;
+		private EffectAbstractBase m_EffectInstance;
 
-		public global::VLB.EffectAbstractBase effectProfile
+		public EffectAbstractBase effectProfile
 		{
 			get
 			{

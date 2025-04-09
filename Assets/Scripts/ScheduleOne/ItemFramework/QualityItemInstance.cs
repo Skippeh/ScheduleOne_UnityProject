@@ -1,34 +1,38 @@
+using System;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.Storage;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::System.Serializable]
-	public class QualityItemInstance : global::ScheduleOne.Storage.StorableItemInstance
+	[Serializable]
+	public class QualityItemInstance : StorableItemInstance
 	{
-		public global::ScheduleOne.ItemFramework.EQuality Quality;
+		public EQuality Quality;
 
 		public QualityItemInstance()
 		{
 		}
 
-		public QualityItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality)
+		public QualityItemInstance(ItemDefinition definition, int quantity, EQuality quality)
 		{
 		}
 
-		public override bool CanStackWith(global::ScheduleOne.ItemFramework.ItemInstance other, bool checkQuantities = true)
+		public override bool CanStackWith(ItemInstance other, bool checkQuantities = true)
 		{
 			return false;
 		}
 
-		public override global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
+		public override ItemInstance GetCopy(int overrideQuantity = -1)
 		{
 			return null;
 		}
 
-		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
+		public override ItemData GetItemData()
 		{
 			return null;
 		}
 
-		public void SetQuality(global::ScheduleOne.ItemFramework.EQuality quality)
+		public void SetQuality(EQuality quality)
 		{
 		}
 	}

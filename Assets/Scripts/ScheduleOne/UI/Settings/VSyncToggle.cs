@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class VSyncToggle : global::ScheduleOne.UI.Settings.SettingsToggle
+	public class VSyncToggle : SettingsToggle
 	{
 		protected virtual void OnEnable()
 		{

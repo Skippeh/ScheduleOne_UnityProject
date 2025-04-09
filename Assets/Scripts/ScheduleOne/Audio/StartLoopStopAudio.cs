@@ -1,12 +1,15 @@
+using EasyButtons;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	public class StartLoopStopAudio : global::UnityEngine.MonoBehaviour
+	public class StartLoopStopAudio : MonoBehaviour
 	{
-		public global::ScheduleOne.Audio.AudioSourceController StartSound;
+		public AudioSourceController StartSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController LoopSound;
+		public AudioSourceController LoopSound;
 
-		public global::ScheduleOne.Audio.AudioSourceController StopSound;
+		public AudioSourceController StopSound;
 
 		public bool FadeLoopIn;
 
@@ -22,12 +25,12 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void StartAudio()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void StopAudio()
 		{
 		}

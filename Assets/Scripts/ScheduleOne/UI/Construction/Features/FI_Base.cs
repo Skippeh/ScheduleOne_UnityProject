@@ -1,12 +1,16 @@
+using ScheduleOne.Construction.Features;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.UI.Construction.Features
 {
-	public class FI_Base : global::UnityEngine.MonoBehaviour
+	public class FI_Base : MonoBehaviour
 	{
-		protected global::ScheduleOne.Construction.Features.Feature feature;
+		protected Feature feature;
 
-		public global::UnityEngine.Events.UnityEvent onClose;
+		public UnityEvent onClose;
 
-		public virtual void Initialize(global::ScheduleOne.Construction.Features.Feature _feature)
+		public virtual void Initialize(Feature _feature)
 		{
 		}
 

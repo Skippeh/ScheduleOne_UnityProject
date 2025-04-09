@@ -1,51 +1,64 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ScriptableObjects;
+using ScheduleOne.Vision;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class Phone : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.Phone>
+	public class Phone : PlayerSingleton<Phone>
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetIsHorizontal_Process_003Ed__46 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CSetIsHorizontal_Process_003Ed__46 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.Phone.Phone _003C_003E4__this;
+			public Phone _003C_003E4__this;
 
 			public bool h;
 
 			private float _003CadjustedRotationTime_003E5__2;
 
-			private global::UnityEngine.Quaternion _003CstartRotation_003E5__3;
+			private Quaternion _003CstartRotation_003E5__3;
 
-			private global::UnityEngine.Quaternion _003CendRotation_003E5__4;
+			private Quaternion _003CendRotation_003E5__4;
 
 			private float _003Ci_003E5__5;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CSetIsHorizontal_Process_003Ed__46(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -54,26 +67,26 @@ namespace ScheduleOne.UI.Phone
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetLookOffset_Process_003Ed__50 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CSetLookOffset_Process_003Ed__50 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.Phone.Phone _003C_003E4__this;
+			public Phone _003C_003E4__this;
 
 			public float lookOffset;
 
@@ -85,31 +98,31 @@ namespace ScheduleOne.UI.Phone
 
 			private float _003Ci_003E5__5;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CSetLookOffset_Process_003Ed__50(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -118,44 +131,44 @@ namespace ScheduleOne.UI.Phone
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		public static global::UnityEngine.GameObject ActiveApp;
+		public static GameObject ActiveApp;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData testData;
+		public PhoneCallData testData;
 
-		public global::ScheduleOne.ScriptableObjects.CallerID testCalller;
+		public CallerID testCalller;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject phoneModel;
+		[Header("References")]
+		[SerializeField]
+		protected GameObject phoneModel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform orientation_Vertical;
+		[SerializeField]
+		protected Transform orientation_Vertical;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform orientation_Horizontal;
+		[SerializeField]
+		protected Transform orientation_Horizontal;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.GraphicRaycaster raycaster;
+		[SerializeField]
+		protected GraphicRaycaster raycaster;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject PhoneFlashlight;
+		[SerializeField]
+		protected GameObject PhoneFlashlight;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Audio.AudioSourceController FlashlightToggleSound;
+		[SerializeField]
+		protected AudioSourceController FlashlightToggleSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float rotationTime;
 
 		public float LookOffsetMax;
@@ -164,19 +177,19 @@ namespace ScheduleOne.UI.Phone
 
 		public float OpenVerticalOffset;
 
-		public global::System.Action onPhoneOpened;
+		public Action onPhoneOpened;
 
-		public global::System.Action onPhoneClosed;
+		public Action onPhoneClosed;
 
-		public global::System.Action closeApps;
+		public Action closeApps;
 
-		private global::UnityEngine.EventSystems.EventSystem eventSystem;
+		private EventSystem eventSystem;
 
-		private global::ScheduleOne.Vision.VisibilityAttribute flashlightVisibility;
+		private VisibilityAttribute flashlightVisibility;
 
-		private global::UnityEngine.Coroutine rotationCoroutine;
+		private Coroutine rotationCoroutine;
 
-		private global::UnityEngine.Coroutine lookOffsetCoroutine;
+		private Coroutine lookOffsetCoroutine;
 
 		public bool IsOpen { get; protected set; }
 
@@ -224,8 +237,8 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__46))]
-		protected global::System.Collections.IEnumerator SetIsHorizontal_Process(bool h)
+		[IteratorStateMachine(typeof(_003CSetIsHorizontal_Process_003Ed__46))]
+		protected IEnumerator SetIsHorizontal_Process(bool h)
 		{
 			return null;
 		}
@@ -238,15 +251,15 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__50))]
-		protected global::System.Collections.IEnumerator SetLookOffset_Process(float lookOffset)
+		[IteratorStateMachine(typeof(_003CSetLookOffset_Process_003Ed__50))]
+		protected IEnumerator SetLookOffset_Process(float lookOffset)
 		{
 			return null;
 		}
 
-		public bool MouseRaycast(out global::UnityEngine.EventSystems.RaycastResult result)
+		public bool MouseRaycast(out RaycastResult result)
 		{
-			result = default(global::UnityEngine.EventSystems.RaycastResult);
+			result = default(RaycastResult);
 			return false;
 		}
 	}

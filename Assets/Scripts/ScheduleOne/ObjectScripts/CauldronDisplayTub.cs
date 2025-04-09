@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class CauldronDisplayTub : global::UnityEngine.MonoBehaviour
+	public class CauldronDisplayTub : MonoBehaviour
 	{
 		public enum EContents
 		{
@@ -8,13 +10,13 @@ namespace ScheduleOne.ObjectScripts
 			CocaLeaf = 1
 		}
 
-		public global::UnityEngine.Transform CocaLeafContainer;
+		public Transform CocaLeafContainer;
 
-		public global::UnityEngine.Transform Container_Min;
+		public Transform Container_Min;
 
-		public global::UnityEngine.Transform Container_Max;
+		public Transform Container_Max;
 
-		public void Configure(global::ScheduleOne.ObjectScripts.CauldronDisplayTub.EContents contentsType, float fillLevel)
+		public void Configure(EContents contentsType, float fillLevel)
 		{
 		}
 	}

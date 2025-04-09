@@ -1,6 +1,9 @@
+using ScheduleOne.DevUtilities;
+using TMPro;
+
 namespace ScheduleOne.UI.MainMenu
 {
-	public class MainMenuPopup : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.MainMenu.MainMenuPopup>
+	public class MainMenuPopup : Singleton<MainMenuPopup>
 	{
 		public class Data
 		{
@@ -15,13 +18,13 @@ namespace ScheduleOne.UI.MainMenu
 			}
 		}
 
-		public global::ScheduleOne.UI.MainMenu.MainMenuScreen Screen;
+		public MainMenuScreen Screen;
 
-		public global::TMPro.TextMeshProUGUI Title;
+		public TextMeshProUGUI Title;
 
-		public global::TMPro.TextMeshProUGUI Description;
+		public TextMeshProUGUI Description;
 
-		public void Open(global::ScheduleOne.UI.MainMenu.MainMenuPopup.Data data)
+		public void Open(Data data)
 		{
 		}
 

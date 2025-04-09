@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SetTerrainObstacles : global::UnityEngine.MonoBehaviour
+	public class SetTerrainObstacles : MonoBehaviour
 	{
-		public global::UnityEngine.BoxCollider Bounds;
+		public BoxCollider Bounds;
 
-		private global::UnityEngine.TreeInstance[] Obstacle;
+		private TreeInstance[] Obstacle;
 
-		private global::UnityEngine.Terrain terrain;
+		private Terrain terrain;
 
 		private float width;
 

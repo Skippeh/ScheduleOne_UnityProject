@@ -1,6 +1,6 @@
 namespace UnityEngine.PostProcessing
 {
-	public sealed class ChromaticAberrationComponent : global::UnityEngine.PostProcessing.PostProcessingComponentRenderTexture<global::UnityEngine.PostProcessing.ChromaticAberrationModel>
+	public sealed class ChromaticAberrationComponent : PostProcessingComponentRenderTexture<ChromaticAberrationModel>
 	{
 		private static class Uniforms
 		{
@@ -9,7 +9,7 @@ namespace UnityEngine.PostProcessing
 			internal static readonly int _ChromaticAberration_Spectrum;
 		}
 
-		private global::UnityEngine.Texture2D m_SpectrumLut;
+		private Texture2D m_SpectrumLut;
 
 		public override bool active => false;
 
@@ -17,7 +17,7 @@ namespace UnityEngine.PostProcessing
 		{
 		}
 
-		public override void Prepare(global::UnityEngine.Material uberMaterial)
+		public override void Prepare(Material uberMaterial)
 		{
 		}
 	}

@@ -1,17 +1,20 @@
+using System;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.UI.CanvasScaler))]
-	public class CanvasScaler : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(CanvasScaler))]
+	public class CanvasScaler : MonoBehaviour
 	{
 		public static float CanvasScaleFactor;
 
-		public static global::System.Action OnCanvasScaleFactorChanged;
+		public static Action OnCanvasScaleFactorChanged;
 
 		public float ScaleMultiplier;
 
-		private global::UnityEngine.Vector2 referenceResolution;
+		private Vector2 referenceResolution;
 
-		private global::UnityEngine.UI.CanvasScaler canvasScaler;
+		private UnityEngine.UI.CanvasScaler canvasScaler;
 
 		public static float NormalizedCanvasScaleFactor => 0f;
 

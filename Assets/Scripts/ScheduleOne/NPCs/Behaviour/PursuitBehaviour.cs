@@ -1,6 +1,22 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.AvatarFramework.Equipping;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.Police;
+using ScheduleOne.Vision;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class PursuitBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class PursuitBehaviour : Behaviour
 	{
 		private enum EPursuitAction
 		{
@@ -10,46 +26,46 @@ namespace ScheduleOne.NPCs.Behaviour
 			MoveAndShoot = 3
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRangedWeaponRoutine_003Ed__59 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CRangedWeaponRoutine_003Ed__59 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour _003C_003E4__this;
+			public PursuitBehaviour _003C_003E4__this;
 
-			private global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour.EPursuitAction _003CcurrentAction_003E5__2;
+			private EPursuitAction _003CcurrentAction_003E5__2;
 
 			private float _003CcurrentActionDuration_003E5__3;
 
 			private float _003CcurrentActionTime_003E5__4;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CRangedWeaponRoutine_003Ed__59(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -58,52 +74,52 @@ namespace ScheduleOne.NPCs.Behaviour
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSearchRoutine_003Ed__82 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CSearchRoutine_003Ed__82 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour _003C_003E4__this;
+			public PursuitBehaviour _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CSearchRoutine_003Ed__82(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -112,14 +128,14 @@ namespace ScheduleOne.NPCs.Behaviour
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
@@ -148,12 +164,12 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public const float CONSECUTIVE_MISS_ACCURACY_BOOST = 0.1f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float ArrestCircle_MaxVisibleDistance;
 
 		public float ArrestCircle_MaxOpacity;
 
-		[global::FishNet.Object.Synchronizing.SyncVar(SendRate = 0.25f, WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
+		[SyncVar(SendRate = 0.25f, WritePermissions = WritePermission.ClientUnsynchronized)]
 		public bool isTargetVisible;
 
 		protected bool isTargetStrictlyVisible;
@@ -170,15 +186,15 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		protected float distanceOnPursuitStart;
 
-		private global::UnityEngine.Coroutine searchRoutine;
+		private Coroutine searchRoutine;
 
-		private global::UnityEngine.Coroutine rangedWeaponRoutine;
+		private Coroutine rangedWeaponRoutine;
 
-		private global::UnityEngine.Vector3 currentSearchDestination;
+		private Vector3 currentSearchDestination;
 
 		private bool hasSearchDestination;
 
-		private global::ScheduleOne.Police.PoliceOfficer officer;
+		private PoliceOfficer officer;
 
 		private bool targetWasDrivingOnPursuitStart;
 
@@ -186,19 +202,19 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private int leaveArrestCircleCount;
 
-		private global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon rangedWeapon;
+		private AvatarRangedWeapon rangedWeapon;
 
 		private int consecutiveMissedShots;
 
 		private float nextAngryVO;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar___isTargetVisible;
+		public SyncVar<bool> syncVar___isTargetVisible;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EPursuitBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EPursuitBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; protected set; }
+		public Player TargetPlayer { get; protected set; }
 
 		public bool IsSearching { get; protected set; }
 
@@ -221,12 +237,12 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void AssignTarget(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		[ObserversRpc(RunLocally = true)]
+		public virtual void AssignTarget(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
@@ -267,9 +283,9 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetNewArrestDestination()
+		private Vector3 GetNewArrestDestination()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private void ClearSpeedControls()
@@ -284,8 +300,8 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour._003CRangedWeaponRoutine_003Ed__59))]
-		private global::System.Collections.IEnumerator RangedWeaponRoutine()
+		[IteratorStateMachine(typeof(_003CRangedWeaponRoutine_003Ed__59))]
+		private IEnumerator RangedWeaponRoutine()
 		{
 			return null;
 		}
@@ -349,11 +365,11 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 
-		private void ProcessThirdPartyVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		private void ProcessThirdPartyVisionEvent(VisionEventReceipt visionEventReceipt)
 		{
 		}
 
@@ -369,7 +385,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void SetArrestCircleColor(global::UnityEngine.Color col)
+		private void SetArrestCircleColor(Color col)
 		{
 		}
 
@@ -381,20 +397,20 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour._003CSearchRoutine_003Ed__82))]
-		private global::System.Collections.IEnumerator SearchRoutine()
+		[IteratorStateMachine(typeof(_003CSearchRoutine_003Ed__82))]
+		private IEnumerator SearchRoutine()
 		{
 			return null;
 		}
 
-		private global::UnityEngine.Vector3 GetNextSearchLocation()
+		private Vector3 GetNextSearchLocation()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
-		private global::UnityEngine.Vector3 GetRandomReachablePointNear(global::UnityEngine.Vector3 point, float randomRadius, float minDistance = 0f)
+		private Vector3 GetRandomReachablePointNear(Vector3 point, float randomRadius, float minDistance = 0f)
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		private void SetWorldspaceIconsActive(bool active)
@@ -413,19 +429,19 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcWriter___Observers_AssignTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		private void RpcWriter___Observers_AssignTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		public virtual void RpcLogic___AssignTarget_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject target)
+		public virtual void RpcLogic___AssignTarget_1824087381(NetworkConnection conn, NetworkObject target)
 		{
 		}
 
-		private void RpcReader___Observers_AssignTarget_1824087381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AssignTarget_1824087381(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002EBehaviour_002EPursuitBehaviour(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002EBehaviour_002EPursuitBehaviour(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

@@ -1,12 +1,15 @@
+using ScheduleOne.Growing;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class SowSeedTask : global::ScheduleOne.PlayerTasks.Task
+	public class SowSeedTask : Task
 	{
-		protected global::ScheduleOne.ObjectScripts.Pot pot;
+		protected Pot pot;
 
-		protected global::ScheduleOne.Growing.SeedDefinition definition;
+		protected SeedDefinition definition;
 
-		protected global::ScheduleOne.Growing.FunctionalSeed seed;
+		protected FunctionalSeed seed;
 
 		private bool seedExitedVial;
 
@@ -20,7 +23,7 @@ namespace ScheduleOne.PlayerTasks
 
 		public override string TaskName { get; protected set; }
 
-		public SowSeedTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.Growing.SeedDefinition def)
+		public SowSeedTask(Pot _pot, SeedDefinition def)
 		{
 		}
 

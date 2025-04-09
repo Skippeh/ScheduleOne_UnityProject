@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SetLayerOnAwake : global::UnityEngine.MonoBehaviour
+	public class SetLayerOnAwake : MonoBehaviour
 	{
-		public global::UnityEngine.LayerMask Layer;
+		public LayerMask Layer;
 
 		private void Awake()
 		{

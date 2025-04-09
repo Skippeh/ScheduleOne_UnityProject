@@ -1,44 +1,51 @@
+using CorgiGodRays;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Tools;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 namespace ScheduleOne.FX
 {
-	public class PostProcessingManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.FX.PostProcessingManager>
+	public class PostProcessingManager : Singleton<PostProcessingManager>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rendering.Volume GlobalVolume;
+		[Header("References")]
+		public Volume GlobalVolume;
 
-		[global::UnityEngine.Header("Vignette")]
+		[Header("Vignette")]
 		public float Vig_DefaultIntensity;
 
 		public float Vig_DefaultSmoothness;
 
-		[global::UnityEngine.Header("Blur")]
+		[Header("Blur")]
 		public float MinBlur;
 
 		public float MaxBlur;
 
-		[global::UnityEngine.Header("Smoothers")]
-		public global::ScheduleOne.Tools.FloatSmoother ChromaticAberrationController;
+		[Header("Smoothers")]
+		public FloatSmoother ChromaticAberrationController;
 
-		public global::ScheduleOne.Tools.FloatSmoother SaturationController;
+		public FloatSmoother SaturationController;
 
-		public global::ScheduleOne.Tools.FloatSmoother BloomController;
+		public FloatSmoother BloomController;
 
-		public global::ScheduleOne.Tools.HDRColorSmoother ColorFilterController;
+		public HDRColorSmoother ColorFilterController;
 
-		private global::UnityEngine.Rendering.Universal.Vignette vig;
+		private Vignette vig;
 
-		private global::UnityEngine.Rendering.Universal.DepthOfField DoF;
+		private DepthOfField DoF;
 
-		private global::CorgiGodRays.GodRaysVolume GodRays;
+		private GodRaysVolume GodRays;
 
-		private global::UnityEngine.Rendering.Universal.ColorAdjustments ColorAdjustments;
+		private ColorAdjustments ColorAdjustments;
 
-		private global::Beautify.Universal.Beautify beautifySettings;
+		private Beautify.Universal.Beautify beautifySettings;
 
-		private global::UnityEngine.Rendering.Universal.Bloom bloom;
+		private Bloom bloom;
 
-		private global::UnityEngine.Rendering.Universal.ChromaticAberration chromaticAberration;
+		private ChromaticAberration chromaticAberration;
 
-		private global::UnityEngine.Rendering.Universal.ColorAdjustments colorAdjustments;
+		private ColorAdjustments colorAdjustments;
 
 		protected override void Awake()
 		{

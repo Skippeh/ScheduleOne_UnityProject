@@ -1,15 +1,22 @@
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Doors;
+using ScheduleOne.Map;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Schedules
 {
-	public class NPCEvent_StayInBuilding : global::ScheduleOne.NPCs.Schedules.NPCEvent
+	public class NPCEvent_StayInBuilding : NPCEvent
 	{
-		public global::ScheduleOne.Map.NPCEnterableBuilding Building;
+		public NPCEnterableBuilding Building;
 
-		[global::UnityEngine.Header("Optionally specify door to use. Otherwise closest door will be used.")]
-		public global::ScheduleOne.Doors.StaticDoor Door;
+		[Header("Optionally specify door to use. Otherwise closest door will be used.")]
+		public StaticDoor Door;
 
 		private bool IsEntering;
 
-		private global::UnityEngine.Coroutine enterRoutine;
+		private Coroutine enterRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCEvent_StayInBuildingAssembly_002DCSharp_002Edll_Excuted;
 
@@ -60,11 +67,11 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		protected override void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected override void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[ObserversRpc(RunLocally = true)]
 		private void PlayEnterAnimation()
 		{
 		}
@@ -81,12 +88,12 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private global::UnityEngine.Transform GetEntryPoint()
+		private Transform GetEntryPoint()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.Doors.StaticDoor GetDoor(out int doorIndex)
+		private StaticDoor GetDoor(out int doorIndex)
 		{
 			doorIndex = default(int);
 			return null;
@@ -112,7 +119,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void RpcReader___Observers_PlayEnterAnimation_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlayEnterAnimation_2166136261(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

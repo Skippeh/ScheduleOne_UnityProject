@@ -1,141 +1,144 @@
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class ViewmodelSway : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.ViewmodelSway>
+	public class ViewmodelSway : PlayerSingleton<ViewmodelSway>
 	{
-		[global::UnityEngine.Header("Settings - Breathing")]
+		[Header("Settings - Breathing")]
 		public bool breatheBobbingEnabled;
 
-		[global::UnityEngine.Range(0f, 0.0004f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.0004f)]
+		[SerializeField]
 		protected float breathingHeightMultiplier;
 
-		[global::UnityEngine.Range(0f, 10f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 10f)]
+		[SerializeField]
 		protected float breathingSpeedMultiplier;
 
 		private float lastHeight;
 
-		private global::UnityEngine.Vector3 breatheBobPos;
+		private Vector3 breatheBobPos;
 
-		[global::UnityEngine.Header("Settings - Sway - Movement")]
+		[Header("Settings - Sway - Movement")]
 		public bool swayingEnabled;
 
-		[global::UnityEngine.Range(0f, 0.1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.1f)]
+		[SerializeField]
 		protected float horizontalSwayMultiplier;
 
-		[global::UnityEngine.Range(0f, 0.1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.1f)]
+		[SerializeField]
 		protected float verticalSwayMultiplier;
 
-		[global::UnityEngine.Range(0f, 0.5f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.5f)]
+		[SerializeField]
 		protected float maxHorizontal;
 
-		[global::UnityEngine.Range(0f, 0.5f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.5f)]
+		[SerializeField]
 		protected float maxVertical;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float swaySmooth;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float returnMultiplier;
 
-		private global::UnityEngine.Vector3 initialPos;
+		private Vector3 initialPos;
 
-		private global::UnityEngine.Vector3 swayPos;
+		private Vector3 swayPos;
 
-		[global::UnityEngine.Header("Settings - Walk Bob")]
+		[Header("Settings - Walk Bob")]
 		public bool walkBobbingEnabled;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve verticalMovement;
+		[SerializeField]
+		protected AnimationCurve verticalMovement;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve horizontalMovement;
+		[SerializeField]
+		protected AnimationCurve horizontalMovement;
 
-		[global::UnityEngine.Range(0f, 0.1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.1f)]
+		[SerializeField]
 		protected float verticalBobHeight;
 
-		[global::UnityEngine.Range(0f, 5f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 5f)]
+		[SerializeField]
 		protected float verticalBobSpeed;
 
-		[global::UnityEngine.Range(0f, 0.1f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 0.1f)]
+		[SerializeField]
 		protected float horizontalBobWidth;
 
-		[global::UnityEngine.Range(0f, 5f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 5f)]
+		[SerializeField]
 		protected float horizontalBobSpeed;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float walkBobSmooth;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float sprintSpeedMultiplier;
 
-		[global::UnityEngine.HideInInspector]
+		[HideInInspector]
 		public float walkBobMultiplier;
 
-		private global::UnityEngine.Vector3 walkBobPos;
+		private Vector3 walkBobPos;
 
 		private float timeSinceWalkStart_vert;
 
 		private float timeSinceWalkStart_horiz;
 
-		[global::UnityEngine.Header("Settings - Jump Jolt")]
+		[Header("Settings - Jump Jolt")]
 		public bool jumpJoltEnabled;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve jumpCurve;
+		[SerializeField]
+		protected AnimationCurve jumpCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float jumpJoltTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float jumpJoltHeight;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float jumpJoltSmooth;
 
-		[global::UnityEngine.Header("Settings - Equip Bop")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings - Equip Bop")]
+		[SerializeField]
 		protected float equipBopVerticalOffset;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float equipBopTime;
 
-		private global::UnityEngine.Vector3 equipBopPos;
+		private Vector3 equipBopPos;
 
 		private float timeSinceJumpStart;
 
-		private global::UnityEngine.Vector3 jumpPos;
+		private Vector3 jumpPos;
 
-		[global::UnityEngine.Header("Settings - Falling")]
-		[global::UnityEngine.Range(0f, 1f)]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings - Falling")]
+		[Range(0f, 1f)]
+		[SerializeField]
 		protected float fallOffsetRate;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
+		[Range(0f, 2f)]
+		[SerializeField]
 		protected float maxFallOffsetAmount;
 
-		private global::UnityEngine.Vector3 fallOffsetPos;
+		private Vector3 fallOffsetPos;
 
-		[global::UnityEngine.Header("Settings - Land Jolt")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve landCurve;
+		[Header("Settings - Land Jolt")]
+		[SerializeField]
+		protected AnimationCurve landCurve;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float landJoltTime;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float landJoltSmooth;
 
-		private global::UnityEngine.Vector3 landPos;
+		private Vector3 landPos;
 
 		private float timeSinceLanded;
 

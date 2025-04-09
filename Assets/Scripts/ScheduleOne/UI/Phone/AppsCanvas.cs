@@ -1,9 +1,17 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class AppsCanvas : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.AppsCanvas>
+	public class AppsCanvas : PlayerSingleton<AppsCanvas>
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDelayedSetCanvasActive_003Ed__10 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CDelayedSetCanvasActive_003Ed__10 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -11,35 +19,35 @@ namespace ScheduleOne.UI.Phone
 
 			public float delay;
 
-			public global::ScheduleOne.UI.Phone.AppsCanvas _003C_003E4__this;
+			public AppsCanvas _003C_003E4__this;
 
 			public bool active;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CDelayedSetCanvasActive_003Ed__10(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -48,22 +56,22 @@ namespace ScheduleOne.UI.Phone
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		public Canvas canvas;
 
-		private global::UnityEngine.Coroutine delayedSetOpenRoutine;
+		private Coroutine delayedSetOpenRoutine;
 
 		public bool isOpen { get; private set; }
 
@@ -83,8 +91,8 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.AppsCanvas._003CDelayedSetCanvasActive_003Ed__10))]
-		private global::System.Collections.IEnumerator DelayedSetCanvasActive(bool active, float delay)
+		[IteratorStateMachine(typeof(_003CDelayedSetCanvasActive_003Ed__10))]
+		private IEnumerator DelayedSetCanvasActive(bool active, float delay)
 		{
 			return null;
 		}

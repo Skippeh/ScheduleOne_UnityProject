@@ -1,14 +1,22 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Levelling;
+using ScheduleOne.NPCs.CharacterClasses;
+
 namespace ScheduleOne.Map
 {
-	public class DarkMarket : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Map.DarkMarket>
+	public class DarkMarket : NetworkSingleton<DarkMarket>
 	{
-		public global::ScheduleOne.Map.DarkMarketAccessZone AccessZone;
+		public DarkMarketAccessZone AccessZone;
 
-		public global::ScheduleOne.Map.DarkMarketMainDoor MainDoor;
+		public DarkMarketMainDoor MainDoor;
 
-		public global::ScheduleOne.NPCs.CharacterClasses.Oscar Oscar;
+		public Oscar Oscar;
 
-		public global::ScheduleOne.Levelling.FullRank UnlockRank;
+		public FullRank UnlockRank;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EMap_002EDarkMarketAssembly_002DCSharp_002Edll_Excuted;
 
@@ -22,7 +30,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -39,14 +47,14 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendUnlocked()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		private void SetUnlocked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		private void SetUnlocked(NetworkConnection conn)
 		{
 		}
 
@@ -70,27 +78,27 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		private void RpcReader___Server_SendUnlocked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendUnlocked_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetUnlocked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_SetUnlocked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___SetUnlocked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcLogic___SetUnlocked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_SetUnlocked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetUnlocked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetUnlocked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_SetUnlocked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_SetUnlocked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetUnlocked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

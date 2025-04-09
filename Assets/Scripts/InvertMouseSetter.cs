@@ -1,4 +1,6 @@
-public class InvertMouseSetter : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+public class InvertMouseSetter : MonoBehaviour
 {
 	private void Awake()
 	{

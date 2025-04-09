@@ -1,11 +1,15 @@
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Pourable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class Equippable_Pourable : Equippable_Viewmodel
 	{
-		[global::UnityEngine.Header("Pourable settings")]
+		[Header("Pourable settings")]
 		public float InteractionRange;
 
-		public global::ScheduleOne.PlayerTasks.Pourable PourablePrefab;
+		public Pourable PourablePrefab;
 
 		public virtual string InteractionLabel { get; set; }
 
@@ -13,11 +17,11 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		protected virtual void StartPourTask(global::ScheduleOne.ObjectScripts.Pot pot)
+		protected virtual void StartPourTask(Pot pot)
 		{
 		}
 
-		protected virtual bool CanPour(global::ScheduleOne.ObjectScripts.Pot pot, out string reason)
+		protected virtual bool CanPour(Pot pot, out string reason)
 		{
 			reason = null;
 			return false;

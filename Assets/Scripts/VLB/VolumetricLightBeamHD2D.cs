@@ -1,15 +1,17 @@
+using UnityEngine;
+
 namespace VLB
 {
-	[global::UnityEngine.ExecuteInEditMode]
-	[global::UnityEngine.DisallowMultipleComponent]
-	[global::UnityEngine.SelectionBase]
-	[global::UnityEngine.HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
-	public class VolumetricLightBeamHD2D : global::VLB.VolumetricLightBeamHD
+	[ExecuteInEditMode]
+	[DisallowMultipleComponent]
+	[SelectionBase]
+	[HelpURL("http://saladgamer.com/vlb-doc/comp-lightbeam-hd/")]
+	public class VolumetricLightBeamHD2D : VolumetricLightBeamHD
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_SortingLayerID;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		private int m_SortingOrder;
 
 		public int sortingLayerID
@@ -45,9 +47,9 @@ namespace VLB
 			}
 		}
 
-		public override global::VLB.Dimensions GetDimensions()
+		public override Dimensions GetDimensions()
 		{
-			return default(global::VLB.Dimensions);
+			return default(Dimensions);
 		}
 
 		public override bool DoesSupportSorting2D()

@@ -1,23 +1,30 @@
+using System;
+using System.Collections.Generic;
+using EasyButtons;
+using ScheduleOne.Doors;
+using ScheduleOne.NPCs;
+using UnityEngine;
+
 namespace ScheduleOne.Map
 {
-	public class NPCEnterableBuilding : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class NPCEnterableBuilding : MonoBehaviour, IGUIDRegisterable
 	{
 		public const float DOOR_SOUND_DISTANCE_LIMIT = 15f;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string BuildingName;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Doors.StaticDoor[] Doors;
+		[Header("References")]
+		public StaticDoor[] Doors;
 
-		[global::UnityEngine.Header("Readonly")]
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> Occupants;
+		[Header("Readonly")]
+		[SerializeField]
+		private List<NPC> Occupants;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		public int OccupantCount => 0;
 
@@ -25,29 +32,29 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
-		public virtual void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void NPCEnteredBuilding(NPC npc)
 		{
 		}
 
-		public virtual void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void NPCExitedBuilding(NPC npc)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void GetDoors()
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> GetSummonableNPCs()
+		public List<NPC> GetSummonableNPCs()
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.Doors.StaticDoor GetClosestDoor(global::UnityEngine.Vector3 pos, bool useableOnly)
+		public StaticDoor GetClosestDoor(Vector3 pos, bool useableOnly)
 		{
 			return null;
 		}

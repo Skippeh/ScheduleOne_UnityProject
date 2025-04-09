@@ -1,19 +1,23 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class SmoothedVelocityCalculator : global::UnityEngine.MonoBehaviour
+	public class SmoothedVelocityCalculator : MonoBehaviour
 	{
-		public global::UnityEngine.Vector3 Velocity;
+		public Vector3 Velocity;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public float SampleLength;
 
 		public float MaxReasonableVelocity;
 
-		private global::System.Collections.Generic.List<global::System.Tuple<global::UnityEngine.Vector3, float>> VelocityHistory;
+		private List<Tuple<Vector3, float>> VelocityHistory;
 
 		private int maxSamples;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private Vector3 lastFramePosition;
 
 		private bool zeroOut;
 
@@ -25,9 +29,9 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetAverageVelocity()
+		private Vector3 GetAverageVelocity()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void FlushBuffer()

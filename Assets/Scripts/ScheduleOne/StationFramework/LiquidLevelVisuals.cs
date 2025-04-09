@@ -1,14 +1,16 @@
+using UnityEngine;
+
 namespace ScheduleOne.StationFramework
 {
-	public class LiquidLevelVisuals : global::UnityEngine.MonoBehaviour
+	public class LiquidLevelVisuals : MonoBehaviour
 	{
-		public global::ScheduleOne.StationFramework.LiquidContainer Container;
+		public LiquidContainer Container;
 
-		public global::UnityEngine.Transform LiquidSurface;
+		public Transform LiquidSurface;
 
-		public global::UnityEngine.Transform LiquidSurface_Min;
+		public Transform LiquidSurface_Min;
 
-		public global::UnityEngine.Transform LiquidSurface_Max;
+		public Transform LiquidSurface_Max;
 
 		private void Update()
 		{

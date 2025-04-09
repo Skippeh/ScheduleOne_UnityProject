@@ -1,10 +1,17 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace ScheduleOne.Lighting
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.ReflectionProbe))]
-	public class ReflectionProbeUpdater : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(ReflectionProbe))]
+	public class ReflectionProbeUpdater : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CProcessQueue_003Ed__6 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CProcessQueue_003Ed__6 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -14,31 +21,31 @@ namespace ScheduleOne.Lighting
 
 			private int _003Ci_003E5__3;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CProcessQueue_003Ed__6(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -47,23 +54,23 @@ namespace ScheduleOne.Lighting
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		public global::UnityEngine.ReflectionProbe Probe;
+		public ReflectionProbe Probe;
 
-		private static global::System.Collections.Generic.List<global::UnityEngine.ReflectionProbe> renderQueue;
+		private static List<ReflectionProbe> renderQueue;
 
-		private static global::UnityEngine.Coroutine RenderRoutine;
+		private static Coroutine RenderRoutine;
 
 		private void OnValidate()
 		{
@@ -77,8 +84,8 @@ namespace ScheduleOne.Lighting
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Lighting.ReflectionProbeUpdater._003CProcessQueue_003Ed__6))]
-		private global::System.Collections.IEnumerator ProcessQueue()
+		[IteratorStateMachine(typeof(_003CProcessQueue_003Ed__6))]
+		private IEnumerator ProcessQueue()
 		{
 			return null;
 		}

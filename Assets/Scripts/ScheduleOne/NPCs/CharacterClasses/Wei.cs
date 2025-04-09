@@ -1,6 +1,8 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Wei : global::ScheduleOne.Economy.Dealer
+	public class Wei : Dealer
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EWeiAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,18 +1,22 @@
+using System.Collections.Generic;
+using FishNet.Connection;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Management
 {
 	public class EntityConfiguration
 	{
-		public global::System.Collections.Generic.List<global::ScheduleOne.Management.ConfigField> Fields;
+		public List<ConfigField> Fields;
 
-		public global::UnityEngine.Events.UnityEvent onChanged;
+		public UnityEvent onChanged;
 
-		public global::ScheduleOne.Management.ConfigurationReplicator Replicator { get; protected set; }
+		public ConfigurationReplicator Replicator { get; protected set; }
 
-		public global::ScheduleOne.Management.IConfigurable Configurable { get; protected set; }
+		public IConfigurable Configurable { get; protected set; }
 
 		public bool IsSelected { get; protected set; }
 
-		public EntityConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable)
+		public EntityConfiguration(ConfigurationReplicator replicator, IConfigurable configurable)
 		{
 		}
 
@@ -20,11 +24,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public void ReplicateField(global::ScheduleOne.Management.ConfigField field, global::FishNet.Connection.NetworkConnection conn = null)
+		public void ReplicateField(ConfigField field, NetworkConnection conn = null)
 		{
 		}
 
-		public void ReplicateAllFields(global::FishNet.Connection.NetworkConnection conn = null, bool replicateDefaults = true)
+		public void ReplicateAllFields(NetworkConnection conn = null, bool replicateDefaults = true)
 		{
 		}
 

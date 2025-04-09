@@ -1,6 +1,6 @@
 namespace ScheduleOne.Tiles
 {
-	public class IndoorTile : global::ScheduleOne.Tiles.Tile
+	public class IndoorTile : Tile
 	{
 	}
 }

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Property
 {
-	public class Sweatshop : global::ScheduleOne.Property.Property
+	public class Sweatshop : Property
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002EProperty_002ESweatshopAssembly_002DCSharp_002Edll_Excuted;
 

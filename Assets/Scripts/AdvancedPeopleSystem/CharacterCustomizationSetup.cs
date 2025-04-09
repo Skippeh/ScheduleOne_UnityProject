@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
+
 namespace AdvancedPeopleSystem
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class CharacterCustomizationSetup
 	{
 		public enum CharacterFileSaveFormat
@@ -12,9 +15,9 @@ namespace AdvancedPeopleSystem
 
 		public string settingsName;
 
-		public global::AdvancedPeopleSystem.CharacterSelectedElements selectedElements;
+		public CharacterSelectedElements selectedElements;
 
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.CharacterBlendshapeData> blendshapes;
+		public List<CharacterBlendshapeData> blendshapes;
 
 		public int MinLod;
 
@@ -36,16 +39,16 @@ namespace AdvancedPeopleSystem
 
 		public float HeadSize;
 
-		public void ApplyToCharacter(global::AdvancedPeopleSystem.CharacterCustomization cc)
+		public void ApplyToCharacter(CharacterCustomization cc)
 		{
 		}
 
-		public string Serialize(global::AdvancedPeopleSystem.CharacterCustomizationSetup.CharacterFileSaveFormat format)
+		public string Serialize(CharacterFileSaveFormat format)
 		{
 			return null;
 		}
 
-		public static global::AdvancedPeopleSystem.CharacterCustomizationSetup Deserialize(string data, global::AdvancedPeopleSystem.CharacterCustomizationSetup.CharacterFileSaveFormat format)
+		public static CharacterCustomizationSetup Deserialize(string data, CharacterFileSaveFormat format)
 		{
 			return null;
 		}

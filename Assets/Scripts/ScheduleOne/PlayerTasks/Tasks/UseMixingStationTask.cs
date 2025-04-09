@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class UseMixingStationTask : global::ScheduleOne.PlayerTasks.Task
+	public class UseMixingStationTask : Task
 	{
 		public enum EStep
 		{
@@ -8,30 +13,30 @@ namespace ScheduleOne.PlayerTasks.Tasks
 			StartMixing = 1
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationItem> items;
+		private List<StationItem> items;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationItem> mixerItems;
+		private List<StationItem> mixerItems;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.IngredientPiece> ingredientPieces;
+		private List<IngredientPiece> ingredientPieces;
 
-		private global::ScheduleOne.ItemFramework.ItemInstance[] removedIngredients;
+		private ItemInstance[] removedIngredients;
 
-		private global::ScheduleOne.ObjectScripts.Beaker Jug;
+		private Beaker Jug;
 
-		public global::ScheduleOne.ObjectScripts.MixingStation Station { get; private set; }
+		public MixingStation Station { get; private set; }
 
-		public global::ScheduleOne.PlayerTasks.Tasks.UseMixingStationTask.EStep CurrentStep { get; private set; }
+		public EStep CurrentStep { get; private set; }
 
-		public static string GetStepDescription(global::ScheduleOne.PlayerTasks.Tasks.UseMixingStationTask.EStep step)
+		public static string GetStepDescription(EStep step)
 		{
 			return null;
 		}
 
-		public UseMixingStationTask(global::ScheduleOne.ObjectScripts.MixingStation station)
+		public UseMixingStationTask(MixingStation station)
 		{
 		}
 
-		private global::ScheduleOne.ObjectScripts.Beaker CreateJug()
+		private Beaker CreateJug()
 		{
 			return null;
 		}

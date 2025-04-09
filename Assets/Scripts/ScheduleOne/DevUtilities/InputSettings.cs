@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.DevUtilities
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class InputSettings
 	{
 		public enum EActionMode
@@ -13,7 +15,7 @@ namespace ScheduleOne.DevUtilities
 
 		public bool InvertMouse;
 
-		public global::ScheduleOne.DevUtilities.InputSettings.EActionMode SprintMode;
+		public EActionMode SprintMode;
 
 		public string BindingOverrides;
 	}

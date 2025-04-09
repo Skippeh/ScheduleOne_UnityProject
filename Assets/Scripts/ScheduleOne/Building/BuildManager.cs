@@ -1,54 +1,66 @@
+using System;
+using System.Collections.Generic;
+using FishNet.Object;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Storage;
+using ScheduleOne.Tiles;
+using UnityEngine;
+using Grid = ScheduleOne.Tiles.Grid;
+
 namespace ScheduleOne.Building
 {
-	public class BuildManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Building.BuildManager>
+	public class BuildManager : Singleton<BuildManager>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class BuildSound
 		{
-			public global::ScheduleOne.ItemFramework.BuildableItemDefinition.EBuildSoundType Type;
+			public BuildableItemDefinition.EBuildSoundType Type;
 
-			public global::ScheduleOne.Audio.AudioSourceController Sound;
+			public AudioSourceController Sound;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Building.BuildManager.BuildSound> PlaceSounds;
+		public List<BuildSound> PlaceSounds;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform tempContainer;
+		[Header("References")]
+		[SerializeField]
+		protected Transform tempContainer;
 
-		public global::FishNet.Object.NetworkObject networkObject;
+		public NetworkObject networkObject;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject storedItemBuildHandler;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject storedItemBuildHandler;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject cashBuildHandler;
+		[SerializeField]
+		protected GameObject cashBuildHandler;
 
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material ghostMaterial_White;
+		[Header("Materials")]
+		public Material ghostMaterial_White;
 
-		public global::UnityEngine.Material ghostMaterial_Red;
+		public Material ghostMaterial_Red;
 
-		public global::UnityEngine.Transform _tempContainer => null;
+		public Transform _tempContainer => null;
 
 		public bool isBuilding { get; protected set; }
 
-		public global::UnityEngine.GameObject currentBuildHandler { get; protected set; }
+		public GameObject currentBuildHandler { get; protected set; }
 
 		protected override void Awake()
 		{
 		}
 
-		public void StartBuilding(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void StartBuilding(ItemInstance item)
 		{
 		}
 
-		public void StartBuildingStoredItem(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void StartBuildingStoredItem(ItemInstance item)
 		{
 		}
 
-		public void StartPlacingCash(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void StartPlacingCash(ItemInstance item)
 		{
 		}
 
@@ -56,49 +68,54 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		public void PlayBuildSound(global::ScheduleOne.ItemFramework.BuildableItemDefinition.EBuildSoundType type, global::UnityEngine.Vector3 point)
+		public void PlayBuildSound(BuildableItemDefinition.EBuildSoundType type, Vector3 point)
 		{
 		}
 
-		public void DisableColliders(global::UnityEngine.GameObject obj)
+		public void DisableColliders(GameObject obj)
 		{
 		}
 
-		public void DisableLights(global::UnityEngine.GameObject obj)
+		public void DisableLights(GameObject obj)
 		{
 		}
 
-		public void DisableNetworking(global::UnityEngine.GameObject obj)
+		public void DisableNetworking(GameObject obj)
 		{
 		}
 
-		public void DisableSpriteRenderers(global::UnityEngine.GameObject obj)
+		public void DisableSpriteRenderers(GameObject obj)
 		{
 		}
 
-		public void ApplyMaterial(global::UnityEngine.GameObject obj, global::UnityEngine.Material mat, bool allMaterials = true)
+		public void ApplyMaterial(GameObject obj, Material mat, bool allMaterials = true)
 		{
 		}
 
-		public void DisableNavigation(global::UnityEngine.GameObject obj)
+		public void DisableNavigation(GameObject obj)
 		{
 		}
 
-		public void DisableCanvases(global::UnityEngine.GameObject obj)
+		public void DisableCanvases(GameObject obj)
 		{
 		}
 
-		public global::ScheduleOne.EntityFramework.GridItem CreateGridItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string guid = "")
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.EntityFramework.ProceduralGridItem CreateProceduralGridItem(global::ScheduleOne.ItemFramework.ItemInstance item, int rotationAngle, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> matches, string guid = "")
+		public GridItem CreateGridItem(ItemInstance item, Grid grid, Vector2 originCoordinate, int rotation, string guid = "")
 		{
 			return null;
 		}
 
-		public void CreateStoredItem(global::ScheduleOne.Storage.StorableItemInstance item, global::ScheduleOne.Storage.IStorageEntity parentStorageEntity, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 originCoord, float rotation)
+		public ProceduralGridItem CreateProceduralGridItem(ItemInstance item, int rotationAngle, List<CoordinateProceduralTilePair> matches, string guid = "")
+		{
+			return null;
+		}
+
+		public SurfaceItem CreateSurfaceItem(ItemInstance item, Surface parentSurface, Vector3 relativePosition, Quaternion relativeRotation, string guid = "")
+		{
+			return null;
+		}
+
+		public void CreateStoredItem(StorableItemInstance item, IStorageEntity parentStorageEntity, StorageGrid grid, Vector2 originCoord, float rotation)
 		{
 		}
 	}

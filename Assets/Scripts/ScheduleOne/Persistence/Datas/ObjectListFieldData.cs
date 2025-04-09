@@ -1,11 +1,14 @@
+using System;
+using System.Collections.Generic;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class ObjectListFieldData
 	{
-		public global::System.Collections.Generic.List<string> ObjectGUIDs;
+		public List<string> ObjectGUIDs;
 
-		public ObjectListFieldData(global::System.Collections.Generic.List<string> objectGUIDs)
+		public ObjectListFieldData(List<string> objectGUIDs)
 		{
 		}
 	}

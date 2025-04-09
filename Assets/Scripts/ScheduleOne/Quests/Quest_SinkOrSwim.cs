@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_SinkOrSwim : global::ScheduleOne.Quests.Quest
+	public class Quest_SinkOrSwim : Quest
 	{
 		public const int DAYS_TO_COMPLETE = 4;
 
@@ -8,9 +10,9 @@ namespace ScheduleOne.Quests
 
 		public int NelsonCallTime;
 
-		public global::UnityEngine.Transform LoanSharkVehiclePosition;
+		public Transform LoanSharkVehiclePosition;
 
-		public global::UnityEngine.GameObject LoanSharkGraves;
+		public GameObject LoanSharkGraves;
 
 		protected override void Awake()
 		{
@@ -40,7 +42,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public override void SetQuestState(EQuestState state, bool network = true)
 		{
 		}
 

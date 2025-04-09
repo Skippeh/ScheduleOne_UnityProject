@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+using ScheduleOne.UI.Construction.Features;
+using UnityEngine;
+
 namespace ScheduleOne.Construction.Features
 {
-	public class GenericOptionListFeature : global::ScheduleOne.Construction.Features.OptionListFeature
+	public class GenericOptionListFeature : OptionListFeature
 	{
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Construction.Features.GenericOption> options;
+		[Header("References")]
+		[SerializeField]
+		protected List<GenericOption> options;
 
-		private global::ScheduleOne.Construction.Features.GenericOption visibleOption;
+		private GenericOption visibleOption;
 
-		private global::ScheduleOne.Construction.Features.GenericOption installedOption;
+		private GenericOption installedOption;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EConstruction_002EFeatures_002EGenericOptionListFeatureAssembly_002DCSharp_002Edll_Excuted;
 
@@ -18,7 +22,7 @@ namespace ScheduleOne.Construction.Features
 		{
 		}
 
-		protected override global::System.Collections.Generic.List<global::ScheduleOne.UI.Construction.Features.FI_OptionList.Option> GetOptions()
+		protected override List<FI_OptionList.Option> GetOptions()
 		{
 			return null;
 		}

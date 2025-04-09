@@ -1,19 +1,30 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Equipping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Money;
+using ScheduleOne.Product.Packaging;
+using ScheduleOne.UI;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerInventory : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerInventory>
+	public class PlayerInventory : PlayerSingleton<PlayerInventory>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class ItemVariable
 		{
-			public global::ScheduleOne.ItemFramework.ItemDefinition Definition;
+			public ItemDefinition Definition;
 
 			public string VariableName;
 		}
 
-		[global::System.Serializable]
+		[Serializable]
 		private class ItemAmount
 		{
-			public global::ScheduleOne.ItemFramework.ItemDefinition Definition;
+			public ItemDefinition Definition;
 
 			public int Amount;
 		}
@@ -26,36 +37,36 @@ namespace ScheduleOne.PlayerScripts
 
 		public const int INVENTORY_SLOT_COUNT = 8;
 
-		[global::UnityEngine.Header("Startup Items (Editor only)")]
-		[global::UnityEngine.SerializeField]
+		[Header("Startup Items (Editor only)")]
+		[SerializeField]
 		private bool giveStartupItems;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerInventory.ItemAmount> startupItems;
+		[SerializeField]
+		private List<ItemAmount> startupItems;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform equipContainer;
+		[Header("References")]
+		public Transform equipContainer;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.HotbarSlot> hotbarSlots;
+		public List<HotbarSlot> hotbarSlots;
 
-		private global::ScheduleOne.ItemFramework.ClipboardSlot clipboardSlot;
+		private ClipboardSlot clipboardSlot;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.UI.ItemSlotUI> slotUIs;
+		private List<ItemSlotUI> slotUIs;
 
-		private global::ScheduleOne.ItemFramework.ItemSlot discardSlot;
+		private ItemSlot discardSlot;
 
-		[global::UnityEngine.Header("Item Variables")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerInventory.ItemVariable> ItemVariables;
+		[Header("Item Variables")]
+		public List<ItemVariable> ItemVariables;
 
-		public global::System.Action<bool> onInventoryStateChanged;
+		public Action<bool> onInventoryStateChanged;
 
 		private int PriorEquippedSlotIndex;
 
 		private int PreviousEquippedSlotIndex;
 
-		public global::UnityEngine.Events.UnityEvent onPreItemEquipped;
+		public UnityEvent onPreItemEquipped;
 
-		public global::UnityEngine.Events.UnityEvent onItemEquipped;
+		public UnityEvent onItemEquipped;
 
 		private bool ManagementSlotEnabled;
 
@@ -65,9 +76,9 @@ namespace ScheduleOne.PlayerScripts
 
 		public int TOTAL_SLOT_COUNT => 0;
 
-		public global::ScheduleOne.Money.CashSlot cashSlot { get; private set; }
+		public CashSlot cashSlot { get; private set; }
 
-		public global::ScheduleOne.ItemFramework.CashInstance cashInstance { get; protected set; }
+		public CashInstance cashInstance { get; protected set; }
 
 		public int EquippedSlotIndex { get; protected set; }
 
@@ -75,13 +86,13 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool EquippingEnabled { get; protected set; }
 
-		public global::ScheduleOne.Equipping.Equippable equippable { get; protected set; }
+		public Equippable equippable { get; protected set; }
 
-		public global::ScheduleOne.PlayerScripts.HotbarSlot equippedSlot => null;
+		public HotbarSlot equippedSlot => null;
 
 		public bool isAnythingEquipped => false;
 
-		public global::ScheduleOne.PlayerScripts.HotbarSlot IndexAllSlots(int index)
+		public HotbarSlot IndexAllSlots(int index)
 		{
 			return null;
 		}
@@ -114,7 +125,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void Equip(global::ScheduleOne.PlayerScripts.HotbarSlot slot)
+		public void Equip(HotbarSlot slot)
 		{
 		}
 
@@ -138,12 +149,12 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public bool CanItemFitInInventory(global::ScheduleOne.ItemFramework.ItemInstance item, int quantity = 1)
+		public bool CanItemFitInInventory(ItemInstance item, int quantity = 1)
 		{
 			return false;
 		}
 
-		public void AddItemToInventory(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public void AddItemToInventory(ItemInstance item)
 		{
 		}
 
@@ -160,7 +171,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void RemoveProductFromInventory(global::ScheduleOne.Product.Packaging.EStealthLevel maxStealth)
+		public void RemoveProductFromInventory(EStealthLevel maxStealth)
 		{
 		}
 
@@ -168,7 +179,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void SetEquippable(global::ScheduleOne.Equipping.Equippable eq)
+		public void SetEquippable(Equippable eq)
 		{
 		}
 
@@ -176,7 +187,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> GetAllInventorySlots()
+		public List<ItemSlot> GetAllInventorySlots()
 		{
 			return null;
 		}

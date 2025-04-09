@@ -1,6 +1,10 @@
+using ScheduleOne.Vehicles;
+using ScheduleOne.Vehicles.AI;
+using UnityEngine;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class VehiclePatrolBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
+	public class VehiclePatrolBehaviour : Behaviour
 	{
 		public new const float MAX_CONSECUTIVE_PATHING_FAILURES = 5f;
 
@@ -8,10 +12,10 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public int CurrentWaypoint;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.NPCs.Behaviour.VehiclePatrolRoute Route;
+		[Header("Settings")]
+		public VehiclePatrolRoute Route;
 
-		public global::ScheduleOne.Vehicles.LandVehicle Vehicle;
+		public LandVehicle Vehicle;
 
 		private bool aggressiveDrivingEnabled;
 
@@ -23,7 +27,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool isDriving => false;
 
-		private global::ScheduleOne.Vehicles.AI.VehicleAgent Agent => null;
+		private VehicleAgent Agent => null;
 
 		public override void Awake()
 		{
@@ -45,7 +49,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void SetRoute(global::ScheduleOne.NPCs.Behaviour.VehiclePatrolRoute route)
+		public void SetRoute(VehiclePatrolRoute route)
 		{
 		}
 
@@ -57,17 +61,17 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void DriveTo(global::UnityEngine.Vector3 location)
+		private void DriveTo(Vector3 location)
 		{
 		}
 
-		private void NavigationCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult status)
+		private void NavigationCallback(VehicleAgent.ENavigationResult status)
 		{
 		}
 
-		private bool IsAsCloseAsPossible(global::UnityEngine.Vector3 pos, out global::UnityEngine.Vector3 closestPosition)
+		private bool IsAsCloseAsPossible(Vector3 pos, out Vector3 closestPosition)
 		{
-			closestPosition = default(global::UnityEngine.Vector3);
+			closestPosition = default(Vector3);
 			return false;
 		}
 

@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Sam : global::ScheduleOne.NPCs.NPC
+	public class Sam : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002ESamAssembly_002DCSharp_002Edll_Excuted;
 

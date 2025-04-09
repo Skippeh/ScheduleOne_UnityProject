@@ -1,41 +1,48 @@
+using FishNet.Object;
+using ScheduleOne.Employees;
+using ScheduleOne.Interaction;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class Bed : global::FishNet.Object.NetworkBehaviour
+	public class Bed : NetworkBehaviour
 	{
 		public const int MIN_SLEEP_TIME = 1800;
 
 		public const float SLEEP_TIME_SCALE = 1f;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Interaction.InteractableObject intObj;
+		[Header("References")]
+		[SerializeField]
+		protected InteractableObject intObj;
 
-		public global::UnityEngine.GameObject Clipboard;
+		public GameObject Clipboard;
 
-		public global::UnityEngine.SpriteRenderer MugshotSprite;
+		public SpriteRenderer MugshotSprite;
 
-		public global::TMPro.TextMeshPro NameLabel;
+		public TextMeshPro NameLabel;
 
-		public global::UnityEngine.MeshRenderer BlanketMesh;
+		public MeshRenderer BlanketMesh;
 
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material DefaultBlanket;
+		[Header("Materials")]
+		public Material DefaultBlanket;
 
-		public global::UnityEngine.Material BotanistBlanket;
+		public Material BotanistBlanket;
 
-		public global::UnityEngine.Material ChemistBlanket;
+		public Material ChemistBlanket;
 
-		public global::UnityEngine.Material PackagerBlanket;
+		public Material PackagerBlanket;
 
-		public global::UnityEngine.Material CleanerBlanket;
+		public Material CleanerBlanket;
 
-		public global::UnityEngine.Events.UnityEvent onAssignedEmployeeChanged;
+		public UnityEvent onAssignedEmployeeChanged;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EBedAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EBedAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Employees.Employee AssignedEmployee { get; protected set; }
+		public Employee AssignedEmployee { get; protected set; }
 
 		public virtual void Awake()
 		{
@@ -54,7 +61,7 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public void SetAssignedEmployee(global::ScheduleOne.Employees.Employee employee)
+		public void SetAssignedEmployee(Employee employee)
 		{
 		}
 

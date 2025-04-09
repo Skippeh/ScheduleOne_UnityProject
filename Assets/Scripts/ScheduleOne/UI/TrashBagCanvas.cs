@@ -1,11 +1,15 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.UI.Input;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class TrashBagCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.TrashBagCanvas>
+	public class TrashBagCanvas : Singleton<TrashBagCanvas>
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Canvas Canvas;
+		[Header("References")]
+		public Canvas Canvas;
 
-		public global::ScheduleOne.UI.Input.InputPrompt InputPrompt;
+		public InputPrompt InputPrompt;
 
 		public bool IsOpen { get; private set; }
 

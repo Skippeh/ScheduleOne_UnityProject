@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
-	public class MusicTrack : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(AudioSourceController))]
+	public class MusicTrack : MonoBehaviour
 	{
 		public bool Enabled;
 
@@ -13,7 +15,7 @@ namespace ScheduleOne.Audio
 
 		public float FadeOutTime;
 
-		public global::ScheduleOne.Audio.AudioSourceController Controller;
+		public AudioSourceController Controller;
 
 		public float VolumeMultiplier;
 

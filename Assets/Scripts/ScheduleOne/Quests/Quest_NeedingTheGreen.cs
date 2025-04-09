@@ -1,10 +1,10 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_NeedingTheGreen : global::ScheduleOne.Quests.Quest
+	public class Quest_NeedingTheGreen : Quest
 	{
-		public global::ScheduleOne.Quests.Quest[] PrerequisiteQuests;
+		public Quest[] PrerequisiteQuests;
 
-		public global::ScheduleOne.Quests.QuestEntry EarnEntry;
+		public QuestEntry EarnEntry;
 
 		public float LifetimeEarningsRequirement;
 

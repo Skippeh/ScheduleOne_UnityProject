@@ -2,8 +2,8 @@ namespace ScheduleOne.Messaging
 {
 	public interface IMessageEntity
 	{
-		global::ScheduleOne.Messaging.MSGConversation MsgConversation { get; set; }
+		MSGConversation MsgConversation { get; set; }
 
-		event global::ScheduleOne.Messaging.ResponseCallback onResponseChosen;
+		event ResponseCallback onResponseChosen;
 	}
 }

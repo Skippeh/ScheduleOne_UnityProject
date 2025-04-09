@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.DevUtilities
 {
 	public class ValueTracker
@@ -15,7 +17,7 @@ namespace ScheduleOne.DevUtilities
 
 		private float historyDuration;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.ValueTracker.Value> valueHistory;
+		private List<Value> valueHistory;
 
 		public ValueTracker(float HistoryDuration)
 		{

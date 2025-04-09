@@ -1,21 +1,25 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class StorageVisualizer : global::UnityEngine.MonoBehaviour
+	public class StorageVisualizer : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Storage.StorageGrid[] StorageGrids;
+		[Header("References")]
+		public StorageGrid[] StorageGrids;
 
-		public global::UnityEngine.Transform ItemContainer;
+		public Transform ItemContainer;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.Tooltip("Should storage visuals be fully recalculated when item(s) are removed?")]
+		[Header("Settings")]
+		[Tooltip("Should storage visuals be fully recalculated when item(s) are removed?")]
 		public bool FullRefreshOnItemRemoved;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> itemSlots;
+		protected List<ItemSlot> itemSlots;
 
 		protected int totalFootprintCapacity;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StorableItemInstance, global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem>> activeStoredItems;
+		protected Dictionary<StorableItemInstance, List<StoredItem>> activeStoredItems;
 
 		public bool BlockRefreshes;
 
@@ -29,11 +33,11 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public void AddSlot(global::ScheduleOne.ItemFramework.ItemSlot slot, bool update = false)
+		public void AddSlot(ItemSlot slot, bool update = false)
 		{
 		}
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StorableItemInstance, int> GetVisualRepresentation()
+		public Dictionary<StorableItemInstance, int> GetVisualRepresentation()
 		{
 			return null;
 		}
@@ -42,16 +46,16 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> EnsureSufficientStoredItems(global::ScheduleOne.Storage.StorableItemInstance item, int quantityRequirement)
+		private List<StoredItem> EnsureSufficientStoredItems(StorableItemInstance item, int quantityRequirement)
 		{
 			return null;
 		}
 
-		private void DestroyExcessStoredItems(global::ScheduleOne.Storage.StorableItemInstance item, int quantityRequirement)
+		private void DestroyExcessStoredItems(StorableItemInstance item, int quantityRequirement)
 		{
 		}
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StorableItemInstance, int> GetContentsDictionary()
+		public Dictionary<StorableItemInstance, int> GetContentsDictionary()
 		{
 			return null;
 		}

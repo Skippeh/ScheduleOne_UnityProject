@@ -1,15 +1,20 @@
+using ScheduleOne.Audio;
+using ScheduleOne.Combat;
+using ScheduleOne.ItemFramework;
+using UnityEngine;
+
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_MeleeWeapon : global::ScheduleOne.Equipping.Equippable_AvatarViewmodel
+	public class Equippable_MeleeWeapon : Equippable_AvatarViewmodel
 	{
-		[global::UnityEngine.Header("Basic Settings")]
-		public global::ScheduleOne.Combat.EImpactType ImpactType;
+		[Header("Basic Settings")]
+		public EImpactType ImpactType;
 
 		public float Range;
 
 		public float HitRadius;
 
-		[global::UnityEngine.Header("Timing")]
+		[Header("Timing")]
 		public float MaxLoadTime;
 
 		public float MinCooldown;
@@ -20,7 +25,7 @@ namespace ScheduleOne.Equipping
 
 		public float MaxHitDelay;
 
-		[global::UnityEngine.Header("Damage")]
+		[Header("Damage")]
 		public float MinDamage;
 
 		public float MaxDamage;
@@ -29,26 +34,26 @@ namespace ScheduleOne.Equipping
 
 		public float MaxForce;
 
-		[global::UnityEngine.Header("Stamina Settings")]
+		[Header("Stamina Settings")]
 		public float MinStaminaCost;
 
 		public float MaxStaminaCost;
 
-		[global::UnityEngine.Header("Sound")]
-		public global::ScheduleOne.Audio.AudioSourceController WhooshSound;
+		[Header("Sound")]
+		public AudioSourceController WhooshSound;
 
 		public float WhooshSoundPitch;
 
-		public global::ScheduleOne.Audio.AudioSourceController ImpactSound;
+		public AudioSourceController ImpactSound;
 
-		[global::UnityEngine.Header("Animation")]
+		[Header("Animation")]
 		public string SwingAnimationTrigger;
 
 		private float load;
 
 		private float remainingCooldown;
 
-		private global::UnityEngine.Coroutine hitRoutine;
+		private Coroutine hitRoutine;
 
 		private bool loadQueued;
 
@@ -62,7 +67,7 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public override void Equip(ItemInstance item)
 		{
 		}
 

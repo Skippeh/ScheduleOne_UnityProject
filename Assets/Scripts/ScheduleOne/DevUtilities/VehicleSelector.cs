@@ -1,27 +1,32 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class VehicleSelector : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.DevUtilities.VehicleSelector>
+	public class VehicleSelector : Singleton<VehicleSelector>
 	{
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected float detectionRange;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.LayerMask detectionMask;
+		[SerializeField]
+		protected LayerMask detectionMask;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> selectedVehicles;
+		private List<LandVehicle> selectedVehicles;
 
-		public global::System.Action onClose;
+		public Action onClose;
 
 		private int selectionLimit;
 
 		private bool exitOnSelectionLimit;
 
-		private global::ScheduleOne.Vehicles.LandVehicle hoveredVehicle;
+		private LandVehicle hoveredVehicle;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> outlinedVehicles;
+		private List<LandVehicle> outlinedVehicles;
 
-		private global::System.Func<global::ScheduleOne.Vehicles.LandVehicle, bool> vehicleFilter;
+		private Func<LandVehicle, bool> vehicleFilter;
 
 		public bool isSelecting { get; protected set; }
 
@@ -37,16 +42,16 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private global::ScheduleOne.Vehicles.LandVehicle GetHoveredVehicle()
+		private LandVehicle GetHoveredVehicle()
 		{
 			return null;
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
-		public void StartSelecting(string selectionTitle, ref global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.LandVehicle> initialSelection, int _selectionLimit, bool _exitOnSelectionLimit, global::System.Func<global::ScheduleOne.Vehicles.LandVehicle, bool> filter = null)
+		public void StartSelecting(string selectionTitle, ref List<LandVehicle> initialSelection, int _selectionLimit, bool _exitOnSelectionLimit, Func<LandVehicle, bool> filter = null)
 		{
 		}
 

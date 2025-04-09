@@ -1,50 +1,59 @@
+using System;
+using System.Collections.Generic;
+using ScheduleOne.Audio;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.Product;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI
 {
-	public class NewMixScreen : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.NewMixScreen>
+	public class NewMixScreen : Singleton<NewMixScreen>
 	{
 		public const int MAX_PROPERTIES_DISPLAYED = 5;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Canvas canvas;
+		[Header("References")]
+		[SerializeField]
+		protected Canvas canvas;
 
-		public global::UnityEngine.RectTransform Container;
+		public RectTransform Container;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TMP_InputField nameInputField;
+		[SerializeField]
+		protected TMP_InputField nameInputField;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject mixAlreadyExistsText;
+		[SerializeField]
+		protected GameObject mixAlreadyExistsText;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.RectTransform editIcon;
+		[SerializeField]
+		protected RectTransform editIcon;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button randomizeNameButton;
+		[SerializeField]
+		protected Button randomizeNameButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.UI.Button confirmButton;
+		[SerializeField]
+		protected Button confirmButton;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI PropertiesLabel;
+		[SerializeField]
+		protected TextMeshProUGUI PropertiesLabel;
 
-		[global::UnityEngine.SerializeField]
-		protected global::TMPro.TextMeshProUGUI MarketValueLabel;
+		[SerializeField]
+		protected TextMeshProUGUI MarketValueLabel;
 
-		public global::ScheduleOne.Audio.AudioSourceController Sound;
+		public AudioSourceController Sound;
 
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject attributeEntryPrefab;
+		[Header("Prefabs")]
+		[SerializeField]
+		protected GameObject attributeEntryPrefab;
 
-		[global::UnityEngine.Header("Name Library")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<string> name1Library;
+		[Header("Name Library")]
+		[SerializeField]
+		protected List<string> name1Library;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<string> name2Library;
+		[SerializeField]
+		protected List<string> name2Library;
 
-		public global::System.Action<string> onMixNamed;
+		public Action<string> onMixNamed;
 
 		public bool IsOpen => false;
 
@@ -52,7 +61,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
+		private void Exit(ExitAction action)
 		{
 		}
 
@@ -60,7 +69,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::ScheduleOne.Product.EDrugType drugType, float productMarketValue)
+		public void Open(List<ScheduleOne.Properties.Property> properties, EDrugType drugType, float productMarketValue)
 		{
 		}
 
@@ -76,7 +85,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public string GenerateUniqueName(global::ScheduleOne.Properties.Property[] properties = null, global::ScheduleOne.Product.EDrugType drugType = global::ScheduleOne.Product.EDrugType.Marijuana)
+		public string GenerateUniqueName(ScheduleOne.Properties.Property[] properties = null, EDrugType drugType = EDrugType.Marijuana)
 		{
 			return null;
 		}

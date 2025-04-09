@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class DemoBoundary : global::UnityEngine.MonoBehaviour
+	public class DemoBoundary : MonoBehaviour
 	{
-		public global::UnityEngine.Collider Collider;
+		public Collider Collider;
 
 		private void OnValidate()
 		{

@@ -1,6 +1,6 @@
 namespace ScheduleOne.AvatarFramework.Customization
 {
-	public class ACAvatarLayerReplicator : global::ScheduleOne.AvatarFramework.Customization.ACAssetPathReplicator<global::ScheduleOne.AvatarFramework.AvatarLayer>
+	public class ACAvatarLayerReplicator : ACAssetPathReplicator<AvatarLayer>
 	{
 	}
 }

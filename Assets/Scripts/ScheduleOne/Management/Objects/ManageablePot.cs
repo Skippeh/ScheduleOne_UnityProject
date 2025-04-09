@@ -1,25 +1,29 @@
+using ScheduleOne.Management.Presets;
+using ScheduleOne.ObjectScripts;
+using UnityEngine;
+
 namespace ScheduleOne.Management.Objects
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.ObjectScripts.Pot))]
-	public class ManageablePot : global::ScheduleOne.Management.Objects.ManageableObject
+	[RequireComponent(typeof(Pot))]
+	public class ManageablePot : ManageableObject
 	{
-		public global::ScheduleOne.Management.Presets.PotPreset CurrentPreset;
+		public PotPreset CurrentPreset;
 
 		protected virtual void Awake()
 		{
 		}
 
-		public override global::ScheduleOne.Management.ManageableObjectType GetObjectType()
+		public override ManageableObjectType GetObjectType()
 		{
-			return default(global::ScheduleOne.Management.ManageableObjectType);
+			return default(ManageableObjectType);
 		}
 
-		public override global::ScheduleOne.Management.Presets.Preset GetCurrentPreset()
+		public override Preset GetCurrentPreset()
 		{
 			return null;
 		}
 
-		protected override void SetPreset_Internal(global::ScheduleOne.Management.Presets.Preset newPreset)
+		protected override void SetPreset_Internal(Preset newPreset)
 		{
 		}
 	}

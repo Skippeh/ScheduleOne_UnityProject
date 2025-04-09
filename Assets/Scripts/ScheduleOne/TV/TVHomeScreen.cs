@@ -1,20 +1,24 @@
+using ScheduleOne.PlayerScripts;
+using TMPro;
+using UnityEngine;
+
 namespace ScheduleOne.TV
 {
-	public class TVHomeScreen : global::ScheduleOne.TV.TVApp
+	public class TVHomeScreen : TVApp
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.TV.TVInterface Interface;
+		[Header("References")]
+		public TVInterface Interface;
 
-		public global::ScheduleOne.TV.TVApp[] Apps;
+		public TVApp[] Apps;
 
-		public global::UnityEngine.RectTransform AppButtonContainer;
+		public RectTransform AppButtonContainer;
 
-		public global::UnityEngine.RectTransform[] PlayerDisplays;
+		public RectTransform[] PlayerDisplays;
 
-		public global::TMPro.TextMeshProUGUI TimeLabel;
+		public TextMeshProUGUI TimeLabel;
 
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject AppButtonPrefab;
+		[Header("Prefabs")]
+		public GameObject AppButtonPrefab;
 
 		private bool skipExit;
 
@@ -38,11 +42,11 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		private void AppSelected(global::ScheduleOne.TV.TVApp app)
+		private void AppSelected(TVApp app)
 		{
 		}
 
-		private void PlayerChange(global::ScheduleOne.PlayerScripts.Player player)
+		private void PlayerChange(Player player)
 		{
 		}
 	}

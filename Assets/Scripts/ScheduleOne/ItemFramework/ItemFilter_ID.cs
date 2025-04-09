@@ -1,14 +1,18 @@
+using System.Collections.Generic;
+
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemFilter_ID : global::ScheduleOne.ItemFramework.ItemFilter
+	public class ItemFilter_ID : ItemFilter
 	{
-		public global::System.Collections.Generic.List<string> AcceptedIDs;
+		public bool IsWhitelist;
 
-		public ItemFilter_ID(global::System.Collections.Generic.List<string> acceptedIDs)
+		public List<string> IDs;
+
+		public ItemFilter_ID(List<string> ids)
 		{
 		}
 
-		public override bool DoesItemMatchFilter(global::ScheduleOne.ItemFramework.ItemInstance instance)
+		public override bool DoesItemMatchFilter(ItemInstance instance)
 		{
 			return false;
 		}

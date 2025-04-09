@@ -1,54 +1,64 @@
+using System;
+using FishNet.Serializing.Helping;
+using ScheduleOne.Map;
+using ScheduleOne.Persistence.Datas;
+using ScheduleOne.UI;
+using ScheduleOne.UI.Compass;
+using ScheduleOne.Variables;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Quests
 {
-	[global::System.Serializable]
-	public class QuestEntry : global::UnityEngine.MonoBehaviour
+	[Serializable]
+	public class QuestEntry : MonoBehaviour
 	{
-		[global::UnityEngine.Header("Naming")]
-		[global::UnityEngine.SerializeField]
+		[Header("Naming")]
+		[SerializeField]
 		protected string EntryTitle;
 
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Quests.EQuestState state;
+		[SerializeField]
+		protected EQuestState state;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool AutoComplete;
 
-		public global::ScheduleOne.Variables.Conditions AutoCompleteConditions;
+		public Conditions AutoCompleteConditions;
 
 		public bool CompleteParentQuest;
 
 		public string EntryAddedIn;
 
-		[global::UnityEngine.Header("PoI Settings")]
+		[Header("PoI Settings")]
 		public bool AutoCreatePoI;
 
-		public global::UnityEngine.Transform PoILocation;
+		public Transform PoILocation;
 
 		public bool AutoUpdatePoILocation;
 
-		public global::ScheduleOne.Map.POI PoI;
+		public POI PoI;
 
-		public global::UnityEngine.Events.UnityEvent onStart;
+		public UnityEvent onStart;
 
-		public global::UnityEngine.Events.UnityEvent onEnd;
+		public UnityEvent onEnd;
 
-		public global::UnityEngine.Events.UnityEvent onComplete;
+		public UnityEvent onComplete;
 
-		public global::UnityEngine.Events.UnityEvent onInitialComplete;
+		public UnityEvent onInitialComplete;
 
-		private global::ScheduleOne.UI.Compass.CompassManager.Element compassElement;
+		private CompassManager.Element compassElement;
 
-		private global::ScheduleOne.UI.QuestEntryHUDUI entryUI;
+		private QuestEntryHUDUI entryUI;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		[field: global::System.NonSerialized]
-		public global::ScheduleOne.Quests.Quest ParentQuest { get; private set; }
+		[CodegenExclude]
+		[field: NonSerialized]
+		public Quest ParentQuest { get; private set; }
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
+		[CodegenExclude]
 		public string Title => null;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.Quests.EQuestState State => default(global::ScheduleOne.Quests.EQuestState);
+		[CodegenExclude]
+		public EQuestState State => default(EQuestState);
 
 		protected virtual void Awake()
 		{
@@ -66,7 +76,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public void SetData(global::ScheduleOne.Persistence.Datas.QuestEntryData data)
+		public void SetData(QuestEntryData data)
 		{
 		}
 
@@ -82,7 +92,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public virtual void SetState(global::ScheduleOne.Quests.EQuestState newState, bool network = true)
+		public virtual void SetState(EQuestState newState, bool network = true)
 		{
 		}
 
@@ -95,7 +105,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public void SetPoILocation(global::UnityEngine.Vector3 location)
+		public void SetPoILocation(Vector3 location)
 		{
 		}
 
@@ -115,7 +125,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public global::ScheduleOne.Persistence.Datas.QuestEntryData GetSaveData()
+		public QuestEntryData GetSaveData()
 		{
 			return null;
 		}

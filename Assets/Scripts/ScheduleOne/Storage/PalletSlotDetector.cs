@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace ScheduleOne.Storage
 {
-	public class PalletSlotDetector : global::UnityEngine.MonoBehaviour
+	public class PalletSlotDetector : MonoBehaviour
 	{
-		public global::ScheduleOne.Storage.Pallet pallet;
+		public Pallet pallet;
 
-		protected virtual void OnTriggerStay(global::UnityEngine.Collider other)
+		protected virtual void OnTriggerStay(Collider other)
 		{
 		}
 	}

@@ -1,7 +1,10 @@
+using ScheduleOne.Combat;
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.Rigidbody))]
-	public class ImpactSoundEntity : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(Rigidbody))]
+	public class ImpactSoundEntity : MonoBehaviour
 	{
 		public enum EMaterial
 		{
@@ -21,21 +24,21 @@ namespace ScheduleOne.Audio
 
 		public const float COOLDOWN = 0.25f;
 
-		public global::ScheduleOne.Audio.ImpactSoundEntity.EMaterial Material;
+		public EMaterial Material;
 
 		private float lastImpactTime;
 
-		private global::UnityEngine.Rigidbody rb;
+		private Rigidbody rb;
 
 		public void Awake()
 		{
 		}
 
-		private void OnImpacted(global::ScheduleOne.Combat.Impact impact)
+		private void OnImpacted(Impact impact)
 		{
 		}
 
-		private void OnCollisionEnter(global::UnityEngine.Collision collision)
+		private void OnCollisionEnter(Collision collision)
 		{
 		}
 	}

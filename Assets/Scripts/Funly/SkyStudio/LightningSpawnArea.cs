@@ -1,9 +1,11 @@
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	public class LightningSpawnArea : global::UnityEngine.MonoBehaviour
+	public class LightningSpawnArea : MonoBehaviour
 	{
-		[global::UnityEngine.Tooltip("Dimensions of the lightning area where lightning bolts will be spawned inside randomly.")]
-		public global::UnityEngine.Vector3 lightningArea;
+		[Tooltip("Dimensions of the lightning area where lightning bolts will be spawned inside randomly.")]
+		public Vector3 lightningArea;
 
 		public void OnDrawGizmosSelected()
 		{

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Quests
 {
-	public class Quest_DownToBusiness : global::ScheduleOne.Quests.Quest
+	public class Quest_DownToBusiness : Quest
 	{
 		protected override void Awake()
 		{

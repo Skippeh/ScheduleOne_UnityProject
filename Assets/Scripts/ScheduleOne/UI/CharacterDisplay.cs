@@ -1,25 +1,31 @@
+using System;
+using ScheduleOne.AvatarFramework;
+using ScheduleOne.Clothing;
+using ScheduleOne.DevUtilities;
+using UnityEngine;
+
 namespace ScheduleOne.UI
 {
-	public class CharacterDisplay : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.CharacterDisplay>
+	public class CharacterDisplay : Singleton<CharacterDisplay>
 	{
-		[global::System.Serializable]
+		[Serializable]
 		public class SlotAlignmentPoint
 		{
-			public global::ScheduleOne.Clothing.EClothingSlot SlotType;
+			public EClothingSlot SlotType;
 
-			public global::UnityEngine.Transform Point;
+			public Transform Point;
 		}
 
-		public global::ScheduleOne.UI.CharacterDisplay.SlotAlignmentPoint[] AlignmentPoints;
+		public SlotAlignmentPoint[] AlignmentPoints;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform Container;
+		[Header("References")]
+		public Transform Container;
 
-		public global::ScheduleOne.AvatarFramework.Avatar ParentAvatar;
+		public ScheduleOne.AvatarFramework.Avatar ParentAvatar;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		public ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		public global::UnityEngine.Transform AvatarContainer;
+		public Transform AvatarContainer;
 
 		private float targetRotation;
 
@@ -37,7 +43,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void SetAppearance(global::ScheduleOne.AvatarFramework.AvatarSettings settings)
+		public void SetAppearance(AvatarSettings settings)
 		{
 		}
 	}

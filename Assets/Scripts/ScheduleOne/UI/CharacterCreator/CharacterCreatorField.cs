@@ -1,8 +1,10 @@
+using ScheduleOne.Clothing;
+
 namespace ScheduleOne.UI.CharacterCreator
 {
-	public class CharacterCreatorField<T> : global::ScheduleOne.UI.CharacterCreator.BaseCharacterCreatorField
+	public class CharacterCreatorField<T> : BaseCharacterCreatorField
 	{
-		protected global::ScheduleOne.Clothing.ClothingDefinition selectedClothingDefinition;
+		protected ClothingDefinition selectedClothingDefinition;
 
 		public T value { get; protected set; }
 

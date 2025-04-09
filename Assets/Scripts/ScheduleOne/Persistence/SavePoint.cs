@@ -1,14 +1,18 @@
+using ScheduleOne.Interaction;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Persistence
 {
-	public class SavePoint : global::UnityEngine.MonoBehaviour
+	public class SavePoint : MonoBehaviour
 	{
 		public const float SAVE_COOLDOWN = 60f;
 
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Events.UnityEvent onSaveStart;
+		public UnityEvent onSaveStart;
 
-		public global::UnityEngine.Events.UnityEvent onSaveComplete;
+		public UnityEvent onSaveComplete;
 
 		public void Awake()
 		{

@@ -1,6 +1,11 @@
+using System.Collections.Generic;
+using ScheduleOne.Skating;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarAnimation : global::UnityEngine.MonoBehaviour
+	public class AvatarAnimation : MonoBehaviour
 	{
 		public enum EFlinchType
 		{
@@ -26,7 +31,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float MaxBoneOffsetSqr = 0.0001f;
 
-		public static global::UnityEngine.Vector3 SITTING_OFFSET;
+		public static Vector3 SITTING_OFFSET;
 
 		public const float SEAT_TIME = 0.5f;
 
@@ -34,27 +39,27 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private int framesActive;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Animator animator;
+		[Header("References")]
+		public Animator animator;
 
-		public global::UnityEngine.Transform HipBone;
+		public Transform HipBone;
 
-		public global::UnityEngine.Transform[] Bones;
+		public Transform[] Bones;
 
-		protected global::ScheduleOne.AvatarFramework.Avatar avatar;
+		protected Avatar avatar;
 
-		public global::UnityEngine.Transform LeftHandContainer;
+		public Transform LeftHandContainer;
 
-		public global::UnityEngine.Transform RightHandContainer;
+		public Transform RightHandContainer;
 
-		public global::UnityEngine.Transform RightHandAlignmentPoint;
+		public Transform RightHandAlignmentPoint;
 
-		public global::UnityEngine.Transform LeftHandAlignmentPoint;
+		public Transform LeftHandAlignmentPoint;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarIKController IKController;
+		public AvatarIKController IKController;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::UnityEngine.LayerMask GroundingMask;
+		[Header("Settings")]
+		public LayerMask GroundingMask;
 
 		public string StandUpFromBackClipName;
 
@@ -64,29 +69,29 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public bool AllowCulling;
 
-		public global::UnityEngine.Events.UnityEvent onStandupStart;
+		public UnityEvent onStandupStart;
 
-		public global::UnityEngine.Events.UnityEvent onStandupDone;
+		public UnityEvent onStandupDone;
 
-		public global::UnityEngine.Events.UnityEvent onHeavyFlinch;
+		public UnityEvent onHeavyFlinch;
 
-		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] standingBoneTransforms;
+		private BoneTransform[] standingBoneTransforms;
 
-		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] standUpFromBackBoneTransforms;
+		private BoneTransform[] standUpFromBackBoneTransforms;
 
-		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] standUpFromFrontBoneTransforms;
+		private BoneTransform[] standUpFromFrontBoneTransforms;
 
-		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] ragdollBoneTransforms;
+		private BoneTransform[] ragdollBoneTransforms;
 
-		private global::UnityEngine.Coroutine standUpRoutine;
+		private Coroutine standUpRoutine;
 
-		private global::UnityEngine.Coroutine seatRoutine;
+		private Coroutine seatRoutine;
 
-		private global::ScheduleOne.Skating.Skateboard activeSkateboard;
+		private Skateboard activeSkateboard;
 
 		private bool animationEnabled;
 
-		private global::UnityEngine.AnimatorCullingMode initialCullingMode;
+		private AnimatorCullingMode initialCullingMode;
 
 		public bool IsCrouched { get; protected set; }
 
@@ -94,7 +99,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public float TimeSinceSitEnd { get; protected set; }
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarSeat CurrentSeat { get; protected set; }
+		public AvatarSeat CurrentSeat { get; protected set; }
 
 		public bool StandUpAnimationPlaying { get; protected set; }
 
@@ -160,7 +165,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		public void Flinch(global::UnityEngine.Vector3 forceDirection, global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation.EFlinchType flinchType)
+		public void Flinch(Vector3 forceDirection, EFlinchType flinchType)
 		{
 		}
 
@@ -181,16 +186,16 @@ namespace ScheduleOne.AvatarFramework.Animation
 			return false;
 		}
 
-		private void PopulateBoneTransforms(global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)
+		private void PopulateBoneTransforms(BoneTransform[] boneTransforms)
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Pose> GetBoneTransforms()
+		private List<Pose> GetBoneTransforms()
 		{
 			return null;
 		}
 
-		private void PopulateAnimationStartBoneTransforms(string clipName, global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)
+		private void PopulateAnimationStartBoneTransforms(string clipName, BoneTransform[] boneTransforms)
 		{
 		}
 
@@ -206,11 +211,11 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		public void SetSeat(global::ScheduleOne.AvatarFramework.Animation.AvatarSeat seat)
+		public void SetSeat(AvatarSeat seat)
 		{
 		}
 
-		public void SkateboardMounted(global::ScheduleOne.Skating.Skateboard board)
+		public void SkateboardMounted(Skateboard board)
 		{
 		}
 

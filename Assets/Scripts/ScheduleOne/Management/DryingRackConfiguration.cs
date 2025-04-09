@@ -1,18 +1,21 @@
+using ScheduleOne.EntityFramework;
+using ScheduleOne.ObjectScripts;
+
 namespace ScheduleOne.Management
 {
-	public class DryingRackConfiguration : global::ScheduleOne.Management.EntityConfiguration
+	public class DryingRackConfiguration : EntityConfiguration
 	{
-		public global::ScheduleOne.Management.NPCField AssignedBotanist;
+		public NPCField AssignedBotanist;
 
-		public global::ScheduleOne.Management.QualityField TargetQuality;
+		public QualityField TargetQuality;
 
-		public global::ScheduleOne.Management.ObjectField Destination;
+		public ObjectField Destination;
 
-		public global::ScheduleOne.ObjectScripts.DryingRack Rack { get; protected set; }
+		public DryingRack Rack { get; protected set; }
 
-		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
+		public TransitRoute DestinationRoute { get; protected set; }
 
-		public DryingRackConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.DryingRack rack)
+		public DryingRackConfiguration(ConfigurationReplicator replicator, IConfigurable configurable, DryingRack rack)
 			: base(null, null)
 		{
 		}
@@ -21,11 +24,11 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		private void DestinationChanged(global::ScheduleOne.EntityFramework.BuildableItem item)
+		private void DestinationChanged(BuildableItem item)
 		{
 		}
 
-		public bool DestinationFilter(global::ScheduleOne.EntityFramework.BuildableItem obj, out string reason)
+		public bool DestinationFilter(BuildableItem obj, out string reason)
 		{
 			reason = null;
 			return false;

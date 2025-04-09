@@ -6,8 +6,8 @@ namespace Funly.SkyStudio
 
 		float time { get; set; }
 
-		global::Funly.SkyStudio.InterpolationCurve interpolationCurve { get; set; }
+		InterpolationCurve interpolationCurve { get; set; }
 
-		global::Funly.SkyStudio.InterpolationDirection interpolationDirection { get; set; }
+		InterpolationDirection interpolationDirection { get; set; }
 	}
 }

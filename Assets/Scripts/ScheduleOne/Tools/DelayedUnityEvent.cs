@@ -1,14 +1,18 @@
+using EasyButtons;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.Tools
 {
-	public class DelayedUnityEvent : global::UnityEngine.MonoBehaviour
+	public class DelayedUnityEvent : MonoBehaviour
 	{
 		public float Delay;
 
-		public global::UnityEngine.Events.UnityEvent onDelayStart;
+		public UnityEvent onDelayStart;
 
-		public global::UnityEngine.Events.UnityEvent onDelayedExecute;
+		public UnityEvent onDelayedExecute;
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Execute()
 		{
 		}

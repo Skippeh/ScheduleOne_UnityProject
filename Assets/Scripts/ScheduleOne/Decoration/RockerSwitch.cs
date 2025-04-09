@@ -1,12 +1,14 @@
+using UnityEngine;
+
 namespace ScheduleOne.Decoration
 {
-	public class RockerSwitch : global::UnityEngine.MonoBehaviour
+	public class RockerSwitch : MonoBehaviour
 	{
-		public global::UnityEngine.MeshRenderer ButtonMesh;
+		public MeshRenderer ButtonMesh;
 
-		public global::UnityEngine.Transform ButtonTransform;
+		public Transform ButtonTransform;
 
-		public global::UnityEngine.Light Light;
+		public Light Light;
 
 		public bool isOn;
 

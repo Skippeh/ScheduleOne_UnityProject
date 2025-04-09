@@ -1,24 +1,32 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Management;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs.Behaviour
 {
-	public class Behaviour : global::FishNet.Object.NetworkBehaviour
+	public class Behaviour : NetworkBehaviour
 	{
 		public const int MAX_CONSECUTIVE_PATHING_FAILURES = 5;
 
 		public bool EnabledOnAwake;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public string Name;
 
-		[global::UnityEngine.Tooltip("Behaviour priority; higher = takes priority over lower number behaviour")]
+		[Tooltip("Behaviour priority; higher = takes priority over lower number behaviour")]
 		public int Priority;
 
-		public global::UnityEngine.Events.UnityEvent onEnable;
+		public UnityEvent onEnable;
 
-		public global::UnityEngine.Events.UnityEvent onDisable;
+		public UnityEvent onDisable;
 
-		public global::UnityEngine.Events.UnityEvent onBegin;
+		public UnityEvent onBegin;
 
-		public global::UnityEngine.Events.UnityEvent onEnd;
+		public UnityEvent onEnd;
 
 		protected int consecutivePathingFailures;
 
@@ -32,15 +40,15 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public bool Active { get; private set; }
 
-		public global::ScheduleOne.NPCs.Behaviour.NPCBehaviour beh { get; private set; }
+		public NPCBehaviour beh { get; private set; }
 
-		public global::ScheduleOne.NPCs.NPC Npc => null;
+		public NPC Npc => null;
 
 		public virtual void Awake()
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		public override void OnSpawnServer(NetworkConnection connection)
 		{
 		}
 
@@ -52,14 +60,14 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendEnable()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Enable_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Enable_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -67,14 +75,14 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendDisable()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Disable_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Disable_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -82,9 +90,9 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Begin_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Begin_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -92,14 +100,14 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SendEnd()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void End_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void End_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -107,9 +115,9 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Pause_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Pause_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -117,9 +125,9 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc]
-		public void Resume_Networked(global::FishNet.Connection.NetworkConnection conn)
+		[ObserversRpc(RunLocally = true)]
+		[TargetRpc]
+		public void Resume_Networked(NetworkConnection conn)
 		{
 		}
 
@@ -143,15 +151,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected void SetDestination(global::ScheduleOne.Management.ITransitEntity transitEntity, bool teleportIfFail = true)
+		protected void SetDestination(ITransitEntity transitEntity, bool teleportIfFail = true)
 		{
 		}
 
-		protected void SetDestination(global::UnityEngine.Vector3 position, bool teleportIfFail = true)
+		protected void SetDestination(Vector3 position, bool teleportIfFail = true)
 		{
 		}
 
-		protected virtual void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		protected virtual void WalkCallback(NPCMovement.WalkResult result)
 		{
 		}
 
@@ -175,27 +183,27 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_SendEnable_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEnable_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Enable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Enable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Enable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Enable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Enable_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Enable_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Enable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Enable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Enable_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Enable_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -207,47 +215,47 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_SendDisable_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendDisable_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_Disable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Disable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Disable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Disable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Disable_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Disable_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Disable_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Disable_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Disable_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Disable_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_Begin_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Begin_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Begin_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Begin_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Begin_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Begin_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Begin_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Begin_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Begin_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Begin_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
@@ -259,67 +267,67 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcReader___Server_SendEnd_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendEnd_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_End_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_End_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___End_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___End_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_End_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_End_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_End_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_End_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_End_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_End_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_Pause_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Pause_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Pause_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Pause_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Pause_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Pause_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Pause_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Pause_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Pause_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Pause_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_Resume_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Observers_Resume_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		public void RpcLogic___Resume_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		public void RpcLogic___Resume_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Resume_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Resume_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Resume_Networked_328543758(global::FishNet.Connection.NetworkConnection conn)
+		private void RpcWriter___Target_Resume_Networked_328543758(NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Target_Resume_Networked_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Resume_Networked_328543758(PooledReader PooledReader0, Channel channel)
 		{
 		}
 

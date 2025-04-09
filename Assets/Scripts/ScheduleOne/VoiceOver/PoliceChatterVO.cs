@@ -1,16 +1,19 @@
+using ScheduleOne.Audio;
+using UnityEngine;
+
 namespace ScheduleOne.VoiceOver
 {
-	public class PoliceChatterVO : global::ScheduleOne.VoiceOver.VOEmitter
+	public class PoliceChatterVO : VOEmitter
 	{
-		public global::ScheduleOne.Audio.AudioSourceController StartBeep;
+		public AudioSourceController StartBeep;
 
-		public global::ScheduleOne.Audio.AudioSourceController StartEndBeep;
+		public AudioSourceController StartEndBeep;
 
-		public global::ScheduleOne.Audio.AudioSourceController Static;
+		public AudioSourceController Static;
 
-		private global::UnityEngine.Coroutine chatterRoutine;
+		private Coroutine chatterRoutine;
 
-		public override void Play(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		public override void Play(EVOLineType lineType)
 		{
 		}
 

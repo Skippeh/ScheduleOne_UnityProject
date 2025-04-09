@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public abstract class PlayerSingleton<T> : global::UnityEngine.MonoBehaviour where T : global::ScheduleOne.DevUtilities.PlayerSingleton<T>
+	public abstract class PlayerSingleton<T> : MonoBehaviour where T : PlayerSingleton<T>
 	{
 		private static T instance;
 

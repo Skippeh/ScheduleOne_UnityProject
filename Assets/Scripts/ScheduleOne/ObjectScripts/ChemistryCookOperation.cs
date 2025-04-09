@@ -1,28 +1,33 @@
+using FishNet.Serializing.Helping;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.StationFramework;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
 	public class ChemistryCookOperation
 	{
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		private global::ScheduleOne.StationFramework.StationRecipe recipe;
+		[CodegenExclude]
+		private StationRecipe recipe;
 
 		public string RecipeID;
 
-		public global::ScheduleOne.ItemFramework.EQuality ProductQuality;
+		public EQuality ProductQuality;
 
-		public global::UnityEngine.Color StartLiquidColor;
+		public Color StartLiquidColor;
 
 		public float LiquidLevel;
 
 		public int CurrentTime;
 
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::ScheduleOne.StationFramework.StationRecipe Recipe => null;
+		[CodegenExclude]
+		public StationRecipe Recipe => null;
 
-		public ChemistryCookOperation(global::ScheduleOne.StationFramework.StationRecipe recipe, global::ScheduleOne.ItemFramework.EQuality productQuality, global::UnityEngine.Color startLiquidColor, float liquidLevel, int currentTime = 0)
+		public ChemistryCookOperation(StationRecipe recipe, EQuality productQuality, Color startLiquidColor, float liquidLevel, int currentTime = 0)
 		{
 		}
 
-		public ChemistryCookOperation(string recipeID, global::ScheduleOne.ItemFramework.EQuality productQuality, global::UnityEngine.Color startLiquidColor, float liquidLevel, int currentTime = 0)
+		public ChemistryCookOperation(string recipeID, EQuality productQuality, Color startLiquidColor, float liquidLevel, int currentTime = 0)
 		{
 		}
 

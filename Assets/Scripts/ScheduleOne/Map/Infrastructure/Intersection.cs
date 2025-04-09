@@ -1,41 +1,48 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
 namespace ScheduleOne.Map.Infrastructure
 {
-	public class Intersection : global::UnityEngine.MonoBehaviour
+	public class Intersection : MonoBehaviour
 	{
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRun_003Ed__8 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		[CompilerGenerated]
+		private sealed class _003CRun_003Ed__8 : IEnumerator<object>, IEnumerator, IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Map.Infrastructure.Intersection _003C_003E4__this;
+			public Intersection _003C_003E4__this;
 
-			object global::System.Collections.Generic.IEnumerator<object>.Current
+			object IEnumerator<object>.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			object global::System.Collections.IEnumerator.Current
+			object IEnumerator.Current
 			{
-				[global::System.Diagnostics.DebuggerHidden]
+				[DebuggerHidden]
 				get
 				{
 					return null;
 				}
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
+			[DebuggerHidden]
 			public _003CRun_003Ed__8(int _003C_003E1__state)
 			{
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
+			[DebuggerHidden]
+			void IDisposable.Dispose()
 			{
 			}
 
@@ -44,56 +51,56 @@ namespace ScheduleOne.Map.Infrastructure
 				return false;
 			}
 
-			bool global::System.Collections.IEnumerator.MoveNext()
+			bool IEnumerator.MoveNext()
 			{
 				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 				return this.MoveNext();
 			}
 
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
+			[DebuggerHidden]
+			void IEnumerator.Reset()
 			{
 			}
 		}
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Map.Infrastructure.TrafficLight> path1Lights;
+		[Header("References")]
+		[SerializeField]
+		protected List<TrafficLight> path1Lights;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Map.Infrastructure.TrafficLight> path2Lights;
+		[SerializeField]
+		protected List<TrafficLight> path2Lights;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> path1Obstacles;
+		[SerializeField]
+		protected List<GameObject> path1Obstacles;
 
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> path2Obstacles;
+		[SerializeField]
+		protected List<GameObject> path2Obstacles;
 
-		[global::UnityEngine.Header("Settings")]
-		[global::UnityEngine.SerializeField]
+		[Header("Settings")]
+		[SerializeField]
 		protected float path1Time;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float path2Time;
 
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected float timeOffset;
 
 		protected virtual void Start()
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Map.Infrastructure.Intersection._003CRun_003Ed__8))]
-		protected global::System.Collections.IEnumerator Run()
+		[IteratorStateMachine(typeof(_003CRun_003Ed__8))]
+		protected IEnumerator Run()
 		{
 			return null;
 		}
 
-		protected void SetPath1Lights(global::ScheduleOne.Map.Infrastructure.TrafficLight.State state)
+		protected void SetPath1Lights(TrafficLight.State state)
 		{
 		}
 
-		protected void SetPath2Lights(global::ScheduleOne.Map.Infrastructure.TrafficLight.State state)
+		protected void SetPath2Lights(TrafficLight.State state)
 		{
 		}
 	}

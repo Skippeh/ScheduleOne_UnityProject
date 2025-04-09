@@ -1,6 +1,8 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Albert : global::ScheduleOne.Economy.Supplier
+	public class Albert : Supplier
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EAlbertAssembly_002DCSharp_002Edll_Excuted;
 

@@ -1,11 +1,15 @@
+using System.Collections.Generic;
+using ScheduleOne.Police;
+using UnityEngine;
+
 namespace ScheduleOne.Law
 {
-	public class SentryLocation : global::UnityEngine.MonoBehaviour
+	public class SentryLocation : MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> StandPoints;
+		[Header("References")]
+		public List<Transform> StandPoints;
 
-		[global::UnityEngine.Header("Info")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> AssignedOfficers;
+		[Header("Info")]
+		public List<PoliceOfficer> AssignedOfficers;
 	}
 }

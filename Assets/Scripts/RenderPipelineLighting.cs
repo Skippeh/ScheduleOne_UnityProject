@@ -1,32 +1,34 @@
-[global::UnityEngine.ExecuteInEditMode]
-public class RenderPipelineLighting : global::UnityEngine.MonoBehaviour
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class RenderPipelineLighting : MonoBehaviour
 {
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.GameObject _standardLighting;
+	[SerializeField]
+	private GameObject _standardLighting;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _standardSky;
+	[SerializeField]
+	private Material _standardSky;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _standardTerrain;
+	[SerializeField]
+	private Material _standardTerrain;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.GameObject _universalLighting;
+	[SerializeField]
+	private GameObject _universalLighting;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _universalSky;
+	[SerializeField]
+	private Material _universalSky;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _universalTerrain;
+	[SerializeField]
+	private Material _universalTerrain;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.GameObject _highDefinitionLighting;
+	[SerializeField]
+	private GameObject _highDefinitionLighting;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _highDefinitionSky;
+	[SerializeField]
+	private Material _highDefinitionSky;
 
-	[global::UnityEngine.SerializeField]
-	private global::UnityEngine.Material _highDefinitionTerrain;
+	[SerializeField]
+	private Material _highDefinitionTerrain;
 
 	private void OnValidate()
 	{

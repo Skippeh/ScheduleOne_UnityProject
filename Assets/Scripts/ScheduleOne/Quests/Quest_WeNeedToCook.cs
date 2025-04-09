@@ -1,10 +1,12 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.Quests
 {
-	public class Quest_WeNeedToCook : global::ScheduleOne.Quests.Quest
+	public class Quest_WeNeedToCook : Quest
 	{
-		public global::ScheduleOne.Quests.Quest[] PrerequisiteQuests;
+		public Quest[] PrerequisiteQuests;
 
-		public global::ScheduleOne.Economy.Supplier MethSupplier;
+		public Supplier MethSupplier;
 
 		protected override void MinPass()
 		{

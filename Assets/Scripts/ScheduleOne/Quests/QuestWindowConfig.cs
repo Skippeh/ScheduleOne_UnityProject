@@ -1,6 +1,8 @@
+using System;
+
 namespace ScheduleOne.Quests
 {
-	[global::System.Serializable]
+	[Serializable]
 	public class QuestWindowConfig
 	{
 		public bool IsEnabled;

@@ -1,10 +1,12 @@
+using System;
+
 namespace UnityEngine.PostProcessing
 {
-	[global::System.Serializable]
+	[Serializable]
 	public abstract class PostProcessingModel
 	{
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.PostProcessing.GetSet("enabled")]
+		[SerializeField]
+		[GetSet("enabled")]
 		private bool m_Enabled;
 
 		public bool enabled

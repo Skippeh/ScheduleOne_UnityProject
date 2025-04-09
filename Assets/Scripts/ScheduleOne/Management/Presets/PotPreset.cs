@@ -1,19 +1,21 @@
+using ScheduleOne.Management.Presets.Options;
+
 namespace ScheduleOne.Management.Presets
 {
-	public class PotPreset : global::ScheduleOne.Management.Presets.Preset
+	public class PotPreset : Preset
 	{
-		public global::ScheduleOne.Management.Presets.Options.ItemList Seeds;
+		public ItemList Seeds;
 
-		public global::ScheduleOne.Management.Presets.Options.ItemList Additives;
+		public ItemList Additives;
 
-		protected static global::ScheduleOne.Management.Presets.PotPreset DefaultPreset { get; set; }
+		protected static PotPreset DefaultPreset { get; set; }
 
-		public override global::ScheduleOne.Management.Presets.Preset GetCopy()
+		public override Preset GetCopy()
 		{
 			return null;
 		}
 
-		public override void CopyTo(global::ScheduleOne.Management.Presets.Preset other)
+		public override void CopyTo(Preset other)
 		{
 		}
 
@@ -21,12 +23,12 @@ namespace ScheduleOne.Management.Presets
 		{
 		}
 
-		public static global::ScheduleOne.Management.Presets.PotPreset GetDefaultPreset()
+		public static PotPreset GetDefaultPreset()
 		{
 			return null;
 		}
 
-		public static global::ScheduleOne.Management.Presets.PotPreset GetNewBlankPreset()
+		public static PotPreset GetNewBlankPreset()
 		{
 			return null;
 		}

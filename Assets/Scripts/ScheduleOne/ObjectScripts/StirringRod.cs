@@ -1,6 +1,10 @@
+using ScheduleOne.Audio;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class StirringRod : global::UnityEngine.MonoBehaviour
+	public class StirringRod : MonoBehaviour
 	{
 		public const float MAX_STIR_RATE = 20f;
 
@@ -8,18 +12,18 @@ namespace ScheduleOne.ObjectScripts
 
 		public float LerpSpeed;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerTasks.Clickable Clickable;
+		[Header("References")]
+		public Clickable Clickable;
 
-		public global::UnityEngine.Transform PlaneNormal;
+		public Transform PlaneNormal;
 
-		public global::UnityEngine.Transform Container;
+		public Transform Container;
 
-		public global::UnityEngine.Transform RodPivot;
+		public Transform RodPivot;
 
-		public global::ScheduleOne.Audio.AudioSourceController StirSound;
+		public AudioSourceController StirSound;
 
-		private global::UnityEngine.Vector3 clickOffset;
+		private Vector3 clickOffset;
 
 		private bool isMoving;
 
@@ -43,13 +47,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ClickStart(global::UnityEngine.RaycastHit hit)
+		public void ClickStart(RaycastHit hit)
 		{
 		}
 
-		private global::UnityEngine.Vector3 GetPlaneHit()
+		private Vector3 GetPlaneHit()
 		{
-			return default(global::UnityEngine.Vector3);
+			return default(Vector3);
 		}
 
 		public void ClickEnd()

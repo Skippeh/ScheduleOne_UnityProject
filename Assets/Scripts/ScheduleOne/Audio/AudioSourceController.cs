@@ -1,16 +1,18 @@
+using UnityEngine;
+
 namespace ScheduleOne.Audio
 {
-	[global::UnityEngine.RequireComponent(typeof(global::UnityEngine.AudioSource))]
-	public class AudioSourceController : global::UnityEngine.MonoBehaviour
+	[RequireComponent(typeof(AudioSource))]
+	public class AudioSourceController : MonoBehaviour
 	{
 		public bool DEBUG;
 
-		public global::UnityEngine.AudioSource AudioSource;
+		public AudioSource AudioSource;
 
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Audio.EAudioType AudioType;
+		[Header("Settings")]
+		public EAudioType AudioType;
 
-		[global::UnityEngine.Range(0f, 1f)]
+		[Range(0f, 1f)]
 		public float DefaultVolume;
 
 		public bool RandomizePitch;
@@ -19,10 +21,10 @@ namespace ScheduleOne.Audio
 
 		public float MaxPitch;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float VolumeMultiplier;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		[Range(0f, 2f)]
 		public float PitchMultiplier;
 
 		private bool paused;

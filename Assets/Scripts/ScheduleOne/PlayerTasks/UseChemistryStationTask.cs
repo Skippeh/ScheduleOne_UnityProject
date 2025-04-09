@@ -1,37 +1,42 @@
+using System.Collections.Generic;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.StationFramework;
+
 namespace ScheduleOne.PlayerTasks
 {
-	public class UseChemistryStationTask : global::ScheduleOne.PlayerTasks.Task
+	public class UseChemistryStationTask : Task
 	{
 		public const float STIR_TIME = 1.5f;
 
 		public const float TEMPERATURE_TIME = 2f;
 
-		private global::ScheduleOne.ObjectScripts.Beaker beaker;
+		private Beaker beaker;
 
-		private global::ScheduleOne.ObjectScripts.StirringRod stirringRod;
+		private StirringRod stirringRod;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationItem> items;
+		private List<StationItem> items;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.IngredientPiece> ingredientPieces;
+		private List<IngredientPiece> ingredientPieces;
 
 		private float stirProgress;
 
 		private float timeInTemperatureRange;
 
-		private global::ScheduleOne.ItemFramework.ItemInstance[] RemovedIngredients;
+		private ItemInstance[] RemovedIngredients;
 
-		public global::ScheduleOne.ObjectScripts.ChemistryStation.EStep CurrentStep { get; private set; }
+		public ChemistryStation.EStep CurrentStep { get; private set; }
 
-		public global::ScheduleOne.ObjectScripts.ChemistryStation Station { get; private set; }
+		public ChemistryStation Station { get; private set; }
 
-		public global::ScheduleOne.StationFramework.StationRecipe Recipe { get; private set; }
+		public StationRecipe Recipe { get; private set; }
 
-		public static string GetStepDescription(global::ScheduleOne.ObjectScripts.ChemistryStation.EStep step)
+		public static string GetStepDescription(ChemistryStation.EStep step)
 		{
 			return null;
 		}
 
-		public UseChemistryStationTask(global::ScheduleOne.ObjectScripts.ChemistryStation station, global::ScheduleOne.StationFramework.StationRecipe recipe)
+		public UseChemistryStationTask(ChemistryStation station, StationRecipe recipe)
 		{
 		}
 

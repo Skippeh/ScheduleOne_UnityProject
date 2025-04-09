@@ -1,19 +1,23 @@
+using EasyButtons;
+using ScheduleOne.AvatarFramework.Equipping;
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class EquipUtility : global::UnityEngine.MonoBehaviour
+	public class EquipUtility : MonoBehaviour
 	{
-		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable Equippable;
+		public AvatarEquippable Equippable;
 
 		public void Update()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Equip()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void Unequip()
 		{
 		}

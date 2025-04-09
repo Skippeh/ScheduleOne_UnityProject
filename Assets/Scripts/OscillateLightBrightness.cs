@@ -1,13 +1,15 @@
-public class OscillateLightBrightness : global::UnityEngine.MonoBehaviour
-{
-	private global::UnityEngine.Light lightComponent;
+using UnityEngine;
 
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.Range(0f, 10f)]
+public class OscillateLightBrightness : MonoBehaviour
+{
+	private Light lightComponent;
+
+	[SerializeField]
+	[Range(0f, 10f)]
 	private float lower;
 
-	[global::UnityEngine.SerializeField]
-	[global::UnityEngine.Range(0f, 10f)]
+	[SerializeField]
+	[Range(0f, 10f)]
 	private float upper;
 
 	private void Start()

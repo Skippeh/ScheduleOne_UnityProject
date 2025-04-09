@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.Tools
 {
-	public class ForcePlayerCrouch : global::UnityEngine.MonoBehaviour
+	public class ForcePlayerCrouch : MonoBehaviour
 	{
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerStay(Collider other)
 		{
 		}
 	}

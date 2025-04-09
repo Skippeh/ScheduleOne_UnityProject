@@ -1,22 +1,27 @@
+using System;
+using ScheduleOne.PlayerTasks;
+using ScheduleOne.Trash;
+using UnityEngine;
+
 namespace ScheduleOne.Growing
 {
-	public class FunctionalSeed : global::UnityEngine.MonoBehaviour
+	public class FunctionalSeed : MonoBehaviour
 	{
-		public global::System.Action onSeedExitVial;
+		public Action onSeedExitVial;
 
-		public global::ScheduleOne.PlayerTasks.Draggable Vial;
+		public Draggable Vial;
 
-		public global::UnityEngine.Collider SeedBlocker;
+		public Collider SeedBlocker;
 
-		public global::ScheduleOne.Growing.VialCap Cap;
+		public VialCap Cap;
 
-		public global::UnityEngine.Collider SeedCollider;
+		public Collider SeedCollider;
 
-		public global::UnityEngine.Rigidbody SeedRigidbody;
+		public Rigidbody SeedRigidbody;
 
-		public global::ScheduleOne.Trash.TrashItem TrashPrefab;
+		public TrashItem TrashPrefab;
 
-		public void TriggerExit(global::UnityEngine.Collider other)
+		public void TriggerExit(Collider other)
 		{
 		}
 	}

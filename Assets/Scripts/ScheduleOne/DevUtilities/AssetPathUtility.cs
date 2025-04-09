@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
 	public static class AssetPathUtility
 	{
-		public static string GetResourcesPath(global::UnityEngine.Object selectedObject)
+		public static string GetResourcesPath(Object selectedObject)
 		{
 			return null;
 		}

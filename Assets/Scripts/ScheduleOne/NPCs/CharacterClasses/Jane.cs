@@ -1,6 +1,8 @@
+using ScheduleOne.Economy;
+
 namespace ScheduleOne.NPCs.CharacterClasses
 {
-	public class Jane : global::ScheduleOne.Economy.Dealer
+	public class Jane : Dealer
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ECharacterClasses_002EJaneAssembly_002DCSharp_002Edll_Excuted;
 

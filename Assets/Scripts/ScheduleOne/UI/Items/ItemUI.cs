@@ -1,21 +1,26 @@
+using ScheduleOne.ItemFramework;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Items
 {
-	public class ItemUI : global::UnityEngine.MonoBehaviour
+	public class ItemUI : MonoBehaviour
 	{
-		protected global::ScheduleOne.ItemFramework.ItemInstance itemInstance;
+		protected ItemInstance itemInstance;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Rect;
+		[Header("References")]
+		public RectTransform Rect;
 
-		public global::UnityEngine.UI.Image IconImg;
+		public Image IconImg;
 
-		public global::TMPro.TextMeshProUGUI QuantityLabel;
+		public TextMeshProUGUI QuantityLabel;
 
 		protected int DisplayedQuantity;
 
 		protected bool Destroyed;
 
-		public virtual void Setup(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual void Setup(ItemInstance item)
 		{
 		}
 
@@ -23,7 +28,7 @@ namespace ScheduleOne.UI.Items
 		{
 		}
 
-		public virtual global::UnityEngine.RectTransform DuplicateIcon(global::UnityEngine.Transform parent, int overriddenQuantity = -1)
+		public virtual RectTransform DuplicateIcon(Transform parent, int overriddenQuantity = -1)
 		{
 			return null;
 		}

@@ -1,6 +1,12 @@
+using ScheduleOne.Levelling;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.CharacterCustomization
 {
-	public class CharacterCustomizationOption : global::UnityEngine.MonoBehaviour
+	public class CharacterCustomizationOption : MonoBehaviour
 	{
 		public string Name;
 
@@ -10,29 +16,29 @@ namespace ScheduleOne.UI.CharacterCustomization
 
 		public bool RequireLevel;
 
-		public global::ScheduleOne.Levelling.FullRank RequiredLevel;
+		public FullRank RequiredLevel;
 
-		[global::UnityEngine.Header("References")]
-		public global::TMPro.TextMeshProUGUI NameLabel;
+		[Header("References")]
+		public TextMeshProUGUI NameLabel;
 
-		public global::TMPro.TextMeshProUGUI PriceLabel;
+		public TextMeshProUGUI PriceLabel;
 
-		public global::TMPro.TextMeshProUGUI LevelLabel;
+		public TextMeshProUGUI LevelLabel;
 
-		public global::UnityEngine.RectTransform LockDisplay;
+		public RectTransform LockDisplay;
 
-		public global::UnityEngine.UI.Button MainButton;
+		public Button MainButton;
 
-		public global::UnityEngine.UI.Button BuyButton;
+		public Button BuyButton;
 
-		public global::UnityEngine.RectTransform SelectionIndicator;
+		public RectTransform SelectionIndicator;
 
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onSelect;
+		[Header("Events")]
+		public UnityEvent onSelect;
 
-		public global::UnityEngine.Events.UnityEvent onDeselect;
+		public UnityEvent onDeselect;
 
-		public global::UnityEngine.Events.UnityEvent onPurchase;
+		public UnityEvent onPurchase;
 
 		private bool selected;
 
@@ -84,11 +90,11 @@ namespace ScheduleOne.UI.CharacterCustomization
 		{
 		}
 
-		public void SiblingOptionSelected(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public void SiblingOptionSelected(CharacterCustomizationOption option)
 		{
 		}
 
-		public void SiblingOptionPurchased(global::ScheduleOne.UI.CharacterCustomization.CharacterCustomizationOption option)
+		public void SiblingOptionPurchased(CharacterCustomizationOption option)
 		{
 		}
 	}

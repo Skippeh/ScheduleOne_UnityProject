@@ -1,14 +1,17 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace AdvancedPeopleSystem
 {
-	public class CharacterPreBuilt : global::UnityEngine.ScriptableObject
+	public class CharacterPreBuilt : ScriptableObject
 	{
-		[global::UnityEngine.SerializeField]
-		public global::AdvancedPeopleSystem.CharacterSettings settings;
+		[SerializeField]
+		public CharacterSettings settings;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.PreBuiltData> preBuiltDatas;
+		[SerializeField]
+		public List<PreBuiltData> preBuiltDatas;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<global::AdvancedPeopleSystem.PreBuiltBlendshape> blendshapes;
+		[SerializeField]
+		public List<PreBuiltBlendshape> blendshapes;
 	}
 }

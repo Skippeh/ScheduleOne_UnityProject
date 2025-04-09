@@ -1,25 +1,30 @@
+using ScheduleOne.ObjectScripts;
+using ScheduleOne.PlayerScripts;
+using ScheduleOne.PlayerTasks;
+using UnityEngine;
+
 namespace ScheduleOne.Packaging
 {
-	public class FunctionalJar : global::ScheduleOne.Packaging.FunctionalPackaging
+	public class FunctionalJar : FunctionalPackaging
 	{
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.PlayerTasks.Draggable Lid;
+		[Header("References")]
+		public Draggable Lid;
 
-		public global::UnityEngine.Transform LidStartPoint;
+		public Transform LidStartPoint;
 
-		public global::UnityEngine.Collider LidSensor;
+		public Collider LidSensor;
 
-		public global::UnityEngine.Collider LidCollider;
+		public Collider LidCollider;
 
-		public global::UnityEngine.GameObject FullyPackedBlocker;
+		public GameObject FullyPackedBlocker;
 
-		private global::UnityEngine.GameObject LidObject;
+		private GameObject LidObject;
 
-		private global::UnityEngine.Vector3 lidPosition;
+		private Vector3 lidPosition;
 
-		public override global::ScheduleOne.PlayerScripts.CursorManager.ECursorType HoveredCursor { get; protected set; }
+		public override CursorManager.ECursorType HoveredCursor { get; protected set; }
 
-		public override void Initialize(global::ScheduleOne.ObjectScripts.PackagingStation _station, global::UnityEngine.Transform alignment, bool align = false)
+		public override void Initialize(PackagingStation _station, Transform alignment, bool align = false)
 		{
 		}
 
@@ -35,7 +40,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		protected override void OnTriggerStay(global::UnityEngine.Collider other)
+		protected override void OnTriggerStay(Collider other)
 		{
 		}
 

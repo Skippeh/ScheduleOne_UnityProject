@@ -1,21 +1,24 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class ColorKeyframeGroup : global::Funly.SkyStudio.KeyframeGroup<global::Funly.SkyStudio.ColorKeyframe>
+	[Serializable]
+	public class ColorKeyframeGroup : KeyframeGroup<ColorKeyframe>
 	{
 		public ColorKeyframeGroup(string name)
 			: base((string)null)
 		{
 		}
 
-		public ColorKeyframeGroup(string name, global::Funly.SkyStudio.ColorKeyframe frame)
+		public ColorKeyframeGroup(string name, ColorKeyframe frame)
 			: base((string)null)
 		{
 		}
 
-		public global::UnityEngine.Color ColorForTime(float time)
+		public Color ColorForTime(float time)
 		{
-			return default(global::UnityEngine.Color);
+			return default(Color);
 		}
 	}
 }

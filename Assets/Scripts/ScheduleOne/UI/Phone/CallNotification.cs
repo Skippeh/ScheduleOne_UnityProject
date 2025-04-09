@@ -1,19 +1,24 @@
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ScriptableObjects;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.UI.Phone
 {
-	public class CallNotification : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Phone.CallNotification>
+	public class CallNotification : Singleton<CallNotification>
 	{
 		public const float TIME_PER_CHAR = 0.015f;
 
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.RectTransform Container;
+		[Header("References")]
+		public RectTransform Container;
 
-		public global::UnityEngine.UI.Image ProfilePicture;
+		public Image ProfilePicture;
 
-		public global::UnityEngine.CanvasGroup Group;
+		public CanvasGroup Group;
 
-		private global::UnityEngine.Coroutine slideRoutine;
+		private Coroutine slideRoutine;
 
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCallData { get; private set; }
+		public PhoneCallData ActiveCallData { get; private set; }
 
 		public bool IsOpen { get; protected set; }
 
@@ -21,7 +26,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void SetIsOpen(bool visible, global::ScheduleOne.ScriptableObjects.CallerID caller)
+		public void SetIsOpen(bool visible, CallerID caller)
 		{
 		}
 	}

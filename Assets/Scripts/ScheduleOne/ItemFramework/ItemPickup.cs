@@ -1,22 +1,31 @@
+using FishNet.Connection;
+using FishNet.Object;
+using FishNet.Serializing;
+using FishNet.Transporting;
+using ScheduleOne.Interaction;
+using ScheduleOne.Variables;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.ItemFramework
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Interaction.InteractableObject))]
-	public class ItemPickup : global::FishNet.Object.NetworkBehaviour
+	[RequireComponent(typeof(InteractableObject))]
+	public class ItemPickup : NetworkBehaviour
 	{
-		public global::ScheduleOne.ItemFramework.ItemDefinition ItemToGive;
+		public ItemDefinition ItemToGive;
 
 		public bool DestroyOnPickup;
 
 		public bool ConditionallyActive;
 
-		public global::ScheduleOne.Variables.Condition ActiveCondition;
+		public Condition ActiveCondition;
 
 		public bool Networked;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Interaction.InteractableObject IntObj;
+		[Header("References")]
+		public InteractableObject IntObj;
 
-		public global::UnityEngine.Events.UnityEvent onPickup;
+		public UnityEvent onPickup;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EItemFramework_002EItemPickupAssembly_002DCSharp_002Edll_Excuted;
 
@@ -51,7 +60,7 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		[ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void Destroy()
 		{
 		}
@@ -76,7 +85,7 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		private void RpcReader___Server_Destroy_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_Destroy_2166136261(PooledReader PooledReader0, Channel channel, NetworkConnection conn)
 		{
 		}
 

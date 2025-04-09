@@ -1,51 +1,57 @@
+using System.Collections.Generic;
+using ScheduleOne.Building;
+using ScheduleOne.EntityFramework;
+using ScheduleOne.Tiles;
+using UnityEngine;
+
 namespace ScheduleOne.ObjectScripts
 {
-	public class FloorRack : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.EntityFramework.IProceduralTileContainer
+	public class FloorRack : GridItem, IProceduralTileContainer
 	{
-		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Transform leg_BottomLeft;
+		[Header("References")]
+		public Transform leg_BottomLeft;
 
-		public global::UnityEngine.Transform leg_BottomRight;
+		public Transform leg_BottomRight;
 
-		public global::UnityEngine.Transform leg_TopLeft;
+		public Transform leg_TopLeft;
 
-		public global::UnityEngine.Transform leg_TopRight;
+		public Transform leg_TopRight;
 
-		public global::ScheduleOne.Building.CornerObstacle obs_BottomLeft;
+		public CornerObstacle obs_BottomLeft;
 
-		public global::ScheduleOne.Building.CornerObstacle obs_BottomRight;
+		public CornerObstacle obs_BottomRight;
 
-		public global::ScheduleOne.Building.CornerObstacle obs_TopLeft;
+		public CornerObstacle obs_TopLeft;
 
-		public global::ScheduleOne.Building.CornerObstacle obs_TopRight;
+		public CornerObstacle obs_TopRight;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.ProceduralTile> procTiles;
+		public List<ProceduralTile> procTiles;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EFloorRackAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EFloorRackAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.ProceduralTile> ProceduralTiles => null;
+		public List<ProceduralTile> ProceduralTiles => null;
 
 		public virtual void UpdateLegVisibility()
 		{
 		}
 
-		protected void CockAndBalls(global::UnityEngine.GameObject leg, global::ScheduleOne.Building.CornerObstacle obs, int xOffset, int yOffset)
+		protected void CockAndBalls(GameObject leg, CornerObstacle obs, int xOffset, int yOffset)
 		{
 		}
 
-		private global::ScheduleOne.ObjectScripts.FloorRack GetFloorRackFromOccupants(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.GridItem> occs)
-		{
-			return null;
-		}
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.FloorRack> GetSurroundingRacks()
+		private FloorRack GetFloorRackFromOccupants(List<GridItem> occs)
 		{
 			return null;
 		}
 
-		public override bool CanShareTileWith(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.GridItem> obstacles)
+		public List<FloorRack> GetSurroundingRacks()
+		{
+			return null;
+		}
+
+		public override bool CanShareTileWith(List<GridItem> obstacles)
 		{
 			return false;
 		}

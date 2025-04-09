@@ -1,6 +1,12 @@
+using ScheduleOne.Audio;
+using ScheduleOne.ObjectScripts;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ScheduleOne.StationFramework
 {
-	public class BoilingFlask : global::ScheduleOne.StationFramework.Fillable
+	public class BoilingFlask : Fillable
 	{
 		public const float TEMPERATURE_MAX = 500f;
 
@@ -12,26 +18,26 @@ namespace ScheduleOne.StationFramework
 
 		public bool LockTemperature;
 
-		public global::UnityEngine.AnimationCurve BoilSoundPitchCurve;
+		public AnimationCurve BoilSoundPitchCurve;
 
 		public float LabelJitterScale;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.ObjectScripts.BunsenBurner Burner;
+		[Header("References")]
+		public BunsenBurner Burner;
 
-		public global::UnityEngine.Canvas TemperatureCanvas;
+		public Canvas TemperatureCanvas;
 
-		public global::TMPro.TextMeshProUGUI TemperatureLabel;
+		public TextMeshProUGUI TemperatureLabel;
 
-		public global::UnityEngine.UI.Slider TemperatureSlider;
+		public Slider TemperatureSlider;
 
-		public global::UnityEngine.RectTransform TemperatureRangeIndicator;
+		public RectTransform TemperatureRangeIndicator;
 
-		public global::UnityEngine.ParticleSystem SmokeParticles;
+		public ParticleSystem SmokeParticles;
 
-		public global::ScheduleOne.Audio.AudioSourceController BoilSound;
+		public AudioSourceController BoilSound;
 
-		public global::UnityEngine.MeshRenderer OverheatMesh;
+		public MeshRenderer OverheatMesh;
 
 		public float CurrentTemperature { get; private set; }
 
@@ -41,7 +47,7 @@ namespace ScheduleOne.StationFramework
 
 		public float OverheatScale { get; private set; }
 
-		public global::ScheduleOne.StationFramework.StationRecipe Recipe { get; private set; }
+		public StationRecipe Recipe { get; private set; }
 
 		public void Update()
 		{
@@ -67,7 +73,7 @@ namespace ScheduleOne.StationFramework
 		{
 		}
 
-		public void SetRecipe(global::ScheduleOne.StationFramework.StationRecipe recipe)
+		public void SetRecipe(StationRecipe recipe)
 		{
 		}
 	}

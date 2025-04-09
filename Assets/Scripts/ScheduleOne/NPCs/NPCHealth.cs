@@ -1,42 +1,39 @@
+using FishNet.Object;
+using FishNet.Object.Synchronizing;
+using FishNet.Serializing;
+using ScheduleOne.Persistence.Datas;
+using UnityEngine;
+using UnityEngine.Events;
+
 namespace ScheduleOne.NPCs
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPCHealth))]
-	[global::UnityEngine.DisallowMultipleComponent]
-	public class NPCHealth : global::FishNet.Object.NetworkBehaviour
+	[RequireComponent(typeof(NPCHealth))]
+	[DisallowMultipleComponent]
+	public class NPCHealth : NetworkBehaviour
 	{
 		public const int REVIVE_DAYS = 3;
 
-		[global::UnityEngine.Header("Settings")]
+		[Header("Settings")]
 		public bool Invincible;
 
 		public float MaxHealth;
 
-		private global::ScheduleOne.NPCs.NPC npc;
+		private NPC npc;
 
-		public global::UnityEngine.Events.UnityEvent onDie;
+		public UnityEvent onDie;
 
-		public global::UnityEngine.Events.UnityEvent onKnockedOut;
+		public UnityEvent onKnockedOut;
 
 		private bool AfflictedWithLethalEffect;
 
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CHealth_003Ek__BackingField;
+		public SyncVar<float> syncVar____003CHealth_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCHealthAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ENPCHealthAssembly_002DCSharp_002Edll_Excuted;
 
-		public float Health
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			get
-			{
-				return 0f;
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			private set
-			{
-			}
-		}
+		[field: SyncVar(WritePermissions = WritePermission.ClientUnsynchronized)]
+		public float Health { get; private set; }
 
 		public bool IsDead { get; private set; }
 
@@ -67,7 +64,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public void Load(global::ScheduleOne.Persistence.Datas.NPCHealthData healthData)
+		public void Load(NPCHealthData healthData)
 		{
 		}
 
@@ -111,7 +108,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002ENPCHealth(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002ENPCHealth(PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}

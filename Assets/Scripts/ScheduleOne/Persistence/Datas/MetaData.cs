@@ -1,11 +1,13 @@
+using System;
+
 namespace ScheduleOne.Persistence.Datas
 {
-	[global::System.Serializable]
-	public class MetaData : global::ScheduleOne.Persistence.Datas.SaveData
+	[Serializable]
+	public class MetaData : SaveData
 	{
-		public global::ScheduleOne.Persistence.Datas.DateTimeData CreationDate;
+		public DateTimeData CreationDate;
 
-		public global::ScheduleOne.Persistence.Datas.DateTimeData LastPlayedDate;
+		public DateTimeData LastPlayedDate;
 
 		public string CreationVersion;
 
@@ -13,7 +15,7 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool PlayTutorial;
 
-		public MetaData(global::ScheduleOne.Persistence.Datas.DateTimeData creationDate, global::ScheduleOne.Persistence.Datas.DateTimeData lastPlayedDate, string creationVersion, string lastSaveVersion, bool playTutorial)
+		public MetaData(DateTimeData creationDate, DateTimeData lastPlayedDate, string creationVersion, string lastSaveVersion, bool playTutorial)
 		{
 		}
 	}

@@ -1,14 +1,17 @@
+using System;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class TextureKeyframeGroup : global::Funly.SkyStudio.KeyframeGroup<global::Funly.SkyStudio.TextureKeyframe>
+	[Serializable]
+	public class TextureKeyframeGroup : KeyframeGroup<TextureKeyframe>
 	{
-		public TextureKeyframeGroup(string name, global::Funly.SkyStudio.TextureKeyframe keyframe)
+		public TextureKeyframeGroup(string name, TextureKeyframe keyframe)
 			: base((string)null)
 		{
 		}
 
-		public global::UnityEngine.Texture TextureForTime(float time)
+		public Texture TextureForTime(float time)
 		{
 			return null;
 		}

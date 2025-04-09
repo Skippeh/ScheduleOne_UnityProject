@@ -1,6 +1,6 @@
 namespace ScheduleOne.UI.Settings
 {
-	public class AntiAliasingDropdown : global::ScheduleOne.UI.Settings.SettingsDropdown
+	public class AntiAliasingDropdown : SettingsDropdown
 	{
 		protected override void Awake()
 		{

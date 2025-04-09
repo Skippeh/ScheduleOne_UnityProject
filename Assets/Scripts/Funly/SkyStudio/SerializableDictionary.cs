@@ -1,16 +1,20 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Funly.SkyStudio
 {
-	[global::System.Serializable]
-	public class SerializableDictionary<K, V> : global::UnityEngine.ISerializationCallbackReceiver
+	[Serializable]
+	public class SerializableDictionary<K, V> : ISerializationCallbackReceiver
 	{
-		[global::System.NonSerialized]
-		public global::System.Collections.Generic.Dictionary<K, V> dict;
+		[NonSerialized]
+		public Dictionary<K, V> dict;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<K> m_Keys;
+		[SerializeField]
+		public List<K> m_Keys;
 
-		[global::UnityEngine.SerializeField]
-		public global::System.Collections.Generic.List<V> m_Values;
+		[SerializeField]
+		public List<V> m_Values;
 
 		public V this[K aKey]
 		{

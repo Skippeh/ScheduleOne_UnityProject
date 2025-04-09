@@ -1,6 +1,6 @@
 namespace ScheduleOne.NPCs
 {
-	public class Jerry : global::ScheduleOne.NPCs.NPC
+	public class Jerry : NPC
 	{
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EJerryAssembly_002DCSharp_002Edll_Excuted;
 

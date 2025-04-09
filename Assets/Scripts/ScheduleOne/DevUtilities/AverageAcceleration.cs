@@ -1,20 +1,22 @@
+using UnityEngine;
+
 namespace ScheduleOne.DevUtilities
 {
-	public class AverageAcceleration : global::UnityEngine.MonoBehaviour
+	public class AverageAcceleration : MonoBehaviour
 	{
-		public global::UnityEngine.Rigidbody Rb;
+		public Rigidbody Rb;
 
 		public float TimeWindow;
 
-		private global::UnityEngine.Vector3[] accelerations;
+		private Vector3[] accelerations;
 
 		private int currentIndex;
 
 		private float timer;
 
-		private global::UnityEngine.Vector3 prevVelocity;
+		private Vector3 prevVelocity;
 
-		public global::UnityEngine.Vector3 Acceleration { get; private set; }
+		public Vector3 Acceleration { get; private set; }
 
 		private void Start()
 		{

@@ -1,41 +1,52 @@
+using System;
+using System.Collections.Generic;
+using EPOOutline;
+using EasyButtons;
+using ScheduleOne.DevUtilities;
+using ScheduleOne.ItemFramework;
+using ScheduleOne.Management;
+using ScheduleOne.Map;
+using ScheduleOne.Vehicles;
+using UnityEngine;
+
 namespace ScheduleOne.Delivery
 {
-	public class LoadingDock : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Management.ITransitEntity
+	public class LoadingDock : MonoBehaviour, IGUIDRegisterable, ITransitEntity
 	{
-		[global::UnityEngine.SerializeField]
+		[SerializeField]
 		protected string BakedGUID;
 
-		public global::ScheduleOne.Property.Property ParentProperty;
+		public ScheduleOne.Property.Property ParentProperty;
 
-		public global::ScheduleOne.DevUtilities.VehicleDetector VehicleDetector;
+		public VehicleDetector VehicleDetector;
 
-		public global::ScheduleOne.Map.ParkingLot Parking;
+		public ParkingLot Parking;
 
-		public global::UnityEngine.Transform uiPoint;
+		public Transform uiPoint;
 
-		public global::UnityEngine.Transform[] accessPoints;
+		public Transform[] accessPoints;
 
-		public global::UnityEngine.GameObject[] OutlineRenderers;
+		public GameObject[] OutlineRenderers;
 
-		private global::EPOOutline.Outlinable OutlineEffect;
+		private Outlinable OutlineEffect;
 
-		public global::ScheduleOne.Vehicles.LandVehicle DynamicOccupant { get; private set; }
+		public LandVehicle DynamicOccupant { get; private set; }
 
-		public global::ScheduleOne.Vehicles.LandVehicle StaticOccupant { get; private set; }
+		public LandVehicle StaticOccupant { get; private set; }
 
 		public bool IsInUse => false;
 
-		public global::System.Guid GUID { get; protected set; }
+		public Guid GUID { get; protected set; }
 
 		public string Name => null;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> InputSlots { get; set; }
+		public List<ItemSlot> InputSlots { get; set; }
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> OutputSlots { get; set; }
+		public List<ItemSlot> OutputSlots { get; set; }
 
-		public global::UnityEngine.Transform LinkOrigin => null;
+		public Transform LinkOrigin => null;
 
-		public global::UnityEngine.Transform[] AccessPoints => null;
+		public Transform[] AccessPoints => null;
 
 		public bool Selectable { get; }
 
@@ -43,7 +54,7 @@ namespace ScheduleOne.Delivery
 
 		public bool IsDestroyed { get; set; }
 
-		[global::EasyButtons.Button]
+		[Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -56,7 +67,7 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		public void SetGUID(global::System.Guid guid)
+		public void SetGUID(Guid guid)
 		{
 		}
 
@@ -64,15 +75,15 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		private void SetOccupant(global::ScheduleOne.Vehicles.LandVehicle occupant)
+		private void SetOccupant(LandVehicle occupant)
 		{
 		}
 
-		public void SetStaticOccupant(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void SetStaticOccupant(LandVehicle vehicle)
 		{
 		}
 
-		public virtual void ShowOutline(global::UnityEngine.Color color)
+		public virtual void ShowOutline(Color color)
 		{
 		}
 
