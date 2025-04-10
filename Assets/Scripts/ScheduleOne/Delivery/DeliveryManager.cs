@@ -2,9 +2,6 @@ namespace ScheduleOne.Delivery
 {
 	public class DeliveryManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Delivery.DeliveryManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
 	{
-		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopInterface> AllShops;
-
 		public global::System.Collections.Generic.List<global::ScheduleOne.Delivery.DeliveryInstance> Deliveries;
 
 		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCreated;

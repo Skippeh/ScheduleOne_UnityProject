@@ -13,6 +13,10 @@ namespace ScheduleOne.ItemFramework
 
 		public global::ScheduleOne.Levelling.FullRank RequiredRank;
 
+		[global::UnityEngine.Header("Reselling")]
+		[global::UnityEngine.Range(0f, 1f)]
+		public float ResellMultiplier;
+
 		[global::UnityEngine.Header("Storable Item")]
 		public global::ScheduleOne.Storage.StoredItem StoredItem;
 

@@ -33,11 +33,11 @@ namespace ScheduleOne.UI.Phone
 
 		public global::UnityEngine.UI.Text FairPriceLabel;
 
-		public global::UnityEngine.RectTransform EntryContainer;
+		public global::ScheduleOne.UI.Phone.CounterOfferProductSelector ProductSelector;
 
 		private global::System.Action<global::ScheduleOne.Product.ProductDefinition, int, float> orderConfirmedCallback;
 
-		private global::ScheduleOne.Product.ProductDefinition product;
+		private global::ScheduleOne.Product.ProductDefinition selectedProduct;
 
 		private int quantity;
 
@@ -64,10 +64,6 @@ namespace ScheduleOne.UI.Phone
 		}
 
 		public void Open(global::ScheduleOne.Product.ProductDefinition product, int quantity, float price, global::ScheduleOne.Messaging.MSGConversation _conversation, global::System.Action<global::ScheduleOne.Product.ProductDefinition, int, float> _orderConfirmedCallback)
-		{
-		}
-
-		private void CreateProductEntry(global::ScheduleOne.Product.ProductDefinition product)
 		{
 		}
 
@@ -111,7 +107,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		public void ProductClicked()
+		public void OpenProductSelector()
 		{
 		}
 	}

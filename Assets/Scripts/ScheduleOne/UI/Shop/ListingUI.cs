@@ -6,12 +6,19 @@ namespace ScheduleOne.UI.Shop
 
 		public static global::UnityEngine.Color32 PriceLabelColor_NoStock;
 
+		[global::UnityEngine.Header("Colors")]
+		public global::UnityEngine.Color32 StockLabelDefault;
+
+		public global::UnityEngine.Color32 StockLabelNone;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.UI.Image Icon;
 
 		public global::TMPro.TextMeshProUGUI NameLabel;
 
 		public global::TMPro.TextMeshProUGUI PriceLabel;
+
+		public global::TMPro.TextMeshProUGUI StockLabel;
 
 		public global::UnityEngine.GameObject LockedContainer;
 
@@ -46,6 +53,10 @@ namespace ScheduleOne.UI.Shop
 			return null;
 		}
 
+		public void Update()
+		{
+		}
+
 		private void Clicked()
 		{
 		}
@@ -62,12 +73,25 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void QuantityChanged()
+		private void StockChanged()
 		{
 		}
 
 		private void UpdatePrice()
 		{
+		}
+
+		private void UpdateStock()
+		{
+		}
+
+		private void UpdateButtons()
+		{
+		}
+
+		public bool CanAddToCart()
+		{
+			return false;
 		}
 
 		public void UpdateLockStatus()

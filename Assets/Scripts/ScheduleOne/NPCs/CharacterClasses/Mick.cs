@@ -6,6 +6,16 @@ namespace ScheduleOne.NPCs.CharacterClasses
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ECharacterClasses_002EMickAssembly_002DCSharp_002Edll_Excuted;
 
+		protected override void Start()
+		{
+		}
+
+		private bool CanPawn(out string reason)
+		{
+			reason = null;
+			return false;
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}
