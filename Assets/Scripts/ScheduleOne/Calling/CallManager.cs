@@ -8,6 +8,10 @@ namespace ScheduleOne.Calling
 		{
 		}
 
+		protected override void OnDestroy()
+		{
+		}
+
 		public void QueueCall(global::ScheduleOne.ScriptableObjects.PhoneCallData data)
 		{
 		}

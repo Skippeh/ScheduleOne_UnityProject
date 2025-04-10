@@ -18,6 +18,8 @@ namespace ScheduleOne.Calling
 
 		private float timeSinceLastRing;
 
+		private const float ringRangeSquared = 81f;
+
 		public global::ScheduleOne.ScriptableObjects.PhoneCallData QueuedCall => null;
 
 		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCall => null;

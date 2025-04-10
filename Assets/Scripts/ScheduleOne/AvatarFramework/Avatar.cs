@@ -152,6 +152,21 @@ namespace ScheduleOne.AvatarFramework
 			return false;
 		}
 
+		public string GetFormalAddress(bool capitalized = true)
+		{
+			return null;
+		}
+
+		public string GetThirdPersonAddress(bool capitalized = true)
+		{
+			return null;
+		}
+
+		public string GetThirdPersonPronoun(bool capitalized = true)
+		{
+			return null;
+		}
+
 		private void ApplyShapeKeys(float gender, float weight, bool bodyOnly = false)
 		{
 		}

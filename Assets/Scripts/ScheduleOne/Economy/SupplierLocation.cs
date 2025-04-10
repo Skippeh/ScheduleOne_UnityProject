@@ -16,6 +16,8 @@ namespace ScheduleOne.Economy
 
 		public global::ScheduleOne.Storage.WorldStorageEntity[] DeliveryBays;
 
+		public global::ScheduleOne.Map.POI PoI;
+
 		private global::ScheduleOne.Economy.SupplierLocationConfiguration[] configs;
 
 		public bool IsOccupied => false;

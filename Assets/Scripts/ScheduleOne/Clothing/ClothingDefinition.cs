@@ -12,6 +12,8 @@ namespace ScheduleOne.Clothing
 
 		public bool Colorable;
 
+		public global::ScheduleOne.Clothing.EClothingColor DefaultColor;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Clothing.EClothingSlot> SlotsToBlock;
 
 		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)

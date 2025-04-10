@@ -34,7 +34,7 @@ namespace ScheduleOne.Economy
 
 		public global::ScheduleOne.NPCs.Schedules.NPCEvent_StayInBuilding HomeEvent;
 
-		public global::ScheduleOne.Dialogue.DialogueController_Supplier DialogueController;
+		public global::ScheduleOne.Dialogue.DialogueController_Dealer DialogueController;
 
 		[global::UnityEngine.Header("Dialogue stuff")]
 		public global::ScheduleOne.Dialogue.DialogueContainer RecruitDialogue;
@@ -139,7 +139,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private new void OnDestroy()
+		protected override void OnDestroy()
 		{
 		}
 

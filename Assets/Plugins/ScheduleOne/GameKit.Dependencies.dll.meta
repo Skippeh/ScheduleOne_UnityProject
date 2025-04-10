@@ -1,18 +1,20 @@
 fileFormatVersion: 2
-guid: 7be7ccfa1d939eb498c2e65136a9f6fa
+guid: 2c7dbe087f51370cff944bbda964d321
+timeCreated: 1744280690
+licenseType: Free
 PluginImporter:
-  externalObjects: {}
   serializedVersion: 2
+  externalObjects: {}
   iconMap: {}
   executionOrder: {}
   defineConstraints: []
   isPreloaded: 0
   isOverridable: 0
   isExplicitlyReferenced: 0
-  validateReferences: 1
+  validateReferences: 0
   platformData:
   - first:
-      Any: 
+      Any:
     second:
       enabled: 1
       settings: {}
@@ -22,12 +24,9 @@ PluginImporter:
       enabled: 0
       settings:
         DefaultValueInitialized: true
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  output:
+    dllType: 0
+    scriptingRuntimeVersion: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

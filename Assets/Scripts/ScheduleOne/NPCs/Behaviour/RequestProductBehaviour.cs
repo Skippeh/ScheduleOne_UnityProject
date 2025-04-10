@@ -39,7 +39,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void Awake()
+		protected virtual void Start()
 		{
 		}
 
@@ -197,7 +197,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected virtual void Awake_UserLogic_ScheduleOne_002ENPCs_002EBehaviour_002ERequestProductBehaviour_Assembly_002DCSharp_002Edll()
+		public override void Awake()
 		{
 		}
 	}
