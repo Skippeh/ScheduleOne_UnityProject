@@ -2,8 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!47 &1
 QualitySettings:
-  serializedVersion: 5
   m_ObjectHideFlags: 0
+  serializedVersion: 5
   m_CurrentQuality: 0
   m_QualitySettings:
   - serializedVersion: 3
@@ -44,7 +44,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: a9135f79ab1b9bd47b8d82a56c8ed04c, type: 2}
+    customRenderPipeline: {fileID: 11400000, guid: e9b2db4ca58188948bcb4cecb587e819, type: 2}
     terrainQualityOverrides: 7
     terrainPixelError: 100
     terrainDetailDensityScale: 0.5
