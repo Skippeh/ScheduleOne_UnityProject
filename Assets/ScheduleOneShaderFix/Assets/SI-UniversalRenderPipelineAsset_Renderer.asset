@@ -1,0 +1,549 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8138722397462166955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927576baecea04a5aa8be06dc57e6d9e, type: 3}
+  m_Name: Volumetric Fog 2
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: c9391e295126842e589edc35e6cfa61a, type: 3}
+  renderPassEvent: 450
+  cameraLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  ignoreReflectionProbes: 1
+--- !u!114 &-7713294856247249401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  rayTracing:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  directLightingStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  radius:
+    m_OverrideState: 0
+    m_Value: 2
+  spatialBilateralAggressiveness:
+    m_OverrideState: 0
+    m_Value: 0.15
+  temporalAccumulation:
+    m_OverrideState: 0
+    m_Value: 1
+  ghostingReduction:
+    m_OverrideState: 0
+    m_Value: 0.5
+  blurSharpness:
+    m_OverrideState: 0
+    m_Value: 0.1
+  layerMask:
+    m_OverrideState: 0
+    m_Value:
+      m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
+  occluderMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  m_StepCount:
+    m_OverrideState: 0
+    m_Value: 6
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  m_MaximumRadiusInPixels:
+    m_OverrideState: 0
+    m_Value: 40
+  m_BilateralUpsample:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DirectionCount:
+    m_OverrideState: 0
+    m_Value: 2
+  m_RayLength:
+    m_OverrideState: 0
+    m_Value: 50
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &-5882725644796692665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f939cab223f84584adf64c5cf11de56, type: 3}
+  m_Name: Liquid Volume Depth PrePass
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  shader: {fileID: 4800000, guid: c3dd22b145db8426c8431df2f8e416b1, type: 3}
+  interleavedRendering: 0
+  renderPassEvent: 450
+--- !u!114 &-3807690317598894637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949e51698f19f65488a7d3cbf912e046, type: 3}
+  m_Name: GodRaysRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderData: {fileID: 11400000, guid: e6b76c6e411b42545bbf258d36b24ff1, type: 2}
+    Jitter: 0.25
+    textureQuality: 2
+    stepQuality: 32
+    blur: 1
+    BlurCount: 2
+    blurSamples: 4
+    depthAwareUpsampling: 1
+    allowMainLight: 1
+    allowAdditionalLights: 1
+    useUnityDepthDirectly: 1
+    supportUnityScreenSpaceShadows: 0
+    renderAfterTransparents: 1
+    useVariableIntensity: 0
+    variableIntensityCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    maxDistance: 256
+    encodeLightColor: 1
+    enableHighQualityTextures: 0
+--- !u!114 &-1106258607901166560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  rayTracing:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  directLightingStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  radius:
+    m_OverrideState: 0
+    m_Value: 2
+  spatialBilateralAggressiveness:
+    m_OverrideState: 0
+    m_Value: 0.15
+  temporalAccumulation:
+    m_OverrideState: 0
+    m_Value: 1
+  ghostingReduction:
+    m_OverrideState: 0
+    m_Value: 0.5
+  blurSharpness:
+    m_OverrideState: 0
+    m_Value: 0.1
+  layerMask:
+    m_OverrideState: 0
+    m_Value:
+      m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
+  occluderMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  m_StepCount:
+    m_OverrideState: 0
+    m_Value: 6
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  m_MaximumRadiusInPixels:
+    m_OverrideState: 0
+    m_Value: 40
+  m_BilateralUpsample:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DirectionCount:
+    m_OverrideState: 0
+    m_Value: 2
+  m_RayLength:
+    m_OverrideState: 0
+    m_Value: 50
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
+  m_Name: SI-UniversalRenderPipelineAsset_Renderer
+  m_EditorClassIdentifier: 
+  debugShaders:
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
+      type: 3}
+    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
+  m_RendererFeatures:
+  - {fileID: 3639406615612379984}
+  - {fileID: 1451886185274005827}
+  m_RendererFeatureMap: 5053c8d408c5813243d98d07cb222614
+  m_UseNativeRenderPass: 1
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
+  shaders:
+    blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    copyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
+    screenSpaceShadowPS: {fileID: 0}
+    samplingPS: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
+    stencilDeferredPS: {fileID: 4800000, guid: e9155b26e1bc55942a41e518703fe304, type: 3}
+    fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+    fallbackLoadingPS: {fileID: 4800000, guid: 7f888aff2ac86494babad1c2c5daeee2, type: 3}
+    materialErrorPS: {fileID: 4800000, guid: 5fd9a8feb75a4b5894c241777f519d4e, type: 3}
+    coreBlitPS: {fileID: 4800000, guid: 93446b5c5339d4f00b85c159e1159b7c, type: 3}
+    coreBlitColorAndDepthPS: {fileID: 4800000, guid: d104b2fc1ca6445babb8e90b0758136b,
+      type: 3}
+    blitHDROverlay: {fileID: 4800000, guid: a89bee29cffa951418fc1e2da94d1959, type: 3}
+    cameraMotionVector: {fileID: 4800000, guid: c56b7e0d4c7cb484e959caeeedae9bbf,
+      type: 3}
+    objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
+      type: 3}
+    dataDrivenLensFlare: {fileID: 4800000, guid: 6cda457ac28612740adb23da5d39ea92,
+      type: 3}
+  m_AssetVersion: 2
+  m_OpaqueLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_TransparentLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_DefaultStencilState:
+    overrideStencilState: 0
+    stencilReference: 0
+    stencilCompareFunction: 8
+    passOperation: 0
+    failOperation: 0
+    zFailOperation: 0
+  m_ShadowTransparentReceive: 1
+  m_RenderingMode: 1
+  m_DepthPrimingMode: 0
+  m_CopyDepthMode: 1
+  m_AccurateGbufferNormals: 1
+  m_IntermediateTextureMode: 1
+--- !u!114 &1427869786941893143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  rayTracing:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  directLightingStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  radius:
+    m_OverrideState: 0
+    m_Value: 2
+  spatialBilateralAggressiveness:
+    m_OverrideState: 0
+    m_Value: 0.15
+  temporalAccumulation:
+    m_OverrideState: 0
+    m_Value: 1
+  ghostingReduction:
+    m_OverrideState: 0
+    m_Value: 0.5
+  blurSharpness:
+    m_OverrideState: 0
+    m_Value: 0.1
+  layerMask:
+    m_OverrideState: 0
+    m_Value:
+      m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
+  occluderMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  m_StepCount:
+    m_OverrideState: 0
+    m_Value: 6
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  m_MaximumRadiusInPixels:
+    m_OverrideState: 0
+    m_Value: 40
+  m_BilateralUpsample:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DirectionCount:
+    m_OverrideState: 0
+    m_Value: 2
+  m_RayLength:
+    m_OverrideState: 0
+    m_Value: 50
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &1451886185274005827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_Settings:
+    AOMethod: 0
+    Downsample: 0
+    AfterOpaque: 0
+    Source: 1
+    NormalSamples: 1
+    Intensity: 3
+    DirectLightingStrength: 0.25
+    Radius: 0.035
+    Samples: 1
+    BlurQuality: 0
+    Falloff: 100
+    SampleCount: -1
+  m_BlueNoise256Textures:
+  - {fileID: 2800000, guid: 36f118343fc974119bee3d09e2111500, type: 3}
+  - {fileID: 2800000, guid: 4b7b083e6b6734e8bb2838b0b50a0bc8, type: 3}
+  - {fileID: 2800000, guid: c06cc21c692f94f5fb5206247191eeee, type: 3}
+  - {fileID: 2800000, guid: cb76dd40fa7654f9587f6a344f125c9a, type: 3}
+  - {fileID: 2800000, guid: e32226222ff144b24bf3a5a451de54bc, type: 3}
+  - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
+  - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+--- !u!114 &3639406615612379984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1614fc811f8f184697d9bee70ab9fe5, type: 3}
+  m_Name: DecalRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_Settings:
+    technique: 0
+    maxDrawDistance: 1000
+    decalLayers: 0
+    dBufferSettings:
+      surfaceData: 2
+    screenSpaceSettings:
+      normalBlend: 0
+  m_CopyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
+  m_DBufferClear: {fileID: 4800000, guid: f056d8bd2a1c7e44e9729144b4c70395, type: 3}
+--- !u!114 &4050780252127045926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  rayTracing:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  directLightingStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  radius:
+    m_OverrideState: 0
+    m_Value: 2
+  spatialBilateralAggressiveness:
+    m_OverrideState: 0
+    m_Value: 0.15
+  temporalAccumulation:
+    m_OverrideState: 0
+    m_Value: 1
+  ghostingReduction:
+    m_OverrideState: 0
+    m_Value: 0.5
+  blurSharpness:
+    m_OverrideState: 0
+    m_Value: 0.1
+  layerMask:
+    m_OverrideState: 0
+    m_Value:
+      m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
+  occluderMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
+  m_StepCount:
+    m_OverrideState: 0
+    m_Value: 6
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  m_MaximumRadiusInPixels:
+    m_OverrideState: 0
+    m_Value: 40
+  m_BilateralUpsample:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DirectionCount:
+    m_OverrideState: 0
+    m_Value: 2
+  m_RayLength:
+    m_OverrideState: 0
+    m_Value: 50
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &7060764068710119376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99044e0b7d7b80241981c71e36b391ed, type: 3}
+  m_Name: GrassBendingFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  bendingShader: {fileID: 4800000, guid: 83f1a74da0594f2439500e813fc6108b, type: 3}
+  settings:
+    renderRange: 50
+    ignoreSceneView: 0
+    ignoreOverlayCamera: 1
+--- !u!114 &7690420474655923929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d111dc2a0b22b142804f4d59508b893, type: 3}
+  m_Name: URPOutlineFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1

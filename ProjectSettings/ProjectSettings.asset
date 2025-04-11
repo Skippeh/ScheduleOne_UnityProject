@@ -560,7 +560,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0
   webGLMemoryGeometricGrowthCap: 0
   webGLPowerPreference: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: HAS_URP_INSTALLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
