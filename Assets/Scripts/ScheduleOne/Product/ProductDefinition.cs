@@ -73,6 +73,11 @@ namespace ScheduleOne.Product
 		{
 		}
 
+		public virtual global::ScheduleOne.Persistence.Datas.ProductData GetSaveData()
+		{
+			return null;
+		}
+
 		public virtual string GetSaveString()
 		{
 			return null;

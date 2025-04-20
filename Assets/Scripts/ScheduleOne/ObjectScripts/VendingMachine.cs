@@ -6,7 +6,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public const float COST = 2f;
 
-		public const int REPAIR_TIME_DAYS = 2;
+		public const int REPAIR_TIME_DAYS = 0;
 
 		public const float IMPACT_THRESHOLD_FREE_ITEM = 50f;
 

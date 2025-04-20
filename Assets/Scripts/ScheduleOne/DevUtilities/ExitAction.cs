@@ -4,6 +4,21 @@ namespace ScheduleOne.DevUtilities
 	{
 		public global::ScheduleOne.DevUtilities.ExitType exitType;
 
-		public bool used;
+		private bool used;
+
+		public bool Used
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
+
+		public void Use()
+		{
+		}
 	}
 }

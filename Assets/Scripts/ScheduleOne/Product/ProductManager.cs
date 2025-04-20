@@ -324,11 +324,6 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

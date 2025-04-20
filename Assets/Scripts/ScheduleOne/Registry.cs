@@ -33,6 +33,8 @@ namespace ScheduleOne
 
 		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.Registry.ItemRegister> ItemDictionary;
 
+		private global::System.Collections.Generic.Dictionary<string, string> itemIDAliases;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.SeedDefinition> Seeds;
 
 		protected override void Awake()
@@ -49,12 +51,17 @@ namespace ScheduleOne
 			return null;
 		}
 
+		public static bool ItemExists(string ID)
+		{
+			return false;
+		}
+
 		public static T GetItem<T>(string ID) where T : global::ScheduleOne.ItemFramework.ItemDefinition
 		{
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemDefinition _GetItem(string ID)
+		public global::ScheduleOne.ItemFramework.ItemDefinition _GetItem(string ID, bool warnIfNonExistent = true)
 		{
 			return null;
 		}

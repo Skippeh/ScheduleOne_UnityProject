@@ -110,7 +110,7 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public bool ShouldSave()
+		public new bool ShouldSave()
 		{
 			return false;
 		}

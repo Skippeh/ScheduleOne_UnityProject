@@ -1,5 +1,6 @@
 namespace ScheduleOne.Map
 {
+	[global::UnityEngine.DisallowMultipleComponent]
 	public class NPCEnterableBuilding : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
 	{
 		public const float DOOR_SOUND_DISTANCE_LIMIT = 15f;

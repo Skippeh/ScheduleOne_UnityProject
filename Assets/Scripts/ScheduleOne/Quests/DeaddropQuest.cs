@@ -26,6 +26,15 @@ namespace ScheduleOne.Quests
 		{
 		}
 
+		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		{
+		}
+
+		public override bool ShouldSave()
+		{
+			return false;
+		}
+
 		public override string GetSaveString()
 		{
 			return null;

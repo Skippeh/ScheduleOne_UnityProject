@@ -24,7 +24,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.ProductData GetSaveData()
 		{
 			return null;
 		}

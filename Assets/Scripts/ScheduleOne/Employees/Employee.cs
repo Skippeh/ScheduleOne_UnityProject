@@ -236,6 +236,14 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
+		private void TradeItems()
+		{
+		}
+
+		private void TradeItemsDone()
+		{
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}

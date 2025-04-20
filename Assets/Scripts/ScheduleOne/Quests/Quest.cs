@@ -273,6 +273,11 @@ namespace ScheduleOne.Quests
 		{
 		}
 
+		public virtual bool ShouldSave()
+		{
+			return false;
+		}
+
 		public virtual string GetSaveString()
 		{
 			return null;

@@ -5,5 +5,13 @@ namespace ScheduleOne.Persistence.Loaders
 		public override void Load(string mainPath)
 		{
 		}
+
+		private void SanitizeProductData(global::ScheduleOne.Persistence.Datas.ProductData data)
+		{
+		}
+
+		private void LoadProducts(global::ScheduleOne.Persistence.Datas.ProductManagerData productData)
+		{
+		}
 	}
 }

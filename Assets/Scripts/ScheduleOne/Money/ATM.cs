@@ -8,7 +8,7 @@ namespace ScheduleOne.Money
 
 		public const float IMPACT_THRESHOLD_BREAK = 165f;
 
-		public const int REPAIR_TIME_DAYS = 2;
+		public const int REPAIR_TIME_DAYS = 0;
 
 		public const int MIN_CASH_DROP = 2;
 

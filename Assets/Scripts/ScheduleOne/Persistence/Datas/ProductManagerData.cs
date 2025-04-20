@@ -17,7 +17,13 @@ namespace ScheduleOne.Persistence.Datas
 
 		public string[] FavouritedProducts;
 
-		public ProductManagerData(string[] discoveredProducts, string[] listedProducts, global::ScheduleOne.Product.NewMixOperation activeOperation, bool isMixComplete, global::ScheduleOne.Product.MixRecipeData[] mixRecipes, global::ScheduleOne.DevUtilities.StringIntPair[] productPrices, string[] favouritedProducts)
+		public global::ScheduleOne.Persistence.Datas.WeedProductData[] CreatedWeed;
+
+		public global::ScheduleOne.Persistence.Datas.MethProductData[] CreatedMeth;
+
+		public global::ScheduleOne.Persistence.Datas.CocaineProductData[] CreatedCocaine;
+
+		public ProductManagerData(string[] discoveredProducts, string[] listedProducts, global::ScheduleOne.Product.NewMixOperation activeOperation, bool isMixComplete, global::ScheduleOne.Product.MixRecipeData[] mixRecipes, global::ScheduleOne.DevUtilities.StringIntPair[] productPrices, string[] favouritedProducts, global::ScheduleOne.Persistence.Datas.WeedProductData[] createdWeed, global::ScheduleOne.Persistence.Datas.MethProductData[] createdMeth, global::ScheduleOne.Persistence.Datas.CocaineProductData[] createdCocaine)
 		{
 		}
 	}

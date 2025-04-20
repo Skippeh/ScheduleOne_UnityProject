@@ -36,6 +36,10 @@ namespace ScheduleOne.Storage
 		{
 		}
 
+		protected override void OnDestroy()
+		{
+		}
+
 		public virtual void InitializeSaveable()
 		{
 		}
@@ -47,6 +51,11 @@ namespace ScheduleOne.Storage
 		public virtual bool ShouldSave()
 		{
 			return false;
+		}
+
+		public global::ScheduleOne.Persistence.Datas.WorldStorageEntityData GetSaveData()
+		{
+			return null;
 		}
 
 		public virtual string GetSaveString()
