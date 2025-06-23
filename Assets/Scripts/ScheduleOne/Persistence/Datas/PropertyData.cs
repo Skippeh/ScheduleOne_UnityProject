@@ -11,7 +11,11 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool[] ToggleableStates;
 
-		public PropertyData(string propertyCode, bool isOwned, bool[] switchStates, bool[] toggleableStates)
+		public global::ScheduleOne.Persistence.Datas.DynamicSaveData[] Employees;
+
+		public global::ScheduleOne.Persistence.Datas.DynamicSaveData[] Objects;
+
+		public PropertyData(string propertyCode, bool isOwned, bool[] switchStates, bool[] toggleableStates, global::ScheduleOne.Persistence.Datas.DynamicSaveData[] employees, global::ScheduleOne.Persistence.Datas.DynamicSaveData[] objects)
 		{
 		}
 	}

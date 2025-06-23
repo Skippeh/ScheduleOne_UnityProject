@@ -10,11 +10,7 @@ namespace ScheduleOne.ObjectScripts
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Interaction.InteractableObject intObj;
 
-		public global::UnityEngine.GameObject Clipboard;
-
-		public global::UnityEngine.SpriteRenderer MugshotSprite;
-
-		public global::TMPro.TextMeshPro NameLabel;
+		public global::ScheduleOne.Employees.EmployeeHome EmployeeStationThing;
 
 		public global::UnityEngine.MeshRenderer BlanketMesh;
 
@@ -29,13 +25,11 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::UnityEngine.Material CleanerBlanket;
 
-		public global::UnityEngine.Events.UnityEvent onAssignedEmployeeChanged;
-
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EBedAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EBedAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.Employees.Employee AssignedEmployee { get; protected set; }
+		public global::ScheduleOne.Employees.Employee AssignedEmployee => null;
 
 		public virtual void Awake()
 		{
@@ -49,16 +43,13 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private bool CanSleep()
+		private bool CanSleep(out string noSleepReason)
 		{
+			noSleepReason = null;
 			return false;
 		}
 
-		public void SetAssignedEmployee(global::ScheduleOne.Employees.Employee employee)
-		{
-		}
-
-		private void UpdateMaterial()
+		public void UpdateMaterial()
 		{
 		}
 

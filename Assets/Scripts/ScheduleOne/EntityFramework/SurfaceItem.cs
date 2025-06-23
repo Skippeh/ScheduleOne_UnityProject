@@ -55,7 +55,7 @@ namespace ScheduleOne.EntityFramework
 			return null;
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.BuildableItemData GetBaseData()
 		{
 			return null;
 		}

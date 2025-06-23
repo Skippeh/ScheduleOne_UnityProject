@@ -15,6 +15,8 @@ namespace ScheduleOne
 		[global::System.Serializable]
 		public class ItemRegister
 		{
+			public string name;
+
 			public string ID;
 
 			public string AssetPath;
@@ -36,6 +38,10 @@ namespace ScheduleOne
 		private global::System.Collections.Generic.Dictionary<string, string> itemIDAliases;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.SeedDefinition> Seeds;
+
+		private void OnValidate()
+		{
+		}
 
 		protected override void Awake()
 		{
@@ -87,6 +93,11 @@ namespace ScheduleOne
 
 		public void AddToRegistry(global::ScheduleOne.ItemFramework.ItemDefinition item)
 		{
+		}
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemDefinition> GetAllItems()
+		{
+			return null;
 		}
 
 		private void AddToItemDictionary(global::ScheduleOne.Registry.ItemRegister reg)

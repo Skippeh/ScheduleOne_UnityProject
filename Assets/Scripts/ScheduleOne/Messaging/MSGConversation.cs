@@ -101,7 +101,7 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
-		private void EnsureUIExists()
+		public void EnsureUIExists()
 		{
 		}
 

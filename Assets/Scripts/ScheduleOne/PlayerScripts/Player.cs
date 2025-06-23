@@ -527,6 +527,10 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
+		protected virtual void Tick()
+		{
+		}
+
 		protected virtual void LateUpdate()
 		{
 		}
@@ -710,6 +714,11 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public string GetClothingString()
+		{
+			return null;
+		}
+
+		public string GetVariablesString()
 		{
 			return null;
 		}

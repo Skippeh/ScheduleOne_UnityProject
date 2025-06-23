@@ -5,6 +5,8 @@ namespace ScheduleOne.Properties
 	{
 		public const float SPEED_MULTIPLIER = 1.3f;
 
+		public const float NPC_SPEED_MULTIPLIER = 1.8f;
+
 		[global::UnityEngine.ColorUsage(true, true)]
 		[global::UnityEngine.SerializeField]
 		public global::UnityEngine.Color TintColor;

@@ -10,8 +10,6 @@ namespace ScheduleOne.FX
 		[global::UnityEngine.SerializeField]
 		protected global::Funly.SkyStudio.TimeOfDayController timeOfDayController;
 
-		public global::AtmosphericHeightFog.HeightFogGlobal HeightFog;
-
 		public global::VolumetricFogAndMist2.VolumetricFog VolumetricFog;
 
 		public global::UnityEngine.Light SunLight;

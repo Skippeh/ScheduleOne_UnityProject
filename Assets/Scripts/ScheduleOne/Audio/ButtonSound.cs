@@ -9,6 +9,8 @@ namespace ScheduleOne.Audio
 
 		public global::UnityEngine.EventSystems.EventTrigger EventTrigger;
 
+		public bool PlaySoundOnClickStart;
+
 		[global::UnityEngine.Header("Clips")]
 		public global::UnityEngine.AudioClip HoverClip;
 

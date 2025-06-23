@@ -35,7 +35,7 @@ namespace ScheduleOne.Quests
 			return false;
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.SaveData GetSaveData()
 		{
 			return null;
 		}

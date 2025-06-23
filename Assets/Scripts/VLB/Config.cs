@@ -154,7 +154,7 @@ namespace VLB
 			return null;
 		}
 
-		private unsafe ref global::UnityEngine.Shader GetBeamShaderInternal(global::VLB.ShaderMode mode)
+		private ref global::UnityEngine.Shader GetBeamShaderInternal(global::VLB.ShaderMode mode)
 		{
 			throw null;
 		}

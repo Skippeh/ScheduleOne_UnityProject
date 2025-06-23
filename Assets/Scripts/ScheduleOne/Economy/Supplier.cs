@@ -233,12 +233,16 @@ namespace ScheduleOne.Economy
 			return 0f;
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.NPCData GetNPCData()
 		{
 			return null;
 		}
 
 		public override void Load(global::ScheduleOne.Persistence.Datas.NPCData data, string containerPath)
+		{
+		}
+
+		public override void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData dynamicData, global::ScheduleOne.Persistence.Datas.NPCData npcData)
 		{
 		}
 

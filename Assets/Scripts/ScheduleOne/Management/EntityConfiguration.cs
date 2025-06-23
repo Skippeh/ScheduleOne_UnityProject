@@ -32,6 +32,10 @@ namespace ScheduleOne.Management
 		{
 		}
 
+		public virtual void Reset()
+		{
+		}
+
 		public virtual void Selected()
 		{
 		}

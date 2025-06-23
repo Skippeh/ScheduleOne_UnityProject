@@ -477,7 +477,7 @@ namespace ScheduleOne.NPCs
 			return false;
 		}
 
-		protected virtual bool ShouldSaveMessages()
+		protected bool ShouldSaveMessages()
 		{
 			return false;
 		}
@@ -492,7 +492,17 @@ namespace ScheduleOne.NPCs
 			return false;
 		}
 
-		public virtual string GetSaveString()
+		public string GetSaveString()
+		{
+			return null;
+		}
+
+		public virtual global::ScheduleOne.Persistence.Datas.NPCData GetNPCData()
+		{
+			return null;
+		}
+
+		public virtual global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
 		{
 			return null;
 		}
@@ -503,6 +513,10 @@ namespace ScheduleOne.NPCs
 		}
 
 		public virtual void Load(global::ScheduleOne.Persistence.Datas.NPCData data, string containerPath)
+		{
+		}
+
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData dynamicData, global::ScheduleOne.Persistence.Datas.NPCData npcData)
 		{
 		}
 

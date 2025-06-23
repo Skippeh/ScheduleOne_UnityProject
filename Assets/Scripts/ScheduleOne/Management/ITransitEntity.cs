@@ -39,7 +39,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		int GetInputCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC asker = null)
+		int GetInputCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.NPCs.NPC asker = null, bool checkPlayerFilters = true)
 		{
 			return 0;
 		}

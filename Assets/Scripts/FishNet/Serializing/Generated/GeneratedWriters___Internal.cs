@@ -72,11 +72,23 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002EPlayerScripts_002EPlayerFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.PlayerScripts.Player value)
+		public static void Write___ScheduleOne_002EItemFramework_002ESlotFilterFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.SlotFilter value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EItemFramework_002ESlotFilter_002FETypeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.SlotFilter.EType value)
 		{
 		}
 
 		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CSystem_002EString_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<string> value)
+		{
+		}
+
+		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002EItemFramework_002EEQuality_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.EQuality> value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EPlayerScripts_002EPlayerFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.PlayerScripts.Player value)
 		{
 		}
 
@@ -321,6 +333,14 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EObjectScripts_002ERecycler_002FEStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.Recycler.EState value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EObjectScripts_002EJukebox_002FJukeboxStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.Jukebox.JukeboxState value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EObjectScripts_002EJukebox_002FERepeatModeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.Jukebox.ERepeatMode value)
 		{
 		}
 

@@ -8,6 +8,10 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData data)
+		{
+		}
+
 		public global::ScheduleOne.Persistence.Datas.BuildableItemData GetBuildableItemData(string mainPath)
 		{
 			return null;

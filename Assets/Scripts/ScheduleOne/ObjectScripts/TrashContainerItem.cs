@@ -18,11 +18,13 @@ namespace ScheduleOne.ObjectScripts
 		[global::UnityEngine.Header("Pickup settings")]
 		public bool UsableByCleaners;
 
-		public float PickupRadius;
+		public float PickupSquareWidth;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> TrashItemsInRadius;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashBag> TrashBagsInRadius;
+
+		private float calculatedPickupRadius;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ETrashContainerItemAssembly_002DCSharp_002Edll_Excuted;
 
@@ -64,7 +66,7 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.BuildableItemData GetBaseData()
 		{
 			return null;
 		}
@@ -106,7 +108,7 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public bool IsPointInRadius(global::UnityEngine.Vector3 point)
+		public bool IsPointInPickupZone(global::UnityEngine.Vector3 point)
 		{
 			return false;
 		}

@@ -32,6 +32,10 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
+		public void OnSaveStart()
+		{
+		}
+
 		public void OnSaveComplete()
 		{
 		}

@@ -31,8 +31,6 @@ namespace ScheduleOne.Quests
 
 		private global::ScheduleOne.Persistence.Loaders.QuestsLoader loader;
 
-		private global::System.Collections.Generic.List<string> writtenContractFiles;
-
 		private bool NetworkInitialize___EarlyScheduleOne_002EQuests_002EQuestManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EQuests_002EQuestManagerAssembly_002DCSharp_002Edll_Excuted;
@@ -152,15 +150,6 @@ namespace ScheduleOne.Quests
 		public virtual string GetSaveString()
 		{
 			return null;
-		}
-
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
-		public virtual void DeleteUnapprovedFiles(string parentFolderPath)
-		{
 		}
 
 		public override void NetworkInitialize___Early()

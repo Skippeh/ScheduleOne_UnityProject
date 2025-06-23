@@ -18,6 +18,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.RectTransform ItemContainer;
 
+		public global::ScheduleOne.UI.Items.ItemSlotFilterButton FilterButton;
+
 		public global::ScheduleOne.ItemFramework.ItemSlot assignedSlot { get; protected set; }
 
 		public global::ScheduleOne.UI.Items.ItemUI ItemUI { get; protected set; }

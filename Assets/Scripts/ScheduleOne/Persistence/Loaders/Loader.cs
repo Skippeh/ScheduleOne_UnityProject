@@ -22,5 +22,16 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 			return null;
 		}
+
+		protected global::System.Collections.Generic.List<global::System.IO.FileInfo> GetFiles(string parenPath)
+		{
+			return null;
+		}
+
+		public static bool TryDeserialize<T>(string json, out T data)
+		{
+			data = default(T);
+			return false;
+		}
 	}
 }

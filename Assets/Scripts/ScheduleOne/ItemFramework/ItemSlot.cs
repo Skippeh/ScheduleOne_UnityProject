@@ -11,6 +11,8 @@ namespace ScheduleOne.ItemFramework
 
 		public global::System.Action onUnlocked;
 
+		public global::System.Action onFilterChange;
+
 		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance { get; protected set; }
 
 		public global::ScheduleOne.ItemFramework.IItemSlotOwner SlotOwner { get; protected set; }
@@ -29,9 +31,27 @@ namespace ScheduleOne.ItemFramework
 
 		public bool IsAddLocked { get; protected set; }
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemFilter> Filters { get; set; }
+		protected global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemFilter> HardFilters { get; set; }
+
+		public bool CanPlayerSetFilter { get; set; }
+
+		public global::ScheduleOne.ItemFramework.SlotFilter PlayerFilter { get; set; }
+
+		public global::ScheduleOne.ItemFramework.ItemSlotSiblingSet SiblingSet { get; set; }
 
 		public void SetSlotOwner(global::ScheduleOne.ItemFramework.IItemSlotOwner owner)
+		{
+		}
+
+		public void SetSiblingSet(global::ScheduleOne.ItemFramework.ItemSlotSiblingSet set)
+		{
+		}
+
+		public ItemSlot()
+		{
+		}
+
+		public ItemSlot(bool canPlayerSetFilter = false)
 		{
 		}
 
@@ -91,12 +111,25 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		public virtual bool DoesItemMatchFilters(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual bool DoesItemMatchHardFilters(global::ScheduleOne.ItemFramework.ItemInstance item)
 		{
 			return false;
 		}
 
-		public virtual int GetCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item)
+		public virtual bool DoesItemMatchPlayerFilters(global::ScheduleOne.ItemFramework.ItemInstance item)
+		{
+			return false;
+		}
+
+		public void SetFilterable(bool filterable)
+		{
+		}
+
+		public void SetPlayerFilter(global::ScheduleOne.ItemFramework.SlotFilter filter, bool _internal = false)
+		{
+		}
+
+		public virtual int GetCapacityForItem(global::ScheduleOne.ItemFramework.ItemInstance item, bool checkPlayerFilters = false)
 		{
 			return 0;
 		}

@@ -38,5 +38,10 @@ namespace ScheduleOne.Audio
 		private void Update()
 		{
 		}
+
+		protected virtual bool CanStartAmbientTrack()
+		{
+			return false;
+		}
 	}
 }

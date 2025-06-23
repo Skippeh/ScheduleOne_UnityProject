@@ -2,7 +2,7 @@ namespace ScheduleOne.Management
 {
 	public class CleanerConfiguration : global::ScheduleOne.Management.EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public global::ScheduleOne.Management.ObjectField Home;
 
 		public global::ScheduleOne.Management.ObjectListField Bins;
 
@@ -10,14 +10,14 @@ namespace ScheduleOne.Management
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.TrashContainerItem> binItems { get; private set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public global::ScheduleOne.Employees.EmployeeHome assignedHome { get; private set; }
 
 		public CleanerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Cleaner _cleaner)
 			: base(null, null)
 		{
 		}
 
-		public override void Destroy()
+		public override void Reset()
 		{
 		}
 
@@ -41,7 +41,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void HomeChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
 		{
 		}
 	}

@@ -52,11 +52,6 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		public override string GetSaveString()
-		{
-			return null;
-		}
-
 		public override void Load(global::ScheduleOne.Persistence.Datas.NPCData data, string containerPath)
 		{
 		}

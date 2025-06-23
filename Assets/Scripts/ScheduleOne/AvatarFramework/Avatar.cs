@@ -57,6 +57,8 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::ScheduleOne.AvatarFramework.Impostors.AvatarImpostor Impostor;
 
+		public global::ScheduleOne.Audio.FootstepSounds FootstepSounds;
+
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.AvatarFramework.AvatarSettings InitialAvatarSettings;
 

@@ -15,6 +15,8 @@ namespace ScheduleOne.Employees
 			}
 		}
 
+		public const int MAX_CONSECUTIVE_PATHING_FAILURES = 5;
+
 		public bool DEBUG;
 
 		[global::UnityEngine.SerializeField]
@@ -38,9 +40,17 @@ namespace ScheduleOne.Employees
 
 		public global::ScheduleOne.Dialogue.DialogueContainer FireDialogue;
 
+		public global::ScheduleOne.Dialogue.DialogueContainer TransferDialogue;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee.NoWorkReason> WorkIssues;
 
 		protected bool initialized;
+
+		protected int consecutivePathingFailures;
+
+		private float timeOnLastPathingFailure;
+
+		private global::UnityEngine.Transform cachedNPCSpawnPoint;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CPaidForToday_003Ek__BackingField;
 
@@ -106,7 +116,25 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		protected virtual void AssignProperty(global::ScheduleOne.Property.Property prop)
+		protected virtual void AssignProperty(global::ScheduleOne.Property.Property prop, bool warp)
+		{
+		}
+
+		protected virtual void UnassignProperty()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void SendTransfer(string propertyCode)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc]
+		private void TransferToProperty(string code)
+		{
+		}
+
+		protected virtual void TransferToProperty(global::ScheduleOne.Property.Property prop)
 		{
 		}
 
@@ -129,6 +157,10 @@ namespace ScheduleOne.Employees
 
 		[global::FishNet.Object.ObserversRpc]
 		private void ReceiveFire()
+		{
+		}
+
+		protected virtual void ResetConfiguration()
 		{
 		}
 
@@ -184,12 +216,12 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.NPCData GetNPCData()
 		{
 			return null;
 		}
 
-		public virtual global::ScheduleOne.ObjectScripts.BedItem GetBed()
+		public virtual global::ScheduleOne.Employees.EmployeeHome GetHome()
 		{
 			return null;
 		}
@@ -244,6 +276,18 @@ namespace ScheduleOne.Employees
 		{
 		}
 
+		protected void SetDestination(global::ScheduleOne.Management.ITransitEntity transitEntity, bool teleportIfFail = true)
+		{
+		}
+
+		protected void SetDestination(global::UnityEngine.Vector3 position, bool teleportIfFail = true)
+		{
+		}
+
+		protected virtual void WalkCallback(global::ScheduleOne.NPCs.NPCMovement.WalkResult result)
+		{
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}
@@ -273,6 +317,30 @@ namespace ScheduleOne.Employees
 		}
 
 		private void RpcReader___Target_Initialize_2260823878(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_SendTransfer_3615296227(string propertyCode)
+		{
+		}
+
+		public void RpcLogic___SendTransfer_3615296227(string propertyCode)
+		{
+		}
+
+		private void RpcReader___Server_SendTransfer_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_TransferToProperty_3615296227(string code)
+		{
+		}
+
+		private void RpcLogic___TransferToProperty_3615296227(string code)
+		{
+		}
+
+		private void RpcReader___Observers_TransferToProperty_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

@@ -14,7 +14,7 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CJump_003Ed__114 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CJump_003Ed__115 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -43,7 +43,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CJump_003Ed__114(int _003C_003E1__state)
+			public _003CJump_003Ed__115(int _003C_003E1__state)
 			{
 			}
 
@@ -70,7 +70,7 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpPlayerRotation_Process_003Ed__122 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CLerpPlayerRotation_Process_003Ed__123 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -105,7 +105,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CLerpPlayerRotation_Process_003Ed__122(int _003C_003E1__state)
+			public _003CLerpPlayerRotation_Process_003Ed__123(int _003C_003E1__state)
 			{
 			}
 
@@ -184,6 +184,8 @@ namespace ScheduleOne.PlayerScripts
 		public float MoveSpeedMultiplier;
 
 		public float SlipperyMovementMultiplier;
+
+		public bool ForceSprint;
 
 		[global::UnityEngine.Header("Jump/fall settings")]
 		[global::UnityEngine.SerializeField]
@@ -338,7 +340,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CJump_003Ed__114))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CJump_003Ed__115))]
 		private global::System.Collections.IEnumerator Jump()
 		{
 			return null;
@@ -369,7 +371,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CLerpPlayerRotation_Process_003Ed__122))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CLerpPlayerRotation_Process_003Ed__123))]
 		private global::System.Collections.IEnumerator LerpPlayerRotation_Process(global::UnityEngine.Quaternion endRotation, float lerpTime)
 		{
 			return null;

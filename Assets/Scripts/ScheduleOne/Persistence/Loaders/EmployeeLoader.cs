@@ -4,7 +4,11 @@ namespace ScheduleOne.Persistence.Loaders
 	{
 		public override string NPCType => null;
 
-		public global::ScheduleOne.Employees.Employee LoadAndCreateEmployee(string mainPath)
+		public override void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData saveData)
+		{
+		}
+
+		protected virtual global::ScheduleOne.Employees.Employee CreateAndLoadEmployee(global::ScheduleOne.Persistence.Datas.DynamicSaveData saveData)
 		{
 			return null;
 		}

@@ -4,7 +4,7 @@ namespace ScheduleOne.Persistence.Loaders
 	{
 		public override string NPCType => null;
 
-		public override void Load(string mainPath)
+		public override void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData saveData)
 		{
 		}
 	}

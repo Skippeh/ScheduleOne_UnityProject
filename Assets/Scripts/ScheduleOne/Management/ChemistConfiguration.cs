@@ -2,7 +2,7 @@ namespace ScheduleOne.Management
 {
 	public class ChemistConfiguration : global::ScheduleOne.Management.EntityConfiguration
 	{
-		public global::ScheduleOne.Management.ObjectField Bed;
+		public global::ScheduleOne.Management.ObjectField Home;
 
 		public global::ScheduleOne.Management.ObjectListField Stations;
 
@@ -18,14 +18,14 @@ namespace ScheduleOne.Management
 
 		public global::ScheduleOne.Employees.Chemist chemist { get; protected set; }
 
-		public global::ScheduleOne.ObjectScripts.BedItem bedItem { get; private set; }
+		public global::ScheduleOne.Employees.EmployeeHome assignedHome { get; private set; }
 
 		public ChemistConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Chemist _chemist)
 			: base(null, null)
 		{
 		}
 
-		public override void Destroy()
+		public override void Reset()
 		{
 		}
 
@@ -49,7 +49,7 @@ namespace ScheduleOne.Management
 			return null;
 		}
 
-		private void BedChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
+		private void HomeChanged(global::ScheduleOne.EntityFramework.BuildableItem newItem)
 		{
 		}
 	}

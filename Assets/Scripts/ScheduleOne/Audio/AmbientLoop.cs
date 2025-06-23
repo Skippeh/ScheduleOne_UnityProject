@@ -5,8 +5,6 @@ namespace ScheduleOne.Audio
 	{
 		public const float MUSIC_FADE_MULTIPLIER = 0.3f;
 
-		public const float MUSIC_FADE_TIME = 4f;
-
 		public global::UnityEngine.AnimationCurve VolumeCurve;
 
 		public bool FadeDuringMusic;

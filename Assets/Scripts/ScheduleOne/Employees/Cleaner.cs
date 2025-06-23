@@ -82,7 +82,15 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		protected override void AssignProperty(global::ScheduleOne.Property.Property prop)
+		protected override void AssignProperty(global::ScheduleOne.Property.Property prop, bool warp)
+		{
+		}
+
+		protected override void UnassignProperty()
+		{
+		}
+
+		protected override void ResetConfiguration()
 		{
 		}
 
@@ -120,7 +128,7 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		public override global::ScheduleOne.ObjectScripts.BedItem GetBed()
+		public override global::ScheduleOne.Employees.EmployeeHome GetHome()
 		{
 			return null;
 		}
@@ -148,7 +156,12 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.NPCData GetNPCData()
+		{
+			return null;
+		}
+
+		public override global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
 		{
 			return null;
 		}

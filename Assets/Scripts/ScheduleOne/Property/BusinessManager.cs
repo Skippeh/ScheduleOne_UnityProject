@@ -36,7 +36,11 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public void LoadBusiness(global::ScheduleOne.Persistence.Datas.BusinessData businessData, string containerPath)
+		public virtual void DeleteUnapprovedFiles(string parentFolderPath)
+		{
+		}
+
+		public void LoadBusiness(global::ScheduleOne.Persistence.Datas.BusinessData businessData)
 		{
 		}
 	}

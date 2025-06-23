@@ -617,12 +617,17 @@ namespace ScheduleOne.Vehicles
 			return null;
 		}
 
-		public virtual string GetSaveString()
+		public virtual global::ScheduleOne.Persistence.Datas.VehicleData GetVehicleData()
 		{
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public string GetSaveString()
+		{
+			return null;
+		}
+
+		private global::ScheduleOne.Persistence.Datas.ItemSet GetContentsSet()
 		{
 			return null;
 		}

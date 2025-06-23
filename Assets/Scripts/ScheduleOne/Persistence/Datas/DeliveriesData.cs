@@ -4,7 +4,9 @@ namespace ScheduleOne.Persistence.Datas
 	{
 		public global::ScheduleOne.Delivery.DeliveryInstance[] ActiveDeliveries;
 
-		public DeliveriesData(global::ScheduleOne.Delivery.DeliveryInstance[] deliveries)
+		public global::ScheduleOne.Persistence.Datas.VehicleData[] DeliveryVehicles;
+
+		public DeliveriesData(global::ScheduleOne.Delivery.DeliveryInstance[] deliveries, global::ScheduleOne.Persistence.Datas.VehicleData[] deliveryVehicles)
 		{
 		}
 	}

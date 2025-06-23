@@ -1,8 +1,10 @@
 namespace ScheduleOne.Persistence.Datas
 {
 	[global::System.Serializable]
-	public class TrashItemData : global::ScheduleOne.Persistence.Datas.SaveData
+	public class TrashItemData
 	{
+		public string DataType;
+
 		public string TrashID;
 
 		public string GUID;

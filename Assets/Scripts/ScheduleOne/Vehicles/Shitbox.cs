@@ -16,15 +16,6 @@ namespace ScheduleOne.Vehicles
 
 		private bool NetworkInitialize__LateScheduleOne_002EVehicles_002EShitboxAssembly_002DCSharp_002Edll_Excuted;
 
-		public override global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
-		public override void Load(global::ScheduleOne.Persistence.Datas.VehicleData data, string containerPath)
-		{
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

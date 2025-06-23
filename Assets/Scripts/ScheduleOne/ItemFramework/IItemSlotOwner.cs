@@ -10,7 +10,9 @@ namespace ScheduleOne.ItemFramework
 
 		void SetSlotLocked(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason);
 
-		void SendItemsToClient(global::FishNet.Connection.NetworkConnection conn)
+		void SetSlotFilter(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.SlotFilter filter);
+
+		void SendItemSlotDataToClient(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

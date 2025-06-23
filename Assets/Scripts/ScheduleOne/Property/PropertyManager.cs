@@ -36,7 +36,11 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public void LoadProperty(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string containerPath)
+		public virtual void DeleteUnapprovedFiles(string parentFolderPath)
+		{
+		}
+
+		public void LoadProperty(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
 		{
 		}
 

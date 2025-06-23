@@ -34,6 +34,8 @@ namespace ScheduleOne.Audio
 
 		private float lastStepTime;
 
+		public float VolumeMultiplier { get; set; }
+
 		private void Start()
 		{
 		}

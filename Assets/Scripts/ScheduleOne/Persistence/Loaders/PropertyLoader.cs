@@ -5,5 +5,9 @@ namespace ScheduleOne.Persistence.Loaders
 		public override void Load(string mainPath)
 		{
 		}
+
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
+		{
+		}
 	}
 }

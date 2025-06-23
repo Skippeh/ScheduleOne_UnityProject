@@ -17,7 +17,7 @@ namespace ScheduleOne.Management
 		{
 		}
 
-		public override void Destroy()
+		public override void Reset()
 		{
 		}
 

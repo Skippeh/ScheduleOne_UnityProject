@@ -32,6 +32,8 @@ namespace ScheduleOne.Persistence
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Loaders.BuildableItemLoader> ObjectLoaders;
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Loaders.LegacyNPCLoader> LegacyNPCLoaders;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Loaders.NPCLoader> NPCLoaders;
 
 		public global::UnityEngine.Events.UnityEvent onPreSceneChange;
@@ -106,6 +108,11 @@ namespace ScheduleOne.Persistence
 			return null;
 		}
 
+		public global::ScheduleOne.Persistence.Loaders.LegacyNPCLoader GetLegacyNPCLoader(string npcType)
+		{
+			return null;
+		}
+
 		public global::ScheduleOne.Persistence.Loaders.NPCLoader GetNPCLoader(string npcType)
 		{
 			return null;
@@ -146,6 +153,12 @@ namespace ScheduleOne.Persistence
 
 		public void ExitToMenu(global::ScheduleOne.Persistence.SaveInfo autoLoadSave = null, global::ScheduleOne.UI.MainMenu.MainMenuPopup.Data mainMenuPopup = null, bool preventLeaveLobby = false)
 		{
+		}
+
+		public static bool TryLoadSaveInfo(string saveFolderPath, int saveSlotIndex, out global::ScheduleOne.Persistence.SaveInfo saveInfo, bool requireGameFile = false)
+		{
+			saveInfo = null;
+			return false;
 		}
 
 		public void RefreshSaveInfo()

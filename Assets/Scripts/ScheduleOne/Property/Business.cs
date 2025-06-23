@@ -27,8 +27,6 @@ namespace ScheduleOne.Property
 
 		public float appliedLaunderLimit => 0f;
 
-		public new string SaveFileName => null;
-
 		public new global::ScheduleOne.Persistence.Loaders.Loader Loader => null;
 
 		public override void Awake()
@@ -68,7 +66,7 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.BusinessData businessData, string containerPath)
+		public override void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
 		{
 		}
 

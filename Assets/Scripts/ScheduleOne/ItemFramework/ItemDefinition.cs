@@ -21,6 +21,8 @@ namespace ScheduleOne.ItemFramework
 
 		public bool AvailableInDemo;
 
+		public bool UsableInFilters;
+
 		public global::UnityEngine.Color LabelDisplayColor;
 
 		public int StackLimit;

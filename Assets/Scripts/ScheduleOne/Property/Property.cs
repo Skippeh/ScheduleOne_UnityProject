@@ -220,6 +220,16 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.DynamicSaveData> GetEmployeeSaveDatas()
+		{
+			return null;
+		}
+
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.DynamicSaveData> GetObjectSaveDatas()
+		{
+			return null;
+		}
+
 		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
 		{
 			return null;
@@ -229,7 +239,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string containerPath)
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
 		{
 		}
 
@@ -244,6 +254,11 @@ namespace ScheduleOne.Property
 		}
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Bed> GetUnassignedBeds()
+		{
+			return null;
+		}
+
+		public global::System.Collections.Generic.List<T> GetBuildablesOfType<T>() where T : global::ScheduleOne.EntityFramework.BuildableItem
 		{
 			return null;
 		}

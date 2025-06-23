@@ -8,7 +8,7 @@ namespace ScheduleOne.Persistence
 
 		public const string TUTORIAL_SCENE_NAME = "Tutorial";
 
-		public const int SAVES_PER_FRAME = 10;
+		public const int SAVES_PER_FRAME = 15;
 
 		public const string SAVE_FILE_EXTENSION = ".json";
 

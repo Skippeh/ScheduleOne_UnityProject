@@ -8,7 +8,7 @@ namespace ScheduleOne.PlayerTasks
 
 		public float RotationForce;
 
-		public global::UnityEngine.Transform CuntAssFuckingBitch;
+		public global::UnityEngine.Transform Bitch;
 
 		public void FixedUpdate()
 		{

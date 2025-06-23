@@ -278,7 +278,12 @@ namespace ScheduleOne.Quests
 			return false;
 		}
 
-		public virtual string GetSaveString()
+		public virtual global::ScheduleOne.Persistence.Datas.SaveData GetSaveData()
+		{
+			return null;
+		}
+
+		public string GetSaveString()
 		{
 			return null;
 		}

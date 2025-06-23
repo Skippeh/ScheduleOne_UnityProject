@@ -40,6 +40,8 @@ namespace ScheduleOne.EntityFramework
 		public global::System.Collections.Generic.List<global::UnityEngine.MeshRenderer> MeshesToCull;
 
 		[global::UnityEngine.Header("Buildable Events")]
+		public global::UnityEngine.Events.UnityEvent onGhostModel;
+
 		public global::UnityEngine.Events.UnityEvent onInitialized;
 
 		public global::UnityEngine.Events.UnityEvent onDestroyed;
@@ -202,7 +204,17 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public virtual string GetSaveString()
+		public virtual global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
+		{
+			return null;
+		}
+
+		public virtual global::ScheduleOne.Persistence.Datas.BuildableItemData GetBaseData()
+		{
+			return null;
+		}
+
+		public string GetSaveString()
 		{
 			return null;
 		}

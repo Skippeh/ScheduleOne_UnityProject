@@ -10,6 +10,14 @@ namespace ScheduleOne.DevUtilities
 
 		public const float MinYPos = -20f;
 
+		public const string BETA_ARG = "-beta";
+
+		public const string DISABLE_COUNTRY_CHECK_ARG = "-disablecountrycheck";
+
+		public const bool COUNTRY_CHECK = false;
+
+		public global::System.Collections.Generic.List<string> LaunchArgs;
+
 		public global::ScheduleOne.DevUtilities.DisplaySettings DisplaySettings;
 
 		public global::ScheduleOne.DevUtilities.DisplaySettings UnappliedDisplaySettings;
@@ -55,6 +63,10 @@ namespace ScheduleOne.DevUtilities
 		}
 
 		protected override void Start()
+		{
+		}
+
+		private void CheckCountryCode()
 		{
 		}
 

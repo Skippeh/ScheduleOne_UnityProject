@@ -3,6 +3,8 @@ namespace ScheduleOne.UI.Tooltips
 	public class TooltipManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Tooltips.TooltipManager>
 	{
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.Canvas Canvas;
+
 		[global::UnityEngine.SerializeField]
 		private global::UnityEngine.RectTransform anchor;
 
@@ -19,6 +21,10 @@ namespace ScheduleOne.UI.Tooltips
 		private global::UnityEngine.EventSystems.EventSystem eventSystem;
 
 		private bool tooltipShownThisFrame;
+
+		private global::UnityEngine.EventSystems.PointerEventData pointerEventData;
+
+		private global::System.Collections.Generic.List<global::UnityEngine.EventSystems.RaycastResult> rayResults;
 
 		protected override void Awake()
 		{

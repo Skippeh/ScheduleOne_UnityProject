@@ -98,15 +98,6 @@ namespace ScheduleOne.Delivery
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
-		public virtual void DeleteUnapprovedFiles(string parentFolderPath)
-		{
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

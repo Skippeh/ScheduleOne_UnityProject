@@ -621,12 +621,12 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override string GetSaveString()
+		public override global::ScheduleOne.Persistence.Datas.BuildableItemData GetBaseData()
 		{
 			return null;
 		}
 
-		public override global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
+		public override global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
 		{
 			return null;
 		}

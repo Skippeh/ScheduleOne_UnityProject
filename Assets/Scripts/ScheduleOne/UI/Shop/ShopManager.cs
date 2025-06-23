@@ -35,11 +35,6 @@ namespace ScheduleOne.UI.Shop
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SendStock(string shopCode, string itemID, int stock)
 		{

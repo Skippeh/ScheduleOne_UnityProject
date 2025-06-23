@@ -15,6 +15,8 @@ namespace ScheduleOne.Equipping
 
 		public bool ClearDrugEffects;
 
+		public global::ScheduleOne.Product.ProductDefinition PseudoProduct;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Animation OpenAnim;
 

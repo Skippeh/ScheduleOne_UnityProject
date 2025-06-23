@@ -66,11 +66,6 @@ namespace ScheduleOne.Vehicles
 			return null;
 		}
 
-		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
-		{
-			return null;
-		}
-
 		public void SpawnLoanSharkVehicle(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rot)
 		{
 		}

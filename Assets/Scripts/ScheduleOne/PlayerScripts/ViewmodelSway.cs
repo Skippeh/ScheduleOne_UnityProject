@@ -2,6 +2,8 @@ namespace ScheduleOne.PlayerScripts
 {
 	public class ViewmodelSway : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.ViewmodelSway>
 	{
+		public bool DEBUG;
+
 		[global::UnityEngine.Header("Settings - Breathing")]
 		public bool breatheBobbingEnabled;
 

@@ -5,7 +5,9 @@ namespace ScheduleOne.Persistence.Datas
 	{
 		public global::ScheduleOne.Persistence.Datas.TrashItemData[] Items;
 
-		public TrashData(global::ScheduleOne.Persistence.Datas.TrashItemData[] trash)
+		public global::ScheduleOne.Persistence.Datas.TrashGeneratorData[] Generators;
+
+		public TrashData(global::ScheduleOne.Persistence.Datas.TrashItemData[] trash, global::ScheduleOne.Persistence.Datas.TrashGeneratorData[] generators)
 		{
 		}
 	}

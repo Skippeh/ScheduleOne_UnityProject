@@ -4,7 +4,7 @@ namespace ScheduleOne.ItemFramework
 	{
 		Product = 0,
 		Packaging = 1,
-		Growing = 2,
+		Agriculture = 2,
 		Tools = 3,
 		Furniture = 4,
 		Lighting = 5,
@@ -13,6 +13,7 @@ namespace ScheduleOne.ItemFramework
 		Equipment = 8,
 		Ingredient = 9,
 		Decoration = 10,
-		Clothing = 11
+		Clothing = 11,
+		Storage = 12
 	}
 }

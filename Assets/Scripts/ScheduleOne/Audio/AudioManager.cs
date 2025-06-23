@@ -2,6 +2,10 @@ namespace ScheduleOne.Audio
 {
 	public class AudioManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Audio.AudioManager>
 	{
+		public const float MIN_WORLD_MUSIC_VOLUME_MULTIPLIER = 0f;
+
+		public const float MUSIC_FADE_TIME = 4f;
+
 		[global::UnityEngine.Range(0f, 2f)]
 		[global::UnityEngine.SerializeField]
 		protected float masterVolume;
@@ -81,6 +85,13 @@ namespace ScheduleOne.Audio
 		public float VoiceVolume => 0f;
 
 		public float UnscaledVoiceVolume => 0f;
+
+		public float WorldMusicVolumeMultiplier { get; private set; }
+
+		public float GetScaledMusicVolumeMultiplier(float min)
+		{
+			return 0f;
+		}
 
 		protected override void Awake()
 		{
