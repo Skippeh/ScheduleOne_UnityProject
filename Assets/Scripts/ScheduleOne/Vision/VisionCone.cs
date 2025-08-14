@@ -13,16 +13,16 @@ namespace ScheduleOne.Vision
 		[global::System.Serializable]
 		public class StateContainer
 		{
-			public global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState state;
+			public global::ScheduleOne.Vision.EVisualState state;
 
 			public bool Enabled;
 
 			public float RequiredNoticeTime;
 		}
 
-		public class PlayerSightData
+		public class SightableData
 		{
-			public global::ScheduleOne.PlayerScripts.Player Player;
+			public global::ScheduleOne.Vision.ISightable Sightable;
 
 			public float VisionDelta;
 
@@ -36,6 +36,8 @@ namespace ScheduleOne.Vision
 		public static float UniversalAttentivenessScale;
 
 		public static float UniversalMemoryScale;
+
+		public bool DEBUG;
 
 		public bool DisableSightUpdates;
 
@@ -91,17 +93,23 @@ namespace ScheduleOne.Vision
 
 		public global::ScheduleOne.Vision.VisionCone.EventStateChange onVisionEventExpired;
 
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.Player, global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState, global::ScheduleOne.Vision.VisionCone.StateContainer>> StateSettings;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.ISightable> sightablesOfInterest;
+
+		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Vision.ISightable, global::ScheduleOne.Vision.VisionCone.SightableData> sightableDatas;
+
+		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Vision.ISightable, global::System.Collections.Generic.Dictionary<global::ScheduleOne.Vision.EVisualState, global::ScheduleOne.Vision.VisionCone.StateContainer>> stateSettings;
 
 		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionEvent> activeVisionEvents;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.PlayerScripts.Player, global::ScheduleOne.Vision.VisionCone.PlayerSightData> playerSightDatas;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionEvent> cachedVisionEvents;
 
 		protected global::ScheduleOne.NPCs.NPC npc;
 
-		private bool generalCrimeResponseActive;
+		protected bool generalCrimeResponseActive;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> sightedPlayers;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.ISightable> sightablesSeenThisFrame;
+
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.ISightable> toRemove;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVision_002EVisionConeAssembly_002DCSharp_002Edll_Excuted;
 
@@ -163,12 +171,25 @@ namespace ScheduleOne.Vision
 		{
 		}
 
+		public void AddSightableOfInterest(global::ScheduleOne.Vision.ISightable s)
+		{
+		}
+
+		public void RemoveSightableOfInterest(global::ScheduleOne.Vision.ISightable s)
+		{
+		}
+
+		public global::ScheduleOne.Vision.VisionCone.StateContainer GetStateSettings(global::ScheduleOne.Vision.ISightable sightable, global::ScheduleOne.Vision.EVisualState state)
+		{
+			return null;
+		}
+
 		public virtual bool IsPointWithinSight(global::UnityEngine.Vector3 point, bool ignoreLoS = false, global::ScheduleOne.Vehicles.LandVehicle vehicleToIgnore = null)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.Vision.VisionEvent GetEvent(global::ScheduleOne.PlayerScripts.Player target, global::ScheduleOne.PlayerScripts.PlayerVisualState.VisualState state)
+		public global::ScheduleOne.Vision.VisionEvent GetEvent(global::ScheduleOne.Vision.ISightable target, global::ScheduleOne.Vision.EntityVisualState state)
 		{
 			return null;
 		}
@@ -178,12 +199,22 @@ namespace ScheduleOne.Vision
 			return false;
 		}
 
+		public bool WasSightableVisibleThisFrame(global::ScheduleOne.Vision.ISightable sightable)
+		{
+			return false;
+		}
+
+		public bool IsTargetVisible(global::ScheduleOne.Vision.ISightable target)
+		{
+			return false;
+		}
+
 		public float GetPlayerVisibility(global::ScheduleOne.PlayerScripts.Player player)
 		{
 			return 0f;
 		}
 
-		public bool IsPlayerVisible(global::ScheduleOne.PlayerScripts.Player player, out global::ScheduleOne.Vision.VisionCone.PlayerSightData data)
+		public bool IsPlayerVisible(global::ScheduleOne.PlayerScripts.Player player, out global::ScheduleOne.Vision.VisionCone.SightableData data)
 		{
 			data = null;
 			return false;

@@ -12,7 +12,7 @@ namespace ScheduleOne.Money
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CShowCashChange_003Ed__58 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CShowCashChange_003Ed__64 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -49,7 +49,7 @@ namespace ScheduleOne.Money
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CShowCashChange_003Ed__58(int _003C_003E1__state)
+			public _003CShowCashChange_003Ed__64(int _003C_003E1__state)
 			{
 			}
 
@@ -76,7 +76,7 @@ namespace ScheduleOne.Money
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CShowOnlineBalanceChange_003Ed__55 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CShowOnlineBalanceChange_003Ed__61 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -113,7 +113,7 @@ namespace ScheduleOne.Money
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CShowOnlineBalanceChange_003Ed__55(int _003C_003E1__state)
+			public _003CShowOnlineBalanceChange_003Ed__61(int _003C_003E1__state)
 			{
 			}
 
@@ -198,6 +198,8 @@ namespace ScheduleOne.Money
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		public float SyncAccessor_onlineBalance
 		{
 			get
@@ -218,6 +220,21 @@ namespace ScheduleOne.Money
 			set
 			{
 			}
+		}
+
+		public static string ApplyMoneyTextColor(string text)
+		{
+			return null;
+		}
+
+		public static string ApplyMoneyTextColorDarker(string text)
+		{
+			return null;
+		}
+
+		public static string ApplyOnlineBalanceColor(string text)
+		{
+			return null;
 		}
 
 		public override void Awake()
@@ -271,7 +288,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowOnlineBalanceChange_003Ed__55))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowOnlineBalanceChange_003Ed__61))]
 		protected global::System.Collections.IEnumerator ShowOnlineBalanceChange(global::UnityEngine.RectTransform changeDisplay)
 		{
 			return null;
@@ -286,7 +303,7 @@ namespace ScheduleOne.Money
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowCashChange_003Ed__58))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowCashChange_003Ed__64))]
 		protected global::System.Collections.IEnumerator ShowCashChange(global::UnityEngine.RectTransform changeDisplay)
 		{
 			return null;

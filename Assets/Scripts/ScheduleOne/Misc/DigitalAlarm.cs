@@ -19,6 +19,8 @@ namespace ScheduleOne.Misc
 
 		public global::UnityEngine.Material ScreenOnMat;
 
+		private bool isLit;
+
 		private void Start()
 		{
 		}

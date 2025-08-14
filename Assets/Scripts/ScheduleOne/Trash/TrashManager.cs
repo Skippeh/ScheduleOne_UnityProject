@@ -45,6 +45,8 @@ namespace ScheduleOne.Trash
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		protected override void Start()
 		{
 		}

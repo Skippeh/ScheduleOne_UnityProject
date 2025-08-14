@@ -9,8 +9,6 @@ namespace ScheduleOne.PlayerScripts.Health
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.PlayerScripts.Player Player;
 
-		public global::UnityEngine.ParticleSystem BloodParticles;
-
 		public global::UnityEngine.Events.UnityEvent<float> onHealthChanged;
 
 		public global::UnityEngine.Events.UnityEvent onDie;

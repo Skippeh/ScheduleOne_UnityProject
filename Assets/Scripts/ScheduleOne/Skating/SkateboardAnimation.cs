@@ -37,6 +37,8 @@ namespace ScheduleOne.Skating
 
 		public float PushAnimationSpeed;
 
+		public global::UnityEngine.AnimationClip PushAnim;
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Skating.SkateboardAnimation.AlignmentSet PelvisContainerAlignment;
 

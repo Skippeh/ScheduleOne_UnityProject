@@ -66,7 +66,7 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
-		public override void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
+		public override void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string dataString)
 		{
 		}
 

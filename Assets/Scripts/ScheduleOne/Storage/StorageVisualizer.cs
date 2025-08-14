@@ -25,7 +25,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		protected virtual void FixedUpdate()
+		protected virtual void Update()
 		{
 		}
 

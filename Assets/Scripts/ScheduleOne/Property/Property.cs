@@ -31,8 +31,6 @@ namespace ScheduleOne.Property
 
 		public bool OwnedByDefault;
 
-		public bool DEBUG_SET_OWNED;
-
 		public string IsOwnedVariable;
 
 		[global::UnityEngine.Header("Culling Settings")]
@@ -187,6 +185,11 @@ namespace ScheduleOne.Property
 		{
 		}
 
+		public virtual bool CanBePurchased()
+		{
+			return false;
+		}
+
 		public virtual void SetContentCulled(bool culled)
 		{
 		}
@@ -239,7 +242,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string dataString)
 		{
 		}
 

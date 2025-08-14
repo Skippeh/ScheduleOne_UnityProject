@@ -89,7 +89,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void DayPass(int minsSlept)
+		private void DayPass()
 		{
 		}
 

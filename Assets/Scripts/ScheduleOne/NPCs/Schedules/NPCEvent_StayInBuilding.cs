@@ -73,7 +73,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		private void EnterBuilding(int doorIndex)
+		protected virtual void EnterBuilding(int doorIndex)
 		{
 		}
 

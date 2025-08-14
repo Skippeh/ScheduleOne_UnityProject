@@ -150,6 +150,8 @@ namespace ScheduleOne.ObjectScripts
 
 		private global::ScheduleOne.ItemFramework.SoilDefinition appliedSoilDefinition;
 
+		private global::UnityEngine.Material appliedSoilMaterial;
+
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CSoilLevel_003Ek__BackingField;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<string> syncVar____003CSoilID_003Ek__BackingField;

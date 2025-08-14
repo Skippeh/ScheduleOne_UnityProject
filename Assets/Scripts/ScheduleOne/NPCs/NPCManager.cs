@@ -8,11 +8,6 @@ namespace ScheduleOne.NPCs
 
 		public global::UnityEngine.Transform NPCContainer;
 
-		[global::UnityEngine.Header("Employee Prefabs")]
-		public global::UnityEngine.GameObject BotanistPrefab;
-
-		public global::UnityEngine.GameObject PackagerPrefab;
-
 		[global::UnityEngine.Header("Prefabs")]
 		public global::ScheduleOne.Map.NPCPoI NPCPoIPrefab;
 
@@ -39,6 +34,8 @@ namespace ScheduleOne.NPCs
 		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
+
+		public int LoadOrder { get; }
 
 		public override void Awake()
 		{

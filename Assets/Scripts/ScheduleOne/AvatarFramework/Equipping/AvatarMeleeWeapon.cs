@@ -28,11 +28,15 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		public global::ScheduleOne.Audio.AudioSourceController HitSound;
 
 		[global::UnityEngine.Header("Melee Weapon settings")]
+		public global::ScheduleOne.Combat.EImpactType ImpactType;
+
 		public float AttackRange;
 
 		public float AttackRadius;
 
 		public float Damage;
+
+		public float ImpactForce;
 
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarMeleeWeapon.MeleeAttack[] Attacks;
 
@@ -40,6 +44,11 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public override void Unequip()
 		{
+		}
+
+		public override bool IsReadyToAttack()
+		{
+			return false;
 		}
 
 		public override void Attack()

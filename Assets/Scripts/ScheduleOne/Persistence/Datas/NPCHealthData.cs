@@ -8,7 +8,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public int DaysPassedSinceDeath;
 
-		public NPCHealthData(float health, bool isDead, int daysPassedSinceDeath)
+		public int HoursSinceAttackedByPlayer;
+
+		public NPCHealthData(float health, bool isDead, int daysPassedSinceDeath, int hoursSinceAttackedByPlayer)
 		{
 		}
 	}

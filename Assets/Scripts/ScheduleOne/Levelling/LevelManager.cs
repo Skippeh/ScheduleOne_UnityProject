@@ -44,6 +44,8 @@ namespace ScheduleOne.Levelling
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		public override void Awake()
 		{
 		}
@@ -73,6 +75,12 @@ namespace ScheduleOne.Levelling
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
 		public void SetData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Levelling.ERank rank, int tier, int xp, int totalXp)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void SetUnlockedRegions(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> unlockedRegions)
 		{
 		}
 
@@ -177,6 +185,26 @@ namespace ScheduleOne.Levelling
 		}
 
 		private void RpcReader___Target_SetData_20965027(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_SetUnlockedRegions_563230222(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> unlockedRegions)
+		{
+		}
+
+		public void RpcLogic___SetUnlockedRegions_563230222(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> unlockedRegions)
+		{
+		}
+
+		private void RpcReader___Observers_SetUnlockedRegions_563230222(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_SetUnlockedRegions_563230222(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> unlockedRegions)
+		{
+		}
+
+		private void RpcReader___Target_SetUnlockedRegions_563230222(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

@@ -5,15 +5,15 @@ namespace ScheduleOne.Dialogue
 		[global::System.Serializable]
 		public class WeaponOption
 		{
-			public string Name;
-
-			public float Price;
-
 			public bool IsAvailable;
 
 			public string NotAvailableReason;
 
 			public global::ScheduleOne.ItemFramework.StorableItemDefinition Item;
+
+			public string Name => null;
+
+			public float Price => 0f;
 		}
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> MeleeWeapons;
@@ -22,11 +22,21 @@ namespace ScheduleOne.Dialogue
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> Ammo;
 
+		public global::ScheduleOne.ItemFramework.ItemDefinition RDX;
+
+		public global::ScheduleOne.ItemFramework.ItemDefinition Bomb;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption> allWeapons;
 
 		private global::ScheduleOne.Dialogue.DialogueController_ArmsDealer.WeaponOption chosenWeapon;
 
+		private global::ScheduleOne.Quests.Quest_DefeatCartel questDefeatCartel;
+
 		private void Awake()
+		{
+		}
+
+		protected override void Start()
 		{
 		}
 
@@ -52,6 +62,10 @@ namespace ScheduleOne.Dialogue
 		public override string ModifyDialogueText(string dialogueLabel, string dialogueText)
 		{
 			return null;
+		}
+
+		private void TradeRDXForBomb()
+		{
 		}
 	}
 }

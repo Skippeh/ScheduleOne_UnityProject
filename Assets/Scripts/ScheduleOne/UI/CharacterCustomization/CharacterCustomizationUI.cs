@@ -24,13 +24,9 @@ namespace ScheduleOne.UI.CharacterCustomization
 
 		public global::UnityEngine.UI.Slider RigRotationSlider;
 
-		public global::UnityEngine.Transform CameraPosition;
-
-		public global::UnityEngine.Transform RigContainer;
-
-		public global::ScheduleOne.AvatarFramework.Avatar AvatarRig;
-
 		public global::UnityEngine.RectTransform PreviewIndicator;
+
+		public global::ScheduleOne.AvatarFramework.CharacterCustomizationShop CharacterCustomizationShop;
 
 		[global::UnityEngine.Header("Prefab")]
 		public global::UnityEngine.UI.Button CategoryButtonPrefab;

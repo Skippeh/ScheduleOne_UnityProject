@@ -6,7 +6,7 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
-		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
+		public virtual void Load(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string dataString)
 		{
 		}
 	}

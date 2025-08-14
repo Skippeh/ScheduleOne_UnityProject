@@ -9,9 +9,13 @@ namespace ScheduleOne.Doors
 
 		public global::ScheduleOne.Doors.DoorController Door;
 
+		private global::UnityEngine.Collider collider;
+
 		private global::System.Collections.Generic.List<global::UnityEngine.Collider> exclude;
 
-		private global::UnityEngine.Collider collider;
+		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPC> npcsInContact;
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> playersInContact;
 
 		private void Awake()
 		{
@@ -21,7 +25,15 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		{
+		}
+
+		private void OnTriggerExit(global::UnityEngine.Collider other)
+		{
+		}
+
+		private void FixedUpdate()
 		{
 		}
 	}

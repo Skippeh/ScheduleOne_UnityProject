@@ -2,6 +2,8 @@ namespace ScheduleOne.NPCs
 {
 	public class NPCAnimation : global::FishNet.Object.NetworkBehaviour
 	{
+		public bool DEBUG;
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
 

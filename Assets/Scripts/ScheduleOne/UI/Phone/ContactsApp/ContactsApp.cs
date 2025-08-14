@@ -21,6 +21,8 @@ namespace ScheduleOne.UI.Phone.ContactsApp
 		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Map.EMapRegion, global::ScheduleOne.UI.Phone.ContactsApp.ContactsApp.RegionUI> RegionDict;
 
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.UI.PinchableScrollRect ScrollRect;
+
 		public global::UnityEngine.RectTransform CirclesContainer;
 
 		public global::UnityEngine.RectTransform DemoCirclesContainer;
@@ -41,11 +43,29 @@ namespace ScheduleOne.UI.Phone.ContactsApp
 
 		public global::UnityEngine.RectTransform RegionSelectionIndicator;
 
-		public global::UnityEngine.RectTransform LockedRegionContainer;
+		public global::UnityEngine.RectTransform InfluenceContainer;
 
-		public global::UnityEngine.UI.Text RegionRankRequirementLabel;
+		public global::UnityEngine.UI.Slider InfluenceSlider;
 
-		public global::UnityEngine.UI.Image SelectedRegionIcon;
+		public global::UnityEngine.UI.Text InfluenceCountLabel;
+
+		public global::UnityEngine.RectTransform UnlockRegionSliderNotch;
+
+		public global::UnityEngine.UI.Text InfluenceText;
+
+		public global::UnityEngine.RectTransform LowerContainer;
+
+		public global::UnityEngine.RectTransform HorizontalScrollbarRectTransform;
+
+		public global::UnityEngine.RectTransform RegionLockedContainer;
+
+		public global::UnityEngine.RectTransform RegionLocked_Rank;
+
+		public global::UnityEngine.RectTransform RegionLocked_CartelInfluence;
+
+		public global::UnityEngine.UI.Text RegionLocked_CartelInfluence_Text;
+
+		public global::UnityEngine.RectTransform RegionLocked_Unavailable;
 
 		[global::UnityEngine.Header("Prefabs")]
 		public global::UnityEngine.GameObject ConnectionPrefab;
@@ -77,7 +97,7 @@ namespace ScheduleOne.UI.Phone.ContactsApp
 		{
 		}
 
-		public void SetSelectedRegion(global::ScheduleOne.Map.EMapRegion region)
+		public void SetSelectedRegion(global::ScheduleOne.Map.EMapRegion region, bool selectNPC)
 		{
 		}
 

@@ -33,24 +33,26 @@ namespace ScheduleOne.Dialogue
 
 		public global::UnityEngine.Events.UnityEvent<string> onDialogueChoiceChosen;
 
+		[global::UnityEngine.SerializeField]
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueContainer> dialogueContainers;
+
 		protected string overrideText;
 
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueContainer> dialogueContainers;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.NodeLinkData> tempLinks;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.NodeLinkData> TempLinks;
+		protected bool skipNextDialogueBehaviourEnd;
 
-		private bool skipNextDialogueBehaviourEnd;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> finalChoices;
 
 		private bool passChecked;
 
-		public bool IsPlaying { get; private set; }
+		public bool IsDialogueInProgress { get; private set; }
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueModule> runtimeModules { get; private set; }
 
 		public global::ScheduleOne.NPCs.NPC NPC { get; protected set; }
 
-		private global::ScheduleOne.UI.DialogueCanvas canvas => null;
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueModule> runtimeModules { get; private set; }
+		protected global::ScheduleOne.UI.DialogueCanvas canvas => null;
 
 		protected virtual void Awake()
 		{

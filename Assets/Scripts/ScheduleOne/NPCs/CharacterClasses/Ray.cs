@@ -37,6 +37,10 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
+		private void NotifyPlayerOfManorRebuild()
+		{
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}

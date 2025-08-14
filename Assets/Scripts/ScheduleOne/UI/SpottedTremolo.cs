@@ -7,7 +7,7 @@ namespace ScheduleOne.UI
 
 		public global::ScheduleOne.Audio.AudioSourceController Loop;
 
-		public global::ScheduleOne.Stealth.PlayerVisibility PlayerVisibility;
+		public global::ScheduleOne.Vision.EntityVisibility PlayerVisibility;
 
 		[global::UnityEngine.Header("Settings")]
 		public float MinVolume;

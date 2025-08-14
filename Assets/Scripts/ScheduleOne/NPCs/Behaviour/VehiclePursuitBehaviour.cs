@@ -2,8 +2,6 @@ namespace ScheduleOne.NPCs.Behaviour
 {
 	public class VehiclePursuitBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
 	{
-		public new const float MAX_CONSECUTIVE_PATHING_FAILURES = 5f;
-
 		public const float EXTRA_VISIBILITY_TIME = 6f;
 
 		public const float EXIT_VEHICLE_MAX_SPEED = 4f;
@@ -33,7 +31,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private float timeSinceLastSighting;
 
-		private new int consecutivePathingFailures;
+		private int consecutiveVehiclePathingFailures;
 
 		private float timeStationary;
 

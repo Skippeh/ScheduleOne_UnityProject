@@ -2,6 +2,12 @@ namespace ScheduleOne.Equipping
 {
 	public class Equippable_RangedWeapon : global::ScheduleOne.Equipping.Equippable_AvatarViewmodel
 	{
+		public enum EReloadType
+		{
+			Magazine = 0,
+			Incremental = 1
+		}
+
 		public const float NPC_AIM_DETECTION_RANGE = 10f;
 
 		public int MagazineSize;
@@ -10,8 +16,6 @@ namespace ScheduleOne.Equipping
 		public float AimDuration;
 
 		public float AimFOVReduction;
-
-		public float FOVChangeDuration;
 
 		[global::UnityEngine.Header("Firing")]
 		public global::ScheduleOne.Audio.AudioSourceController FireSound;
@@ -42,7 +46,7 @@ namespace ScheduleOne.Equipping
 		[global::UnityEngine.Header("Reloading")]
 		public bool CanReload;
 
-		public bool IncrementalReload;
+		public global::ScheduleOne.Equipping.Equippable_RangedWeapon.EReloadType ReloadType;
 
 		public global::ScheduleOne.ItemFramework.StorableItemDefinition Magazine;
 
@@ -62,6 +66,10 @@ namespace ScheduleOne.Equipping
 
 		[global::UnityEngine.Header("Cocking")]
 		public bool MustBeCocked;
+
+		public bool CockedByDefault;
+
+		public bool AutoCockAfterReload;
 
 		public float CockTime;
 
@@ -139,6 +147,16 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
+		protected virtual global::UnityEngine.Vector3[] GetBulletDirections()
+		{
+			return null;
+		}
+
+		protected static global::UnityEngine.Vector3 SpreadDirection(global::UnityEngine.Vector3 direction, float maxAngle)
+		{
+			return default(global::UnityEngine.Vector3);
+		}
+
 		public virtual void Reload()
 		{
 		}
@@ -172,7 +190,7 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		private float GetSpread()
+		protected float GetSpreadAngle()
 		{
 			return 0f;
 		}

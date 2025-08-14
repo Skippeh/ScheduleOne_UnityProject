@@ -11,6 +11,14 @@ namespace ScheduleOne.Product
 			public global::ScheduleOne.ItemFramework.EQuality Quality;
 
 			public int Quantity;
+
+			public Entry(string productID, global::ScheduleOne.ItemFramework.EQuality quality, int quantity)
+			{
+			}
+
+			public Entry()
+			{
+			}
 		}
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductList.Entry> entries;

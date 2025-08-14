@@ -19,7 +19,7 @@ namespace ScheduleOne.FX
 		{
 		}
 
-		public void CreateImpactFX(global::ScheduleOne.Combat.Impact impact)
+		public void CreateImpactFX(global::ScheduleOne.Combat.Impact impact, global::ScheduleOne.Combat.IDamageable target)
 		{
 		}
 
@@ -35,12 +35,12 @@ namespace ScheduleOne.FX
 		{
 		}
 
-		private global::UnityEngine.AudioClip GetImpactSound(global::ScheduleOne.Combat.Impact impact)
+		private global::UnityEngine.AudioClip GetImpactSound(global::ScheduleOne.Combat.Impact impact, global::ScheduleOne.Combat.IDamageable target)
 		{
 			return null;
 		}
 
-		private global::UnityEngine.GameObject GetImpactParticles(global::ScheduleOne.Combat.Impact impact)
+		private global::UnityEngine.GameObject GetImpactParticles(global::ScheduleOne.Combat.Impact impact, global::ScheduleOne.Combat.IDamageable target)
 		{
 			return null;
 		}

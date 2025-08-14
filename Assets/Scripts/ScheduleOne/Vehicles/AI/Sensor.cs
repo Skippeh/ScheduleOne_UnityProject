@@ -2,6 +2,8 @@ namespace ScheduleOne.Vehicles.AI
 {
 	public class Sensor : global::UnityEngine.MonoBehaviour
 	{
+		public bool Enabled;
+
 		public global::UnityEngine.Collider obstruction;
 
 		public float obstructionDistance;

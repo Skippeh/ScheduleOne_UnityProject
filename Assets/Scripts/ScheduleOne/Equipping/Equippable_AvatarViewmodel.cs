@@ -6,6 +6,8 @@ namespace ScheduleOne.Equipping
 
 		public global::UnityEngine.Vector3 ViewmodelAvatarOffset;
 
+		public global::UnityEngine.Vector3 ViewmodelAvatarRotationOffset;
+
 		[global::UnityEngine.Header("Equipping")]
 		public float EquipTime;
 

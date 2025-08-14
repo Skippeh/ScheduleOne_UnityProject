@@ -17,6 +17,8 @@ namespace ScheduleOne.Misc
 
 		public global::ScheduleOne.Audio.AudioSourceController OffAudio;
 
+		public global::ScheduleOne.Misc.ToggleableLight[] LightsToControl;
+
 		[global::UnityEngine.Header("Settings")]
 		[global::UnityEngine.SerializeField]
 		protected global::System.Collections.Generic.List<global::ScheduleOne.Misc.ModularSwitch> SwitchesToSyncWith;

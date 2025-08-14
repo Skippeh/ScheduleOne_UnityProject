@@ -22,6 +22,11 @@ namespace ScheduleOne.Tiles
 		{
 		}
 
+		[global::EasyButtons.Button]
+		public void RegenerateGUID()
+		{
+		}
+
 		protected virtual void Awake()
 		{
 		}

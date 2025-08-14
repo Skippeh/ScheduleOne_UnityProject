@@ -61,9 +61,19 @@ namespace ScheduleOne.Audio
 
 		protected float CurrentVolumeMultiplier;
 
+		public float LocalPlayerDistance { get; protected set; }
+
 		public float VolumeModifier { get; set; }
 
+		protected override void Awake()
+		{
+		}
+
 		private void Start()
+		{
+		}
+
+		public void Recalculate()
 		{
 		}
 

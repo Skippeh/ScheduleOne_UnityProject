@@ -16,16 +16,13 @@ namespace ScheduleOne.Economy
 
 		public const float RELATIONSHIP_CHANGE_PER_DEAL = 0.05f;
 
-		public static global::System.Action<global::ScheduleOne.Economy.Dealer> onDealerRecruited;
-
 		public static global::UnityEngine.Color32 DealerLabelColor;
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Dealer> AllDealers;
+		public static global::System.Action<global::ScheduleOne.Economy.Dealer> onDealerRecruited;
 
-		[global::UnityEngine.Header("Debug")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> InitialCustomers;
+		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Dealer> AllPlayerDealers;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> InitialItems;
+		public global::System.Action onContractAccepted;
 
 		[global::UnityEngine.Header("Dealer References")]
 		public global::ScheduleOne.Map.NPCEnterableBuilding Home;
@@ -44,6 +41,8 @@ namespace ScheduleOne.Economy
 		public global::ScheduleOne.Dialogue.DialogueContainer AssignCustomersDialogue;
 
 		[global::UnityEngine.Header("Dealer Settings")]
+		public global::ScheduleOne.Economy.EDealerType DealerType;
+
 		public string HomeName;
 
 		public float SigningFee;
@@ -57,13 +56,10 @@ namespace ScheduleOne.Economy
 		[global::UnityEngine.Header("Variables")]
 		public string CompletedDealsVariable;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> AssignedCustomers;
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract> ActiveContracts;
-
+		[global::UnityEngine.Header("UnityEvents")]
 		public global::UnityEngine.Events.UnityEvent onRecommended;
 
-		protected global::ScheduleOne.ItemFramework.ItemSlot[] OverflowSlots;
+		private global::ScheduleOne.ItemFramework.ItemSlot[] overflowSlots;
 
 		private global::ScheduleOne.Quests.Contract currentContract;
 
@@ -73,14 +69,9 @@ namespace ScheduleOne.Economy
 
 		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice assignCustomersChoice;
 
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		public global::System.Collections.Generic.List<string> acceptedContractGUIDs;
-
 		private int itemCountOnTradeStart;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CCash_003Ek__BackingField;
-
-		public global::FishNet.Object.Synchronizing.SyncVar<global::System.Collections.Generic.List<string>> syncVar___acceptedContractGUIDs;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EEconomy_002EDealerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -89,6 +80,10 @@ namespace ScheduleOne.Economy
 		public bool IsRecruited { get; private set; }
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> ItemSlots { get; set; }
+
+		public global::ScheduleOne.Map.NPCPoI PotentialDealerPoI { get; private set; }
+
+		public global::ScheduleOne.Map.NPCPoI DealerPoI { get; private set; }
 
 		public float Cash
 		{
@@ -103,28 +98,17 @@ namespace ScheduleOne.Economy
 			}
 		}
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> AssignedCustomers { get; private set; }
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract> ActiveContracts { get; private set; }
+
 		public bool HasBeenRecommended { get; private set; }
-
-		public global::ScheduleOne.Map.NPCPoI potentialDealerPoI { get; protected set; }
-
-		public global::ScheduleOne.Map.NPCPoI dealerPoI { get; protected set; }
 
 		public float SyncAccessor__003CCash_003Ek__BackingField
 		{
 			get
 			{
 				return 0f;
-			}
-			set
-			{
-			}
-		}
-
-		public global::System.Collections.Generic.List<string> SyncAccessor_acceptedContractGUIDs
-		{
-			get
-			{
-				return null;
 			}
 			set
 			{
@@ -189,6 +173,10 @@ namespace ScheduleOne.Economy
 		}
 
 		protected virtual void UpdatePotentialDealerPoI()
+		{
+		}
+
+		private void DealerUnconscious()
 		{
 		}
 
@@ -285,6 +273,10 @@ namespace ScheduleOne.Economy
 		{
 		}
 
+		public void TryRobDealer()
+		{
+		}
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> GetOrderableProducts()
 		{
 			return null;
@@ -305,7 +297,7 @@ namespace ScheduleOne.Economy
 			return 0;
 		}
 
-		private void CustomerContractStarted(global::ScheduleOne.Quests.Contract contract)
+		private void AddContract(global::ScheduleOne.Quests.Contract contract)
 		{
 		}
 

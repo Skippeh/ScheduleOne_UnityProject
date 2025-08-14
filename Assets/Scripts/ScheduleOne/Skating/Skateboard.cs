@@ -2,8 +2,6 @@ namespace ScheduleOne.Skating
 {
 	public class Skateboard : global::FishNet.Object.NetworkBehaviour
 	{
-		public const float GroundedRaycastDistance = 0.1f;
-
 		public const float JumpCooldown = 0.3f;
 
 		public const float JumpForceMin = 0.5f;
@@ -67,6 +65,8 @@ namespace ScheduleOne.Skating
 		public global::UnityEngine.Collider[] MainColliders;
 
 		public float RotationClampForce;
+
+		public bool SlowOnTerrain;
 
 		[global::UnityEngine.Header("Friction Settings")]
 		public bool FrictionEnabled;
@@ -302,6 +302,11 @@ namespace ScheduleOne.Skating
 		public float GetSurfaceSmoothness()
 		{
 			return 0f;
+		}
+
+		public bool IsOnTerrain()
+		{
+			return false;
 		}
 
 		public virtual void NetworkInitialize___Early()

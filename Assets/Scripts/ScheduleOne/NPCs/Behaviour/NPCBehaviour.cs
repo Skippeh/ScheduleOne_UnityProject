@@ -18,7 +18,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public global::ScheduleOne.NPCs.Behaviour.HeavyFlinchBehaviour HeavyFlinchBehaviour;
 
-		public global::ScheduleOne.NPCs.Behaviour.FacePlayerBehaviour FacePlayerBehaviour;
+		public global::ScheduleOne.NPCs.Behaviour.FaceTargetBehaviour FaceTargetBehaviour;
 
 		public global::ScheduleOne.NPCs.Behaviour.DeadBehaviour DeadBehaviour;
 

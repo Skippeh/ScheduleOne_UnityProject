@@ -41,6 +41,10 @@ namespace ScheduleOne.Building
 		{
 		}
 
+		private void OnDrawGizmos()
+		{
+		}
+
 		protected virtual void Awake()
 		{
 		}

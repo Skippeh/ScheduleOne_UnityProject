@@ -18,6 +18,8 @@ namespace ScheduleOne.Property
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		protected override void Awake()
 		{
 		}
@@ -40,7 +42,7 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		public void LoadProperty(global::ScheduleOne.Persistence.Datas.PropertyData propertyData)
+		public void LoadProperty(global::ScheduleOne.Persistence.Datas.PropertyData propertyData, string dataString)
 		{
 		}
 

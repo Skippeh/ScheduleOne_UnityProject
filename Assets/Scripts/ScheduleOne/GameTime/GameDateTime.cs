@@ -35,6 +35,11 @@ namespace ScheduleOne.GameTime
 			return default(global::ScheduleOne.GameTime.GameDateTime);
 		}
 
+		public global::ScheduleOne.GameTime.GameDateTime GetCopy()
+		{
+			return default(global::ScheduleOne.GameTime.GameDateTime);
+		}
+
 		public static global::ScheduleOne.GameTime.GameDateTime operator +(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
 		{
 			return default(global::ScheduleOne.GameTime.GameDateTime);

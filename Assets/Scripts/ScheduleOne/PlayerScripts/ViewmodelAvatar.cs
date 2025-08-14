@@ -10,8 +10,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::UnityEngine.Transform RightHandContainer;
 
-		private global::UnityEngine.Vector3 baseOffset;
-
 		public bool IsVisible { get; private set; }
 
 		protected override void Awake()
@@ -19,6 +17,14 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void SetVisibility(bool isVisible)
+		{
+		}
+
+		private void LateUpdate()
+		{
+		}
+
+		private void ResetHipTransform()
 		{
 		}
 
@@ -31,6 +37,10 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void SetOffset(global::UnityEngine.Vector3 offset)
+		{
+		}
+
+		public void SetRotationOffset(global::UnityEngine.Vector3 eulerAngles)
 		{
 		}
 	}

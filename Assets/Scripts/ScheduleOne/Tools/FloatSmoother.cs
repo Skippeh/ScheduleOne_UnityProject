@@ -20,6 +20,10 @@ namespace ScheduleOne.Tools
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Tools.FloatSmoother.Override> overrides;
 
+		private global::ScheduleOne.Tools.FloatSmoother.Override activeOverride;
+
+		private int activeCount;
+
 		public float CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }

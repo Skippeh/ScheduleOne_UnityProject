@@ -4,6 +4,8 @@ namespace ScheduleOne.NPCs
 	{
 		public const float PLAYER_AIM_DETECTION_RANGE = 15f;
 
+		public bool AwarenessActiveByDefault;
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Vision.VisionCone VisionCone;
 

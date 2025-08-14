@@ -3,7 +3,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 	public class AvatarRangedWeapon : global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CReload_003Ed__30 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CReload_003Ed__36 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CReload_003Ed__30(int _003C_003E1__state)
+			public _003CReload_003Ed__36(int _003C_003E1__state)
 			{
 			}
 
@@ -56,8 +56,6 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			}
 		}
 
-		public static string[] RaycastLayers;
-
 		[global::UnityEngine.Header("Weapon Settings")]
 		public int MagazineSize;
 
@@ -65,25 +63,38 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public float MaxFireRate;
 
-		public bool CanShootWhileMoving;
-
 		public float EquipTime;
 
 		public float RaiseTime;
 
 		public float Damage;
 
-		[global::UnityEngine.Header("Accuracy")]
-		public float HitChange_MinRange;
+		public float ImpactForce;
 
-		public float HitChange_MaxRange;
+		public bool CanShootWhileMoving;
+
+		public int MaxMovingShotsBeforeReposition;
+
+		public int MaxStationaryShotsBeforeReposition;
+
+		public bool RepositionAfterHit;
+
+		[global::UnityEngine.Header("Accuracy")]
+		public float HitChance_MinRange;
+
+		public float HitChance_MaxRange;
+
+		[global::UnityEngine.Header("Aiming")]
+		public float AimTime_Min;
+
+		public float AimTime_Max;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Transform MuzzlePoint;
 
 		public global::ScheduleOne.Audio.AudioSourceController FireSound;
 
-		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.Header("Animation Settings")]
 		public string LoweredAnimationTrigger;
 
 		public string RaisedAnimationTrigger;
@@ -123,17 +134,21 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			return false;
 		}
 
-		public virtual void Shoot(global::UnityEngine.Vector3 endPoint)
+		protected virtual void Shoot(global::UnityEngine.Vector3 endPoint)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon._003CReload_003Ed__30))]
+		public virtual void ApplyHitToDamageable(global::ScheduleOne.Combat.IDamageable damageable, global::UnityEngine.Vector3 hitPoint)
+		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon._003CReload_003Ed__36))]
 		private global::System.Collections.IEnumerator Reload()
 		{
 			return null;
 		}
 
-		public bool IsPlayerInLoS(global::ScheduleOne.PlayerScripts.Player target)
+		public bool IsTargetInLoS(global::ScheduleOne.Combat.ICombatTargetable target)
 		{
 			return false;
 		}

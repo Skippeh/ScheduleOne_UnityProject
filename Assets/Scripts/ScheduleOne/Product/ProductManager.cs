@@ -6,6 +6,8 @@ namespace ScheduleOne.Product
 
 		public const int MAX_PRICE = 999;
 
+		public const int CONTRACT_RECEIPT_MAX_COUNT = 50;
+
 		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductDiscovered;
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> DiscoveredProducts;
@@ -20,7 +22,11 @@ namespace ScheduleOne.Product
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyItemDefinition> ValidMixIngredients;
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.ContractReceipt> ContractReceipts;
+
 		public global::UnityEngine.AnimationCurve SampleSuccessCurve;
+
+		public global::ScheduleOne.Product.ProductDefinition[] ListForSaleOnStart;
 
 		[global::UnityEngine.Header("Default Products")]
 		public global::ScheduleOne.Product.WeedDefinition DefaultWeed;
@@ -49,6 +55,8 @@ namespace ScheduleOne.Product
 		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductFavourited;
 
 		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductUnfavourited;
+
+		public global::System.Action<global::ScheduleOne.Economy.ContractReceipt> onContractReceiptRecorded;
 
 		public global::UnityEngine.Events.UnityEvent onFirstSampleRejection;
 
@@ -98,6 +106,8 @@ namespace ScheduleOne.Product
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		public override void Awake()
 		{
 		}
@@ -130,6 +140,16 @@ namespace ScheduleOne.Product
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SetCocaineDiscovered()
 		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		public void RecordContractReceipt(global::ScheduleOne.Economy.ContractReceipt receipt)
+		{
+		}
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.ContractReceipt> GetContractReceipts(global::ScheduleOne.Map.EMapRegion region, global::System.Collections.Generic.List<global::ScheduleOne.Economy.EContractParty> dealCompleterTypes, int maxMinsAgo)
+		{
+			return null;
 		}
 
 		public virtual void InitializeSaveable()
@@ -357,6 +377,18 @@ namespace ScheduleOne.Product
 		}
 
 		private void RpcReader___Server_SetCocaineDiscovered_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_RecordContractReceipt_1401448548(global::ScheduleOne.Economy.ContractReceipt receipt)
+		{
+		}
+
+		public void RpcLogic___RecordContractReceipt_1401448548(global::ScheduleOne.Economy.ContractReceipt receipt)
+		{
+		}
+
+		private void RpcReader___Observers_RecordContractReceipt_1401448548(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

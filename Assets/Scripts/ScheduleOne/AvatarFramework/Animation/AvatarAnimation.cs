@@ -16,6 +16,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 			Right = 3
 		}
 
+		public const bool GLOBAL_USE_IMPOSTOR = true;
+
 		public const float AnimationRangeSqr = 1600f;
 
 		public const float FrustrumCullMinDist = 225f;
@@ -128,7 +130,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		private void UpdateAnimationActive(bool forceWriteIdle = false)
+		private void UpdateAnimationActive()
 		{
 		}
 
@@ -168,7 +170,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 		{
 		}
 
-		protected void RagdollChange(bool oldValue, bool ragdoll, bool playStandUpAnim)
+		protected void RagdollChange(bool wasRagdolled, bool ragdoll, bool playStandUpAnim)
 		{
 		}
 

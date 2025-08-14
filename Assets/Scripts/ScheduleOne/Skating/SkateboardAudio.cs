@@ -11,6 +11,8 @@ namespace ScheduleOne.Skating
 
 		public global::ScheduleOne.Audio.AudioSourceController RollingAudio;
 
+		public global::ScheduleOne.Audio.AudioSourceController DirtRollingAudio;
+
 		public global::ScheduleOne.Audio.AudioSourceController WindAudio;
 
 		private void Awake()

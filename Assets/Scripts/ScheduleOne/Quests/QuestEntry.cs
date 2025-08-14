@@ -40,6 +40,8 @@ namespace ScheduleOne.Quests
 
 		private global::ScheduleOne.UI.QuestEntryHUDUI entryUI;
 
+		private global::UnityEngine.RectTransform PoIIcon;
+
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		[field: global::System.NonSerialized]
 		public global::ScheduleOne.Quests.Quest ParentQuest { get; private set; }

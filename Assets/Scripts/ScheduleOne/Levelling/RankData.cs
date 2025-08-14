@@ -10,7 +10,9 @@ namespace ScheduleOne.Levelling
 
 		public int TotalXP;
 
-		public RankData(int rank, int tier, int xp, int totalXP)
+		public global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> UnlockedRegions;
+
+		public RankData(int rank, int tier, int xp, int totalXP, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> unlockedRegions)
 		{
 		}
 	}

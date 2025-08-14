@@ -173,7 +173,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		protected new virtual void OnDestroy()
+		protected override void OnDestroy()
 		{
 		}
 
@@ -203,7 +203,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private void OnSleepEnd(int sleepTime)
+		private void OnSleepEnd()
 		{
 		}
 

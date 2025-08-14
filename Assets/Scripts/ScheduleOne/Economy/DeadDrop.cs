@@ -8,7 +8,9 @@ namespace ScheduleOne.Economy
 
 		public string DeadDropDescription;
 
-		public global::ScheduleOne.Storage.StorageEntity Storage;
+		public global::ScheduleOne.Map.EMapRegion Region;
+
+		public global::ScheduleOne.Storage.WorldStorageEntity Storage;
 
 		public global::ScheduleOne.Map.POI PoI;
 

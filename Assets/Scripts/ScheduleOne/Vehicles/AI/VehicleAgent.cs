@@ -34,7 +34,7 @@ namespace ScheduleOne.Vehicles.AI
 		public delegate void NavigationCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult status);
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CReverse_003Ed__139 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CReverse_003Ed__140 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -77,7 +77,7 @@ namespace ScheduleOne.Vehicles.AI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CReverse_003Ed__139(int _003C_003E1__state)
+			public _003CReverse_003Ed__140(int _003C_003E1__state)
 			{
 			}
 
@@ -178,6 +178,8 @@ namespace ScheduleOne.Vehicles.AI
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Vehicles.AI.Sensor sensor_RL;
 
+		private global::ScheduleOne.Vehicles.AI.Sensor[] sensors;
+
 		[global::UnityEngine.Header("Sweeping")]
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.LayerMask sweepMask;
@@ -203,12 +205,8 @@ namespace ScheduleOne.Vehicles.AI
 		protected const float sweepSegment = 15f;
 
 		[global::UnityEngine.Header("Path following")]
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.1f, 5f)]
 		protected float sampleStepSizeMin;
 
-		[global::UnityEngine.SerializeField]
-		[global::UnityEngine.Range(0.1f, 5f)]
 		protected float sampleStepSizeMax;
 
 		protected int aheadPointSamples;
@@ -434,7 +432,7 @@ namespace ScheduleOne.Vehicles.AI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Vehicles.AI.VehicleAgent._003CReverse_003Ed__139))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Vehicles.AI.VehicleAgent._003CReverse_003Ed__140))]
 		public global::System.Collections.IEnumerator Reverse()
 		{
 			return null;

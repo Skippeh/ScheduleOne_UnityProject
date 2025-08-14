@@ -121,6 +121,10 @@ namespace ScheduleOne.Vehicles
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.AnimationCurve brakeForce;
 
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Range(0.1f, 3f)]
+		protected float BrakeForceMultiplier;
+
 		[global::UnityEngine.Range(0.5f, 10f)]
 		[global::UnityEngine.SerializeField]
 		protected float downforce;
@@ -155,9 +159,9 @@ namespace ScheduleOne.Vehicles
 
 		private global::ScheduleOne.Vehicles.VehicleSeat localPlayerSeat;
 
-		private global::System.Collections.Generic.List<float> previousSpeeds;
+		private CircularQueue<float> previousSpeeds;
 
-		private int previousSpeedsSampleSize;
+		private const int previousSpeedsSampleSize = 20;
 
 		[global::FishNet.Object.Synchronizing.SyncVar(Channel = global::FishNet.Transporting.Channel.Unreliable, SendRate = 0.05f, WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
 		public float currentSteerAngle;

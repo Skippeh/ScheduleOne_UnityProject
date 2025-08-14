@@ -22,12 +22,12 @@ namespace ScheduleOne.UI.Compass
 			public global::UnityEngine.Transform Transform;
 		}
 
+		public const int NOTCH_COUNT = 24;
+
 		public const float DISTANCE_LABEL_THRESHOLD = 50f;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.RectTransform Container;
-
-		public global::UnityEngine.Transform NotchPointContainer;
 
 		public global::UnityEngine.RectTransform NotchUIContainer;
 
@@ -57,7 +57,7 @@ namespace ScheduleOne.UI.Compass
 
 		public float OpenYPos;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Transform> notchPositions;
+		private global::System.Collections.Generic.List<global::UnityEngine.Vector3> notchPositions;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Compass.CompassManager.Notch> notches;
 
@@ -75,7 +75,7 @@ namespace ScheduleOne.UI.Compass
 		{
 		}
 
-		private void FixedUpdate()
+		private void Update()
 		{
 		}
 

@@ -43,6 +43,8 @@ namespace ScheduleOne.Police
 
 		public global::ScheduleOne.VoiceOver.PoliceChatterVO ChatterVO;
 
+		public global::ScheduleOne.NPCs.Behaviour.Behaviour[] DeactivationBlockingBehaviours;
+
 		[global::UnityEngine.Header("Dialogue")]
 		public global::ScheduleOne.Dialogue.DialogueContainer CheckpointDialogue;
 
@@ -225,6 +227,12 @@ namespace ScheduleOne.Police
 
 		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
 		{
+		}
+
+		public static global::ScheduleOne.Police.PoliceOfficer GetNearestOfficer(global::UnityEngine.Vector3 position, out float distanceToTarget, bool onlyConscious = true)
+		{
+			distanceToTarget = default(float);
+			return null;
 		}
 
 		public virtual void UpdateBodySearch()

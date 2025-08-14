@@ -1,7 +1,7 @@
 namespace ScheduleOne.NPCs
 {
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPCHealth))]
-	public class NPC : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.IDamageable
+	public class NPC : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable
 	{
 		public const float PANIC_DURATION = 20f;
 
@@ -34,26 +34,29 @@ namespace ScheduleOne.NPCs
 		protected global::UnityEngine.Transform modelContainer;
 
 		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.NPCs.NPCMovement movement;
-
-		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Interaction.InteractableObject intObj;
 
-		public global::ScheduleOne.Dialogue.DialogueHandler dialogueHandler;
+		public global::ScheduleOne.NPCs.NPCMovement Movement;
+
+		public global::ScheduleOne.Dialogue.DialogueHandler DialogueHandler;
 
 		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
 
-		public global::ScheduleOne.NPCs.NPCAwareness awareness;
+		public global::ScheduleOne.NPCs.NPCAwareness Awareness;
 
-		public global::ScheduleOne.NPCs.Responses.NPCResponses responses;
+		public global::ScheduleOne.NPCs.Responses.NPCResponses Responses;
 
-		public global::ScheduleOne.NPCs.Actions.NPCActions actions;
+		public global::ScheduleOne.NPCs.Actions.NPCActions Actions;
 
-		public global::ScheduleOne.NPCs.Behaviour.NPCBehaviour behaviour;
+		public global::ScheduleOne.NPCs.Behaviour.NPCBehaviour Behaviour;
+
+		public global::ScheduleOne.NPCs.NPCInventory Inventory;
 
 		public global::ScheduleOne.VoiceOver.VOEmitter VoiceOverEmitter;
 
 		public global::ScheduleOne.NPCs.NPCHealth Health;
+
+		public global::ScheduleOne.Vision.EntityVisibility Visibility;
 
 		public global::System.Action<global::ScheduleOne.Vehicles.LandVehicle> onEnterVehicle;
 
@@ -72,12 +75,20 @@ namespace ScheduleOne.NPCs
 		[global::UnityEngine.Header("Messaging")]
 		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.EConversationCategory> ConversationCategories;
 
+		public bool MessagingKnownByDefault;
+
 		public bool ConversationCanBeHidden;
 
 		public global::System.Action onConversationCreated;
 
 		[global::UnityEngine.Header("Other Settings")]
 		public bool CanOpenDoors;
+
+		public bool OverrideParent;
+
+		public global::UnityEngine.Transform OverriddenParent;
+
+		public bool IgnoreImpacts;
 
 		[global::UnityEngine.SerializeField]
 		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> OutlineRenderers;
@@ -117,10 +128,6 @@ namespace ScheduleOne.NPCs
 
 		public bool IsConscious => false;
 
-		public global::ScheduleOne.NPCs.NPCMovement Movement => null;
-
-		public global::ScheduleOne.NPCs.NPCInventory Inventory { get; protected set; }
-
 		public global::ScheduleOne.Vehicles.LandVehicle CurrentVehicle { get; protected set; }
 
 		public bool IsInVehicle => false;
@@ -147,6 +154,22 @@ namespace ScheduleOne.NPCs
 
 		public bool HasChanged { get; set; }
 
+		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
+
+		public global::UnityEngine.Transform CenterPointTransform => null;
+
+		public global::UnityEngine.Vector3 LookAtPoint => default(global::UnityEngine.Vector3);
+
+		public bool IsCurrentlyTargetable => false;
+
+		public float RangedHitChanceMultiplier => 0f;
+
+		public global::UnityEngine.Vector3 Velocity => default(global::UnityEngine.Vector3);
+
+		public global::ScheduleOne.Vision.VisionEvent HighestProgressionEvent { get; set; }
+
+		public global::ScheduleOne.Vision.EntityVisibility VisibilityComponent => null;
+
 		public global::System.Guid GUID { get; protected set; }
 
 		public bool isVisible { get; protected set; }
@@ -155,7 +178,7 @@ namespace ScheduleOne.NPCs
 
 		public bool IsPanicked => false;
 
-		public float timeSincePanicked { get; protected set; }
+		public float TimeSincePanicked { get; protected set; }
 
 		public global::FishNet.Object.NetworkObject SyncAccessor_PlayerConversant
 		{
@@ -168,7 +191,31 @@ namespace ScheduleOne.NPCs
 			}
 		}
 
+		global::FishNet.Object.NetworkObject global::ScheduleOne.Combat.ICombatTargetable.NetworkObject => null;
+
+		global::UnityEngine.GameObject global::ScheduleOne.Combat.IDamageable.gameObject => null;
+
+		global::FishNet.Object.NetworkObject global::ScheduleOne.Vision.ISightable.NetworkObject => null;
+
+		public void RecordLastKnownPosition(bool resetTimeSinceLastSeen)
+		{
+		}
+
+		public float GetSearchTime()
+		{
+			return 0f;
+		}
+
+		public bool IsCurrentlySightable()
+		{
+			return false;
+		}
+
 		public virtual void Awake()
+		{
+		}
+
+		protected virtual void CheckAndGetReferences()
 		{
 		}
 
@@ -184,12 +231,18 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public override void OnStartClient()
+		protected virtual void CreateMessageConversation()
 		{
 		}
 
-		protected virtual void CreateMessageConversation()
+		protected virtual string GetMessagingName()
 		{
+			return null;
+		}
+
+		public virtual global::UnityEngine.Sprite GetMessagingIcon()
+		{
+			return null;
 		}
 
 		public void SendTextMessage(string message)
@@ -197,10 +250,6 @@ namespace ScheduleOne.NPCs
 		}
 
 		protected override void OnValidate()
-		{
-		}
-
-		private void GetHealth()
 		{
 		}
 
@@ -229,7 +278,12 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public virtual void SetVisible(bool visible)
+		public virtual void SetVisible(bool visible, bool networked = false)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void SetVisible_Networked(bool visible)
 		{
 		}
 
@@ -255,6 +309,14 @@ namespace ScheduleOne.NPCs
 		}
 
 		public void ResetAggression()
+		{
+		}
+
+		protected virtual void OnDie()
+		{
+		}
+
+		protected virtual void OnKnockedOut()
 		{
 		}
 
@@ -284,12 +346,22 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendWorldspaceDialogueKey(string key, float duration)
+		public void SendWorldspaceDialogueReaction(string key, float duration)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void PlayWorldspaceDialogue(string key, float duration)
+		private void PlayWorldspaceDialogueReaction(string key, float duration)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void SendWorldSpaceDialogue(string text, float duration)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		public void ShowWorldSpaceDialogue(string text, float duration)
 		{
 		}
 
@@ -431,7 +503,17 @@ namespace ScheduleOne.NPCs
 			return null;
 		}
 
-		public void PlayVO(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		public void PlayVO(global::ScheduleOne.VoiceOver.EVOLineType lineType, bool network = false)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		private void PlayVO_Server(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void PlayVO_Client(global::ScheduleOne.VoiceOver.EVOLineType lineType)
 		{
 		}
 
@@ -456,10 +538,6 @@ namespace ScheduleOne.NPCs
 		}
 
 		public void ShowOutline(global::UnityEngine.Color color)
-		{
-		}
-
-		public void ShowOutline(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor color)
 		{
 		}
 
@@ -544,6 +622,18 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		private void RpcWriter___Observers_SetVisible_Networked_1140765316(bool visible)
+		{
+		}
+
+		private void RpcLogic___SetVisible_Networked_1140765316(bool visible)
+		{
+		}
+
+		private void RpcReader___Observers_SetVisible_Networked_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
 		private void RpcWriter___Server_AimedAtByPlayer_3323014238(global::FishNet.Object.NetworkObject player)
 		{
 		}
@@ -612,27 +702,51 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Server_SendWorldspaceDialogueKey_606697822(string key, float duration)
+		private void RpcWriter___Server_SendWorldspaceDialogueReaction_606697822(string key, float duration)
 		{
 		}
 
-		public void RpcLogic___SendWorldspaceDialogueKey_606697822(string key, float duration)
+		public void RpcLogic___SendWorldspaceDialogueReaction_606697822(string key, float duration)
 		{
 		}
 
-		private void RpcReader___Server_SendWorldspaceDialogueKey_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendWorldspaceDialogueReaction_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_PlayWorldspaceDialogue_606697822(string key, float duration)
+		private void RpcWriter___Observers_PlayWorldspaceDialogueReaction_606697822(string key, float duration)
 		{
 		}
 
-		private void RpcLogic___PlayWorldspaceDialogue_606697822(string key, float duration)
+		private void RpcLogic___PlayWorldspaceDialogueReaction_606697822(string key, float duration)
 		{
 		}
 
-		private void RpcReader___Observers_PlayWorldspaceDialogue_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlayWorldspaceDialogueReaction_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_SendWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		public void RpcLogic___SendWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		private void RpcReader___Server_SendWorldSpaceDialogue_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_ShowWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		public void RpcLogic___ShowWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		private void RpcReader___Observers_ShowWorldSpaceDialogue_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
@@ -869,6 +983,30 @@ namespace ScheduleOne.NPCs
 		}
 
 		private void RpcReader___Observers_RemovePanicked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_PlayVO_Server_1710085680(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		{
+		}
+
+		private void RpcLogic___PlayVO_Server_1710085680(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		{
+		}
+
+		private void RpcReader___Server_PlayVO_Server_1710085680(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_PlayVO_Client_1710085680(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		{
+		}
+
+		private void RpcLogic___PlayVO_Client_1710085680(global::ScheduleOne.VoiceOver.EVOLineType lineType)
+		{
+		}
+
+		private void RpcReader___Observers_PlayVO_Client_1710085680(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

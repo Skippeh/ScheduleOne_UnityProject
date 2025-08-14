@@ -8,6 +8,7 @@ namespace ScheduleOne.Dialogue
 		Customer = 3,
 		Police = 4,
 		Supplier = 5,
-		Dealer = 6
+		Dealer = 6,
+		CartelGoon = 7
 	}
 }

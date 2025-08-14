@@ -91,6 +91,8 @@ namespace ScheduleOne.UI.Handover
 
 		private bool ignoreCustomerChangedEvents;
 
+		private bool requireFullChanceOfSuccess;
+
 		public global::ScheduleOne.Quests.Contract CurrentContract { get; protected set; }
 
 		public bool IsOpen { get; protected set; }
@@ -117,7 +119,7 @@ namespace ScheduleOne.UI.Handover
 		{
 		}
 
-		public virtual void Open(global::ScheduleOne.Quests.Contract contract, global::ScheduleOne.Economy.Customer customer, global::ScheduleOne.UI.Handover.HandoverScreen.EMode mode, global::System.Action<global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float> callback, global::System.Func<global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float, float> successChanceMethod)
+		public virtual void Open(global::ScheduleOne.Quests.Contract contract, global::ScheduleOne.Economy.Customer customer, global::ScheduleOne.UI.Handover.HandoverScreen.EMode mode, global::System.Action<global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float> callback, global::System.Func<global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float, float> successChanceMethod, bool _requireFullChanceOfSuccess = false)
 		{
 		}
 

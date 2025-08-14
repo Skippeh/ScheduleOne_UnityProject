@@ -3,9 +3,6 @@ namespace ScheduleOne.Combat
 	[global::System.Serializable]
 	public class Impact
 	{
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::UnityEngine.RaycastHit Hit;
-
 		public global::UnityEngine.Vector3 HitPoint;
 
 		public global::UnityEngine.Vector3 ImpactForceDirection;
@@ -20,7 +17,7 @@ namespace ScheduleOne.Combat
 
 		public int ImpactID;
 
-		public Impact(global::UnityEngine.RaycastHit hit, global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::ScheduleOne.PlayerScripts.Player impactSource, int impactID)
+		public Impact(global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::FishNet.Object.NetworkObject impactSource, int impactID = 0)
 		{
 		}
 

@@ -7,7 +7,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public global::ScheduleOne.Persistence.Datas.ItemSet Contents;
 
-		public WorldStorageEntityData(global::System.Guid guid, global::ScheduleOne.Persistence.Datas.ItemSet contents)
+		public global::ScheduleOne.GameTime.GameDateTime LastContentChangeTime;
+
+		public WorldStorageEntityData(global::System.Guid guid, global::ScheduleOne.Persistence.Datas.ItemSet contents, global::ScheduleOne.GameTime.GameDateTime lastContentChangeTime)
 		{
 		}
 	}

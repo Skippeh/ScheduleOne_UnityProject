@@ -23,6 +23,10 @@ namespace ScheduleOne.Tools
 		[global::UnityEngine.SerializeField]
 		private global::System.Collections.Generic.List<global::ScheduleOne.Tools.HDRColorSmoother.Override> overrides;
 
+		private global::ScheduleOne.Tools.HDRColorSmoother.Override activeOverride;
+
+		private int activeCount;
+
 		public global::UnityEngine.Color CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }

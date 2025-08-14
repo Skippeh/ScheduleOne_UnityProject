@@ -8,7 +8,7 @@ namespace ScheduleOne.Skating
 
 		public const float SurfaceSampleRayLength = 0.7f;
 
-		public const float BoardSpawnUpwardsShift = 0.1f;
+		public const float BoardSpawnUpwardsShift = 0.05f;
 
 		public const float BoardSpawnAngleLimit = 30f;
 

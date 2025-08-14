@@ -14,6 +14,8 @@ namespace ScheduleOne.DevUtilities
 
 		public global::UnityEngine.Light _Light;
 
+		private bool _LightExists;
+
 		private bool culled;
 
 		private float maxDistanceSquared;
@@ -30,7 +32,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		public virtual void FixedUpdate()
+		public virtual void Update()
 		{
 		}
 

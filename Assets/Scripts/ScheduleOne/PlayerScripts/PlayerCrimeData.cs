@@ -116,6 +116,8 @@ namespace ScheduleOne.PlayerScripts
 
 		public float CurrentBodySearchProgress { get; protected set; }
 
+		public int MinsSinceLastArrested { get; set; }
+
 		public float TimeSinceLastBodySearch { get; set; }
 
 		public bool EvadedArrest { get; protected set; }
@@ -155,6 +157,10 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		protected virtual void Update()
+		{
+		}
+
+		private void MinPass()
 		{
 		}
 

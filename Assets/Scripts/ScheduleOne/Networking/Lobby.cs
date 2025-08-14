@@ -12,8 +12,6 @@ namespace ScheduleOne.Networking
 
 		public const string HOST_LOADING = "host_loading";
 
-		public global::FishNet.Managing.NetworkManager NetworkManager;
-
 		public global::Steamworks.CSteamID[] Players;
 
 		public global::System.Action onLobbyChange;
@@ -27,8 +25,6 @@ namespace ScheduleOne.Networking
 		private global::Steamworks.Callback<global::Steamworks.GameLobbyJoinRequested_t> GameLobbyJoinRequestedCallback;
 
 		private global::Steamworks.Callback<global::Steamworks.LobbyChatMsg_t> LobbyChatMessageCallback;
-
-		public string DebugSteamId64;
 
 		public bool IsHost => false;
 
@@ -72,11 +68,6 @@ namespace ScheduleOne.Networking
 		}
 
 		private void UpdateLobbyMembers()
-		{
-		}
-
-		[global::EasyButtons.Button]
-		public void DebugJoin()
 		{
 		}
 

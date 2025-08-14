@@ -67,11 +67,13 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private float cullRange;
 
+		public float BodyRotationSpeedMultiplier { get; set; }
+
 		private void Awake()
 		{
 		}
 
-		private void UpdateShit()
+		private void UpdateLook()
 		{
 		}
 

@@ -2,7 +2,7 @@ namespace ScheduleOne.Tools
 {
 	public class ForcePlayerCrouch : global::UnityEngine.MonoBehaviour
 	{
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(global::UnityEngine.Collider other)
 		{
 		}
 	}

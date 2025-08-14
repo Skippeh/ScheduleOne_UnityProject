@@ -36,6 +36,8 @@ namespace ScheduleOne.UI
 
 		public global::ScheduleOne.UI.Input.InputPrompt InputPrompt;
 
+		public global::UnityEngine.RectTransform ActionsContainer;
+
 		public global::UnityEngine.Events.UnityEvent onFail;
 
 		public global::UnityEngine.Events.UnityEvent onStop;

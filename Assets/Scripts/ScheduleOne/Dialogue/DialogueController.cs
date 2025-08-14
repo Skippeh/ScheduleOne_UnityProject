@@ -13,6 +13,8 @@ namespace ScheduleOne.Dialogue
 
 			public string ChoiceText;
 
+			public bool ShowWorldspaceDialogue;
+
 			public global::ScheduleOne.Dialogue.DialogueContainer Conversation;
 
 			public global::UnityEngine.Events.UnityEvent onChoosen;

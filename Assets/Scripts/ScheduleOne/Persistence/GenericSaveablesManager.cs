@@ -20,6 +20,8 @@ namespace ScheduleOne.Persistence
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		protected override void Awake()
 		{
 		}

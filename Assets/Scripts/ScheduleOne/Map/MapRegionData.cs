@@ -3,9 +3,17 @@ namespace ScheduleOne.Map
 	[global::System.Serializable]
 	public class MapRegionData
 	{
+		[global::System.Serializable]
+		public class RegionContainer
+		{
+			public global::ScheduleOne.Map.EMapRegion Region;
+		}
+
 		public global::ScheduleOne.Map.EMapRegion Region;
 
 		public string Name;
+
+		public bool UnlockedByDefault;
 
 		public global::ScheduleOne.Levelling.FullRank RankRequirement;
 
@@ -15,7 +23,11 @@ namespace ScheduleOne.Map
 
 		public global::ScheduleOne.Economy.DeliveryLocation[] RegionDeliveryLocations;
 
-		public bool IsUnlocked => false;
+		public global::ScheduleOne.Map.MapRegionData.RegionContainer[] AdjacentRegions;
+
+		public global::ScheduleOne.Audio.Zone RegionBounds;
+
+		public bool IsUnlocked { get; private set; }
 
 		public global::ScheduleOne.Economy.DeliveryLocation GetRandomUnscheduledDeliveryLocation()
 		{
@@ -24,6 +36,11 @@ namespace ScheduleOne.Map
 
 		public void SetUnlocked()
 		{
+		}
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> GetAdjacentRegions()
+		{
+			return null;
 		}
 	}
 }

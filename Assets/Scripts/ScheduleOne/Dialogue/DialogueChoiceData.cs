@@ -8,5 +8,12 @@ namespace ScheduleOne.Dialogue
 		public string ChoiceText;
 
 		public string ChoiceLabel;
+
+		public bool ShowWorldspaceDialogue;
+
+		public global::ScheduleOne.Dialogue.DialogueChoiceData GetCopy()
+		{
+			return null;
+		}
 	}
 }

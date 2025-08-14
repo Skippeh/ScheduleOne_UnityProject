@@ -2,23 +2,25 @@ namespace ScheduleOne.Quests
 {
 	public class Quest_UnfavourableAgreements : global::ScheduleOne.Quests.Quest
 	{
-		public const float WEEKLY_DELIVERY_HOURS = 168f;
+		public global::ScheduleOne.Vehicles.LandVehicle MeetingVehicle;
 
-		public const float REMINDER_THRESHOLD = 144f;
+		public global::UnityEngine.Transform VehicleSpawnPoint;
+
+		public global::ScheduleOne.Map.ParkingLot ParkingLot;
 
 		public global::ScheduleOne.NPCs.CharacterClasses.Thomas Thomas;
 
-		public global::ScheduleOne.Map.ManorGate Gate;
+		public global::ScheduleOne.Quests.QuestEntry ReadMessageQuestEntry;
 
-		public global::ScheduleOne.Misc.ModularSwitch Switch;
+		public global::ScheduleOne.Quests.QuestEntry MeetingQuestEntry;
 
-		public global::ScheduleOne.Property.RV RV;
-
-		public string QuestEntryTitle;
-
-		private bool handoverSetup;
+		public global::UnityEngine.Events.UnityEvent onMeetingConcluded;
 
 		protected override void Start()
+		{
+		}
+
+		private void CheckQuestStart()
 		{
 		}
 
@@ -26,27 +28,23 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		private void HourPass()
+		protected override void MinPass()
 		{
 		}
 
-		private void SetupHandover()
+		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
 		{
 		}
 
-		private void CheckHandoverExpiry()
+		private void MeetingEnded()
 		{
 		}
 
-		private void UpdateName()
+		private void DriveCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult result)
 		{
 		}
 
-		private void HandoverCompleted()
-		{
-		}
-
-		public void ResetTimer(bool allowBuildup)
+		private void Park()
 		{
 		}
 	}

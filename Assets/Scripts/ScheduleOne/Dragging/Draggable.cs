@@ -17,6 +17,10 @@ namespace ScheduleOne.Dragging
 
 		public const float MAX_TARGET_OFFSET = 1.5f;
 
+		private bool isBeingDragged;
+
+		private global::ScheduleOne.PlayerScripts.Player currentDragger;
+
 		[global::UnityEngine.SerializeField]
 		protected string BakedGUID;
 
@@ -50,7 +54,16 @@ namespace ScheduleOne.Dragging
 
 		public bool IsBeingDragged => false;
 
-		public global::ScheduleOne.PlayerScripts.Player CurrentDragger { get; protected set; }
+		public global::ScheduleOne.PlayerScripts.Player CurrentDragger
+		{
+			get
+			{
+				return null;
+			}
+			protected set
+			{
+			}
+		}
 
 		public global::System.Guid GUID { get; protected set; }
 
@@ -81,7 +94,7 @@ namespace ScheduleOne.Dragging
 		{
 		}
 
-		private void FixedUpdate()
+		public void UpdateDraggable(float fixedDeltaTime)
 		{
 		}
 

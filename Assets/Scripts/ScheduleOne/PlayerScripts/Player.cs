@@ -1,6 +1,6 @@
 namespace ScheduleOne.PlayerScripts
 {
-	public class Player : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.IDamageable
+	public class Player : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable
 	{
 		public delegate void VehicleEvent(global::ScheduleOne.Vehicles.LandVehicle vehicle);
 
@@ -31,13 +31,9 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
 
-		public global::UnityEngine.Vector3 EyePosition;
+		public global::ScheduleOne.Vision.PlayerVisibility VisualState;
 
-		public global::ScheduleOne.AvatarFramework.AvatarSettings TestAvatarSettings;
-
-		public global::ScheduleOne.PlayerScripts.PlayerVisualState VisualState;
-
-		public global::ScheduleOne.Stealth.PlayerVisibility Visibility;
+		public global::ScheduleOne.Vision.EntityVisibility Visibility;
 
 		public global::UnityEngine.CapsuleCollider CapCol;
 
@@ -64,6 +60,8 @@ namespace ScheduleOne.PlayerScripts
 		public global::ScheduleOne.UI.WorldspaceDialogueRenderer NameLabel;
 
 		public global::ScheduleOne.PlayerScripts.PlayerClothing Clothing;
+
+		public global::ScheduleOne.UI.WorldspaceDialogueRenderer WorldspaceDialogue;
 
 		[global::UnityEngine.Header("Settings")]
 		public global::UnityEngine.LayerMask GroundDetectionMask;
@@ -154,6 +152,22 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool IsLocalPlayer => false;
 
+		public global::UnityEngine.Transform CenterPointTransform => null;
+
+		public global::UnityEngine.Vector3 LookAtPoint => default(global::UnityEngine.Vector3);
+
+		public bool IsCurrentlyTargetable => false;
+
+		public float RangedHitChanceMultiplier => 0f;
+
+		public global::UnityEngine.Vector3 Velocity => default(global::UnityEngine.Vector3);
+
+		public global::ScheduleOne.Vision.VisionEvent HighestProgressionEvent { get; set; }
+
+		public global::ScheduleOne.Vision.EntityVisibility VisibilityComponent => null;
+
+		public global::UnityEngine.Vector3 EyePosition { get; private set; }
+
 		public string PlayerName
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
@@ -193,6 +207,8 @@ namespace ScheduleOne.PlayerScripts
 			{
 			}
 		}
+
+		public global::ScheduleOne.Vehicles.VehicleSeat CurrentVehicleSeat { get; private set; }
 
 		public float TimeSinceVehicleExit { get; protected set; }
 
@@ -250,6 +266,8 @@ namespace ScheduleOne.PlayerScripts
 		public global::ScheduleOne.Property.Property LastVisitedProperty { get; protected set; }
 
 		public global::ScheduleOne.Property.Business CurrentBusiness { get; protected set; }
+
+		public global::ScheduleOne.Map.EMapRegion CurrentRegion { get; protected set; }
 
 		public global::UnityEngine.Vector3 PlayerBasePosition => default(global::UnityEngine.Vector3);
 
@@ -398,6 +416,26 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
+		global::FishNet.Object.NetworkObject global::ScheduleOne.Combat.ICombatTargetable.NetworkObject => null;
+
+		global::UnityEngine.GameObject global::ScheduleOne.Combat.IDamageable.gameObject => null;
+
+		global::FishNet.Object.NetworkObject global::ScheduleOne.Vision.ISightable.NetworkObject => null;
+
+		public void RecordLastKnownPosition(bool resetTimeSinceLastSeen)
+		{
+		}
+
+		public float GetSearchTime()
+		{
+			return 0f;
+		}
+
+		public bool IsCurrentlySightable()
+		{
+			return false;
+		}
+
 		[global::EasyButtons.Button]
 		public void LoadDebugAvatarSettings()
 		{
@@ -539,6 +577,10 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
+		private void RecalculateCurrentRegion()
+		{
+		}
+
 		private void FixedUpdate()
 		{
 		}
@@ -591,7 +633,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void EnterVehicle(global::ScheduleOne.Vehicles.LandVehicle vehicle)
+		public void EnterVehicle(global::ScheduleOne.Vehicles.LandVehicle vehicle, global::ScheduleOne.Vehicles.VehicleSeat seat)
 		{
 		}
 
@@ -621,7 +663,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void SleepEnd(int minsSlept)
+		private void SleepEnd()
 		{
 		}
 
@@ -964,6 +1006,16 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void LoadVariable(global::ScheduleOne.Persistence.Datas.VariableData data)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void SendWorldSpaceDialogue(string text, float duration)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void ShowWorldSpaceDialogue(string text, float duration)
 		{
 		}
 
@@ -1677,6 +1729,30 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		private void RpcReader___Target_ReceiveValue_3895153758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_SendWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		public void RpcLogic___SendWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		private void RpcReader___Server_SendWorldSpaceDialogue_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_ShowWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		private void RpcLogic___ShowWorldSpaceDialogue_606697822(string text, float duration)
+		{
+		}
+
+		private void RpcReader___Observers_ShowWorldSpaceDialogue_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

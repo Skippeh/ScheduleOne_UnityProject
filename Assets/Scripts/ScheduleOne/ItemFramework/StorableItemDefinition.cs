@@ -23,6 +23,10 @@ namespace ScheduleOne.ItemFramework
 		[global::UnityEngine.Tooltip("Optional station item if this item can be used at a station.")]
 		public global::ScheduleOne.StationFramework.StationItem StationItem;
 
+		[global::UnityEngine.Header("Other Settings")]
+		[global::UnityEngine.Range(0f, 1f)]
+		public float CombatUtilityForNPCs;
+
 		public bool IsPurchasable => false;
 
 		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)

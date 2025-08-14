@@ -13,9 +13,13 @@ namespace ScheduleOne.NPCs
 
 		public bool CanBePickpocketed;
 
+		public float PickpocketDifficultyMultiplier;
+
 		public bool ClearInventoryEachNight;
 
 		public global::ScheduleOne.ItemFramework.ItemDefinition[] TestItems;
+
+		public global::ScheduleOne.ItemFramework.ItemDefinition[] StartupItems;
 
 		[global::UnityEngine.Header("Random cash")]
 		public bool RandomCash;
@@ -113,11 +117,6 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public int GetTotalItemCount()
-		{
-			return 0;
-		}
-
 		public void Hovered()
 		{
 		}
@@ -141,6 +140,10 @@ namespace ScheduleOne.NPCs
 
 		[global::EasyButtons.Button]
 		public void PrintInventoryContents()
+		{
+		}
+
+		public void Clear()
 		{
 		}
 

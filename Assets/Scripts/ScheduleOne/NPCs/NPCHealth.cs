@@ -17,6 +17,10 @@ namespace ScheduleOne.NPCs
 
 		public global::UnityEngine.Events.UnityEvent onKnockedOut;
 
+		public global::UnityEngine.Events.UnityEvent onDieOrKnockedOut;
+
+		public global::UnityEngine.Events.UnityEvent onRevive;
+
 		private bool AfflictedWithLethalEffect;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CHealth_003Ek__BackingField;
@@ -44,6 +48,8 @@ namespace ScheduleOne.NPCs
 
 		public int DaysPassedSinceDeath { get; private set; }
 
+		public int HoursSinceAttackedByPlayer { get; private set; }
+
 		public float SyncAccessor__003CHealth_003Ek__BackingField
 		{
 			get
@@ -56,6 +62,10 @@ namespace ScheduleOne.NPCs
 		}
 
 		public virtual void Awake()
+		{
+		}
+
+		private void Start()
 		{
 		}
 
@@ -75,11 +85,19 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		protected virtual void OnHourPass()
+		{
+		}
+
 		public void SetAfflictedWithLethalEffect(bool value)
 		{
 		}
 
 		public void SleepStart()
+		{
+		}
+
+		public virtual void NotifyAttackedByPlayer(global::ScheduleOne.PlayerScripts.Player player)
 		{
 		}
 

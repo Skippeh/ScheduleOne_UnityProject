@@ -17,8 +17,6 @@ namespace ScheduleOne.Messaging
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.SendableMessage> Sendables;
 
-		public bool read;
-
 		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.EConversationCategory> Categories;
 
 		public global::UnityEngine.RectTransform entry;
@@ -51,11 +49,15 @@ namespace ScheduleOne.Messaging
 
 		public global::System.Action onResponsesShown;
 
+		public global::System.Action onConversationOpened;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.Response> currentResponses;
 
 		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> responseRects;
 
 		public bool IsSenderKnown { get; protected set; }
+
+		public bool Read { get; private set; }
 
 		public int index { get; protected set; }
 

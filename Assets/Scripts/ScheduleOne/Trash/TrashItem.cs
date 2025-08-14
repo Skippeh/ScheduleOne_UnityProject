@@ -78,10 +78,6 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		protected void SleepEnd(int mins)
-		{
-		}
-
 		protected void Hovered()
 		{
 		}

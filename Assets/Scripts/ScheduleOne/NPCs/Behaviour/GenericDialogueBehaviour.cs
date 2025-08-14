@@ -4,6 +4,9 @@ namespace ScheduleOne.NPCs.Behaviour
 	{
 		private global::ScheduleOne.PlayerScripts.Player targetPlayer;
 
+		[global::UnityEngine.Header("Settings")]
+		public bool FaceConversationTarget;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EGenericDialogueBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EGenericDialogueBehaviourAssembly_002DCSharp_002Edll_Excuted;

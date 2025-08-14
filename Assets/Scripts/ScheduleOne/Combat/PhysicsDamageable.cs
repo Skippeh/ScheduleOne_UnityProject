@@ -16,6 +16,8 @@ namespace ScheduleOne.Combat
 
 		public global::UnityEngine.Vector3 averageVelocity { get; private set; }
 
+		global::UnityEngine.GameObject global::ScheduleOne.Combat.IDamageable.gameObject => null;
+
 		public void OnValidate()
 		{
 		}

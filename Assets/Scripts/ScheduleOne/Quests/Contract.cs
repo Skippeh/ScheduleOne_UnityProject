@@ -40,11 +40,11 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		public virtual void InitializeContract(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid, global::FishNet.Object.NetworkObject customer, float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, int pickupScheduleIndex, global::ScheduleOne.GameTime.GameDateTime acceptTime)
+		public virtual void InitializeContract(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid, global::ScheduleOne.Economy.Customer customer, float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, int pickupScheduleIndex, global::ScheduleOne.GameTime.GameDateTime acceptTime)
 		{
 		}
 
-		public virtual void SilentlyInitializeContract(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid, global::FishNet.Object.NetworkObject customer, float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, int pickupScheduleIndex, global::ScheduleOne.GameTime.GameDateTime acceptTime)
+		public virtual void SilentlyInitializeContract(string title, string description, global::ScheduleOne.Persistence.Datas.QuestEntryData[] entries, string guid, global::ScheduleOne.Economy.Customer customer, float payment, global::ScheduleOne.Product.ProductList products, string deliveryLocationGUID, global::ScheduleOne.Quests.QuestWindowConfig deliveryWindow, int pickupScheduleIndex, global::ScheduleOne.GameTime.GameDateTime acceptTime)
 		{
 		}
 

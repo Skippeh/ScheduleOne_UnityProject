@@ -5,11 +5,11 @@ namespace ScheduleOne.UI.Phone
 		[global::System.Serializable]
 		public class Listing
 		{
-			public global::ScheduleOne.ItemFramework.ItemDefinition Item;
+			public global::ScheduleOne.ItemFramework.StorableItemDefinition Item;
 
-			public float Price;
+			public float Price => 0f;
 
-			public Listing(global::ScheduleOne.ItemFramework.ItemDefinition item, float price)
+			public Listing(global::ScheduleOne.ItemFramework.StorableItemDefinition item)
 			{
 			}
 		}

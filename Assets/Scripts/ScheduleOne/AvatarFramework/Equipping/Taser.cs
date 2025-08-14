@@ -3,7 +3,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 	public class Taser : global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFlash_003Ed__9 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFlash_003Ed__10 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -32,7 +32,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFlash_003Ed__9(int _003C_003E1__state)
+			public _003CFlash_003Ed__10(int _003C_003E1__state)
 			{
 			}
 
@@ -76,7 +76,11 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
-		public override void Shoot(global::UnityEngine.Vector3 endPoint)
+		protected override void Shoot(global::UnityEngine.Vector3 endPoint)
+		{
+		}
+
+		public override void ApplyHitToDamageable(global::ScheduleOne.Combat.IDamageable damageable, global::UnityEngine.Vector3 hitPoint)
 		{
 		}
 
@@ -84,7 +88,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.Taser._003CFlash_003Ed__9))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.Taser._003CFlash_003Ed__10))]
 		private global::System.Collections.IEnumerator Flash(global::UnityEngine.Vector3 endPoint)
 		{
 			return null;

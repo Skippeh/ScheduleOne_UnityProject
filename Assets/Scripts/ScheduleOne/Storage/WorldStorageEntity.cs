@@ -7,6 +7,8 @@ namespace ScheduleOne.Storage
 		[global::UnityEngine.SerializeField]
 		protected string BakedGUID;
 
+		public global::ScheduleOne.GameTime.GameDateTime LastContentChangeTime;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EWorldStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EStorage_002EWorldStorageEntityAssembly_002DCSharp_002Edll_Excuted;

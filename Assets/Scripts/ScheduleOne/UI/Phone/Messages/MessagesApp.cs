@@ -63,6 +63,8 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::ScheduleOne.Audio.AudioSourceController MessageSentSound;
 
+		public global::ScheduleOne.UI.Phone.Messages.ConfirmationPopup ConfirmationPopup;
+
 		[global::UnityEngine.Header("Prefabs")]
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.GameObject conversationEntryPrefab;

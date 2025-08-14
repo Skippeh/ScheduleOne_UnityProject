@@ -2,9 +2,6 @@ namespace ScheduleOne.Storage
 {
 	public class StorageManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Storage.StorageManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
 	{
-		[global::UnityEngine.Header("Prefabs")]
-		public global::UnityEngine.GameObject PalletPrefab;
-
 		private global::ScheduleOne.Persistence.Loaders.StorageLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EStorageManagerAssembly_002DCSharp_002Edll_Excuted;
@@ -25,13 +22,10 @@ namespace ScheduleOne.Storage
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		public override void Awake()
 		{
-		}
-
-		public global::ScheduleOne.Storage.Pallet CreatePallet(global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation, string initialSlotGuid = "")
-		{
-			return null;
 		}
 
 		public virtual void InitializeSaveable()

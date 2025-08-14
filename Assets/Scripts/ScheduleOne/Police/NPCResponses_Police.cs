@@ -28,6 +28,10 @@ namespace ScheduleOne.Police
 		{
 		}
 
+		public override void PlayerFailedPickpocket(global::ScheduleOne.PlayerScripts.Player player)
+		{
+		}
+
 		public override void NoticePlayerBrandishingWeapon(global::ScheduleOne.PlayerScripts.Player player)
 		{
 		}

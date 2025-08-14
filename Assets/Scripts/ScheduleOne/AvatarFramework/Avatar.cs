@@ -12,6 +12,8 @@ namespace ScheduleOne.AvatarFramework
 
 		private static float femaleShoulderScale;
 
+		public bool DEBUG;
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Anim;
 
@@ -58,6 +60,8 @@ namespace ScheduleOne.AvatarFramework
 		public global::ScheduleOne.AvatarFramework.Impostors.AvatarImpostor Impostor;
 
 		public global::ScheduleOne.Audio.FootstepSounds FootstepSounds;
+
+		public global::UnityEngine.ParticleSystem BloodParticles;
 
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.AvatarFramework.AvatarSettings InitialAvatarSettings;
@@ -107,6 +111,8 @@ namespace ScheduleOne.AvatarFramework
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable CurrentEquippable { get; protected set; }
 
 		public global::ScheduleOne.AvatarFramework.AvatarSettings CurrentSettings { get; protected set; }
+
+		public global::UnityEngine.Transform CenterPointTransform => null;
 
 		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
 

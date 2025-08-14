@@ -2,20 +2,28 @@ namespace ScheduleOne.Tools
 {
 	public class SmoothedVelocityCalculator : global::UnityEngine.MonoBehaviour
 	{
-		public global::UnityEngine.Vector3 Velocity;
+		private const int sampleCount = 20;
+
+		public bool DEBUG;
 
 		[global::UnityEngine.Header("Settings")]
 		public float SampleLength;
 
 		public float MaxReasonableVelocity;
 
-		private global::System.Collections.Generic.List<global::System.Tuple<global::UnityEngine.Vector3, float>> VelocityHistory;
+		private CircularQueue<global::UnityEngine.Vector3> velocityHistory;
 
-		private int maxSamples;
+		private global::UnityEngine.Vector3 lastSamplePosition;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private float timeOnLastSample;
+
+		private float timeSinceLastSample;
 
 		private bool zeroOut;
+
+		public global::UnityEngine.Vector3 Velocity { get; protected set; }
+
+		public global::UnityEngine.Transform Target { get; private set; }
 
 		private void Start()
 		{
@@ -35,6 +43,10 @@ namespace ScheduleOne.Tools
 		}
 
 		public void ZeroOut(float duration)
+		{
+		}
+
+		public void SetTarget(global::UnityEngine.Transform target)
 		{
 		}
 	}

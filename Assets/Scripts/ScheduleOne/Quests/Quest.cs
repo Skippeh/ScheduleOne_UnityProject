@@ -85,7 +85,7 @@ namespace ScheduleOne.Quests
 
 		protected bool autoInitialize;
 
-		public global::ScheduleOne.Quests.EQuestState QuestState { get; protected set; }
+		public global::ScheduleOne.Quests.EQuestState State { get; protected set; }
 
 		public global::System.Guid GUID { get; protected set; }
 

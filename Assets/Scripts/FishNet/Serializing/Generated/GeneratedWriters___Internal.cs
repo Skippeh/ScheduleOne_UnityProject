@@ -8,18 +8,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002EVision_002EVisionEventReceiptFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vision.VisionEventReceipt value)
-		{
-		}
-
-		public static void Write___ScheduleOne_002EPlayerScripts_002EPlayerVisualState_002FEVisualStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.PlayerScripts.PlayerVisualState.EVisualState value)
-		{
-		}
-
-		public static void Write___ScheduleOne_002EVision_002EVisionCone_002FEEventLevelFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vision.VisionCone.EEventLevel value)
-		{
-		}
-
 		public static void Write___ScheduleOne_002EQuests_002EContractInfoFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Quests.ContractInfo value)
 		{
 		}
@@ -56,6 +44,18 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002EVision_002EEVisualStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vision.EVisualState value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EVision_002EVisionEventReceiptFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vision.VisionEventReceipt value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EVision_002EVisionCone_002FEEventLevelFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vision.VisionCone.EEventLevel value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002ECombat_002EImpactFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Combat.Impact value)
 		{
 		}
@@ -68,7 +68,7 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002ELaw_002ECheckpointManager_002FECheckpointLocationFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation value)
+		public static void Write___ScheduleOne_002EVoiceOver_002EEVOLineTypeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.VoiceOver.EVOLineType value)
 		{
 		}
 
@@ -97,6 +97,10 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EDevUtilities_002EStringIntPair_005B_005DFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.DevUtilities.StringIntPair[] value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ELaw_002ECheckpointManager_002FECheckpointLocationFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation value)
 		{
 		}
 
@@ -157,6 +161,14 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002ELevelling_002EERankFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Levelling.ERank value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EMap_002EEMapRegionFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Map.EMapRegion value)
+		{
+		}
+
+		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002EMap_002EEMapRegion_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> value)
 		{
 		}
 
@@ -232,10 +244,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___System_002EString_005B_005DFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, string[] value)
-		{
-		}
-
 		public static void Write___System_002ESingle_005B_005DFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, float[] value)
 		{
 		}
@@ -288,6 +296,22 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ECartelStatusFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, ECartelStatus value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ECartel_002ECartelGoonAppearanceFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Cartel.CartelGoonAppearance value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ECartel_002ECartelDealInfoFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Cartel.CartelDealInfo value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ECartel_002ECartelDealInfo_002FEStatusFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Cartel.CartelDealInfo.EStatus value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EDoors_002EEDoorSideFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Doors.EDoorSide value)
 		{
 		}
@@ -304,7 +328,15 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002EProperty_002EManor_002FEManorStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Property.Manor.EManorState value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EPersistence_002ETrashContentDataFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Persistence.TrashContentData value)
+		{
+		}
+
+		public static void Write___System_002EString_005B_005DFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, string[] value)
 		{
 		}
 
@@ -313,6 +345,14 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002ETiles_002ECoordinateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Tiles.Coordinate value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EEconomy_002EContractReceiptFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Economy.ContractReceipt value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EEconomy_002EEContractPartyFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Economy.EContractParty value)
 		{
 		}
 

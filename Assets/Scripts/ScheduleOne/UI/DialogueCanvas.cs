@@ -71,11 +71,11 @@ namespace ScheduleOne.UI
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.UI.DialogueCanvas _003C_003E4__this;
-
 			public string text;
 
-			public global::System.Collections.Generic.List<string> choices;
+			public global::ScheduleOne.UI.DialogueCanvas _003C_003E4__this;
+
+			public global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> choices;
 
 			private global::System.Collections.Generic.List<int> _003CactiveDialogueChoices_003E5__2;
 
@@ -169,7 +169,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void DisplayDialogueNode(global::ScheduleOne.Dialogue.DialogueHandler diag, global::ScheduleOne.Dialogue.DialogueNodeData node, string dialogueText, global::System.Collections.Generic.List<string> choices)
+		public void DisplayDialogueNode(global::ScheduleOne.Dialogue.DialogueHandler diag, global::ScheduleOne.Dialogue.DialogueNodeData node, string dialogueText, global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> choices)
 		{
 		}
 
@@ -190,7 +190,7 @@ namespace ScheduleOne.UI
 		}
 
 		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CRolloutDialogue_003Ed__21))]
-		protected global::System.Collections.IEnumerator RolloutDialogue(string text, global::System.Collections.Generic.List<string> choices)
+		protected global::System.Collections.IEnumerator RolloutDialogue(string text, global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> choices)
 		{
 			return null;
 		}

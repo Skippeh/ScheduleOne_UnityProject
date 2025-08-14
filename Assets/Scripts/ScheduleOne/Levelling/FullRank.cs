@@ -3,6 +3,8 @@ namespace ScheduleOne.Levelling
 	[global::System.Serializable]
 	public struct FullRank
 	{
+		public const int TIER_COUNT = 5;
+
 		public global::ScheduleOne.Levelling.ERank Rank;
 
 		[global::UnityEngine.Range(1f, 5f)]
@@ -22,6 +24,11 @@ namespace ScheduleOne.Levelling
 		public global::ScheduleOne.Levelling.FullRank NextRank()
 		{
 			return default(global::ScheduleOne.Levelling.FullRank);
+		}
+
+		public float ToFloat()
+		{
+			return 0f;
 		}
 
 		public static string GetString(global::ScheduleOne.Levelling.FullRank rank)

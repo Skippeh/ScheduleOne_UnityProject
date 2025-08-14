@@ -6,6 +6,10 @@ namespace ScheduleOne.NPCs.CharacterClasses
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ECharacterClasses_002ESamAssembly_002DCSharp_002Edll_Excuted;
 
+		public void SendTunnelDugMessage()
+		{
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}

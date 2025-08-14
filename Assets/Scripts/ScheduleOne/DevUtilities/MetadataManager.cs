@@ -22,6 +22,8 @@ namespace ScheduleOne.DevUtilities
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		protected override void Awake()
 		{
 		}

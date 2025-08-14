@@ -2,6 +2,8 @@ namespace ScheduleOne.Vehicles
 {
 	public class VehicleLights : global::FishNet.Object.NetworkBehaviour
 	{
+		private const int brakeHistoryMaxCount = 60;
+
 		public global::ScheduleOne.Vehicles.LandVehicle vehicle;
 
 		[global::UnityEngine.Header("Headlights")]
@@ -53,7 +55,7 @@ namespace ScheduleOne.Vehicles
 
 		public global::UnityEngine.Events.UnityEvent onHeadlightsOff;
 
-		private global::System.Collections.Generic.List<bool> brakesAppliedHistory;
+		private CircularQueue<bool> brakesAppliedHistory;
 
 		private global::ScheduleOne.Vehicles.AI.VehicleAgent agent;
 

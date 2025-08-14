@@ -9,9 +9,11 @@ namespace ScheduleOne.Tools
 
 		public float ContactTimeForDetection;
 
-		private float contactTime;
+		private bool inContact;
 
-		private float timeSinceLastContact;
+		private global::ScheduleOne.NPCs.NPC npcInContact;
+
+		private float contactTime;
 
 		private void Awake()
 		{
@@ -21,7 +23,11 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void OnTriggerStay(global::UnityEngine.Collider other)
+		private void OnTriggerEnter(global::UnityEngine.Collider other)
+		{
+		}
+
+		private void OnTriggerExit(global::UnityEngine.Collider other)
 		{
 		}
 	}

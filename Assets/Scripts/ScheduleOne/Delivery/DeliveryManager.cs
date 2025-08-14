@@ -32,6 +32,8 @@ namespace ScheduleOne.Delivery
 
 		public bool HasChanged { get; set; }
 
+		public int LoadOrder { get; }
+
 		public override void Awake()
 		{
 		}

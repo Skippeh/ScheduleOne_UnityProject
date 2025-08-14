@@ -25,7 +25,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFaceDirection_Process_003Ed__139 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFaceDirection_Process_003Ed__141 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -60,7 +60,7 @@ namespace ScheduleOne.NPCs
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFaceDirection_Process_003Ed__139(int _003C_003E1__state)
+			public _003CFaceDirection_Process_003Ed__141(int _003C_003E1__state)
 			{
 			}
 
@@ -133,6 +133,8 @@ namespace ScheduleOne.NPCs
 
 		public float SlipperyModeMultiplier;
 
+		public bool ObstacleAvoidanceEnabled;
+
 		public global::UnityEngine.AI.ObstacleAvoidanceType DefaultObstacleAvoidanceType;
 
 		[global::UnityEngine.Header("References")]
@@ -159,8 +161,6 @@ namespace ScheduleOne.NPCs
 		protected global::UnityEngine.Collider RagdollDraggableCollider;
 
 		public float MovementSpeedScale;
-
-		private float ragdollTime;
 
 		private float ragdollStaticTime;
 
@@ -197,6 +197,10 @@ namespace ScheduleOne.NPCs
 		private float velocityHistorySpacing;
 
 		private float timeSinceLastVelocityHistoryRecord;
+
+		private global::UnityEngine.AI.NavMeshPath agentCurrentPath;
+
+		private global::UnityEngine.Vector3[] agentCurrentPathCorners;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCMovementAssembly_002DCSharp_002Edll_Excuted;
 
@@ -415,7 +419,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__139))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__141))]
 		protected global::System.Collections.IEnumerator FaceDirection_Process(global::UnityEngine.Vector3 forward, float lerpTime)
 		{
 			return null;
