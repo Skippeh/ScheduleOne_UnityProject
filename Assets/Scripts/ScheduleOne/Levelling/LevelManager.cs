@@ -12,6 +12,8 @@ namespace ScheduleOne.Levelling
 
 		public global::System.Action<global::ScheduleOne.Levelling.FullRank, global::ScheduleOne.Levelling.FullRank> onRankUp;
 
+		public global::System.Action<global::ScheduleOne.Levelling.FullRank, global::ScheduleOne.Levelling.FullRank> onRankChanged;
+
 		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Levelling.FullRank, global::System.Collections.Generic.List<global::ScheduleOne.Levelling.Unlockable>> Unlockables;
 
 		private global::ScheduleOne.Persistence.Loaders.RankLoader loader;

@@ -49,6 +49,8 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::System.Action<bool> onInventoryStateChanged;
 
+		public global::System.Action<int> onEquippedSlotChanged;
+
 		private int PriorEquippedSlotIndex;
 
 		private int PreviousEquippedSlotIndex;
@@ -169,6 +171,10 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void SetEquippable(global::ScheduleOne.Equipping.Equippable eq)
+		{
+		}
+
+		public void EquippedSlotChanged()
 		{
 		}
 

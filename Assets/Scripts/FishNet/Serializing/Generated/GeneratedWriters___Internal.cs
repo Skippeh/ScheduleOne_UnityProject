@@ -88,10 +88,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002EPlayerScripts_002EPlayerFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.PlayerScripts.Player value)
-		{
-		}
-
 		public static void Write___ScheduleOne_002EDevUtilities_002EStringIntPairFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.DevUtilities.StringIntPair value)
 		{
 		}
@@ -217,6 +213,22 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EPlayerScripts_002EPlayerCrimeData_002FEPursuitLevelFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EGraffiti_002ESprayStrokeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Graffiti.SprayStroke value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EGraffiti_002EUShort2FishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Graffiti.UShort2 value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EGraffiti_002EESprayColorFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Graffiti.ESprayColor value)
+		{
+		}
+
+		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002EGraffiti_002ESprayStroke_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> value)
 		{
 		}
 

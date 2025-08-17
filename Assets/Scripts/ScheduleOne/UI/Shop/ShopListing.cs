@@ -34,6 +34,15 @@ namespace ScheduleOne.UI.Shop
 
 		public global::ScheduleOne.UI.Shop.ShopListing.ERestockRate RestockRate;
 
+		public bool TieStockToNumberVariable;
+
+		public string StockVariableName;
+
+		[global::UnityEngine.Header("Purchase Tracking")]
+		public bool TrackPurchases;
+
+		public string PurchasedQuantityVariableName;
+
 		[global::UnityEngine.Header("Settings")]
 		public bool EnforceMinimumGameCreationVersion;
 
@@ -47,6 +56,10 @@ namespace ScheduleOne.UI.Shop
 		public global::UnityEngine.Color IconTint;
 
 		public global::System.Action onStockChanged;
+
+		private global::ScheduleOne.Variables.NumberVariable stockVariable;
+
+		private global::ScheduleOne.Variables.NumberVariable purchasedQuantityVariable;
 
 		public bool IsInStock => false;
 
@@ -75,6 +88,14 @@ namespace ScheduleOne.UI.Shop
 		}
 
 		public void SetStock(int quantity, bool network = true)
+		{
+		}
+
+		public void PullStockFromVariable()
+		{
+		}
+
+		private void StockVariableChanged(float newValue)
 		{
 		}
 

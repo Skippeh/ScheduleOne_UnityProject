@@ -161,6 +161,10 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
+		private void PullStockVariables()
+		{
+		}
+
 		private void DeselectCurrentCategory()
 		{
 		}

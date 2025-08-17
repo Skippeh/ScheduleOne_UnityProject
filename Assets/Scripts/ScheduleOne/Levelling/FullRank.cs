@@ -31,6 +31,11 @@ namespace ScheduleOne.Levelling
 			return 0f;
 		}
 
+		public int GetRankIndex()
+		{
+			return 0;
+		}
+
 		public static string GetString(global::ScheduleOne.Levelling.FullRank rank)
 		{
 			return null;

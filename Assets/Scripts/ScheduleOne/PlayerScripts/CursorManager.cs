@@ -8,7 +8,8 @@ namespace ScheduleOne.PlayerScripts
 			Finger = 1,
 			OpenHand = 2,
 			Grab = 3,
-			Scissors = 4
+			Scissors = 4,
+			Spray = 5
 		}
 
 		[global::System.Serializable]

@@ -23,6 +23,10 @@ namespace ScheduleOne.Map
 		{
 		}
 
+		private void OnRankUp(global::ScheduleOne.Levelling.FullRank old, global::ScheduleOne.Levelling.FullRank newRank)
+		{
+		}
+
 		public global::ScheduleOne.Map.MapRegionData GetRegionData(global::ScheduleOne.Map.EMapRegion region)
 		{
 			return null;
@@ -31,6 +35,11 @@ namespace ScheduleOne.Map
 		public global::System.Collections.Generic.List<global::ScheduleOne.Map.EMapRegion> GetUnlockedRegions()
 		{
 			return null;
+		}
+
+		public global::ScheduleOne.Map.EMapRegion GetRegionFromPosition(global::UnityEngine.Vector3 position)
+		{
+			return default(global::ScheduleOne.Map.EMapRegion);
 		}
 	}
 }

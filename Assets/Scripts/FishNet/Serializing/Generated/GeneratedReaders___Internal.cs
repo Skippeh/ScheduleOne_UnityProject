@@ -108,11 +108,6 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
-		public static global::ScheduleOne.PlayerScripts.Player Read___ScheduleOne_002EPlayerScripts_002EPlayerFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
 		public static global::ScheduleOne.DevUtilities.StringIntPair Read___ScheduleOne_002EDevUtilities_002EStringIntPairFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -271,6 +266,26 @@ namespace FishNet.Serializing.Generated
 		public static global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel Read___ScheduleOne_002EPlayerScripts_002EPlayerCrimeData_002FEPursuitLevelFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel);
+		}
+
+		public static global::ScheduleOne.Graffiti.SprayStroke Read___ScheduleOne_002EGraffiti_002ESprayStrokeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.Graffiti.UShort2 Read___ScheduleOne_002EGraffiti_002EUShort2FishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Graffiti.UShort2);
+		}
+
+		public static global::ScheduleOne.Graffiti.ESprayColor Read___ScheduleOne_002EGraffiti_002EESprayColorFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Graffiti.ESprayColor);
+		}
+
+		public static global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> Read___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002EGraffiti_002ESprayStroke_003EFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
 		}
 
 		public static global::ScheduleOne.Property.Property Read___ScheduleOne_002EProperty_002EPropertyFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)

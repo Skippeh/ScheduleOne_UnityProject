@@ -343,6 +343,11 @@ namespace ScheduleOne.Economy
 			return 0;
 		}
 
+		public int GetPackagedProductAmount()
+		{
+			return 0;
+		}
+
 		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetStoredInstance(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{

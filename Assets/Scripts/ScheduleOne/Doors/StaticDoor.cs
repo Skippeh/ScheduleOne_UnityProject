@@ -22,6 +22,8 @@ namespace ScheduleOne.Doors
 
 		private float timeSinceLastKnock;
 
+		private int doorIndex;
+
 		protected virtual void Awake()
 		{
 		}

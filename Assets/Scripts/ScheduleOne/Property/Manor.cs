@@ -76,6 +76,14 @@ namespace ScheduleOne.Property
 		{
 		}
 
+		public void SetDestroyedIfOriginal()
+		{
+		}
+
+		public void DigTunnel()
+		{
+		}
+
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
 		public void SetTunnelDug(global::FishNet.Connection.NetworkConnection conn, bool dug)
@@ -89,6 +97,11 @@ namespace ScheduleOne.Property
 
 		private void OnSleepEnd()
 		{
+		}
+
+		public override bool ShouldSave()
+		{
+			return false;
 		}
 
 		public override string GetSaveString()

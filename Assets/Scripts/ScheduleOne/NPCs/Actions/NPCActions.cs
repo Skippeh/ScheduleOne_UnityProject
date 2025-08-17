@@ -19,7 +19,7 @@ namespace ScheduleOne.NPCs.Actions
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void CallPolice_Networked(global::ScheduleOne.PlayerScripts.Player player)
+		public void CallPolice_Networked(global::FishNet.Object.NetworkObject playerObj)
 		{
 		}
 
@@ -43,15 +43,15 @@ namespace ScheduleOne.NPCs.Actions
 		{
 		}
 
-		private void RpcWriter___Server_CallPolice_Networked_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcWriter___Server_CallPolice_Networked_3323014238(global::FishNet.Object.NetworkObject playerObj)
 		{
 		}
 
-		public void RpcLogic___CallPolice_Networked_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		public void RpcLogic___CallPolice_Networked_3323014238(global::FishNet.Object.NetworkObject playerObj)
 		{
 		}
 
-		private void RpcReader___Server_CallPolice_Networked_1385486242(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_CallPolice_Networked_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
