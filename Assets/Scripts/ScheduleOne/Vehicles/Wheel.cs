@@ -45,7 +45,7 @@ namespace ScheduleOne.Vehicles
 
 		private global::ScheduleOne.Vehicles.LandVehicle vehicle;
 
-		private global::UnityEngine.Vector3 lastFramePosition;
+		private global::UnityEngine.Vector3 lastFixedUpdatePosition;
 
 		private global::UnityEngine.WheelHit wheelData;
 
@@ -66,10 +66,6 @@ namespace ScheduleOne.Vehicles
 		public float DriftIntensity { get; protected set; }
 
 		protected virtual void Start()
-		{
-		}
-
-		protected virtual void LateUpdate()
 		{
 		}
 

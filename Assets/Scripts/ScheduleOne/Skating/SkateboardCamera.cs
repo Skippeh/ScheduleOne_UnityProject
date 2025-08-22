@@ -60,13 +60,23 @@ namespace ScheduleOne.Skating
 
 		private float y;
 
+		private float mouseIdleCooldown;
+
+		private float mouseIdleTimer;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ESkating_002ESkateboardCameraAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ESkating_002ESkateboardCameraAssembly_002DCSharp_002Edll_Excuted;
 
 		private global::UnityEngine.Transform cam => null;
 
+		private bool NeedSecondaryClick => false;
+
 		public virtual void Awake()
+		{
+		}
+
+		private void OnPlayerMountedSkateboard(global::ScheduleOne.Skating.Skateboard skateboard)
 		{
 		}
 
@@ -86,6 +96,10 @@ namespace ScheduleOne.Skating
 		{
 		}
 
+		private void CheckForMouseMovement()
+		{
+		}
+
 		private void LateUpdate()
 		{
 		}
@@ -94,7 +108,19 @@ namespace ScheduleOne.Skating
 		{
 		}
 
+		private void HandleNonSecondaryClickCameraMovement()
+		{
+		}
+
+		private void HandleSecondaryClickCameraMovement()
+		{
+		}
+
 		private void UpdateFOV()
+		{
+		}
+
+		private void ForceCameraReturn()
 		{
 		}
 

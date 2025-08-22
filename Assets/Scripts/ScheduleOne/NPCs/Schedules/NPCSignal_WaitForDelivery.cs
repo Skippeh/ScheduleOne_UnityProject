@@ -4,13 +4,19 @@ namespace ScheduleOne.NPCs.Schedules
 	{
 		public const float DESTINATION_THRESHOLD = 1.5f;
 
-		public global::ScheduleOne.Economy.DeliveryLocation Location;
+		private global::ScheduleOne.Quests.Contract contract;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_WaitForDeliveryAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ESchedules_002ENPCSignal_WaitForDeliveryAssembly_002DCSharp_002Edll_Excuted;
 
 		public new string ActionName => null;
+
+		private global::ScheduleOne.Economy.DeliveryLocation Location => null;
+
+		public void SetContract(global::ScheduleOne.Quests.Contract contract)
+		{
+		}
 
 		public override void Awake()
 		{
@@ -29,15 +35,19 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		public override void ActiveMinPassed()
-		{
-		}
-
 		public override void LateStarted()
 		{
 		}
 
 		public override void JumpTo()
+		{
+		}
+
+		private void EnsureNPCHasEnoughCash()
+		{
+		}
+
+		public override void ActiveMinPassed()
 		{
 		}
 

@@ -13,6 +13,8 @@ namespace ScheduleOne.Graffiti
 
 		public const float CARTEL_INFLUENCE_REDUCTION = 0.05f;
 
+		public const int PAINTED_PIXEL_LIMIT = 15000;
+
 		public global::ScheduleOne.Graffiti.SpraySurface SpraySurface;
 
 		public global::ScheduleOne.Interaction.InteractableObject IntObj;
@@ -24,6 +26,8 @@ namespace ScheduleOne.Graffiti
 		public global::UnityEngine.UI.Image SprayImg;
 
 		public global::ScheduleOne.Audio.AudioSourceController SpraySound;
+
+		public global::ScheduleOne.Audio.AudioSourceController CleanSound;
 
 		private global::ScheduleOne.Graffiti.ESprayColor selectedColor;
 
@@ -105,6 +109,10 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		private void UseGraffitiCleaner()
+		{
+		}
+
 		private void Exit(global::ScheduleOne.DevUtilities.ExitAction action)
 		{
 		}
@@ -134,6 +142,11 @@ namespace ScheduleOne.Graffiti
 		}
 
 		private static bool IsSprayCanEquipped()
+		{
+			return false;
+		}
+
+		private static bool IsGraffitiCleanerEquipped()
 		{
 			return false;
 		}

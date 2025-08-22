@@ -102,6 +102,10 @@ namespace ScheduleOne.Equipping
 
 		private float timeSincePrimaryClick;
 
+		private float timeSinceReloadStart;
+
+		private bool interruptReload;
+
 		public float Aim { get; private set; }
 
 		public float Accuracy { get; private set; }

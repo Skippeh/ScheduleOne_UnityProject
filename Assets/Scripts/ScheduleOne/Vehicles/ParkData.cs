@@ -8,5 +8,13 @@ namespace ScheduleOne.Vehicles
 		public int spotIndex;
 
 		public global::ScheduleOne.Vehicles.EParkingAlignment alignment;
+
+		public ParkData(global::System.Guid lotGUID, int spotIndex, global::ScheduleOne.Vehicles.EParkingAlignment alignment)
+		{
+		}
+
+		public ParkData()
+		{
+		}
 	}
 }

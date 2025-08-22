@@ -12,7 +12,7 @@ namespace ScheduleOne.Money
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CShowCashChange_003Ed__64 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CShowCashChange_003Ed__65 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -49,7 +49,7 @@ namespace ScheduleOne.Money
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CShowCashChange_003Ed__64(int _003C_003E1__state)
+			public _003CShowCashChange_003Ed__65(int _003C_003E1__state)
 			{
 			}
 
@@ -153,7 +153,8 @@ namespace ScheduleOne.Money
 		[global::FishNet.Object.Synchronizing.SyncVar(WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
 		public float lifetimeEarnings;
 
-		public global::ScheduleOne.Audio.AudioSourceController CashSound;
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.Audio.AudioSourceController CashSound;
 
 		[global::UnityEngine.Header("Prefabs")]
 		[global::UnityEngine.SerializeField]
@@ -299,11 +300,15 @@ namespace ScheduleOne.Money
 		{
 		}
 
+		public void PlayCashSound()
+		{
+		}
+
 		public void ChangeCashBalance(float change, bool visualizeChange = true, bool playCashSound = false)
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowCashChange_003Ed__64))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Money.MoneyManager._003CShowCashChange_003Ed__65))]
 		protected global::System.Collections.IEnumerator ShowCashChange(global::UnityEngine.RectTransform changeDisplay)
 		{
 			return null;

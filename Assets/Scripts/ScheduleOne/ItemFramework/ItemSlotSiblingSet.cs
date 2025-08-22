@@ -1,6 +1,6 @@
 namespace ScheduleOne.ItemFramework
 {
-	public class ItemSlotSiblingSet : global::UnityEngine.MonoBehaviour
+	public class ItemSlotSiblingSet
 	{
 		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> Slots;
 

@@ -47,7 +47,13 @@ namespace ScheduleOne.Vehicles
 
 		private float y;
 
+		private float mouseIdleCooldown;
+
+		private float mouseIdleTimer;
+
 		private global::UnityEngine.Transform cam => null;
+
+		private bool NeedSecondaryClick => false;
 
 		protected virtual void Start()
 		{
@@ -69,7 +75,23 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		private void CheckForMouseMovement()
+		{
+		}
+
 		protected virtual void LateUpdate()
+		{
+		}
+
+		private void HandleNonSecondaryClickCameraMovement()
+		{
+		}
+
+		private void HandleSecondaryClickCameraMovement()
+		{
+		}
+
+		private void ForceCameraReturn()
 		{
 		}
 

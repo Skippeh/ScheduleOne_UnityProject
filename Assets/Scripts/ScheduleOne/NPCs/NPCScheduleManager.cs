@@ -2,6 +2,8 @@ namespace ScheduleOne.NPCs
 {
 	public class NPCScheduleManager : global::UnityEngine.MonoBehaviour
 	{
+		private static readonly global::ScheduleOne.NPCs.Schedules.NPCActionOrderByDescending orderByDescending;
+
 		public bool DEBUG_MODE;
 
 		[global::UnityEngine.Header("References")]

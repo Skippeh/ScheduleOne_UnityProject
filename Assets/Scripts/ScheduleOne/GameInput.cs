@@ -19,8 +19,8 @@ namespace ScheduleOne
 			Interact = 12,
 			Submit = 13,
 			TogglePhone = 14,
-			ToggleLights = 15,
-			Handbrake = 16,
+			VehicleToggleLights = 15,
+			VehicleHandbrake = 16,
 			RotateLeft = 17,
 			RotateRight = 18,
 			ManagementMode = 19,
@@ -33,7 +33,10 @@ namespace ScheduleOne
 			Reload = 26,
 			InventoryLeft = 27,
 			InventoryRight = 28,
-			Holster = 29
+			Holster = 29,
+			VehicleResetCamera = 30,
+			SkateboardDismount = 31,
+			SkateboardMount = 32
 		}
 
 		public enum InputDeviceType
@@ -80,6 +83,8 @@ namespace ScheduleOne
 		public static global::UnityEngine.Vector3 MousePosition => default(global::UnityEngine.Vector3);
 
 		public static float MouseScrollDelta => 0f;
+
+		public static float VehicleDriveAxis { get; private set; }
 
 		protected override void Awake()
 		{
@@ -180,11 +185,11 @@ namespace ScheduleOne
 		{
 		}
 
-		private void OnToggleLights()
+		private void OnVehicleToggleLights()
 		{
 		}
 
-		private void OnHandbrake()
+		private void OnVehicleHandbrake()
 		{
 		}
 
@@ -249,6 +254,22 @@ namespace ScheduleOne
 		}
 
 		private void OnControllerCombo(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnVehicleResetCamera()
+		{
+		}
+
+		private void OnVehicleDrive(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnSkateboardDismount()
+		{
+		}
+
+		private void OnSkateboardMount()
 		{
 		}
 

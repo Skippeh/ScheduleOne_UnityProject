@@ -147,6 +147,19 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		public float GetCashInInventory()
+		{
+			return 0f;
+		}
+
+		public void RemoveCash(float amountToRemove)
+		{
+		}
+
+		public void AddCash(float amountToAdd)
+		{
+		}
+
 		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetStoredInstance(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{

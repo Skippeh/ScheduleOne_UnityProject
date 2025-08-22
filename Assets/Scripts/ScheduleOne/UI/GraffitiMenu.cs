@@ -15,6 +15,14 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.UI.Button CancelButton;
 
+		public global::UnityEngine.RectTransform RemainigPaintContainer;
+
+		public global::UnityEngine.UI.Slider RemainingPaintSlider;
+
+		public global::UnityEngine.UI.Image[] RemainingPaintImages;
+
+		public global::TMPro.TextMeshProUGUI RemainingPaintLabel;
+
 		[global::UnityEngine.Header("Prefabs")]
 		public global::UnityEngine.GameObject ColorButtonPrefab;
 
@@ -25,6 +33,8 @@ namespace ScheduleOne.UI
 		public global::System.Action onConfirmClicked;
 
 		private global::System.Collections.Generic.List<global::UnityEngine.UI.Button> colorButtons;
+
+		private global::ScheduleOne.Graffiti.SpraySurface activeSurface;
 
 		protected override void Awake()
 		{
@@ -43,6 +53,10 @@ namespace ScheduleOne.UI
 		}
 
 		private void SelectColor(global::ScheduleOne.Graffiti.ESprayColor color)
+		{
+		}
+
+		public void UpdateRemainingPaintIndicator(float remainingPaint)
 		{
 		}
 

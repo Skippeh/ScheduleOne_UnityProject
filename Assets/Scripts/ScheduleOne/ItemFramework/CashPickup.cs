@@ -5,6 +5,8 @@ namespace ScheduleOne.ItemFramework
 		[global::FishNet.Object.Synchronizing.SyncVar(OnChange = "ValueChanged")]
 		public float Value;
 
+		public bool PlayCashPickupSound;
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.ObjectScripts.Cash.CashStackVisuals CashStackVisuals;
 

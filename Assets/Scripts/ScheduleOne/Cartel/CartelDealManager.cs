@@ -4,7 +4,7 @@ namespace ScheduleOne.Cartel
 	{
 		public const int DEAL_DUE_TIME_DAYS = 3;
 
-		public const float PAYMENT_MULTIPLIER = 0.6f;
+		public const float PAYMENT_MULTIPLIER = 0.65f;
 
 		public const int DEAL_COOLDOWN_HOURS = 24;
 

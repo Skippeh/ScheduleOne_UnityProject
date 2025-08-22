@@ -4,9 +4,9 @@ namespace ScheduleOne.Quests
 	{
 		public global::ScheduleOne.Vehicles.LandVehicle MeetingVehicle;
 
-		public global::UnityEngine.Transform VehicleSpawnPoint;
+		public global::ScheduleOne.Map.ParkingLot MeetingParkingLot;
 
-		public global::ScheduleOne.Map.ParkingLot ParkingLot;
+		public global::ScheduleOne.Map.ParkingLot ManorParkingLot;
 
 		public global::ScheduleOne.NPCs.CharacterClasses.Thomas Thomas;
 
@@ -14,7 +14,13 @@ namespace ScheduleOne.Quests
 
 		public global::ScheduleOne.Quests.QuestEntry MeetingQuestEntry;
 
+		public global::ScheduleOne.Quests.Quest PrereqQuest;
+
 		public global::UnityEngine.Events.UnityEvent onMeetingConcluded;
+
+		protected override void Awake()
+		{
+		}
 
 		protected override void Start()
 		{
