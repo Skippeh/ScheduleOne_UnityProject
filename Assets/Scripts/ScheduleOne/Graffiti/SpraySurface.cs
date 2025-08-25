@@ -37,7 +37,7 @@ namespace ScheduleOne.Graffiti
 
 		public global::System.Guid GUID { get; protected set; }
 
-		public global::ScheduleOne.PlayerScripts.Player CurrentEditor { get; private set; }
+		public global::FishNet.Object.NetworkObject CurrentEditor { get; private set; }
 
 		public global::ScheduleOne.Graffiti.Drawing Drawing { get; private set; }
 
@@ -73,13 +73,13 @@ namespace ScheduleOne.Graffiti
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SetCurrentEditor_Server(global::ScheduleOne.PlayerScripts.Player player)
+		public void SetCurrentEditor_Server(global::FishNet.Object.NetworkObject player)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		private void SetCurrentEditor_Client(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.PlayerScripts.Player player)
+		private void SetCurrentEditor_Client(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject player)
 		{
 		}
 
@@ -171,35 +171,35 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void RpcWriter___Server_SetCurrentEditor_Server_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcWriter___Server_SetCurrentEditor_Server_3323014238(global::FishNet.Object.NetworkObject player)
 		{
 		}
 
-		public void RpcLogic___SetCurrentEditor_Server_1385486242(global::ScheduleOne.PlayerScripts.Player player)
+		public void RpcLogic___SetCurrentEditor_Server_3323014238(global::FishNet.Object.NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Server_SetCurrentEditor_Server_1385486242(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetCurrentEditor_Server_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetCurrentEditor_Client_3916101229(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcWriter___Observers_SetCurrentEditor_Client_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject player)
 		{
 		}
 
-		private void RpcLogic___SetCurrentEditor_Client_3916101229(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcLogic___SetCurrentEditor_Client_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Observers_SetCurrentEditor_Client_3916101229(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetCurrentEditor_Client_1824087381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetCurrentEditor_Client_3916101229(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.PlayerScripts.Player player)
+		private void RpcWriter___Target_SetCurrentEditor_Client_1824087381(global::FishNet.Connection.NetworkConnection conn, global::FishNet.Object.NetworkObject player)
 		{
 		}
 
-		private void RpcReader___Target_SetCurrentEditor_Client_3916101229(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetCurrentEditor_Client_1824087381(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

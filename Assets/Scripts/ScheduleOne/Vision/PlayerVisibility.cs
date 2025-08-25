@@ -32,7 +32,7 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		private void Awake_UserLogic_ScheduleOne_002EVision_002EPlayerVisibility_Assembly_002DCSharp_002Edll()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EVision_002EPlayerVisibility_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

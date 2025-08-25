@@ -422,10 +422,10 @@ namespace ScheduleOne.Vehicles.AI
 			return false;
 		}
 
-		public void BetterSweepTurn(global::ScheduleOne.Vehicles.AI.VehicleAgent.ESweepType sweep, float steerAngle, bool reverse, global::UnityEngine.LayerMask mask, out float hitDistance, out global::UnityEngine.Vector3 hitPoint)
+		public void BetterSweepTurn(global::ScheduleOne.Vehicles.AI.VehicleAgent.ESweepType sweep, float steerAngle, bool reverse, global::UnityEngine.LayerMask mask, out float hitDistance, out global::UnityEngine.RaycastHit hit)
 		{
 			hitDistance = default(float);
-			hitPoint = default(global::UnityEngine.Vector3);
+			hit = default(global::UnityEngine.RaycastHit);
 		}
 
 		public void StartReverse()

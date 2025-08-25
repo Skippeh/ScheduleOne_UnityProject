@@ -39,7 +39,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void SetProduct(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void SetProduct(global::ScheduleOne.Product.ProductItemInstance _product)
 		{
 		}
 
@@ -121,7 +121,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void RpcLogic___SetProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void RpcLogic___SetProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
 		{
 		}
 

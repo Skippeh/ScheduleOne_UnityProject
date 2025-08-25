@@ -13,7 +13,7 @@ namespace ScheduleOne.Graffiti
 
 		public const float CARTEL_INFLUENCE_REDUCTION = 0.05f;
 
-		public const int PAINTED_PIXEL_LIMIT = 15000;
+		public const int PAINTED_PIXEL_LIMIT = 25000;
 
 		public global::ScheduleOne.Graffiti.SpraySurface SpraySurface;
 

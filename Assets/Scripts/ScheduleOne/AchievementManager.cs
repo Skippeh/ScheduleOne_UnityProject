@@ -14,7 +14,8 @@ namespace ScheduleOne
 			UPSTANDING_CITIZEN = 7,
 			ROLLING_IN_STYLE = 8,
 			LONG_ARM_OF_THE_LAW = 9,
-			INDIAN_DEALER = 10
+			INDIAN_DEALER = 10,
+			URBAN_ARTIST = 11
 		}
 
 		private global::ScheduleOne.AchievementManager.EAchievement[] achievements;

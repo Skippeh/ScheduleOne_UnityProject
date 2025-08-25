@@ -38,6 +38,7 @@ namespace ScheduleOne.Skating
 
 		public global::ScheduleOne.DevUtilities.AverageAcceleration Accelerometer;
 
+		[global::UnityEngine.HideInInspector]
 		public global::ScheduleOne.Skating.Skateboard_Equippable Equippable;
 
 		public global::UnityEngine.Transform IKAlignmentsContainer;

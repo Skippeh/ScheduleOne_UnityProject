@@ -2,9 +2,14 @@ namespace ScheduleOne.NPCs
 {
 	public class Stan : global::ScheduleOne.NPCs.NPC
 	{
+		public global::ScheduleOne.UI.Shop.ShopInterface ShopInterface;
+
 		public global::ScheduleOne.Dialogue.DialogueContainer GreetingDialogue;
 
 		public string GreetedVariable;
+
+		[global::UnityEngine.Header("Settings")]
+		public string[] OrderCompletedLines;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EStanAssembly_002DCSharp_002Edll_Excuted;
 
@@ -23,6 +28,10 @@ namespace ScheduleOne.NPCs
 		}
 
 		private void SetGreeted()
+		{
+		}
+
+		private void OrderCompleted()
 		{
 		}
 

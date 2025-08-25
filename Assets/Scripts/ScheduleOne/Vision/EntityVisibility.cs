@@ -10,6 +10,8 @@ namespace ScheduleOne.Vision
 		public global::UnityEngine.LayerMask VisibilityCheckMask;
 
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.Transform CentralVisibilityPoint;
+
 		public global::System.Collections.Generic.List<global::UnityEngine.Transform> VisibilityPoints;
 
 		private global::ScheduleOne.Vision.VisibilityAttribute environmentalVisibility;
@@ -31,6 +33,10 @@ namespace ScheduleOne.Vision
 		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.EntityVisualState> VisualStates { get; protected set; }
 
 		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
+
+		public virtual void Awake()
+		{
+		}
 
 		public override void OnStartClient()
 		{
@@ -114,7 +120,7 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		public virtual void Awake()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EVision_002EEntityVisibility_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

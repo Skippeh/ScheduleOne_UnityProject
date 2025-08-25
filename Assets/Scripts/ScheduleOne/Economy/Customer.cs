@@ -32,6 +32,8 @@ namespace ScheduleOne.Economy
 
 		public static global::System.Action<global::ScheduleOne.Economy.Customer> onCustomerUnlocked;
 
+		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> LockedCustomers;
+
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> UnlockedCustomers;
 
 		public const float AFFINITY_MAX_EFFECT = 0.3f;

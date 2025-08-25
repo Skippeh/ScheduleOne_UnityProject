@@ -14,6 +14,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.GameObject UnlockedItemsContainer;
 
+		public global::UnityEngine.CanvasGroup UnlockedItemsCanvasGroup;
+
 		public global::UnityEngine.RectTransform[] UnlockedItems;
 
 		public global::TMPro.TextMeshProUGUI ExtraUnlocksLabel;

@@ -3,7 +3,7 @@ namespace ScheduleOne.PlayerTasks
 	public class FinalizeLabOven : global::ScheduleOne.PlayerTasks.Task
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CStartSequence_003Ed__14 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CStartSequence_003Ed__15 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.PlayerTasks
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CStartSequence_003Ed__14(int _003C_003E1__state)
+			public _003CStartSequence_003Ed__15(int _003C_003E1__state)
 			{
 			}
 
@@ -60,6 +60,8 @@ namespace ScheduleOne.PlayerTasks
 
 		public float SMASH_VELOCITY_THRESHOLD;
 
+		public float SMASH_COOLDOWN;
+
 		public const int REQUIRED_IMPACTS = 3;
 
 		private global::UnityEngine.Coroutine startSequence;
@@ -84,7 +86,7 @@ namespace ScheduleOne.PlayerTasks
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerTasks.FinalizeLabOven._003CStartSequence_003Ed__14))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerTasks.FinalizeLabOven._003CStartSequence_003Ed__15))]
 		private global::System.Collections.IEnumerator StartSequence()
 		{
 			return null;
