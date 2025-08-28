@@ -53,6 +53,8 @@ namespace ScheduleOne.Persistence
 
 		public string IndividualSavesContainerPath { get; protected set; }
 
+		public string BackupFolderPath => null;
+
 		public string SaveName { get; protected set; }
 
 		public static void ReportSaveError()
@@ -101,6 +103,10 @@ namespace ScheduleOne.Persistence
 		}
 
 		public void ClearCompletedSaveable(global::ScheduleOne.Persistence.ISaveable saveable)
+		{
+		}
+
+		public void CreateSaveBackup(global::ScheduleOne.Persistence.SaveInfo saveInfo)
 		{
 		}
 

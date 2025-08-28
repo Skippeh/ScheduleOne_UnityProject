@@ -123,7 +123,7 @@ namespace ScheduleOne.Persistence
 			return null;
 		}
 
-		public void StartGame(global::ScheduleOne.Persistence.SaveInfo info, bool allowLoadStacking = false)
+		public void StartGame(global::ScheduleOne.Persistence.SaveInfo info, bool allowLoadStacking = false, bool allowSaveBackup = true)
 		{
 		}
 

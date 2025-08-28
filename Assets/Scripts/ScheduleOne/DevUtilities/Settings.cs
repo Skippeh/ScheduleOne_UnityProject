@@ -28,6 +28,8 @@ namespace ScheduleOne.DevUtilities
 
 		public global::ScheduleOne.DevUtilities.InputSettings InputSettings;
 
+		public global::ScheduleOne.DevUtilities.OtherSettings OtherSettings;
+
 		public global::UnityEngine.InputSystem.InputActionAsset InputActions;
 
 		public global::ScheduleOne.GameInput GameInput;
@@ -102,6 +104,14 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
+		public void ReloadOtherSettings()
+		{
+		}
+
+		public void ApplyOtherSettings(global::ScheduleOne.DevUtilities.OtherSettings settings)
+		{
+		}
+
 		public void WriteDisplaySettings(global::ScheduleOne.DevUtilities.DisplaySettings settings)
 		{
 		}
@@ -134,6 +144,15 @@ namespace ScheduleOne.DevUtilities
 		}
 
 		public global::ScheduleOne.DevUtilities.InputSettings ReadInputSettings()
+		{
+			return null;
+		}
+
+		public void WriteOtherSettings(global::ScheduleOne.DevUtilities.OtherSettings settings)
+		{
+		}
+
+		public global::ScheduleOne.DevUtilities.OtherSettings ReadOtherSettings()
 		{
 			return null;
 		}
