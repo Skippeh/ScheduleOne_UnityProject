@@ -17,6 +17,10 @@ namespace ScheduleOne.Map
 
 		private bool intercomActive;
 
+		private bool NetworkInitialize___EarlyScheduleOne_002EMap_002EManorGateAssembly_002DCSharp_002Edll_Excuted;
+
+		private bool NetworkInitialize__LateScheduleOne_002EMap_002EManorGateAssembly_002DCSharp_002Edll_Excuted;
+
 		protected virtual void Start()
 		{
 		}
@@ -43,6 +47,22 @@ namespace ScheduleOne.Map
 		}
 
 		private void UpdateIntercom()
+		{
+		}
+
+		public override void NetworkInitialize___Early()
+		{
+		}
+
+		public override void NetworkInitialize__Late()
+		{
+		}
+
+		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		public override void Awake()
 		{
 		}
 	}

@@ -8,6 +8,10 @@ namespace ScheduleOne.Graffiti
 
 		private global::ScheduleOne.Persistence.Loaders.GraffitiLoader loader;
 
+		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Graffiti.SpraySurface, global::FishNet.Connection.NetworkConnection>> surfaceReplicationQueue;
+
+		private float timeUntilNextReplication;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002EGraffiti_002EGraffitiManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EGraffiti_002EGraffitiManagerAssembly_002DCSharp_002Edll_Excuted;
@@ -38,6 +42,10 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		private void Update()
+		{
+		}
+
 		public virtual void InitializeSaveable()
 		{
 		}
@@ -57,6 +65,18 @@ namespace ScheduleOne.Graffiti
 		public virtual string GetSaveString()
 		{
 			return null;
+		}
+
+		public void QueueSurfaceToReplicate(global::ScheduleOne.Graffiti.SpraySurface surface, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		public void RemoveFromReplicationQueueIfPresent(global::ScheduleOne.Graffiti.SpraySurface surface)
+		{
+		}
+
+		private void ReplicateSurface()
+		{
 		}
 
 		public override void NetworkInitialize___Early()

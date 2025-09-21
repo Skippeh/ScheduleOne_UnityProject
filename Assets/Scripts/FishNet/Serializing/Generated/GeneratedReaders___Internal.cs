@@ -263,6 +263,11 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
+		public static global::ScheduleOne.Graffiti.SprayStroke[] Read___ScheduleOne_002EGraffiti_002ESprayStroke_005B_005DFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
 		public static global::ScheduleOne.Vehicles.LandVehicle Read___ScheduleOne_002EVehicles_002ELandVehicleFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;

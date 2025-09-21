@@ -18,7 +18,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const bool GLOBAL_USE_IMPOSTOR = true;
 
-		public const float AnimationRangeSqr = 1600f;
+		public const float AnimationRangeSqr = 2025f;
 
 		public const float FrustrumCullMinDist = 225f;
 

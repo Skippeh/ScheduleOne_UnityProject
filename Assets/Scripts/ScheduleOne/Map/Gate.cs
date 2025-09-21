@@ -1,6 +1,6 @@
 namespace ScheduleOne.Map
 {
-	public class Gate : global::UnityEngine.MonoBehaviour
+	public class Gate : global::FishNet.Object.NetworkBehaviour
 	{
 		public global::UnityEngine.Transform Gate1;
 
@@ -29,6 +29,10 @@ namespace ScheduleOne.Map
 
 		private float openDelta;
 
+		private bool NetworkInitialize___EarlyScheduleOne_002EMap_002EGateAssembly_002DCSharp_002Edll_Excuted;
+
+		private bool NetworkInitialize__LateScheduleOne_002EMap_002EGateAssembly_002DCSharp_002Edll_Excuted;
+
 		public bool IsOpen { get; protected set; }
 
 		private void Update()
@@ -36,12 +40,54 @@ namespace ScheduleOne.Map
 		}
 
 		[global::EasyButtons.Button]
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		public void Open()
 		{
 		}
 
 		[global::EasyButtons.Button]
+		[global::FishNet.Object.ObserversRpc]
 		public void Close()
+		{
+		}
+
+		public virtual void NetworkInitialize___Early()
+		{
+		}
+
+		public virtual void NetworkInitialize__Late()
+		{
+		}
+
+		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		private void RpcWriter___Observers_Open_2166136261()
+		{
+		}
+
+		public void RpcLogic___Open_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_Open_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_Close_2166136261()
+		{
+		}
+
+		public void RpcLogic___Close_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_Close_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		public virtual void Awake()
 		{
 		}
 	}

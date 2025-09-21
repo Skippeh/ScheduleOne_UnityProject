@@ -4,7 +4,7 @@ public static class GUIDManager
 
 	private static global::System.Collections.Generic.Dictionary<global::System.Guid, object> guidToObject;
 
-	public static void RegisterObject(global::ScheduleOne.IGUIDRegisterable obj)
+	public static void RegisterObject(global::ScheduleOne.IGUIDRegisterable obj, global::UnityEngine.GameObject go = null)
 	{
 	}
 

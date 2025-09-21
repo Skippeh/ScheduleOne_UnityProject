@@ -72,6 +72,10 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		public void ReplicateTo(global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SetCurrentEditor_Server(global::FishNet.Object.NetworkObject player)
 		{
@@ -127,7 +131,7 @@ namespace ScheduleOne.Graffiti
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		public void Set(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> strokes, bool hasBeenFinalized)
+		public void Set(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
 		{
 		}
 
@@ -263,23 +267,23 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void RpcWriter___Observers_Set_4232712843(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> strokes, bool hasBeenFinalized)
+		private void RpcWriter___Observers_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
 		{
 		}
 
-		public void RpcLogic___Set_4232712843(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> strokes, bool hasBeenFinalized)
+		public void RpcLogic___Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
 		{
 		}
 
-		private void RpcReader___Observers_Set_4232712843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Set_4105842735(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_Set_4232712843(global::FishNet.Connection.NetworkConnection conn, global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> strokes, bool hasBeenFinalized)
+		private void RpcWriter___Target_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
 		{
 		}
 
-		private void RpcReader___Target_Set_4232712843(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_Set_4105842735(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

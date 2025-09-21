@@ -494,11 +494,12 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public virtual float EvaluateDelivery(global::ScheduleOne.Quests.Contract contract, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> providedItems, out float highestAddiction, out global::ScheduleOne.Product.EDrugType mainTypeType, out int matchedProductCount)
+		public virtual float EvaluateDelivery(global::ScheduleOne.Quests.Contract contract, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> providedItems, out float highestAddiction, out global::ScheduleOne.Product.EDrugType mainTypeType, out int matchedProductCount, out float qualityDifference)
 		{
 			highestAddiction = default(float);
 			mainTypeType = default(global::ScheduleOne.Product.EDrugType);
 			matchedProductCount = default(int);
+			qualityDifference = default(float);
 			return 0f;
 		}
 

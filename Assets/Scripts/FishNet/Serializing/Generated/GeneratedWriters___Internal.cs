@@ -212,6 +212,10 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002EGraffiti_002ESprayStroke_005B_005DFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Graffiti.SprayStroke[] value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EVehicles_002ELandVehicleFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Vehicles.LandVehicle value)
 		{
 		}

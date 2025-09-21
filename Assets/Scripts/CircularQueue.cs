@@ -1,6 +1,5 @@
 public class CircularQueue<T> where T : struct
 {
-	[global::Unity.Collections.ReadOnly]
 	public global::Unity.Collections.NativeArray<T> q;
 
 	private int idx;

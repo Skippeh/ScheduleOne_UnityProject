@@ -38,7 +38,7 @@ namespace ScheduleOne.Persistence.Datas
 			return false;
 		}
 
-		public T GetData<T>(string name) where T : global::ScheduleOne.Persistence.Datas.SaveData
+		public T GetData<T>(string name, bool warn = true) where T : global::ScheduleOne.Persistence.Datas.SaveData
 		{
 			return null;
 		}
