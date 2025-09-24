@@ -60,8 +60,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool BodySearchPending;
 
-		public float timeSinceLastShot;
-
 		protected global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerCrimeData.VehicleCollisionInstance> Collisions;
 
 		private global::ScheduleOne.Audio.MusicTrack _lightCombatTrack;
@@ -241,10 +239,6 @@ namespace ScheduleOne.PlayerScripts
 		public float GetSearchTime()
 		{
 			return 0f;
-		}
-
-		public void ResetShotAccuracy()
-		{
 		}
 
 		public float GetShotAccuracyMultiplier()

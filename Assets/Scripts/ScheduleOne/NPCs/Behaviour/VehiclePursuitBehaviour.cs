@@ -2,7 +2,7 @@ namespace ScheduleOne.NPCs.Behaviour
 {
 	public class VehiclePursuitBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
 	{
-		public const float EXTRA_VISIBILITY_TIME = 6f;
+		public const float RECENT_VISIBILITY_THRESHOLD = 5f;
 
 		public const float EXIT_VEHICLE_MAX_SPEED = 4f;
 
@@ -23,13 +23,9 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool aggressiveDrivingEnabled;
 
-		private bool isTargetVisible;
-
-		private bool isTargetStrictlyVisible;
-
-		private float playerSightedDuration;
-
 		private float timeSinceLastSighting;
+
+		private bool visionEventReceived;
 
 		private int consecutiveVehiclePathingFailures;
 
@@ -47,7 +43,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EVehiclePursuitBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::ScheduleOne.PlayerScripts.Player TargetPlayer { get; protected set; }
+		public global::ScheduleOne.PlayerScripts.Player Target { get; protected set; }
+
+		public bool IsTargetRecentlyVisible { get; private set; }
+
+		public bool IsTargetImmediatelyVisible { get; private set; }
 
 		private bool isDriving => false;
 
@@ -137,13 +137,17 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private bool IsPlayerVisible()
+		protected void CheckTargetVisibility()
 		{
-			return false;
 		}
 
-		private void CheckPlayerVisibility()
+		public void MarkPlayerVisible()
 		{
+		}
+
+		protected bool IsTargetVisible()
+		{
+			return false;
 		}
 
 		private void ProcessVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
@@ -151,6 +155,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void ProcessThirdPartyVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt visionEventReceipt)
+		{
+		}
+
+		protected virtual void TargetSpotted()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void NotifyServerTargetSeen()
 		{
 		}
 
@@ -163,6 +176,18 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		private void RpcWriter___Server_NotifyServerTargetSeen_2166136261()
+		{
+		}
+
+		public void RpcLogic___NotifyServerTargetSeen_2166136261()
+		{
+		}
+
+		private void RpcReader___Server_NotifyServerTargetSeen_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

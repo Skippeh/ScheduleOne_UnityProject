@@ -147,7 +147,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected void SetDestination(global::UnityEngine.Vector3 position, bool teleportIfFail = true)
+		protected virtual void SetDestination(global::UnityEngine.Vector3 position, bool teleportIfFail = true)
 		{
 		}
 

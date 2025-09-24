@@ -194,11 +194,6 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		protected override bool ShouldNoticeGeneralCrime(global::ScheduleOne.PlayerScripts.Player player)
-		{
-			return false;
-		}
-
 		protected override void MinPass()
 		{
 		}

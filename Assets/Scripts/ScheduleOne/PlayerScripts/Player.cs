@@ -81,8 +81,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.PlayerScripts.Player.VehicleTransformEvent onExitVehicle;
 
-		public global::ScheduleOne.Vehicles.LandVehicle LastDrivenVehicle;
-
 		public global::System.Action<global::ScheduleOne.Skating.Skateboard> onSkateboardMounted;
 
 		public global::System.Action onSkateboardDismounted;
@@ -209,6 +207,8 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public global::ScheduleOne.Vehicles.VehicleSeat CurrentVehicleSeat { get; private set; }
+
+		public global::ScheduleOne.Vehicles.LandVehicle LastDrivenVehicle { get; private set; }
 
 		public float TimeSinceVehicleExit { get; protected set; }
 
@@ -811,12 +811,23 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void Arrest()
+		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		public void Arrest_Server()
 		{
 		}
 
-		public void Free()
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void Arrest_Client()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		public void Free_Server()
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void Free_Client()
 		{
 		}
 
@@ -1404,15 +1415,51 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Observers_Arrest_2166136261()
+		private void RpcWriter___Server_Arrest_Server_2166136261()
 		{
 		}
 
-		public void RpcLogic___Arrest_2166136261()
+		public void RpcLogic___Arrest_Server_2166136261()
 		{
 		}
 
-		private void RpcReader___Observers_Arrest_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Server_Arrest_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_Arrest_Client_2166136261()
+		{
+		}
+
+		private void RpcLogic___Arrest_Client_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_Arrest_Client_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_Free_Server_2166136261()
+		{
+		}
+
+		public void RpcLogic___Free_Server_2166136261()
+		{
+		}
+
+		private void RpcReader___Server_Free_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_Free_Client_2166136261()
+		{
+		}
+
+		private void RpcLogic___Free_Client_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_Free_Client_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

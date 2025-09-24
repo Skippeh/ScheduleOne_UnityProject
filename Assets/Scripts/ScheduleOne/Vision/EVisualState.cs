@@ -8,10 +8,9 @@ namespace ScheduleOne.Vision
 		Vandalizing = 3,
 		PettyCrime = 4,
 		DrugDealing = 5,
-		SearchedFor = 6,
-		Wanted = 7,
-		Pickpocketing = 8,
-		DischargingWeapon = 9,
-		Brandishing = 10
+		Wanted = 6,
+		Pickpocketing = 7,
+		DischargingWeapon = 8,
+		Brandishing = 9
 	}
 }

@@ -156,6 +156,13 @@ namespace ScheduleOne.Police
 		{
 		}
 
+		private bool TryGetNearestAssignedNPC(out global::ScheduleOne.NPCs.NPC npc, out float distance)
+		{
+			npc = null;
+			distance = default(float);
+			return false;
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}

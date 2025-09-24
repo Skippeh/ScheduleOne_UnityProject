@@ -152,5 +152,10 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 			return false;
 		}
+
+		public virtual float GetIdealUseRange()
+		{
+			return 0f;
+		}
 	}
 }

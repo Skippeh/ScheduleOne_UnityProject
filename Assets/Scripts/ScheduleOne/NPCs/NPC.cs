@@ -16,8 +16,6 @@ namespace ScheduleOne.NPCs
 
 		public string ID;
 
-		public bool AutoGenerateMugshot;
-
 		public global::UnityEngine.Sprite MugshotSprite;
 
 		public global::ScheduleOne.Map.EMapRegion Region;
@@ -468,11 +466,6 @@ namespace ScheduleOne.NPCs
 
 		public void SetAnimationBool(string trigger, bool val)
 		{
-		}
-
-		protected virtual bool ShouldNoticeGeneralCrime(global::ScheduleOne.PlayerScripts.Player player)
-		{
-			return false;
 		}
 
 		protected virtual void SetUnsettled_30s(global::ScheduleOne.PlayerScripts.Player player)

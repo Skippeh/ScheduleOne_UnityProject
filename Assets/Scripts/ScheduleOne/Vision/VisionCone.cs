@@ -17,7 +17,15 @@ namespace ScheduleOne.Vision
 
 			public bool Enabled;
 
-			public float RequiredNoticeTime;
+			[global::UnityEngine.Range(0.5f, 4f)]
+			public float NoticeTimeMultiplier;
+
+			public float RequiredNoticeTime => 0f;
+
+			public global::ScheduleOne.Vision.VisionCone.StateContainer GetCopy()
+			{
+				return null;
+			}
 		}
 
 		public class SightableData
@@ -33,24 +41,25 @@ namespace ScheduleOne.Vision
 
 		public const float VISION_UPDATE_INTERVAL = 0.1f;
 
+		public const float MinVisionDelta = 0.075f;
+
 		public static float UniversalAttentivenessScale;
 
 		public static float UniversalMemoryScale;
 
+		public const float HorizontalFOV = 135f;
+
+		public const float VerticalFOV = 100f;
+
+		public const float Range = 25f;
+
+		public const float MinorWidth = 3f;
+
+		public const float MinorHeight = 1.5f;
+
 		public bool DEBUG;
 
 		public bool DisableSightUpdates;
-
-		[global::UnityEngine.Header("Frustrum Settings")]
-		public float HorizontalFOV;
-
-		public float VerticalFOV;
-
-		public float Range;
-
-		public float MinorWidth;
-
-		public float MinorHeight;
 
 		public global::UnityEngine.Transform VisionOrigin;
 
@@ -67,11 +76,10 @@ namespace ScheduleOne.Vision
 		public float RangeMultiplier;
 
 		[global::UnityEngine.Header("Interest settings")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionCone.StateContainer> StatesOfInterest;
+		[global::UnityEngine.Serialization.FormerlySerializedAs("StatesOfInterest")]
+		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.VisionCone.StateContainer> DefaultStatesOfInterest;
 
 		[global::UnityEngine.Header("Notice Settings")]
-		public float MinVisionDelta;
-
 		public float Attentiveness;
 
 		public float Memory;
@@ -105,7 +113,7 @@ namespace ScheduleOne.Vision
 
 		protected global::ScheduleOne.NPCs.NPC npc;
 
-		protected bool generalCrimeResponseActive;
+		protected bool noticeGeneralCrime;
 
 		protected global::System.Collections.Generic.List<global::ScheduleOne.Vision.ISightable> sightablesSeenThisFrame;
 
@@ -179,9 +187,13 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		public global::ScheduleOne.Vision.VisionCone.StateContainer GetStateSettings(global::ScheduleOne.Vision.ISightable sightable, global::ScheduleOne.Vision.EVisualState state)
+		public void SetSightableStateEnabled(global::ScheduleOne.Vision.ISightable sightable, global::ScheduleOne.Vision.EVisualState state, bool enabled)
 		{
-			return null;
+		}
+
+		[global::EasyButtons.Button]
+		public void PrintSightableStates()
+		{
 		}
 
 		public virtual bool IsPointWithinSight(global::UnityEngine.Vector3 point, bool ignoreLoS = false, global::ScheduleOne.Vehicles.LandVehicle vehicleToIgnore = null)
@@ -220,7 +232,7 @@ namespace ScheduleOne.Vision
 			return false;
 		}
 
-		public virtual void SetGeneralCrimeResponseActive(global::ScheduleOne.PlayerScripts.Player player, bool active)
+		public virtual void SetNoticePlayerCrimes(global::ScheduleOne.PlayerScripts.Player player, bool active)
 		{
 		}
 

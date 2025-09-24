@@ -4,19 +4,7 @@ namespace ScheduleOne.NPCs
 	{
 		public bool DEBUG;
 
-		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
-
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation anim;
-
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.NPCs.NPCMovement movement;
-
 		protected global::ScheduleOne.NPCs.NPC npc;
-
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Tools.SmoothedVelocityCalculator velocityCalculator;
 
 		[global::UnityEngine.Header("Settings")]
 		public global::UnityEngine.AnimationCurve WalkMapCurve;
@@ -25,7 +13,7 @@ namespace ScheduleOne.NPCs
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ENPCAnimationAssembly_002DCSharp_002Edll_Excuted;
 
-		private void Start()
+		public virtual void Awake()
 		{
 		}
 
@@ -38,10 +26,6 @@ namespace ScheduleOne.NPCs
 		}
 
 		public virtual void SetRagdollActive(bool active)
-		{
-		}
-
-		public void ResetVelocityCalculations()
 		{
 		}
 
@@ -65,7 +49,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public virtual void Awake()
+		private void Awake_UserLogic_ScheduleOne_002ENPCs_002ENPCAnimation_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

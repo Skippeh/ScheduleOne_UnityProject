@@ -15,7 +15,7 @@ namespace ScheduleOne.AvatarFramework
 		public bool DEBUG;
 
 		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Anim;
+		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Animation;
 
 		public global::ScheduleOne.AvatarFramework.Animation.AvatarLookController LookController;
 

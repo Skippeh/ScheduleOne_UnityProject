@@ -93,5 +93,10 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 			return null;
 		}
+
+		public override float GetIdealUseRange()
+		{
+			return 0f;
+		}
 	}
 }
