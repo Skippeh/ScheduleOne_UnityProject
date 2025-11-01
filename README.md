@@ -2,7 +2,7 @@
 
 All script methods/etc have been stripped, but scriptable objects and prefabs etc still work fine at runtime if loaded with a mod loader like BepInEx or MelonLoader.
 
-Only works with Unity Editor version 2022.3.32.
+Only works with Unity Editor version 2022.3.62f2.
 
 ## First time setup instructions
 
