@@ -4,7 +4,15 @@ namespace ScheduleOne.DevUtilities
 	{
 		public global::UnityEngine.Transform ToCopy;
 
+		private void Start()
+		{
+		}
+
 		private void LateUpdate()
+		{
+		}
+
+		public void UpdateEnabledState()
 		{
 		}
 	}

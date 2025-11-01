@@ -26,6 +26,8 @@ namespace ScheduleOne.Audio
 
 		public float MaxDistance;
 
+		public bool PlayWhileInSewer;
+
 		private int timeSinceLastPlay;
 
 		private void Start()

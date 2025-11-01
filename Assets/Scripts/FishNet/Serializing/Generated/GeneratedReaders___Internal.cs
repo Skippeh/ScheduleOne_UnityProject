@@ -318,6 +318,11 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Product.EDrugType);
 		}
 
+		public static global::ScheduleOne.Doors.EDoorSide Read___ScheduleOne_002EDoors_002EEDoorSideFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Doors.EDoorSide);
+		}
+
 		public static global::ScheduleOne.DevUtilities.StringIntPair Read___ScheduleOne_002EDevUtilities_002EStringIntPairFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -406,11 +411,6 @@ namespace FishNet.Serializing.Generated
 		public static global::ScheduleOne.Cartel.CartelDealInfo.EStatus Read___ScheduleOne_002ECartel_002ECartelDealInfo_002FEStatusFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.Cartel.CartelDealInfo.EStatus);
-		}
-
-		public static global::ScheduleOne.Doors.EDoorSide Read___ScheduleOne_002EDoors_002EEDoorSideFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Doors.EDoorSide);
 		}
 
 		public static global::ScheduleOne.Vehicles.Modification.EVehicleColor Read___ScheduleOne_002EVehicles_002EModification_002EEVehicleColorFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)

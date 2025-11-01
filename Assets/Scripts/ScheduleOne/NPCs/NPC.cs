@@ -272,7 +272,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		protected virtual void Update()
+		protected virtual void UpdateVisionConeState(bool value)
 		{
 		}
 
@@ -390,8 +390,16 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		protected virtual void EnterBuilding(string buildingGUID, int doorIndex)
+		{
+		}
+
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		public void ExitBuilding(string buildingID = "")
+		{
+		}
+
+		protected virtual void ExitBuilding(global::ScheduleOne.Map.NPCEnterableBuilding building)
 		{
 		}
 

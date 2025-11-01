@@ -42,10 +42,6 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void Update()
-		{
-		}
-
 		public virtual void InitializeSaveable()
 		{
 		}
@@ -68,14 +64,6 @@ namespace ScheduleOne.Graffiti
 		}
 
 		public void QueueSurfaceToReplicate(global::ScheduleOne.Graffiti.SpraySurface surface, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		public void RemoveFromReplicationQueueIfPresent(global::ScheduleOne.Graffiti.SpraySurface surface)
-		{
-		}
-
-		private void ReplicateSurface()
 		{
 		}
 

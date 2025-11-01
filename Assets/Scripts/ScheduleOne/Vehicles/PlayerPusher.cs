@@ -21,7 +21,11 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void FixedUpdate()
+		private void OnDestroy()
+		{
+		}
+
+		public void SetEnabled(bool isEnabled)
 		{
 		}
 

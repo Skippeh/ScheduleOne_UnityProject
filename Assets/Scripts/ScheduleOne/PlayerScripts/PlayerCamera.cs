@@ -280,7 +280,7 @@ namespace ScheduleOne.PlayerScripts
 
 		private float focusMouseY;
 
-		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.PlayerScripts.PlayerMovement.MovementEvent> movementEvents;
+		private global::System.Collections.Generic.Dictionary<int, global::ScheduleOne.Tools.MotionEvent> movementEvents;
 
 		private float freeCamSpeed;
 

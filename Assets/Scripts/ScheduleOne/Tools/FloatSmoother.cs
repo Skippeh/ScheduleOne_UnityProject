@@ -22,17 +22,11 @@ namespace ScheduleOne.Tools
 
 		private global::ScheduleOne.Tools.FloatSmoother.Override activeOverride;
 
-		private int activeCount;
-
 		public float CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }
 
 		public void Initialize()
-		{
-		}
-
-		public void Destroy()
 		{
 		}
 

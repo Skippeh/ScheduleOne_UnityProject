@@ -21,8 +21,7 @@ namespace ScheduleOne.Dragging
 
 		private global::ScheduleOne.PlayerScripts.Player currentDragger;
 
-		[global::UnityEngine.SerializeField]
-		protected string BakedGUID;
+		public string BakedGUID;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Rigidbody Rigidbody;
@@ -94,7 +93,7 @@ namespace ScheduleOne.Dragging
 		{
 		}
 
-		public void UpdateDraggable(float fixedDeltaTime)
+		public void UpdateDraggable()
 		{
 		}
 

@@ -3,7 +3,7 @@ namespace ScheduleOne.FX
 	public class PlayerHealthVisuals : global::UnityEngine.MonoBehaviour
 	{
 		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.Rendering.Volume GlobalVolume;
+		public global::UnityEngine.Rendering.Volume[] PPVolumes;
 
 		[global::UnityEngine.Header("Vignette")]
 		public float VignetteAlpha_MaxHealth;
@@ -27,7 +27,7 @@ namespace ScheduleOne.FX
 
 		public float LensDirt_MinHealth;
 
-		private global::Beautify.Universal.Beautify _beautifySettings;
+		private global::Beautify.Universal.Beautify[] _beautifySettings;
 
 		private void Awake()
 		{

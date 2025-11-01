@@ -32,6 +32,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float SEAT_TIME = 0.5f;
 
+		private bool _IsAvatarCulled;
+
 		public bool DEBUG_MODE;
 
 		private int framesActive;
@@ -100,7 +102,28 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public bool StandUpAnimationPlaying { get; protected set; }
 
-		public bool IsAvatarCulled { get; private set; }
+		public bool IsAvatarCulled
+		{
+			get
+			{
+				return false;
+			}
+			private set
+			{
+			}
+		}
+
+		public event global::System.Action<bool> onAvatarCullStateChanged
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
 
 		protected virtual void Awake()
 		{

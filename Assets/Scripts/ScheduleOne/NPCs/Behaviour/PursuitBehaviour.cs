@@ -97,10 +97,6 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		protected override void FixedUpdate()
-		{
-		}
-
 		protected virtual void UpdateInvestigatingBehaviour()
 		{
 		}
@@ -151,6 +147,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void SetArrestCircleColor(global::UnityEngine.Color col)
+		{
+		}
+
+		private void OnThirdPartyVisionEvent(global::ScheduleOne.Vision.VisionEventReceipt receipt)
 		{
 		}
 

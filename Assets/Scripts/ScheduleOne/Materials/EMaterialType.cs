@@ -13,6 +13,7 @@ namespace ScheduleOne.Materials
 		Metal = 8,
 		Plastic = 9,
 		Rock = 10,
-		Fabric = 11
+		Fabric = 11,
+		Water = 12
 	}
 }

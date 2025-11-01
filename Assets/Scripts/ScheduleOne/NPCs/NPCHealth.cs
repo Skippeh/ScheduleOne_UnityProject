@@ -4,12 +4,68 @@ namespace ScheduleOne.NPCs
 	[global::UnityEngine.DisallowMultipleComponent]
 	public class NPCHealth : global::FishNet.Object.NetworkBehaviour
 	{
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CAfflictWithLethalEffect_003Ed__38 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.NPCs.NPCHealth _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CAfflictWithLethalEffect_003Ed__38(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
 		public const int REVIVE_DAYS = 3;
 
 		[global::UnityEngine.Header("Settings")]
 		public bool Invincible;
 
 		public float MaxHealth;
+
+		public bool CanRevive;
 
 		private global::ScheduleOne.NPCs.NPC npc;
 
@@ -20,6 +76,8 @@ namespace ScheduleOne.NPCs
 		public global::UnityEngine.Events.UnityEvent onDieOrKnockedOut;
 
 		public global::UnityEngine.Events.UnityEvent onRevive;
+
+		public global::System.Action<float> onTakeDamage;
 
 		private bool AfflictedWithLethalEffect;
 
@@ -41,6 +99,8 @@ namespace ScheduleOne.NPCs
 			{
 			}
 		}
+
+		public float NormalizedHealth => 0f;
 
 		public bool IsDead { get; private set; }
 
@@ -81,8 +141,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void Update()
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCHealth._003CAfflictWithLethalEffect_003Ed__38))]
+		private global::System.Collections.IEnumerator AfflictWithLethalEffect()
 		{
+			return null;
 		}
 
 		protected virtual void OnHourPass()
@@ -114,6 +176,10 @@ namespace ScheduleOne.NPCs
 		}
 
 		public virtual void Revive()
+		{
+		}
+
+		public void RestoreHealth()
 		{
 		}
 

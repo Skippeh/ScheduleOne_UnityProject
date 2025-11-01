@@ -16,16 +16,6 @@ namespace ScheduleOne.FX
 
 		public global::UnityEngine.Light MoonLight;
 
-		[global::UnityEngine.Header("Fog")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient fogColorGradient;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.AnimationCurve fogEndDistanceCurve;
-
-		[global::UnityEngine.SerializeField]
-		protected float fogEndDistanceMultiplier;
-
 		[global::UnityEngine.Header("Height Fog")]
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Gradient HeightFogColor;
@@ -48,6 +38,10 @@ namespace ScheduleOne.FX
 
 		[global::UnityEngine.SerializeField]
 		protected float VolumetricFogIntensityMultiplier;
+
+		[global::UnityEngine.Header("Fog")]
+		[global::UnityEngine.SerializeField]
+		private float fogEndDistanceMultiplier;
 
 		[global::UnityEngine.Header("God rays")]
 		[global::UnityEngine.SerializeField]
@@ -90,6 +84,8 @@ namespace ScheduleOne.FX
 		public global::ScheduleOne.Tools.FloatSmoother FogEndDistanceController;
 
 		public float normalizedEnvironmentalBrightness => 0f;
+
+		public float FogEndDistanceMultiplier => 0f;
 
 		protected override void Start()
 		{

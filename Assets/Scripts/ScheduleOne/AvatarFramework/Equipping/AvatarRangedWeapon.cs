@@ -3,7 +3,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 	public class AvatarRangedWeapon : global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CReload_003Ed__36 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CReload_003Ed__37 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CReload_003Ed__36(int _003C_003E1__state)
+			public _003CReload_003Ed__37(int _003C_003E1__state)
 			{
 			}
 
@@ -117,6 +117,10 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
+		public override void Unequip()
+		{
+		}
+
 		public virtual void SetIsRaised(bool raised)
 		{
 		}
@@ -142,7 +146,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon._003CReload_003Ed__36))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.Equipping.AvatarRangedWeapon._003CReload_003Ed__37))]
 		private global::System.Collections.IEnumerator Reload()
 		{
 			return null;

@@ -236,7 +236,7 @@ namespace Funly.SkyStudio
 
 		public const string CloudCubemapDoubleLayerTintColorKey = "CloudCubemapDoubleLayerTintColorKey";
 
-		public const string FogDensityKey = "FogDensityKey";
+		public const string FogEndDistanceKey = "FogEndDistanceKey";
 
 		public const string FogColorKey = "FogColorKey";
 

@@ -15,6 +15,7 @@ namespace ScheduleOne
 		[global::System.Serializable]
 		public class ItemRegister
 		{
+			[global::UnityEngine.HideInInspector]
 			public string name;
 
 			public string ID;

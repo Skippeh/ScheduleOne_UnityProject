@@ -26,9 +26,9 @@ namespace ScheduleOne.Vision
 
 		private bool NetworkInitialize__LateScheduleOne_002EVision_002EEntityVisibilityAssembly_002DCSharp_002Edll_Excuted;
 
-		public float CurrentVisibility { get; protected set; }
+		public virtual float CurrentVisibility => 0f;
 
-		public float Suspiciousness { get; protected set; }
+		public virtual float Suspiciousness => 0f;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Vision.EntityVisualState> VisualStates { get; protected set; }
 
@@ -39,10 +39,6 @@ namespace ScheduleOne.Vision
 		}
 
 		public override void OnStartClient()
-		{
-		}
-
-		protected virtual void FixedUpdate()
 		{
 		}
 

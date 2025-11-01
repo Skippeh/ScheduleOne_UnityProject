@@ -20,8 +20,6 @@ namespace ScheduleOne.AvatarFramework.Equipping
 			public global::UnityEngine.AudioClip[] HitClips;
 		}
 
-		public const float GruntChance = 0.4f;
-
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Audio.AudioSourceController AttackSound;
 
@@ -39,6 +37,8 @@ namespace ScheduleOne.AvatarFramework.Equipping
 		public float ImpactForce;
 
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarMeleeWeapon.MeleeAttack[] Attacks;
+
+		public float GruntChance;
 
 		private global::UnityEngine.Coroutine attackRoutine;
 

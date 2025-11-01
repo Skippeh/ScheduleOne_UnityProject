@@ -41,10 +41,6 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		protected virtual void LateUpdate()
-		{
-		}
-
 		public void Hovered()
 		{
 		}

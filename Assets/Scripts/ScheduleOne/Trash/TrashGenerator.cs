@@ -14,6 +14,9 @@ namespace ScheduleOne.Trash
 		private int MaxTrashCount;
 
 		[global::UnityEngine.SerializeField]
+		private int TrashCountMultiplier;
+
+		[global::UnityEngine.SerializeField]
 		private global::System.Collections.Generic.List<global::ScheduleOne.Trash.TrashItem> generatedTrash;
 
 		[global::UnityEngine.Header("Settings")]

@@ -99,6 +99,16 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
+		public bool ShouldReplicate()
+		{
+			return false;
+		}
+
+		public int GetReplicationByteSize()
+		{
+			return 0;
+		}
+
 		protected void CreateUI()
 		{
 		}
@@ -158,6 +168,10 @@ namespace ScheduleOne.Messaging
 		}
 
 		public virtual void Load(global::ScheduleOne.Persistence.Datas.MSGConversationData data)
+		{
+		}
+
+		public void ResetConversation()
 		{
 		}
 

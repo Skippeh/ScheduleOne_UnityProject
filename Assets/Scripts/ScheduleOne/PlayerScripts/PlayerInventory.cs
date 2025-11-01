@@ -47,6 +47,8 @@ namespace ScheduleOne.PlayerScripts
 		[global::UnityEngine.Header("Item Variables")]
 		public global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerInventory.ItemVariable> ItemVariables;
 
+		private int _equippedSlotIndex;
+
 		public global::System.Action<bool> onInventoryStateChanged;
 
 		public global::System.Action<int> onEquippedSlotChanged;
@@ -71,7 +73,16 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.ItemFramework.CashInstance cashInstance { get; protected set; }
 
-		public int EquippedSlotIndex { get; protected set; }
+		public int EquippedSlotIndex
+		{
+			get
+			{
+				return 0;
+			}
+			set
+			{
+			}
+		}
 
 		public bool HotbarEnabled { get; protected set; }
 

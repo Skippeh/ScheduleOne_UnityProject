@@ -101,7 +101,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		protected override void Update()
+		protected void Update()
 		{
 		}
 
@@ -211,6 +211,10 @@ namespace ScheduleOne.Police
 		{
 			distanceToTarget = default(float);
 			return null;
+		}
+
+		private new void OnDie()
+		{
 		}
 
 		public virtual void UpdateBodySearch()

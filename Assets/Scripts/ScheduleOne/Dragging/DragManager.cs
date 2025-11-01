@@ -21,6 +21,8 @@ namespace ScheduleOne.Dragging
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Dragging.Draggable> AllDraggables;
 
+		private global::System.Collections.Generic.List<global::ScheduleOne.Dragging.Draggable> CurrentlyUpdating;
+
 		private global::ScheduleOne.Dragging.Draggable lastThrownDraggable;
 
 		private global::ScheduleOne.Dragging.Draggable lastHeldDraggable;
@@ -90,6 +92,11 @@ namespace ScheduleOne.Dragging
 		private global::UnityEngine.Vector3 GetTargetPosition()
 		{
 			return default(global::UnityEngine.Vector3);
+		}
+
+		[global::EasyButtons.Button]
+		public void EnsureAllDraggableGUIDsAreValid()
+		{
 		}
 
 		public override void NetworkInitialize___Early()

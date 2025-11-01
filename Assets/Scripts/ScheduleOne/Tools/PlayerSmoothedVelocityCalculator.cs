@@ -4,8 +4,6 @@ namespace ScheduleOne.Tools
 	{
 		public global::ScheduleOne.PlayerScripts.Player Player;
 
-		protected override void FixedUpdate()
-		{
-		}
+		public override global::UnityEngine.Vector3 Velocity => default(global::UnityEngine.Vector3);
 	}
 }

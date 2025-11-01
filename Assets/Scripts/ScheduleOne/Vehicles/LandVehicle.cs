@@ -86,6 +86,10 @@ namespace ScheduleOne.Vehicles
 
 		public global::ScheduleOne.Map.POI POI;
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Sound.VehicleSound> Sounds;
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.PlayerPusher> Pushers;
+
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Transform centerOfMass;
 
@@ -159,7 +163,9 @@ namespace ScheduleOne.Vehicles
 
 		private global::ScheduleOne.Vehicles.VehicleSeat localPlayerSeat;
 
-		private CircularQueue<float> previousSpeeds;
+		private bool _isOccupied;
+
+		private RollingAverage<float> previousSpeeds;
 
 		private const int previousSpeedsSampleSize = 20;
 
@@ -193,6 +199,8 @@ namespace ScheduleOne.Vehicles
 
 		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collision> onCollision;
 
+		public global::UnityEngine.Events.UnityEvent<bool> onOccupy;
+
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___currentSteerAngle;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CbrakesApplied_003Ek__BackingField;
@@ -214,8 +222,6 @@ namespace ScheduleOne.Vehicles
 		public bool IsVisible { get; protected set; }
 
 		public global::System.Guid GUID { get; protected set; }
-
-		public float DistanceToLocalCamera { get; private set; }
 
 		public global::UnityEngine.Vector3 boundingBoxDimensions => default(global::UnityEngine.Vector3);
 
@@ -239,7 +245,16 @@ namespace ScheduleOne.Vehicles
 
 		public bool localPlayerIsInVehicle { get; protected set; }
 
-		public bool isOccupied { get; private set; }
+		public bool isOccupied
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
 
 		public global::ScheduleOne.PlayerScripts.Player DriverPlayer => null;
 
@@ -402,10 +417,6 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		protected virtual void OnMinPass()
-		{
-		}
-
 		protected virtual void LateUpdate()
 		{
 		}
@@ -521,6 +532,14 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		private void StartVehicle()
+		{
+		}
+
+		private void StopVehicle()
+		{
+		}
+
 		private void EnterVehicle()
 		{
 		}
@@ -613,6 +632,22 @@ namespace ScheduleOne.Vehicles
 		}
 
 		public void SetVisible(bool vis)
+		{
+		}
+
+		public void RegisterSound(global::ScheduleOne.Vehicles.Sound.VehicleSound sound)
+		{
+		}
+
+		public void DeregisterSound(global::ScheduleOne.Vehicles.Sound.VehicleSound sound)
+		{
+		}
+
+		public void RegisterPusher(global::ScheduleOne.Vehicles.PlayerPusher pusher)
+		{
+		}
+
+		public void DeregisterPusher(global::ScheduleOne.Vehicles.PlayerPusher pusher)
 		{
 		}
 

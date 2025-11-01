@@ -256,6 +256,10 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002EDoors_002EEDoorSideFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Doors.EDoorSide value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EDevUtilities_002EStringIntPairFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.DevUtilities.StringIntPair value)
 		{
 		}
@@ -325,10 +329,6 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002ECartel_002ECartelDealInfo_002FEStatusFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Cartel.CartelDealInfo.EStatus value)
-		{
-		}
-
-		public static void Write___ScheduleOne_002EDoors_002EEDoorSideFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Doors.EDoorSide value)
 		{
 		}
 

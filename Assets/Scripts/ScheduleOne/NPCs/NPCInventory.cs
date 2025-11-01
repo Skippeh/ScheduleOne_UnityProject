@@ -2,6 +2,15 @@ namespace ScheduleOne.NPCs
 {
 	public class NPCInventory : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.ItemFramework.IItemSlotOwner
 	{
+		[global::System.Serializable]
+		public class RandomInventoryItem
+		{
+			public global::ScheduleOne.ItemFramework.StorableItemDefinition ItemDefinition;
+
+			[global::UnityEngine.Range(0f, 10f)]
+			public float Weight;
+		}
+
 		public delegate bool ItemFilter(global::ScheduleOne.ItemFramework.ItemInstance item);
 
 		public global::ScheduleOne.Interaction.InteractableObject PickpocketIntObj;
@@ -31,7 +40,7 @@ namespace ScheduleOne.NPCs
 		[global::UnityEngine.Header("Random items")]
 		public bool RandomItems;
 
-		public global::ScheduleOne.ItemFramework.StorableItemDefinition[] RandomItemDefinitions;
+		public global::ScheduleOne.NPCs.NPCInventory.RandomInventoryItem[] RandomInventoryItems;
 
 		public int RandomItemMin;
 
@@ -67,6 +76,17 @@ namespace ScheduleOne.NPCs
 
 		protected virtual void OnSleepStart()
 		{
+		}
+
+		private global::ScheduleOne.ItemFramework.StorableItemDefinition GetRandomInventoryItem()
+		{
+			return null;
+		}
+
+		[global::EasyButtons.Button]
+		public float GetTotalRandomInventoryItemWeight()
+		{
+			return 0f;
 		}
 
 		public int GetItemCount()
@@ -166,7 +186,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		private void SetStoredInstance_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{
 		}
@@ -186,7 +206,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetSlotLocked_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
 		{
@@ -198,7 +218,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		private void SetSlotFilter_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.SlotFilter filter)
 		{
 		}

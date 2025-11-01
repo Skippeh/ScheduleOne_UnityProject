@@ -299,6 +299,8 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
+		public int EquippedItemSlotIndex { get; private set; }
+
 		public global::ScheduleOne.AvatarFramework.Customization.BasicAvatarSettings CurrentAvatarSettings { get; protected set; }
 
 		public global::ScheduleOne.Product.ProductItemInstance ConsumedProduct { get; private set; }
@@ -923,6 +925,21 @@ namespace ScheduleOne.PlayerScripts
 
 		[global::FishNet.Object.ServerRpc(RunLocally = true)]
 		public void SetInventoryItem(int index, global::ScheduleOne.ItemFramework.ItemInstance item)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RunLocally = true)]
+		public void SetEquippedSlotIndex(int index)
+		{
+		}
+
+		public global::ScheduleOne.ItemFramework.ItemInstance GetEquippedItem()
+		{
+			return null;
+		}
+
+		[global::FishNet.Object.ObserversRpc]
+		public void RemoveEquippedItemFromInventory(string id, int amount)
 		{
 		}
 
@@ -1680,6 +1697,30 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		private void RpcReader___Server_SetInventoryItem_2317364410(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_SetEquippedSlotIndex_3316948804(int index)
+		{
+		}
+
+		public void RpcLogic___SetEquippedSlotIndex_3316948804(int index)
+		{
+		}
+
+		private void RpcReader___Server_SetEquippedSlotIndex_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_RemoveEquippedItemFromInventory_3643459082(string id, int amount)
+		{
+		}
+
+		public void RpcLogic___RemoveEquippedItemFromInventory_3643459082(string id, int amount)
+		{
+		}
+
+		private void RpcReader___Observers_RemoveEquippedItemFromInventory_3643459082(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

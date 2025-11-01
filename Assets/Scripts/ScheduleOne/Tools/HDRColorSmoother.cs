@@ -25,17 +25,13 @@ namespace ScheduleOne.Tools
 
 		private global::ScheduleOne.Tools.HDRColorSmoother.Override activeOverride;
 
-		private int activeCount;
+		private bool isBeingUpdated;
 
 		public global::UnityEngine.Color CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }
 
 		public void Initialize()
-		{
-		}
-
-		public void Destroy()
 		{
 		}
 

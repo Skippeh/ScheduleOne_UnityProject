@@ -8,6 +8,8 @@ namespace ScheduleOne.Vision
 
 		private float currentNoticeTime;
 
+		public bool playTremolo;
+
 		public global::ScheduleOne.Vision.ISightable Target { get; protected set; }
 
 		public global::ScheduleOne.Vision.EntityVisualState State { get; protected set; }
@@ -18,7 +20,7 @@ namespace ScheduleOne.Vision
 
 		public float NormalizedNoticeLevel => 0f;
 
-		public VisionEvent(global::ScheduleOne.Vision.VisionCone _owner, global::ScheduleOne.Vision.ISightable _target, global::ScheduleOne.Vision.EntityVisualState _state, float _noticeTime)
+		public VisionEvent(global::ScheduleOne.Vision.VisionCone _owner, global::ScheduleOne.Vision.ISightable _target, global::ScheduleOne.Vision.EntityVisualState _state, float _noticeTime, bool _playTremolo)
 		{
 		}
 

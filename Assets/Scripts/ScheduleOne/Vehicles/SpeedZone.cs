@@ -9,20 +9,18 @@ namespace ScheduleOne.Vehicles
 
 		public float speed;
 
+		private static global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.SpeedZone> query;
+
 		public virtual void Awake()
 		{
 		}
 
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.SpeedZone> GetSpeedZones(global::UnityEngine.Vector3 point)
+		public static global::System.Collections.Generic.IEnumerable<global::ScheduleOne.Vehicles.SpeedZone> GetSpeedZones(global::UnityEngine.Vector3 point)
 		{
 			return null;
 		}
 
 		private void OnDrawGizmos()
-		{
-		}
-
-		private void OnDrawGizmosSelected()
 		{
 		}
 	}

@@ -49,10 +49,6 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public void Update()
-		{
-		}
-
 		public static global::ScheduleOne.NPCs.NPC GetNPC(string id)
 		{
 			return null;
@@ -76,6 +72,11 @@ namespace ScheduleOne.NPCs
 		public virtual global::System.Collections.Generic.List<string> WriteData(string parentFolderPath)
 		{
 			return null;
+		}
+
+		[global::EasyButtons.Button]
+		public void GetNPCsWithSewerKey()
+		{
 		}
 
 		public override void NetworkInitialize___Early()

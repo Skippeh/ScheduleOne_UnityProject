@@ -24,8 +24,6 @@ namespace ScheduleOne.Tools
 
 		private global::ScheduleOne.Tools.ColorSmoother.Override activeOverride;
 
-		private int activeCount;
-
 		public global::UnityEngine.Color CurrentValue { get; private set; }
 
 		public float Multiplier { get; private set; }
@@ -33,10 +31,6 @@ namespace ScheduleOne.Tools
 		public global::UnityEngine.Color Default => default(global::UnityEngine.Color);
 
 		public void Initialize()
-		{
-		}
-
-		public void Destroy()
 		{
 		}
 

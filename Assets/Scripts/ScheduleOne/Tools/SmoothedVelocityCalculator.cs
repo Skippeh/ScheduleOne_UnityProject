@@ -11,7 +11,7 @@ namespace ScheduleOne.Tools
 
 		public float MaxReasonableVelocity;
 
-		private CircularQueue<global::UnityEngine.Vector3> velocityHistory;
+		private RollingAverage<global::UnityEngine.Vector3> velocityHistory;
 
 		private global::UnityEngine.Vector3 lastSamplePosition;
 
@@ -21,9 +21,11 @@ namespace ScheduleOne.Tools
 
 		private bool zeroOut;
 
-		public global::UnityEngine.Vector3 Velocity { get; protected set; }
+		private bool isTargetValid;
 
 		public global::UnityEngine.Transform Target { get; private set; }
+
+		public virtual global::UnityEngine.Vector3 Velocity => default(global::UnityEngine.Vector3);
 
 		private void Start()
 		{
@@ -31,11 +33,6 @@ namespace ScheduleOne.Tools
 
 		protected virtual void FixedUpdate()
 		{
-		}
-
-		private global::UnityEngine.Vector3 GetAverageVelocity()
-		{
-			return default(global::UnityEngine.Vector3);
 		}
 
 		public void FlushBuffer()

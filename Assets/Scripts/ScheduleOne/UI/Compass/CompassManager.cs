@@ -11,6 +11,8 @@ namespace ScheduleOne.UI.Compass
 
 		public class Element
 		{
+			public bool LastState;
+
 			public bool Visible;
 
 			public global::UnityEngine.RectTransform Rect;

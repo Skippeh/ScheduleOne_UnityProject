@@ -84,6 +84,9 @@ namespace ScheduleOne.Vision
 
 		public float Memory;
 
+		[global::UnityEngine.Header("Sound Settings")]
+		public bool UseTremoloSound;
+
 		[global::UnityEngine.Header("Worldspace Icons")]
 		public bool WorldspaceIconsEnabled;
 
@@ -138,10 +141,6 @@ namespace ScheduleOne.Vision
 		}
 
 		protected virtual void Update()
-		{
-		}
-
-		protected virtual void FixedUpdate()
 		{
 		}
 

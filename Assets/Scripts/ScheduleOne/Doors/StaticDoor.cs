@@ -32,10 +32,6 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		protected virtual void Update()
-		{
-		}
-
 		protected virtual void Hovered()
 		{
 		}

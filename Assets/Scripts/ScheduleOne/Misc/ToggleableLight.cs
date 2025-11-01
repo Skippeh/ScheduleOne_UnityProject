@@ -2,7 +2,16 @@ namespace ScheduleOne.Misc
 {
 	public class ToggleableLight : global::UnityEngine.MonoBehaviour
 	{
-		public bool isOn;
+		private enum State
+		{
+			NotInitialized = 0,
+			On = 1,
+			Off = 2
+		}
+
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("isOn")]
+		private bool _isOn;
 
 		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
@@ -22,17 +31,20 @@ namespace ScheduleOne.Misc
 
 		private global::ScheduleOne.ConstructableScripts.Constructable_GridBased constructable;
 
-		private bool lightsApplied;
+		private global::ScheduleOne.Misc.ToggleableLight.State state;
+
+		public bool isOn
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
 
 		protected virtual void Awake()
-		{
-		}
-
-		private void OnValidate()
-		{
-		}
-
-		protected virtual void Update()
 		{
 		}
 
@@ -44,7 +56,7 @@ namespace ScheduleOne.Misc
 		{
 		}
 
-		protected virtual void SetLights(bool active)
+		protected virtual void SetLights()
 		{
 		}
 	}

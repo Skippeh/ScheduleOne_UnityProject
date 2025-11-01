@@ -83,10 +83,6 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		private void Update()
-		{
-		}
-
 		private void Hovered()
 		{
 		}

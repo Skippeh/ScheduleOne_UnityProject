@@ -25,5 +25,10 @@ namespace ScheduleOne.ItemFramework
 		{
 			return 0;
 		}
+
+		int GetNonEmptySlotCount()
+		{
+			return 0;
+		}
 	}
 }

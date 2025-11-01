@@ -44,6 +44,8 @@ namespace ScheduleOne.Persistence
 
 		public global::UnityEngine.Events.UnityEvent onSaveInfoLoaded;
 
+		private global::System.Collections.Generic.List<global::ScheduleOne.Networking.IStaggeredReplicator> staggeredReplicators;
+
 		public string DefaultTutorialSaveFolder => null;
 
 		public bool IsGameLoaded { get; protected set; }
@@ -162,6 +164,10 @@ namespace ScheduleOne.Persistence
 		}
 
 		public void RefreshSaveInfo()
+		{
+		}
+
+		public void AddStaggeredReplicator(global::ScheduleOne.Networking.IStaggeredReplicator replicator)
 		{
 		}
 	}

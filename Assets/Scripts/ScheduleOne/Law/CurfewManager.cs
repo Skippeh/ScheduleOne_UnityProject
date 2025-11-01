@@ -2,9 +2,19 @@ namespace ScheduleOne.Law
 {
 	public class CurfewManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Law.CurfewManager>
 	{
+		private const string NORMAL_MESSAGE = "CURFEW TONIGHT\n9PM - 5AM";
+
+		private const string CURFEW_MESSAGE = "CURFEW ACTIVE\n UNTIL 5AM";
+
+		private const string WARNING_MESSAGE = "CURFEW SOON\n{0} MINS";
+
+		public const int HOUR_BEFORE_CURFEW = 2000;
+
 		public const int WARNING_TIME = 2030;
 
 		public const int CURFEW_START_TIME = 2100;
+
+		public const int HARD_CURFEW_START_TIME = 2115;
 
 		public const int CURFEW_END_TIME = 500;
 
@@ -23,7 +33,11 @@ namespace ScheduleOne.Law
 
 		public global::UnityEngine.Events.UnityEvent onCurfewWarning;
 
-		private bool warningPlayed;
+		public global::UnityEngine.Events.UnityEvent onCurfewStart;
+
+		public global::UnityEngine.Events.UnityEvent onCurfewHardStart;
+
+		public global::UnityEngine.Events.UnityEvent onCurfewEnd;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ELaw_002ECurfewManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -33,7 +47,7 @@ namespace ScheduleOne.Law
 
 		public bool IsCurrentlyActive { get; protected set; }
 
-		public bool IsCurrentlyActiveWithTolerance => false;
+		public bool IsHardCurfewActive { get; protected set; }
 
 		protected override void Start()
 		{

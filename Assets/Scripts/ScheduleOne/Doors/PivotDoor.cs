@@ -13,13 +13,11 @@ namespace ScheduleOne.Doors
 
 		public float SwingSpeed;
 
+		private bool isUpdatingDoor;
+
 		private float targetDoorAngle;
 
 		protected virtual void Awake()
-		{
-		}
-
-		private void LateUpdate()
 		{
 		}
 
@@ -28,6 +26,10 @@ namespace ScheduleOne.Doors
 		}
 
 		public virtual void Closed()
+		{
+		}
+
+		private void UpdateDoor()
 		{
 		}
 	}

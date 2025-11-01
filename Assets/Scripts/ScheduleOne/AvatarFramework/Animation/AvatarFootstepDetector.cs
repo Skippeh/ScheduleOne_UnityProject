@@ -2,9 +2,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 {
 	public class AvatarFootstepDetector : global::UnityEngine.MonoBehaviour
 	{
-		public const float MAX_DETECTION_RANGE = 20f;
-
-		public const float GROUND_DETECTION_RANGE = 0.25f;
+		public const float GROUND_DETECTION_RANGE = 0.15f;
 
 		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
 
@@ -17,6 +15,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 		public float StepThreshold;
 
 		public global::UnityEngine.LayerMask GroundDetectionMask;
+
+		public float MaxDetectionRange;
 
 		private bool leftDown;
 

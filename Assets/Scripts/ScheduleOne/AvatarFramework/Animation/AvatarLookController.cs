@@ -49,6 +49,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private bool overrideRotateBody;
 
+		private bool blockLookOverrides;
+
 		private global::UnityEngine.Vector3 lastFrameLookOriginPos;
 
 		private global::UnityEngine.Vector3 lastFrameLookOriginForward;
@@ -86,6 +88,10 @@ namespace ScheduleOne.AvatarFramework.Animation
 		}
 
 		public void OverrideLookTarget(global::UnityEngine.Vector3 targetPosition, int priority, bool rotateBody = false)
+		{
+		}
+
+		public void BlockLookTargetOverrides()
 		{
 		}
 

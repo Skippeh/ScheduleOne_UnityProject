@@ -10,6 +10,10 @@ namespace ScheduleOne.NPCs.Responses
 
 		public const float PICKPOCKET_RELATIONSHIPCHANGE = -0.25f;
 
+		private const float INITIALIZED_TIME_OFFSET = 100f;
+
+		private const float TIME_THRESHOLD = 20f;
+
 		protected float timeSinceLastImpact;
 
 		protected float timeSinceAimedAt;
@@ -19,10 +23,6 @@ namespace ScheduleOne.NPCs.Responses
 		protected global::ScheduleOne.NPCs.Actions.NPCActions actions => null;
 
 		protected virtual void Awake()
-		{
-		}
-
-		protected virtual void Update()
 		{
 		}
 

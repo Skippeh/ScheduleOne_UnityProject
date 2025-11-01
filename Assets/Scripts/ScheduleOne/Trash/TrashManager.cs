@@ -13,6 +13,8 @@ namespace ScheduleOne.Trash
 
 		public const int TRASH_ITEM_LIMIT = 2000;
 
+		public const int TRASH_REPLICATIONS_PER_SECOND = 100;
+
 		public global::ScheduleOne.Trash.TrashItem[] TrashPrefabs;
 
 		public global::ScheduleOne.Trash.TrashItem TrashBagPrefab;

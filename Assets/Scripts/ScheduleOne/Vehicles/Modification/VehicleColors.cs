@@ -9,7 +9,7 @@ namespace ScheduleOne.Vehicles.Modification
 
 			public string colorName;
 
-			public global::UnityEngine.Material material;
+			public global::UnityEngine.Color MaterialColor;
 
 			public global::UnityEngine.Color32 UIColor;
 		}

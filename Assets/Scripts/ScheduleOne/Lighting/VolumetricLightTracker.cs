@@ -5,9 +5,13 @@ namespace ScheduleOne.Lighting
 	[global::UnityEngine.RequireComponent(typeof(global::VLB.VolumetricLightBeamSD))]
 	public class VolumetricLightTracker : global::UnityEngine.MonoBehaviour
 	{
-		public bool Override;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("Override")]
+		private bool _Override;
 
-		public bool Enabled;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("Enabled")]
+		private bool _Enabled;
 
 		public global::UnityEngine.Light light;
 
@@ -17,11 +21,37 @@ namespace ScheduleOne.Lighting
 
 		public global::VLB.VolumetricDustParticles dust;
 
-		private void OnValidate()
+		public bool Override
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
+
+		public bool Enabled
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
+
+		private void AssignReferences()
 		{
 		}
 
-		private void LateUpdate()
+		private void UpdateEffectsState()
+		{
+		}
+
+		private void Awake()
 		{
 		}
 	}

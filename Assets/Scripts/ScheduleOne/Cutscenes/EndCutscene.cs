@@ -8,6 +8,8 @@ namespace ScheduleOne.Cutscenes
 
 		public global::UnityEngine.Events.UnityEvent onEngineStart;
 
+		public global::UnityEngine.Events.UnityEvent onLightsOn;
+
 		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
 
 		public override void Play()
@@ -23,6 +25,10 @@ namespace ScheduleOne.Cutscenes
 		}
 
 		public void EngineStart()
+		{
+		}
+
+		public void LightsOn()
 		{
 		}
 

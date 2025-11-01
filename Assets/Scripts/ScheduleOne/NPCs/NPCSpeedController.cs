@@ -20,27 +20,30 @@ namespace ScheduleOne.NPCs
 		[global::UnityEngine.Range(0f, 1f)]
 		public float DefaultWalkSpeed;
 
-		public float SpeedMultiplier;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("SpeedMultiplier")]
+		private float _SpeedMultiplier;
 
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.NPCs.NPCMovement Movement;
 
 		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl> speedControlStack;
 
-		[global::UnityEngine.Header("Debug")]
 		public global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl ActiveSpeedControl;
+
+		public float SpeedMultiplier
+		{
+			get
+			{
+				return 0f;
+			}
+			set
+			{
+			}
+		}
 
 		private void Awake()
 		{
-		}
-
-		private void FixedUpdate()
-		{
-		}
-
-		private global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl GetHighestPriorityControl()
-		{
-			return null;
 		}
 
 		public void AddSpeedControl(global::ScheduleOne.NPCs.NPCSpeedController.SpeedControl control)
@@ -58,6 +61,10 @@ namespace ScheduleOne.NPCs
 		}
 
 		public void RemoveSpeedControl(string id)
+		{
+		}
+
+		private void UpdateActiveSpeedControl()
 		{
 		}
 	}

@@ -7,6 +7,12 @@ namespace ScheduleOne.FX
 
 		private bool enabledThisFrame;
 
+		private global::UnityEngine.Material materialInstance;
+
+		private void Awake()
+		{
+		}
+
 		private void LateUpdate()
 		{
 		}

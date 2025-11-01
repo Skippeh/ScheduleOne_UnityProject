@@ -26,6 +26,9 @@ namespace ScheduleOne.Audio
 
 		public const float COOLDOWN_TIME = 0.15f;
 
+		[global::UnityEngine.Range(0f, 4f)]
+		public float BaseVolumeMultiplier;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> sources;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.FootstepSounds.FootstepSoundGroup> soundGroups;
@@ -36,11 +39,11 @@ namespace ScheduleOne.Audio
 
 		public float VolumeMultiplier { get; set; }
 
-		private void Start()
+		private void Awake()
 		{
 		}
 
-		private void Update()
+		private void Start()
 		{
 		}
 

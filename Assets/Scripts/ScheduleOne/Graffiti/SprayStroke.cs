@@ -34,5 +34,14 @@ namespace ScheduleOne.Graffiti
 		{
 			return null;
 		}
+
+		public void Serialize(global::System.IO.BinaryWriter writer)
+		{
+		}
+
+		public static global::ScheduleOne.Graffiti.SprayStroke Deserialize(global::System.IO.BinaryReader reader)
+		{
+			return null;
+		}
 	}
 }

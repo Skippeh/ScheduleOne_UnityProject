@@ -4,19 +4,27 @@ namespace ScheduleOne.Vision
 	{
 		private global::ScheduleOne.PlayerScripts.Player player;
 
+		private bool disobeyingCurfewStateApplied;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002EVision_002EPlayerVisibilityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EVision_002EPlayerVisibilityAssembly_002DCSharp_002Edll_Excuted;
+
+		public override float Suspiciousness => 0f;
 
 		public override void Awake()
 		{
 		}
 
-		protected override void FixedUpdate()
+		private void Update()
 		{
 		}
 
-		private void UpdateSuspiciousness()
+		private void AddFlag_DisobeyingCurfew()
+		{
+		}
+
+		private void RemoveFlag_DisobeyingCurfew()
 		{
 		}
 

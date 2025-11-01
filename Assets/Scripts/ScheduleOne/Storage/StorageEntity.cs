@@ -9,6 +9,60 @@ namespace ScheduleOne.Storage
 			Full = 2
 		}
 
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CUpdateWhileOpen_003Ed__30 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.Storage.StorageEntity _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CUpdateWhileOpen_003Ed__30(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
 		public const int MAX_SLOTS = 20;
 
 		[global::UnityEngine.Header("Settings")]
@@ -77,8 +131,10 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		protected virtual void FixedUpdate()
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Storage.StorageEntity._003CUpdateWhileOpen_003Ed__30))]
+		private global::System.Collections.IEnumerator UpdateWhileOpen()
 		{
+			return null;
 		}
 
 		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StorableItemInstance, int> GetContentsDictionary()
@@ -154,7 +210,7 @@ namespace ScheduleOne.Storage
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		private void SetStoredInstance_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{
 		}
@@ -174,7 +230,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetSlotLocked_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
 		{
@@ -186,7 +242,7 @@ namespace ScheduleOne.Storage
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		private void SetSlotFilter_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.SlotFilter filter)
 		{
 		}

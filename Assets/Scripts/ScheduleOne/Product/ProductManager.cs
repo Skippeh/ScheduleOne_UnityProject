@@ -8,6 +8,8 @@ namespace ScheduleOne.Product
 
 		public const int CONTRACT_RECEIPT_MAX_COUNT = 50;
 
+		public const int STAGGERED_REPLICATIONS_PER_SECOND = 80;
+
 		public global::System.Action<global::ScheduleOne.Product.ProductDefinition> onProductDiscovered;
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> DiscoveredProducts;
@@ -129,6 +131,11 @@ namespace ScheduleOne.Product
 		}
 
 		private void Clean()
+		{
+		}
+
+		[global::FishNet.Object.TargetRpc]
+		public void SetIsDoneReplicating(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
@@ -353,6 +360,18 @@ namespace ScheduleOne.Product
 		}
 
 		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		private void RpcWriter___Target_SetIsDoneReplicating_328543758(global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		public void RpcLogic___SetIsDoneReplicating_328543758(global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcReader___Target_SetIsDoneReplicating_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

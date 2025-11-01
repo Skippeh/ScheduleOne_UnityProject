@@ -19,13 +19,9 @@ namespace ScheduleOne.Storage
 
 		public bool BlockRefreshes;
 
-		protected bool updateVisuals;
+		private bool isUpdatingVisuals;
 
 		protected virtual void Awake()
-		{
-		}
-
-		protected virtual void Update()
 		{
 		}
 

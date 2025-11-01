@@ -25,7 +25,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFaceDirection_Process_003Ed__140 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFaceDirection_Process_003Ed__154 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -60,7 +60,7 @@ namespace ScheduleOne.NPCs
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFaceDirection_Process_003Ed__140(int _003C_003E1__state)
+			public _003CFaceDirection_Process_003Ed__154(int _003C_003E1__state)
 			{
 			}
 
@@ -186,7 +186,7 @@ namespace ScheduleOne.NPCs
 
 		private global::UnityEngine.Vector3 stumbleDirection;
 
-		private global::System.Collections.Generic.List<global::UnityEngine.Vector3> desiredVelocityHistory;
+		private CircularQueue<global::UnityEngine.Vector3> desiredVelocityHistory;
 
 		private int desiredVelocityHistoryLength;
 
@@ -196,7 +196,11 @@ namespace ScheduleOne.NPCs
 
 		private global::UnityEngine.AI.NavMeshPath agentCurrentPath;
 
+		private float agentCurrentSpeed;
+
 		private global::UnityEngine.Vector3[] agentCurrentPathCorners;
+
+		private global::UnityEngine.Coroutine ladderClimbRoutine;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCMovementAssembly_002DCSharp_002Edll_Excuted;
 
@@ -218,6 +222,14 @@ namespace ScheduleOne.NPCs
 
 		public bool FaceDirectionInProgress => false;
 
+		public bool IsOnLadder => false;
+
+		public float CurrentLadderSpeed { get; protected set; }
+
+		public bool IsClimbingUpwards => false;
+
+		public global::ScheduleOne.Map.Ladder CurrentLadder { get; protected set; }
+
 		public global::UnityEngine.Vector3 CurrentDestination { get; protected set; }
 
 		public global::ScheduleOne.NPCs.NPCPathCache PathCache { get; private set; }
@@ -236,15 +248,11 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
-		{
-		}
-
 		protected virtual void Update()
 		{
 		}
 
-		protected virtual void LateUpdate()
+		public void SetAgentEnabled(bool enabled)
 		{
 		}
 
@@ -252,7 +260,6 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::EasyButtons.Button]
 		private void Stumble()
 		{
 		}
@@ -374,6 +381,10 @@ namespace ScheduleOne.NPCs
 			return false;
 		}
 
+		public void SetDestination(global::UnityEngine.Transform target)
+		{
+		}
+
 		public void SetDestination(global::UnityEngine.Vector3 pos)
 		{
 		}
@@ -415,7 +426,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__140))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__154))]
 		protected global::System.Collections.IEnumerator FaceDirection_Process(global::UnityEngine.Vector3 forward, float lerpTime)
 		{
 			return null;
@@ -459,6 +470,14 @@ namespace ScheduleOne.NPCs
 		private global::UnityEngine.AI.NavMeshPath GetPathTo(global::UnityEngine.Vector3 position, float proximityReq = 1f)
 		{
 			return null;
+		}
+
+		public void TraverseLadder(global::ScheduleOne.Map.Ladder ladder)
+		{
+		}
+
+		private void CancelTraverseLadder()
+		{
 		}
 
 		public virtual void NetworkInitialize___Early()

@@ -20,6 +20,9 @@ namespace ScheduleOne.ItemFramework
 		[global::UnityEngine.Header("Storable Item")]
 		public global::ScheduleOne.Storage.StoredItem StoredItem;
 
+		[global::UnityEngine.Range(0.1f, 5f)]
+		public float PickpocketDifficultyMultiplier;
+
 		[global::UnityEngine.Tooltip("Optional station item if this item can be used at a station.")]
 		public global::ScheduleOne.StationFramework.StationItem StationItem;
 

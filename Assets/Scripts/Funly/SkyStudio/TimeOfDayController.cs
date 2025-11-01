@@ -40,6 +40,9 @@ namespace Funly.SkyStudio
 		[global::UnityEngine.Tooltip("Configurable prefab that determines how to animate between 2 sky profiles. You can override individual feature animations, ex: 'skyBlender', to create a custom sky blending effect.")]
 		public global::Funly.SkyStudio.BlendSkyProfiles skyProfileTransitionPrefab;
 
+		[global::UnityEngine.Header("Overrides")]
+		public global::Funly.SkyStudio.SkyProfileOverride[] SkyProfileOverrideStack;
+
 		private bool m_DidInitialUpdate;
 
 		public static global::Funly.SkyStudio.TimeOfDayController instance { get; private set; }

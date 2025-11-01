@@ -69,7 +69,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void FixedUpdate()
+		public void FixedUpdateWheel()
 		{
 		}
 

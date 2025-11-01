@@ -36,10 +36,6 @@ namespace ScheduleOne.AvatarFramework.Emotions
 		{
 		}
 
-		private void Update()
-		{
-		}
-
 		public void UpdateEmotion()
 		{
 		}

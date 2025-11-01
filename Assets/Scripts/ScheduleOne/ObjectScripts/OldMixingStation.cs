@@ -174,7 +174,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetStoredInstance_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{
@@ -195,7 +195,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetSlotLocked_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, bool locked, global::FishNet.Object.NetworkObject lockOwner, string lockReason)
 		{
@@ -207,7 +207,7 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		[global::FishNet.Object.TargetRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
 		private void SetSlotFilter_Internal(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.SlotFilter filter)
 		{
 		}

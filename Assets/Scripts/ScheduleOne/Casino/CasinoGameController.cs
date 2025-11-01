@@ -35,10 +35,6 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		protected virtual void Update()
-		{
-		}
-
 		protected virtual void FixedUpdate()
 		{
 		}

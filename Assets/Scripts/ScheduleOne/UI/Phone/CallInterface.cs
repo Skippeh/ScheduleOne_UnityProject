@@ -38,6 +38,8 @@ namespace ScheduleOne.UI.Phone
 
 		public global::System.Action<global::ScheduleOne.ScriptableObjects.PhoneCallData> CallCompleted;
 
+		public global::System.Action<global::ScheduleOne.ScriptableObjects.PhoneCallData> CallStarted;
+
 		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCallData { get; private set; }
 
 		public bool IsOpen { get; protected set; }
