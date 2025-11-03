@@ -25,6 +25,8 @@ namespace ScheduleOne.Graffiti
 
 		public global::UnityEngine.Rendering.Universal.DecalProjector Projector;
 
+		private global::ScheduleOne.Graffiti.Drawing drawing;
+
 		private global::ScheduleOne.Graffiti.Drawing cachedDrawing;
 
 		public global::System.Action onDrawingChanged;
@@ -39,7 +41,11 @@ namespace ScheduleOne.Graffiti
 
 		public global::FishNet.Object.NetworkObject CurrentEditor { get; private set; }
 
-		public global::ScheduleOne.Graffiti.Drawing Drawing { get; private set; }
+		public int DrawingStrokeCount => 0;
+
+		public global::UnityEngine.Texture DrawingOutputTexture => null;
+
+		public int DrawingPaintedPixelCount => 0;
 
 		public global::ScheduleOne.Map.EMapRegion Region { get; private set; }
 
@@ -102,6 +108,10 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		public void EnsureDrawingExists()
+		{
+		}
+
 		private void CreateNewDrawing()
 		{
 		}
@@ -117,6 +127,10 @@ namespace ScheduleOne.Graffiti
 		public global::UnityEngine.Vector3 ToWorldPosition(global::ScheduleOne.Graffiti.UShort2 coordinate, float offset = 0f)
 		{
 			return default(global::UnityEngine.Vector3);
+		}
+
+		public void DrawPaintedPixel(global::ScheduleOne.Graffiti.PixelData data, bool applyTexture)
+		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]

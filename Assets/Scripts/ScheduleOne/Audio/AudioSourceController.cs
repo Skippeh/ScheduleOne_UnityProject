@@ -119,10 +119,6 @@ namespace ScheduleOne.Audio
 			return null;
 		}
 
-		private void DoPauseStuff()
-		{
-		}
-
 		private void OnDestroy()
 		{
 		}

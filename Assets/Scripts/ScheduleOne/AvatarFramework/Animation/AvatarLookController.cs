@@ -8,6 +8,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float AimIKRange = 20f;
 
+		public static global::UnityEngine.Transform TempContainer;
+
 		public bool DEBUG;
 
 		[global::UnityEngine.Header("References")]

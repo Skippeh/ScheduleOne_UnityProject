@@ -24,9 +24,9 @@ namespace ScheduleOne.UI
 
 		private bool hudVisible;
 
-		public global::UnityEngine.Events.UnityEvent onPause;
+		public global::System.Action onPause;
 
-		public global::UnityEngine.Events.UnityEvent onResume;
+		public global::System.Action onResume;
 
 		public bool IsPaused { get; protected set; }
 
