@@ -6,7 +6,7 @@ namespace ScheduleOne.Cartel
 
 		public const int CANCEL_AMBUSH_AFTER_MINS = 360;
 
-		public const float AMBUSH_DEFEATED_INFLUENCE_CHANGE = -0.075f;
+		public const float AMBUSH_DEFEATED_INFLUENCE_CHANGE = -0.1f;
 
 		public static global::ScheduleOne.Levelling.FullRank MIN_RANK_FOR_RANGED_WEAPONS;
 

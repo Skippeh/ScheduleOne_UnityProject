@@ -19,8 +19,6 @@ namespace ScheduleOne.Cartel
 
 		public const float INFLUENCE_TO_UNLOCK_NEXT_REGION = 0.3f;
 
-		public const float PASSIVE_INFLUENCE_GAIN_PER_DAY = 0.02f;
-
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.Cartel.CartelInfluence.RegionInfluenceData[] DefaultRegionInfluence;
 

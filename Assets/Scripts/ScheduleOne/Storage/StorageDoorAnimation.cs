@@ -6,8 +6,6 @@ namespace ScheduleOne.Storage
 
 		private bool overrideState;
 
-		public global::UnityEngine.Transform ItemContainer;
-
 		[global::UnityEngine.Header("Animations")]
 		public global::UnityEngine.Animation[] Anims;
 
@@ -18,6 +16,10 @@ namespace ScheduleOne.Storage
 		public global::ScheduleOne.Audio.AudioSourceController OpenSound;
 
 		public global::ScheduleOne.Audio.AudioSourceController CloseSound;
+
+		private global::ScheduleOne.Storage.StorageEntity storageEntity;
+
+		private global::UnityEngine.Transform itemContainer;
 
 		public bool IsOpen { get; protected set; }
 

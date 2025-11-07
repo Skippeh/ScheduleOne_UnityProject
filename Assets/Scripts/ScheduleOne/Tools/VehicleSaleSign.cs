@@ -6,6 +6,8 @@ namespace ScheduleOne.Tools
 
 		public global::TMPro.TextMeshPro PriceLabel;
 
+		public global::ScheduleOne.Vehicles.LandVehicle VehiclePrefab;
+
 		private void Awake()
 		{
 		}

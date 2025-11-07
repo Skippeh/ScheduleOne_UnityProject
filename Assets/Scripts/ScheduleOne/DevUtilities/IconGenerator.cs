@@ -7,7 +7,9 @@ namespace ScheduleOne.DevUtilities
 		{
 			public string PackagingID;
 
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+			public global::ScheduleOne.Product.MultiTypeVisualsSetter ProductVisuals;
+
+			public global::UnityEngine.Transform TopLevelTransform;
 		}
 
 		public int IconSize;

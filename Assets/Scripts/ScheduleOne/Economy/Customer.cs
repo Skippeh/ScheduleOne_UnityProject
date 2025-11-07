@@ -48,7 +48,7 @@ namespace ScheduleOne.Economy
 
 		public const float RELATIONSHIP_THRESHOLD_TO_GIVE_DEAL_TO_CARTEL = 0.25f;
 
-		public const float CUSTOMER_UNLOCKED_CARTEL_INFLUENCE_CHANGE = -0.05f;
+		public const float CUSTOMER_UNLOCKED_CARTEL_INFLUENCE_CHANGE = -0.075f;
 
 		public bool DEBUG;
 

@@ -28,14 +28,14 @@ namespace ScheduleOne.Product
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyUtility.DrugTypeData> DrugTypeDatas;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> AllProperties;
+		public global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> AllProperties;
 
 		[global::UnityEngine.Header("Test Mixing")]
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> Products;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.PropertyItemDefinition> Properties;
 
-		private global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Properties.Property> PropertiesDict;
+		private global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Effects.Effect> PropertiesDict;
 
 		protected override void Awake()
 		{
@@ -45,12 +45,12 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetProperties(int tier)
+		public global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> GetProperties(int tier)
 		{
 			return null;
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetProperties(global::System.Collections.Generic.List<string> ids)
+		public global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> GetProperties(global::System.Collections.Generic.List<string> ids)
 		{
 			return null;
 		}
@@ -65,7 +65,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public static global::System.Collections.Generic.List<global::UnityEngine.Color32> GetOrderedPropertyColors(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public static global::System.Collections.Generic.List<global::UnityEngine.Color32> GetOrderedPropertyColors(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 			return null;
 		}

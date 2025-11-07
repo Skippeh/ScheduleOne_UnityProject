@@ -237,12 +237,16 @@ namespace ScheduleOne.Quests
 			return null;
 		}
 
-		public virtual global::ScheduleOne.UI.QuestHUDUI SetupHudUI()
+		public virtual global::ScheduleOne.UI.QuestHUDUI SetupHUDUI()
 		{
 			return null;
 		}
 
 		public void UpdateHUDUI()
+		{
+		}
+
+		public void DestroyHUDUI()
 		{
 		}
 
@@ -258,10 +262,6 @@ namespace ScheduleOne.Quests
 		public global::ScheduleOne.Quests.QuestEntry GetFirstActiveEntry()
 		{
 			return null;
-		}
-
-		private void DestroyHudUI()
-		{
 		}
 
 		public virtual global::UnityEngine.RectTransform CreateDetailDisplay(global::UnityEngine.RectTransform parent)

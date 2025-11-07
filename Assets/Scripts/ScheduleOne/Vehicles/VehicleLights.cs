@@ -30,8 +30,6 @@ namespace ScheduleOne.Vehicles
 
 		public global::UnityEngine.Material brakeLightMat_Off;
 
-		public global::UnityEngine.Material brakeLightMat_Ambient;
-
 		protected bool brakeLightsOn;
 
 		protected bool brakeLightsApplied;

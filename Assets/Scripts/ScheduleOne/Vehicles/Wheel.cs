@@ -53,10 +53,6 @@ namespace ScheduleOne.Vehicles
 
 		private global::UnityEngine.WheelFrictionCurve sidewaysCurve;
 
-		private global::UnityEngine.Transform wheelTransform;
-
-		public bool isStatic { get; protected set; }
-
 		public bool IsDrifting { get; protected set; }
 
 		public bool IsDrifting_Smoothed => false;
@@ -70,6 +66,10 @@ namespace ScheduleOne.Vehicles
 		}
 
 		public void FixedUpdateWheel()
+		{
+		}
+
+		public void FakeWheelRotation()
 		{
 		}
 
@@ -89,11 +89,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public virtual void SetIsStatic(bool s)
-		{
-		}
-
-		private void GroundWheelModel()
+		public virtual void SetPhysicsEnabled(bool enabled)
 		{
 		}
 

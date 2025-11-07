@@ -39,8 +39,6 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::UnityEngine.Transform PressTransform_Lowered;
 
-		public global::UnityEngine.Transform PressTransform_Compressed;
-
 		public global::ScheduleOne.Audio.AudioSourceController SlamSound;
 
 		public global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
@@ -247,7 +245,7 @@ namespace ScheduleOne.ObjectScripts
 			secondaryItemQuantity = default(int);
 		}
 
-		public global::ScheduleOne.PlayerTasks.Draggable CreateFunctionalContainer(global::ScheduleOne.Product.ProductItemInstance instance, float productScale, out global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> products)
+		public global::ScheduleOne.PlayerTasks.Draggable CreateFunctionalContainer(global::ScheduleOne.Product.ProductItemInstance instance, float productScale, out global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> products)
 		{
 			products = null;
 			return null;
@@ -261,7 +259,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> GetProductInMould()
+		public global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> GetProductInMould()
 		{
 			return null;
 		}

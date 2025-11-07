@@ -5,8 +5,6 @@ namespace ScheduleOne.StationFramework
 	{
 		public const float LIQUID_FRICTION = 100f;
 
-		public global::ScheduleOne.StationFramework.LiquidContainer CurrentLiquidContainer;
-
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Transform ModelContainer;
 
@@ -27,6 +25,8 @@ namespace ScheduleOne.StationFramework
 		private global::UnityEngine.Coroutine dissolveParticleRoutine;
 
 		public float CurrentDissolveAmount { get; private set; }
+
+		public global::ScheduleOne.StationFramework.LiquidContainer CurrentLiquidContainer { get; private set; }
 
 		private void Start()
 		{

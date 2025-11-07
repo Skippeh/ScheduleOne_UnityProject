@@ -2,7 +2,7 @@ namespace ScheduleOne.ObjectScripts
 {
 	public class BrickPressContainer : global::UnityEngine.MonoBehaviour
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public global::ScheduleOne.Product.MultiTypeVisualsSetter Visuals;
 
 		public global::UnityEngine.Transform ContentsContainer;
 

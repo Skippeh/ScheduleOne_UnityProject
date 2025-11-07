@@ -52,6 +52,8 @@ namespace ScheduleOne.Quests
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public global::ScheduleOne.Quests.EQuestState State => default(global::ScheduleOne.Quests.EQuestState);
 
+		public int QuestEntryIndex => 0;
+
 		protected virtual void Awake()
 		{
 		}

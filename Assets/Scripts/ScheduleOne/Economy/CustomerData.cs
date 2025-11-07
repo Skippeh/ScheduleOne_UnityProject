@@ -7,7 +7,7 @@ namespace ScheduleOne.Economy
 		public global::ScheduleOne.Economy.CustomerAffinityData DefaultAffinityData;
 
 		[global::UnityEngine.Header("Preferred Properties - Properties the customer prefers in a product.")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> PreferredProperties;
+		public global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> PreferredProperties;
 
 		[global::UnityEngine.Header("Spending Behaviour")]
 		public float MinWeeklySpend;

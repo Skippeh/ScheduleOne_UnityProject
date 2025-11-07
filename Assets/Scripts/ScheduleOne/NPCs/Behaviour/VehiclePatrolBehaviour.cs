@@ -29,19 +29,19 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected override void Begin()
+		public override void Begin()
 		{
 		}
 
-		protected override void Resume()
+		public override void Resume()
 		{
 		}
 
-		protected override void Pause()
+		public override void Pause()
 		{
 		}
 
-		protected override void End()
+		public override void End()
 		{
 		}
 

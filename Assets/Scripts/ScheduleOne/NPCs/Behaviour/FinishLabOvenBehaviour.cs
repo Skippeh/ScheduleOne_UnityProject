@@ -22,7 +22,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected override void End()
+		public override void End()
 		{
 		}
 

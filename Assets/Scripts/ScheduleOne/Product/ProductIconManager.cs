@@ -5,6 +5,9 @@ namespace ScheduleOne.Product
 		[global::System.Serializable]
 		public class ProductIcon
 		{
+			[global::UnityEngine.HideInInspector]
+			public string name;
+
 			public string ProductID;
 
 			public string PackagingID;

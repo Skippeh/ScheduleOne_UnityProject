@@ -16,10 +16,6 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public override void SetupPackagingVisuals(global::ScheduleOne.Packaging.FilledPackagingVisuals visuals)
-		{
-		}
-
 		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
 		{
 			return null;

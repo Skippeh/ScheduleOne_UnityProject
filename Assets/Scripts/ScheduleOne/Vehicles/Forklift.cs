@@ -97,7 +97,7 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		protected new virtual void LateUpdate()
+		protected virtual void LateUpdate()
 		{
 		}
 

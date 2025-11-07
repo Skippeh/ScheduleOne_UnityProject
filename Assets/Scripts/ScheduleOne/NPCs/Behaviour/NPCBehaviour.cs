@@ -124,6 +124,72 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void EnableBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void EnableBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void DisableBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void DisableBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void BeginBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void BeginBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void EndBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void EndBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void PauseBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void PauseBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void ResumeBehaviour_Server(int behaviourIndex)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		[global::FishNet.Object.TargetRpc]
+		public void ResumeBehaviour_Client(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}
@@ -157,6 +223,198 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void RpcReader___Server_ConsumeProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_EnableBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___EnableBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_EnableBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_EnableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___EnableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_EnableBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_EnableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_EnableBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_DisableBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___DisableBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_DisableBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_DisableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___DisableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_DisableBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_DisableBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_DisableBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_BeginBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___BeginBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_BeginBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_BeginBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___BeginBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_BeginBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_BeginBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_BeginBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_EndBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___EndBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_EndBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_EndBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___EndBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_EndBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_EndBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_EndBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_PauseBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___PauseBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_PauseBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_PauseBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___PauseBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_PauseBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_PauseBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_PauseBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_ResumeBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___ResumeBehaviour_Server_3316948804(int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Server_ResumeBehaviour_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_ResumeBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		public void RpcLogic___ResumeBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Observers_ResumeBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_ResumeBehaviour_Client_2681120339(global::FishNet.Connection.NetworkConnection conn, int behaviourIndex)
+		{
+		}
+
+		private void RpcReader___Target_ResumeBehaviour_Client_2681120339(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

@@ -20,7 +20,7 @@ namespace ScheduleOne.Packaging
 
 		public global::ScheduleOne.Audio.AudioSourceController SealSound;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> PackedProducts;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> PackedProducts;
 
 		public global::System.Action onFullyPacked;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.Packaging
 
 		private global::ScheduleOne.ObjectScripts.PackagingStation station;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Packaging.FunctionalProduct, float> productContactTime;
+		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Product.FunctionalProduct, float> productContactTime;
 
 		private global::ScheduleOne.Tools.SmoothedVelocityCalculator VelocityCalculator;
 
@@ -56,7 +56,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		protected virtual void PackProduct(global::ScheduleOne.Packaging.FunctionalProduct product)
+		protected virtual void PackProduct(global::ScheduleOne.Product.FunctionalProduct product)
 		{
 		}
 

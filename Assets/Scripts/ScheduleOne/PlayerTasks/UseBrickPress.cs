@@ -17,7 +17,7 @@ namespace ScheduleOne.PlayerTasks
 
 		protected global::ScheduleOne.Product.ProductItemInstance product;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> products;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> products;
 
 		protected global::ScheduleOne.PlayerTasks.Draggable container;
 

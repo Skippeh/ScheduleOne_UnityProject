@@ -2,14 +2,6 @@ namespace ScheduleOne.Product
 {
 	public class NewMixDiscoveryBox : global::UnityEngine.MonoBehaviour
 	{
-		[global::System.Serializable]
-		public class DrugTypeVisuals
-		{
-			public global::ScheduleOne.Product.EDrugType DrugType;
-
-			public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
-		}
-
 		private bool isOpen;
 
 		[global::UnityEngine.Header("References")]
@@ -17,13 +9,13 @@ namespace ScheduleOne.Product
 
 		public global::TMPro.TextMeshPro PropertiesText;
 
-		public global::ScheduleOne.Product.NewMixDiscoveryBox.DrugTypeVisuals[] Visuals;
-
 		public global::UnityEngine.Animation Animation;
 
 		public global::ScheduleOne.Interaction.InteractableObject IntObj;
 
 		public global::UnityEngine.Transform Lid;
+
+		public global::ScheduleOne.Product.MultiTypeVisualsSetter Visuals;
 
 		private global::UnityEngine.Pose closedLidPose;
 
@@ -33,7 +25,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public void ShowProduct(global::ScheduleOne.Product.ProductDefinition baseDefinition, global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public void ShowProduct(global::ScheduleOne.Product.ProductDefinition baseDefinition, global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 		}
 

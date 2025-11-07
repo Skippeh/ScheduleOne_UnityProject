@@ -57,10 +57,6 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public virtual void SetupPackagingVisuals(global::ScheduleOne.Packaging.FilledPackagingVisuals visuals)
-		{
-		}
-
 		private global::UnityEngine.Sprite GetIcon()
 		{
 			return null;

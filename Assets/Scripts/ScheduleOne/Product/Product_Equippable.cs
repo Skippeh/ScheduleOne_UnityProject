@@ -3,31 +3,13 @@ namespace ScheduleOne.Product
 	public class Product_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
 	{
 		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public global::ScheduleOne.Product.ProductVisualsSetter Visuals;
 
 		public global::UnityEngine.Transform ModelContainer;
 
-		[global::UnityEngine.Header("Settings")]
-		public bool Consumable;
+		private global::ScheduleOne.Product.FirstPersonProductConsumeAnimation consumeAnimation;
 
-		public string ConsumeDescription;
-
-		public float ConsumeTime;
-
-		public float EffectsApplyDelay;
-
-		public string ConsumeAnimationBool;
-
-		public string ConsumeAnimationTrigger;
-
-		public string ConsumeEquippableAssetPath;
-
-		[global::UnityEngine.Header("Events")]
-		public global::UnityEngine.Events.UnityEvent onConsumeInputStart;
-
-		public global::UnityEngine.Events.UnityEvent onConsumeInputComplete;
-
-		public global::UnityEngine.Events.UnityEvent onConsumeInputCancel;
+		private bool isConsumable;
 
 		private float consumeTime;
 
@@ -35,11 +17,19 @@ namespace ScheduleOne.Product
 
 		private global::UnityEngine.Vector3 defaultModelPosition;
 
-		private int productAmount;
-
 		private global::UnityEngine.Coroutine consumeRoutine;
 
+		public string ConsumeDescription => null;
+
+		public float ConsumeTime => 0f;
+
+		public float EffectsApplyDelay => 0f;
+
 		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		{
+		}
+
+		protected virtual void ApplyProductVisuals(global::ScheduleOne.Product.ProductItemInstance product)
 		{
 		}
 
@@ -48,6 +38,14 @@ namespace ScheduleOne.Product
 		}
 
 		protected override void Update()
+		{
+		}
+
+		protected virtual void StartPrepare()
+		{
+		}
+
+		protected virtual void CancelPrepare()
 		{
 		}
 

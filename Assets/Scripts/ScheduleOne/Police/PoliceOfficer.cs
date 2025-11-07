@@ -101,6 +101,10 @@ namespace ScheduleOne.Police
 		{
 		}
 
+		protected override void OnDestroy()
+		{
+		}
+
 		protected void Update()
 		{
 		}

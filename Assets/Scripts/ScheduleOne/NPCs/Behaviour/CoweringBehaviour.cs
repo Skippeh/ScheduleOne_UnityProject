@@ -6,7 +6,7 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002ECoweringBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		protected override void Begin()
+		public override void Begin()
 		{
 		}
 
@@ -14,15 +14,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected override void End()
+		public override void End()
 		{
 		}
 
-		protected override void Resume()
+		public override void Resume()
 		{
 		}
 
-		protected override void Pause()
+		public override void Pause()
 		{
 		}
 

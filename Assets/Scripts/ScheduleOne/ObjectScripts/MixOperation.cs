@@ -19,7 +19,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public global::ScheduleOne.Product.EDrugType GetOutput(out global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public global::ScheduleOne.Product.EDrugType GetOutput(out global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 			properties = null;
 			return default(global::ScheduleOne.Product.EDrugType);

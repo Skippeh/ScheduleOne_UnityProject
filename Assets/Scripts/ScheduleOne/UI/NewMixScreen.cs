@@ -60,7 +60,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::ScheduleOne.Product.EDrugType drugType, float productMarketValue)
+		public void Open(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties, global::ScheduleOne.Product.EDrugType drugType, float productMarketValue)
 		{
 		}
 
@@ -76,7 +76,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public string GenerateUniqueName(global::ScheduleOne.Properties.Property[] properties = null, global::ScheduleOne.Product.EDrugType drugType = global::ScheduleOne.Product.EDrugType.Marijuana)
+		public string GenerateUniqueName(global::ScheduleOne.Effects.Effect[] properties = null, global::ScheduleOne.Product.EDrugType drugType = global::ScheduleOne.Product.EDrugType.Marijuana)
 		{
 			return null;
 		}

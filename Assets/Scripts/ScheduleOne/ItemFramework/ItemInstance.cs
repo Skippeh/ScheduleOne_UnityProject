@@ -3,7 +3,7 @@ namespace ScheduleOne.ItemFramework
 	[global::System.Serializable]
 	public abstract class ItemInstance
 	{
-		public const int APPROXIMATE_BYTE_SIZE = 50;
+		public const int APPROXIMATE_BYTE_SIZE = 80;
 
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		protected global::ScheduleOne.ItemFramework.ItemDefinition definition;

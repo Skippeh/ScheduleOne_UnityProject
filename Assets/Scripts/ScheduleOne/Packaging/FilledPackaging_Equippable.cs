@@ -1,10 +1,10 @@
 namespace ScheduleOne.Packaging
 {
-	public class FilledPackaging_Equippable : global::ScheduleOne.Equipping.Equippable_Viewmodel
+	public class FilledPackaging_Equippable : global::ScheduleOne.Product.Product_Equippable
 	{
-		public global::ScheduleOne.Packaging.FilledPackagingVisuals Visuals;
+		public global::ScheduleOne.Product.MultiTypeVisualsSetter MultiTypeVisuals;
 
-		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		protected override void ApplyProductVisuals(global::ScheduleOne.Product.ProductItemInstance product)
 		{
 		}
 	}

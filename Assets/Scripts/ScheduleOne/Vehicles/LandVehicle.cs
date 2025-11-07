@@ -1,22 +1,10 @@
 namespace ScheduleOne.Vehicles
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.VehicleCamera))]
 	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Transforming.NetworkTransform))]
 	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Ownership.PredictedOwner))]
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Vehicles.VehicleCollisionDetector))]
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Combat.PhysicsDamageable))]
 	public class LandVehicle : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
 	{
-		[global::System.Serializable]
-		public class BodyMesh
-		{
-			public global::UnityEngine.MeshRenderer Renderer;
-
-			public int MaterialIndex;
-		}
-
-		public delegate void VehiclePlayerEvent(global::ScheduleOne.PlayerScripts.Player player);
-
 		public const float KINEMATIC_THRESHOLD_DISTANCE = 30f;
 
 		public const float MAX_TURNOVER_SPEED = 5f;
@@ -65,8 +53,9 @@ namespace ScheduleOne.Vehicles
 		[global::UnityEngine.SerializeField]
 		protected global::System.Collections.Generic.List<global::UnityEngine.Transform> exitPoints;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Rigidbody rb;
+		public global::UnityEngine.Rigidbody Rb;
+
+		public global::ScheduleOne.Vehicles.VehicleColor Color;
 
 		public global::ScheduleOne.Vehicles.VehicleSeat[] Seats;
 
@@ -86,9 +75,7 @@ namespace ScheduleOne.Vehicles
 
 		public global::ScheduleOne.Map.POI POI;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.Sound.VehicleSound> Sounds;
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.PlayerPusher> Pushers;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.PlayerPusher> pushers;
 
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Transform centerOfMass;
@@ -137,20 +124,6 @@ namespace ScheduleOne.Vehicles
 		[global::UnityEngine.SerializeField]
 		protected float reverseMultiplier;
 
-		[global::UnityEngine.Header("Color Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Vehicles.LandVehicle.BodyMesh[] BodyMeshes;
-
-		public global::ScheduleOne.Vehicles.Modification.EVehicleColor DefaultColor;
-
-		private global::ScheduleOne.Vehicles.Modification.EVehicleColor DisplayedColor;
-
-		[global::UnityEngine.Header("Outline settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> outlineRenderers;
-
-		protected global::EPOOutline.Outlinable outlineEffect;
-
 		[global::UnityEngine.Header("Control overrides")]
 		public bool overrideControls;
 
@@ -169,9 +142,6 @@ namespace ScheduleOne.Vehicles
 
 		private const int previousSpeedsSampleSize = 20;
 
-		[global::FishNet.Object.Synchronizing.SyncVar(Channel = global::FishNet.Transporting.Channel.Unreliable, SendRate = 0.05f, WritePermissions = global::FishNet.Object.Synchronizing.WritePermission.ClientUnsynchronized)]
-		public float currentSteerAngle;
-
 		private float lastFrameSteerAngle;
 
 		private float lastReplicatedSteerAngle;
@@ -182,30 +152,28 @@ namespace ScheduleOne.Vehicles
 
 		private global::UnityEngine.Transform closestExitPoint;
 
+		private float timeOnSpawn;
+
+		private float timeOnLastOccupied;
+
 		[global::UnityEngine.HideInInspector]
 		public global::ScheduleOne.Vehicles.ParkData CurrentParkData;
 
 		private global::ScheduleOne.Persistence.Loaders.VehicleLoader loader;
 
-		public global::ScheduleOne.Vehicles.LandVehicle.VehiclePlayerEvent onPlayerEnterVehicle;
+		public global::System.Action onVehicleStart;
 
-		public global::ScheduleOne.Vehicles.LandVehicle.VehiclePlayerEvent onPlayerExitVehicle;
+		public global::System.Action onVehicleStop;
 
-		public global::UnityEngine.Events.UnityEvent onVehicleStart;
+		public global::System.Action onHandbrakeApplied;
 
-		public global::UnityEngine.Events.UnityEvent onVehicleStop;
+		public global::System.Action<global::UnityEngine.Collision> onCollision;
 
-		public global::UnityEngine.Events.UnityEvent onHandbrakeApplied;
+		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CCurrentSteerAngle_003Ek__BackingField;
 
-		public global::UnityEngine.Events.UnityEvent<global::UnityEngine.Collision> onCollision;
+		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CBrakesApplied_003Ek__BackingField;
 
-		public global::UnityEngine.Events.UnityEvent<bool> onOccupy;
-
-		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar___currentSteerAngle;
-
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CbrakesApplied_003Ek__BackingField;
-
-		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CisReversing_003Ek__BackingField;
+		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CIsReversing_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EVehicles_002ELandVehicleAssembly_002DCSharp_002Edll_Excuted;
 
@@ -223,11 +191,9 @@ namespace ScheduleOne.Vehicles
 
 		public global::System.Guid GUID { get; protected set; }
 
-		public global::UnityEngine.Vector3 boundingBoxDimensions => default(global::UnityEngine.Vector3);
+		public global::UnityEngine.Vector3 BoundingBoxDimensions => default(global::UnityEngine.Vector3);
 
 		public global::UnityEngine.Transform driverEntryPoint => null;
-
-		public global::UnityEngine.Rigidbody Rb => null;
 
 		public float ActualMaxSteeringAngle => 0f;
 
@@ -235,17 +201,15 @@ namespace ScheduleOne.Vehicles
 
 		public float OverriddenMaxSteerAngle { get; private set; }
 
-		public global::ScheduleOne.Vehicles.Modification.EVehicleColor OwnedColor { get; private set; }
-
 		public int Capacity => 0;
 
 		public int CurrentPlayerOccupancy => 0;
 
-		public bool localPlayerIsDriver { get; protected set; }
+		public bool LocalPlayerIsDriver { get; protected set; }
 
-		public bool localPlayerIsInVehicle { get; protected set; }
+		public bool LocalPlayerIsInVehicle { get; protected set; }
 
-		public bool isOccupied
+		public bool IsOccupied
 		{
 			get
 			{
@@ -262,15 +226,31 @@ namespace ScheduleOne.Vehicles
 
 		public global::ScheduleOne.NPCs.NPC[] OccupantNPCs { get; protected set; }
 
-		public float speed_Kmh { get; protected set; }
+		public float Speed_Kmh { get; protected set; }
 
-		public float speed_Ms => 0f;
+		public float Speed_Ms => 0f;
 
-		public float speed_Mph => 0f;
+		public float Speed_Mph => 0f;
+
+		public bool IsPhysicallySimulated { get; protected set; }
 
 		public float currentThrottle { get; protected set; }
 
-		public bool brakesApplied
+		public float CurrentSteerAngle
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return 0f;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			set
+			{
+			}
+		}
+
+		[global::UnityEngine.HideInInspector]
+		public bool BrakesApplied
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
 			get
@@ -283,7 +263,8 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		public bool isReversing
+		[global::UnityEngine.HideInInspector]
+		public bool IsReversing
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
 			get
@@ -295,12 +276,16 @@ namespace ScheduleOne.Vehicles
 			{
 			}
 		}
-
-		public bool isStatic { get; protected set; }
 
 		public bool handbrakeApplied { get; protected set; }
 
 		public float boundingBaseOffset => 0f;
+
+		private float timeSinceSpawn => 0f;
+
+		public float timeSinceLastOccupied => 0f;
+
+		public global::ScheduleOne.Vehicles.Modification.EVehicleColor OwnedColor { get; private set; }
 
 		public bool isParked => false;
 
@@ -322,7 +307,7 @@ namespace ScheduleOne.Vehicles
 
 		public bool HasChanged { get; set; }
 
-		public float SyncAccessor_currentSteerAngle
+		public float SyncAccessor__003CCurrentSteerAngle_003Ek__BackingField
 		{
 			get
 			{
@@ -333,7 +318,7 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		public bool SyncAccessor__003CbrakesApplied_003Ek__BackingField
+		public bool SyncAccessor__003CBrakesApplied_003Ek__BackingField
 		{
 			get
 			{
@@ -344,7 +329,7 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		public bool SyncAccessor__003CisReversing_003Ek__BackingField
+		public bool SyncAccessor__003CIsReversing_003Ek__BackingField
 		{
 			get
 			{
@@ -409,15 +394,15 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		private void OnDrawGizmos()
-		{
-		}
-
 		protected virtual void FixedUpdate()
 		{
 		}
 
-		protected virtual void LateUpdate()
+		private void UpdateSpeedCalculation()
+		{
+		}
+
+		private void UpdateOutOfBounds()
 		{
 		}
 
@@ -461,8 +446,11 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void SetSteeringAngle(float sa)
+		private void ApplyDownForce()
+		{
+		}
+
+		private void UpdateTurnOver()
 		{
 		}
 
@@ -470,15 +458,12 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		private void SetSteeringAngle(float sa)
+		{
+		}
+
 		protected virtual void ApplySteerAngle()
-		{
-		}
-
-		private void DelaySetStatic(bool stat)
-		{
-		}
-
-		public virtual void SetIsStatic(bool stat)
 		{
 		}
 
@@ -506,6 +491,15 @@ namespace ScheduleOne.Vehicles
 
 		public void SetObstaclesActive(bool active)
 		{
+		}
+
+		private void UpdatePhysicallySimulated(bool forceApply = false)
+		{
+		}
+
+		private bool ShouldBePhysicallySimulated()
+		{
+			return false;
 		}
 
 		public global::ScheduleOne.Vehicles.VehicleSeat GetFirstFreeSeat()
@@ -595,19 +589,11 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public virtual void ApplyColor(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
+		public void ApplyColor(global::ScheduleOne.Vehicles.Modification.EVehicleColor col)
 		{
 		}
 
 		public void ApplyOwnedColor()
-		{
-		}
-
-		public void ShowOutline(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor color)
-		{
-		}
-
-		public void HideOutline()
 		{
 		}
 
@@ -632,14 +618,6 @@ namespace ScheduleOne.Vehicles
 		}
 
 		public void SetVisible(bool vis)
-		{
-		}
-
-		public void RegisterSound(global::ScheduleOne.Vehicles.Sound.VehicleSound sound)
-		{
-		}
-
-		public void DeregisterSound(global::ScheduleOne.Vehicles.Sound.VehicleSound sound)
 		{
 		}
 

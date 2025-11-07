@@ -5,13 +5,13 @@ namespace ScheduleOne.Product
 	public class PropertyItemDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
 	{
 		[global::UnityEngine.Header("Properties")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> Properties;
+		public global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> Properties;
 
-		public virtual void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public virtual void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 		}
 
-		public bool HasProperty(global::ScheduleOne.Properties.Property property)
+		public bool HasProperty(global::ScheduleOne.Effects.Effect property)
 		{
 			return false;
 		}

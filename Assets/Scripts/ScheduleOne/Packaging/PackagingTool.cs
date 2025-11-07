@@ -87,13 +87,13 @@ namespace ScheduleOne.Packaging
 
 		private global::ScheduleOne.Product.ProductItemInstance ProductItem;
 
-		private global::ScheduleOne.Packaging.FunctionalProduct ProductPrefab;
+		private global::ScheduleOne.Product.FunctionalProduct ProductPrefab;
 
 		private int ProductInHopper;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.PackagingTool.PackagingInstance> PackagingInstances;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> ProductInstances;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> ProductInstances;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalPackaging> FinalizedPackaging;
 
@@ -181,7 +181,7 @@ namespace ScheduleOne.Packaging
 		{
 		}
 
-		private void InsertIntoHopper(global::ScheduleOne.Packaging.FunctionalProduct product)
+		private void InsertIntoHopper(global::ScheduleOne.Product.FunctionalProduct product)
 		{
 		}
 

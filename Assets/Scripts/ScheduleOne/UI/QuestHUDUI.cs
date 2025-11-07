@@ -35,10 +35,6 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		public void UpdateExpiry()
-		{
-		}
-
 		public void UpdateShade()
 		{
 		}

@@ -100,17 +100,17 @@ namespace ScheduleOne.UI.Stations
 		{
 		}
 
-		private string GetPropertyListString(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		private string GetPropertyListString(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 			return null;
 		}
 
-		private string GetPropertyString(global::ScheduleOne.Properties.Property property)
+		private string GetPropertyString(global::ScheduleOne.Effects.Effect property)
 		{
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> GetOutputProperties(global::ScheduleOne.Product.ProductDefinition product, global::ScheduleOne.Product.PropertyItemDefinition mixer)
+		private global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> GetOutputProperties(global::ScheduleOne.Product.ProductDefinition product, global::ScheduleOne.Product.PropertyItemDefinition mixer)
 		{
 			return null;
 		}

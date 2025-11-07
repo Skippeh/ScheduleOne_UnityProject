@@ -14,7 +14,7 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes, global::ScheduleOne.Product.CocaineAppearanceSettings _appearance)
+		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes, global::ScheduleOne.Product.CocaineAppearanceSettings _appearance)
 		{
 		}
 
@@ -23,7 +23,15 @@ namespace ScheduleOne.Product
 			return null;
 		}
 
-		public static global::ScheduleOne.Product.CocaineAppearanceSettings GetAppearanceSettings(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties)
+		public override void GenerateAppearanceSettings()
+		{
+		}
+
+		private void ApplyAppearanceSettings()
+		{
+		}
+
+		public static global::ScheduleOne.Product.CocaineAppearanceSettings GetAppearanceSettings(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
 		{
 			return null;
 		}

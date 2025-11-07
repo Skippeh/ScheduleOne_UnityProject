@@ -2,9 +2,15 @@ namespace ScheduleOne.Audio
 {
 	public class AudioManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Audio.AudioManager>
 	{
-		public const float MIN_WORLD_MUSIC_VOLUME_MULTIPLIER = 0f;
+		private const float MinWorldMusicVolumeMulitplier = 0f;
 
-		public const float MUSIC_FADE_TIME = 4f;
+		private const float MusicFadeTime = 4f;
+
+		private const float MinGameVolume = 0.0001f;
+
+		private const float MaxGameVolume = 1f;
+
+		private const float GameVolumeLerpSpeed = 2f;
 
 		[global::UnityEngine.Range(0f, 2f)]
 		[global::UnityEngine.SerializeField]
@@ -49,12 +55,6 @@ namespace ScheduleOne.Audio
 		public global::UnityEngine.Audio.AudioMixerGroup MusicMixer;
 
 		private float currentGameVolume;
-
-		private const float minGameVolume = 0.0001f;
-
-		private const float maxGameVolume = 0.0001f;
-
-		private float gameVolumeMultiplier;
 
 		public global::UnityEngine.Audio.AudioMixerSnapshot DefaultSnapshot;
 
@@ -105,16 +105,17 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public void SetGameVolumeMultipler(float value)
-		{
-		}
-
 		public void SetDistorted(bool distorted, float transition = 5f)
 		{
 		}
 
 		private void SetGameVolume(float value)
 		{
+		}
+
+		private float ValueToVolume(float value)
+		{
+			return 0f;
 		}
 
 		public float GetVolume(global::ScheduleOne.Audio.EAudioType audioType, bool scaled = true)

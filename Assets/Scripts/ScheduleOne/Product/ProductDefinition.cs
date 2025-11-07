@@ -13,7 +13,7 @@ namespace ScheduleOne.Product
 
 		public float MarketValue;
 
-		public global::ScheduleOne.Packaging.FunctionalProduct FunctionalProduct;
+		public global::ScheduleOne.Product.FunctionalProduct FunctionalProduct;
 
 		public int EffectsDuration;
 
@@ -22,6 +22,9 @@ namespace ScheduleOne.Product
 
 		[global::UnityEngine.Header("Packaging that can be applied to this product. MUST BE ORDERED FROm LOWEST TO HIGHEST QUANTITY")]
 		public global::ScheduleOne.Product.Packaging.PackagingDefinition[] ValidPackaging;
+
+		[global::UnityEngine.Header("Product References")]
+		public global::ScheduleOne.Product.FirstPersonProductConsumeAnimation ConsumeAnimation;
 
 		public global::ScheduleOne.Product.EDrugType DrugType => default(global::ScheduleOne.Product.EDrugType);
 
@@ -52,7 +55,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Properties.Property> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes)
+		public void Initialize(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties, global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> drugTypes)
 		{
 		}
 
@@ -70,6 +73,10 @@ namespace ScheduleOne.Product
 		}
 
 		public void AddRecipe(global::ScheduleOne.StationFramework.StationRecipe recipe)
+		{
+		}
+
+		public virtual void GenerateAppearanceSettings()
 		{
 		}
 

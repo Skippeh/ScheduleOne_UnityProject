@@ -8,6 +8,10 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		private void LateUpdate()
+		{
+		}
+
 		private void OnCollisionStay(global::UnityEngine.Collision collision)
 		{
 		}

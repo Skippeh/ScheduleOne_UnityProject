@@ -4,6 +4,10 @@ namespace ScheduleOne.Vehicles
 	{
 		public global::UnityEngine.ParticleSystem[] exhaustFX;
 
+		protected virtual void Awake()
+		{
+		}
+
 		public virtual void OnVehicleStart()
 		{
 		}

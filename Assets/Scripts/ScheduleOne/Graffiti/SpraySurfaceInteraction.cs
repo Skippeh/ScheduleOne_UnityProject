@@ -11,7 +11,7 @@ namespace ScheduleOne.Graffiti
 
 		public const int XP_GAIN = 50;
 
-		public const float CARTEL_INFLUENCE_REDUCTION = 0.05f;
+		public const float CARTEL_INFLUENCE_CHANGE = -0.05f;
 
 		public const int PAINTED_PIXEL_LIMIT = 25000;
 

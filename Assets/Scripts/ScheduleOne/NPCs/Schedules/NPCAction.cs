@@ -53,6 +53,10 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
+		private void OnDestroy()
+		{
+		}
+
 		public virtual void Started()
 		{
 		}

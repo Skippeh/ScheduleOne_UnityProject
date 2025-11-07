@@ -4,6 +4,8 @@ namespace ScheduleOne.Tools
 	{
 		public float LeftSpacing;
 
+		public float RightSpacing;
+
 		private global::UnityEngine.UI.VerticalLayoutGroup layoutGroup;
 
 		private void Awake()

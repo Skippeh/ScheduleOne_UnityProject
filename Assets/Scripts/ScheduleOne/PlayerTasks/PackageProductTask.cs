@@ -6,7 +6,7 @@ namespace ScheduleOne.PlayerTasks
 
 		protected global::ScheduleOne.Packaging.FunctionalPackaging Packaging;
 
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Packaging.FunctionalProduct> Products;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Product.FunctionalProduct> Products;
 
 		public override string TaskName { get; protected set; }
 

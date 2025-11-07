@@ -4,9 +4,15 @@ namespace ScheduleOne.Quests
 	{
 		public global::ScheduleOne.Quests.QuestEntry MainEntry;
 
+		public global::ScheduleOne.Quests.QuestEntry EndTruceEntry;
+
 		private global::ScheduleOne.Cartel.CartelDealInfo dealInfo;
 
 		public void Initialize(global::ScheduleOne.Cartel.CartelDealInfo dealInfo)
+		{
+		}
+
+		public override void Begin(bool network = true)
 		{
 		}
 
@@ -19,6 +25,10 @@ namespace ScheduleOne.Quests
 		}
 
 		public void NotifyDealCompleted()
+		{
+		}
+
+		public void NotifyTruceEnded()
 		{
 		}
 	}

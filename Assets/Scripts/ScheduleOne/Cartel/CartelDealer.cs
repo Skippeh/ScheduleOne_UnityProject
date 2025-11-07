@@ -2,7 +2,7 @@ namespace ScheduleOne.Cartel
 {
 	public class CartelDealer : global::ScheduleOne.Economy.Dealer
 	{
-		public const float DEALER_DEFEATED_INFLUENCE_CHANGE = -0.05f;
+		public const float DEALER_DEFEATED_INFLUENCE_CHANGE = -0.1f;
 
 		public const int PRODUCT_COUNT_MIN = 2;
 

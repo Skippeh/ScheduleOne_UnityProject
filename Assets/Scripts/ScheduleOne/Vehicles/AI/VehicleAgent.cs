@@ -34,7 +34,7 @@ namespace ScheduleOne.Vehicles.AI
 		public delegate void NavigationCallback(global::ScheduleOne.Vehicles.AI.VehicleAgent.ENavigationResult status);
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CReverse_003Ed__140 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CReverse_003Ed__139 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -77,7 +77,7 @@ namespace ScheduleOne.Vehicles.AI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CReverse_003Ed__140(int _003C_003E1__state)
+			public _003CReverse_003Ed__139(int _003C_003E1__state)
 			{
 			}
 
@@ -136,8 +136,6 @@ namespace ScheduleOne.Vehicles.AI
 		public const float OBSTACLE_MAX_RANGE = 15f;
 
 		public const float MAX_STEER_ANGLE_OVERRIDE = 35f;
-
-		public const float KINEMATIC_MODE_MIN_DISTANCE = 40f;
 
 		public const float INFREQUENT_UPDATE_RATE = 0.033f;
 
@@ -298,7 +296,7 @@ namespace ScheduleOne.Vehicles.AI
 
 		protected global::ScheduleOne.Math.PathSmoothingUtility.SmoothedPath path;
 
-		private float timeSinceLastNavigationCall;
+		private float timeOnLastNavigationCall;
 
 		private float sweepTestFailedTime;
 
@@ -308,9 +306,9 @@ namespace ScheduleOne.Vehicles.AI
 
 		private global::UnityEngine.Coroutine reverseCoroutine;
 
-		public bool KinematicMode { get; protected set; }
-
 		public bool AutoDriving { get; protected set; }
+
+		public bool KinematicMode => false;
 
 		public bool IsReversing => false;
 
@@ -322,9 +320,11 @@ namespace ScheduleOne.Vehicles.AI
 
 		protected float maxSteerAngle => 0f;
 
-		private global::UnityEngine.Vector3 FrontOfVehiclePosition => default(global::UnityEngine.Vector3);
+		private global::UnityEngine.Vector3 frontOfVehiclePosition => default(global::UnityEngine.Vector3);
 
 		public bool NavigationCalculationInProgress => false;
+
+		private float timeSinceLastNavigationCall => 0f;
 
 		private void Awake()
 		{
@@ -432,7 +432,7 @@ namespace ScheduleOne.Vehicles.AI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Vehicles.AI.VehicleAgent._003CReverse_003Ed__140))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Vehicles.AI.VehicleAgent._003CReverse_003Ed__139))]
 		public global::System.Collections.IEnumerator Reverse()
 		{
 			return null;

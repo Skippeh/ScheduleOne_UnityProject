@@ -14,11 +14,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EUnconsciousBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		protected override void Begin()
+		public override void Begin()
 		{
 		}
 
-		protected override void End()
+		public override void End()
 		{
 		}
 

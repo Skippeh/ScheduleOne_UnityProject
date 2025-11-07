@@ -3,6 +3,14 @@ namespace ScheduleOne.Product
 	[global::System.Serializable]
 	public class WeedAppearanceSettings
 	{
+		public enum EWeedAppearanceType
+		{
+			Main = 0,
+			Secondary = 1,
+			Leaf = 2,
+			Stem = 3
+		}
+
 		public global::UnityEngine.Color32 MainColor;
 
 		public global::UnityEngine.Color32 SecondaryColor;

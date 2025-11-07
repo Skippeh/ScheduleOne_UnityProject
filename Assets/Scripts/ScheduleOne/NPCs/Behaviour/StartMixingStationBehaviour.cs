@@ -22,11 +22,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected override void End()
+		public override void End()
 		{
 		}
 
-		protected override void Pause()
+		public override void Pause()
 		{
 		}
 

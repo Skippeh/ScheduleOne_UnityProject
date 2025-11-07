@@ -72,11 +72,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected override void Begin()
+		public override void Begin()
 		{
 		}
 
-		protected override void Resume()
+		public override void Resume()
 		{
 		}
 

@@ -89,15 +89,11 @@ namespace ScheduleOne.Storage
 		[global::UnityEngine.Range(0f, 10f)]
 		public float MaxAccessDistance;
 
-		[global::UnityEngine.Header("Events")]
-		[global::UnityEngine.Tooltip("Invoked when this StorageEntity is accessed in the StorageMenu")]
-		public global::UnityEngine.Events.UnityEvent onOpened;
+		public global::System.Action onOpened;
 
-		[global::UnityEngine.Tooltip("Invoked when the StorageMenu is closed.")]
-		public global::UnityEngine.Events.UnityEvent onClosed;
+		public global::System.Action onClosed;
 
-		[global::UnityEngine.Tooltip("Invoked when the contents change in any way. i.e. an item is added, removed, or the quantity of an item changes.")]
-		public global::UnityEngine.Events.UnityEvent onContentsChanged;
+		public global::System.Action onContentsChanged;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EStorage_002EStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
@@ -105,7 +101,7 @@ namespace ScheduleOne.Storage
 
 		public bool IsOpened => false;
 
-		public global::ScheduleOne.PlayerScripts.Player CurrentAccessor { get; protected set; }
+		public global::ScheduleOne.PlayerScripts.Player CurrentPlayerAccessor { get; protected set; }
 
 		public int ItemCount => 0;
 

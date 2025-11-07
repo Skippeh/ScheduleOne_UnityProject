@@ -18,7 +18,7 @@ namespace ScheduleOne.Networking
 			}
 		}
 
-		public const int RATE_LIMIT_BYTES_PER_SECOND = 102400;
+		public const int RATE_LIMIT_BYTES_PER_SECOND = 51200;
 
 		private global::System.Collections.Generic.Dictionary<global::FishNet.Connection.NetworkConnection, global::System.Collections.Generic.List<global::ScheduleOne.Networking.ReplicationQueue.ReplicationRequest>> requestsByConnection;
 
