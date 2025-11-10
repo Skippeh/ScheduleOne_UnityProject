@@ -82,6 +82,11 @@ namespace ScheduleOne.Interaction
 		{
 		}
 
+		public bool IsAnythingBlockingInteraction()
+		{
+			return false;
+		}
+
 		protected virtual void CheckInteraction()
 		{
 		}

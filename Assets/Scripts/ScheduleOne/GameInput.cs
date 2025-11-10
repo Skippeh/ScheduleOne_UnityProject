@@ -70,6 +70,8 @@ namespace ScheduleOne
 
 		public static bool ControllerComboActive;
 
+		private float vehicleDriveAxis;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ButtonCode> buttonsDownThisFrame;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.GameInput.ButtonCode> buttonsDown;
@@ -84,7 +86,16 @@ namespace ScheduleOne
 
 		public static float MouseScrollDelta => 0f;
 
-		public static float VehicleDriveAxis { get; private set; }
+		public static float VehicleDriveAxis
+		{
+			get
+			{
+				return 0f;
+			}
+			private set
+			{
+			}
+		}
 
 		protected override void Awake()
 		{

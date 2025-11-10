@@ -136,7 +136,7 @@ namespace ScheduleOne.Skating
 
 		public global::UnityEngine.Events.UnityEvent OnLand;
 
-		private int horizontalInput;
+		private float horizontalInput;
 
 		private bool jumpReleased;
 
