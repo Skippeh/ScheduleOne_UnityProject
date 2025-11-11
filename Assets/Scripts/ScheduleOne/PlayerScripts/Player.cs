@@ -206,6 +206,8 @@ namespace ScheduleOne.PlayerScripts
 			}
 		}
 
+		public bool IsInVehicle => false;
+
 		public global::ScheduleOne.Vehicles.VehicleSeat CurrentVehicleSeat { get; private set; }
 
 		public global::ScheduleOne.Vehicles.LandVehicle LastDrivenVehicle { get; private set; }

@@ -33,19 +33,15 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
-		public override void OnStartServer()
-		{
-		}
-
 		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
 		{
 		}
 
-		private void RandomizeInventory()
+		public void RandomizeInventory()
 		{
 		}
 
-		private void RandomizeAppearance()
+		public void RandomizeAppearance()
 		{
 		}
 

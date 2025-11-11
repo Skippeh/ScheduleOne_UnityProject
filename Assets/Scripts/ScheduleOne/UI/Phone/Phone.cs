@@ -3,7 +3,7 @@ namespace ScheduleOne.UI.Phone
 	public class Phone : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.Phone>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetIsHorizontal_Process_003Ed__46 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetIsHorizontal_Process_003Ed__47 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -40,7 +40,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetIsHorizontal_Process_003Ed__46(int _003C_003E1__state)
+			public _003CSetIsHorizontal_Process_003Ed__47(int _003C_003E1__state)
 			{
 			}
 
@@ -67,7 +67,7 @@ namespace ScheduleOne.UI.Phone
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetLookOffset_Process_003Ed__50 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetLookOffset_Process_003Ed__51 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -104,7 +104,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetLookOffset_Process_003Ed__50(int _003C_003E1__state)
+			public _003CSetLookOffset_Process_003Ed__51(int _003C_003E1__state)
 			{
 			}
 
@@ -212,6 +212,10 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
+		private void LateUpdate()
+		{
+		}
+
 		public void SetOpenable(bool o)
 		{
 		}
@@ -224,7 +228,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__46))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__47))]
 		protected global::System.Collections.IEnumerator SetIsHorizontal_Process(bool h)
 		{
 			return null;
@@ -238,7 +242,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__50))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__51))]
 		protected global::System.Collections.IEnumerator SetLookOffset_Process(float lookOffset)
 		{
 			return null;

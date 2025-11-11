@@ -465,7 +465,7 @@ namespace ScheduleOne.Economy
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void ProcessHandoverServerSide(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		private void ProcessHandoverServerSide(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealerObject)
 		{
 		}
 
@@ -838,11 +838,11 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcWriter___Server_ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		private void RpcWriter___Server_ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealerObject)
 		{
 		}
 
-		private void RpcLogic___ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealer)
+		private void RpcLogic___ProcessHandoverServerSide_3760244802(global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items, bool handoverByPlayer, float totalPayment, global::ScheduleOne.Product.ProductList productList, float satisfaction, global::FishNet.Object.NetworkObject dealerObject)
 		{
 		}
 

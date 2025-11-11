@@ -22,5 +22,9 @@ namespace ScheduleOne.Cartel
 		protected override void Deactivate()
 		{
 		}
+
+		private void DealerUnconscious()
+		{
+		}
 	}
 }

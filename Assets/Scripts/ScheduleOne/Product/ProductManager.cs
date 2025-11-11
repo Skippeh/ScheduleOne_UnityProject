@@ -134,11 +134,6 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.TargetRpc]
-		public void SetIsDoneReplicating(global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SetMethDiscovered()
 		{
@@ -360,18 +355,6 @@ namespace ScheduleOne.Product
 		}
 
 		public override void NetworkInitializeIfDisabled()
-		{
-		}
-
-		private void RpcWriter___Target_SetIsDoneReplicating_328543758(global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		public void RpcLogic___SetIsDoneReplicating_328543758(global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		private void RpcReader___Target_SetIsDoneReplicating_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

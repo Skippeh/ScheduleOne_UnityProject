@@ -27,6 +27,10 @@ namespace ScheduleOne.Product
 
 		public global::ScheduleOne.Product.Packaging.PackagingDefinition[] Packaging;
 
+		protected override void Awake()
+		{
+		}
+
 		public global::UnityEngine.Sprite GetIcon(string productID, string packagingID, bool ignoreError = false)
 		{
 			return null;

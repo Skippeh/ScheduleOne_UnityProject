@@ -48,6 +48,11 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
+		[global::EasyButtons.Button]
+		public void ActivateDeal()
+		{
+		}
+
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
 		private void StartActivity(global::FishNet.Connection.NetworkConnection conn, int activityIndex)

@@ -82,7 +82,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		protected virtual void OnKnockOut()
+		private void OnKnockOut()
+		{
+		}
+
+		private void OnRevive()
 		{
 		}
 
