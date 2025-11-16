@@ -194,7 +194,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		protected override void MinPass()
+		protected override void OnTick()
 		{
 		}
 

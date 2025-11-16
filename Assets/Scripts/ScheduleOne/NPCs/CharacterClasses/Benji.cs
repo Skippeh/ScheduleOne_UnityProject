@@ -8,7 +8,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ECharacterClasses_002EBenjiAssembly_002DCSharp_002Edll_Excuted;
 
-		protected override void MinPass()
+		protected override void OnTick()
 		{
 		}
 

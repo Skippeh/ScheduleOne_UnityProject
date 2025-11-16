@@ -143,7 +143,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected override void MinPass()
+		protected override void OnTick()
 		{
 		}
 

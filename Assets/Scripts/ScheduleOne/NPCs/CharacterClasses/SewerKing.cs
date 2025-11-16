@@ -12,7 +12,7 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		protected override void MinPass()
+		protected override void OnTick()
 		{
 		}
 

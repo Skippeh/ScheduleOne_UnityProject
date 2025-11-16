@@ -272,6 +272,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		protected virtual void OnTick()
+		{
+		}
+
 		protected virtual void UpdateVisionConeState(bool value)
 		{
 		}

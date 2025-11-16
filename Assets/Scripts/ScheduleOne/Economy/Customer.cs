@@ -270,7 +270,11 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnMinPass()
+		{
+		}
+
+		protected virtual void OnTick()
 		{
 		}
 
@@ -278,7 +282,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void DayPass()
+		protected virtual void OnDayPass()
 		{
 		}
 

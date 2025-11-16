@@ -20,6 +20,8 @@ namespace ScheduleOne.Networking
 
 		public const int RATE_LIMIT_BYTES_PER_SECOND = 51200;
 
+		public const int MAX_REPLICATION_DURATION = 45;
+
 		private global::System.Collections.Generic.Dictionary<global::FishNet.Connection.NetworkConnection, global::System.Collections.Generic.List<global::ScheduleOne.Networking.ReplicationQueue.ReplicationRequest>> requestsByConnection;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Networking.ReplicationQueue.ReplicationRequest> queue;
@@ -28,11 +30,15 @@ namespace ScheduleOne.Networking
 
 		private float timeOnLastReplicationTaskRPC;
 
+		private float timeOnReplicationStart;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ENetworking_002EReplicationQueueAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENetworking_002EReplicationQueueAssembly_002DCSharp_002Edll_Excuted;
 
 		public bool ReplicationDoneForLocalPlayer { get; private set; }
+
+		public bool LocalPlayerReplicationTimedOut => false;
 
 		public string CurrentReplicationTask { get; private set; }
 
@@ -46,6 +52,10 @@ namespace ScheduleOne.Networking
 		}
 
 		public override void OnStartServer()
+		{
+		}
+
+		public override void OnStartClient()
 		{
 		}
 

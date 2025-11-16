@@ -23,5 +23,10 @@ namespace ScheduleOne.Combat
 		void RecordLastKnownPosition(bool resetTimeSinceLastSeen);
 
 		float GetSearchTime();
+
+		bool IsNull()
+		{
+			return false;
+		}
 	}
 }

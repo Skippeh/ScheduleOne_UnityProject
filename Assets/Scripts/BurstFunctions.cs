@@ -1,9 +1,9 @@
 [global::Unity.Burst.BurstCompile]
 public static class BurstFunctions
 {
-	public delegate void Average_0000007B_0024PostfixBurstDelegate(ref global::Unity.Collections.NativeArray<float> arr, out float result);
+	public delegate void Average_0000003D_0024PostfixBurstDelegate(ref global::Unity.Collections.NativeArray<float> arr, out float result);
 
-	internal static class Average_0000007B_0024BurstDirectCall
+	internal static class Average_0000003D_0024BurstDirectCall
 	{
 		private static global::System.IntPtr Pointer;
 
@@ -33,9 +33,9 @@ public static class BurstFunctions
 		}
 	}
 
-	public delegate void Average_0000007C_0024PostfixBurstDelegate(ref global::Unity.Collections.NativeArray<global::UnityEngine.Vector3> arr, out global::UnityEngine.Vector3 result);
+	public delegate void Average_0000003E_0024PostfixBurstDelegate(ref global::Unity.Collections.NativeArray<global::UnityEngine.Vector3> arr, out global::UnityEngine.Vector3 result);
 
-	internal static class Average_0000007C_0024BurstDirectCall
+	internal static class Average_0000003E_0024BurstDirectCall
 	{
 		private static global::System.IntPtr Pointer;
 

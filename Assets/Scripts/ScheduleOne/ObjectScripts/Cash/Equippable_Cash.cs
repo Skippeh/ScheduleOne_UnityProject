@@ -17,18 +17,6 @@ namespace ScheduleOne.ObjectScripts.Cash
 
 		public global::System.Collections.Generic.List<global::UnityEngine.Transform> PlusStacks;
 
-		protected override void Update()
-		{
-		}
-
-		protected override void StartBuildingStoredItem()
-		{
-		}
-
-		protected override void StopBuildingStoredItem()
-		{
-		}
-
 		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
 		{
 		}

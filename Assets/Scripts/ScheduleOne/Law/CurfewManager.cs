@@ -49,6 +49,10 @@ namespace ScheduleOne.Law
 
 		public bool IsHardCurfewActive { get; protected set; }
 
+		public override void Awake()
+		{
+		}
+
 		protected override void Start()
 		{
 		}
@@ -116,7 +120,7 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		public override void Awake()
+		protected virtual void Awake_UserLogic_ScheduleOne_002ELaw_002ECurfewManager_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

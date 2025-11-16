@@ -51,6 +51,7 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void ChangeInfluence(global::ScheduleOne.Map.EMapRegion region, float amount)
 		{
 		}
@@ -89,6 +90,18 @@ namespace ScheduleOne.Cartel
 		}
 
 		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		private void RpcWriter___Server_ChangeInfluence_2792544924(global::ScheduleOne.Map.EMapRegion region, float amount)
+		{
+		}
+
+		public void RpcLogic___ChangeInfluence_2792544924(global::ScheduleOne.Map.EMapRegion region, float amount)
+		{
+		}
+
+		private void RpcReader___Server_ChangeInfluence_2792544924(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

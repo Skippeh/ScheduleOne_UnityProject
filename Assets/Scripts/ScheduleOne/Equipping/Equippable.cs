@@ -15,5 +15,9 @@ namespace ScheduleOne.Equipping
 		public virtual void Unequip()
 		{
 		}
+
+		protected virtual void Update()
+		{
+		}
 	}
 }

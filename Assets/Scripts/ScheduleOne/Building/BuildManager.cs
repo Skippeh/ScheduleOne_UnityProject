@@ -44,14 +44,6 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		public void StartBuildingStoredItem(global::ScheduleOne.ItemFramework.ItemInstance item)
-		{
-		}
-
-		public void StartPlacingCash(global::ScheduleOne.ItemFramework.ItemInstance item)
-		{
-		}
-
 		public void StopBuilding()
 		{
 		}
@@ -101,10 +93,6 @@ namespace ScheduleOne.Building
 		public global::ScheduleOne.EntityFramework.SurfaceItem CreateSurfaceItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.Building.Surface parentSurface, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation, string guid = "")
 		{
 			return null;
-		}
-
-		public void CreateStoredItem(global::ScheduleOne.Storage.StorableItemInstance item, global::ScheduleOne.Storage.IStorageEntity parentStorageEntity, global::ScheduleOne.Storage.StorageGrid grid, global::UnityEngine.Vector2 originCoord, float rotation)
-		{
 		}
 	}
 }

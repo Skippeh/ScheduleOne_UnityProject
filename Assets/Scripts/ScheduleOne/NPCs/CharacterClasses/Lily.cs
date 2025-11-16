@@ -21,10 +21,6 @@ namespace ScheduleOne.NPCs.CharacterClasses
 		{
 		}
 
-		protected override void MinPass()
-		{
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

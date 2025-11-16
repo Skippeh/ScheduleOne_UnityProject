@@ -106,7 +106,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		protected override void MinPass()
+		protected override void UpdateBehaviour()
 		{
 		}
 

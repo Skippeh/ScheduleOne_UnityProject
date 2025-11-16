@@ -3,7 +3,7 @@ namespace ScheduleOne.GameTime
 	public class TimeManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.GameTime.TimeManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CStaggeredMinPass_003Ed__104 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CStaggeredMinPass_003Ed__105 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -46,7 +46,7 @@ namespace ScheduleOne.GameTime
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CStaggeredMinPass_003Ed__104(int _003C_003E1__state)
+			public _003CStaggeredMinPass_003Ed__105(int _003C_003E1__state)
 			{
 			}
 
@@ -73,7 +73,7 @@ namespace ScheduleOne.GameTime
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTickLoop_003Ed__102 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CTickLoop_003Ed__103 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -106,7 +106,7 @@ namespace ScheduleOne.GameTime
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CTickLoop_003Ed__102(int _003C_003E1__state)
+			public _003CTickLoop_003Ed__103(int _003C_003E1__state)
 			{
 			}
 
@@ -133,7 +133,7 @@ namespace ScheduleOne.GameTime
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTimeLoop_003Ed__103 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CTimeLoop_003Ed__104 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -166,7 +166,7 @@ namespace ScheduleOne.GameTime
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CTimeLoop_003Ed__103(int _003C_003E1__state)
+			public _003CTimeLoop_003Ed__104(int _003C_003E1__state)
 			{
 			}
 
@@ -221,6 +221,8 @@ namespace ScheduleOne.GameTime
 		public global::System.Action onFixedUpdate;
 
 		public global::System.Action<int> onTimeSkip;
+
+		public global::System.Action onUnscaledMinPass;
 
 		public global::System.Action onTick;
 
@@ -341,19 +343,19 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTickLoop_003Ed__102))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTickLoop_003Ed__103))]
 		private global::System.Collections.IEnumerator TickLoop()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTimeLoop_003Ed__103))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTimeLoop_003Ed__104))]
 		private global::System.Collections.IEnumerator TimeLoop()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CStaggeredMinPass_003Ed__104))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CStaggeredMinPass_003Ed__105))]
 		private global::System.Collections.IEnumerator StaggeredMinPass(float staggerTime)
 		{
 			return null;

@@ -1,6 +1,6 @@
 namespace ScheduleOne.Equipping
 {
-	public class Equippable_Viewmodel : global::ScheduleOne.Equipping.Equippable_StorableItem
+	public class Equippable_Viewmodel : global::ScheduleOne.Equipping.Equippable
 	{
 		[global::UnityEngine.Header("Viewmodel settings")]
 		public global::UnityEngine.Vector3 localPosition;

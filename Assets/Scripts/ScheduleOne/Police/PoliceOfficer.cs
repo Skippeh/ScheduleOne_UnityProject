@@ -109,7 +109,7 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		protected override void MinPass()
+		protected override void OnTick()
 		{
 		}
 
