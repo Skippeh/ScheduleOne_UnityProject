@@ -19,8 +19,18 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
 
 		public PotConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.Pot pot)
-			: base(null, null)
+			: base(null, null, null)
 		{
+		}
+
+		public bool IsAdditiveSelected(global::ScheduleOne.ItemFramework.ItemDefinition additive)
+		{
+			return false;
+		}
+
+		public string[] GetSelectedSeedIDs()
+		{
+			return null;
 		}
 
 		public override void Reset()

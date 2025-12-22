@@ -22,7 +22,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void End()
+		public override void Deactivate()
 		{
 		}
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void ActiveMinPass()
+		public override void OnActiveTick()
 		{
 		}
 

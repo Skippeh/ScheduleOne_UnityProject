@@ -8,6 +8,11 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static global::ScheduleOne.Temperature.AirConditioner.EMode Read___ScheduleOne_002ETemperature_002EAirConditioner_002FEModeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Temperature.AirConditioner.EMode);
+		}
+
 		public static global::ScheduleOne.Quests.ContractInfo Read___ScheduleOne_002EQuests_002EContractInfoFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -51,6 +56,11 @@ namespace FishNet.Serializing.Generated
 		public static global::ScheduleOne.Quests.EQuestState Read___ScheduleOne_002EQuests_002EEQuestStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.Quests.EQuestState);
+		}
+
+		public static global::ScheduleOne.Property.Manor.EManorState Read___ScheduleOne_002EProperty_002EManor_002FEManorStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Property.Manor.EManorState);
 		}
 
 		public static global::ScheduleOne.Vision.EVisualState Read___ScheduleOne_002EVision_002EEVisualStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
@@ -428,11 +438,6 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Vehicles.EParkingAlignment);
 		}
 
-		public static global::ScheduleOne.Property.Manor.EManorState Read___ScheduleOne_002EProperty_002EManor_002FEManorStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Property.Manor.EManorState);
-		}
-
 		public static global::ScheduleOne.Persistence.TrashContentData Read___ScheduleOne_002EPersistence_002ETrashContentDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -478,6 +483,11 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
+		public static global::ScheduleOne.Product.ShroomAppearanceSettings Read___ScheduleOne_002EProduct_002EShroomAppearanceSettingsFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
 		public static global::ScheduleOne.Product.NewMixOperation Read___ScheduleOne_002EProduct_002ENewMixOperationFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -498,16 +508,6 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.ObjectScripts.Jukebox.ERepeatMode);
 		}
 
-		public static global::ScheduleOne.Tiles.CoordinateProceduralTilePair Read___ScheduleOne_002ETiles_002ECoordinateProceduralTilePairFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Tiles.CoordinateProceduralTilePair);
-		}
-
-		public static global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> Read___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002ETiles_002ECoordinateProceduralTilePair_003EFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
 		public static global::ScheduleOne.ObjectScripts.ChemistryCookOperation Read___ScheduleOne_002EObjectScripts_002EChemistryCookOperationFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -524,6 +524,16 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static global::ScheduleOne.ObjectScripts.MixOperation Read___ScheduleOne_002EObjectScripts_002EMixOperationFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.Tiles.CoordinateProceduralTilePair Read___ScheduleOne_002ETiles_002ECoordinateProceduralTilePairFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Tiles.CoordinateProceduralTilePair);
+		}
+
+		public static global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> Read___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002ETiles_002ECoordinateProceduralTilePair_003EFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
 		}

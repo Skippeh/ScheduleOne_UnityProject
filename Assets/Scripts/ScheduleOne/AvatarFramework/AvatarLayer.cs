@@ -12,7 +12,7 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::UnityEngine.Texture2D Normal;
 
-		public global::UnityEngine.Texture2D Normal_DefaultFormat;
+		public global::UnityEngine.Texture2D Normal_DefaultImportType;
 
 		public int Order;
 

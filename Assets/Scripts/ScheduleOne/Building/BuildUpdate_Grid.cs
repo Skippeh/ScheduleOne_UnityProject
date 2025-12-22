@@ -2,14 +2,6 @@ namespace ScheduleOne.Building
 {
 	public class BuildUpdate_Grid : global::ScheduleOne.Building.BuildUpdate_Base
 	{
-		public global::UnityEngine.GameObject GhostModel;
-
-		public global::ScheduleOne.EntityFramework.GridItem BuildableItemClass;
-
-		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance;
-
-		public float CurrentRotation;
-
 		[global::UnityEngine.Header("Settings")]
 		public float detectionRange;
 
@@ -19,19 +11,57 @@ namespace ScheduleOne.Building
 
 		public bool AllowRotation;
 
-		protected bool validPosition;
+		[global::UnityEngine.Header("Temperature")]
+		[global::UnityEngine.SerializeField]
+		private bool showTemperaturesByDefault;
 
-		protected global::UnityEngine.Material currentGhostMaterial;
+		[global::UnityEngine.SerializeField]
+		private bool allowToggleShowTemperatures;
 
-		protected global::ScheduleOne.Building.TileIntersection closestIntersection;
+		protected bool _validPosition;
+
+		protected global::UnityEngine.Material _currentGhostMaterial;
+
+		protected float _rotation;
+
+		private global::ScheduleOne.Building.TileIntersection _closestIntersection;
 
 		private float verticalOffset;
+
+		protected bool _showTemperatures;
+
+		public global::UnityEngine.GameObject GhostModel { get; private set; }
+
+		public global::ScheduleOne.EntityFramework.GridItem BuildableItemClass { get; private set; }
+
+		public global::ScheduleOne.ItemFramework.ItemInstance ItemInstance { get; private set; }
+
+		public bool AllowToggleShowTemperatures => false;
+
+		protected global::ScheduleOne.Building.TileIntersection closestIntersection
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
+
+		public virtual void Initialize(global::ScheduleOne.EntityFramework.GridItem buildableItemClass, global::ScheduleOne.ItemFramework.ItemInstance itemInstance, global::UnityEngine.GameObject ghostModel)
+		{
+		}
 
 		protected virtual void Start()
 		{
 		}
 
 		protected virtual void Update()
+		{
+		}
+
+		private void CheckToggleTemperatureDisplay()
 		{
 		}
 
@@ -64,7 +94,20 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		protected virtual void Place()
+		protected virtual global::ScheduleOne.EntityFramework.GridItem Place()
+		{
+			return null;
+		}
+
+		protected virtual void OnPlacedObjectPreSpawn(global::ScheduleOne.EntityFramework.GridItem item)
+		{
+		}
+
+		protected virtual void OnClosestIntersectionChanged(global::ScheduleOne.Building.TileIntersection previous, global::ScheduleOne.Building.TileIntersection current)
+		{
+		}
+
+		protected virtual void SetShowTemperatures(bool show, global::ScheduleOne.Property.Property property)
 		{
 		}
 

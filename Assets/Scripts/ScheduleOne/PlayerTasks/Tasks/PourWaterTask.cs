@@ -10,9 +10,9 @@ namespace ScheduleOne.PlayerTasks.Tasks
 
 		protected override bool FailOnEmpty => false;
 
-		protected override global::ScheduleOne.ObjectScripts.Pot.ECameraPosition CameraPosition => default(global::ScheduleOne.ObjectScripts.Pot.ECameraPosition);
+		protected override global::ScheduleOne.Growing.GrowContainerCameraHandler.ECameraPosition CameraPosition => default(global::ScheduleOne.Growing.GrowContainerCameraHandler.ECameraPosition);
 
-		public PourWaterTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		public PourWaterTask(global::ScheduleOne.Growing.GrowContainer _growContainer, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
 			: base(null, null, null)
 		{
 		}

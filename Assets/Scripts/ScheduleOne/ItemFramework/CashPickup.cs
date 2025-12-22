@@ -1,6 +1,6 @@
 namespace ScheduleOne.ItemFramework
 {
-	public class CashPickup : global::ScheduleOne.ItemFramework.ItemPickup
+	public class CashPickup : global::ScheduleOne.ItemFramework.NetworkedItemPickup
 	{
 		[global::FishNet.Object.Synchronizing.SyncVar(OnChange = "ValueChanged")]
 		public float Value;

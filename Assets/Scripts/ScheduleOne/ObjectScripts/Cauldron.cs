@@ -67,6 +67,8 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::UnityEngine.BoxCollider TrashSpawnVolume;
 
+		public global::UnityEngine.Transform LeafDragProjectionPlane;
+
 		[global::UnityEngine.Header("Prefabs")]
 		public global::ScheduleOne.StationFramework.StationItem CocaLeafPrefab;
 
@@ -224,6 +226,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
+		public override string GetManagementName()
+		{
+			return null;
+		}
+
 		protected override void Start()
 		{
 		}
@@ -236,7 +243,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
+		protected override void Destroy()
 		{
 		}
 

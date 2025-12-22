@@ -1,42 +1,29 @@
 namespace ScheduleOne.ObjectScripts
 {
-	public class PlaceableStorageEntity : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.Management.ITransitEntity, global::ScheduleOne.Storage.IStorageEntity, global::ScheduleOne.Management.IUsable
+	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Management.ConfigurationReplicator))]
+	public class PlaceableStorageEntity : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.Management.ITransitEntity, global::ScheduleOne.Management.IUsable, global::ScheduleOne.Management.IConfigurable
 	{
-		[global::UnityEngine.Header("Reference")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform _storedItemContainer;
-
+		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Storage.StorageEntity StorageEntity;
-
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> storageGrids;
 
 		public global::UnityEngine.Transform[] accessPoints;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> _reservedItems;
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.Transform _linkOrigin;
 
-		private global::System.Collections.Generic.List<string> completedJobs;
+		private global::ScheduleOne.Management.EntityConfiguration _configuration;
+
+		private global::ScheduleOne.Management.ConfigurationReplicator _configReplicator;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
 
+		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002EPlaceableStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EPlaceableStorageEntityAssembly_002DCSharp_002Edll_Excuted;
-
-		public global::UnityEngine.Transform storedItemContainer => null;
-
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> reservedItems
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
 
 		public string Name => null;
 
@@ -78,6 +65,35 @@ namespace ScheduleOne.ObjectScripts
 
 		public bool IsAcceptingItems { get; set; }
 
+		public global::ScheduleOne.Management.EntityConfiguration Configuration => null;
+
+		public global::ScheduleOne.Management.ConfigurationReplicator ConfigReplicator => null;
+
+		public global::ScheduleOne.Management.EConfigurableType ConfigurableType => default(global::ScheduleOne.Management.EConfigurableType);
+
+		public global::ScheduleOne.UI.Management.WorldspaceUIElement WorldspaceUI { get; set; }
+
+		public global::FishNet.Object.NetworkObject CurrentPlayerConfigurer
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return null;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			set
+			{
+			}
+		}
+
+		public global::UnityEngine.Sprite TypeIcon => null;
+
+		public global::UnityEngine.Transform Transform => null;
+
+		public global::UnityEngine.Transform UIPoint => null;
+
+		public bool CanBeSelected => false;
+
 		public global::FishNet.Object.NetworkObject SyncAccessor__003CNPCUserObject_003Ek__BackingField
 		{
 			get
@@ -100,28 +116,36 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
+		public global::FishNet.Object.NetworkObject SyncAccessor__003CCurrentPlayerConfigurer_003Ek__BackingField
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
+
+		public override void Awake()
+		{
+		}
+
 		protected override void Start()
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetStoredItems()
+		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
+		{
+		}
+
+		public override void InitializeGridItem(global::ScheduleOne.ItemFramework.ItemInstance instance, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string GUID)
+		{
+		}
+
+		public override string GetManagementName()
 		{
 			return null;
-		}
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> GetStorageGrids()
-		{
-			return null;
-		}
-
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void DestroyStoredItem(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void DestroyStoredItem_Server(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
@@ -140,9 +164,36 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
+		protected override void Destroy()
+		{
+		}
+
 		public override global::ScheduleOne.Persistence.Datas.BuildableItemData GetBaseData()
 		{
 			return null;
+		}
+
+		public override global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
+		{
+			return null;
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void SetConfigurer(global::FishNet.Object.NetworkObject player)
+		{
+		}
+
+		public void SendConfigurationToClient(global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		public global::ScheduleOne.UI.Management.WorldspaceUIElement CreateWorldspaceUI()
+		{
+			return null;
+		}
+
+		public void DestroyWorldspaceUI()
+		{
 		}
 
 		public override void NetworkInitialize___Early()
@@ -154,30 +205,6 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		public override void NetworkInitializeIfDisabled()
-		{
-		}
-
-		private void RpcWriter___Observers_DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		public void RpcLogic___DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		private void RpcReader___Observers_DestroyStoredItem_3261517793(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Server_DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
-		}
-
-		private void RpcLogic___DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
-		}
-
-		private void RpcReader___Server_DestroyStoredItem_Server_3952619116(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
@@ -205,12 +232,24 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
+		private void RpcWriter___Server_SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		{
+		}
+
+		public void RpcLogic___SetConfigurer_3323014238(global::FishNet.Object.NetworkObject player)
+		{
+		}
+
+		private void RpcReader___Server_SetConfigurer_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
 		public virtual bool ReadSyncVar___ScheduleOne_002EObjectScripts_002EPlaceableStorageEntity(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
 		{
 			return false;
 		}
 
-		public override void Awake()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EObjectScripts_002EPlaceableStorageEntity_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

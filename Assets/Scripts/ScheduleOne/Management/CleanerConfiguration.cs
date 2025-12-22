@@ -12,8 +12,13 @@ namespace ScheduleOne.Management
 
 		public global::ScheduleOne.Employees.EmployeeHome assignedHome { get; private set; }
 
+		public override bool AllowRename()
+		{
+			return false;
+		}
+
 		public CleanerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Cleaner _cleaner)
-			: base(null, null)
+			: base(null, null, null)
 		{
 		}
 

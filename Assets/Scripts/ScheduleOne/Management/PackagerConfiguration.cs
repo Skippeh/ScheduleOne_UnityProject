@@ -18,8 +18,13 @@ namespace ScheduleOne.Management
 
 		public global::ScheduleOne.Employees.EmployeeHome assignedHome { get; private set; }
 
-		public PackagerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Packager _botanist)
-			: base(null, null)
+		public override bool AllowRename()
+		{
+			return false;
+		}
+
+		public PackagerConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.Employees.Packager _packager)
+			: base(null, null, null)
 		{
 		}
 

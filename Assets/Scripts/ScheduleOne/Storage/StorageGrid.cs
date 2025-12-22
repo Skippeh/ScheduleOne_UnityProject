@@ -6,8 +6,10 @@ namespace ScheduleOne.Storage
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> storageTiles;
 
+		[global::UnityEngine.HideInInspector]
 		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> freeTiles;
 
+		[global::UnityEngine.HideInInspector]
 		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.CoordinateStorageTilePair> coordinateStorageTilePairs;
 
 		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Tiles.Coordinate, global::ScheduleOne.Storage.StorageTile> coordinateToTile;

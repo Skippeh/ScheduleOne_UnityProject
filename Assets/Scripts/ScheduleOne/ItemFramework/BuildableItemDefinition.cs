@@ -14,5 +14,9 @@ namespace ScheduleOne.ItemFramework
 		public global::ScheduleOne.EntityFramework.BuildableItem BuiltItem;
 
 		public global::ScheduleOne.ItemFramework.BuildableItemDefinition.EBuildSoundType BuildSoundType;
+
+		public override void ValidateDefinition()
+		{
+		}
 	}
 }

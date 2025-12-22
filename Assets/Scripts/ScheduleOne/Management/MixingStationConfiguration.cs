@@ -13,7 +13,7 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
 
 		public MixingStationConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.MixingStation station)
-			: base(null, null)
+			: base(null, null, null)
 		{
 		}
 

@@ -15,9 +15,26 @@ namespace ScheduleOne.Tools
 
 		public global::TMPro.TextMeshProUGUI OverrideText;
 
-		private global::UnityEngine.Coroutine moveRoutine;
+		private static bool _heatmapToggledOn;
+
+		private global::ScheduleOne.Property.Property _propertyWithHeatmapShown;
+
+		private static bool _canToggleHeatmap => false;
+
+		public static bool ResetHeatmapToggle()
+		{
+			return false;
+		}
 
 		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
+		{
+		}
+
+		private void ShowInputPrompts()
+		{
+		}
+
+		private void HideInputPrompts()
 		{
 		}
 
@@ -26,6 +43,19 @@ namespace ScheduleOne.Tools
 		}
 
 		protected override void Update()
+		{
+		}
+
+		private bool CanToggleClipboard()
+		{
+			return false;
+		}
+
+		private void UpdateHeatmap()
+		{
+		}
+
+		private void ClearPropertyWithHeatmapShown()
 		{
 		}
 

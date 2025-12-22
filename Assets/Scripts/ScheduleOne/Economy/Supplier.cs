@@ -164,7 +164,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public void SetUnlockMessage()
+		private void SendUnlockMessage()
 		{
 		}
 

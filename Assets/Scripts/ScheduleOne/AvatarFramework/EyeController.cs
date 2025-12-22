@@ -4,7 +4,7 @@ namespace ScheduleOne.AvatarFramework
 	public class EyeController : global::UnityEngine.MonoBehaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CBlinkRoutine_003Ed__48 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CBlinkRoutine_003Ed__47 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -31,7 +31,7 @@ namespace ScheduleOne.AvatarFramework
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CBlinkRoutine_003Ed__48(int _003C_003E1__state)
+			public _003CBlinkRoutine_003Ed__47(int _003C_003E1__state)
 			{
 			}
 
@@ -82,12 +82,6 @@ namespace ScheduleOne.AvatarFramework
 		protected float eyeSize;
 
 		[global::UnityEngine.Header("Eyelid Settings")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color leftEyeLidColor;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color rightEyeLidColor;
-
 		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration LeftRestingEyeState;
 
 		public global::ScheduleOne.AvatarFramework.Eye.EyeLidConfiguration RightRestingEyeState;
@@ -95,9 +89,6 @@ namespace ScheduleOne.AvatarFramework
 		[global::UnityEngine.Header("Eyeball Settings")]
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Material eyeBallMaterial;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Color eyeBallColor;
 
 		[global::UnityEngine.Header("Pupil State")]
 		[global::UnityEngine.Range(0f, 1f)]
@@ -134,6 +125,10 @@ namespace ScheduleOne.AvatarFramework
 
 		private float defaultDilation;
 
+		private global::UnityEngine.Color defaultEyeballColor;
+
+		private global::UnityEngine.Color currentEyeballColor;
+
 		public bool EyesOpen { get; protected set; }
 
 		protected virtual void Awake()
@@ -148,16 +143,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		[global::EasyButtons.Button]
-		public void ApplySettings()
-		{
-		}
-
-		public void SetEyeballTint(global::UnityEngine.Color col)
-		{
-		}
-
-		public void OverrideEyeballTint(global::UnityEngine.Color col)
+		public void SetEyeballTint(global::UnityEngine.Color col, bool overrideDefault = false)
 		{
 		}
 
@@ -189,6 +175,14 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
+		public void SetEyeballMaterial(global::UnityEngine.Material material)
+		{
+		}
+
+		public void ResetEyeballMaterial()
+		{
+		}
+
 		public void ResetPupilDilation()
 		{
 		}
@@ -209,7 +203,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.EyeController._003CBlinkRoutine_003Ed__48))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.AvatarFramework.EyeController._003CBlinkRoutine_003Ed__47))]
 		private global::System.Collections.IEnumerator BlinkRoutine()
 		{
 			return null;

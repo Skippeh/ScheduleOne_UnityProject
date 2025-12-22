@@ -37,12 +37,16 @@ namespace ScheduleOne.Product
 
 		public global::ScheduleOne.Product.MethDefinition DefaultMeth;
 
+		public global::ScheduleOne.Product.ShroomDefinition DefaultShroom;
+
 		[global::UnityEngine.Header("Mix Maps")]
 		public global::ScheduleOne.Effects.MixMaps.MixerMap WeedMixMap;
 
 		public global::ScheduleOne.Effects.MixMaps.MixerMap MethMixMap;
 
 		public global::ScheduleOne.Effects.MixMaps.MixerMap CokeMixMap;
+
+		public global::ScheduleOne.Effects.MixMaps.MixerMap ShroomMixMap;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> createdProducts;
 
@@ -74,6 +78,10 @@ namespace ScheduleOne.Product
 
 		private global::ScheduleOne.Product.ProductDefinition highestValueProduct;
 
+		private global::System.Collections.Generic.List<global::FishNet.Connection.NetworkConnection> productDataSentTo;
+
+		public global::System.Action<global::FishNet.Connection.NetworkConnection> onProductDataSentToConnection;
+
 		private global::ScheduleOne.Persistence.Loaders.ProductManagerLoader loader;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EProduct_002EProductManagerAssembly_002DCSharp_002Edll_Excuted;
@@ -83,6 +91,8 @@ namespace ScheduleOne.Product
 		public static bool MethDiscovered => false;
 
 		public static bool CocaineDiscovered => false;
+
+		public static bool ShroomsDiscovered => false;
 
 		public static bool IsAcceptingOrders { get; private set; }
 
@@ -109,6 +119,11 @@ namespace ScheduleOne.Product
 		public bool HasChanged { get; set; }
 
 		public int LoadOrder { get; }
+
+		public bool HasSentProductDataToConnection(global::FishNet.Connection.NetworkConnection conn)
+		{
+			return false;
+		}
 
 		public override void Awake()
 		{
@@ -141,6 +156,11 @@ namespace ScheduleOne.Product
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SetCocaineDiscovered()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void SetShroomsDiscovered()
 		{
 		}
 
@@ -245,6 +265,17 @@ namespace ScheduleOne.Product
 		{
 		}
 
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void CreateShroom_Server(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		[global::FishNet.Object.TargetRpc]
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void CreateShroom_Client(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
 		private void RefreshHighestValueProduct()
 		{
 		}
@@ -268,11 +299,6 @@ namespace ScheduleOne.Product
 		public global::ScheduleOne.StationFramework.StationRecipe GetRecipe(global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> productProperties, global::ScheduleOne.Effects.Effect mixerProperty)
 		{
 			return null;
-		}
-
-		[global::FishNet.Object.TargetRpc]
-		private void GiveItem(global::FishNet.Connection.NetworkConnection conn, string id)
-		{
 		}
 
 		public global::ScheduleOne.Product.ProductDefinition GetKnownProduct(global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<global::ScheduleOne.Effects.Effect> properties)
@@ -379,6 +405,18 @@ namespace ScheduleOne.Product
 		}
 
 		private void RpcReader___Server_SetCocaineDiscovered_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_SetShroomsDiscovered_2166136261()
+		{
+		}
+
+		public void RpcLogic___SetShroomsDiscovered_2166136261()
+		{
+		}
+
+		private void RpcReader___Server_SetShroomsDiscovered_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
@@ -586,6 +624,38 @@ namespace ScheduleOne.Product
 		{
 		}
 
+		private void RpcWriter___Server_CreateShroom_Server_2261384965(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		public void RpcLogic___CreateShroom_Server_2261384965(string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		private void RpcReader___Server_CreateShroom_Server_2261384965(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Target_CreateShroom_Client_812995776(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		private void RpcLogic___CreateShroom_Client_812995776(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		private void RpcReader___Target_CreateShroom_Client_812995776(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_CreateShroom_Client_812995776(global::FishNet.Connection.NetworkConnection conn, string name, string id, global::ScheduleOne.Product.EDrugType type, global::System.Collections.Generic.List<string> properties, global::ScheduleOne.Product.ShroomAppearanceSettings appearance)
+		{
+		}
+
+		private void RpcReader___Observers_CreateShroom_Client_812995776(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
 		private void RpcWriter___Server_SendMixRecipe_852232071(string product, string mixer, string output)
 		{
 		}
@@ -615,18 +685,6 @@ namespace ScheduleOne.Product
 		}
 
 		private void RpcReader___Observers_CreateMixRecipe_1410895574(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Target_GiveItem_2971853958(global::FishNet.Connection.NetworkConnection conn, string id)
-		{
-		}
-
-		private void RpcLogic___GiveItem_2971853958(global::FishNet.Connection.NetworkConnection conn, string id)
-		{
-		}
-
-		private void RpcReader___Target_GiveItem_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

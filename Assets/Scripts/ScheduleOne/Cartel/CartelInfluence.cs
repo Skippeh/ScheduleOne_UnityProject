@@ -19,6 +19,8 @@ namespace ScheduleOne.Cartel
 
 		public const float INFLUENCE_TO_UNLOCK_NEXT_REGION = 0.3f;
 
+		public const float WESTVILLE_MAX_INFLUENCE = 0.5f;
+
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.Cartel.CartelInfluence.RegionInfluenceData[] DefaultRegionInfluence;
 
@@ -36,10 +38,6 @@ namespace ScheduleOne.Cartel
 		}
 
 		public virtual void Awake()
-		{
-		}
-
-		private void Start()
 		{
 		}
 
@@ -65,10 +63,6 @@ namespace ScheduleOne.Cartel
 		public float GetInfluence(global::ScheduleOne.Map.EMapRegion region)
 		{
 			return 0f;
-		}
-
-		private void OnSleepEnd()
-		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]

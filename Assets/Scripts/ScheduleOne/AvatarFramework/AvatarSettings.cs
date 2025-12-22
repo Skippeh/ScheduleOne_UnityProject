@@ -60,9 +60,11 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.AvatarFramework.AvatarSettings.AccessorySetting> AccessorySettings;
 
+		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public bool UseCombinedLayer;
 
-		public string CombinedLayerPath;
+		[global::FishNet.Serializing.Helping.CodegenExclude]
+		public global::ScheduleOne.AvatarFramework.AvatarLayer CombinedLayer;
 
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public global::UnityEngine.Texture2D ImpostorTexture;

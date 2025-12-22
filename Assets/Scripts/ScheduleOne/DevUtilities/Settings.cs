@@ -2,7 +2,7 @@ namespace ScheduleOne.DevUtilities
 {
 	public class Settings : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.DevUtilities.Settings>
 	{
-		public enum UnitType
+		public enum EUnitType
 		{
 			Metric = 0,
 			Imperial = 1
@@ -11,10 +11,6 @@ namespace ScheduleOne.DevUtilities
 		public const float MinYPos = -20f;
 
 		public const string BETA_ARG = "-beta";
-
-		public const string DISABLE_COUNTRY_CHECK_ARG = "-disablecountrycheck";
-
-		public const bool COUNTRY_CHECK = false;
 
 		public global::System.Collections.Generic.List<string> LaunchArgs;
 
@@ -56,19 +52,15 @@ namespace ScheduleOne.DevUtilities
 
 		public global::System.Action onInputsApplied;
 
-		public global::ScheduleOne.DevUtilities.Settings.UnitType unitType { get; protected set; }
-
 		public bool PausingFreezesTime => false;
+
+		public global::ScheduleOne.DevUtilities.Settings.EUnitType UnitType { get; private set; }
 
 		protected override void Awake()
 		{
 		}
 
 		protected override void Start()
-		{
-		}
-
-		private void CheckCountryCode()
 		{
 		}
 
@@ -160,6 +152,11 @@ namespace ScheduleOne.DevUtilities
 		public string GetActionControlPath(string actionName)
 		{
 			return null;
+		}
+
+		private global::ScheduleOne.DevUtilities.Settings.EUnitType GetDefaultUnitTypeForPlayer()
+		{
+			return default(global::ScheduleOne.DevUtilities.Settings.EUnitType);
 		}
 	}
 }

@@ -165,6 +165,10 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
+		private void OnEquippedSlotChanged(int slotIndex)
+		{
+		}
+
 		public void RefreshViewmodel()
 		{
 		}

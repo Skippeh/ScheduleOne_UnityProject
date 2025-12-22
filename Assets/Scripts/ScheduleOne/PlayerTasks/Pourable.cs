@@ -35,9 +35,7 @@ namespace ScheduleOne.PlayerTasks
 		public global::ScheduleOne.Trash.TrashItem TrashItem;
 
 		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.ObjectScripts.Pot TargetPot;
-
-		public float currentQuantity;
+		public global::ScheduleOne.Growing.GrowContainer TargetGrowContainer;
 
 		protected bool hasPoured;
 
@@ -52,6 +50,8 @@ namespace ScheduleOne.PlayerTasks
 		public bool IsPouring { get; protected set; }
 
 		public float NormalizedPourRate { get; private set; }
+
+		public float CurrentQuantity { get; protected set; }
 
 		protected virtual void Start()
 		{

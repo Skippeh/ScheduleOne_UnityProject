@@ -47,6 +47,8 @@ namespace ScheduleOne.PlayerTasks
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerTasks.Clickable> forcedClickables;
 
+		protected global::UnityEngine.LayerMask clickablesLayerMask;
+
 		public virtual string TaskName { get; protected set; }
 
 		public string CurrentInstruction { get; protected set; }

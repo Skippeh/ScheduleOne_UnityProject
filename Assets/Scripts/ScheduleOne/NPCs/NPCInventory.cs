@@ -40,6 +40,8 @@ namespace ScheduleOne.NPCs
 		[global::UnityEngine.Header("Random items")]
 		public bool RandomItems;
 
+		public bool AllowDuplicateRandomItems;
+
 		public global::ScheduleOne.NPCs.NPCInventory.RandomInventoryItem[] RandomInventoryItems;
 
 		public int RandomItemMin;
@@ -78,7 +80,15 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private global::ScheduleOne.ItemFramework.StorableItemDefinition GetRandomInventoryItem()
+		public void AddRandomItemsToInventory()
+		{
+		}
+
+		private void AddRandomCashInstance()
+		{
+		}
+
+		private global::ScheduleOne.ItemFramework.StorableItemDefinition GetRandomInventoryItem(global::System.Collections.Generic.List<string> excludeIDs)
 		{
 			return null;
 		}
@@ -87,16 +97,6 @@ namespace ScheduleOne.NPCs
 		public float GetTotalRandomInventoryItemWeight()
 		{
 			return 0f;
-		}
-
-		public int GetItemCount()
-		{
-			return 0;
-		}
-
-		public int _GetItemAmount(string id)
-		{
-			return 0;
 		}
 
 		public int GetIdenticalItemAmount(global::ScheduleOne.ItemFramework.ItemInstance item)

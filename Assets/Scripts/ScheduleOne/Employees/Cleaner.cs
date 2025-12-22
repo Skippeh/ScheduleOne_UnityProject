@@ -2,7 +2,7 @@ namespace ScheduleOne.Employees
 {
 	public class Cleaner : global::ScheduleOne.Employees.Employee, global::ScheduleOne.Management.IConfigurable
 	{
-		public const int MAX_ASSIGNED_BINS = 3;
+		public const int MAX_ASSIGNED_BINS = 6;
 
 		public global::ScheduleOne.ObjectScripts.WateringCan.TrashGrabberDefinition TrashGrabberDef;
 

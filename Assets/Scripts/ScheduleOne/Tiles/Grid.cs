@@ -2,36 +2,52 @@ namespace ScheduleOne.Tiles
 {
 	public class Grid : global::UnityEngine.MonoBehaviour, global::ScheduleOne.IGUIDRegisterable
 	{
-		public static float GridSideLength;
+		public const float TileSize = 0.5f;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Tile> Tiles;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateTilePair> CoordinateTilePairs;
 
-		public global::UnityEngine.Transform Container;
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Property.Property _parentProperty;
 
-		public bool IsStatic;
+		[global::UnityEngine.Serialization.FormerlySerializedAs("StaticGUID")]
+		[global::UnityEngine.SerializeField]
+		private string _guid;
 
-		public string StaticGUID;
+		public global::System.Action<string, global::ScheduleOne.Temperature.TemperatureEmitterInfo[]> OnCosmeticTemperatureEmittersChanged;
+
+		public global::System.Action<global::ScheduleOne.Temperature.TemperatureEmitterInfo[]> OnTemperatureEmittersChanged;
 
 		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Tiles.Coordinate, global::ScheduleOne.Tiles.Tile> _coordinateToTile;
 
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Temperature.TemperatureEmitter> _cosmeticTemperatureEmitters;
+
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Temperature.TemperatureEmitter> _temperatureEmitters;
+
+		private bool _cosmeticEmittersChangedThisFrame;
+
+		private bool _emittersChangedThisFrame;
+
 		public global::System.Guid GUID { get; protected set; }
 
-		public void SetGUID(global::System.Guid guid)
-		{
-		}
+		public global::ScheduleOne.Property.Property ParentProperty => null;
 
-		[global::EasyButtons.Button]
-		public void RegenerateGUID()
-		{
-		}
+		public global::UnityEngine.Transform Container => null;
+
+		public global::UnityEngine.Vector3 Origin => default(global::UnityEngine.Vector3);
+
+		public global::ScheduleOne.Temperature.TemperatureEmitterInfo[] TemperatureEmitterInfos { get; private set; }
+
+		public int Width { get; private set; }
+
+		public int Height { get; private set; }
 
 		protected virtual void Awake()
 		{
 		}
 
-		public virtual void DestroyGrid()
+		private void LateUpdate()
 		{
 		}
 
@@ -47,17 +63,21 @@ namespace ScheduleOne.Tiles
 		{
 		}
 
+		[global::EasyButtons.Button]
+		public void RegenerateGUID()
+		{
+		}
+
+		public void SetGUID(global::System.Guid guid)
+		{
+		}
+
 		public global::ScheduleOne.Tiles.Coordinate GetMatchedCoordinate(global::ScheduleOne.Tiles.FootprintTile tileToMatch)
 		{
 			return null;
 		}
 
 		public bool IsTileValidAtCoordinate(global::ScheduleOne.Tiles.Coordinate gridCoord, global::ScheduleOne.Tiles.FootprintTile tile, global::ScheduleOne.EntityFramework.GridItem tileOwner = null)
-		{
-			return false;
-		}
-
-		public bool IsTileValidAtCoordinate(global::ScheduleOne.Tiles.Coordinate gridCoord, global::ScheduleOne.Tiles.FootprintTile tile, global::ScheduleOne.ConstructableScripts.Constructable_GridBased ignoreConstructable)
 		{
 			return false;
 		}
@@ -74,6 +94,26 @@ namespace ScheduleOne.Tiles
 
 		[global::EasyButtons.Button]
 		public void SetInvisible()
+		{
+		}
+
+		public void AddTemperatureEmitter(global::ScheduleOne.Temperature.TemperatureEmitter emitter, bool onlyCosmetic)
+		{
+		}
+
+		public void RemoveTemperatureEmitter(global::ScheduleOne.Temperature.TemperatureEmitter emitter, bool onlyCosmetic)
+		{
+		}
+
+		private void CosmeticTemperatureEmittersChanged()
+		{
+		}
+
+		private void TemperatureEmittersChanged()
+		{
+		}
+
+		private void SetGridSize()
 		{
 		}
 	}

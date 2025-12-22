@@ -2,6 +2,8 @@ namespace ScheduleOne.Management
 {
 	public class EntityConfiguration
 	{
+		private const int NameCharacterLimit = 28;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Management.ConfigField> Fields;
 
 		public global::UnityEngine.Events.UnityEvent onChanged;
@@ -12,7 +14,14 @@ namespace ScheduleOne.Management
 
 		public bool IsSelected { get; protected set; }
 
-		public EntityConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable)
+		public global::ScheduleOne.Management.StringField Name { get; private set; }
+
+		public virtual bool AllowRename()
+		{
+			return false;
+		}
+
+		public EntityConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, string defaultName)
 		{
 		}
 
@@ -50,6 +59,11 @@ namespace ScheduleOne.Management
 		}
 
 		public virtual string GetSaveString()
+		{
+			return null;
+		}
+
+		public T GetField<T>() where T : global::ScheduleOne.Management.ConfigField
 		{
 			return null;
 		}

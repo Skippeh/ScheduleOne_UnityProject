@@ -79,6 +79,19 @@ namespace ScheduleOne.FX
 		[global::UnityEngine.Header("Bloom")]
 		public global::UnityEngine.AnimationCurve bloomThreshholdCurve;
 
+		[global::UnityEngine.Header("Gloabl Shader Properties")]
+		[global::UnityEngine.SerializeField]
+		private float _environmentScrollSpeed;
+
+		[global::UnityEngine.SerializeField]
+		private float _testPercentage;
+
+		private float _scrollTime;
+
+		private float _scrollValue;
+
+		private bool _scrollTActive;
+
 		private bool started;
 
 		public global::ScheduleOne.Tools.FloatSmoother FogEndDistanceController;
@@ -96,6 +109,14 @@ namespace ScheduleOne.FX
 		}
 
 		private void UpdateVisuals()
+		{
+		}
+
+		public void SetEnvironmentScrollingActive(bool active)
+		{
+		}
+
+		public void SetEnvironmentScrollingSpeedByPercentage(float percentage)
 		{
 		}
 

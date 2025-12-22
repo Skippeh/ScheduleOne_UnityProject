@@ -17,7 +17,7 @@ namespace ScheduleOne.DevUtilities
 			return 0f;
 		}
 
-		public static global::UnityEngine.Transform GetAccessPoint(global::ScheduleOne.Management.ITransitEntity entity, global::ScheduleOne.NPCs.NPC npc)
+		public static global::UnityEngine.Transform GetReachableAccessPoint(global::ScheduleOne.Management.ITransitEntity entity, global::ScheduleOne.NPCs.NPC npc)
 		{
 			return null;
 		}

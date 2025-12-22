@@ -1,7 +1,7 @@
 namespace ScheduleOne.EntityFramework
 {
 	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Ownership.PredictedSpawn))]
-	public class BuildableItem : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
+	public abstract class BuildableItem : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable
 	{
 		public enum EOutlineColor
 		{
@@ -66,7 +66,7 @@ namespace ScheduleOne.EntityFramework
 
 		public global::UnityEngine.GameObject BuildHandler => null;
 
-		public bool LocallyBuilt { get; protected set; }
+		protected bool _locallyBuilt { get; set; }
 
 		public string SaveFolderName => null;
 
@@ -81,11 +81,6 @@ namespace ScheduleOne.EntityFramework
 		public global::System.Collections.Generic.List<string> LocalExtraFolders { get; set; }
 
 		public bool HasChanged { get; set; }
-
-		[global::EasyButtons.Button]
-		public void AddChildMeshes()
-		{
-		}
 
 		public void SetLocallyBuilt()
 		{
@@ -104,6 +99,16 @@ namespace ScheduleOne.EntityFramework
 			return null;
 		}
 
+		public virtual string GetManagementName()
+		{
+			return null;
+		}
+
+		public virtual string GetDefaultManagementName()
+		{
+			return null;
+		}
+
 		public virtual void InitializeSaveable()
 		{
 		}
@@ -112,22 +117,15 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		protected virtual void SendInitToClient(global::FishNet.Connection.NetworkConnection conn)
+		public override void OnStartClient()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendBuildableItemData(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
-		{
-		}
+		protected abstract void SendInitializationToClient(global::FishNet.Connection.NetworkConnection conn);
 
-		[global::FishNet.Object.ObserversRpc]
-		[global::FishNet.Object.TargetRpc]
-		public void ReceiveBuildableItemData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
-		{
-		}
+		protected abstract void SendInitializationToServer();
 
-		public virtual void InitializeBuildableItem(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
+		protected void InitializeBuildableItem(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
 		{
 		}
 
@@ -143,21 +141,21 @@ namespace ScheduleOne.EntityFramework
 			return false;
 		}
 
-		public virtual void PickupItem()
+		public void PickupItem()
 		{
 		}
 
-		public virtual void DestroyItem(bool callOnServer = true)
+		protected virtual void Destroy()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void Destroy_Networked()
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void Destroy_Server()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
-		private void DestroyItemWrapper()
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void Destroy_Client()
 		{
 		}
 
@@ -165,7 +163,7 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public static global::UnityEngine.Color32 GetColorFromOutlineColorEnum(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor col)
+		private static global::UnityEngine.Color32 GetColorFromOutlineColorEnum(global::ScheduleOne.EntityFramework.BuildableItem.EOutlineColor col)
 		{
 			return default(global::UnityEngine.Color32);
 		}
@@ -180,11 +178,6 @@ namespace ScheduleOne.EntityFramework
 
 		public virtual void HideOutline()
 		{
-		}
-
-		public global::UnityEngine.Vector3 GetFurthestPointFromBoundingCollider(global::UnityEngine.Vector3 pos)
-		{
-			return default(global::UnityEngine.Vector3);
 		}
 
 		public bool GetPenetration(out float x, out float z, out float y)
@@ -236,59 +229,27 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		private void RpcWriter___Server_SendBuildableItemData_3537728543(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
+		private void RpcWriter___Server_Destroy_Server_2166136261()
 		{
 		}
 
-		public void RpcLogic___SendBuildableItemData_3537728543(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
+		private void RpcLogic___Destroy_Server_2166136261()
 		{
 		}
 
-		private void RpcReader___Server_SendBuildableItemData_3537728543(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_Destroy_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceiveBuildableItemData_3859851844(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
+		private void RpcWriter___Observers_Destroy_Client_2166136261()
 		{
 		}
 
-		public void RpcLogic___ReceiveBuildableItemData_3859851844(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
+		private void RpcLogic___Destroy_Client_2166136261()
 		{
 		}
 
-		private void RpcReader___Observers_ReceiveBuildableItemData_3859851844(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Target_ReceiveBuildableItemData_3859851844(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentPropertyCode)
-		{
-		}
-
-		private void RpcReader___Target_ReceiveBuildableItemData_3859851844(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Server_Destroy_Networked_2166136261()
-		{
-		}
-
-		private void RpcLogic___Destroy_Networked_2166136261()
-		{
-		}
-
-		private void RpcReader___Server_Destroy_Networked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		private void RpcWriter___Observers_DestroyItemWrapper_2166136261()
-		{
-		}
-
-		private void RpcLogic___DestroyItemWrapper_2166136261()
-		{
-		}
-
-		private void RpcReader___Observers_DestroyItemWrapper_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Destroy_Client_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

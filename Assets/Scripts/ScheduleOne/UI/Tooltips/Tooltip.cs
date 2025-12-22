@@ -3,11 +3,12 @@ namespace ScheduleOne.UI.Tooltips
 	public class Tooltip : global::UnityEngine.MonoBehaviour
 	{
 		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.TextArea(3, 10)]
 		public string text;
 
 		public global::UnityEngine.Vector2 labelOffset;
 
-		private global::UnityEngine.RectTransform rect;
+		public global::UnityEngine.RectTransform LabelOriginRect;
 
 		private global::UnityEngine.Canvas canvas;
 

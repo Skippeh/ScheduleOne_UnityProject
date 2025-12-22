@@ -186,6 +186,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
+		public override string GetManagementName()
+		{
+			return null;
+		}
+
 		protected virtual void LateUpdate()
 		{
 		}
@@ -208,7 +213,7 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
+		protected override void Destroy()
 		{
 		}
 

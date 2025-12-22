@@ -55,11 +55,18 @@ namespace ScheduleOne.UI.Shop
 
 		public global::UnityEngine.Color IconTint;
 
+		[global::UnityEngine.Header("Visibility")]
+		public bool ConditionalVisibility;
+
+		public string ConditionalVisibilityVariableName;
+
 		public global::System.Action onStockChanged;
 
 		private global::ScheduleOne.Variables.NumberVariable stockVariable;
 
 		private global::ScheduleOne.Variables.NumberVariable purchasedQuantityVariable;
+
+		private global::ScheduleOne.Variables.BoolVariable conditionalVisibilityVariable;
 
 		public bool IsInStock => false;
 

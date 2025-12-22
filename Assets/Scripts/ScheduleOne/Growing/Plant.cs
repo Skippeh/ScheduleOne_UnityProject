@@ -1,6 +1,6 @@
 namespace ScheduleOne.Growing
 {
-	public class Plant : global::UnityEngine.MonoBehaviour
+	public abstract class Plant : global::UnityEngine.MonoBehaviour
 	{
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Transform VisualsContainer;
@@ -14,6 +14,8 @@ namespace ScheduleOne.Growing
 		public global::ScheduleOne.Audio.AudioSourceController DestroySound;
 
 		public global::UnityEngine.ParticleSystem FullyGrownParticles;
+
+		public global::UnityEngine.Transform HarvestLabelPositionTransform;
 
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.Growing.SeedDefinition SeedDefinition;
@@ -29,8 +31,6 @@ namespace ScheduleOne.Growing
 		[global::UnityEngine.Header("Trash")]
 		public global::ScheduleOne.Trash.TrashItem PlantScrapPrefab;
 
-		public global::UnityEngine.Events.UnityEvent onGrowthDone;
-
 		[global::UnityEngine.Header("Plant data")]
 		public float YieldLevel;
 
@@ -38,6 +38,8 @@ namespace ScheduleOne.Growing
 
 		[global::UnityEngine.HideInInspector]
 		public global::System.Collections.Generic.List<int> ActiveHarvestables;
+
+		public global::System.Action onFullyHarvested;
 
 		public global::ScheduleOne.ObjectScripts.Pot Pot { get; protected set; }
 
@@ -47,11 +49,11 @@ namespace ScheduleOne.Growing
 
 		public global::ScheduleOne.Growing.PlantGrowthStage FinalGrowthStage => null;
 
-		public virtual void Initialize(global::FishNet.Object.NetworkObject pot, float growthProgress = 0f, float yieldLevel = 0f, float qualityLevel = 0f)
+		private void Awake()
 		{
 		}
 
-		public virtual void Destroy(bool dropScraps = false)
+		public virtual void Initialize(global::FishNet.Object.NetworkObject pot, float growthProgress = 0f, float yieldLevel = 0f, float qualityLevel = 0f)
 		{
 		}
 
@@ -68,6 +70,10 @@ namespace ScheduleOne.Growing
 		}
 
 		public virtual void SetHarvestableActive(int index, bool active)
+		{
+		}
+
+		private void OnFullyHarvested()
 		{
 		}
 

@@ -74,6 +74,8 @@ namespace ScheduleOne.Property
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> Configurables;
 
+		public readonly global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Grid> Grids;
+
 		private global::UnityEngine.BoxCollider[] propertyBoundsColliders;
 
 		private global::ScheduleOne.Persistence.Loaders.PropertyLoader loader;
@@ -97,6 +99,9 @@ namespace ScheduleOne.Property
 		public string PropertyName => null;
 
 		public string PropertyCode => null;
+
+		[field: global::UnityEngine.SerializeField]
+		public float AmbientTemperature { get; private set; }
 
 		public int LoadingDockCount => 0;
 

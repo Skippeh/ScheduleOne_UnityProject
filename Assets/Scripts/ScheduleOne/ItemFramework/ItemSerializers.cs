@@ -135,6 +135,20 @@ namespace ScheduleOne.ItemFramework
 			return null;
 		}
 
+		public static void WriteShroomInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.ShroomInstance value)
+		{
+		}
+
+		public static global::ScheduleOne.Product.ShroomInstance ReadShroomInstance(this global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		private static global::ScheduleOne.Product.ShroomInstance DirectReadShroomInstance(this global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
 		public static void WriteIntegerItemInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.IntegerItemInstance value)
 		{
 		}
@@ -149,16 +163,16 @@ namespace ScheduleOne.ItemFramework
 			return null;
 		}
 
-		public static void WriteWateringCanInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance value)
+		public static void WriteWateringCanInstance(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ItemFramework.WaterContainerInstance value)
 		{
 		}
 
-		public static global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance ReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
+		public static global::ScheduleOne.ItemFramework.WaterContainerInstance ReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
 		{
 			return null;
 		}
 
-		private static global::ScheduleOne.ObjectScripts.WateringCan.WateringCanInstance DirectReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
+		private static global::ScheduleOne.ItemFramework.WaterContainerInstance DirectReadWateringCanInstance(this global::FishNet.Serializing.Reader reader)
 		{
 			return null;
 		}

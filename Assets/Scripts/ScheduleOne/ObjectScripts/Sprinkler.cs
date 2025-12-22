@@ -47,7 +47,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void ApplyWater(float normalizedAmount)
+		public void AddWater(float normalizedAmount)
 		{
 		}
 

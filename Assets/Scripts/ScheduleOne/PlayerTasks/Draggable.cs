@@ -5,7 +5,16 @@ namespace ScheduleOne.PlayerTasks
 		public enum EDragProjectionMode
 		{
 			CameraForward = 0,
-			FlatCameraForward = 1
+			FlatCameraForward = 1,
+			CustomPlane = 2
+		}
+
+		public enum ERotationAxis
+		{
+			FlatCameraForward = 0,
+			LocalX = 1,
+			LocalY = 2,
+			LocalZ = 3
 		}
 
 		[global::UnityEngine.Header("Drag Force")]
@@ -18,8 +27,12 @@ namespace ScheduleOne.PlayerTasks
 
 		public float TorqueMultiplier;
 
+		public global::ScheduleOne.PlayerTasks.Draggable.ERotationAxis RotationAxis;
+
 		[global::UnityEngine.Header("Settings")]
 		public global::ScheduleOne.PlayerTasks.Draggable.EDragProjectionMode DragProjectionMode;
+
+		public global::UnityEngine.Transform CustomDragPlane;
 
 		public bool DisableGravityWhenDragged;
 

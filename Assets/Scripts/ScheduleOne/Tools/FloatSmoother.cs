@@ -30,7 +30,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		public void SetDefault(float value)
+		public void SetDefault(float value, bool apply = true)
 		{
 		}
 

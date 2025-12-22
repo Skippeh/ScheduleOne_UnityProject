@@ -15,7 +15,7 @@ namespace ScheduleOne.Map
 
 		public global::ScheduleOne.Audio.AudioSourceController SewerUnlockSound;
 
-		public global::ScheduleOne.ItemFramework.ItemPickup RandomWorldSewerKeyPickup;
+		public global::ScheduleOne.ItemFramework.NetworkedItemPickup RandomWorldSewerKeyPickup;
 
 		public global::UnityEngine.Transform[] RandomSewerKeyLocations;
 
@@ -24,6 +24,8 @@ namespace ScheduleOne.Map
 		public global::ScheduleOne.NPCs.CharacterClasses.SewerGoblin SewerGoblinNPC;
 
 		public global::ScheduleOne.Map.SewerManager.KeyPossessor[] SewerKeyPossessors;
+
+		public global::ScheduleOne.Map.SewerMushrooms SewerMushrooms;
 
 		private global::ScheduleOne.Persistence.Loaders.SewerLoader loader;
 

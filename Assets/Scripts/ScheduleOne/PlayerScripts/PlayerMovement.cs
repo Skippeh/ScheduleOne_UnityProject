@@ -378,6 +378,10 @@ namespace ScheduleOne.PlayerScripts
 			return null;
 		}
 
+		public void SetPlayerRotation(global::UnityEngine.Quaternion rotation)
+		{
+		}
+
 		private void EnterVehicle(global::ScheduleOne.Vehicles.LandVehicle vehicle)
 		{
 		}

@@ -25,5 +25,7 @@ namespace ScheduleOne.AvatarFramework.Emotions
 		public const string Cocaine = "Cocaine";
 
 		public const string Zombie = "Zombie";
+
+		public const string Shroom = "Shroom";
 	}
 }

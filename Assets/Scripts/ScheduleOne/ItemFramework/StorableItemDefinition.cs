@@ -9,6 +9,7 @@ namespace ScheduleOne.ItemFramework
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopListing.CategoryInstance> ShopCategories;
 
+		[global::UnityEngine.Header("Unlocking")]
 		public bool RequiresLevelToPurchase;
 
 		public global::ScheduleOne.Levelling.FullRank RequiredRank;
@@ -27,14 +28,20 @@ namespace ScheduleOne.ItemFramework
 		public global::ScheduleOne.StationFramework.StationItem StationItem;
 
 		[global::UnityEngine.Header("Other Settings")]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("CombatUtilityForNPCs")]
 		[global::UnityEngine.Range(0f, 1f)]
-		public float CombatUtilityForNPCs;
+		public float CombatUtility;
 
-		public bool IsPurchasable => false;
+		public bool IsUnlocked => false;
 
 		public override global::ScheduleOne.ItemFramework.ItemInstance GetDefaultInstance(int quantity = 1)
 		{
 			return null;
+		}
+
+		protected virtual bool GetIsUnlocked()
+		{
+			return false;
 		}
 	}
 }

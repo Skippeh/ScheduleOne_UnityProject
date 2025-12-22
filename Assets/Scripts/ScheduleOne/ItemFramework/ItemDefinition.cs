@@ -40,5 +40,9 @@ namespace ScheduleOne.ItemFramework
 		{
 			return null;
 		}
+
+		public virtual void ValidateDefinition()
+		{
+		}
 	}
 }

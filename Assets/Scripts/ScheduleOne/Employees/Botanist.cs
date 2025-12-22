@@ -2,35 +2,31 @@ namespace ScheduleOne.Employees
 {
 	public class Botanist : global::ScheduleOne.Employees.Employee, global::ScheduleOne.Management.IConfigurable
 	{
-		public float CRITICAL_WATERING_THRESHOLD;
+		public const float CriticalWateringThreshold = 0.2f;
 
-		public float WATERING_THRESHOLD;
+		public const float WateringThreshold = 0.3f;
 
-		public float TARGET_WATER_LEVEL_MIN;
+		public const float MoistureLevelRandomMin = 0.9f;
 
-		public float TARGET_WATER_LEVEL_MAX;
+		public const float MoistureLevelRandomMax = 1f;
 
-		public float SOIL_POUR_TIME;
+		public const float SoilPourTime = 10f;
 
-		public float WATER_POUR_TIME;
+		public const float WaterPourTime = 10f;
 
-		public float ADDITIVE_POUR_TIME;
+		public const float AdditivePourTime = 10f;
 
-		public float SEED_SOW_TIME;
+		public const float SeedSowTime = 15f;
 
-		public float HARVEST_TIME;
+		public const float IndividualHarvestTime = 1f;
+
+		public const float ApplySpawnTime = 15f;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Sprite typeIcon;
 
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
-
-		public global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour PotActionBehaviour;
-
-		public global::ScheduleOne.NPCs.Behaviour.StartDryingRackBehaviour StartDryingRackBehaviour;
-
-		public global::ScheduleOne.NPCs.Behaviour.StopDryingRackBehaviour StopDryingRackBehaviour;
 
 		[global::UnityEngine.Header("UI")]
 		public global::ScheduleOne.UI.Management.BotanistUIElement WorldspaceUIPrefab;
@@ -49,6 +45,30 @@ namespace ScheduleOne.Employees
 		public global::ScheduleOne.Dialogue.DialogueContainer MissingMaterialsDialogue;
 
 		public global::ScheduleOne.Dialogue.DialogueContainer NoPotsRequireWorkDialogue;
+
+		private global::ScheduleOne.NPCs.Behaviour.StartDryingRackBehaviour _startDryingRackBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.StopDryingRackBehaviour _stopDryingRackBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.UseSpawnStationBehaviour _useSpawnStationBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.AddSoilToGrowContainerBehaviour _addSoilToGrowContainerBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.ApplyAdditiveToGrowContainerBehaviour _applyAdditiveToGrowContainerBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.SowSeedInPotBehaviour _sowSeedInPotBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.WaterPotBehaviour _waterPotBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.HarvestPotBehaviour _harvestPotBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.MistMushroomBedBehaviour _mistMushroomBedBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.HarvestMushroomBedBehaviour _harvestMushroomBedBehaviour;
+
+		private global::ScheduleOne.NPCs.Behaviour.ApplySpawnToMushroomBedBehaviour _applySpawnToMushroomBedBehaviour;
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Behaviour.Behaviour> _workBehaviours;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CCurrentPlayerConfigurer_003Ek__BackingField;
 
@@ -105,7 +125,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		protected override void Start()
+		public override void Awake()
 		{
 		}
 
@@ -116,10 +136,6 @@ namespace ScheduleOne.Employees
 		private bool IsEntityAccessible(global::ScheduleOne.Management.ITransitEntity entity)
 		{
 			return false;
-		}
-
-		private void StartAction(global::ScheduleOne.ObjectScripts.Pot pot, global::ScheduleOne.NPCs.Behaviour.PotActionBehaviour.EActionType actionType)
-		{
 		}
 
 		private void StartDryingRack(global::ScheduleOne.ObjectScripts.DryingRack rack)
@@ -173,16 +189,6 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		public global::ScheduleOne.ItemFramework.ItemInstance GetItemInSupplies(string id)
-		{
-			return null;
-		}
-
-		public global::ScheduleOne.ItemFramework.ItemInstance GetSeedInSupplies()
-		{
-			return null;
-		}
-
 		protected override bool ShouldIdle()
 		{
 			return false;
@@ -193,27 +199,17 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		private bool AreThereUnspecifiedPots()
-		{
-			return false;
-		}
-
-		private bool AreThereNullDestinationPots()
-		{
-			return false;
-		}
-
-		private bool IsMissingRequiredMaterials()
-		{
-			return false;
-		}
-
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForWatering(float threshold, bool excludeFullyGrowm)
+		public global::ScheduleOne.Management.ITransitEntity GetSuppliesAsTransitEntity()
 		{
 			return null;
 		}
 
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForSoilSour()
+		private global::ScheduleOne.ObjectScripts.Pot GetPotForWatering(float threshold)
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.Growing.GrowContainer> GetGrowContainersForSoilPour()
 		{
 			return null;
 		}
@@ -223,28 +219,27 @@ namespace ScheduleOne.Employees
 			return null;
 		}
 
-		private T GetAccessableEntity<T>(T entity) where T : global::ScheduleOne.Management.ITransitEntity
+		private global::System.Collections.Generic.List<global::ScheduleOne.Growing.GrowContainer> GetGrowContainersForAdditives()
 		{
-			return default(T);
-		}
-
-		private global::System.Collections.Generic.List<T> GetAccessableEntities<T>(global::System.Collections.Generic.List<T> list) where T : global::ScheduleOne.Management.ITransitEntity
-		{
-			return null;
-		}
-
-		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> FilterPotsForSpecifiedSeed(global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> pots)
-		{
-			return null;
-		}
-
-		private global::ScheduleOne.ObjectScripts.Pot GetPotForAdditives(out int additiveNumber)
-		{
-			additiveNumber = default(int);
 			return null;
 		}
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.Pot> GetPotsForHarvest()
+		{
+			return null;
+		}
+
+		private global::ScheduleOne.ObjectScripts.MushroomBed GetMushroomBedForMisting(float threshold)
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.MushroomBed> GetMushroomBedsForHarvest()
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.MushroomBed> GetBedsReadyForSpawn()
 		{
 			return null;
 		}
@@ -260,6 +255,16 @@ namespace ScheduleOne.Employees
 		}
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.ObjectScripts.DryingRack> GetRacksReadyToMove()
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.MushroomSpawnStation> GetSpawnStationsReadyToUse()
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.MushroomSpawnStation> GetSpawnStationsReadyToMove()
 		{
 			return null;
 		}
@@ -317,7 +322,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		public override void Awake()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EEmployees_002EBotanist_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

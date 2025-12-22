@@ -18,6 +18,10 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		protected override void Start()
+		{
+		}
+
 		public void Open()
 		{
 		}

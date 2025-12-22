@@ -13,6 +13,9 @@ namespace ScheduleOne.Management
 		Cleaner = 8,
 		BrickPress = 9,
 		MixingStation = 10,
-		DryingRack = 11
+		DryingRack = 11,
+		SpawnStation = 12,
+		MushroomBed = 13,
+		Storage = 14
 	}
 }

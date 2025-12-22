@@ -228,10 +228,6 @@ namespace ScheduleOne.Vehicles
 
 		public float Speed_Kmh { get; protected set; }
 
-		public float Speed_Ms => 0f;
-
-		public float Speed_Mph => 0f;
-
 		public bool IsPhysicallySimulated { get; protected set; }
 
 		public float currentThrottle { get; protected set; }

@@ -11,7 +11,7 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
 
 		public LabOvenConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.LabOven oven)
-			: base(null, null)
+			: base(null, null, null)
 		{
 		}
 

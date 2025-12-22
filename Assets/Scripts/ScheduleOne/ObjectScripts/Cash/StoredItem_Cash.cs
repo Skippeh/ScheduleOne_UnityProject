@@ -11,7 +11,7 @@ namespace ScheduleOne.ObjectScripts.Cash
 		{
 		}
 
-		public override void Destroy_Internal()
+		public override void Destroy()
 		{
 		}
 

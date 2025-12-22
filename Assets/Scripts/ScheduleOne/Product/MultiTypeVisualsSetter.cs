@@ -8,6 +8,8 @@ namespace ScheduleOne.Product
 
 		public global::ScheduleOne.Product.CocaineVisualsSetter CocaineVisuals;
 
+		public global::ScheduleOne.Product.ShroomVisualsSetter ShroomVisuals;
+
 		private void Awake()
 		{
 		}

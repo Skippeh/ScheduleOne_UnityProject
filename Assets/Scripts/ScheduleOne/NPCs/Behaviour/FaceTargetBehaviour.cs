@@ -40,7 +40,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void Begin()
+		public override void Activate()
 		{
 		}
 

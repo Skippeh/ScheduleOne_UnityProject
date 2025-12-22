@@ -4,7 +4,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 	[global::UnityEngine.CreateAssetMenu(fileName = "BasicAvatarSettings", menuName = "ScriptableObjects/BasicAvatarSettings", order = 1)]
 	public class BasicAvatarSettings : global::UnityEngine.ScriptableObject
 	{
-		public const float GENDER_MULTIPLIER = 0.7f;
+		public const float GenderScaleMultiplier = 0.7f;
 
 		public const string MaleUnderwearPath = "Avatar/Layers/Bottom/MaleUnderwear";
 

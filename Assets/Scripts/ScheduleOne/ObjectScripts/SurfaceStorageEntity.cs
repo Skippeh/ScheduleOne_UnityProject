@@ -1,19 +1,9 @@
 namespace ScheduleOne.ObjectScripts
 {
-	public class SurfaceStorageEntity : global::ScheduleOne.EntityFramework.SurfaceItem, global::ScheduleOne.Storage.IStorageEntity, global::ScheduleOne.Management.IUsable
+	public class SurfaceStorageEntity : global::ScheduleOne.EntityFramework.SurfaceItem, global::ScheduleOne.Management.IUsable
 	{
 		[global::UnityEngine.Header("Reference")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform _storedItemContainer;
-
 		public global::ScheduleOne.Storage.StorageEntity StorageEntity;
-
-		[global::UnityEngine.SerializeField]
-		protected global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> storageGrids;
-
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> _reservedItems;
-
-		private global::System.Collections.Generic.List<string> completedJobs;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
 
@@ -22,19 +12,6 @@ namespace ScheduleOne.ObjectScripts
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ESurfaceStorageEntityAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002ESurfaceStorageEntityAssembly_002DCSharp_002Edll_Excuted;
-
-		public global::UnityEngine.Transform storedItemContainer => null;
-
-		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.Storage.StoredItem, global::ScheduleOne.Employees.Employee> reservedItems
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
 
 		public global::FishNet.Object.NetworkObject NPCUserObject
 		{
@@ -88,30 +65,6 @@ namespace ScheduleOne.ObjectScripts
 			}
 		}
 
-		protected override void Start()
-		{
-		}
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StoredItem> GetStoredItems()
-		{
-			return null;
-		}
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageGrid> GetStorageGrids()
-		{
-			return null;
-		}
-
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void DestroyStoredItem(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		private void DestroyStoredItem_Server(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
-		}
-
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetPlayerUser(global::FishNet.Object.NetworkObject playerObject)
 		{
@@ -142,30 +95,6 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		public override void NetworkInitializeIfDisabled()
-		{
-		}
-
-		private void RpcWriter___Observers_DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		public void RpcLogic___DestroyStoredItem_3261517793(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID = "", bool network = true)
-		{
-		}
-
-		private void RpcReader___Observers_DestroyStoredItem_3261517793(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Server_DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
-		}
-
-		private void RpcLogic___DestroyStoredItem_Server_3952619116(int gridIndex, global::ScheduleOne.Tiles.Coordinate coord, string jobID)
-		{
-		}
-
-		private void RpcReader___Server_DestroyStoredItem_Server_3952619116(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

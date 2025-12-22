@@ -16,7 +16,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public bool RandomKeyPossessorSet;
 
-		public SewerData(bool isSewerUnlocked, bool isRandomWorldKeyCollected, int randomSewerKeyLocationIndex, bool hasSewerKingBeenDefeated, int hoursSinceLastSewerGoblinAppearance, int randomKeyPossessorIndex)
+		public global::System.Collections.Generic.List<int> ActiveMushroomLocationIndices;
+
+		public SewerData(bool isSewerUnlocked, bool isRandomWorldKeyCollected, int randomSewerKeyLocationIndex, bool hasSewerKingBeenDefeated, int hoursSinceLastSewerGoblinAppearance, int randomKeyPossessorIndex, global::System.Collections.Generic.List<int> activeMushroomLocationIndices)
 		{
 		}
 	}

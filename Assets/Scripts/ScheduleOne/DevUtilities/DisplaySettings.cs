@@ -24,6 +24,8 @@ namespace ScheduleOne.DevUtilities
 
 		public int ActiveDisplayIndex;
 
+		public global::ScheduleOne.DevUtilities.Settings.EUnitType UnitType;
+
 		public static global::System.Collections.Generic.List<global::UnityEngine.Resolution> GetResolutions()
 		{
 			return null;

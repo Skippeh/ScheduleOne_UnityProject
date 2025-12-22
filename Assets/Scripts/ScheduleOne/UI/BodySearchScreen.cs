@@ -35,6 +35,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.Animation ResetAnimation;
 
+		public global::ScheduleOne.Audio.AudioSourceController FailSound;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.ItemSlotUI> slots;
 
 		public global::UnityEngine.Events.UnityEvent onSearchClear;
@@ -55,9 +57,15 @@ namespace ScheduleOne.UI
 
 		private global::ScheduleOne.NPCs.NPC searcher;
 
+		private bool _caught;
+
 		public bool IsOpen { get; private set; }
 
 		public bool TutorialOpen { get; private set; }
+
+		protected override void Awake()
+		{
+		}
 
 		protected override void Start()
 		{

@@ -26,9 +26,6 @@ namespace ScheduleOne
 		}
 
 		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Registry.ObjectRegister> ObjectRegistry;
-
-		[global::UnityEngine.SerializeField]
 		private global::System.Collections.Generic.List<global::ScheduleOne.Registry.ItemRegister> ItemRegistry;
 
 		[global::UnityEngine.SerializeField]
@@ -38,19 +35,12 @@ namespace ScheduleOne
 
 		private global::System.Collections.Generic.Dictionary<string, string> itemIDAliases;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.SeedDefinition> Seeds;
-
 		private void OnValidate()
 		{
 		}
 
 		protected override void Awake()
 		{
-		}
-
-		public static global::UnityEngine.GameObject GetPrefab(string id)
-		{
-			return null;
 		}
 
 		public static global::ScheduleOne.ItemFramework.ItemDefinition GetItem(string ID)
@@ -69,11 +59,6 @@ namespace ScheduleOne
 		}
 
 		public global::ScheduleOne.ItemFramework.ItemDefinition _GetItem(string ID, bool warnIfNonExistent = true)
-		{
-			return null;
-		}
-
-		public static global::ScheduleOne.ConstructableScripts.Constructable GetConstructable(string id)
 		{
 			return null;
 		}

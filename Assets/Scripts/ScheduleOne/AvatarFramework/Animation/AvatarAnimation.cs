@@ -16,7 +16,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 			Right = 3
 		}
 
-		public const bool GLOBAL_USE_IMPOSTOR = true;
+		public const bool ImpostorsEnabled = true;
 
 		public const float AnimationRangeSqr = 2025f;
 
@@ -32,11 +32,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float SEAT_TIME = 0.5f;
 
-		private bool _IsAvatarCulled;
-
 		public bool DEBUG_MODE;
-
-		private int framesActive;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Animator animator;
@@ -64,8 +60,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public string StandUpFromFrontClipName;
 
-		public bool UseImpostor;
-
 		public bool AllowCulling;
 
 		public global::UnityEngine.Events.UnityEvent onStandupStart;
@@ -73,8 +67,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 		public global::UnityEngine.Events.UnityEvent onStandupDone;
 
 		public global::UnityEngine.Events.UnityEvent onHeavyFlinch;
-
-		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] standingBoneTransforms;
 
 		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] standUpFromBackBoneTransforms;
 
@@ -90,8 +82,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private bool animationEnabled;
 
-		private global::UnityEngine.AnimatorCullingMode initialCullingMode;
-
 		public bool IsCrouched { get; protected set; }
 
 		public bool IsSeated => false;
@@ -102,54 +92,17 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public bool StandUpAnimationPlaying { get; protected set; }
 
-		public bool IsAvatarCulled
-		{
-			get
-			{
-				return false;
-			}
-			private set
-			{
-			}
-		}
-
-		public event global::System.Action<bool> onAvatarCullStateChanged
-		{
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			add
-			{
-			}
-			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			remove
-			{
-			}
-		}
+		public bool IsAvatarCulled { get; private set; }
 
 		protected virtual void Awake()
 		{
 		}
 
-		protected virtual void Start()
-		{
-		}
-
-		private void OnDestroy()
-		{
-		}
-
-		private void OnEnable()
+		private void Start()
 		{
 		}
 
 		private void Update()
-		{
-		}
-
-		private void InfrequentUpdate()
-		{
-		}
-
-		private void MinPass()
 		{
 		}
 
@@ -208,11 +161,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private void PopulateBoneTransforms(global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)
 		{
-		}
-
-		private global::System.Collections.Generic.List<global::UnityEngine.Pose> GetBoneTransforms()
-		{
-			return null;
 		}
 
 		private void PopulateAnimationStartBoneTransforms(string clipName, global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)

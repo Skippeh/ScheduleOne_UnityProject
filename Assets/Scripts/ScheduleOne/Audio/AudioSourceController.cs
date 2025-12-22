@@ -151,7 +151,15 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public virtual void PlayOneShot(bool duplicateAudioSource = false)
+		public virtual void PlayOneShot()
+		{
+		}
+
+		public void DuplicateAndPlayOneShot()
+		{
+		}
+
+		public virtual void DuplicateAndPlayOneShot(global::UnityEngine.Transform parent)
 		{
 		}
 

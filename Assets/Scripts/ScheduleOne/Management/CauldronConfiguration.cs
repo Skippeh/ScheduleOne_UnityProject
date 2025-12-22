@@ -11,7 +11,7 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.Management.TransitRoute DestinationRoute { get; protected set; }
 
 		public CauldronConfiguration(global::ScheduleOne.Management.ConfigurationReplicator replicator, global::ScheduleOne.Management.IConfigurable configurable, global::ScheduleOne.ObjectScripts.Cauldron cauldron)
-			: base(null, null)
+			: base(null, null, null)
 		{
 		}
 

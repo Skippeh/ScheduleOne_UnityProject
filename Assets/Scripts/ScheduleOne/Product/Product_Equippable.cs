@@ -7,7 +7,7 @@ namespace ScheduleOne.Product
 
 		public global::UnityEngine.Transform ModelContainer;
 
-		private global::ScheduleOne.Product.FirstPersonProductConsumeAnimation consumeAnimation;
+		private global::ScheduleOne.Product.ProductConsumeAnimation consumeAnimation;
 
 		private bool isConsumable;
 
@@ -19,9 +19,11 @@ namespace ScheduleOne.Product
 
 		private global::UnityEngine.Coroutine consumeRoutine;
 
+		private bool mouseUp;
+
 		public string ConsumeDescription => null;
 
-		public float ConsumeTime => 0f;
+		public float PrepareDuration => 0f;
 
 		public float EffectsApplyDelay => 0f;
 

@@ -4,7 +4,7 @@ namespace ScheduleOne.Growing
 	{
 		public string AdditiveName;
 
-		public string AssetPath;
+		public global::ScheduleOne.ItemFramework.AdditiveDefinition Definition;
 
 		[global::UnityEngine.Header("Plant effector settings")]
 		public float QualityChange;

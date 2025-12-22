@@ -55,10 +55,6 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void ApplySoil(string ID)
-		{
-		}
-
 		public void FillHovered()
 		{
 		}

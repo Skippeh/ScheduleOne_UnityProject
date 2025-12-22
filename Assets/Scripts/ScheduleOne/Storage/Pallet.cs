@@ -1,6 +1,6 @@
 namespace ScheduleOne.Storage
 {
-	public class Pallet : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Storage.IStorageEntity
+	public class Pallet : global::FishNet.Object.NetworkBehaviour
 	{
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Storage.Pallet> palletsOwnedByLocalPlayer;
 

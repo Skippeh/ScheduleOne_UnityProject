@@ -1,13 +1,21 @@
 namespace ScheduleOne.PlayerTasks.Tasks
 {
-	public class PourSoilTask : global::ScheduleOne.PlayerTasks.Tasks.PourIntoPotTask
+	public class PourSoilTask : global::ScheduleOne.PlayerTasks.Tasks.GrowContainerPourTask
 	{
-		private global::ScheduleOne.ObjectScripts.Soil.PourableSoil soil;
+		private global::ScheduleOne.ItemFramework.SoilDefinition _soilDefinition;
 
-		private global::UnityEngine.Collider HoveredTopCollider;
+		private global::ScheduleOne.ObjectScripts.Soil.PourableSoil _pourableSoil;
 
-		public PourSoilTask(global::ScheduleOne.ObjectScripts.Pot _pot, global::ScheduleOne.ItemFramework.ItemInstance _itemInstance, global::ScheduleOne.PlayerTasks.Pourable _pourablePrefab)
+		private global::UnityEngine.Collider _hoveredTopCollider;
+
+		private global::ScheduleOne.Growing.GrowContainer _growContainer;
+
+		public PourSoilTask(global::ScheduleOne.Growing.GrowContainer growContainer, global::ScheduleOne.ItemFramework.ItemInstance itemInstance, global::ScheduleOne.PlayerTasks.Pourable pourablePrefab)
 			: base(null, null, null)
+		{
+		}
+
+		protected override void OnInitialPour()
 		{
 		}
 

@@ -80,7 +80,7 @@ namespace ScheduleOne.Building
 		{
 		}
 
-		public global::ScheduleOne.EntityFramework.GridItem CreateGridItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string guid = "")
+		public global::ScheduleOne.EntityFramework.GridItem CreateGridItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.Tiles.Grid grid, global::UnityEngine.Vector2 originCoordinate, int rotation, string guid = "", global::System.Action<global::ScheduleOne.EntityFramework.GridItem> onBeforeSpawn = null)
 		{
 			return null;
 		}

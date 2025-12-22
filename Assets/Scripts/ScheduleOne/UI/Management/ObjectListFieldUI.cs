@@ -33,6 +33,10 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
+		private void RemoveEntryClicked(int index)
+		{
+		}
+
 		private bool AreFieldsUniform()
 		{
 			return false;
@@ -49,6 +53,10 @@ namespace ScheduleOne.UI.Management
 		}
 
 		public void ObjectsSelected(global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> objs)
+		{
+		}
+
+		public void Clear()
 		{
 		}
 	}

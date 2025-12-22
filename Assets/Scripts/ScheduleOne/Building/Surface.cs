@@ -23,14 +23,15 @@ namespace ScheduleOne.Building
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Building.Surface.EFace> ValidFaces;
 
-		public global::ScheduleOne.Property.Property ParentProperty;
-
 		[global::UnityEngine.SerializeField]
 		protected string BakedGUID;
 
 		public global::System.Guid GUID { get; protected set; }
 
 		public global::UnityEngine.Transform Container => null;
+
+		[field: global::UnityEngine.SerializeField]
+		public global::ScheduleOne.Property.Property ParentProperty { get; private set; }
 
 		[global::EasyButtons.Button]
 		public void RegenerateGUID()

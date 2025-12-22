@@ -29,6 +29,10 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		protected override void Start()
+		{
+		}
+
 		public virtual void Open(global::ScheduleOne.ItemFramework.IItemSlotOwner owner, string title, string subtitle)
 		{
 		}

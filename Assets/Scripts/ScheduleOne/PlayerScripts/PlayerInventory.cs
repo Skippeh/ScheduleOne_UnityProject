@@ -92,6 +92,8 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.PlayerScripts.HotbarSlot equippedSlot => null;
 
+		public global::ScheduleOne.ItemFramework.ItemInstance EquippedItem => null;
+
 		public bool isAnythingEquipped => false;
 
 		public global::ScheduleOne.PlayerScripts.HotbarSlot IndexAllSlots(int index)

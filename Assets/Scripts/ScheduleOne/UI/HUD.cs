@@ -3,7 +3,7 @@ namespace ScheduleOne.UI
 	public class HUD : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.HUD>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFadeBlackOverlay_003Ed__42 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFadeBlackOverlay_003Ed__43 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -40,7 +40,7 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFadeBlackOverlay_003Ed__42(int _003C_003E1__state)
+			public _003CFadeBlackOverlay_003Ed__43(int _003C_003E1__state)
 			{
 			}
 
@@ -147,6 +147,10 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		protected override void Start()
+		{
+		}
+
 		public void SetCrosshairVisible(bool vis)
 		{
 		}
@@ -176,7 +180,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.HUD._003CFadeBlackOverlay_003Ed__42))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.HUD._003CFadeBlackOverlay_003Ed__43))]
 		protected global::System.Collections.IEnumerator FadeBlackOverlay(bool visible, float fadeTime)
 		{
 			return null;

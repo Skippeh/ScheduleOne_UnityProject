@@ -8,8 +8,6 @@ namespace ScheduleOne.ItemFramework
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		protected global::ScheduleOne.ItemFramework.ItemDefinition definition;
 
-		public string ID;
-
 		public int Quantity;
 
 		[global::FishNet.Serializing.Helping.CodegenExclude]
@@ -20,6 +18,8 @@ namespace ScheduleOne.ItemFramework
 
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public global::ScheduleOne.ItemFramework.ItemDefinition Definition => null;
+
+		public string ID { get; protected set; }
 
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public virtual string Name => null;
@@ -88,6 +88,10 @@ namespace ScheduleOne.ItemFramework
 		}
 
 		public void RequestClearSlot()
+		{
+		}
+
+		public void SetID(string id)
 		{
 		}
 	}

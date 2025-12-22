@@ -14,15 +14,15 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002EUnconsciousBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public override void Begin()
+		public override void Activate()
 		{
 		}
 
-		public override void End()
+		public override void Deactivate()
 		{
 		}
 
-		public override void ActiveMinPass()
+		public override void OnActiveTick()
 		{
 		}
 

@@ -30,10 +30,6 @@ namespace ScheduleOne.UI.Stations
 
 		public global::ScheduleOne.ObjectScripts.DryingRack Rack { get; protected set; }
 
-		protected override void Awake()
-		{
-		}
-
 		protected override void Start()
 		{
 		}

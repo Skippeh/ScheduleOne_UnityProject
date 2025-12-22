@@ -267,7 +267,7 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.Property.Property LastVisitedProperty { get; protected set; }
 
-		public global::ScheduleOne.Property.Business CurrentBusiness { get; protected set; }
+		public global::ScheduleOne.Property.Business CurrentBusiness => null;
 
 		public global::ScheduleOne.Map.EMapRegion CurrentRegion { get; protected set; }
 

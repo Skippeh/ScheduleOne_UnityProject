@@ -223,6 +223,16 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
+		public override string GetManagementName()
+		{
+			return null;
+		}
+
+		public override string GetDefaultManagementName()
+		{
+			return null;
+		}
+
 		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
 		{
 		}
@@ -237,7 +247,7 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
+		protected override void Destroy()
 		{
 		}
 

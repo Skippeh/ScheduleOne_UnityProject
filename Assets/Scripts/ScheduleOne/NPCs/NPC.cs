@@ -276,10 +276,6 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		protected virtual void UpdateVisionConeState(bool value)
-		{
-		}
-
 		public virtual void SetVisible(bool visible, bool networked = false)
 		{
 		}

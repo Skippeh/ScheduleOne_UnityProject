@@ -8,11 +8,11 @@ namespace ScheduleOne.Equipping
 		{
 		}
 
-		protected override void StartPourTask(global::ScheduleOne.ObjectScripts.Pot pot)
+		protected override void StartPourTask(global::ScheduleOne.Growing.GrowContainer growContainer)
 		{
 		}
 
-		protected override bool CanPour(global::ScheduleOne.ObjectScripts.Pot pot, out string reason)
+		protected override bool CanPour(global::ScheduleOne.Growing.GrowContainer pot, out string reason)
 		{
 			reason = null;
 			return false;

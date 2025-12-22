@@ -4,7 +4,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 	{
 		public delegate void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings settings);
 
-		public const string CHARACTER_SETTINGS_PATH = "Assets/Resources/CharacterSettings";
+		public const string AppearancesFolderPath = "Assets/Resources/Appearances";
 
 		[global::UnityEngine.SerializeField]
 		private global::ScheduleOne.AvatarFramework.AvatarSettings ActiveSettings;
@@ -14,6 +14,8 @@ namespace ScheduleOne.AvatarFramework.Customization
 		public global::TMPro.TMP_InputField SaveInputField;
 
 		public global::TMPro.TMP_InputField LoadInputField;
+
+		public global::UnityEngine.UI.Toggle GenerateCombinedLayerToggle;
 
 		public global::ScheduleOne.AvatarFramework.Customization.CustomizationManager.AvatarSettingsChanged OnAvatarSettingsChanged;
 

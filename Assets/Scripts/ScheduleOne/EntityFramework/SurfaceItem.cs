@@ -23,22 +23,22 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public override void OnStartClient()
+		protected override void SendInitializationToServer()
 		{
 		}
 
-		protected override void SendInitToClient(global::FishNet.Connection.NetworkConnection conn)
+		protected override void SendInitializationToClient(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendSurfaceItemData(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void InitializeSurfaceItem_Server(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
 		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void InitializeSurfaceItem(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void InitializeSurfaceItem_Client(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
@@ -46,7 +46,7 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		protected virtual void SetTransformData(string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void SetTransformData(string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
@@ -72,35 +72,35 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		private void RpcWriter___Server_SendSurfaceItemData_2652836379(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void RpcWriter___Server_InitializeSurfaceItem_Server_2652836379(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
-		public void RpcLogic___SendSurfaceItemData_2652836379(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void RpcLogic___InitializeSurfaceItem_Server_2652836379(global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
-		private void RpcReader___Server_SendSurfaceItemData_2652836379(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_InitializeSurfaceItem_Server_2652836379(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_InitializeSurfaceItem_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void RpcWriter___Target_InitializeSurfaceItem_Client_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
-		public virtual void RpcLogic___InitializeSurfaceItem_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void RpcLogic___InitializeSurfaceItem_Client_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
-		private void RpcReader___Target_InitializeSurfaceItem_2932264618(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_InitializeSurfaceItem_Client_2932264618(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_InitializeSurfaceItem_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
+		private void RpcWriter___Observers_InitializeSurfaceItem_Client_2932264618(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, string GUID, string parentSurfaceGUID, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation)
 		{
 		}
 
-		private void RpcReader___Observers_InitializeSurfaceItem_2932264618(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_InitializeSurfaceItem_Client_2932264618(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

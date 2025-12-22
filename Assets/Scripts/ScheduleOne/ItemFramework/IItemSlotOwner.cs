@@ -16,12 +16,12 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
-		int GetTotalItemCount()
+		int GetQuantitySum()
 		{
 			return 0;
 		}
 
-		int GetItemCount(string id)
+		int GetQuantityOfItem(string id)
 		{
 			return 0;
 		}
@@ -29,6 +29,11 @@ namespace ScheduleOne.ItemFramework
 		int GetNonEmptySlotCount()
 		{
 			return 0;
+		}
+
+		global::ScheduleOne.ItemFramework.ItemSlot GetFirstSlotContaining(string id)
+		{
+			return null;
 		}
 	}
 }

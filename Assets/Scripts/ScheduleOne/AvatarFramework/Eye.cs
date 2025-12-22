@@ -77,7 +77,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		public void SetEyeballMaterial(global::UnityEngine.Material mat, global::UnityEngine.Color col)
+		public void SetEyeballMaterial(global::UnityEngine.Material mat)
 		{
 		}
 

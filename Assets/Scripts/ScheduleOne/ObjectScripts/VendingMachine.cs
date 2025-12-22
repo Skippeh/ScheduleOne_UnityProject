@@ -23,7 +23,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public int LitOnEndTime;
 
-		public global::ScheduleOne.ItemFramework.ItemPickup CukePrefab;
+		public global::ScheduleOne.ItemFramework.NetworkedItemPickup CukePrefab;
 
 		public global::ScheduleOne.ItemFramework.CashPickup CashPrefab;
 
@@ -79,7 +79,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public int DaysUntilRepair { get; protected set; }
 
-		public global::ScheduleOne.ItemFramework.ItemPickup lastDroppedItem { get; protected set; }
+		public global::ScheduleOne.ItemFramework.NetworkedItemPickup lastDroppedItem { get; protected set; }
 
 		public global::System.Guid GUID { get; protected set; }
 

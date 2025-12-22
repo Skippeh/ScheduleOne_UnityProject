@@ -92,6 +92,16 @@ namespace ScheduleOne.Management
 		{
 		}
 
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		private void SendStringField(int fieldIndex, string value)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc]
+		private void ReceiveStringField(int fieldIndex, string value)
+		{
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}
@@ -293,6 +303,30 @@ namespace ScheduleOne.Management
 		}
 
 		private void RpcReader___Observers_ReceiveQualityField_3536682170(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_SendStringField_2801973956(int fieldIndex, string value)
+		{
+		}
+
+		private void RpcLogic___SendStringField_2801973956(int fieldIndex, string value)
+		{
+		}
+
+		private void RpcReader___Server_SendStringField_2801973956(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_ReceiveStringField_2801973956(int fieldIndex, string value)
+		{
+		}
+
+		private void RpcLogic___ReceiveStringField_2801973956(int fieldIndex, string value)
+		{
+		}
+
+		private void RpcReader___Observers_ReceiveStringField_2801973956(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

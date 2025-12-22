@@ -4,15 +4,13 @@ namespace ScheduleOne.AvatarFramework
 	{
 		public const int MAX_ACCESSORIES = 9;
 
-		public const bool USE_COMBINED_LAYERS = true;
+		public const bool CombinedLayersEnabled = true;
 
 		public const float DEFAULT_SMOOTHNESS = 0.25f;
 
 		private static float maleShoulderScale;
 
 		private static float femaleShoulderScale;
-
-		public bool DEBUG;
 
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Animation;
@@ -68,7 +66,7 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::UnityEngine.Material DefaultAvatarMaterial;
 
-		public bool UseImpostor;
+		public bool UseCombinedLayer;
 
 		public global::UnityEngine.Events.UnityEvent<bool, bool, bool> onRagdollChange;
 

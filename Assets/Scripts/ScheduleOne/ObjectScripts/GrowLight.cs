@@ -19,7 +19,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
+		protected override void Destroy()
 		{
 		}
 

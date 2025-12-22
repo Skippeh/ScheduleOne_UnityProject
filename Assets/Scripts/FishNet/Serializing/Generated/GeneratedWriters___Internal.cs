@@ -8,6 +8,10 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002ETemperature_002EAirConditioner_002FEModeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Temperature.AirConditioner.EMode value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EQuests_002EContractInfoFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Quests.ContractInfo value)
 		{
 		}
@@ -41,6 +45,10 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EQuests_002EEQuestStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Quests.EQuestState value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002EProperty_002EManor_002FEManorStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Property.Manor.EManorState value)
 		{
 		}
 
@@ -344,10 +352,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002EProperty_002EManor_002FEManorStateFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Property.Manor.EManorState value)
-		{
-		}
-
 		public static void Write___ScheduleOne_002EPersistence_002ETrashContentDataFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Persistence.TrashContentData value)
 		{
 		}
@@ -384,6 +388,10 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static void Write___ScheduleOne_002EProduct_002EShroomAppearanceSettingsFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.ShroomAppearanceSettings value)
+		{
+		}
+
 		public static void Write___ScheduleOne_002EProduct_002ENewMixOperationFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Product.NewMixOperation value)
 		{
 		}
@@ -400,14 +408,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002ETiles_002ECoordinateProceduralTilePairFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Tiles.CoordinateProceduralTilePair value)
-		{
-		}
-
-		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002ETiles_002ECoordinateProceduralTilePair_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> value)
-		{
-		}
-
 		public static void Write___ScheduleOne_002EObjectScripts_002EChemistryCookOperationFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.ChemistryCookOperation value)
 		{
 		}
@@ -421,6 +421,14 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EObjectScripts_002EMixOperationFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.ObjectScripts.MixOperation value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ETiles_002ECoordinateProceduralTilePairFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Tiles.CoordinateProceduralTilePair value)
+		{
+		}
+
+		public static void Write___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002ETiles_002ECoordinateProceduralTilePair_003EFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> value)
 		{
 		}
 	}

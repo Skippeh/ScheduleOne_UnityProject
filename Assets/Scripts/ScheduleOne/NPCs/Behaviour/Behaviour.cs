@@ -71,23 +71,23 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public void Begin_Server(global::FishNet.Connection.NetworkConnection conn)
+		public void Activate_Server(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		public virtual void Begin()
+		public virtual void Activate()
 		{
 		}
 
-		public void End_Server()
+		public void Deactivate_Server()
 		{
 		}
 
-		public void End_Networked(global::FishNet.Connection.NetworkConnection conn)
+		public void Deactivate_Networked(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		public virtual void End()
+		public virtual void Deactivate()
 		{
 		}
 
@@ -115,7 +115,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public virtual void ActiveMinPass()
+		public virtual void OnActiveTick()
 		{
 		}
 

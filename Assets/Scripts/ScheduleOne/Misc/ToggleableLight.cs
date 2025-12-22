@@ -29,8 +29,6 @@ namespace ScheduleOne.Misc
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Material lightOffMat;
 
-		private global::ScheduleOne.ConstructableScripts.Constructable_GridBased constructable;
-
 		private global::ScheduleOne.Misc.ToggleableLight.State state;
 
 		public bool isOn

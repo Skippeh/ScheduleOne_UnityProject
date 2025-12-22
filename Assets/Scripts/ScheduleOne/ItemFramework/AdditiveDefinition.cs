@@ -4,6 +4,20 @@ namespace ScheduleOne.ItemFramework
 	[global::UnityEngine.CreateAssetMenu(fileName = "AdditiveDefinition", menuName = "ScriptableObjects/Item Definitions/AdditiveDefinition", order = 1)]
 	public class AdditiveDefinition : global::ScheduleOne.ItemFramework.StorableItemDefinition
 	{
-		public global::ScheduleOne.Growing.Additive AdditivePrefab;
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.Material DisplayMaterial { get; private set; }
+
+		[field: global::UnityEngine.SerializeField]
+		public float QualityChange { get; private set; }
+
+		[field: global::UnityEngine.SerializeField]
+		public float YieldChange { get; private set; }
+
+		[field: global::UnityEngine.SerializeField]
+		public float InstantGrowth { get; private set; }
+
+		public override void ValidateDefinition()
+		{
+		}
 	}
 }

@@ -31,6 +31,8 @@ namespace ScheduleOne.DevUtilities
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.IconGenerator.PackagingVisuals> Visuals;
 
+		public global::UnityEngine.Rendering.Universal.UniversalRendererData rendererData;
+
 		protected override void Awake()
 		{
 		}

@@ -6,6 +6,8 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable PipePrefab;
 
+		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable ShroomPrefab;
+
 		private global::ScheduleOne.Product.ProductItemInstance product;
 
 		private global::UnityEngine.Coroutine consumeRoutine;
@@ -15,6 +17,8 @@ namespace ScheduleOne.NPCs.Behaviour
 		public global::ScheduleOne.Audio.AudioSourceController MethConsumeSound;
 
 		public global::ScheduleOne.Audio.AudioSourceController SnortSound;
+
+		public global::ScheduleOne.Audio.AudioSourceController EatSound;
 
 		public global::UnityEngine.ParticleSystem SmokeExhaleParticles;
 
@@ -48,7 +52,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void Begin()
+		public override void Activate()
 		{
 		}
 
@@ -64,7 +68,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void End()
+		public override void Deactivate()
 		{
 		}
 
@@ -77,6 +81,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void ConsumeCocaine()
+		{
+		}
+
+		private void ConsumeShrooms()
 		{
 		}
 

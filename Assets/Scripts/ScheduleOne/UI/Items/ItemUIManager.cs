@@ -5,8 +5,6 @@ namespace ScheduleOne.UI.Items
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Canvas Canvas;
 
-		public global::UnityEngine.UI.GraphicRaycaster[] Raycasters;
-
 		public global::UnityEngine.RectTransform CashDragAmountContainer;
 
 		public global::UnityEngine.RectTransform InputsContainer;
@@ -36,6 +34,8 @@ namespace ScheduleOne.UI.Items
 
 		private global::UnityEngine.RectTransform tempIcon;
 
+		private global::System.Collections.Generic.List<global::UnityEngine.UI.GraphicRaycaster> _raycasters;
+
 		private bool isDraggingCash;
 
 		private float draggedCashAmount;
@@ -63,6 +63,10 @@ namespace ScheduleOne.UI.Items
 		}
 
 		protected virtual void Update()
+		{
+		}
+
+		public void AddRaycaster(global::UnityEngine.UI.GraphicRaycaster raycaster)
 		{
 		}
 

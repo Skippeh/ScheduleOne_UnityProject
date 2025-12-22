@@ -8,7 +8,7 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public override void PlayOneShot(bool duplicateAudioSource = false)
+		public override void PlayOneShot()
 		{
 		}
 	}

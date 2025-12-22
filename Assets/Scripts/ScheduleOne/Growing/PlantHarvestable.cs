@@ -6,6 +6,10 @@ namespace ScheduleOne.Growing
 
 		public int ProductQuantity;
 
+		private void Awake()
+		{
+		}
+
 		public virtual void Harvest(bool giveProduct = true)
 		{
 		}

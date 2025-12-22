@@ -3,6 +3,8 @@ namespace ScheduleOne.FX
 	public class PostProcessingManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.FX.PostProcessingManager>
 	{
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.Rendering.Universal.UniversalRendererData rendererData;
+
 		public global::UnityEngine.Rendering.Volume GlobalVolume;
 
 		[global::UnityEngine.Header("Vignette")]
@@ -40,11 +42,17 @@ namespace ScheduleOne.FX
 
 		private global::UnityEngine.Rendering.Universal.ColorAdjustments colorAdjustments;
 
+		private global::ScheduleOne.FX.PsychedelicFullScreenFeature _psychedelicFullScreenFeature;
+
 		protected override void Awake()
 		{
 		}
 
 		public void Update()
+		{
+		}
+
+		protected override void OnDestroy()
 		{
 		}
 
@@ -77,6 +85,32 @@ namespace ScheduleOne.FX
 		}
 
 		public void SetBlur(float blurLevel)
+		{
+		}
+
+		public void SetPsychedelicEffectActive(bool isActive)
+		{
+		}
+
+		public void SetPsychedelicEffectProperties(global::ScheduleOne.FX.PsychedelicFullScreenData data)
+		{
+		}
+
+		public void SetPsychedelicEffectProperties(global::ScheduleOne.FX.PsychedelicFullScreenFeature.MaterialProperties properties)
+		{
+		}
+
+		public global::ScheduleOne.FX.PsychedelicFullScreenFeature.MaterialProperties GetActivePsychedelicEffectProperties()
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.FX.PsychedelicFullScreenData GetPsychedelicEffectDataPreset(string presetName)
+		{
+			return null;
+		}
+
+		public void PrintValueOfPsychedelicEffectBlend()
 		{
 		}
 	}

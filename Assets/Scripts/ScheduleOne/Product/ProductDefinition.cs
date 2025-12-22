@@ -24,7 +24,7 @@ namespace ScheduleOne.Product
 		public global::ScheduleOne.Product.Packaging.PackagingDefinition[] ValidPackaging;
 
 		[global::UnityEngine.Header("Product References")]
-		public global::ScheduleOne.Product.FirstPersonProductConsumeAnimation ConsumeAnimation;
+		public global::ScheduleOne.Product.ProductConsumeAnimation ConsumeAnimation;
 
 		public global::ScheduleOne.Product.EDrugType DrugType => default(global::ScheduleOne.Product.EDrugType);
 

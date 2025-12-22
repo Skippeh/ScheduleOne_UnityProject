@@ -17,6 +17,9 @@ namespace ScheduleOne.Cartel
 
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon[] MeleeWeapons;
 
+		[global::UnityEngine.Header("Debugging & Development")]
+		public global::ScheduleOne.Map.EMapRegion region;
+
 		public override void Activate(global::ScheduleOne.Map.EMapRegion region)
 		{
 		}
@@ -39,6 +42,11 @@ namespace ScheduleOne.Cartel
 		}
 
 		private void SpawnAmbush(global::ScheduleOne.PlayerScripts.Player target, global::UnityEngine.Vector3[] potentialSpawnPoints)
+		{
+		}
+
+		[global::EasyButtons.Button]
+		public void TriggerAmbushForPlayer()
 		{
 		}
 	}

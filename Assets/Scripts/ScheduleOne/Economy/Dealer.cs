@@ -27,8 +27,6 @@ namespace ScheduleOne.Economy
 		[global::UnityEngine.Header("Dealer References")]
 		public global::ScheduleOne.Map.NPCEnterableBuilding Home;
 
-		public global::ScheduleOne.NPCs.Schedules.NPCSignal_HandleDeal DealSignal;
-
 		public global::ScheduleOne.NPCs.Schedules.NPCEvent_StayInBuilding HomeEvent;
 
 		public global::ScheduleOne.Dialogue.DialogueController_Dealer DialogueController;
@@ -59,6 +57,8 @@ namespace ScheduleOne.Economy
 		[global::UnityEngine.Header("UnityEvents")]
 		public global::UnityEngine.Events.UnityEvent onRecommended;
 
+		public global::UnityEngine.Events.UnityEvent onCompleteDeal;
+
 		private global::ScheduleOne.ItemFramework.ItemSlot[] overflowSlots;
 
 		private global::ScheduleOne.Quests.Contract currentContract;
@@ -70,6 +70,8 @@ namespace ScheduleOne.Economy
 		private global::ScheduleOne.Dialogue.DialogueController.DialogueChoice assignCustomersChoice;
 
 		private int itemCountOnTradeStart;
+
+		private global::ScheduleOne.NPCs.Behaviour.DealerAttendDealBehaviour _attendDealBehaviour;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CCash_003Ek__BackingField;
 
@@ -202,7 +204,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void UpdateCurrentDeal()
+		private void CheckCurrentDealValidity()
 		{
 		}
 

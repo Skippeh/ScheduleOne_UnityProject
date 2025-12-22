@@ -10,9 +10,11 @@ namespace ScheduleOne.Management
 			public global::ScheduleOne.Management.UI.ConfigPanel Panel;
 		}
 
-		public const float PANEL_SLIDE_TIME = 0.1f;
+		public const float PANEL_SLIDE_TIME = 0f;
 
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.Canvas Canvas;
+
 		public global::TMPro.TextMeshProUGUI NothingSelectedLabel;
 
 		public global::TMPro.TextMeshProUGUI DifferentTypesSelectedLabel;
@@ -30,6 +32,10 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.UI.Management.RecipeSelector RecipeSelectorScreen;
 
 		public global::ScheduleOne.UI.Management.TransitEntitySelector TransitEntitySelector;
+
+		public global::ScheduleOne.UI.Management.StringSetter StringSetterScreen;
+
+		public global::UnityEngine.UI.Button RenameButton;
 
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Management.ManagementInterface.ConfigurableTypePanel[] ConfigPanelPrefabs;
@@ -69,6 +75,10 @@ namespace ScheduleOne.Management
 		public global::ScheduleOne.Management.UI.ConfigPanel GetConfigPanelPrefab(global::ScheduleOne.Management.EConfigurableType type)
 		{
 			return null;
+		}
+
+		public void RenameButtonClicked()
+		{
 		}
 	}
 }

@@ -56,10 +56,6 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
-		{
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

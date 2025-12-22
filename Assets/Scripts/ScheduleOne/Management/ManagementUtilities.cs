@@ -2,14 +2,18 @@ namespace ScheduleOne.Management
 {
 	public class ManagementUtilities : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Management.ManagementUtilities>
 	{
-		public global::System.Collections.Generic.List<string> weedSeedAssetPaths;
+		public global::System.Collections.Generic.List<global::ScheduleOne.Growing.SeedDefinition> Seeds;
 
-		public global::System.Collections.Generic.List<string> additiveAssetPaths;
+		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ShroomSpawnDefinition> MushroomSpawns;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.AdditiveDefinition> AdditiveDefinitions;
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.Sprite StorageTypeIcon { get; private set; }
 
-		public static global::System.Collections.Generic.List<string> WeedSeedAssetPaths => null;
+		[field: global::UnityEngine.SerializeField]
+		public global::ScheduleOne.UI.Management.StorageUIElement StorageUIElementPrefab { get; private set; }
 
-		public static global::System.Collections.Generic.List<string> AdditiveAssetPaths => null;
+		protected override void Awake()
+		{
+		}
 	}
 }

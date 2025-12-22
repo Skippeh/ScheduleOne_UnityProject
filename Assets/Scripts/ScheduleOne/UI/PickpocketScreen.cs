@@ -64,6 +64,10 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		protected override void Start()
+		{
+		}
+
 		public void Open(global::ScheduleOne.NPCs.NPC _npc)
 		{
 		}

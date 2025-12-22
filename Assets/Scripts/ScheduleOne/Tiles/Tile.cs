@@ -5,8 +5,6 @@ namespace ScheduleOne.Tiles
 	{
 		public delegate void TileChange(global::ScheduleOne.Tiles.Tile thisTile);
 
-		public static float TileSize;
-
 		public int x;
 
 		public int y;
@@ -22,13 +20,29 @@ namespace ScheduleOne.Tiles
 		[global::UnityEngine.Header("Occupants")]
 		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.GridItem> BuildableOccupants;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.ConstructableScripts.Constructable_GridBased> ConstructableOccupants;
-
 		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.FootprintTile> OccupantTiles;
 
 		public global::ScheduleOne.Tiles.Tile.TileChange onTileChanged;
 
+		public global::System.Action<global::ScheduleOne.Tiles.Tile, float> onTileTemperatureChanged;
+
+		private float _cosmeticTileTemperature;
+
+		private global::ScheduleOne.Temperature.TemperatureEmitterInfo[] _cachedCosmeticTemperatureEmitters;
+
+		private float _tileTemperature;
+
+		private global::ScheduleOne.Temperature.TemperatureEmitterInfo[] _cachedTemperatureEmitters;
+
+		public float CosmeticTileTemperature => 0f;
+
+		public float TileTemperature => 0f;
+
 		public void InitializePropertyTile(int _x, int _y, float _available_Offset, global::ScheduleOne.Tiles.Grid _ownerGrid)
+		{
+		}
+
+		private void Awake()
 		{
 		}
 
@@ -36,15 +50,7 @@ namespace ScheduleOne.Tiles
 		{
 		}
 
-		public void AddOccupant(global::ScheduleOne.ConstructableScripts.Constructable_GridBased occ, global::ScheduleOne.Tiles.FootprintTile tile)
-		{
-		}
-
 		public void RemoveOccupant(global::ScheduleOne.EntityFramework.GridItem occ, global::ScheduleOne.Tiles.FootprintTile tile)
-		{
-		}
-
-		public void RemoveOccupant(global::ScheduleOne.ConstructableScripts.Constructable_GridBased occ, global::ScheduleOne.Tiles.FootprintTile tile)
 		{
 		}
 
@@ -64,6 +70,14 @@ namespace ScheduleOne.Tiles
 		}
 
 		public void SetVisible(bool vis)
+		{
+		}
+
+		private void OnCosmeticTemperatureEmittersChanged(string propertyCode, global::ScheduleOne.Temperature.TemperatureEmitterInfo[] emitters)
+		{
+		}
+
+		private void OnTemperatureEmittersChanged(global::ScheduleOne.Temperature.TemperatureEmitterInfo[] emitters)
 		{
 		}
 	}

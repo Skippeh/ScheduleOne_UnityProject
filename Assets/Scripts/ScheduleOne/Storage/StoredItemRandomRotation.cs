@@ -4,7 +4,7 @@ namespace ScheduleOne.Storage
 	{
 		public global::UnityEngine.Transform ItemContainer;
 
-		public void Awake()
+		public void ApplyRotation()
 		{
 		}
 	}

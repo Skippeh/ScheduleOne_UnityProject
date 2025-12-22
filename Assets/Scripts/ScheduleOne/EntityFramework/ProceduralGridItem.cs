@@ -60,22 +60,22 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public override void OnStartClient()
+		protected override void SendInitializationToServer()
 		{
 		}
 
-		protected override void SendInitToClient(global::FishNet.Connection.NetworkConnection conn)
+		protected override void SendInitializationToClient(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SendProceduralGridItemData(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public void InitializeProceduralGridItem_Server(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
 		[global::FishNet.Object.TargetRpc]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public virtual void InitializeProceduralGridItem(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public virtual void InitializeProceduralGridItem_Client(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
@@ -95,7 +95,7 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		public override void DestroyItem(bool callOnServer = true)
+		protected override void Destroy()
 		{
 		}
 
@@ -134,35 +134,35 @@ namespace ScheduleOne.EntityFramework
 		{
 		}
 
-		private void RpcWriter___Server_SendProceduralGridItemData_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Server_InitializeProceduralGridItem_Server_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		public void RpcLogic___SendProceduralGridItemData_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public void RpcLogic___InitializeProceduralGridItem_Server_638911643(global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Server_SendProceduralGridItemData_638911643(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_InitializeProceduralGridItem_Server_638911643(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Target_InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Target_InitializeProceduralGridItem_Client_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		public virtual void RpcLogic___InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		public virtual void RpcLogic___InitializeProceduralGridItem_Client_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Target_InitializeProceduralGridItem_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_InitializeProceduralGridItem_Client_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Observers_InitializeProceduralGridItem_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
+		private void RpcWriter___Observers_InitializeProceduralGridItem_Client_3164718044(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ItemFramework.ItemInstance instance, int _rotation, global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> _footprintTileMatches, string GUID)
 		{
 		}
 
-		private void RpcReader___Observers_InitializeProceduralGridItem_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_InitializeProceduralGridItem_Client_3164718044(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

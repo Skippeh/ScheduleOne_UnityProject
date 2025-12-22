@@ -59,15 +59,9 @@ namespace ScheduleOne.Vision
 
 		public bool DEBUG;
 
-		public bool DisableSightUpdates;
-
 		public global::UnityEngine.Transform VisionOrigin;
 
-		public bool DEBUG_FRUSTRUM;
-
 		[global::UnityEngine.Header("Vision Settings")]
-		public bool VisionEnabled;
-
 		public global::UnityEngine.AnimationCurve VisionFalloff;
 
 		public global::UnityEngine.LayerMask VisibilityBlockingLayers;
@@ -136,11 +130,11 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		private void OnDisable()
+		private void OnEnable()
 		{
 		}
 
-		protected virtual void Update()
+		private void OnDisable()
 		{
 		}
 
