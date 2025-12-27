@@ -11,7 +11,7 @@ namespace ScheduleOne.ItemFramework
 		public float QualityChange { get; private set; }
 
 		[field: global::UnityEngine.SerializeField]
-		public float YieldChange { get; private set; }
+		public float YieldMultiplier { get; private set; }
 
 		[field: global::UnityEngine.SerializeField]
 		public float InstantGrowth { get; private set; }

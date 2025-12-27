@@ -1,12 +1,11 @@
 namespace ScheduleOne.Growing
 {
-	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Ownership.PredictedSpawn))]
 	[global::UnityEngine.RequireComponent(typeof(global::FishNet.Component.Transforming.NetworkTransform))]
 	public class ShroomColony : global::FishNet.Object.NetworkBehaviour
 	{
 		public const float MaxTemperatureForGrowth = 15f;
 
-		private const float MinSoilMoistureForGrowth = 0f;
+		private const float MinSoilMoistureForGrowth = 0.0001f;
 
 		private const float RandomRotationRange = 15f;
 

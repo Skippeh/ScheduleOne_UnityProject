@@ -32,6 +32,10 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float SEAT_TIME = 0.5f;
 
+		private const string StandUpFromBackClipName = "Stand up from back";
+
+		private const string StandUpFromFrontClipName = "Stand up from front";
+
 		public bool DEBUG_MODE;
 
 		[global::UnityEngine.Header("References")]
@@ -55,10 +59,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		[global::UnityEngine.Header("Settings")]
 		public global::UnityEngine.LayerMask GroundingMask;
-
-		public string StandUpFromBackClipName;
-
-		public string StandUpFromFrontClipName;
 
 		public bool AllowCulling;
 

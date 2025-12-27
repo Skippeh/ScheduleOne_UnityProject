@@ -98,6 +98,10 @@ namespace ScheduleOne.Employees
 			}
 		}
 
+		public override void Awake()
+		{
+		}
+
 		protected override void Start()
 		{
 		}
@@ -380,7 +384,7 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
-		public override void Awake()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EEmployees_002EEmployee_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

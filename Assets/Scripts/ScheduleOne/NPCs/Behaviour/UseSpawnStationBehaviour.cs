@@ -4,7 +4,7 @@ namespace ScheduleOne.NPCs.Behaviour
 	{
 		private const float TaskDuration = 6f;
 
-		private const float ProximityThreshold = 0.5f;
+		private const float ProximityThreshold = 0.6f;
 
 		private const string AnimationBoolName = "UsePackagingStation";
 

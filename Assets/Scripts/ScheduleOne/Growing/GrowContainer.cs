@@ -48,6 +48,10 @@ namespace ScheduleOne.Growing
 		[global::UnityEngine.SerializeField]
 		private global::ScheduleOne.Lighting.UsableLightSource _lightSourceOverride;
 
+		public global::System.Action onMinPass;
+
+		public global::System.Action<int> onTimeSkip;
+
 		protected float _currentSoilAmount;
 
 		protected float _currentMoistureAmount;
@@ -214,6 +218,8 @@ namespace ScheduleOne.Growing
 		public abstract float GetGrowSurfaceSideLength();
 
 		public abstract bool ContainsGrowable();
+
+		public abstract float GetGrowthProgressNormalized();
 
 		public virtual void SetSoil(global::ScheduleOne.ItemFramework.SoilDefinition soil)
 		{

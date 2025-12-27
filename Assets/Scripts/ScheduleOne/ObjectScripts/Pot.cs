@@ -229,22 +229,23 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
+		public override float GetGrowthProgressNormalized()
+		{
+			return 0f;
+		}
+
 		public void SetSoilState(global::ScheduleOne.ObjectScripts.Pot.ESoilState state)
 		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void PlantSeed_Server(string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		public void PlantSeed_Server(string seedID, float normalizedSeedProgress)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		private void PlantSeed_Client(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
-		{
-		}
-
-		private void PlantSeed(string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void PlantSeed_Client(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress)
 		{
 		}
 
@@ -324,35 +325,35 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcWriter___Server_PlantSeed_Server_2530605204(string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcWriter___Server_PlantSeed_Server_606697822(string seedID, float normalizedSeedProgress)
 		{
 		}
 
-		public void RpcLogic___PlantSeed_Server_2530605204(string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		public void RpcLogic___PlantSeed_Server_606697822(string seedID, float normalizedSeedProgress)
 		{
 		}
 
-		private void RpcReader___Server_PlantSeed_Server_2530605204(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_PlantSeed_Server_606697822(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_PlantSeed_Client_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcWriter___Observers_PlantSeed_Client_4077118173(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress)
 		{
 		}
 
-		private void RpcLogic___PlantSeed_Client_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcLogic___PlantSeed_Client_4077118173(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress)
 		{
 		}
 
-		private void RpcReader___Observers_PlantSeed_Client_709433087(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_PlantSeed_Client_4077118173(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_PlantSeed_Client_709433087(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress, float yieldLevel, float qualityLevel)
+		private void RpcWriter___Target_PlantSeed_Client_4077118173(global::FishNet.Connection.NetworkConnection conn, string seedID, float normalizedSeedProgress)
 		{
 		}
 
-		private void RpcReader___Target_PlantSeed_Client_709433087(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_PlantSeed_Client_4077118173(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

@@ -194,12 +194,17 @@ namespace ScheduleOne.ObjectScripts
 			return false;
 		}
 
-		[global::EasyButtons.Button]
-		private void TestCreateColony()
+		public override float GetGrowthProgressNormalized()
+		{
+			return 0f;
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void CreateAndAssignColony_Server(string shroomSpawnID)
 		{
 		}
 
-		public void CreateAndAssignColony(global::ScheduleOne.ItemFramework.ShroomSpawnDefinition shroomSpawn)
+		private void CreateAndAssignColony(global::ScheduleOne.ItemFramework.ShroomSpawnDefinition shroomSpawn)
 		{
 		}
 
@@ -263,6 +268,18 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		private void RpcReader___Server_SetConfigurer_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_CreateAndAssignColony_Server_3615296227(string shroomSpawnID)
+		{
+		}
+
+		public void RpcLogic___CreateAndAssignColony_Server_3615296227(string shroomSpawnID)
+		{
+		}
+
+		private void RpcReader___Server_CreateAndAssignColony_Server_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

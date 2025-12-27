@@ -7,13 +7,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public float GrowthProgress;
 
-		public float YieldLevel;
-
-		public float QualityLevel;
-
 		public int[] ActiveBuds;
 
-		public PlantData(string seedID, float growthProgress, float yieldLevel, float qualityLevel, int[] activeBuds)
+		public PlantData(string seedID, float growthProgress, int[] activeBuds)
 		{
 		}
 	}

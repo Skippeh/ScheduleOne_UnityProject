@@ -2,6 +2,8 @@ namespace ScheduleOne.Growing
 {
 	public abstract class Plant : global::UnityEngine.MonoBehaviour
 	{
+		public const float BaseQualityLevel = 0.5f;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Transform VisualsContainer;
 
@@ -22,19 +24,12 @@ namespace ScheduleOne.Growing
 
 		public int GrowthTime;
 
-		public float BaseYieldLevel;
-
-		public float BaseQualityLevel;
+		public int BaseYieldQuantity;
 
 		public string HarvestTarget;
 
 		[global::UnityEngine.Header("Trash")]
 		public global::ScheduleOne.Trash.TrashItem PlantScrapPrefab;
-
-		[global::UnityEngine.Header("Plant data")]
-		public float YieldLevel;
-
-		public float QualityLevel;
 
 		[global::UnityEngine.HideInInspector]
 		public global::System.Collections.Generic.List<int> ActiveHarvestables;
@@ -47,17 +42,25 @@ namespace ScheduleOne.Growing
 
 		public bool IsFullyGrown => false;
 
+		public float YieldMultiplier { get; private set; }
+
+		public float QualityLevel { get; private set; }
+
 		public global::ScheduleOne.Growing.PlantGrowthStage FinalGrowthStage => null;
 
 		private void Awake()
 		{
 		}
 
-		public virtual void Initialize(global::FishNet.Object.NetworkObject pot, float growthProgress = 0f, float yieldLevel = 0f, float qualityLevel = 0f)
+		public virtual void Initialize(global::FishNet.Object.NetworkObject pot, float growthProgress)
 		{
 		}
 
-		public virtual void MinPass()
+		public virtual void MinPass(int mins)
+		{
+		}
+
+		public void AdditiveApplied(global::ScheduleOne.ItemFramework.AdditiveDefinition additive, bool isInitialApplication)
 		{
 		}
 

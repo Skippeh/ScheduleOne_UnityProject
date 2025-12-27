@@ -68,7 +68,7 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		public override void ActiveMinPassed()
+		public override void OnActiveTick()
 		{
 		}
 

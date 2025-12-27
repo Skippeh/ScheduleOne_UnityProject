@@ -59,6 +59,9 @@ namespace ScheduleOne.Economy
 
 		public global::UnityEngine.Events.UnityEvent onCompleteDeal;
 
+		[global::UnityEngine.Header("Seasonal Events")]
+		public global::ScheduleOne.AvatarFramework.AvatarSettings ChristmasOutfit;
+
 		private global::ScheduleOne.ItemFramework.ItemSlot[] overflowSlots;
 
 		private global::ScheduleOne.Quests.Contract currentContract;

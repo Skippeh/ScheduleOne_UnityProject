@@ -93,7 +93,11 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
-		public virtual void ActiveMinPassed()
+		public virtual void OnActiveTick()
+		{
+		}
+
+		public virtual void OnActiveMinPass()
 		{
 		}
 

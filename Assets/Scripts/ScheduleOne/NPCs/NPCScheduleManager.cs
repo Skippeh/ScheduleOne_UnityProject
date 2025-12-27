@@ -62,7 +62,11 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnMinPass()
+		{
+		}
+
+		protected virtual void OnTick()
 		{
 		}
 

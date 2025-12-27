@@ -52,6 +52,8 @@ namespace ScheduleOne.DevUtilities
 
 		public global::System.Action onInputsApplied;
 
+		public static bool ChristmasEventActive { get; private set; }
+
 		public bool PausingFreezesTime => false;
 
 		public global::ScheduleOne.DevUtilities.Settings.EUnitType UnitType { get; private set; }

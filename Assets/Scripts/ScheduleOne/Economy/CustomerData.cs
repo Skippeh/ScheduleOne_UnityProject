@@ -85,10 +85,5 @@ namespace ScheduleOne.Economy
 		public void RandomizeTiming()
 		{
 		}
-
-		[global::EasyButtons.Button]
-		public void ClearInvalid()
-		{
-		}
 	}
 }
