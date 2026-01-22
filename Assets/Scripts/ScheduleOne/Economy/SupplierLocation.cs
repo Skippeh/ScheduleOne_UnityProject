@@ -28,11 +28,23 @@ namespace ScheduleOne.Economy
 		{
 		}
 
+		private void Start()
+		{
+		}
+
+		private void OnSleep()
+		{
+		}
+
 		private void OnDestroy()
 		{
 		}
 
 		public void SetActiveSupplier(global::ScheduleOne.Economy.Supplier supplier)
+		{
+		}
+
+		private void SetDeliveryBaysVisible(bool visible)
 		{
 		}
 	}

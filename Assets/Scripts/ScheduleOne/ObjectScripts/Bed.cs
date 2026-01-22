@@ -4,8 +4,6 @@ namespace ScheduleOne.ObjectScripts
 	{
 		public const int MIN_SLEEP_TIME = 1800;
 
-		public const float SLEEP_TIME_SCALE = 1f;
-
 		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Interaction.InteractableObject intObj;

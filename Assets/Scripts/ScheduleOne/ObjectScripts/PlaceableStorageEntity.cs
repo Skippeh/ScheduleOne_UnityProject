@@ -3,6 +3,13 @@ namespace ScheduleOne.ObjectScripts
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Management.ConfigurationReplicator))]
 	public class PlaceableStorageEntity : global::ScheduleOne.EntityFramework.GridItem, global::ScheduleOne.Management.ITransitEntity, global::ScheduleOne.Management.IUsable, global::ScheduleOne.Management.IConfigurable
 	{
+		private enum ENameLabelVisibility
+		{
+			None = 0,
+			WhenNotDefault = 1,
+			Always = 2
+		}
+
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Storage.StorageEntity StorageEntity;
 
@@ -10,6 +17,16 @@ namespace ScheduleOne.ObjectScripts
 
 		[global::UnityEngine.SerializeField]
 		private global::UnityEngine.Transform _linkOrigin;
+
+		[global::UnityEngine.SerializeField]
+		private global::TMPro.TextMeshPro[] _nameLabels;
+
+		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.SerializeField]
+		private bool _showNameLabels;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.ObjectScripts.PlaceableStorageEntity.ENameLabelVisibility _nameLabelVisibility;
 
 		private global::ScheduleOne.Management.EntityConfiguration _configuration;
 
@@ -176,6 +193,14 @@ namespace ScheduleOne.ObjectScripts
 		public override global::ScheduleOne.Persistence.Datas.DynamicSaveData GetSaveData()
 		{
 			return null;
+		}
+
+		private void NameChanged(string newName)
+		{
+		}
+
+		private void UpdateNameLabels()
+		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]

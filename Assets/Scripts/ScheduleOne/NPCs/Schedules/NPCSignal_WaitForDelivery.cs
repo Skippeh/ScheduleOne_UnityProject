@@ -2,7 +2,9 @@ namespace ScheduleOne.NPCs.Schedules
 {
 	public class NPCSignal_WaitForDelivery : global::ScheduleOne.NPCs.Schedules.NPCSignal
 	{
-		public const float DESTINATION_THRESHOLD = 1.5f;
+		public const float DestinationThreshold = 1.5f;
+
+		public const float WalkSpeedMultiplier = 1.25f;
 
 		private global::ScheduleOne.Quests.Contract contract;
 

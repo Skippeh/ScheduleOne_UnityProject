@@ -2,6 +2,9 @@ namespace ScheduleOne.PlayerScripts
 {
 	public class ViewmodelAvatar : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.PlayerScripts.ViewmodelAvatar>
 	{
+		[global::UnityEngine.SerializeField]
+		private float ArmShift;
+
 		public global::ScheduleOne.AvatarFramework.Avatar ParentAvatar;
 
 		public global::UnityEngine.Animator Animator;
@@ -9,6 +12,10 @@ namespace ScheduleOne.PlayerScripts
 		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
 
 		public global::UnityEngine.Transform RightHandContainer;
+
+		private global::UnityEngine.Vector3 _leftShoulderDefaultLocalPos;
+
+		private global::UnityEngine.Vector3 _rightShoulderDefaultLocalPos;
 
 		public bool IsVisible { get; private set; }
 
@@ -24,7 +31,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void ResetHipTransform()
+		private void SetBoneTransforms()
 		{
 		}
 

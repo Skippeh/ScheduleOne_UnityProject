@@ -50,7 +50,7 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		private void OnMinPass()
+		private void OnTimePass(int minutes)
 		{
 		}
 

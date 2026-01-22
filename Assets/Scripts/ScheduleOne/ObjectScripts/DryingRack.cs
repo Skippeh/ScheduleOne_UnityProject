@@ -4,6 +4,12 @@ namespace ScheduleOne.ObjectScripts
 	{
 		public const int DRY_MINS_PER_TIER = 720;
 
+		public const float MAX_DRY_MULTIPLIER = 1.5f;
+
+		public const float WARMTH_MIN_THRESHOLD = 20f;
+
+		public const float WARMTH_MAX_THRESHOLD = 40f;
+
 		[global::UnityEngine.Header("Settings")]
 		public int ItemCapacity;
 
@@ -26,10 +32,17 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::ScheduleOne.Management.ConfigurationReplicator configReplicator;
 
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.Transform _qualityEffectContianer;
+
 		[global::UnityEngine.Header("UI")]
 		public global::ScheduleOne.UI.Management.DryingRackUIElement WorldspaceUIPrefab;
 
 		public global::UnityEngine.Sprite typeIcon;
+
+		[global::UnityEngine.Header("Fonts")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.DevUtilities.ColorFont _qualityColourFont;
 
 		public global::System.Action<global::ScheduleOne.ObjectScripts.DryingOperation> onOperationStart;
 
@@ -38,6 +51,8 @@ namespace ScheduleOne.ObjectScripts
 		public global::System.Action onOperationsChanged;
 
 		private global::ScheduleOne.ItemFramework.ItemSlot[] hangSlots;
+
+		private global::UnityEngine.ParticleSystem[] _qualityParticleEffect;
 
 		private global::System.Collections.Generic.List<int> requestIDs;
 
@@ -205,7 +220,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void MinPass()
+		private void OnMinPass()
+		{
+		}
+
+		private void OnTimePass(int minutes)
 		{
 		}
 
@@ -260,6 +279,19 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		public void RefreshHangingVisuals()
+		{
+		}
+
+		private void RefreshDryingEffects()
+		{
+		}
+
+		public float GetDryMultiplier()
+		{
+			return 0f;
+		}
+
+		private void SetQualityEffect(int index, bool isActive, global::ScheduleOne.ItemFramework.EQuality quality = global::ScheduleOne.ItemFramework.EQuality.Standard)
 		{
 		}
 

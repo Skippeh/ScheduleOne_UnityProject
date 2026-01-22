@@ -25,6 +25,11 @@ namespace ScheduleOne.ItemFramework
 			return default(global::ScheduleOne.ItemFramework.EQuality);
 		}
 
+		public static global::ScheduleOne.ItemFramework.EQuality ShiftQuality(global::ScheduleOne.ItemFramework.EQuality baseQuality, int shiftAmount)
+		{
+			return default(global::ScheduleOne.ItemFramework.EQuality);
+		}
+
 		public static global::UnityEngine.Color GetColor(global::ScheduleOne.ItemFramework.EQuality quality)
 		{
 			return default(global::UnityEngine.Color);

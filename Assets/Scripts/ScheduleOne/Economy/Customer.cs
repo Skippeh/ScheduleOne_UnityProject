@@ -23,6 +23,16 @@ namespace ScheduleOne.Economy
 			public global::ScheduleOne.ItemFramework.EQuality MinimumQuality;
 		}
 
+		[global::System.Serializable]
+		public class ProductPurchaseRecord
+		{
+			public string ProductID;
+
+			public int Quantity;
+
+			public float TotalSpent;
+		}
+
 		public enum ESampleFeedback
 		{
 			WrongProduct = 0,
@@ -35,6 +45,10 @@ namespace ScheduleOne.Economy
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> LockedCustomers;
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> UnlockedCustomers;
+
+		public const int QualityTierTolerance = 1;
+
+		public const int MaxOrderQuantityPerProduct = 1000;
 
 		public const float AFFINITY_MAX_EFFECT = 0.3f;
 
@@ -175,6 +189,8 @@ namespace ScheduleOne.Economy
 
 		public int CompletedDeliveries { get; protected set; }
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer.ProductPurchaseRecord> WeeklyPurchaseRecord { get; protected set; }
+
 		public bool HasBeenRecommended
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
@@ -234,6 +250,11 @@ namespace ScheduleOne.Economy
 			}
 		}
 
+		public static int MinsSinceLastDealOfferedAllCustomers()
+		{
+			return 0;
+		}
+
 		public virtual void Awake()
 		{
 		}
@@ -282,7 +303,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected virtual void OnDayPass()
+		protected virtual void OnSleepStart()
 		{
 		}
 
@@ -300,11 +321,17 @@ namespace ScheduleOne.Economy
 		{
 		}
 
+		[global::EasyButtons.Button]
 		public void ForceDealOffer()
 		{
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> GetOrderableProducts(global::ScheduleOne.Economy.Dealer dealer)
+		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> GetOrderableProducts(global::ScheduleOne.Economy.Dealer dealer = null)
+		{
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Product.ProductDefinition, int>> GetOrderableProductsWithQuantities(global::ScheduleOne.Economy.Dealer dealer = null)
 		{
 			return null;
 		}
@@ -314,9 +341,10 @@ namespace ScheduleOne.Economy
 			return null;
 		}
 
-		private global::ScheduleOne.Product.ProductDefinition GetWeightedRandomProduct(global::ScheduleOne.Economy.Dealer dealer, out float appeal)
+		private global::ScheduleOne.Product.ProductDefinition GetWeightedRandomProduct(global::ScheduleOne.Economy.Dealer dealer, out float appeal, out int orderableQuantity)
 		{
 			appeal = default(float);
+			orderableQuantity = default(int);
 			return null;
 		}
 
@@ -347,11 +375,6 @@ namespace ScheduleOne.Economy
 		}
 
 		protected virtual void NotifyPlayerOfContract(global::ScheduleOne.Quests.ContractInfo contract, global::ScheduleOne.UI.Phone.Messages.MessageChain offerMessage, bool canAccept, bool canReject, bool canCounterOffer = true)
-		{
-		}
-
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		private void SendSetUpResponseCallbacks()
 		{
 		}
 
@@ -474,7 +497,7 @@ namespace ScheduleOne.Economy
 		}
 
 		[global::FishNet.Object.ObserversRpc]
-		private void ProcessHandoverClient(float satisfaction, bool handoverByPlayer, string npcToRecommend)
+		private void ProcessHandoverClient(float satisfaction, bool handoverByPlayer, string npcToRecommend, global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome)
 		{
 		}
 
@@ -505,6 +528,12 @@ namespace ScheduleOne.Economy
 			matchedProductCount = default(int);
 			qualityDifference = default(float);
 			return 0f;
+		}
+
+		public void CalculateTopWeeklyPurchases(out global::System.Collections.Generic.List<global::ScheduleOne.DevUtilities.StringIntPair> mostPurchasedProducts, out float totalSpent)
+		{
+			mostPurchasedProducts = null;
+			totalSpent = default(float);
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
@@ -758,18 +787,6 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcWriter___Server_SendSetUpResponseCallbacks_2166136261()
-		{
-		}
-
-		private void RpcLogic___SendSetUpResponseCallbacks_2166136261()
-		{
-		}
-
-		private void RpcReader___Server_SendSetUpResponseCallbacks_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
 		private void RpcWriter___Observers_SetUpResponseCallbacks_2166136261()
 		{
 		}
@@ -854,15 +871,15 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcWriter___Observers_ProcessHandoverClient_537707335(float satisfaction, bool handoverByPlayer, string npcToRecommend)
+		private void RpcWriter___Observers_ProcessHandoverClient_2441224929(float satisfaction, bool handoverByPlayer, string npcToRecommend, global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome)
 		{
 		}
 
-		private void RpcLogic___ProcessHandoverClient_537707335(float satisfaction, bool handoverByPlayer, string npcToRecommend)
+		private void RpcLogic___ProcessHandoverClient_2441224929(float satisfaction, bool handoverByPlayer, string npcToRecommend, global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome outcome)
 		{
 		}
 
-		private void RpcReader___Observers_ProcessHandoverClient_537707335(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_ProcessHandoverClient_2441224929(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

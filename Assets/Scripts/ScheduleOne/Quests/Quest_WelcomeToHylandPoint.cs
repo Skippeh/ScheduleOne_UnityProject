@@ -15,13 +15,9 @@ namespace ScheduleOne.Quests
 
 		public float ExplosionMinDist;
 
-		public global::UnityEngine.Events.UnityEvent onExplode;
-
-		private bool exploded;
-
 		private float cameraLookTime;
 
-		protected override void MinPass()
+		protected override void OnMinPass()
 		{
 		}
 
@@ -29,12 +25,15 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		[global::EasyButtons.Button]
-		public void Explode()
+		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
 		{
 		}
 
-		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
+		public void BlowupRV()
+		{
+		}
+
+		public void SetRVDestroyed()
 		{
 		}
 	}

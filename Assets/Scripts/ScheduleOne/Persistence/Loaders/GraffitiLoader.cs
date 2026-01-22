@@ -6,7 +6,11 @@ namespace ScheduleOne.Persistence.Loaders
 		{
 		}
 
-		private void LoadSpraySurface(global::ScheduleOne.Persistence.Datas.SpraySurfaceData surfaceData)
+		private void LoadSpraySurface(global::ScheduleOne.Persistence.Datas.WorldSpraySurfaceData surfaceData)
+		{
+		}
+
+		private void EnsureStrokesHaveValidSize(global::ScheduleOne.Persistence.Datas.SpraySurfaceData surfaceData)
 		{
 		}
 	}

@@ -3,7 +3,7 @@ namespace ScheduleOne.UI.Phone
 	public class Phone : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.Phone>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetIsHorizontal_Process_003Ed__47 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetIsHorizontal_Process_003Ed__50 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -40,7 +40,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetIsHorizontal_Process_003Ed__47(int _003C_003E1__state)
+			public _003CSetIsHorizontal_Process_003Ed__50(int _003C_003E1__state)
 			{
 			}
 
@@ -67,7 +67,7 @@ namespace ScheduleOne.UI.Phone
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetLookOffset_Process_003Ed__51 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetLookOffset_Process_003Ed__54 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -104,7 +104,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetLookOffset_Process_003Ed__51(int _003C_003E1__state)
+			public _003CSetLookOffset_Process_003Ed__54(int _003C_003E1__state)
 			{
 			}
 
@@ -164,6 +164,13 @@ namespace ScheduleOne.UI.Phone
 
 		public float OpenVerticalOffset;
 
+		[global::UnityEngine.Header("Fonts")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.DevUtilities.ColorFont _generalColorFont;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.DevUtilities.ColorFont _productColorFont;
+
 		public global::System.Action onPhoneOpened;
 
 		public global::System.Action onPhoneClosed;
@@ -187,6 +194,8 @@ namespace ScheduleOne.UI.Phone
 		public bool FlashlightOn { get; protected set; }
 
 		public float ScaledLookOffset => 0f;
+
+		public global::ScheduleOne.DevUtilities.ColorFont GeneralColorFont => null;
 
 		protected override void Awake()
 		{
@@ -212,10 +221,6 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		private void LateUpdate()
-		{
-		}
-
 		public void SetOpenable(bool o)
 		{
 		}
@@ -228,7 +233,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__47))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__50))]
 		protected global::System.Collections.IEnumerator SetIsHorizontal_Process(bool h)
 		{
 			return null;
@@ -242,7 +247,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__51))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__54))]
 		protected global::System.Collections.IEnumerator SetLookOffset_Process(float lookOffset)
 		{
 			return null;

@@ -6,6 +6,8 @@ namespace ScheduleOne.Management
 
 		public global::ScheduleOne.Management.QualityField TargetQuality;
 
+		public global::ScheduleOne.Management.NumberField StartThreshold;
+
 		public global::ScheduleOne.Management.ObjectField Destination;
 
 		public global::ScheduleOne.ObjectScripts.DryingRack Rack { get; protected set; }

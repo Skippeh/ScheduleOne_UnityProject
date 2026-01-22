@@ -6,6 +6,9 @@ namespace ScheduleOne.Storage
 
 		private bool overrideState;
 
+		[global::UnityEngine.SerializeField]
+		private bool _disableItemContainerWhenClosed;
+
 		[global::UnityEngine.Header("Animations")]
 		public global::UnityEngine.Animation[] Anims;
 
@@ -41,7 +44,7 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		private void DisableItems()
+		protected virtual void RefreshItemsVisible()
 		{
 		}
 

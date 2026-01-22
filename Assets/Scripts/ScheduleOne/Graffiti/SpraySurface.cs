@@ -1,13 +1,11 @@
 namespace ScheduleOne.Graffiti
 {
-	public class SpraySurface : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable
+	public class SpraySurface : global::FishNet.Object.NetworkBehaviour
 	{
 		public const float PIXEL_SIZE = 0.006666671f;
 
-		public const int PADDING = 8;
-
 		[global::UnityEngine.Header("Settings")]
-		public string BakedGUID;
+		public bool Editable;
 
 		[global::UnityEngine.Range(1f, 1000f)]
 		public int Width;
@@ -17,15 +15,15 @@ namespace ScheduleOne.Graffiti
 
 		public global::UnityEngine.AnimationCurve FalloffCurve;
 
-		[global::UnityEngine.Range(0f, 100f)]
-		public int FalloffRadius;
+		[global::UnityEngine.SerializeField]
+		public bool IsVandalismSurface;
 
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Transform BottomLeftPoint;
 
 		public global::UnityEngine.Rendering.Universal.DecalProjector Projector;
 
-		private global::ScheduleOne.Graffiti.Drawing drawing;
+		protected global::ScheduleOne.Graffiti.Drawing drawing;
 
 		private global::ScheduleOne.Graffiti.Drawing cachedDrawing;
 
@@ -37,27 +35,34 @@ namespace ScheduleOne.Graffiti
 
 		private bool NetworkInitialize__LateScheduleOne_002EGraffiti_002ESpraySurfaceAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::System.Guid GUID { get; protected set; }
-
 		public global::FishNet.Object.NetworkObject CurrentEditor { get; private set; }
 
 		public int DrawingStrokeCount => 0;
 
 		public global::UnityEngine.Texture DrawingOutputTexture => null;
 
-		public int DrawingPaintedPixelCount => 0;
+		public int DrawingPaintedPixelCount
+		{
+			get
+			{
+				return 0;
+			}
+			set
+			{
+			}
+		}
 
-		public global::ScheduleOne.Map.EMapRegion Region { get; private set; }
+		public int RoundedWidth => 0;
 
-		public bool HasDrawingBeenFinalized { get; private set; }
+		public int RoundedHeight => 0;
+
+		public bool ContainsCartelGraffiti { get; set; }
 
 		public global::UnityEngine.Vector3 TopRightPoint => default(global::UnityEngine.Vector3);
 
-		public virtual void Awake()
-		{
-		}
+		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
 
-		private void Start()
+		public virtual void Awake()
 		{
 		}
 
@@ -69,7 +74,12 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		public bool CanBeEdited()
+		public bool CanBeEdited(bool checkEditor)
+		{
+			return false;
+		}
+
+		public bool CanUndo()
 		{
 			return false;
 		}
@@ -78,7 +88,7 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		public void ReplicateTo(global::FishNet.Connection.NetworkConnection conn)
+		public virtual void ReplicateTo(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
@@ -93,6 +103,10 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		public virtual void OnEditingFinished()
+		{
+		}
+
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void AddStrokes_Server(global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> newStrokes, int requestID)
 		{
@@ -100,6 +114,38 @@ namespace ScheduleOne.Graffiti
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void AddStrokes_Client(global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SprayStroke> newStrokes, int requestID)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void AddTextureToHistory_Server(int requestID)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void AddTextureToHistory_Client(int requestID)
+		{
+		}
+
+		public void CacheDrawing()
+		{
+		}
+
+		public void PrintHistoryCount()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		public void Undo_Server(int requestID)
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void Undo_Client(int requestID)
+		{
+		}
+
+		public virtual void CleanGraffiti()
 		{
 		}
 
@@ -112,11 +158,7 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void CreateNewDrawing()
-		{
-		}
-
-		public void CacheDrawing()
+		protected void CreateNewDrawing()
 		{
 		}
 
@@ -133,19 +175,9 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void MarkDrawingFinalized()
-		{
-		}
-
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetFinalized()
-		{
-		}
-
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		public void Set(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
+		public void Set(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool isCartelGraffiti)
 		{
 		}
 
@@ -153,26 +185,32 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private float[] GetFalloffTable()
+		public global::ScheduleOne.Graffiti.SerializedGraffitiDrawing GetSerializedDrawing()
 		{
 			return null;
 		}
 
-		public void SetGUID(global::System.Guid guid)
-		{
-		}
-
 		[global::EasyButtons.Button]
-		public void RegenerateGUID()
+		public void LoadSerializedDrawing(global::ScheduleOne.Graffiti.SerializedGraffitiDrawing serializedDrawing, bool isCartelGraffiti)
 		{
 		}
 
-		public bool ShouldSave()
+		public bool WillDrawingFit(int width, int height)
 		{
 			return false;
 		}
 
-		public global::ScheduleOne.Persistence.Datas.SpraySurfaceData GetSaveData()
+		public static int GetPadding(byte strokeSize)
+		{
+			return 0;
+		}
+
+		public virtual bool ShouldSave()
+		{
+			return false;
+		}
+
+		public virtual global::ScheduleOne.Persistence.Datas.SpraySurfaceData GetSaveData()
 		{
 			return null;
 		}
@@ -245,6 +283,54 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		private void RpcWriter___Server_AddTextureToHistory_Server_3316948804(int requestID)
+		{
+		}
+
+		public void RpcLogic___AddTextureToHistory_Server_3316948804(int requestID)
+		{
+		}
+
+		private void RpcReader___Server_AddTextureToHistory_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_AddTextureToHistory_Client_3316948804(int requestID)
+		{
+		}
+
+		private void RpcLogic___AddTextureToHistory_Client_3316948804(int requestID)
+		{
+		}
+
+		private void RpcReader___Observers_AddTextureToHistory_Client_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Server_Undo_Server_3316948804(int requestID)
+		{
+		}
+
+		public void RpcLogic___Undo_Server_3316948804(int requestID)
+		{
+		}
+
+		private void RpcReader___Server_Undo_Server_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Observers_Undo_Client_3316948804(int requestID)
+		{
+		}
+
+		private void RpcLogic___Undo_Client_3316948804(int requestID)
+		{
+		}
+
+		private void RpcReader___Observers_Undo_Client_3316948804(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
 		private void RpcWriter___Server_ClearDrawing_2166136261()
 		{
 		}
@@ -257,35 +343,11 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void RpcWriter___Server_MarkDrawingFinalized_2166136261()
+		private void RpcWriter___Observers_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool isCartelGraffiti)
 		{
 		}
 
-		public void RpcLogic___MarkDrawingFinalized_2166136261()
-		{
-		}
-
-		private void RpcReader___Server_MarkDrawingFinalized_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		private void RpcWriter___Observers_SetFinalized_2166136261()
-		{
-		}
-
-		private void RpcLogic___SetFinalized_2166136261()
-		{
-		}
-
-		private void RpcReader___Observers_SetFinalized_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
-		{
-		}
-
-		private void RpcWriter___Observers_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
-		{
-		}
-
-		public void RpcLogic___Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
+		public void RpcLogic___Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool isCartelGraffiti)
 		{
 		}
 
@@ -293,7 +355,7 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void RpcWriter___Target_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool hasBeenFinalized)
+		private void RpcWriter___Target_Set_4105842735(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Graffiti.SprayStroke[] strokes, bool isCartelGraffiti)
 		{
 		}
 
@@ -301,7 +363,7 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void Awake_UserLogic_ScheduleOne_002EGraffiti_002ESpraySurface_Assembly_002DCSharp_002Edll()
+		protected virtual void Awake_UserLogic_ScheduleOne_002EGraffiti_002ESpraySurface_Assembly_002DCSharp_002Edll()
 		{
 		}
 	}

@@ -16,6 +16,8 @@ namespace ScheduleOne.Map
 		[global::UnityEngine.Header("Settings")]
 		public bool Enabled;
 
+		public bool LogState;
+
 		public global::UnityEngine.Material OutsideTimeRangeMaterial;
 
 		public global::UnityEngine.Material InsideTimeRangeMaterial;
@@ -31,17 +33,34 @@ namespace ScheduleOne.Map
 		[global::UnityEngine.Range(0f, 1f)]
 		public float TurnOnChance;
 
+		[global::UnityEngine.Range(0f, 1f)]
+		public float TurnOffChance;
+
 		private bool appliedInsideTimeRange;
 
 		private global::ScheduleOne.Map.ScheduledMaterialChange.EOnState onState;
 
 		private int randomShift;
 
+		private bool _shouldTurnOn;
+
+		private bool _shouldTurnOff;
+
+		private global::ScheduleOne.Map.ScheduledMaterialChange.EOnState _lastOnState;
+
 		protected virtual void Start()
 		{
 		}
 
-		protected virtual void Tick()
+		private void Reset()
+		{
+		}
+
+		protected virtual void OnUncappedMinPass()
+		{
+		}
+
+		private void SetOnOffStatus()
 		{
 		}
 

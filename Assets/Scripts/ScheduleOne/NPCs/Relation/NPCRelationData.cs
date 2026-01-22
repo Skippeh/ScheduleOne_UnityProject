@@ -49,7 +49,7 @@ namespace ScheduleOne.NPCs.Relation
 		{
 		}
 
-		public virtual void SetRelationship(float newDelta)
+		public virtual void SetRelationship(float newDelta, bool network = true)
 		{
 		}
 

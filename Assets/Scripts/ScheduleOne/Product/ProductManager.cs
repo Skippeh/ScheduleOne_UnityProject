@@ -6,7 +6,7 @@ namespace ScheduleOne.Product
 
 		public const int MAX_PRICE = 999;
 
-		public const int CONTRACT_RECEIPT_MAX_COUNT = 50;
+		public const int CONTRACT_RECEIPT_MAX_COUNT = 500;
 
 		public const int STAGGERED_REPLICATIONS_PER_SECOND = 80;
 
@@ -165,7 +165,8 @@ namespace ScheduleOne.Product
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void RecordContractReceipt(global::ScheduleOne.Economy.ContractReceipt receipt)
+		[global::FishNet.Object.TargetRpc]
+		public void RecordContractReceipt(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Economy.ContractReceipt receipt)
 		{
 		}
 
@@ -420,15 +421,23 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		private void RpcWriter___Observers_RecordContractReceipt_1401448548(global::ScheduleOne.Economy.ContractReceipt receipt)
+		private void RpcWriter___Observers_RecordContractReceipt_691682765(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Economy.ContractReceipt receipt)
 		{
 		}
 
-		public void RpcLogic___RecordContractReceipt_1401448548(global::ScheduleOne.Economy.ContractReceipt receipt)
+		public void RpcLogic___RecordContractReceipt_691682765(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Economy.ContractReceipt receipt)
 		{
 		}
 
-		private void RpcReader___Observers_RecordContractReceipt_1401448548(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_RecordContractReceipt_691682765(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_RecordContractReceipt_691682765(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Economy.ContractReceipt receipt)
+		{
+		}
+
+		private void RpcReader___Target_RecordContractReceipt_691682765(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

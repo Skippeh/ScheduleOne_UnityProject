@@ -20,7 +20,7 @@ namespace ScheduleOne.NPCs.Responses
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CResetAttackResponse_003Ed__8 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CResetAttackResponse_003Ed__10 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -47,7 +47,7 @@ namespace ScheduleOne.NPCs.Responses
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CResetAttackResponse_003Ed__8(int _003C_003E1__state)
+			public _003CResetAttackResponse_003Ed__10(int _003C_003E1__state)
 			{
 			}
 
@@ -73,7 +73,12 @@ namespace ScheduleOne.NPCs.Responses
 			}
 		}
 
+		[global::UnityEngine.Header("Response Settings")]
 		public bool CanCallPolice;
+
+		public bool OverrideThreatResponses;
+
+		public global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse ThreatResponseOverride;
 
 		private global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian.EAttackResponse currentThreatResponse;
 
@@ -89,7 +94,7 @@ namespace ScheduleOne.NPCs.Responses
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian._003CResetAttackResponse_003Ed__8))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.Responses.NPCResponses_Civilian._003CResetAttackResponse_003Ed__10))]
 		private global::System.Collections.IEnumerator ResetAttackResponse()
 		{
 			return null;

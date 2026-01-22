@@ -17,6 +17,8 @@ namespace ScheduleOne.Doors
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> playersInContact;
 
+		private float maxContactDistanceSqr;
+
 		private void Awake()
 		{
 		}
@@ -34,6 +36,10 @@ namespace ScheduleOne.Doors
 		}
 
 		private void FixedUpdate()
+		{
+		}
+
+		private void RemoveInvalidContacts()
 		{
 		}
 	}

@@ -9,11 +9,15 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.UI.Button ClearButton;
 
+		public global::UnityEngine.UI.Button DoneButton;
+
 		public global::UnityEngine.Transform ConfirmPanel;
 
 		public global::UnityEngine.UI.Button ConfirmButton;
 
 		public global::UnityEngine.UI.Button CancelButton;
+
+		public global::UnityEngine.UI.Button UndoButton;
 
 		public global::UnityEngine.RectTransform RemainigPaintContainer;
 
@@ -23,14 +27,20 @@ namespace ScheduleOne.UI
 
 		public global::TMPro.TextMeshProUGUI RemainingPaintLabel;
 
+		public global::UnityEngine.UI.Button[] WeightButtons;
+
 		[global::UnityEngine.Header("Prefabs")]
 		public global::UnityEngine.GameObject ColorButtonPrefab;
 
 		public global::System.Action<global::ScheduleOne.Graffiti.ESprayColor> onColorSelected;
 
+		public global::System.Action<byte> onWeightSelected;
+
 		public global::System.Action onClearClicked;
 
-		public global::System.Action onConfirmClicked;
+		public global::System.Action onDone;
+
+		public global::System.Action onUndoClicked;
 
 		private global::System.Collections.Generic.List<global::UnityEngine.UI.Button> colorButtons;
 
@@ -48,11 +58,19 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		private void Update()
+		{
+		}
+
 		public void ShowConfirmPanel()
 		{
 		}
 
 		private void SelectColor(global::ScheduleOne.Graffiti.ESprayColor color)
+		{
+		}
+
+		private void WeightButtonClicked(int buttonIndex)
 		{
 		}
 
@@ -64,11 +82,27 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		private void ConfirmClicked()
+		private void UndoClicked()
+		{
+		}
+
+		private void Done()
 		{
 		}
 
 		private void CancelClicked()
+		{
+		}
+
+		public void SetActiveSurface(global::ScheduleOne.Graffiti.SpraySurface surface)
+		{
+		}
+
+		public void ClearActiveSurface()
+		{
+		}
+
+		private void UpdateUndoInteraction()
 		{
 		}
 	}

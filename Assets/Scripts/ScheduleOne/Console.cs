@@ -637,6 +637,32 @@ namespace ScheduleOne
 			}
 		}
 
+		public class SetDayDuration : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
+		public class SetItemQuality : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
 		[global::System.Serializable]
 		public class LabelledGameObject
 		{

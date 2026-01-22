@@ -33,5 +33,10 @@ namespace ScheduleOne.ObjectScripts
 		public void Progress(int mins)
 		{
 		}
+
+		public bool IsComplete()
+		{
+			return false;
+		}
 	}
 }

@@ -15,6 +15,8 @@ namespace ScheduleOne.Quests
 
 		public const int DefaultExpiryTime = 2880;
 
+		public const float ExcessProductsMatchSumMultiplier = 0.5f;
+
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract> Contracts;
 
 		[global::UnityEngine.Header("Contract Settings")]
@@ -48,7 +50,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		protected override void MinPass()
+		protected override void OnUncappedMinPass()
 		{
 		}
 
@@ -60,11 +62,23 @@ namespace ScheduleOne.Quests
 		{
 		}
 
+		public void UpdatePoI()
+		{
+		}
+
 		public override void End()
 		{
 		}
 
 		public override void Complete(bool network = true)
+		{
+		}
+
+		public override void Expire(bool network = true)
+		{
+		}
+
+		public override void Fail(bool network = true)
 		{
 		}
 
@@ -103,6 +117,11 @@ namespace ScheduleOne.Quests
 		{
 			matchedProductCount = default(int);
 			return 0f;
+		}
+
+		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Product.ProductItemInstance, float> GetDescendingMatchRatings(global::ScheduleOne.Product.ProductList.Entry requestedItem, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> providedItems)
+		{
+			return null;
 		}
 
 		public override global::ScheduleOne.Persistence.Datas.SaveData GetSaveData()

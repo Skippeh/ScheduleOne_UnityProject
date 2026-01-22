@@ -9,9 +9,9 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::ScheduleOne.ItemFramework.EQuality StartQuality;
 
-		public int Time;
+		public float Time;
 
-		public DryingOperation(string itemID, int quantity, global::ScheduleOne.ItemFramework.EQuality startQuality, int time)
+		public DryingOperation(string itemID, int quantity, global::ScheduleOne.ItemFramework.EQuality startQuality, float time)
 		{
 		}
 

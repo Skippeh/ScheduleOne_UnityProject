@@ -2,8 +2,6 @@ namespace ScheduleOne.Cartel
 {
 	public class Cartel : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Cartel.Cartel>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
 	{
-		public bool TEST_MODE;
-
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Cartel.CartelActivities Activities;
 

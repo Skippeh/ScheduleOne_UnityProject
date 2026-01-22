@@ -48,9 +48,11 @@ namespace ScheduleOne.DevUtilities
 
 		private global::UnityEngine.InputSystem.InputActionMap playerControls;
 
-		public global::System.Action onDisplayChanged;
-
 		public global::System.Action onInputsApplied;
+
+		public global::System.Action onDisplaySettingsApplied;
+
+		public global::System.Action onUnappliedDisplayIndexChanged;
 
 		public static bool ChristmasEventActive { get; private set; }
 

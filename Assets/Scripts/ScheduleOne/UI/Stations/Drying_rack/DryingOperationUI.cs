@@ -13,6 +13,8 @@ namespace ScheduleOne.UI.Stations.Drying_rack
 
 		public global::ScheduleOne.UI.Tooltips.Tooltip Tooltip;
 
+		private float _dryMultiplier;
+
 		public global::ScheduleOne.ObjectScripts.DryingOperation AssignedOperation { get; protected set; }
 
 		public global::UnityEngine.RectTransform Alignment { get; private set; }
@@ -30,6 +32,10 @@ namespace ScheduleOne.UI.Stations.Drying_rack
 		}
 
 		public void Start()
+		{
+		}
+
+		public void SetDryRate(float dryMultiplier)
 		{
 		}
 

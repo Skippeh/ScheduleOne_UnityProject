@@ -4,7 +4,7 @@ namespace ScheduleOne.Quests
 	{
 		public global::ScheduleOne.Quests.QuestEntry CompleteDealsEntry;
 
-		protected override void MinPass()
+		protected override void OnMinPass()
 		{
 		}
 	}

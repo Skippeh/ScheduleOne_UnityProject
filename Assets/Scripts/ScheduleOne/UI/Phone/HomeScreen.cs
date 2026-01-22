@@ -118,7 +118,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnUncappedMinPass()
 		{
 		}
 

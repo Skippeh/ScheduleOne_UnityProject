@@ -221,6 +221,14 @@ namespace ScheduleOne.Police
 		{
 		}
 
+		public void SetRandomAvoidancePriority()
+		{
+		}
+
+		public void SetAvoidancePriority(int priority)
+		{
+		}
+
 		public virtual void UpdateBodySearch()
 		{
 		}

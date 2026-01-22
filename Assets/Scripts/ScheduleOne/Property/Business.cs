@@ -70,6 +70,11 @@ namespace ScheduleOne.Property
 		{
 		}
 
+		public override bool CanDeliverToProperty()
+		{
+			return false;
+		}
+
 		protected override void RecieveOwned()
 		{
 		}

@@ -60,6 +60,8 @@ namespace ScheduleOne.Calling
 
 		public const float RING_RANGE = 9f;
 
+		private const float ringRangeSquared = 81f;
+
 		public global::ScheduleOne.ScriptableObjects.PhoneCallData QueuedCall;
 
 		public global::ScheduleOne.ScriptableObjects.PhoneCallData ActiveCall;
@@ -75,8 +77,6 @@ namespace ScheduleOne.Calling
 		public global::UnityEngine.Transform CameraPosition;
 
 		private float lastRingTime;
-
-		private const float ringRangeSquared = 81f;
 
 		private global::UnityEngine.Coroutine periodicRingHandle;
 

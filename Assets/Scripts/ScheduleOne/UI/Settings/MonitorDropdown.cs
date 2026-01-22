@@ -10,6 +10,10 @@ namespace ScheduleOne.UI.Settings
 		{
 		}
 
+		protected virtual void OnDisable()
+		{
+		}
+
 		protected override void OnValueChanged(int value)
 		{
 		}
@@ -17,6 +21,10 @@ namespace ScheduleOne.UI.Settings
 		public static int GetCurrentDisplayNumber()
 		{
 			return 0;
+		}
+
+		private void SetCurrent()
+		{
 		}
 	}
 }

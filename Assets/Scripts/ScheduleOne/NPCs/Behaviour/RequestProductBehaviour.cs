@@ -12,9 +12,9 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public const float FOLLOW_MAX_RANGE = 5f;
 
-		public const int MINS_TO_ASK_AGAIN = 90;
+		public const int TicksBeforeAskAgain = 180;
 
-		private int minsSinceLastDialogue;
+		private int ticksSinceLastRequest;
 
 		private global::ScheduleOne.Dialogue.DialogueController.GreetingOverride requestGreeting;
 

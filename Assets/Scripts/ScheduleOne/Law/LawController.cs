@@ -71,11 +71,7 @@ namespace ScheduleOne.Law
 		{
 		}
 
-		private void MinPass()
-		{
-		}
-
-		private void HourPass()
+		private void OnUncappedMinPass()
 		{
 		}
 

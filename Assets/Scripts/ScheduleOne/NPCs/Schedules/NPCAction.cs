@@ -29,7 +29,7 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public bool IsSignal => false;
 
-		public bool IsActive { get; protected set; }
+		public bool IsActive => false;
 
 		public bool HasStarted { get; protected set; }
 

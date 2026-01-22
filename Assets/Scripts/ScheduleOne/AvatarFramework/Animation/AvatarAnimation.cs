@@ -18,7 +18,7 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const bool ImpostorsEnabled = true;
 
-		public const float AnimationRangeSqr = 2025f;
+		public const float AnimationRangeSqr = 2500f;
 
 		public const float FrustrumCullMinDist = 225f;
 

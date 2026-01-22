@@ -280,11 +280,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void MinPass()
+		private void OnUncappedMinPass()
 		{
 		}
 
-		private void TimeSkipped(int minsSkippped)
+		private void OnTimePass(int minutes)
 		{
 		}
 

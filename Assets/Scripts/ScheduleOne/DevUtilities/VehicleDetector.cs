@@ -33,7 +33,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		private void MinPass()
+		private void OnTick()
 		{
 		}
 

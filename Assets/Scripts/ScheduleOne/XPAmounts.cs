@@ -15,5 +15,9 @@ namespace ScheduleOne
 		public const int ESCAPED_WANTED = 40;
 
 		public const int ESCAPED_WANTED2 = 60;
+
+		public const int NEW_MIXTURE_DISCOVERED = 80;
+
+		public const int GRAFFITI_SPRAYED = 50;
 	}
 }

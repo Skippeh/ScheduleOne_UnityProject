@@ -8,7 +8,7 @@ namespace ScheduleOne.Quests
 
 		public global::ScheduleOne.NPCs.CharacterClasses.UncleNelson Nelson;
 
-		protected override void MinPass()
+		protected override void OnMinPass()
 		{
 		}
 

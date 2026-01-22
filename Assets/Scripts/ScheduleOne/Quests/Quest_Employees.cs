@@ -10,7 +10,7 @@ namespace ScheduleOne.Quests
 
 		public abstract global::System.Collections.Generic.List<global::ScheduleOne.Employees.Employee> GetEmployees();
 
-		protected override void MinPass()
+		protected override void OnMinPass()
 		{
 		}
 

@@ -55,7 +55,17 @@ namespace ScheduleOne.GameTime
 			return false;
 		}
 
+		public static bool operator >=(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		{
+			return false;
+		}
+
 		public static bool operator <(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
+		{
+			return false;
+		}
+
+		public static bool operator <=(global::ScheduleOne.GameTime.GameDateTime a, global::ScheduleOne.GameTime.GameDateTime b)
 		{
 			return false;
 		}

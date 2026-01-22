@@ -85,7 +85,7 @@ namespace ScheduleOne.Employees
 
 		public global::ScheduleOne.Employees.EEmployeeType EmployeeType => default(global::ScheduleOne.Employees.EEmployeeType);
 
-		public int TimeSinceLastWorked { get; private set; }
+		public int TicksSinceLastWork { get; private set; }
 
 		public bool SyncAccessor__003CPaidForToday_003Ek__BackingField
 		{

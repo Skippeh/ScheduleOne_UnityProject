@@ -9,6 +9,10 @@ namespace ScheduleOne.UI
 		[global::UnityEngine.HideInInspector]
 		public bool IsBeingDragged;
 
+		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.SerializeField]
+		private bool _playBopAnimation;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.RectTransform Rect;
 
@@ -20,6 +24,12 @@ namespace ScheduleOne.UI
 
 		public global::ScheduleOne.UI.Items.ItemSlotFilterButton FilterButton;
 
+		public global::UnityEngine.Animation BopAnimation;
+
+		private int _lastQuantity;
+
+		private bool _slotBopQueued;
+
 		public global::ScheduleOne.ItemFramework.ItemSlot assignedSlot { get; protected set; }
 
 		public global::ScheduleOne.UI.Items.ItemUI ItemUI { get; protected set; }
@@ -29,6 +39,10 @@ namespace ScheduleOne.UI
 		}
 
 		public virtual void ClearSlot()
+		{
+		}
+
+		protected virtual void LateUpdate()
 		{
 		}
 
@@ -74,6 +88,14 @@ namespace ScheduleOne.UI
 		}
 
 		public void OverrideDisplayedQuantity(int quantity)
+		{
+		}
+
+		private void OnItemSlotDataChanged()
+		{
+		}
+
+		private void CheckSlotBop()
 		{
 		}
 	}

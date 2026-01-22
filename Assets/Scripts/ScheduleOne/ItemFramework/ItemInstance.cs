@@ -91,6 +91,11 @@ namespace ScheduleOne.ItemFramework
 		{
 		}
 
+		public virtual int GetTotalAmount()
+		{
+			return 0;
+		}
+
 		public void SetID(string id)
 		{
 		}

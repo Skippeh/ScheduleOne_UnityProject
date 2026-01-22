@@ -14,6 +14,11 @@ namespace ScheduleOne.Property
 		{
 		}
 
+		public override bool CanDeliverToProperty()
+		{
+			return false;
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}

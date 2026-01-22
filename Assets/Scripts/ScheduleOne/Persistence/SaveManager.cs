@@ -82,10 +82,6 @@ namespace ScheduleOne.Persistence
 		{
 		}
 
-		public void DelayedSave()
-		{
-		}
-
 		public void Save()
 		{
 		}

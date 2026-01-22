@@ -15,7 +15,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public global::ScheduleOne.Persistence.Datas.ItemSet VehicleContents;
 
-		public VehicleData(global::System.Guid guid, string code, global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot, global::ScheduleOne.Vehicles.Modification.EVehicleColor col, global::ScheduleOne.Persistence.Datas.ItemSet vehicleContents)
+		public global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.SpraySurfaceData> SpraySurfaces;
+
+		public VehicleData(global::System.Guid guid, string code, global::UnityEngine.Vector3 pos, global::UnityEngine.Quaternion rot, global::ScheduleOne.Vehicles.Modification.EVehicleColor col, global::ScheduleOne.Persistence.Datas.ItemSet vehicleContents, global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.SpraySurfaceData> spraySurfaces)
 		{
 		}
 	}

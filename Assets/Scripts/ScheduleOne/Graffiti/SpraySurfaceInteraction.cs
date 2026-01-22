@@ -3,17 +3,13 @@ namespace ScheduleOne.Graffiti
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Graffiti.SpraySurface))]
 	public class SpraySurfaceInteraction : global::UnityEngine.MonoBehaviour
 	{
-		public const float CAMERA_MOVE_TIME = 0.15f;
+		private const float CameraLerpTime = 0.15f;
 
-		public const int MAX_PIXELS_BEFORE_NEW_STROKE = 1000;
+		private const int MaxPixelsBeforeNewStroke = 1000;
 
-		public const int MANHATTAN_DISTANCE_BETWEEN_PAINTED_PIXELS = 3;
+		private const int ManhattanDistanceBetweenPaintedPixels = 3;
 
-		public const int XP_GAIN = 50;
-
-		public const float CARTEL_INFLUENCE_CHANGE = -0.05f;
-
-		public const int PAINTED_PIXEL_LIMIT = 25000;
+		private const int FixedPaintedPixelLimit = 25000;
 
 		public global::ScheduleOne.Graffiti.SpraySurface SpraySurface;
 
@@ -29,7 +25,15 @@ namespace ScheduleOne.Graffiti
 
 		public global::ScheduleOne.Audio.AudioSourceController CleanSound;
 
+		public bool _allowDraw;
+
+		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.SerializeField]
+		public float PaintedPixelLimitMultiplier;
+
 		private global::ScheduleOne.Graffiti.ESprayColor selectedColor;
+
+		private byte selectedStrokeSize;
 
 		private global::ScheduleOne.Graffiti.UShort2 lastPaintedPixelCoord;
 
@@ -41,9 +45,13 @@ namespace ScheduleOne.Graffiti
 
 		private float timeSinceStrokeStart;
 
+		private int _startPaintedPixelCount;
+
 		public bool IsOpen { get; private set; }
 
 		private bool confirmationPanelOpen => false;
+
+		private int _paintedPixelLimit => 0;
 
 		private void Awake()
 		{
@@ -77,11 +85,19 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
+		private void UpdateSpraySound()
+		{
+		}
+
+		private void CheckCameraInBounds()
+		{
+		}
+
 		private void FixedUpdate()
 		{
 		}
 
-		private void StartStroke()
+		private void StartStroke(bool recordHistory = true)
 		{
 		}
 
@@ -125,15 +141,23 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		private void Reward()
-		{
-		}
-
 		private void EquippedSlotChanged(int equippedSlotIndex)
 		{
 		}
 
 		private void SetColor(global::ScheduleOne.Graffiti.ESprayColor color)
+		{
+		}
+
+		private void SetStrokeSize(byte strokeSize)
+		{
+		}
+
+		private void UpdateRemainingPaintIndicator()
+		{
+		}
+
+		public void Undo()
 		{
 		}
 

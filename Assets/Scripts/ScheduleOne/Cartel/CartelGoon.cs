@@ -20,6 +20,10 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
+		public override void OnStartServer()
+		{
+		}
+
 		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
 		{
 		}
@@ -45,7 +49,8 @@ namespace ScheduleOne.Cartel
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void Despawn_Client()
+		[global::FishNet.Object.TargetRpc]
+		private void Despawn_Client(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
@@ -118,15 +123,23 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
-		private void RpcWriter___Observers_Despawn_Client_2166136261()
+		private void RpcWriter___Observers_Despawn_Client_328543758(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcLogic___Despawn_Client_2166136261()
+		private void RpcLogic___Despawn_Client_328543758(global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcReader___Observers_Despawn_Client_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_Despawn_Client_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Target_Despawn_Client_328543758(global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcReader___Target_Despawn_Client_328543758(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

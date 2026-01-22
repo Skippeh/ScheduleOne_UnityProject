@@ -4,7 +4,7 @@ namespace ScheduleOne.Quests
 	{
 		public global::ScheduleOne.Economy.Supplier Supplier;
 
-		protected override void MinPass()
+		protected override void OnMinPass()
 		{
 		}
 	}

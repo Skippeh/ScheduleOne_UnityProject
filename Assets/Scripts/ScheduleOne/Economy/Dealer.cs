@@ -2,7 +2,7 @@ namespace ScheduleOne.Economy
 {
 	public class Dealer : global::ScheduleOne.NPCs.NPC, global::ScheduleOne.ItemFramework.IItemSlotOwner
 	{
-		public const int MAX_CUSTOMERS = 8;
+		public const int MAX_CUSTOMERS = 10;
 
 		public const int DEAL_ARRIVAL_DELAY = 30;
 
@@ -17,6 +17,10 @@ namespace ScheduleOne.Economy
 		public const float RELATIONSHIP_CHANGE_PER_DEAL = 0.05f;
 
 		public static global::UnityEngine.Color32 DealerLabelColor;
+
+		public const int NegativeQualityTolerance = -1;
+
+		public const int PositiveQualityTolerance = 5;
 
 		public static global::System.Action<global::ScheduleOne.Economy.Dealer> onDealerRecruited;
 
@@ -46,10 +50,6 @@ namespace ScheduleOne.Economy
 		public float SigningFee;
 
 		public float Cut;
-
-		public bool SellInsufficientQualityItems;
-
-		public bool SellExcessQualityItems;
 
 		[global::UnityEngine.Header("Variables")]
 		public string CompletedDealsVariable;
@@ -231,13 +231,13 @@ namespace ScheduleOne.Economy
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendAddCustomer(string npcID)
+		public void AddCustomer_Server(string npcID)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		private void AddCustomer(global::FishNet.Connection.NetworkConnection conn, string npcID)
+		private void AddCustomer_Client(global::FishNet.Connection.NetworkConnection conn, string npcID)
 		{
 		}
 
@@ -282,14 +282,25 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductDefinition> GetOrderableProducts()
+		public global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Product.ProductDefinition, global::ScheduleOne.ItemFramework.EQuality, int>> GetOrderableProducts(global::ScheduleOne.ItemFramework.EQuality minQuality)
 		{
 			return null;
 		}
 
-		public int GetProductCount(string productID, global::ScheduleOne.ItemFramework.EQuality minQuality, global::ScheduleOne.ItemFramework.EQuality maxQuality)
+		public int GetOrderableProductQuantity(string productID, global::ScheduleOne.ItemFramework.EQuality minQuality, global::ScheduleOne.ItemFramework.EQuality maxQuality)
 		{
 			return 0;
+		}
+
+		[global::EasyButtons.Button]
+		public void TestGetAvailableProducts()
+		{
+		}
+
+		[global::EasyButtons.Button]
+		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Product.ProductDefinition, global::ScheduleOne.ItemFramework.EQuality, int>> GetAvailableProducts()
+		{
+			return null;
 		}
 
 		private global::ScheduleOne.Economy.EDealWindow GetDealWindow()
@@ -318,15 +329,18 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		public bool RemoveContractItems(global::ScheduleOne.Quests.Contract contract, global::ScheduleOne.ItemFramework.EQuality targetQuality, out global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
+		public void RemoveContractItems(global::ScheduleOne.Quests.Contract contract, global::ScheduleOne.ItemFramework.EQuality targetQuality, out global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> items)
 		{
 			items = null;
-			return false;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance> GetItems(string ID, int requiredQuantity, global::System.Func<global::ScheduleOne.Product.ProductItemInstance, bool> qualityCheck, out int returnedQuantity)
+		private global::System.Collections.Generic.List<global::ScheduleOne.Product.ProductItemInstance> RemoveAndReturnProductFromInventory(string productID, int requiredQuantity, global::ScheduleOne.ItemFramework.EQuality targetQuality)
 		{
-			returnedQuantity = default(int);
+			return null;
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> FilterAndSortSlots(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> slots, string productID, global::ScheduleOne.ItemFramework.EQuality productQuality)
+		{
 			return null;
 		}
 
@@ -351,6 +365,10 @@ namespace ScheduleOne.Economy
 		public int GetPackagedProductAmount()
 		{
 			return 0;
+		}
+
+		public virtual void CheckNotifyPlayerOfDeal(global::ScheduleOne.Economy.Dealer cartelDealer, global::ScheduleOne.Quests.Contract contract)
+		{
 		}
 
 		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
@@ -477,35 +495,35 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		private void RpcWriter___Server_SendAddCustomer_3615296227(string npcID)
+		private void RpcWriter___Server_AddCustomer_Server_3615296227(string npcID)
 		{
 		}
 
-		public void RpcLogic___SendAddCustomer_3615296227(string npcID)
+		public void RpcLogic___AddCustomer_Server_3615296227(string npcID)
 		{
 		}
 
-		private void RpcReader___Server_SendAddCustomer_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_AddCustomer_Server_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_AddCustomer_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
+		private void RpcWriter___Observers_AddCustomer_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
 		{
 		}
 
-		private void RpcLogic___AddCustomer_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
+		private void RpcLogic___AddCustomer_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
 		{
 		}
 
-		private void RpcReader___Observers_AddCustomer_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_AddCustomer_Client_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_AddCustomer_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
+		private void RpcWriter___Target_AddCustomer_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string npcID)
 		{
 		}
 
-		private void RpcReader___Target_AddCustomer_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_AddCustomer_Client_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

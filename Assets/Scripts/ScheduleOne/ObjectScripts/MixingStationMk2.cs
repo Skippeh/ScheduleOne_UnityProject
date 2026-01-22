@@ -19,7 +19,7 @@ namespace ScheduleOne.ObjectScripts
 
 		private bool NetworkInitialize__LateScheduleOne_002EObjectScripts_002EMixingStationMk2Assembly_002DCSharp_002Edll_Excuted;
 
-		protected override void MinPass()
+		protected override void OnTimePass(int minutes)
 		{
 		}
 
@@ -40,6 +40,10 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		private void DisableScreen()
+		{
+		}
+
+		protected override void SetMixerToLowered()
 		{
 		}
 

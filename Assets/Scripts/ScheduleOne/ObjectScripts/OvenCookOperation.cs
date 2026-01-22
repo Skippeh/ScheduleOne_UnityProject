@@ -55,6 +55,11 @@ namespace ScheduleOne.ObjectScripts
 			return 0;
 		}
 
+		public bool IsComplete()
+		{
+			return false;
+		}
+
 		public global::ScheduleOne.ItemFramework.ItemInstance GetProductItem(int quantity)
 		{
 			return null;

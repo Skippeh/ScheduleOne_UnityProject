@@ -66,6 +66,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		private void UpdateActions()
+		{
+		}
+
 		protected virtual void OnTick()
 		{
 		}

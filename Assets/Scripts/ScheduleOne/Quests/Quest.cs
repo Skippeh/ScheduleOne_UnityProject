@@ -174,7 +174,11 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnMinPass()
+		{
+		}
+
+		protected virtual void OnUncappedMinPass()
 		{
 		}
 

@@ -21,6 +21,8 @@ namespace ScheduleOne.Economy
 
 		public const int DEADDROP_ITEM_LIMIT = 10;
 
+		public const float MeetingEndDistance = 20f;
+
 		public const float DELIVERY_RELATIONSHIP_REQUIREMENT = 5f;
 
 		public static global::UnityEngine.Color32 SupplierLabelColor;
@@ -130,6 +132,10 @@ namespace ScheduleOne.Economy
 		}
 
 		protected override void MinPass()
+		{
+		}
+
+		protected override void OnTick()
 		{
 		}
 

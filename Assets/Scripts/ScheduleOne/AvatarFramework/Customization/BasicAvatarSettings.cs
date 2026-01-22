@@ -81,6 +81,11 @@ namespace ScheduleOne.AvatarFramework.Customization
 			return null;
 		}
 
+		public static global::UnityEngine.Color GetNippleColor(global::UnityEngine.Color skinColor)
+		{
+			return default(global::UnityEngine.Color);
+		}
+
 		public virtual string GetJson(bool prettyPrint = true)
 		{
 			return null;

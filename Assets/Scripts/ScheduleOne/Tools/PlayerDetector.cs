@@ -37,7 +37,7 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		private void MinPass()
+		private void OnTick()
 		{
 		}
 

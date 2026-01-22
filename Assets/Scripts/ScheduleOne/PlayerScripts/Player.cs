@@ -329,8 +329,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool playerSaveRequestReturned { get; private set; }
 
-		public bool PlayerInitializedOverNetwork { get; private set; }
-
 		public bool Paranoid { get; set; }
 
 		public bool Sneaky { get; set; }
@@ -518,11 +516,6 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true)]
-		public void MarkPlayerInitialized()
-		{
-		}
-
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
 		public void ReceivePlayerData(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
@@ -539,17 +532,13 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void SendFlashlightOn(bool on)
-		{
-		}
-
 		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
-		private void SendFlashlightOnNetworked(bool on)
+		public void SetFlashlightOn_Server(bool on)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetFlashlightOn(bool on)
+		private void SetFlashlightOn_Client(bool on)
 		{
 		}
 
@@ -565,11 +554,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		protected virtual void MinPass()
-		{
-		}
-
-		protected virtual void Tick()
+		protected virtual void OnUncappedMinutePass()
 		{
 		}
 
@@ -1194,18 +1179,6 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_MarkPlayerInitialized_2166136261()
-		{
-		}
-
-		public void RpcLogic___MarkPlayerInitialized_2166136261()
-		{
-		}
-
-		private void RpcReader___Server_MarkPlayerInitialized_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
 		private void RpcWriter___Observers_ReceivePlayerData_3244732873(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.Persistence.Datas.PlayerData data, string inventoryString, string appearanceString, string clothigString, global::ScheduleOne.Persistence.Datas.VariableData[] vars)
 		{
 		}
@@ -1246,27 +1219,27 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_SendFlashlightOnNetworked_1140765316(bool on)
+		private void RpcWriter___Server_SetFlashlightOn_Server_1140765316(bool on)
 		{
 		}
 
-		private void RpcLogic___SendFlashlightOnNetworked_1140765316(bool on)
+		public void RpcLogic___SetFlashlightOn_Server_1140765316(bool on)
 		{
 		}
 
-		private void RpcReader___Server_SendFlashlightOnNetworked_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetFlashlightOn_Server_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetFlashlightOn_1140765316(bool on)
+		private void RpcWriter___Observers_SetFlashlightOn_Client_1140765316(bool on)
 		{
 		}
 
-		private void RpcLogic___SetFlashlightOn_1140765316(bool on)
+		private void RpcLogic___SetFlashlightOn_Client_1140765316(bool on)
 		{
 		}
 
-		private void RpcReader___Observers_SetFlashlightOn_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetFlashlightOn_Client_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

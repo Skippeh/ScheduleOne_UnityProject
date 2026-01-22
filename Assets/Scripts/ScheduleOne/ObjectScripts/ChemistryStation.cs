@@ -238,11 +238,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnMinPass()
 		{
 		}
 
-		private void TimeSkipped(int minsSkippped)
+		private void OnTimePass(int minutes)
 		{
 		}
 

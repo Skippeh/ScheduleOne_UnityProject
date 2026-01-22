@@ -3,7 +3,11 @@ namespace ScheduleOne.UI.Management
 	public class RouteEntryUI : global::UnityEngine.MonoBehaviour
 	{
 		[global::UnityEngine.Header("References")]
+		public global::UnityEngine.UI.Image SourceIcon;
+
 		public global::TMPro.TextMeshProUGUI SourceLabel;
+
+		public global::UnityEngine.UI.Image DestinationIcon;
 
 		public global::TMPro.TextMeshProUGUI DestinationLabel;
 

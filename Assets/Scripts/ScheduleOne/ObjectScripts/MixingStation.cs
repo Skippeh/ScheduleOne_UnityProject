@@ -78,6 +78,10 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::UnityEngine.Events.UnityEvent onStartButtonClicked;
 
+		[global::UnityEngine.Header("Animations")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.Tools.PlayAnimation _mixerAnimator;
+
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CNPCUserObject_003Ek__BackingField;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar____003CPlayerUserObject_003Ek__BackingField;
@@ -251,11 +255,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void TimeSkipped(int minsPassed)
+		protected virtual void OnMinPass()
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnTimePass(int minutes)
 		{
 		}
 
@@ -266,7 +270,11 @@ namespace ScheduleOne.ObjectScripts
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		public virtual void SetMixOperation(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTIme)
+		public virtual void SetMixOperation(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTime)
+		{
+		}
+
+		protected virtual void SetMixerToLowered()
 		{
 		}
 
@@ -284,6 +292,11 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		public bool DoesOutputHaveSpace(global::ScheduleOne.StationFramework.StationRecipe recipe)
+		{
+			return false;
+		}
+
+		private bool IsCurrentMixingOperationComplete()
 		{
 			return false;
 		}
@@ -459,11 +472,11 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcWriter___Observers_SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTIme)
+		private void RpcWriter___Observers_SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTime)
 		{
 		}
 
-		public virtual void RpcLogic___SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTIme)
+		public virtual void RpcLogic___SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTime)
 		{
 		}
 
@@ -471,7 +484,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void RpcWriter___Target_SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTIme)
+		private void RpcWriter___Target_SetMixOperation_1073078804(global::FishNet.Connection.NetworkConnection conn, global::ScheduleOne.ObjectScripts.MixOperation operation, int mixTime)
 		{
 		}
 

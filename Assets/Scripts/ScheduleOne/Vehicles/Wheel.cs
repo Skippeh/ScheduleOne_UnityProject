@@ -107,5 +107,10 @@ namespace ScheduleOne.Vehicles
 		{
 			return false;
 		}
+
+		[global::EasyButtons.Button]
+		private void ApplyDefaultWheelModelPosition()
+		{
+		}
 	}
 }

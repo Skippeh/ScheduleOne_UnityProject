@@ -38,6 +38,8 @@ namespace ScheduleOne.Map
 
 		public global::UnityEngine.RectTransform IconContainer { get; protected set; }
 
+		public global::ScheduleOne.DevUtilities.FontSetter FontSetter { get; protected set; }
+
 		private void OnEnable()
 		{
 		}

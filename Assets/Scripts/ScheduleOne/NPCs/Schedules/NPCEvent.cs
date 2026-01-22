@@ -26,6 +26,10 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
+		public override void OnActiveTick()
+		{
+		}
+
 		public override void PendingMinPassed()
 		{
 		}

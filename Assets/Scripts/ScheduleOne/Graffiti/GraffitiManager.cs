@@ -6,17 +6,18 @@ namespace ScheduleOne.Graffiti
 
 		private const string SPRAY_PAINTS_PURCHASED_VARIABLE = "SprayPaintsPurchased";
 
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.AnimationCurve _falloffCurve;
+
+		private global::System.Collections.Generic.Dictionary<byte, float[]> _falloffTableCache;
+
 		private global::ScheduleOne.Persistence.Loaders.GraffitiLoader loader;
-
-		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Graffiti.SpraySurface, global::FishNet.Connection.NetworkConnection>> surfaceReplicationQueue;
-
-		private float timeUntilNextReplication;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EGraffiti_002EGraffitiManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EGraffiti_002EGraffitiManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		public global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.SpraySurface> SpraySurfaces { get; private set; }
+		public global::System.Collections.Generic.List<global::ScheduleOne.Graffiti.WorldSpraySurface> WorldSpraySurfaces { get; private set; }
 
 		public string SaveFolderName => null;
 
@@ -65,6 +66,16 @@ namespace ScheduleOne.Graffiti
 
 		public void QueueSurfaceToReplicate(global::ScheduleOne.Graffiti.SpraySurface surface, global::FishNet.Connection.NetworkConnection conn)
 		{
+		}
+
+		public float GetPixelStrength(byte strokeSize, int pixelIndex)
+		{
+			return 0f;
+		}
+
+		private float[] GetFalloffTable(int strokeSize)
+		{
+			return null;
 		}
 
 		public override void NetworkInitialize___Early()

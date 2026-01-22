@@ -271,6 +271,11 @@ namespace ScheduleOne.Property
 			return null;
 		}
 
+		public virtual bool CanDeliverToProperty()
+		{
+			return false;
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}

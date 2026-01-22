@@ -9,6 +9,10 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.GameObject Container;
 
+		private static global::System.Collections.Generic.List<string> _commandHistory;
+
+		private int _currentCommandIndex;
+
 		public bool IS_CONSOLE_ENABLED => false;
 
 		private void Awake()
@@ -16,6 +20,10 @@ namespace ScheduleOne.UI
 		}
 
 		private void Update()
+		{
+		}
+
+		private void UpdateCommandHistory()
 		{
 		}
 

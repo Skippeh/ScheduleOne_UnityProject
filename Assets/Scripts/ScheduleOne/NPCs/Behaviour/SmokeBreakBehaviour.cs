@@ -37,11 +37,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EBehaviour_002ESmokeBreakBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
-		public override void OnStartServer()
+		private void SetupEvents()
 		{
 		}
 
-		private void SetupEvents()
+		private void CleanUp()
 		{
 		}
 

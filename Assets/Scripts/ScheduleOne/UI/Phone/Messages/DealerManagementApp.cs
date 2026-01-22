@@ -2,6 +2,19 @@ namespace ScheduleOne.UI.Phone.Messages
 {
 	public class DealerManagementApp : global::ScheduleOne.UI.App<global::ScheduleOne.UI.Phone.Messages.DealerManagementApp>
 	{
+		private class InventoryItem
+		{
+			public string ID;
+
+			public int Quantity;
+
+			public int Quality;
+
+			public InventoryItem(string id, int quantity, int quality)
+			{
+			}
+		}
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.UI.Text NoDealersLabel;
 
@@ -18,6 +31,18 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::UnityEngine.UI.Button NextButton;
 
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.UI.DropdownUI _dropdown;
+
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.UI.Image _dropdownBackground;
+
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.UI.Image _dropdownCaptionImage;
+
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.UI.Text _dropDownCaptionText;
+
 		[global::UnityEngine.Header("Basic Info")]
 		public global::UnityEngine.UI.Text CashLabel;
 
@@ -26,6 +51,12 @@ namespace ScheduleOne.UI.Phone.Messages
 		public global::UnityEngine.UI.Text HomeLabel;
 
 		[global::UnityEngine.Header("Inventory")]
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.UI.Text _inventoryTextLabel;
+
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.RectTransform _inventoryEntryContainer;
+
 		public global::UnityEngine.RectTransform[] InventoryEntries;
 
 		[global::UnityEngine.Header("Customers")]
@@ -35,7 +66,16 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::UnityEngine.UI.Button AssignCustomerButton;
 
+		[global::UnityEngine.Header("Fonts")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.DevUtilities.SpriteFont _uiGeneralSpriteFont;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.DevUtilities.ColorFont _productColorFont;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.Economy.Dealer> dealers;
+
+		private bool _isOpen;
 
 		public global::ScheduleOne.Economy.Dealer SelectedDealer { get; private set; }
 
@@ -48,6 +88,10 @@ namespace ScheduleOne.UI.Phone.Messages
 		}
 
 		protected override void OnDestroy()
+		{
+		}
+
+		public void Refresh()
 		{
 		}
 
@@ -80,6 +124,18 @@ namespace ScheduleOne.UI.Phone.Messages
 		}
 
 		public void AssignCustomer()
+		{
+		}
+
+		private void SetDropDown()
+		{
+		}
+
+		private void OnDropdownValueChanged(int value)
+		{
+		}
+
+		private void OnDropdownOpen()
 		{
 		}
 	}

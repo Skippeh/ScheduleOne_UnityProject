@@ -7,7 +7,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public global::ScheduleOne.Persistence.Datas.ObjectFieldData Destination;
 
-		public DryingRackConfigurationData(global::ScheduleOne.Persistence.Datas.StringFieldData name, global::ScheduleOne.Persistence.Datas.QualityFieldData targetquality, global::ScheduleOne.Persistence.Datas.ObjectFieldData destination)
+		public global::ScheduleOne.Persistence.Datas.NumberFieldData StartThreshold;
+
+		public DryingRackConfigurationData(global::ScheduleOne.Persistence.Datas.StringFieldData name, global::ScheduleOne.Persistence.Datas.QualityFieldData targetquality, global::ScheduleOne.Persistence.Datas.ObjectFieldData destination, global::ScheduleOne.Persistence.Datas.NumberFieldData startThreshold)
 			: base(null)
 		{
 		}

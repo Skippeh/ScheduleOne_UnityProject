@@ -75,6 +75,9 @@ namespace ScheduleOne.Vehicles
 
 		public global::ScheduleOne.Map.POI POI;
 
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Graffiti.SpraySurface[] _spraySurfaces;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.Vehicles.PlayerPusher> pushers;
 
 		[global::UnityEngine.SerializeField]
@@ -124,12 +127,17 @@ namespace ScheduleOne.Vehicles
 		[global::UnityEngine.SerializeField]
 		protected float reverseMultiplier;
 
-		[global::UnityEngine.Header("Control overrides")]
+		[global::UnityEngine.HideInInspector]
 		public bool overrideControls;
 
+		[global::UnityEngine.HideInInspector]
 		public float throttleOverride;
 
+		[global::UnityEngine.HideInInspector]
 		public float steerOverride;
+
+		[global::UnityEngine.HideInInspector]
+		public bool handbrakeOverride;
 
 		[global::UnityEngine.Header("Storage settings")]
 		public global::ScheduleOne.Storage.StorageEntity Storage;
@@ -245,7 +253,6 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		[global::UnityEngine.HideInInspector]
 		public bool BrakesApplied
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
@@ -259,7 +266,6 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		[global::UnityEngine.HideInInspector]
 		public bool IsReversing
 		{
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
@@ -273,7 +279,7 @@ namespace ScheduleOne.Vehicles
 			}
 		}
 
-		public bool handbrakeApplied { get; protected set; }
+		public bool HandbrakeApplied { get; protected set; }
 
 		public float boundingBaseOffset => 0f;
 
@@ -394,6 +400,10 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		private void LateUpdate()
+		{
+		}
+
 		private void UpdateSpeedCalculation()
 		{
 		}
@@ -438,10 +448,6 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
-		public void ApplyHandbrake()
-		{
-		}
-
 		private void ApplyDownForce()
 		{
 		}
@@ -456,6 +462,24 @@ namespace ScheduleOne.Vehicles
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		private void SetSteeringAngle(float sa)
+		{
+		}
+
+		private void SetIsBraking(bool braking)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void SetIsBreaking_Server(bool braking)
+		{
+		}
+
+		private void SetIsReversing(bool reversing)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
+		private void SetIsReversing_Server(bool reversing)
 		{
 		}
 
@@ -635,6 +659,11 @@ namespace ScheduleOne.Vehicles
 			return null;
 		}
 
+		protected global::System.Collections.Generic.List<global::ScheduleOne.Persistence.Datas.SpraySurfaceData> GetSpraySurfaceData()
+		{
+			return null;
+		}
+
 		public string GetSaveString()
 		{
 			return null;
@@ -738,6 +767,30 @@ namespace ScheduleOne.Vehicles
 		}
 
 		private void RpcReader___Server_SetSteeringAngle_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_SetIsBreaking_Server_1140765316(bool braking)
+		{
+		}
+
+		private void RpcLogic___SetIsBreaking_Server_1140765316(bool braking)
+		{
+		}
+
+		private void RpcReader___Server_SetIsBreaking_Server_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_SetIsReversing_Server_1140765316(bool reversing)
+		{
+		}
+
+		private void RpcLogic___SetIsReversing_Server_1140765316(bool reversing)
+		{
+		}
+
+		private void RpcReader___Server_SetIsReversing_Server_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

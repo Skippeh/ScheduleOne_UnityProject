@@ -72,7 +72,7 @@ namespace ScheduleOne.Product
 			return 0f;
 		}
 
-		public float GetSimilarity(global::ScheduleOne.Product.ProductDefinition other, global::ScheduleOne.ItemFramework.EQuality quality)
+		public float GetSimilarity(global::ScheduleOne.Product.ProductDefinition other, global::ScheduleOne.ItemFramework.EQuality otherQuality)
 		{
 			return 0f;
 		}
@@ -96,6 +96,11 @@ namespace ScheduleOne.Product
 		public override float GetMonetaryValue()
 		{
 			return 0f;
+		}
+
+		public override int GetTotalAmount()
+		{
+			return 0;
 		}
 	}
 }

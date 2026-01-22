@@ -272,6 +272,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		protected virtual void OnUncappedMinPass()
+		{
+		}
+
 		protected virtual void OnTick()
 		{
 		}
@@ -405,7 +409,7 @@ namespace ScheduleOne.NPCs
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		[global::FishNet.Object.TargetRpc]
-		public void SetEquippable_Networked(global::FishNet.Connection.NetworkConnection conn, string assetPath)
+		public void SetEquippable_Client(global::FishNet.Connection.NetworkConnection conn, string assetPath)
 		{
 		}
 
@@ -795,23 +799,23 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Observers_SetEquippable_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
+		private void RpcWriter___Observers_SetEquippable_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
 		{
 		}
 
-		public void RpcLogic___SetEquippable_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
+		public void RpcLogic___SetEquippable_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
 		{
 		}
 
-		private void RpcReader___Observers_SetEquippable_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetEquippable_Client_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
-		private void RpcWriter___Target_SetEquippable_Networked_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
+		private void RpcWriter___Target_SetEquippable_Client_2971853958(global::FishNet.Connection.NetworkConnection conn, string assetPath)
 		{
 		}
 
-		private void RpcReader___Target_SetEquippable_Networked_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Target_SetEquippable_Client_2971853958(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

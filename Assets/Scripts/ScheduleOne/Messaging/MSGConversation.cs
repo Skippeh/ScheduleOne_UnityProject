@@ -137,6 +137,10 @@ namespace ScheduleOne.Messaging
 		{
 		}
 
+		public void DisplayRelationshipInfo()
+		{
+		}
+
 		protected virtual void RenderMessage(global::ScheduleOne.Messaging.Message m)
 		{
 		}

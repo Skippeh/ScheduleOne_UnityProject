@@ -20,6 +20,9 @@ namespace ScheduleOne.Cartel
 
 		public global::ScheduleOne.Cartel.CartelDealer CartelDealer;
 
+		[global::UnityEngine.Header("Development & Debugging")]
+		public int _debugActivityIndex;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ECartel_002ECartelRegionActivitiesAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ECartel_002ECartelRegionActivitiesAssembly_002DCSharp_002Edll_Excuted;
@@ -45,6 +48,15 @@ namespace ScheduleOne.Cartel
 		}
 
 		private void TryStartActivity()
+		{
+		}
+
+		[global::EasyButtons.Button]
+		public void StartActivity()
+		{
+		}
+
+		private void StartAcivity(int activityIndex)
 		{
 		}
 

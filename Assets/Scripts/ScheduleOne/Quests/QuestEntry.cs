@@ -99,6 +99,10 @@ namespace ScheduleOne.Quests
 		{
 		}
 
+		public virtual void SetPoIColor(string componentName, string colourName)
+		{
+		}
+
 		public void SetPoILocation(global::UnityEngine.Vector3 location)
 		{
 		}

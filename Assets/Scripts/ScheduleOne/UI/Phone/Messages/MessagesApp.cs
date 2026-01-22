@@ -37,6 +37,10 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::ScheduleOne.UI.Tooltips.Tooltip relationshipTooltip;
 
+		public global::UnityEngine.RectTransform debtContainer;
+
+		public global::UnityEngine.UI.Text debtLabel;
+
 		public global::UnityEngine.RectTransform standardsContainer;
 
 		public global::UnityEngine.UI.Image standardsStar;
