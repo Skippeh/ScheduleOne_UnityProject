@@ -20,10 +20,6 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		protected override void OnMinPass()
-		{
-		}
-
 		private void HourPass()
 		{
 		}

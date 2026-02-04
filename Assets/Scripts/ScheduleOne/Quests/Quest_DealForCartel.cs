@@ -16,7 +16,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		protected override void OnMinPass()
+		protected override void OnUncappedMinPass()
 		{
 		}
 

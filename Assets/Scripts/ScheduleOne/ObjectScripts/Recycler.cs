@@ -143,7 +143,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void MinPass()
+		private void OnTick()
 		{
 		}
 

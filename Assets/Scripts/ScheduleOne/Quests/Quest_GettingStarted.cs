@@ -7,13 +7,5 @@ namespace ScheduleOne.Quests
 		public global::ScheduleOne.Economy.DeadDrop CashDrop;
 
 		public global::ScheduleOne.NPCs.CharacterClasses.UncleNelson Nelson;
-
-		protected override void OnMinPass()
-		{
-		}
-
-		public override void SetQuestState(global::ScheduleOne.Quests.EQuestState state, bool network = true)
-		{
-		}
 	}
 }

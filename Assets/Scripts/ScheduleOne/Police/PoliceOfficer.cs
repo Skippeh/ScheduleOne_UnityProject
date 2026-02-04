@@ -22,8 +22,6 @@ namespace ScheduleOne.Police
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> Officers;
 
-		public global::ScheduleOne.Vehicles.LandVehicle AssignedVehicle;
-
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.NPCs.Behaviour.PursuitBehaviour PursuitBehaviour;
 
@@ -85,13 +83,39 @@ namespace ScheduleOne.Police
 
 		private global::ScheduleOne.Police.Investigation currentBodySearchInvestigation;
 
-		private bool generalCrimeResponseActive;
+		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CIgnorePlayers_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EPolice_002EPoliceOfficerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EPolice_002EPoliceOfficerAssembly_002DCSharp_002Edll_Excuted;
 
+		public bool IgnorePlayers
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return false;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			private set
+			{
+			}
+		}
+
 		public global::FishNet.Object.NetworkObject PursuitTarget => null;
+
+		public global::ScheduleOne.Vehicles.LandVehicle AssignedVehicle { get; set; }
+
+		public bool SyncAccessor__003CIgnorePlayers_003Ek__BackingField
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
 
 		public override void Awake()
 		{
@@ -138,10 +162,6 @@ namespace ScheduleOne.Police
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void BeginVehiclePursuit(string playerCode, global::FishNet.Object.NetworkObject vehicle, bool beginAsSighted)
-		{
-		}
-
-		public void BeginBodySearch_LocalPlayer()
 		{
 		}
 
@@ -217,7 +237,8 @@ namespace ScheduleOne.Police
 			return null;
 		}
 
-		private new void OnDie()
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void SetIgnorePlayers(bool ignore)
 		{
 		}
 
@@ -246,11 +267,11 @@ namespace ScheduleOne.Police
 		{
 		}
 
-		private void StartBodySearchInvestigation(global::ScheduleOne.PlayerScripts.Player player)
+		private void StopBodySearchInvestigation()
 		{
 		}
 
-		private void StopBodySearchInvestigation()
+		public void BodySearchLocalPlayer()
 		{
 		}
 
@@ -357,6 +378,23 @@ namespace ScheduleOne.Police
 
 		private void RpcReader___Observers_AssignToCheckpoint_4087078542(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
+		}
+
+		private void RpcWriter___Server_SetIgnorePlayers_1140765316(bool ignore)
+		{
+		}
+
+		public void RpcLogic___SetIgnorePlayers_1140765316(bool ignore)
+		{
+		}
+
+		private void RpcReader___Server_SetIgnorePlayers_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		public virtual bool ReadSyncVar___ScheduleOne_002EPolice_002EPoliceOfficer(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		{
+			return false;
 		}
 
 		protected virtual void Awake_UserLogic_ScheduleOne_002EPolice_002EPoliceOfficer_Assembly_002DCSharp_002Edll()

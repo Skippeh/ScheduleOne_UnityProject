@@ -8,7 +8,7 @@ namespace ScheduleOne.Quests
 
 		public float LifetimeEarningsRequirement;
 
-		protected override void OnMinPass()
+		protected override void OnUncappedMinPass()
 		{
 		}
 	}

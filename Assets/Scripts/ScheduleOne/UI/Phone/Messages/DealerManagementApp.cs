@@ -127,7 +127,7 @@ namespace ScheduleOne.UI.Phone.Messages
 		{
 		}
 
-		private void SetDropDown()
+		private void RefreshDropdown()
 		{
 		}
 

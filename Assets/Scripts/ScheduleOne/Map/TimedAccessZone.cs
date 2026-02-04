@@ -11,7 +11,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		protected virtual void MinPass()
+		protected virtual void OnUncappedMinPass()
 		{
 		}
 

@@ -6,7 +6,7 @@ namespace ScheduleOne.Quests
 
 		public global::ScheduleOne.Quests.QuestEntry ReachCustomersEntry;
 
-		protected override void OnMinPass()
+		protected override void OnUncappedMinPass()
 		{
 		}
 	}

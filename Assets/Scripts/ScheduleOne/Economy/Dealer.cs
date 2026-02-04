@@ -2,6 +2,12 @@ namespace ScheduleOne.Economy
 {
 	public class Dealer : global::ScheduleOne.NPCs.NPC, global::ScheduleOne.ItemFramework.IItemSlotOwner
 	{
+		private enum EAmountSortOrder
+		{
+			LowToHigh = 0,
+			HighToLow = 1
+		}
+
 		public const int MAX_CUSTOMERS = 10;
 
 		public const int DEAL_ARRIVAL_DELAY = 30;
@@ -18,7 +24,7 @@ namespace ScheduleOne.Economy
 
 		public static global::UnityEngine.Color32 DealerLabelColor;
 
-		public const int NegativeQualityTolerance = -1;
+		public const int NegativeQualityTolerance = -2;
 
 		public const int PositiveQualityTolerance = 5;
 
@@ -293,11 +299,6 @@ namespace ScheduleOne.Economy
 		}
 
 		[global::EasyButtons.Button]
-		public void TestGetAvailableProducts()
-		{
-		}
-
-		[global::EasyButtons.Button]
 		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Product.ProductDefinition, global::ScheduleOne.ItemFramework.EQuality, int>> GetAvailableProducts()
 		{
 			return null;
@@ -339,7 +340,11 @@ namespace ScheduleOne.Economy
 			return null;
 		}
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> FilterAndSortSlots(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> slots, string productID, global::ScheduleOne.ItemFramework.EQuality productQuality)
+		private void SplitItemSlot(global::ScheduleOne.ItemFramework.ItemSlot slot)
+		{
+		}
+
+		private global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> FilterAndSortSlots(global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> slots, string productID, global::ScheduleOne.ItemFramework.EQuality productQuality, global::ScheduleOne.Economy.Dealer.EAmountSortOrder amountSortOrder)
 		{
 			return null;
 		}

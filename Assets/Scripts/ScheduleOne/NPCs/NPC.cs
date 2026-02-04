@@ -98,10 +98,6 @@ namespace ScheduleOne.NPCs
 
 		public global::System.Action<bool> onVisibilityChanged;
 
-		[global::UnityEngine.HideInInspector]
-		[global::FishNet.Object.Synchronizing.SyncVar]
-		public global::FishNet.Object.NetworkObject PlayerConversant;
-
 		private global::UnityEngine.Coroutine resetUnsettledCoroutine;
 
 		private global::System.Collections.Generic.List<int> impactHistory;
@@ -113,8 +109,6 @@ namespace ScheduleOne.NPCs
 		protected float defaultAggression;
 
 		private global::UnityEngine.Coroutine lerpScaleRoutine;
-
-		public global::FishNet.Object.Synchronizing.SyncVar<global::FishNet.Object.NetworkObject> syncVar___PlayerConversant;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCAssembly_002DCSharp_002Edll_Excuted;
 
@@ -178,17 +172,6 @@ namespace ScheduleOne.NPCs
 
 		public float TimeSincePanicked { get; protected set; }
 
-		public global::FishNet.Object.NetworkObject SyncAccessor_PlayerConversant
-		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
-
 		global::FishNet.Object.NetworkObject global::ScheduleOne.Combat.ICombatTargetable.NetworkObject => null;
 
 		global::UnityEngine.GameObject global::ScheduleOne.Combat.IDamageable.gameObject => null;
@@ -244,10 +227,6 @@ namespace ScheduleOne.NPCs
 		}
 
 		public void SendTextMessage(string message)
-		{
-		}
-
-		protected override void OnValidate()
 		{
 		}
 
@@ -364,11 +343,6 @@ namespace ScheduleOne.NPCs
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		public void ShowWorldSpaceDialogue(string text, float duration)
-		{
-		}
-
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SetConversant(global::FishNet.Object.NetworkObject player)
 		{
 		}
 
@@ -755,18 +729,6 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Server_SetConversant_3323014238(global::FishNet.Object.NetworkObject player)
-		{
-		}
-
-		public void RpcLogic___SetConversant_3323014238(global::FishNet.Object.NetworkObject player)
-		{
-		}
-
-		private void RpcReader___Server_SetConversant_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
 		private void RpcWriter___Observers_EnterBuilding_3905681115(global::FishNet.Connection.NetworkConnection connection, string buildingGUID, int doorIndex)
 		{
 		}
@@ -1061,11 +1023,6 @@ namespace ScheduleOne.NPCs
 
 		private void RpcReader___Observers_SetRelationship_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
-		}
-
-		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002ENPC(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
-		{
-			return false;
 		}
 
 		protected virtual void Awake_UserLogic_ScheduleOne_002ENPCs_002ENPC_Assembly_002DCSharp_002Edll()

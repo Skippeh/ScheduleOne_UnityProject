@@ -149,17 +149,17 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetMethDiscovered()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetCocaineDiscovered()
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetShroomsDiscovered()
 		{
 		}

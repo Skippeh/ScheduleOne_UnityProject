@@ -4,13 +4,15 @@ namespace ScheduleOne.DevUtilities
 	{
 		public const float SAMPLE_MAX_DISTANCE = 2f;
 
+		public const float SAMPLE_CACHE_MAX_DIST = 0.5f;
+
+		public const float SAMPLE_CACHE_MAX_SQR_DIST = 0.25f;
+
+		public const float MAX_CACHE_SIZE = 10000f;
+
 		public static global::System.Collections.Generic.Dictionary<global::UnityEngine.Vector3, global::UnityEngine.Vector3> SampleCache;
 
 		public static global::System.Collections.Generic.List<global::UnityEngine.Vector3> sampleCacheKeys;
-
-		public const float SAMPLE_CACHE_MAX_SQR_DIST = 1f;
-
-		public const float MAX_CACHE_SIZE = 10000f;
 
 		public static float GetPathLength(global::UnityEngine.AI.NavMeshPath path)
 		{
@@ -36,6 +38,10 @@ namespace ScheduleOne.DevUtilities
 		{
 			hit = default(global::UnityEngine.AI.NavMeshHit);
 			return false;
+		}
+
+		private static void CacheSampleResult(global::UnityEngine.Vector3 sourcePosition, global::UnityEngine.Vector3 hitPosition)
+		{
 		}
 
 		private static global::UnityEngine.Vector3 Quantize(global::UnityEngine.Vector3 position, float precision = 0.1f)

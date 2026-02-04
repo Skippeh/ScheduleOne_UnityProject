@@ -11,6 +11,8 @@ namespace ScheduleOne.Graffiti
 
 		private const int FixedPaintedPixelLimit = 25000;
 
+		private const int CanvasPadding = 12;
+
 		public global::ScheduleOne.Graffiti.SpraySurface SpraySurface;
 
 		public global::ScheduleOne.Interaction.InteractableObject IntObj;
@@ -66,10 +68,6 @@ namespace ScheduleOne.Graffiti
 		}
 
 		private void OnDestroy()
-		{
-		}
-
-		private void OnValidate()
 		{
 		}
 

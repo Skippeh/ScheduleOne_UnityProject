@@ -29,10 +29,6 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		public void Start()
-		{
-		}
-
 		private void OnDestroy()
 		{
 		}

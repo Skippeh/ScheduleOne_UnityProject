@@ -7,18 +7,15 @@ namespace ScheduleOne.Storage
 		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> storageTiles;
 
 		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.StorageTile> freeTiles;
-
-		[global::UnityEngine.HideInInspector]
 		public global::System.Collections.Generic.List<global::ScheduleOne.Storage.CoordinateStorageTilePair> coordinateStorageTilePairs;
 
-		protected global::System.Collections.Generic.Dictionary<global::ScheduleOne.Tiles.Coordinate, global::ScheduleOne.Storage.StorageTile> coordinateToTile;
+		private int _unoccupiedTileCount;
 
-		protected virtual void Awake()
-		{
-		}
+		private bool _unoccupiedTileCountDirty;
 
-		private void ProcessCoordinateTilePairs()
+		public int UnoccupiedTileCount => 0;
+
+		private void Awake()
 		{
 		}
 
@@ -30,19 +27,9 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		public bool IsItemPositionValid(global::ScheduleOne.Storage.StorageTile primaryTile, global::ScheduleOne.Tiles.FootprintTile primaryFootprintTile, global::ScheduleOne.Storage.StoredItem item)
-		{
-			return false;
-		}
-
 		public global::ScheduleOne.Tiles.Coordinate GetMatchedCoordinate(global::ScheduleOne.Tiles.FootprintTile tileToMatch)
 		{
 			return null;
-		}
-
-		public bool IsGridPositionValid(global::ScheduleOne.Tiles.Coordinate gridCoord, global::ScheduleOne.Tiles.FootprintTile tile)
-		{
-			return false;
 		}
 
 		public global::ScheduleOne.Storage.StorageTile GetTile(global::ScheduleOne.Tiles.Coordinate coord)
@@ -75,6 +62,15 @@ namespace ScheduleOne.Storage
 			originCoordinate = null;
 			rotation = default(float);
 			return false;
+		}
+
+		private int CalculateUnoccupiedTileCount()
+		{
+			return 0;
+		}
+
+		private void TileOccupantChanged()
+		{
 		}
 	}
 }

@@ -74,11 +74,6 @@ namespace ScheduleOne.Dialogue
 		{
 		}
 
-		public virtual bool CanBeginConversation()
-		{
-			return false;
-		}
-
 		public void OverrideShownDialogue(string _overrideText)
 		{
 		}

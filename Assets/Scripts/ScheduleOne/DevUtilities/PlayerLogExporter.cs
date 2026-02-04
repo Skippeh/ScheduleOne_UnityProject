@@ -2,7 +2,15 @@ namespace ScheduleOne.DevUtilities
 {
 	public class PlayerLogExporter : global::UnityEngine.MonoBehaviour
 	{
-		private static void ExportPlayerLog()
+		private static global::System.Action _onSuccess;
+
+		private static global::System.Text.RegularExpressions.Regex[] ExcludedRegexes;
+
+		public static void ExportPlayerLog(bool previous, global::System.Action onSuccess = null)
+		{
+		}
+
+		private static void SavePathSelected(string savePath, bool previous)
 		{
 		}
 
@@ -16,7 +24,7 @@ namespace ScheduleOne.DevUtilities
 			return null;
 		}
 
-		private static string GetLogPath()
+		public static string GetLogPath(bool previous)
 		{
 			return null;
 		}

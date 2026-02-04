@@ -133,6 +133,12 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
+		public bool IsDestinationValid(global::ScheduleOne.Management.TransitRoute route, global::ScheduleOne.ItemFramework.ItemInstance item, out string invalidReason)
+		{
+			invalidReason = null;
+			return false;
+		}
+
 		public bool CanGetToSource(global::ScheduleOne.Management.TransitRoute route)
 		{
 			return false;

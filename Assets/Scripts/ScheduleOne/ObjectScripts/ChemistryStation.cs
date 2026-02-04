@@ -276,7 +276,7 @@ namespace ScheduleOne.ObjectScripts
 		}
 
 		[global::FishNet.Object.ObserversRpc]
-		public void FinalizeOperation()
+		private void FinalizeOperation()
 		{
 		}
 
@@ -455,7 +455,7 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public void RpcLogic___FinalizeOperation_2166136261()
+		private void RpcLogic___FinalizeOperation_2166136261()
 		{
 		}
 

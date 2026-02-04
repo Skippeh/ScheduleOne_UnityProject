@@ -46,7 +46,7 @@ namespace ScheduleOne.Economy
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Economy.Customer> UnlockedCustomers;
 
-		public const int QualityTierTolerance = 1;
+		public const int QualityTierTolerance = 2;
 
 		public const int MaxOrderQuantityPerProduct = 1000;
 
@@ -259,10 +259,6 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		protected override void OnValidate()
-		{
-		}
-
 		private void Start()
 		{
 		}
@@ -305,6 +301,13 @@ namespace ScheduleOne.Economy
 
 		protected virtual void OnSleepStart()
 		{
+		}
+
+		public static void GetContractTimings(global::ScheduleOne.Quests.QuestWindowConfig dealWindow, out int softStartTime, out int hardStartTime, out int endTime)
+		{
+			softStartTime = default(int);
+			hardStartTime = default(int);
+			endTime = default(int);
 		}
 
 		private void UpdateDealAttendance()

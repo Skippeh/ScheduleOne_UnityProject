@@ -34,6 +34,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		public override void BehaviourUpdate()
+		{
+		}
+
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void StartCook()
 		{

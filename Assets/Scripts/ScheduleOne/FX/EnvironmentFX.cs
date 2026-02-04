@@ -1,12 +1,8 @@
 namespace ScheduleOne.FX
 {
-	[global::UnityEngine.ExecuteInEditMode]
 	public class EnvironmentFX : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.FX.EnvironmentFX>
 	{
 		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.WindZone windZone;
-
 		[global::UnityEngine.SerializeField]
 		protected global::Funly.SkyStudio.TimeOfDayController timeOfDayController;
 
@@ -86,21 +82,31 @@ namespace ScheduleOne.FX
 		[global::UnityEngine.SerializeField]
 		private float _testPercentage;
 
+		public global::ScheduleOne.Tools.FloatSmoother FogEndDistanceController;
+
 		private float _scrollTime;
 
 		private float _scrollValue;
 
 		private bool _scrollTActive;
 
-		private bool started;
+		private global::UnityEngine.Color _defaultDistantTreeMatColor;
 
-		public global::ScheduleOne.Tools.FloatSmoother FogEndDistanceController;
+		private global::UnityEngine.Color _defaultGrassMatColor;
 
 		public float normalizedEnvironmentalBrightness => 0f;
 
 		public float FogEndDistanceMultiplier => 0f;
 
+		protected override void Awake()
+		{
+		}
+
 		protected override void Start()
+		{
+		}
+
+		protected override void OnDestroy()
 		{
 		}
 
@@ -117,10 +123,6 @@ namespace ScheduleOne.FX
 		}
 
 		public void SetEnvironmentScrollingSpeedByPercentage(float percentage)
-		{
-		}
-
-		protected override void OnDestroy()
 		{
 		}
 	}

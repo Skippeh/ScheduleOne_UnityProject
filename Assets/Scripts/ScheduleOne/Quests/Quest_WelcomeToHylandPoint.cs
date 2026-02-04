@@ -17,7 +17,7 @@ namespace ScheduleOne.Quests
 
 		private float cameraLookTime;
 
-		protected override void OnMinPass()
+		protected override void OnUncappedMinPass()
 		{
 		}
 

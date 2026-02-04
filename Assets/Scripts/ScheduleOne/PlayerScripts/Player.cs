@@ -466,10 +466,6 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		protected virtual void Start()
-		{
-		}
-
 		protected virtual void OnDestroy()
 		{
 		}

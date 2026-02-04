@@ -53,6 +53,10 @@ namespace ScheduleOne.NPCs.Schedules
 		{
 		}
 
+		private void CheckWarp()
+		{
+		}
+
 		public override void Interrupt()
 		{
 		}

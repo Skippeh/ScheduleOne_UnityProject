@@ -11,9 +11,5 @@ namespace ScheduleOne.Quests
 		private void SupplierUnlocked(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType unlockType, bool notify)
 		{
 		}
-
-		protected override void OnMinPass()
-		{
-		}
 	}
 }
