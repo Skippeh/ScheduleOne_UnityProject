@@ -2,11 +2,21 @@ namespace ScheduleOne.Audio
 {
 	public class HeartbeatSoundController : global::UnityEngine.MonoBehaviour
 	{
-		public global::ScheduleOne.Audio.AudioSourceController sound;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("VolumeController")]
+		private global::ScheduleOne.Tools.FloatSmoother _volumeController;
 
-		public global::ScheduleOne.Tools.FloatSmoother VolumeController;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("PitchController")]
+		private global::ScheduleOne.Tools.FloatSmoother _pitchController;
 
-		public global::ScheduleOne.Tools.FloatSmoother PitchController;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("sound")]
+		private global::ScheduleOne.Audio.AudioSourceController _sound;
+
+		public global::ScheduleOne.Tools.FloatSmoother VolumeController => null;
+
+		public global::ScheduleOne.Tools.FloatSmoother PitchController => null;
 
 		private void Awake()
 		{

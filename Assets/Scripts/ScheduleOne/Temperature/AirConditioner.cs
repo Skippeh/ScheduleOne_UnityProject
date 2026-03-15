@@ -108,17 +108,17 @@ namespace ScheduleOne.Temperature
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetOff()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetCooling()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetHeating()
 		{
 		}

@@ -13,6 +13,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.RectTransform Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::UnityEngine.RectTransform MenuContainer;
 
 		public global::TMPro.TextMeshProUGUI CurrentTimeLabel;

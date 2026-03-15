@@ -29,7 +29,7 @@ namespace ScheduleOne.Storage
 
 		public bool HasChanged { get; set; }
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}

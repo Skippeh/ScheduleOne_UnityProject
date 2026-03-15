@@ -103,7 +103,7 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void HandleInteracted()
 		{
 		}
@@ -163,7 +163,7 @@ namespace ScheduleOne.Casino
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SimulateMany()
 		{
 		}

@@ -37,6 +37,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		private void OnNPCVisibilityChanged(bool visible)
+		{
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}

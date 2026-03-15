@@ -37,6 +37,9 @@ namespace ScheduleOne.Management
 
 		public global::UnityEngine.UI.Button RenameButton;
 
+		[global::UnityEngine.Header("Screen")]
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Management.ManagementInterface.ConfigurableTypePanel[] ConfigPanelPrefabs;
 
@@ -48,7 +51,7 @@ namespace ScheduleOne.Management
 
 		public global::ScheduleOne.Tools.ManagementClipboard_Equippable EquippedClipboard { get; protected set; }
 
-		protected override void Start()
+		protected override void Awake()
 		{
 		}
 

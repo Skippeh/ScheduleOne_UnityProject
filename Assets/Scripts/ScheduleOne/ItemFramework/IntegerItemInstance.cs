@@ -4,11 +4,8 @@ namespace ScheduleOne.ItemFramework
 	{
 		public int Value;
 
-		public IntegerItemInstance()
-		{
-		}
-
 		public IntegerItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, int value)
+			: base(null, 0)
 		{
 		}
 
@@ -28,6 +25,14 @@ namespace ScheduleOne.ItemFramework
 		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
 		{
 			return null;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

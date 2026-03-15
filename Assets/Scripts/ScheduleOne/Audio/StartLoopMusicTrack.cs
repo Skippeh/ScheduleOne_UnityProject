@@ -8,7 +8,11 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		public override void Update()
+		private void Start()
+		{
+		}
+
+		protected override void Update()
 		{
 		}
 

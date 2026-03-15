@@ -45,6 +45,8 @@ namespace Funly.SkyStudio
 
 		private bool m_DidInitialUpdate;
 
+		private global::ScheduleOne.Weather.SkyProfileFrame _skyProfileFrame;
+
 		public static global::Funly.SkyStudio.TimeOfDayController instance { get; private set; }
 
 		public global::Funly.SkyStudio.SkyProfile skyProfile
@@ -70,6 +72,19 @@ namespace Funly.SkyStudio
 		}
 
 		public global::Funly.SkyStudio.SkyMaterialController SkyMaterial => null;
+
+		public bool UseEnvironmentProfileStack { get; set; }
+
+		public global::ScheduleOne.Weather.SkyProfileFrame SkyProfileFrame
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
 
 		public float timeOfDay => 0f;
 

@@ -14,12 +14,12 @@ namespace ScheduleOne.Effects.MixMaps
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void CreateEffectPrefabs()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public global::ScheduleOne.Effects.MixMaps.MixMapEffect GetEffect(global::ScheduleOne.Effects.Effect effect)
 		{
 			return null;

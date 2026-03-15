@@ -3,7 +3,7 @@ namespace ScheduleOne.UI.Phone
 	public class Phone : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.Phone>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetIsHorizontal_Process_003Ed__50 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetIsHorizontal_Process_003Ed__48 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -40,7 +40,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetIsHorizontal_Process_003Ed__50(int _003C_003E1__state)
+			public _003CSetIsHorizontal_Process_003Ed__48(int _003C_003E1__state)
 			{
 			}
 
@@ -67,7 +67,7 @@ namespace ScheduleOne.UI.Phone
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSetLookOffset_Process_003Ed__54 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSetLookOffset_Process_003Ed__52 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -104,7 +104,7 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSetLookOffset_Process_003Ed__54(int _003C_003E1__state)
+			public _003CSetLookOffset_Process_003Ed__52(int _003C_003E1__state)
 			{
 			}
 
@@ -131,10 +131,6 @@ namespace ScheduleOne.UI.Phone
 		}
 
 		public static global::UnityEngine.GameObject ActiveApp;
-
-		public global::ScheduleOne.ScriptableObjects.PhoneCallData testData;
-
-		public global::ScheduleOne.ScriptableObjects.CallerID testCalller;
 
 		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
@@ -233,7 +229,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__50))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetIsHorizontal_Process_003Ed__48))]
 		protected global::System.Collections.IEnumerator SetIsHorizontal_Process(bool h)
 		{
 			return null;
@@ -247,7 +243,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__54))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Phone._003CSetLookOffset_Process_003Ed__52))]
 		protected global::System.Collections.IEnumerator SetLookOffset_Process(float lookOffset)
 		{
 			return null;

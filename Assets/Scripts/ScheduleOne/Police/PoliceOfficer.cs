@@ -73,7 +73,7 @@ namespace ScheduleOne.Police
 		public float BodySearchDuration;
 
 		[global::UnityEngine.HideInInspector]
-		public global::ScheduleOne.AvatarFramework.Customization.PoliceBelt belt;
+		public global::ScheduleOne.AvatarFramework.PoliceBelt belt;
 
 		private float timeSinceReadyToPool;
 

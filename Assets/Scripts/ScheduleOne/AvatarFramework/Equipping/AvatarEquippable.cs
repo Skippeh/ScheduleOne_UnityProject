@@ -30,7 +30,7 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		protected global::ScheduleOne.AvatarFramework.Avatar avatar;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RecalculateAssetPath()
 		{
 		}

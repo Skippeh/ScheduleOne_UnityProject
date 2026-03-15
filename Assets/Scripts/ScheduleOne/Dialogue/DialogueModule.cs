@@ -25,5 +25,10 @@ namespace ScheduleOne.Dialogue
 		{
 			return null;
 		}
+
+		public bool HasLine(string key)
+		{
+			return false;
+		}
 	}
 }

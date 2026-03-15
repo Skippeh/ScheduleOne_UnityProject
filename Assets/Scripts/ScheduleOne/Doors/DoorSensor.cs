@@ -35,10 +35,6 @@ namespace ScheduleOne.Doors
 		{
 		}
 
-		private void FixedUpdate()
-		{
-		}
-
 		private void RemoveInvalidContacts()
 		{
 		}

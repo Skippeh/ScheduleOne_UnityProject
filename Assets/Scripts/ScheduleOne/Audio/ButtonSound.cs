@@ -5,28 +5,33 @@ namespace ScheduleOne.Audio
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
 	public class ButtonSound : global::UnityEngine.MonoBehaviour
 	{
-		public global::ScheduleOne.Audio.AudioSourceController AudioSource;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("PlaySoundOnClickStart")]
+		private bool _playSoundOnClickStart;
 
-		public global::UnityEngine.EventSystems.EventTrigger EventTrigger;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("HoverClip")]
+		private global::UnityEngine.AudioClip _hoverClip;
 
-		public bool PlaySoundOnClickStart;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("HoverSoundVolume")]
+		private float _hoverVolume;
 
-		[global::UnityEngine.Header("Clips")]
-		public global::UnityEngine.AudioClip HoverClip;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("ClickClip")]
+		private global::UnityEngine.AudioClip _clickClip;
 
-		public float HoverSoundVolume;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("ClickSoundVolume")]
+		private float _clickVolume;
 
-		public global::UnityEngine.AudioClip ClickClip;
+		private global::ScheduleOne.Audio.AudioSourceController _audioSource;
 
-		public float ClickSoundVolume;
+		private global::UnityEngine.UI.Button _button;
 
-		private global::UnityEngine.UI.Button Button;
+		private global::UnityEngine.EventSystems.EventTrigger _eventTrigger;
 
 		public void Awake()
-		{
-		}
-
-		private void OnValidate()
 		{
 		}
 

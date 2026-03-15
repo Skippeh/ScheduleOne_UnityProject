@@ -6,11 +6,8 @@ namespace ScheduleOne.Storage
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public virtual global::ScheduleOne.Storage.StoredItem StoredItem => null;
 
-		public StorableItemInstance()
-		{
-		}
-
 		public StorableItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+			: base(null, 0)
 		{
 		}
 

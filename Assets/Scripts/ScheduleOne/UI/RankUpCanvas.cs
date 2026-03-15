@@ -12,6 +12,10 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.Canvas Canvas;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
+		public global::ScheduleOne.UIPanel LevelUpPanel;
+
 		public global::UnityEngine.GameObject UnlockedItemsContainer;
 
 		public global::UnityEngine.CanvasGroup UnlockedItemsCanvasGroup;

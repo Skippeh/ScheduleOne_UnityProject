@@ -8,7 +8,7 @@ namespace ScheduleOne.UI.Settings
 
 		public global::ScheduleOne.Audio.EAudioType AudioType;
 
-		protected virtual void Start()
+		protected virtual void OnEnable()
 		{
 		}
 

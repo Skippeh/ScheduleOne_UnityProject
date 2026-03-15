@@ -1,6 +1,6 @@
 namespace ScheduleOne.PlayerScripts
 {
-	public class PlayerInventory : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerInventory>
+	public class PlayerInventory : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerInventory>, global::ScheduleOne.Core.Equipping.Framework.IFirstPersonReferencesProvider
 	{
 		[global::System.Serializable]
 		public class ItemVariable
@@ -67,7 +67,15 @@ namespace ScheduleOne.PlayerScripts
 
 		protected float currentDiscardTime;
 
+		protected global::ScheduleOne.UIScreen attachedScreen;
+
+		protected global::ScheduleOne.UIPanel uiPanel;
+
+		protected global::ScheduleOne.UIPanel originalSelectedPanel;
+
 		public int TOTAL_SLOT_COUNT => 0;
+
+		public global::UnityEngine.Transform EquipContainer => null;
 
 		public global::ScheduleOne.Money.CashSlot cashSlot { get; private set; }
 
@@ -87,6 +95,8 @@ namespace ScheduleOne.PlayerScripts
 		public bool HotbarEnabled { get; protected set; }
 
 		public bool EquippingEnabled { get; protected set; }
+
+		public bool HolsterEnabled { get; set; }
 
 		public global::ScheduleOne.Equipping.Equippable equippable { get; protected set; }
 
@@ -138,6 +148,14 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void SetEquippingEnabled(bool enabled)
+		{
+		}
+
+		public void AttachToScreen(global::ScheduleOne.UIScreen screen)
+		{
+		}
+
+		public void DetachFromScreen()
 		{
 		}
 

@@ -31,7 +31,7 @@ namespace ScheduleOne.AvatarFramework
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void GenerateMugshot()
 		{
 		}

@@ -2,9 +2,11 @@ namespace ScheduleOne.UI.Settings
 {
 	public class GameSettingsWindow : global::UnityEngine.MonoBehaviour
 	{
-		public global::UnityEngine.UI.Toggle ConsoleToggle;
+		public global::ScheduleOne.UIToggle ConsoleToggle;
 
 		public global::UnityEngine.GameObject Blocker;
+
+		public global::ScheduleOne.UIPanel uiPanel;
 
 		private void Awake()
 		{

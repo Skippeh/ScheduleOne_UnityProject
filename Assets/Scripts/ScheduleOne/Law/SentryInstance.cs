@@ -3,7 +3,7 @@ namespace ScheduleOne.Law
 	[global::System.Serializable]
 	public class SentryInstance
 	{
-		public global::ScheduleOne.Law.SentryLocation Location;
+		public global::ScheduleOne.Law.SentryLocation[] _potentialLocations;
 
 		public int Members;
 
@@ -17,7 +17,9 @@ namespace ScheduleOne.Law
 
 		public bool OnlyIfCurfewEnabled;
 
-		private global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> officers;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> _activeOfficers;
+
+		private global::ScheduleOne.Law.SentryLocation _activeLocation;
 
 		public void Evaluate()
 		{
@@ -33,6 +35,11 @@ namespace ScheduleOne.Law
 
 		public void EndSentry()
 		{
+		}
+
+		private global::ScheduleOne.Law.SentryLocation GetRandomUnoccupiedLocation()
+		{
+			return null;
 		}
 	}
 }

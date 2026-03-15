@@ -169,6 +169,58 @@ namespace ScheduleOne
 			}
 		}
 
+		public class SetWeather : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
+		public class SetWeatherSpeed : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
+		public class TriggerLightning : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
+		public class TriggerDistantThunder : global::ScheduleOne.Console.ConsoleCommand
+		{
+			public override string CommandWord => null;
+
+			public override string CommandDescription => null;
+
+			public override string ExampleUsage => null;
+
+			public override void Execute(global::System.Collections.Generic.List<string> args)
+			{
+			}
+		}
+
 		public class RaisedWanted : global::ScheduleOne.Console.ConsoleCommand
 		{
 			public override string CommandWord => null;
@@ -708,6 +760,10 @@ namespace ScheduleOne
 		}
 
 		protected override void Awake()
+		{
+		}
+
+		private void AddCommand(global::ScheduleOne.Console.ConsoleCommand command)
 		{
 		}
 

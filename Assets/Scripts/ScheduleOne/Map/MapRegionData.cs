@@ -25,7 +25,7 @@ namespace ScheduleOne.Map
 
 		public global::ScheduleOne.Map.MapRegionData.RegionContainer[] AdjacentRegions;
 
-		public global::ScheduleOne.Audio.Zone RegionBounds;
+		public global::ScheduleOne.Audio.PolygonalZone RegionBounds;
 
 		public bool IsUnlocked { get; private set; }
 

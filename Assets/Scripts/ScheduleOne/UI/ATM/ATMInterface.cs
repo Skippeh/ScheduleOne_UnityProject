@@ -3,7 +3,7 @@ namespace ScheduleOne.UI.ATM
 	public class ATMInterface : global::UnityEngine.MonoBehaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CProcessTransaction_003Ed__56 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CProcessTransaction_003Ed__60 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -34,7 +34,7 @@ namespace ScheduleOne.UI.ATM
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CProcessTransaction_003Ed__56(int _003C_003E1__state)
+			public _003CProcessTransaction_003Ed__60(int _003C_003E1__state)
 			{
 			}
 
@@ -138,6 +138,19 @@ namespace ScheduleOne.UI.ATM
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.UI.Button doneButton;
 
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen UIScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIContentPanel MenuPanel;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIContentPanel AmountSelectorPanel;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIContentPanel SuccessPanel;
+
 		private global::UnityEngine.RectTransform activeScreen;
 
 		public static int[] amounts;
@@ -231,7 +244,7 @@ namespace ScheduleOne.UI.ATM
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.ATM.ATMInterface._003CProcessTransaction_003Ed__56))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.ATM.ATMInterface._003CProcessTransaction_003Ed__60))]
 		protected global::System.Collections.IEnumerator ProcessTransaction(float amount, bool depositing)
 		{
 			return null;

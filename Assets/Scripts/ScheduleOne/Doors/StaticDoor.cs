@@ -13,6 +13,10 @@ namespace ScheduleOne.Doors
 
 		public global::ScheduleOne.Audio.AudioSourceController KnockSound;
 
+		public global::ScheduleOne.Audio.AudioSourceController EnterSound;
+
+		public global::ScheduleOne.Audio.AudioSourceController ExitSound;
+
 		public global::ScheduleOne.Map.NPCEnterableBuilding Building;
 
 		[global::UnityEngine.Header("Settings")]

@@ -116,17 +116,17 @@ namespace ScheduleOne.Heatmap
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void TurnOnAllHeatmaps()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void TurnOffAllHeatmaps()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RunDispatchHeatmap()
 		{
 		}

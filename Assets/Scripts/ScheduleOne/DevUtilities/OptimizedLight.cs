@@ -18,6 +18,9 @@ namespace ScheduleOne.DevUtilities
 
 		public global::UnityEngine.Light _Light;
 
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.Rendering.LensFlareComponentSRP _lensFlare;
+
 		private bool culled;
 
 		private float maxDistanceSquared;

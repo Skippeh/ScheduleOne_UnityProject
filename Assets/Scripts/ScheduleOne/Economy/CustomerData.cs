@@ -71,17 +71,17 @@ namespace ScheduleOne.Economy
 			return 0f;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RandomizeAffinities()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RandomizeFavouriteEffects()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RandomizeTiming()
 		{
 		}

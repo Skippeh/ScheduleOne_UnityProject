@@ -38,7 +38,7 @@ namespace ScheduleOne.Growing
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Harvest()
 		{
 		}

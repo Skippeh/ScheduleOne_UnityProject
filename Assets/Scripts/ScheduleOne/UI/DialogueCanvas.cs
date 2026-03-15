@@ -3,7 +3,7 @@ namespace ScheduleOne.UI
 	public class DialogueCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.DialogueCanvas>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CChoiceSelectionResidual_003Ed__23 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CChoiceSelectionResidual_003Ed__26 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -38,7 +38,7 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CChoiceSelectionResidual_003Ed__23(int _003C_003E1__state)
+			public _003CChoiceSelectionResidual_003Ed__26(int _003C_003E1__state)
 			{
 			}
 
@@ -65,7 +65,7 @@ namespace ScheduleOne.UI
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRolloutDialogue_003Ed__21 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CRolloutDialogue_003Ed__23 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -102,7 +102,115 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CRolloutDialogue_003Ed__21(int _003C_003E1__state)
+			public _003CRolloutDialogue_003Ed__23(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CSelectPanel_003Ed__24 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.DialogueCanvas _003C_003E4__this;
+
+			public global::ScheduleOne.UISelectable selectable;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CSelectPanel_003Ed__24(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CUnlockPlayer_003Ed__29 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CUnlockPlayer_003Ed__29(int _003C_003E1__state)
 			{
 			}
 
@@ -147,6 +255,13 @@ namespace ScheduleOne.UI
 		[global::UnityEngine.SerializeField]
 		protected global::System.Collections.Generic.List<global::ScheduleOne.UI.DialogueChoiceEntry> dialogueChoices;
 
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen uiScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIPanel uiPanel;
+
 		private global::ScheduleOne.Dialogue.DialogueHandler currentHandler;
 
 		private global::ScheduleOne.Dialogue.DialogueNodeData currentNode;
@@ -189,13 +304,19 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CRolloutDialogue_003Ed__21))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CRolloutDialogue_003Ed__23))]
 		protected global::System.Collections.IEnumerator RolloutDialogue(string text, global::System.Collections.Generic.List<global::ScheduleOne.Dialogue.DialogueChoiceData> choices)
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CChoiceSelectionResidual_003Ed__23))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CSelectPanel_003Ed__24))]
+		private global::System.Collections.IEnumerator SelectPanel(global::ScheduleOne.UISelectable selectable)
+		{
+			return null;
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CChoiceSelectionResidual_003Ed__26))]
 		private global::System.Collections.IEnumerator ChoiceSelectionResidual(global::ScheduleOne.UI.DialogueChoiceEntry choice, float fadeTime)
 		{
 			return null;
@@ -207,6 +328,12 @@ namespace ScheduleOne.UI
 
 		public void EndDialogue()
 		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.DialogueCanvas._003CUnlockPlayer_003Ed__29))]
+		private global::System.Collections.IEnumerator UnlockPlayer()
+		{
+			return null;
 		}
 
 		public void ChoiceSelected(int choiceIndex)

@@ -1,16 +1,14 @@
 namespace ScheduleOne.DevUtilities
 {
-	public class MapHeightSampler
+	public static class MapHeightSampler
 	{
-		private static float SampleHeight;
+		private const float SampleHeight = 100f;
 
-		private static float SampleDistance;
+		private const float SampleDistance = 200f;
 
-		public static global::UnityEngine.Vector3 ResetPosition;
-
-		public static bool Sample(float x, out float y, float z)
+		public static bool TrySample(float x, float z, out global::UnityEngine.Vector3 hitPoint)
 		{
-			y = default(float);
+			hitPoint = default(global::UnityEngine.Vector3);
 			return false;
 		}
 	}

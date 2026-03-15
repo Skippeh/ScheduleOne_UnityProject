@@ -7,6 +7,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.RectTransform Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::UnityEngine.Animation Anim;
 
 		public global::TMPro.TextMeshProUGUI TitleLabel;

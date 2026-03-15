@@ -78,17 +78,17 @@ namespace ScheduleOne.Trash
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void RegenerateGUID()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void AutoCalculateTrashCount()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void GenerateMaxTrash()
 		{
 		}

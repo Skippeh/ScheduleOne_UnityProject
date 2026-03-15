@@ -10,6 +10,8 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.UI.Image RegionImage;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		private global::ScheduleOne.Map.EMapRegion region;
 
 		public bool IsRunning { get; private set; }

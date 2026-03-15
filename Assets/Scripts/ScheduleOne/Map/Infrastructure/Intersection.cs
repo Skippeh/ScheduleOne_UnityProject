@@ -3,7 +3,7 @@ namespace ScheduleOne.Map.Infrastructure
 	public class Intersection : global::UnityEngine.MonoBehaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRun_003Ed__8 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CRun_003Ed__9 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.Map.Infrastructure
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CRun_003Ed__8(int _003C_003E1__state)
+			public _003CRun_003Ed__9(int _003C_003E1__state)
 			{
 			}
 
@@ -55,6 +55,8 @@ namespace ScheduleOne.Map.Infrastructure
 			{
 			}
 		}
+
+		private const float AmberTime = 3f;
 
 		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
@@ -83,7 +85,7 @@ namespace ScheduleOne.Map.Infrastructure
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Map.Infrastructure.Intersection._003CRun_003Ed__8))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Map.Infrastructure.Intersection._003CRun_003Ed__9))]
 		protected global::System.Collections.IEnumerator Run()
 		{
 			return null;

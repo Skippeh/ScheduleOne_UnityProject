@@ -62,11 +62,11 @@ namespace ScheduleOne.Map
 			return null;
 		}
 
-		public override void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public override void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc, global::ScheduleOne.Doors.StaticDoor door)
 		{
 		}
 
-		public override void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public override void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc, global::ScheduleOne.Doors.StaticDoor door)
 		{
 		}
 

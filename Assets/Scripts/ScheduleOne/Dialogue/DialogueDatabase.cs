@@ -35,5 +35,10 @@ namespace ScheduleOne.Dialogue
 		{
 			return null;
 		}
+
+		public bool HasLine(global::ScheduleOne.Dialogue.EDialogueModule moduleType, string key)
+		{
+			return false;
+		}
 	}
 }

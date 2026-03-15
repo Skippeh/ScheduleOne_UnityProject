@@ -21,7 +21,7 @@ namespace ScheduleOne.Map
 
 		public global::UnityEngine.Material[] HeadstoneMaterials;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RandomizeGrave()
 		{
 		}

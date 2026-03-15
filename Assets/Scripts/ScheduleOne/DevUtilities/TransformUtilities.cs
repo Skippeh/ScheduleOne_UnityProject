@@ -6,5 +6,10 @@ namespace ScheduleOne.DevUtilities
 		{
 			return null;
 		}
+
+		public static global::UnityEngine.Vector2 XZ(this global::UnityEngine.Vector3 vector)
+		{
+			return default(global::UnityEngine.Vector2);
+		}
 	}
 }

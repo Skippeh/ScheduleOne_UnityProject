@@ -1,41 +1,31 @@
 namespace ScheduleOne.AvatarFramework.Animation
 {
-	public class AvatarFootstepDetector : global::UnityEngine.MonoBehaviour
+	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.AvatarFramework.Avatar))]
+	public class AvatarFootstepDetector : global::ScheduleOne.Tools.GenericFootstepDetector
 	{
-		public const float GROUND_DETECTION_RANGE = 0.15f;
+		private const float StepThreshold = 0.125f;
 
-		public global::ScheduleOne.AvatarFramework.Avatar Avatar;
+		[global::UnityEngine.SerializeField]
+		private float _detectionRange;
 
-		public global::UnityEngine.Transform ReferencePoint;
+		private global::ScheduleOne.AvatarFramework.Avatar _avatar;
 
-		public global::UnityEngine.Transform LeftBone;
+		private bool _leftDown;
 
-		public global::UnityEngine.Transform RightBone;
+		private bool _rightDown;
 
-		public float StepThreshold;
+		private float _detectionRangeSqr;
 
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		private global::UnityEngine.Transform _leftBone => null;
 
-		public float MaxDetectionRange;
+		private global::UnityEngine.Transform _rightBone => null;
 
-		private bool leftDown;
-
-		private bool rightDown;
-
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Materials.EMaterialType, float> onStep;
-
-		private void LateUpdate()
+		private void Awake()
 		{
 		}
 
-		public void TriggerStep()
+		protected virtual void LateUpdate()
 		{
-		}
-
-		public bool IsGrounded(out global::ScheduleOne.Materials.EMaterialType surfaceType)
-		{
-			surfaceType = default(global::ScheduleOne.Materials.EMaterialType);
-			return false;
 		}
 	}
 }

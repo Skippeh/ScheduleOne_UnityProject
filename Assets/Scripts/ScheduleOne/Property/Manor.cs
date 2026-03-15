@@ -66,12 +66,12 @@ namespace ScheduleOne.Property
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Explode()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Rebuild()
 		{
 		}

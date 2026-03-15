@@ -33,6 +33,10 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.UI.Phone.Messages.MessageBubble, global::ScheduleOne.Messaging.SendableMessage> sendableMap;
 
+		private global::System.Collections.Generic.List<global::ScheduleOne.UISelectable> bubbleUISelectables;
+
+		public global::ScheduleOne.UIPanel dialogueScreenUIPanel { get; set; }
+
 		public void Awake()
 		{
 		}

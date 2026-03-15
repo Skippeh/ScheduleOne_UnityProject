@@ -51,6 +51,11 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
+		public global::ScheduleOne.Delivery.DeliveryReceipt GetReceipt()
+		{
+			return null;
+		}
+
 		public void OnTimePass(int minutes)
 		{
 		}

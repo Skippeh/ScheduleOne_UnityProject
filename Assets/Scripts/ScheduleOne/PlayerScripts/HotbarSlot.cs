@@ -4,11 +4,13 @@ namespace ScheduleOne.PlayerScripts
 	{
 		public delegate void EquipEvent(bool equipped);
 
-		public global::ScheduleOne.Equipping.Equippable Equippable;
-
 		public global::ScheduleOne.PlayerScripts.HotbarSlot.EquipEvent onEquipChanged;
 
-		public bool IsEquipped { get; protected set; }
+		private global::ScheduleOne.Equipping.Equippable _equippable;
+
+		private global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler _equippedItem;
+
+		public bool IsSelected { get; protected set; }
 
 		public override void SetStoredItem(global::ScheduleOne.ItemFramework.ItemInstance instance, bool _internal = false)
 		{
@@ -18,11 +20,19 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public virtual void Equip()
+		public virtual void Select()
 		{
 		}
 
-		public virtual void Unequip()
+		private void Equip()
+		{
+		}
+
+		private void Unequip()
+		{
+		}
+
+		public virtual void Deselect()
 		{
 		}
 

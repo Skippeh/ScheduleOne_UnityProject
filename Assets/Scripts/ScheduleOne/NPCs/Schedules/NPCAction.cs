@@ -11,6 +11,10 @@ namespace ScheduleOne.NPCs.Schedules
 		[global::UnityEngine.Header("Timing Settings")]
 		public int StartTime;
 
+		[global::UnityEngine.Header("Umbrella Use")]
+		[global::UnityEngine.SerializeField]
+		private bool _canUseUmbrella;
+
 		protected global::ScheduleOne.NPCs.NPC npc;
 
 		protected global::ScheduleOne.NPCs.NPCScheduleManager schedule;
@@ -129,6 +133,14 @@ namespace ScheduleOne.NPCs.Schedules
 		}
 
 		public virtual void SetStartTime(int startTime)
+		{
+		}
+
+		protected void SetCanUseUmbrella(bool canUse)
+		{
+		}
+
+		protected virtual void OnStart()
 		{
 		}
 

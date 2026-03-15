@@ -53,7 +53,7 @@ namespace ScheduleOne.NPCs.Behaviour
 			return false;
 		}
 
-		private bool IsAtDestination()
+		private bool IsAtDestination(float threshold = 2f)
 		{
 			return false;
 		}

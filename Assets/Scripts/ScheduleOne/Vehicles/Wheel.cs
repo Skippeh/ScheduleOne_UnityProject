@@ -35,6 +35,13 @@ namespace ScheduleOne.Vehicles
 
 		public global::UnityEngine.ParticleSystem DriftParticles;
 
+		[global::UnityEngine.Header("Data")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Experimental.WheelData _defaultData;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Experimental.WheelOverrideData _rainOverrideData;
+
 		[global::UnityEngine.Header("Settings")]
 		public bool DriftParticlesEnabled;
 
@@ -56,6 +63,8 @@ namespace ScheduleOne.Vehicles
 		private global::UnityEngine.WheelFrictionCurve forwardCurve;
 
 		private global::UnityEngine.WheelFrictionCurve sidewaysCurve;
+
+		private global::ScheduleOne.Experimental.VehicleSettings _settings;
 
 		public bool IsDrifting { get; protected set; }
 
@@ -108,7 +117,11 @@ namespace ScheduleOne.Vehicles
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		public void OnWeatherChange(global::ScheduleOne.Weather.WeatherConditions newConditions)
+		{
+		}
+
+		[global::ScheduleOne.Core.Button]
 		private void ApplyDefaultWheelModelPosition()
 		{
 		}

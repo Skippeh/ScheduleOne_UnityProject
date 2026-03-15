@@ -4,7 +4,7 @@ namespace ScheduleOne.Tools
 	{
 		public global::UnityEngine.Material Material;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetMaterial()
 		{
 		}

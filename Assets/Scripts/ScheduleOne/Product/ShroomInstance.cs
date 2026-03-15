@@ -4,7 +4,7 @@ namespace ScheduleOne.Product
 	public class ShroomInstance : global::ScheduleOne.Product.ProductItemInstance
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDoPsychedlicEffectBlend_003Ed__15 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CDoPsychedlicEffectBlend_003Ed__14 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -43,7 +43,7 @@ namespace ScheduleOne.Product
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CDoPsychedlicEffectBlend_003Ed__15(int _003C_003E1__state)
+			public _003CDoPsychedlicEffectBlend_003Ed__14(int _003C_003E1__state)
 			{
 			}
 
@@ -75,11 +75,8 @@ namespace ScheduleOne.Product
 
 		private global::ScheduleOne.Product.ShroomDefinition _shroomDefinition => null;
 
-		public ShroomInstance()
-		{
-		}
-
 		public ShroomInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality, global::ScheduleOne.Product.Packaging.PackagingDefinition packaging = null)
+			: base(null, 0, default(global::ScheduleOne.ItemFramework.EQuality))
 		{
 		}
 
@@ -117,7 +114,7 @@ namespace ScheduleOne.Product
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Product.ShroomInstance._003CDoPsychedlicEffectBlend_003Ed__15))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Product.ShroomInstance._003CDoPsychedlicEffectBlend_003Ed__14))]
 		private global::System.Collections.IEnumerator DoPsychedlicEffectBlend(global::ScheduleOne.FX.PsychedelicFullScreenFeature.MaterialProperties targetMaterialProperties, float targetValuePercentage, float duration)
 		{
 			return null;

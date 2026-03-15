@@ -41,8 +41,6 @@ namespace ScheduleOne.Property
 		public global::UnityEngine.GameObject[] ObjectsToCull;
 
 		[global::UnityEngine.Header("References")]
-		public global::ScheduleOne.Property.PropertyContentsContainer Container;
-
 		public global::UnityEngine.Transform EmployeeContainer;
 
 		public global::UnityEngine.Transform SpawnPoint;
@@ -76,7 +74,7 @@ namespace ScheduleOne.Property
 
 		public readonly global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Grid> Grids;
 
-		private global::UnityEngine.BoxCollider[] propertyBoundsColliders;
+		protected global::UnityEngine.BoxCollider[] propertyBoundsColliders;
 
 		private global::ScheduleOne.Persistence.Loaders.PropertyLoader loader;
 
@@ -104,6 +102,8 @@ namespace ScheduleOne.Property
 		public float AmbientTemperature { get; private set; }
 
 		public int LoadingDockCount => 0;
+
+		public global::ScheduleOne.Property.PropertyContentsContainer Container { get; private set; }
 
 		public string SaveFolderName => null;
 
@@ -272,6 +272,11 @@ namespace ScheduleOne.Property
 		}
 
 		public virtual bool CanDeliverToProperty()
+		{
+			return false;
+		}
+
+		public virtual bool CanRespawnInsideProperty()
 		{
 			return false;
 		}

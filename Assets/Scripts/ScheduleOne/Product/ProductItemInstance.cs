@@ -25,11 +25,8 @@ namespace ScheduleOne.Product
 		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public override global::UnityEngine.Sprite Icon => null;
 
-		public ProductItemInstance()
-		{
-		}
-
 		public ProductItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality, global::ScheduleOne.Product.Packaging.PackagingDefinition _packaging = null)
+			: base(null, 0, default(global::ScheduleOne.ItemFramework.EQuality))
 		{
 		}
 
@@ -101,6 +98,14 @@ namespace ScheduleOne.Product
 		public override int GetTotalAmount()
 		{
 			return 0;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

@@ -4,6 +4,10 @@ namespace ScheduleOne.NPCs.Actions
 	{
 		private global::ScheduleOne.NPCs.NPC npc;
 
+		private bool _canUseUmbrella;
+
+		private global::ScheduleOne.NPCs.Other.UseUmbrella _umbrellaAction;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EActions_002ENPCActionsAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002EActions_002ENPCActionsAssembly_002DCSharp_002Edll_Excuted;
@@ -11,6 +15,14 @@ namespace ScheduleOne.NPCs.Actions
 		protected global::ScheduleOne.NPCs.Behaviour.NPCBehaviour behaviour => null;
 
 		public virtual void Awake()
+		{
+		}
+
+		private void Start()
+		{
+		}
+
+		private void OnDestroy()
 		{
 		}
 
@@ -29,6 +41,19 @@ namespace ScheduleOne.NPCs.Actions
 
 		public void FacePlayer(global::ScheduleOne.PlayerScripts.Player player)
 		{
+		}
+
+		public void SetCanUseUmbrella(bool canUseUmbrella)
+		{
+		}
+
+		private void UpdateUmbrellaUse()
+		{
+		}
+
+		private float GetRainAmount()
+		{
+			return 0f;
 		}
 
 		public virtual void NetworkInitialize___Early()

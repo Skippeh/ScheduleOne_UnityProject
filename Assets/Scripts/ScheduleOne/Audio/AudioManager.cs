@@ -2,96 +2,46 @@ namespace ScheduleOne.Audio
 {
 	public class AudioManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Audio.AudioManager>
 	{
-		private const float MinWorldMusicVolumeMulitplier = 0f;
-
-		private const float MusicFadeTime = 4f;
-
 		private const float MinGameVolume = 0.0001f;
 
 		private const float MaxGameVolume = 1f;
 
 		private const float GameVolumeLerpSpeed = 2f;
 
-		[global::UnityEngine.Range(0f, 2f)]
+		public global::System.Action onVolumeSettingsChanged;
+
 		[global::UnityEngine.SerializeField]
-		protected float masterVolume;
+		private global::UnityEngine.Audio.AudioMixerSnapshot _defaultSnapshot;
 
-		[global::UnityEngine.Range(0f, 2f)]
 		[global::UnityEngine.SerializeField]
-		protected float ambientVolume;
+		private global::UnityEngine.Audio.AudioMixerSnapshot _distortedSnapshot;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
-		protected float footstepsVolume;
+		private float _masterVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
-		protected float fxVolume;
+		private float _ambientVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
-		protected float uiVolume;
+		private float _footstepsVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
-		protected float musicVolume;
+		private float _fxVolume;
 
-		[global::UnityEngine.Range(0f, 2f)]
-		[global::UnityEngine.SerializeField]
-		protected float voiceVolume;
+		private float _uiVolume;
 
-		public global::UnityEngine.Events.UnityEvent onSettingsChanged;
+		private float _musicVolume;
 
-		[global::UnityEngine.Header("Generic Door Sounds")]
-		public global::ScheduleOne.Audio.AudioSourceController DoorOpen;
+		private float _voiceVolume;
 
-		public global::ScheduleOne.Audio.AudioSourceController DoorClose;
-
-		[global::UnityEngine.Header("Mixers")]
-		public global::UnityEngine.Audio.AudioMixerGroup MainGameMixer;
-
-		public global::UnityEngine.Audio.AudioMixerGroup MenuMixer;
-
-		public global::UnityEngine.Audio.AudioMixerGroup MusicMixer;
-
-		private float currentGameVolume;
-
-		public global::UnityEngine.Audio.AudioMixerSnapshot DefaultSnapshot;
-
-		public global::UnityEngine.Audio.AudioMixerSnapshot DistortedSnapshot;
+		private float _currentMainMixerVolume;
 
 		public float MasterVolume => 0f;
 
-		public float AmbientVolume => 0f;
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.Audio.AudioMixerGroup MainGameMixer { get; private set; }
 
-		public float UnscaledAmbientVolume => 0f;
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.Audio.AudioMixerGroup MenuMixer { get; private set; }
 
-		public float FootstepsVolume => 0f;
-
-		public float UnscaledFootstepsVolume => 0f;
-
-		public float FXVolume => 0f;
-
-		public float UnscaledFXVolume => 0f;
-
-		public float UIVolume => 0f;
-
-		public float UnscaledUIVolume => 0f;
-
-		public float MusicVolume => 0f;
-
-		public float UnscaledMusicVolume => 0f;
-
-		public float VoiceVolume => 0f;
-
-		public float UnscaledVoiceVolume => 0f;
-
-		public float WorldMusicVolumeMultiplier { get; private set; }
-
-		public float GetScaledMusicVolumeMultiplier(float min)
-		{
-			return 0f;
-		}
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.Audio.AudioMixerGroup MusicMixer { get; private set; }
 
 		protected override void Awake()
 		{
@@ -101,21 +51,12 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		protected void Update()
+		private void Update()
 		{
 		}
 
 		public void SetDistorted(bool distorted, float transition = 5f)
 		{
-		}
-
-		private void SetGameVolume(float value)
-		{
-		}
-
-		private float ValueToVolume(float value)
-		{
-			return 0f;
 		}
 
 		public float GetVolume(global::ScheduleOne.Audio.EAudioType audioType, bool scaled = true)
@@ -129,6 +70,15 @@ namespace ScheduleOne.Audio
 
 		public void SetVolume(global::ScheduleOne.Audio.EAudioType type, float volume)
 		{
+		}
+
+		private void SetMainMixerVolume(float value)
+		{
+		}
+
+		private static float ValueToVolume(float value)
+		{
+			return 0f;
 		}
 	}
 }

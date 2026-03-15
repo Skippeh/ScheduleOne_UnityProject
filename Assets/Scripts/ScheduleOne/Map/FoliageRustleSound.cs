@@ -16,6 +16,10 @@ namespace ScheduleOne.Map
 		{
 		}
 
+		private void OnDrawGizmos()
+		{
+		}
+
 		public void OnTriggerEnter(global::UnityEngine.Collider other)
 		{
 		}

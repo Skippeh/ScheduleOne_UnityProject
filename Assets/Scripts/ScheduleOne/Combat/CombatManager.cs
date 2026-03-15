@@ -16,7 +16,7 @@ namespace ScheduleOne.Combat
 
 		private bool NetworkInitialize__LateScheduleOne_002ECombat_002ECombatManagerAssembly_002DCSharp_002Edll_Excuted;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void CreateTestExplosion()
 		{
 		}

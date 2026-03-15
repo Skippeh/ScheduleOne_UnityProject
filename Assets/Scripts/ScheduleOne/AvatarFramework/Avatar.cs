@@ -1,6 +1,6 @@
 namespace ScheduleOne.AvatarFramework
 {
-	public class Avatar : global::UnityEngine.MonoBehaviour
+	public class Avatar : global::UnityEngine.MonoBehaviour, global::ScheduleOne.Core.Equipping.Framework.IThirdPersonReferencesProvider
 	{
 		public const int MAX_ACCESSORIES = 9;
 
@@ -39,11 +39,17 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::UnityEngine.Transform HipBone;
 
+		public global::UnityEngine.Transform LeftFootBone;
+
+		public global::UnityEngine.Transform RightFootBone;
+
 		public global::UnityEngine.Rigidbody[] RagdollRBs;
 
 		public global::UnityEngine.Collider[] RagdollColliders;
 
 		public global::UnityEngine.Rigidbody MiddleSpineRB;
+
+		public global::UnityEngine.Rigidbody[] ImpactForceRBs;
 
 		public global::ScheduleOne.AvatarFramework.Emotions.AvatarEmotionManager EmotionManager;
 
@@ -56,8 +62,6 @@ namespace ScheduleOne.AvatarFramework
 		public global::UnityEngine.Transform LowestSpine;
 
 		public global::ScheduleOne.AvatarFramework.Impostors.AvatarImpostor Impostor;
-
-		public global::ScheduleOne.Audio.FootstepSounds FootstepSounds;
 
 		public global::UnityEngine.ParticleSystem BloodParticles;
 
@@ -104,6 +108,14 @@ namespace ScheduleOne.AvatarFramework
 
 		private bool blockEyeFaceLayers;
 
+		public global::UnityEngine.Transform RightHandContainer => null;
+
+		public global::UnityEngine.Transform LeftHandContainer => null;
+
+		public global::UnityEngine.Transform RightHandAlignmentPoint => null;
+
+		public global::UnityEngine.Transform LeftHandAlignmentPoint => null;
+
 		public bool Ragdolled { get; protected set; }
 
 		public global::ScheduleOne.AvatarFramework.Equipping.AvatarEquippable CurrentEquippable { get; protected set; }
@@ -114,12 +126,12 @@ namespace ScheduleOne.AvatarFramework
 
 		public global::UnityEngine.Vector3 CenterPoint => default(global::UnityEngine.Vector3);
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Load()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void LoadNaked()
 		{
 		}
@@ -129,10 +141,6 @@ namespace ScheduleOne.AvatarFramework
 		}
 
 		protected virtual void Update()
-		{
-		}
-
-		protected virtual void LateUpdate()
 		{
 		}
 
@@ -171,6 +179,14 @@ namespace ScheduleOne.AvatarFramework
 		public string GetThirdPersonPronoun(bool capitalized = true)
 		{
 			return null;
+		}
+
+		public void SetAnimationBool(string name, bool value)
+		{
+		}
+
+		public void SetAnimationTrigger(string name)
+		{
 		}
 
 		private void ApplyShapeKeys(float gender, float weight, bool bodyOnly = false)

@@ -1,31 +1,22 @@
 namespace ScheduleOne.PlayerScripts
 {
-	public class LocalPlayerFootstepGenerator : global::UnityEngine.MonoBehaviour
+	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement))]
+	public class LocalPlayerFootstepGenerator : global::ScheduleOne.Tools.GenericFootstepDetector
 	{
-		public float DistancePerStep;
+		private const float DistancePerStep = 1.25f;
 
-		public global::UnityEngine.Transform ReferencePoint;
+		private global::ScheduleOne.PlayerScripts.PlayerMovement _movement;
 
-		public global::UnityEngine.LayerMask GroundDetectionMask;
+		private float _currentDistance;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Materials.EMaterialType, float> onStep;
+		private global::UnityEngine.Vector3 _lastFramePosition;
 
-		private float currentDistance;
-
-		private global::UnityEngine.Vector3 lastFramePosition;
-
-		private void LateUpdate()
+		private void Awake()
 		{
 		}
 
-		public void TriggerStep()
+		protected void LateUpdate()
 		{
-		}
-
-		public bool IsGrounded(out global::ScheduleOne.Materials.EMaterialType surfaceType)
-		{
-			surfaceType = default(global::ScheduleOne.Materials.EMaterialType);
-			return false;
 		}
 	}
 }

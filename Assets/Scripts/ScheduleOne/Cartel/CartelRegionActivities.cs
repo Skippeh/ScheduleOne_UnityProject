@@ -51,7 +51,7 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void StartActivity()
 		{
 		}
@@ -60,7 +60,7 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ActivateDeal()
 		{
 		}

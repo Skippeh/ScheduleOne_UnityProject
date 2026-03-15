@@ -12,6 +12,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		[global::UnityEngine.Tooltip("Behaviour priority; higher = takes priority over lower number behaviour")]
 		public int Priority;
 
+		[global::UnityEngine.Header("Umbrella")]
+		[global::UnityEngine.SerializeField]
+		private bool _canUseUmbrellaDuringBehaviour;
+
 		[global::UnityEngine.HideInInspector]
 		public int BehaviourIndex;
 
@@ -132,6 +136,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void UpdateGameObjectName()
+		{
+		}
+
+		public void SetCanUseUmbrellaDuringBehaviour(bool canUse)
 		{
 		}
 

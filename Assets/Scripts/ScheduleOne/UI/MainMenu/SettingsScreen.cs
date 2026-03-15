@@ -5,7 +5,7 @@ namespace ScheduleOne.UI.MainMenu
 		[global::System.Serializable]
 		public class SettingsCategory
 		{
-			public global::UnityEngine.UI.Button Button;
+			public global::UnityEngine.UI.Toggle Toggle;
 
 			public global::UnityEngine.GameObject Panel;
 		}

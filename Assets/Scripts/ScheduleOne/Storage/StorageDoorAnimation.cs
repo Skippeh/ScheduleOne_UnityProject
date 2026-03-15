@@ -30,12 +30,12 @@ namespace ScheduleOne.Storage
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Open()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Close()
 		{
 		}

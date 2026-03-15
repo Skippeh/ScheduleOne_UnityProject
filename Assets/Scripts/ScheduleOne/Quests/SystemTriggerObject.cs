@@ -4,7 +4,7 @@ namespace ScheduleOne.Quests
 	{
 		public global::ScheduleOne.Quests.SystemTrigger SystemTrigger;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Trigger()
 		{
 		}

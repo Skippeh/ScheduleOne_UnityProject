@@ -60,19 +60,9 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool BodySearchPending;
 
+		public global::System.Action<global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel, global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel> onPursuitLevelChange;
+
 		protected global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.PlayerCrimeData.VehicleCollisionInstance> Collisions;
-
-		private global::ScheduleOne.Audio.MusicTrack _lightCombatTrack;
-
-		private global::ScheduleOne.Audio.MusicTrack _heavyCombatTrack;
-
-		private float outOfSightTimeToDipMusic;
-
-		private float minMusicVolume;
-
-		private float musicChangeRate_Down;
-
-		private float musicChangeRate_Up;
 
 		public global::FishNet.Object.Synchronizing.SyncVar<global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel> syncVar____003CCurrentPursuitLevel_003Ek__BackingField;
 
@@ -225,10 +215,6 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		private void UpdateTimeout()
-		{
-		}
-
-		private void UpdateMusic()
 		{
 		}
 

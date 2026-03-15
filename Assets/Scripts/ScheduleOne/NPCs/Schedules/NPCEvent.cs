@@ -6,19 +6,25 @@ namespace ScheduleOne.NPCs.Schedules
 
 		public int EndTime;
 
+		private bool _forgotUmbrella;
+
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ESchedules_002ENPCEventAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ESchedules_002ENPCEventAssembly_002DCSharp_002Edll_Excuted;
 
 		public new string ActionName => null;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ApplyDuration()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ApplyEndTime()
+		{
+		}
+
+		protected override void OnStart()
 		{
 		}
 

@@ -7,11 +7,8 @@ namespace ScheduleOne.Clothing
 
 		public override string Name => null;
 
-		public ClothingInstance()
-		{
-		}
-
 		public ClothingInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.Clothing.EClothingColor color)
+			: base(null, 0)
 		{
 		}
 
@@ -23,6 +20,14 @@ namespace ScheduleOne.Clothing
 		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
 		{
 			return null;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

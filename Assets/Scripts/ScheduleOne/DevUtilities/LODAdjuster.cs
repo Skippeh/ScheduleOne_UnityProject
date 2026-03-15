@@ -13,7 +13,7 @@ namespace ScheduleOne.DevUtilities
 		[global::UnityEngine.SerializeField]
 		private int _lodLevel;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void AddToLodGroup()
 		{
 		}

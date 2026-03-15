@@ -2,12 +2,13 @@ namespace ScheduleOne.UI.Settings
 {
 	public class SettingsSlider : global::UnityEngine.MonoBehaviour
 	{
-		private const float VALUE_DISPLAY_TIME = 2f;
+		public float ValueDisplayTime;
 
 		public bool DisplayValue;
 
 		protected global::UnityEngine.UI.Slider slider;
 
+		[global::UnityEngine.SerializeField]
 		protected global::TMPro.TextMeshProUGUI valueLabel;
 
 		protected float timeOnValueChange;
@@ -21,6 +22,14 @@ namespace ScheduleOne.UI.Settings
 		}
 
 		protected virtual void OnValueChanged(float value)
+		{
+		}
+
+		protected void SetDisplayValue(float value)
+		{
+		}
+
+		protected void SetValueWithoutNotify(float value)
 		{
 		}
 

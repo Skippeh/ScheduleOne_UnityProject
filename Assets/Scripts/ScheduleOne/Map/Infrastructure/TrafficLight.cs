@@ -9,48 +9,26 @@ namespace ScheduleOne.Map.Infrastructure
 			Green = 2
 		}
 
-		public static float amberTime;
-
-		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer redMesh;
+		private global::ScheduleOne.Misc.ToggleableLight _redLight;
 
 		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer orangeMesh;
+		private global::ScheduleOne.Misc.ToggleableLight _orangeLight;
 
 		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer greenMesh;
+		private global::ScheduleOne.Misc.ToggleableLight _greenLight;
 
-		[global::UnityEngine.Header("Materials")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redOn_Mat;
+		private global::ScheduleOne.Map.Infrastructure.TrafficLight.State _state;
 
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material redOff_Mat;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material orangeOn_Mat;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material orangeOff_Mat;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenOn_Mat;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Material greenOff_Mat;
-
-		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Map.Infrastructure.TrafficLight.State state;
-
-		private global::ScheduleOne.Map.Infrastructure.TrafficLight.State appliedState;
-
-		protected virtual void Start()
+		public global::ScheduleOne.Map.Infrastructure.TrafficLight.State CurrentState
 		{
-		}
-
-		protected virtual void Update()
-		{
+			get
+			{
+				return default(global::ScheduleOne.Map.Infrastructure.TrafficLight.State);
+			}
+			set
+			{
+			}
 		}
 
 		protected virtual void ApplyState()

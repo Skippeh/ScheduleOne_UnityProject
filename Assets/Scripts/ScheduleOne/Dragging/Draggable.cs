@@ -68,7 +68,7 @@ namespace ScheduleOne.Dragging
 
 		public global::UnityEngine.Vector3 initialPosition { get; private set; }
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}

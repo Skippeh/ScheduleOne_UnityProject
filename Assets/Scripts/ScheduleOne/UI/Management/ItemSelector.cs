@@ -36,6 +36,8 @@ namespace ScheduleOne.UI.Management
 
 		private global::System.Action<global::ScheduleOne.UI.Management.ItemSelector.Option> optionCallback;
 
+		private global::ScheduleOne.UIContentPanel panel;
+
 		public void Initialize(string selectionTitle, global::System.Collections.Generic.List<global::ScheduleOne.UI.Management.ItemSelector.Option> _options, global::ScheduleOne.UI.Management.ItemSelector.Option _selectedOption = null, global::System.Action<global::ScheduleOne.UI.Management.ItemSelector.Option> _optionCallback = null)
 		{
 		}
@@ -65,6 +67,10 @@ namespace ScheduleOne.UI.Management
 		}
 
 		private void DeleteOptions()
+		{
+		}
+
+		private void InitializeAfterUIReady()
 		{
 		}
 	}

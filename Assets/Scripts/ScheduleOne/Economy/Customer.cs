@@ -324,7 +324,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ForceDealOffer()
 		{
 		}
@@ -573,7 +573,7 @@ namespace ScheduleOne.Economy
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RequestProduct()
 		{
 		}
@@ -729,7 +729,7 @@ namespace ScheduleOne.Economy
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void AutocreateCustomerSettings()
 		{
 		}

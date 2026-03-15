@@ -190,7 +190,7 @@ namespace ScheduleOne.Graffiti
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void LoadSerializedDrawing(global::ScheduleOne.Graffiti.SerializedGraffitiDrawing serializedDrawing, bool isCartelGraffiti)
 		{
 		}

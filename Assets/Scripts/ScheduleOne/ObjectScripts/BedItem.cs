@@ -26,15 +26,6 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		public float GetCashSum()
-		{
-			return 0f;
-		}
-
-		public void RemoveCash(float amount)
-		{
-		}
-
 		public override void NetworkInitialize___Early()
 		{
 		}

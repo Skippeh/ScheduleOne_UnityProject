@@ -83,12 +83,12 @@ namespace ScheduleOne.Graffiti
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void GroundNPCStandPoint()
 		{
 		}

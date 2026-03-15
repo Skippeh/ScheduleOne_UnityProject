@@ -3,7 +3,7 @@ namespace ScheduleOne.UI.Phone
 	public class HomeScreen : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.UI.Phone.HomeScreen>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDelayedSetCanvasActive_003Ed__15 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CDelayedSetCanvasActive_003Ed__21 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -34,7 +34,61 @@ namespace ScheduleOne.UI.Phone
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CDelayedSetCanvasActive_003Ed__15(int _003C_003E1__state)
+			public _003CDelayedSetCanvasActive_003Ed__21(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CSelectUIPanel_003Ed__24 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.Phone.HomeScreen _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CSelectUIPanel_003Ed__24(int _003C_003E1__state)
 			{
 			}
 
@@ -74,11 +128,31 @@ namespace ScheduleOne.UI.Phone
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.GameObject appIconPrefab;
 
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen uiScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIPanel uiPanel;
+
 		protected global::System.Collections.Generic.List<global::UnityEngine.UI.Button> appIcons;
 
 		private global::UnityEngine.Coroutine delayedSetOpenRoutine;
 
+		private global::ScheduleOne.UISelectable lastSelectedSelectable;
+
 		public bool isOpen { get; protected set; }
+
+		public global::ScheduleOne.UISelectable LastSelectedSelectable
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
 
 		protected override void Start()
 		{
@@ -100,7 +174,7 @@ namespace ScheduleOne.UI.Phone
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.HomeScreen._003CDelayedSetCanvasActive_003Ed__15))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.HomeScreen._003CDelayedSetCanvasActive_003Ed__21))]
 		private global::System.Collections.IEnumerator DelayedSetCanvasActive(bool active, float delay)
 		{
 			return null;
@@ -112,6 +186,12 @@ namespace ScheduleOne.UI.Phone
 
 		public void SetCanvasActive(bool a)
 		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.HomeScreen._003CSelectUIPanel_003Ed__24))]
+		private global::System.Collections.IEnumerator SelectUIPanel()
+		{
+			return null;
 		}
 
 		protected virtual void Update()

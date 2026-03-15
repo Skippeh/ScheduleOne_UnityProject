@@ -58,6 +58,21 @@ namespace ScheduleOne.UI
 		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.Canvas canvas;
 
+		[global::UnityEngine.SerializeField]
+		protected global::UnityEngine.UI.ScrollRect scrollRect;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen UIScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIPanel mainPanel;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen selectorScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIPanel selectorPanel;
+
 		private int selectedAmountToLaunder;
 
 		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Property.LaunderingOperation, global::UnityEngine.RectTransform> operationToNotch;
@@ -135,6 +150,10 @@ namespace ScheduleOne.UI
 		}
 
 		public void InputValueChanged()
+		{
+		}
+
+		public void ChangeSelectorValue(int amount)
 		{
 		}
 

@@ -4,13 +4,15 @@ namespace ScheduleOne.Audio
 	public class AudioSourceController : global::UnityEngine.MonoBehaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CStart_003Ed__23 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CDelayIE_003Ed__43 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
 			private object _003C_003E2__current;
 
-			public global::ScheduleOne.Audio.AudioSourceController _003C_003E4__this;
+			public float delay;
+
+			public global::System.Action callback;
 
 			object global::System.Collections.Generic.IEnumerator<object>.Current
 			{
@@ -31,7 +33,7 @@ namespace ScheduleOne.Audio
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CStart_003Ed__23(int _003C_003E1__state)
+			public _003CDelayIE_003Ed__43(int _003C_003E1__state)
 			{
 			}
 
@@ -57,37 +59,69 @@ namespace ScheduleOne.Audio
 			}
 		}
 
-		public bool DEBUG;
-
-		public global::UnityEngine.AudioSource AudioSource;
-
 		[global::UnityEngine.Header("Settings")]
-		public global::ScheduleOne.Audio.EAudioType AudioType;
+		[global::UnityEngine.SerializeField]
+		private string _id;
 
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("AudioType")]
+		private global::ScheduleOne.Audio.EAudioType _audioType;
+
+		[global::UnityEngine.Header("Volume")]
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("DefaultVolume")]
 		[global::UnityEngine.Range(0f, 1f)]
-		public float DefaultVolume;
+		private float _defaultBaseVolume;
 
-		public bool RandomizePitch;
-
-		public float MinPitch;
-
-		public float MaxPitch;
-
-		[global::UnityEngine.Range(0f, 2f)]
 		[global::UnityEngine.SerializeField]
-		private float VolumeMultiplier;
-
+		[global::UnityEngine.Serialization.FormerlySerializedAs("VolumeMultiplier")]
 		[global::UnityEngine.Range(0f, 2f)]
+		private float _volumeMultiplier;
+
+		[global::UnityEngine.Header("Pitch")]
 		[global::UnityEngine.SerializeField]
-		private float PitchMultiplier;
+		[global::UnityEngine.Range(0.1f, 3f)]
+		private float _defaultBasePitch;
 
-		private float basePitch;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("PitchMultiplier")]
+		[global::UnityEngine.Range(0f, 2f)]
+		private float _pitchMultiplier;
 
-		public float Volume { get; protected set; }
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("RandomizePitch")]
+		private bool _randomizePitch;
 
-		public bool isPlaying => false;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("MinPitch")]
+		[global::ScheduleOne.Core.Conditional("_randomizePitch", false)]
+		private float _minRandomPitch;
 
-		public float volumeMultiplier
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("MaxPitch")]
+		[global::ScheduleOne.Core.Conditional("_randomizePitch", false)]
+		private float _maxRandomPitch;
+
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("LowPassFilter")]
+		[global::ScheduleOne.Core.Conditional("_lowPassFilter", false)]
+		private global::UnityEngine.AudioLowPassFilter _lowPassFilter;
+
+		protected global::UnityEngine.AudioSource _audioSource;
+
+		protected float _baseVolume;
+
+		protected float _basePitch;
+
+		public bool IsPlaying => false;
+
+		public float Time => 0f;
+
+		public global::UnityEngine.AudioClip Clip => null;
+
+		public string Id => null;
+
+		public float VolumeMultiplier
 		{
 			get
 			{
@@ -98,7 +132,7 @@ namespace ScheduleOne.Audio
 			}
 		}
 
-		public float pitchMultiplier
+		public float PitchMultiplier
 		{
 			get
 			{
@@ -113,37 +147,39 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Audio.AudioSourceController._003CStart_003Ed__23))]
-		private global::System.Collections.IEnumerator Start()
-		{
-			return null;
-		}
-
-		private void OnDestroy()
+		private void OnEnable()
 		{
 		}
 
-		private void OnValidate()
+		private void OnDisable()
 		{
 		}
 
-		private void Pause()
+		private void ApplyMixer()
 		{
 		}
 
-		private void Unpause()
+		private void OnPause()
 		{
 		}
 
-		public void SetVolume(float volume)
+		private void OnUnpause()
 		{
 		}
 
-		public void ApplyVolume()
+		public void SetBaseVolume(float baseVolume)
 		{
 		}
 
-		public void ApplyPitch()
+		protected void ApplyVolume()
+		{
+		}
+
+		public void SetBasePitch(float basePitch)
+		{
+		}
+
+		private void ApplyPitch()
 		{
 		}
 
@@ -155,11 +191,46 @@ namespace ScheduleOne.Audio
 		{
 		}
 
+		public void PlayOneShotDelayed(float delay)
+		{
+		}
+
 		public void DuplicateAndPlayOneShot()
 		{
 		}
 
 		public virtual void DuplicateAndPlayOneShot(global::UnityEngine.Transform parent)
+		{
+		}
+
+		protected void Delay(float delay, global::System.Action callback)
+		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Audio.AudioSourceController._003CDelayIE_003Ed__43))]
+		protected global::System.Collections.IEnumerator DelayIE(float delay, global::System.Action callback)
+		{
+			return null;
+		}
+
+		public void ApplyAudioSettings(global::ScheduleOne.Audio.AudioSettingsWrapper settings)
+		{
+		}
+
+		public global::ScheduleOne.Audio.AudioSettingsWrapper ExtractAudioSettings()
+		{
+			return null;
+		}
+
+		public void SetTime(float time)
+		{
+		}
+
+		public void SetClip(global::UnityEngine.AudioClip clip)
+		{
+		}
+
+		public void SetLoop(bool loop)
 		{
 		}
 

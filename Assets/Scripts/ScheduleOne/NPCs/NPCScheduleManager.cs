@@ -13,6 +13,10 @@ namespace ScheduleOne.NPCs
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> ActionList;
 
+		[global::UnityEngine.Header("Discrete Actions")]
+		[global::UnityEngine.SerializeField]
+		private global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Other.NPCDiscreteAction> discreteActions;
+
 		protected int lastProcessedTime;
 
 		public bool ScheduleEnabled { get; protected set; }
@@ -24,6 +28,8 @@ namespace ScheduleOne.NPCs
 		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> PendingActions { get; set; }
 
 		public global::ScheduleOne.NPCs.NPC Npc { get; protected set; }
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Other.NPCDiscreteAction> DiscreteActions => null;
 
 		protected global::System.Collections.Generic.List<global::ScheduleOne.NPCs.Schedules.NPCAction> ActionsAwaitingStart { get; set; }
 
@@ -57,7 +63,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void InitializeActions()
 		{
 		}

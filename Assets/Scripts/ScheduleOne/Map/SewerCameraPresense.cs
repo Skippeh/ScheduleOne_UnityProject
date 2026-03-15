@@ -12,7 +12,7 @@ namespace ScheduleOne.Map
 
 		private global::UnityEngine.BoxCollider[] fullPresenceVolumes;
 
-		private global::ScheduleOne.Map.SewerCameraFadeVolume[] fadeVolumes;
+		private global::ScheduleOne.Tools.FadeVolume[] fadeVolumes;
 
 		public float CameraPresenceInSewerArea { get; private set; }
 

@@ -41,7 +41,7 @@ namespace ScheduleOne.Growing
 			return null;
 		}
 
-		[global::EasyButtons.Button("Set Camera Position")]
+		[global::ScheduleOne.Core.Button]
 		private void SetCameraPosition()
 		{
 		}

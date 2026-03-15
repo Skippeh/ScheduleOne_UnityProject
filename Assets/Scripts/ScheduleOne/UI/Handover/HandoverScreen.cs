@@ -33,6 +33,10 @@ namespace ScheduleOne.UI.Handover
 
 		public global::UnityEngine.GameObject Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
+		public global::ScheduleOne.UIScreen AltScreen;
+
 		public global::UnityEngine.CanvasGroup CanvasGroup;
 
 		public global::TMPro.TextMeshProUGUI DescriptionLabel;
@@ -93,6 +97,8 @@ namespace ScheduleOne.UI.Handover
 
 		private bool requireFullChanceOfSuccess;
 
+		private bool activeScreenChangedThisFrame;
+
 		public global::ScheduleOne.Quests.Contract CurrentContract { get; protected set; }
 
 		public bool IsOpen { get; protected set; }
@@ -119,12 +125,16 @@ namespace ScheduleOne.UI.Handover
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void TestOpen()
 		{
 		}
 
 		public virtual void Open(global::ScheduleOne.Quests.Contract contract, global::ScheduleOne.Economy.Customer customer, global::ScheduleOne.UI.Handover.HandoverScreen.EMode mode, global::System.Action<global::ScheduleOne.UI.Handover.HandoverScreen.EHandoverOutcome, global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float> callback, global::System.Func<global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemInstance>, float, float> successChanceMethod, bool _requireFullChanceOfSuccess = false)
+		{
+		}
+
+		public void SwapActiveScreen()
 		{
 		}
 

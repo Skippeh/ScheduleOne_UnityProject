@@ -12,12 +12,24 @@ namespace ScheduleOne.DevUtilities
 		[global::UnityEngine.Header("Objects to Modify")]
 		public global::System.Collections.Generic.List<global::UnityEngine.Transform> SceneObjects;
 
-		[global::EasyButtons.Button]
+		[global::UnityEngine.Header("Finding Shaders")]
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.Transform _rootObject;
+
+		[global::UnityEngine.SerializeField]
+		private bool _showCountOnly;
+
+		[global::ScheduleOne.Core.Button]
+		public void ScanSceneForShaders()
+		{
+		}
+
+		[global::ScheduleOne.Core.Button]
 		public void AddAffinityAndRandomise()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RemoveAffinity()
 		{
 		}

@@ -35,7 +35,7 @@ namespace ScheduleOne.Property
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void BlowUp()
 		{
 		}
@@ -54,6 +54,11 @@ namespace ScheduleOne.Property
 		}
 
 		public override bool CanDeliverToProperty()
+		{
+			return false;
+		}
+
+		public override bool CanRespawnInsideProperty()
 		{
 			return false;
 		}

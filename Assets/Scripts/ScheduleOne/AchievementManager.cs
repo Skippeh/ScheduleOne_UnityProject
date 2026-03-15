@@ -1,6 +1,6 @@
 namespace ScheduleOne
 {
-	public class AchievementManager : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.AchievementManager>
+	public static class AchievementManager
 	{
 		public enum EAchievement
 		{
@@ -19,23 +19,20 @@ namespace ScheduleOne
 			FINISHING_THE_JOB = 12
 		}
 
-		private global::ScheduleOne.AchievementManager.EAchievement[] achievements;
+		private static global::ScheduleOne.AchievementManager.EAchievement[] achievements;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.AchievementManager.EAchievement, bool> achievementUnlocked;
+		private static global::System.Collections.Generic.Dictionary<global::ScheduleOne.AchievementManager.EAchievement, bool> achievementUnlocked;
 
-		protected override void Awake()
+		[global::UnityEngine.RuntimeInitializeOnLoadMethod(global::UnityEngine.RuntimeInitializeLoadType.BeforeSceneLoad)]
+		private static void Init()
 		{
 		}
 
-		protected override void Start()
+		private static void PullAchievements()
 		{
 		}
 
-		private void PullAchievements()
-		{
-		}
-
-		public void UnlockAchievement(global::ScheduleOne.AchievementManager.EAchievement achievement)
+		public static void UnlockAchievement(global::ScheduleOne.AchievementManager.EAchievement achievement)
 		{
 		}
 	}

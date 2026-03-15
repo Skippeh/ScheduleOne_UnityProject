@@ -74,7 +74,7 @@ namespace ScheduleOne.NPCs
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void GetNPCsWithSewerKey()
 		{
 		}

@@ -45,7 +45,7 @@ namespace ScheduleOne.Cartel
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void TriggerAmbushForPlayer()
 		{
 		}

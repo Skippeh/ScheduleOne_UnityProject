@@ -10,6 +10,8 @@ namespace ScheduleOne.UI.Stations
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Canvas Canvas;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::UnityEngine.RectTransform Container;
 
 		public global::UnityEngine.RectTransform InputSlotsContainer;

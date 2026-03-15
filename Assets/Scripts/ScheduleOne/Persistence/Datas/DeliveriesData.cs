@@ -6,7 +6,9 @@ namespace ScheduleOne.Persistence.Datas
 
 		public global::ScheduleOne.Persistence.Datas.VehicleData[] DeliveryVehicles;
 
-		public DeliveriesData(global::ScheduleOne.Delivery.DeliveryInstance[] deliveries, global::ScheduleOne.Persistence.Datas.VehicleData[] deliveryVehicles)
+		public global::ScheduleOne.Delivery.DeliveryReceipt[] DeliveryHistory;
+
+		public DeliveriesData(global::ScheduleOne.Delivery.DeliveryInstance[] deliveries, global::ScheduleOne.Persistence.Datas.VehicleData[] deliveryVehicles, global::ScheduleOne.Delivery.DeliveryReceipt[] deliveryHistory)
 		{
 		}
 	}

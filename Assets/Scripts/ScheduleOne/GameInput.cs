@@ -36,7 +36,8 @@ namespace ScheduleOne
 			Holster = 29,
 			VehicleResetCamera = 30,
 			SkateboardDismount = 31,
-			SkateboardMount = 32
+			SkateboardMount = 32,
+			TogglePauseMenu = 33
 		}
 
 		public enum InputDeviceType
@@ -65,6 +66,8 @@ namespace ScheduleOne
 		public static global::UnityEngine.Vector2 MotionAxis;
 
 		public static global::UnityEngine.Vector2 CameraAxis;
+
+		private static global::UnityEngine.InputSystem.Mouse systemMouse;
 
 		public static float MouseWheelAxis;
 
@@ -97,6 +100,26 @@ namespace ScheduleOne
 			}
 		}
 
+		public static global::UnityEngine.Vector2 UINavigationDirection { get; private set; }
+
+		public static global::UnityEngine.Vector2 UICyclePanelDirection { get; private set; }
+
+		public static float UITabNavigationPrimaryAxis { get; private set; }
+
+		public static float UITabNavigationSecondaryAxis { get; private set; }
+
+		public static float UIScrollbarAxis { get; private set; }
+
+		public static global::UnityEngine.Vector2 UIMapNavigationDirection { get; private set; }
+
+		public static float UIMapZoomAxis { get; private set; }
+
+		public static float UIModifyAmountIncrementTierOneAxis { get; private set; }
+
+		public static float UIModifyAmountIncrementTierTwoAxis { get; private set; }
+
+		public static float UIModifyAmountIncrementTierThreeAxis { get; private set; }
+
 		protected override void Awake()
 		{
 		}
@@ -124,6 +147,16 @@ namespace ScheduleOne
 		}
 
 		public static bool GetButtonUp(global::ScheduleOne.GameInput.ButtonCode buttonCode)
+		{
+			return false;
+		}
+
+		public static bool GetCurrentInputDeviceIsKeyboardMouse()
+		{
+			return false;
+		}
+
+		public static bool GetCurrentInputDeviceIsGamepad()
 		{
 			return false;
 		}
@@ -281,6 +314,50 @@ namespace ScheduleOne
 		}
 
 		private void OnSkateboardMount()
+		{
+		}
+
+		private void OnTogglePauseMenu()
+		{
+		}
+
+		private void OnUINavigationDirection(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUICyclePanelDirection(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUITabNavigationPrimary(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUITabNavigationSecondary(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIScrollbar(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIMapNavigationDirection(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIMapZoom(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIModifyAmountIncrementTierOne(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIModifyAmountIncrementTierTwo(global::UnityEngine.InputSystem.InputValue value)
+		{
+		}
+
+		private void OnUIModifyAmountIncrementTierThree(global::UnityEngine.InputSystem.InputValue value)
 		{
 		}
 

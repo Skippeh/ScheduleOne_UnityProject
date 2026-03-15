@@ -84,10 +84,6 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		protected override void FixedUpdate()
-		{
-		}
-
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetStage(global::ScheduleOne.Casino.RTBGameController.EStage stage)
 		{
@@ -185,6 +181,11 @@ namespace ScheduleOne.Casino
 		}
 
 		public void ToggleLocalPlayerReady()
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void TryNextStage()
 		{
 		}
 
@@ -303,6 +304,18 @@ namespace ScheduleOne.Casino
 		}
 
 		private void RpcReader___Observers_RemovePlayerFromCurrentRound_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_TryNextStage_2166136261()
+		{
+		}
+
+		private void RpcLogic___TryNextStage_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_TryNextStage_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

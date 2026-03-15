@@ -11,7 +11,7 @@ namespace ScheduleOne.UI.Items
 				public global::UnityEngine.RectTransform Entry;
 			}
 
-			public global::ScheduleOne.ItemFramework.EItemCategory Category;
+			public global::ScheduleOne.Core.Items.Framework.EItemCategory Category;
 
 			public global::UnityEngine.RectTransform Container;
 
@@ -196,7 +196,7 @@ namespace ScheduleOne.UI.Items
 			return false;
 		}
 
-		private global::ScheduleOne.UI.Items.FilterConfigPanel.SearchCategory GetSearchCategory(global::ScheduleOne.ItemFramework.EItemCategory category)
+		private global::ScheduleOne.UI.Items.FilterConfigPanel.SearchCategory GetSearchCategory(global::ScheduleOne.Core.Items.Framework.EItemCategory category)
 		{
 			return null;
 		}

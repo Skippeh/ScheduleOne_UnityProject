@@ -19,6 +19,10 @@ namespace ScheduleOne.UI.Management
 		{
 		}
 
+		public void IncrementValue(int amt)
+		{
+		}
+
 		private void Refresh(float newVal)
 		{
 		}

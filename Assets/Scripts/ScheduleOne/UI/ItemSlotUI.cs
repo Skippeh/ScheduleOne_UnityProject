@@ -26,6 +26,19 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.Animation BopAnimation;
 
+		[global::UnityEngine.Header("Controller Support")]
+		public global::ScheduleOne.UITrigger CmdQuickMove;
+
+		public global::ScheduleOne.UITrigger CmdGrabAll;
+
+		public global::ScheduleOne.UITrigger CmdQtyAdd;
+
+		public global::ScheduleOne.UITrigger CmdQtySubtract;
+
+		public global::ScheduleOne.UITrigger CmdToggleTooltip;
+
+		public global::ScheduleOne.UITrigger CmdDiscardItem;
+
 		private int _lastQuantity;
 
 		private bool _slotBopQueued;
@@ -33,6 +46,10 @@ namespace ScheduleOne.UI
 		public global::ScheduleOne.ItemFramework.ItemSlot assignedSlot { get; protected set; }
 
 		public global::ScheduleOne.UI.Items.ItemUI ItemUI { get; protected set; }
+
+		private void Awake()
+		{
+		}
 
 		public virtual void AssignSlot(global::ScheduleOne.ItemFramework.ItemSlot s)
 		{
@@ -88,6 +105,42 @@ namespace ScheduleOne.UI
 		}
 
 		public void OverrideDisplayedQuantity(int quantity)
+		{
+		}
+
+		private void AssignControllerCommands()
+		{
+		}
+
+		private void UnassignControllerCommands()
+		{
+		}
+
+		private void WrapCmdQuickMove()
+		{
+		}
+
+		private void WrapCmdGrabAll()
+		{
+		}
+
+		private void WrapCmdQtyAdd()
+		{
+		}
+
+		private void WrapCmdQtySubtract()
+		{
+		}
+
+		private void WrapCmdToggleTooltip()
+		{
+		}
+
+		private void WrapCmdDiscardItem()
+		{
+		}
+
+		public void ControllerSelect(bool isSelected)
 		{
 		}
 

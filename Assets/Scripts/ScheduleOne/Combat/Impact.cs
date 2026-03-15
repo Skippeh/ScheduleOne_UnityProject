@@ -17,7 +17,13 @@ namespace ScheduleOne.Combat
 
 		public int ImpactID;
 
-		public Impact(global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::FishNet.Object.NetworkObject impactSource, int impactID = 0)
+		public global::ScheduleOne.Combat.EExplosionType ExplosionType;
+
+		public Impact(global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::FishNet.Object.NetworkObject impactSource, int impactID)
+		{
+		}
+
+		public Impact(global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Vector3 impactForceDirection, float impactForce, float impactDamage, global::ScheduleOne.Combat.EImpactType impactType, global::FishNet.Object.NetworkObject impactSource)
 		{
 		}
 

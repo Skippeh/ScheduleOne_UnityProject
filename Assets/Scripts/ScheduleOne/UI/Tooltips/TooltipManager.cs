@@ -11,8 +11,7 @@ namespace ScheduleOne.UI.Tooltips
 		[global::UnityEngine.SerializeField]
 		private global::TMPro.TextMeshProUGUI tooltipLabel;
 
-		[global::UnityEngine.Header("Canvas")]
-		public global::System.Collections.Generic.List<global::UnityEngine.Canvas> canvases;
+		private global::System.Collections.Generic.List<global::UnityEngine.Canvas> canvases;
 
 		private global::System.Collections.Generic.List<global::UnityEngine.Canvas> sortedCanvases;
 

@@ -7,6 +7,10 @@ namespace ScheduleOne.UI.Stations
 
 		public global::UnityEngine.RectTransform Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
+		public global::ScheduleOne.UIPanel ProgressContainerPanel;
+
 		public global::ScheduleOne.UI.ItemSlotUI InputSlotUI;
 
 		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;

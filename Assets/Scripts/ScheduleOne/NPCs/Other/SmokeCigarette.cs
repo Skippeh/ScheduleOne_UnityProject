@@ -2,13 +2,12 @@ namespace ScheduleOne.NPCs.Other
 {
 	public class SmokeCigarette : global::UnityEngine.MonoBehaviour
 	{
-		public global::ScheduleOne.NPCs.NPC Npc;
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Core.Equipping.Framework.EquippableData _cigarette;
 
-		public global::UnityEngine.GameObject CigarettePrefab;
+		private global::ScheduleOne.NPCs.NPC _npc;
 
-		public global::ScheduleOne.AvatarFramework.Animation.AvatarAnimation Anim;
-
-		private global::UnityEngine.GameObject cigarette;
+		private global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler _equippedItem;
 
 		private void Awake()
 		{

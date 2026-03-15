@@ -33,12 +33,8 @@ namespace ScheduleOne.Building
 		[field: global::UnityEngine.SerializeField]
 		public global::ScheduleOne.Property.Property ParentProperty { get; private set; }
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
-		{
-		}
-
-		private void OnValidate()
 		{
 		}
 

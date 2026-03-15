@@ -25,5 +25,9 @@ namespace ScheduleOne.UI.Management
 		public void ValueChanged(global::ScheduleOne.ItemFramework.EQuality value)
 		{
 		}
+
+		public void ChangeTargetQuality(int amt)
+		{
+		}
 	}
 }

@@ -8,7 +8,7 @@ namespace ScheduleOne.Tools
 
 		public global::UnityEngine.Events.UnityEvent onDelayedExecute;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Execute()
 		{
 		}

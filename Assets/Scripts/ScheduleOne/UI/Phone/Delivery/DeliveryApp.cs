@@ -31,10 +31,6 @@ namespace ScheduleOne.UI.Phone.Delivery
 		{
 		}
 
-		protected override void Update()
-		{
-		}
-
 		public override void SetOpen(bool open)
 		{
 		}

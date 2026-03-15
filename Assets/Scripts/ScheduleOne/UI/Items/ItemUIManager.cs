@@ -2,6 +2,10 @@ namespace ScheduleOne.UI.Items
 {
 	public class ItemUIManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Items.ItemUIManager>
 	{
+		private static readonly float[] CASH_DRAG_AMOUNTS;
+
+		private static readonly float[] CASH_DRAG_THRESHOLDS;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.Canvas Canvas;
 
@@ -52,6 +56,10 @@ namespace ScheduleOne.UI.Items
 
 		public global::UnityEngine.Events.UnityEvent onItemMoved;
 
+		private bool canControllerQuickMove;
+
+		private bool isInfoPanelToggledOn;
+
 		public bool DraggingEnabled { get; protected set; }
 
 		public global::ScheduleOne.UI.ItemSlotUI HoveredSlot { get; protected set; }
@@ -59,6 +67,50 @@ namespace ScheduleOne.UI.Items
 		public bool QuickMoveEnabled { get; protected set; }
 
 		protected override void Awake()
+		{
+		}
+
+		private void OnInputDeviceChanged(global::ScheduleOne.GameInput.InputDeviceType type)
+		{
+		}
+
+		public void ControllerHighlightSlot(global::ScheduleOne.UI.ItemSlotUI itemSlot)
+		{
+		}
+
+		public void ControllerToggleTooltip()
+		{
+		}
+
+		public void ControllerGrabAllSlot()
+		{
+		}
+
+		public void ControllerQuickMoveSlot()
+		{
+		}
+
+		public void ControllerDragAddQuantity()
+		{
+		}
+
+		public void ControllerDragSubtractQuantity()
+		{
+		}
+
+		public void ControllerDiscardSlot()
+		{
+		}
+
+		private void TryOpenInfoPanel(global::ScheduleOne.UI.ItemSlotUI itemSlot)
+		{
+		}
+
+		private void TryCloseInfoPanel()
+		{
+		}
+
+		private void UpdateControllerTooltip()
 		{
 		}
 
@@ -79,6 +131,14 @@ namespace ScheduleOne.UI.Items
 		}
 
 		private void UpdateCashDragAmount(global::ScheduleOne.ItemFramework.CashInstance instance)
+		{
+		}
+
+		private void AddCashAmount(global::ScheduleOne.ItemFramework.CashInstance instance, bool wrapAround = false)
+		{
+		}
+
+		private void SubtractCashAmount(global::ScheduleOne.ItemFramework.CashInstance instance, bool wrapAround = false)
 		{
 		}
 

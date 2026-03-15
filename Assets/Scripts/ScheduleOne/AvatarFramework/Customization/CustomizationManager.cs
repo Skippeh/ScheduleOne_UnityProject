@@ -4,10 +4,7 @@ namespace ScheduleOne.AvatarFramework.Customization
 	{
 		public delegate void AvatarSettingsChanged(global::ScheduleOne.AvatarFramework.AvatarSettings settings);
 
-		public const string AppearancesFolderPath = "Assets/Resources/Appearances";
-
-		[global::UnityEngine.SerializeField]
-		private global::ScheduleOne.AvatarFramework.AvatarSettings ActiveSettings;
+		public const string AppearancesFolderPath = "Assets/Data/Appearances";
 
 		public global::ScheduleOne.AvatarFramework.Avatar TemplateAvatar;
 
@@ -24,6 +21,8 @@ namespace ScheduleOne.AvatarFramework.Customization
 		private bool isEditingOriginal;
 
 		private string loadedSettingsAssetPath;
+
+		private global::ScheduleOne.AvatarFramework.AvatarSettings ActiveSettings;
 
 		protected override void Start()
 		{

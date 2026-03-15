@@ -85,12 +85,12 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ChangeLocation()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ActivateSmokeBreak()
 		{
 		}

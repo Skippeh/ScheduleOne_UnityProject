@@ -83,7 +83,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::System.Guid GUID { get; protected set; }
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}

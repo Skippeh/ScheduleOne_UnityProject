@@ -22,6 +22,8 @@ namespace ScheduleOne.UI.Management
 
 		private global::System.Action<global::ScheduleOne.StationFramework.StationRecipe> optionCallback;
 
+		private global::ScheduleOne.UIContentPanel panel;
+
 		public void Initialize(string selectionTitle, global::System.Collections.Generic.List<global::ScheduleOne.StationFramework.StationRecipe> _options, global::ScheduleOne.StationFramework.StationRecipe _selectedOption = null, global::System.Action<global::ScheduleOne.StationFramework.StationRecipe> _optionCallback = null)
 		{
 		}

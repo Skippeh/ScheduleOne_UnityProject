@@ -7,11 +7,8 @@ namespace ScheduleOne.ObjectScripts.WateringCan
 
 		private global::ScheduleOne.Trash.TrashContent Content;
 
-		public TrashGrabberInstance()
-		{
-		}
-
 		public TrashGrabberInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+			: base(null, 0)
 		{
 		}
 
@@ -59,6 +56,14 @@ namespace ScheduleOne.ObjectScripts.WateringCan
 		public global::System.Collections.Generic.List<ushort> GetTrashUshortQuantities()
 		{
 			return null;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

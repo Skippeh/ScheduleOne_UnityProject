@@ -1,6 +1,6 @@
 namespace ScheduleOne.Skating
 {
-	public class Skateboard : global::FishNet.Object.NetworkBehaviour
+	public class Skateboard : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Weather.IWeatherEntity
 	{
 		public const float JumpCooldown = 0.3f;
 
@@ -42,6 +42,13 @@ namespace ScheduleOne.Skating
 		public global::ScheduleOne.Skating.Skateboard_Equippable Equippable;
 
 		public global::UnityEngine.Transform IKAlignmentsContainer;
+
+		[global::UnityEngine.Header("Skateboard Settings")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Experimental.SkateboardData _defaultData;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.Experimental.SkateboardOverrideData _rainOverrideData;
 
 		[global::UnityEngine.Header("Turn Settings")]
 		public float TurnForce;
@@ -166,6 +173,8 @@ namespace ScheduleOne.Skating
 
 		private bool braking;
 
+		private global::ScheduleOne.Experimental.SkateboardSettings _settings;
+
 		public global::FishNet.Object.Synchronizing.SyncVar<float> syncVar____003CJumpBuildAmount_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ESkating_002ESkateboardAssembly_002DCSharp_002Edll_Excuted;
@@ -200,6 +209,27 @@ namespace ScheduleOne.Skating
 
 		public float TopSpeed_Ms => 0f;
 
+		string global::ScheduleOne.Weather.IWeatherEntity.WeatherVolume
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return null;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			set
+			{
+			}
+		}
+
+		global::UnityEngine.Transform global::ScheduleOne.Weather.IWeatherEntity.Transform => null;
+
+		public bool IsUnderCover { get; set; }
+
+		public global::ScheduleOne.Experimental.SkateboardSettings CurentSettings => null;
+
+		public global::ScheduleOne.Experimental.SkateboardSettings DefaultSettings => null;
+
 		public float SyncAccessor__003CJumpBuildAmount_003Ek__BackingField
 		{
 			get
@@ -212,6 +242,10 @@ namespace ScheduleOne.Skating
 		}
 
 		public virtual void Awake()
+		{
+		}
+
+		private void Start()
 		{
 		}
 
@@ -308,6 +342,14 @@ namespace ScheduleOne.Skating
 		public bool IsOnTerrain()
 		{
 			return false;
+		}
+
+		public void OnWeatherChange(global::ScheduleOne.Weather.WeatherConditions newConditions)
+		{
+		}
+
+		private void OnDestroy()
+		{
 		}
 
 		public virtual void NetworkInitialize___Early()

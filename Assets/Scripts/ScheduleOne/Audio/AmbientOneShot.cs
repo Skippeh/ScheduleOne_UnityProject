@@ -1,44 +1,59 @@
 namespace ScheduleOne.Audio
 {
+	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.Audio.AudioSourceController))]
 	public class AmbientOneShot : global::UnityEngine.MonoBehaviour
 	{
-		public enum EPlayTime
+		private enum EPlayTime
 		{
 			All = 0,
 			Day = 1,
 			Night = 2
 		}
 
-		public global::ScheduleOne.Audio.AudioSourceController Audio;
-
 		[global::UnityEngine.Header("Settings")]
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("Volume")]
 		[global::UnityEngine.Range(0f, 1f)]
-		public float Volume;
+		private float _volume;
 
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("ChancePerHour")]
 		[global::UnityEngine.Range(0f, 1f)]
-		public float ChancePerHour;
+		private float _playChancePerHour;
 
-		public int CooldownTime;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("CooldownTime")]
+		private int _cooldownTime;
 
-		public global::ScheduleOne.Audio.AmbientOneShot.EPlayTime PlayTime;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("PlayTime")]
+		private global::ScheduleOne.Audio.AmbientOneShot.EPlayTime _playTime;
 
-		public float MinDistance;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("MinDistance")]
+		private float _minDistanceFromCameraToPlay;
 
-		public float MaxDistance;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("MaxDistance")]
+		private float _maxDistanceFromCameraToPlay;
 
-		public bool PlayWhileInSewer;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("PlayWhileInSewer")]
+		private bool _canPlayWhilePlayerInSewer;
 
-		private int timeSinceLastPlay;
+		private int _timeSinceLastPlay;
+
+		private global::ScheduleOne.Audio.AudioSourceController _audioSource;
+
+		private void Awake()
+		{
+		}
 
 		private void Start()
 		{
 		}
 
-		private void OnDrawGizmosSelected()
-		{
-		}
-
-		private void MinPass()
+		private void OnUncappedMinPass()
 		{
 		}
 

@@ -1,6 +1,6 @@
 namespace ScheduleOne.DevUtilities
 {
-	public class PlayerLogExporter : global::UnityEngine.MonoBehaviour
+	public static class PlayerLogExporter
 	{
 		private static global::System.Action _onSuccess;
 

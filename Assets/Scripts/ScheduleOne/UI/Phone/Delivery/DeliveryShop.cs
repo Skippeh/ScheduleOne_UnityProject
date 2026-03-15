@@ -2,14 +2,6 @@ namespace ScheduleOne.UI.Phone.Delivery
 {
 	public class DeliveryShop : global::UnityEngine.MonoBehaviour
 	{
-		public const int DELIVERY_VEHICLE_SLOT_CAPACITY = 16;
-
-		public const int DELIVERY_TIME_MIN = 60;
-
-		public const int DELIVERY_TIME_MAX = 360;
-
-		public const int DELIVERY_TIME_ITEM_COUNT_DIVISOR = 160;
-
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.UI.Image HeaderImage;
 
@@ -35,8 +27,6 @@ namespace ScheduleOne.UI.Phone.Delivery
 
 		[global::UnityEngine.Header("Settings")]
 		public string MatchingShopInterfaceName;
-
-		public float DeliveryFee;
 
 		public bool AvailableByDefault;
 

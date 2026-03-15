@@ -93,7 +93,7 @@ namespace ScheduleOne.NPCs
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public float GetTotalRandomInventoryItemWeight()
 		{
 			return 0f;
@@ -158,7 +158,7 @@ namespace ScheduleOne.NPCs
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void PrintInventoryContents()
 		{
 		}

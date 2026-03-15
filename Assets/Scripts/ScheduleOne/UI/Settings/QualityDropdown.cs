@@ -6,7 +6,7 @@ namespace ScheduleOne.UI.Settings
 		{
 		}
 
-		protected virtual void Start()
+		protected override void Start()
 		{
 		}
 

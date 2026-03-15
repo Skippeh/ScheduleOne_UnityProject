@@ -120,10 +120,6 @@ namespace ScheduleOne.Casino
 		{
 		}
 
-		protected override void FixedUpdate()
-		{
-		}
-
 		private global::System.Collections.Generic.List<global::ScheduleOne.PlayerScripts.Player> GetClockwisePlayers()
 		{
 			return null;
@@ -236,6 +232,11 @@ namespace ScheduleOne.Casino
 		}
 
 		public void ToggleLocalPlayerReady()
+		{
+		}
+
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
+		private void TryStartGame()
 		{
 		}
 
@@ -356,6 +357,18 @@ namespace ScheduleOne.Casino
 		}
 
 		private void RpcReader___Observers_RemovePlayerFromCurrentRound_3323014238(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		{
+		}
+
+		private void RpcWriter___Observers_TryStartGame_2166136261()
+		{
+		}
+
+		private void RpcLogic___TryStartGame_2166136261()
+		{
+		}
+
+		private void RpcReader___Observers_TryStartGame_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

@@ -10,6 +10,60 @@ namespace ScheduleOne.UI.Shop
 			PreferOnline = 3
 		}
 
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CRefreshShownItemsNextFrame_003Ed__86 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.Shop.ShopInterface _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CRefreshShownItemsNextFrame_003Ed__86(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
 		public static global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.ShopInterface> AllShops;
 
 		public const int MAX_ITEM_QUANTITY = 999;
@@ -60,6 +114,38 @@ namespace ScheduleOne.UI.Shop
 		public global::ScheduleOne.UI.Shop.ListingUI ListingUIPrefab;
 
 		public global::UnityEngine.Events.UnityEvent onOrderCompleted;
+
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.UIScreen shopScreen;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.UIPanel listingPanel;
+
+		[global::UnityEngine.Header("Add To Cart Popup Values")]
+		[global::UnityEngine.SerializeField]
+		private int defaultAddToCartAmount;
+
+		[global::UnityEngine.SerializeField]
+		private int minAddToCartAmount;
+
+		[global::UnityEngine.SerializeField]
+		private int addToCartTier1Amount;
+
+		[global::UnityEngine.SerializeField]
+		private int addToCartTier2Amount;
+
+		[global::UnityEngine.SerializeField]
+		private int addToCartTier3Amount;
+
+		[global::UnityEngine.Header("Modify Cart Popup Values")]
+		public int minModifyAmount;
+
+		public int modifyTier1Amount;
+
+		public int modifyTier2Amount;
+
+		public int modifyTier3Amount;
 
 		[global::UnityEngine.SerializeField]
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.CategoryButton> categoryButtons;
@@ -124,12 +210,16 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Open()
 		{
 		}
 
 		public virtual void SetIsOpen(bool isOpen)
+		{
+		}
+
+		private void Exit()
 		{
 		}
 
@@ -153,10 +243,6 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void ShowCartAnimation(global::ScheduleOne.UI.Shop.ListingUI listing)
-		{
-		}
-
 		public void CategorySelected(global::ScheduleOne.UI.Shop.EShopCategory category)
 		{
 		}
@@ -171,6 +257,12 @@ namespace ScheduleOne.UI.Shop
 
 		private void RefreshShownItems()
 		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Shop.ShopInterface._003CRefreshShownItemsNextFrame_003Ed__86))]
+		private global::System.Collections.IEnumerator RefreshShownItemsNextFrame()
+		{
+			return null;
 		}
 
 		private void RefreshUnlockStatus()
@@ -224,6 +316,10 @@ namespace ScheduleOne.UI.Shop
 		}
 
 		private void DropdownClicked(global::ScheduleOne.UI.Shop.ListingUI listing)
+		{
+		}
+
+		private void QuantitySelectedNew(int amount)
 		{
 		}
 

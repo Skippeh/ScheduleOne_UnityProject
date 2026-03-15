@@ -1,6 +1,6 @@
 namespace ScheduleOne.Math
 {
-	public class PathSmoothingUtility : global::UnityEngine.MonoBehaviour
+	public static class PathSmoothingUtility
 	{
 		public class SmoothedPath
 		{
@@ -15,11 +15,11 @@ namespace ScheduleOne.Math
 			}
 		}
 
-		public const float MinControlPointDistance = 0.5f;
+		private const float MinControlPointDistance = 0.5f;
 
-		private static global::FluffyUnderware.Curvy.CurvySpline spline;
+		private static global::FluffyUnderware.Curvy.CurvySpline _spline;
 
-		private void Awake()
+		private static void EnsureSplineInitialized()
 		{
 		}
 
@@ -28,7 +28,7 @@ namespace ScheduleOne.Math
 			return null;
 		}
 
-		public static void DrawPath(global::ScheduleOne.Math.PathSmoothingUtility.SmoothedPath path, global::UnityEngine.Color col, float duration)
+		private static void DrawPath(global::ScheduleOne.Math.PathSmoothingUtility.SmoothedPath path, global::UnityEngine.Color col, float duration)
 		{
 		}
 

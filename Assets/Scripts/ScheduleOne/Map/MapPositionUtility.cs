@@ -19,7 +19,7 @@ namespace ScheduleOne.Map
 			return default(global::UnityEngine.Vector2);
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Recalculate()
 		{
 		}

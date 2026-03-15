@@ -13,6 +13,8 @@ namespace ScheduleOne.UI.Shop
 
 		public global::UnityEngine.UI.Button RemoveButton;
 
+		public global::ScheduleOne.UITrigger ModifyButton;
+
 		public int Quantity { get; protected set; }
 
 		public global::ScheduleOne.UI.Shop.Cart Cart { get; protected set; }
@@ -36,6 +38,14 @@ namespace ScheduleOne.UI.Shop
 		}
 
 		private void ChangeAmount(int change)
+		{
+		}
+
+		private void SetAmount(int amount)
+		{
+		}
+
+		private void SetItemQuantity(int amount)
 		{
 		}
 	}

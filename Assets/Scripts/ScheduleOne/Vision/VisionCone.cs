@@ -184,7 +184,7 @@ namespace ScheduleOne.Vision
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void PrintSightableStates()
 		{
 		}

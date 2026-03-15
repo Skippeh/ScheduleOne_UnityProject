@@ -8,12 +8,12 @@ namespace ScheduleOne.Tools
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Equip()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Unequip()
 		{
 		}

@@ -16,6 +16,11 @@ namespace ScheduleOne.UI.MainMenu
 
 		public global::UnityEngine.CanvasGroup Group;
 
+		[global::UnityEngine.Header("Custom UI")]
+		public global::ScheduleOne.UIScreen uiScreen;
+
+		public global::ScheduleOne.UIPanel uiPanel;
+
 		private global::UnityEngine.RectTransform Rect;
 
 		private global::UnityEngine.Coroutine lerpRoutine;
@@ -35,6 +40,10 @@ namespace ScheduleOne.UI.MainMenu
 		}
 
 		public virtual void Open(bool closePrevious)
+		{
+		}
+
+		private void Close()
 		{
 		}
 

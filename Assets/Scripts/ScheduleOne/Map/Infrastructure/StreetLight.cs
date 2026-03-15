@@ -2,40 +2,18 @@ namespace ScheduleOne.Map.Infrastructure
 {
 	public class StreetLight : global::UnityEngine.MonoBehaviour
 	{
-		public static global::UnityEngine.Vector3 POWER_ORIGIN;
+		private static global::UnityEngine.Vector3 PowerOrigin;
 
 		[global::UnityEngine.Header("References")]
 		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.MeshRenderer LightRend;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Light Light;
-
-		[global::UnityEngine.SerializeField]
-		protected global::ScheduleOne.Lighting.VolumetricLightTracker BeamTracker;
-
-		[global::UnityEngine.Header("Materials")]
-		public global::UnityEngine.Material LightOnMat;
-
-		public global::UnityEngine.Material LightOffMat;
+		protected global::ScheduleOne.Misc.ToggleableLight _light;
 
 		[global::UnityEngine.Header("Timing")]
 		public int StartTime;
 
 		public int EndTime;
 
-		public int StartTimeOffset;
-
-		[global::UnityEngine.Header("Settings")]
-		public bool ShadowsEnabled;
-
-		public float LightMaxDistance;
-
-		public float SoftShadowsThreshold;
-
-		public float HardShadowsThreshold;
-
-		private bool isOn;
+		private int _startTimeOffset;
 
 		protected virtual void Awake()
 		{
@@ -45,19 +23,11 @@ namespace ScheduleOne.Map.Infrastructure
 		{
 		}
 
-		protected virtual void UpdateState()
-		{
-		}
-
-		private void OnDrawGizmos()
+		private void UpdateState()
 		{
 		}
 
 		private void SetState(bool on)
-		{
-		}
-
-		private void UpdateShadows()
 		{
 		}
 	}

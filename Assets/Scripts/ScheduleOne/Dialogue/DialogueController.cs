@@ -49,7 +49,11 @@ namespace ScheduleOne.Dialogue
 			public global::ScheduleOne.VoiceOver.EVOLineType VOType;
 		}
 
-		public static float GREETING_COOLDOWN;
+		private const float GreetingCooldown = 5f;
+
+		private const float RainyGreetingThreshold = 0.4f;
+
+		private const float RainyGreetingChance = 0.4f;
 
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.Interaction.InteractableObject IntObj;

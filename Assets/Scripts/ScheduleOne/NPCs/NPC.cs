@@ -1,9 +1,9 @@
 namespace ScheduleOne.NPCs
 {
 	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPCHealth))]
-	public class NPC : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable
+	public class NPC : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.IGUIDRegisterable, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable, global::ScheduleOne.Equipping.Framework.INetworkedEquippableUser, global::ScheduleOne.Core.Equipping.Framework.IEquippableUser, global::ScheduleOne.Weather.IWeatherEntity
 	{
-		public const float PANIC_DURATION = 20f;
+		private const int PanicDuration = 15;
 
 		public const bool RequiresRegionUnlocked = true;
 
@@ -88,6 +88,18 @@ namespace ScheduleOne.NPCs
 
 		public bool IgnoreImpacts;
 
+		[global::UnityEngine.Range(0f, 1f)]
+		[global::UnityEngine.SerializeField]
+		private float _useUmbrellaChance;
+
+		[global::UnityEngine.Range(0f, 1f)]
+		[global::UnityEngine.SerializeField]
+		private float _rainTolerance;
+
+		[global::UnityEngine.Range(1f, 10f)]
+		[global::UnityEngine.SerializeField]
+		private float _walkInRainMaxSpeedMultiplier;
+
 		[global::UnityEngine.SerializeField]
 		protected global::System.Collections.Generic.List<global::UnityEngine.GameObject> OutlineRenderers;
 
@@ -108,11 +120,25 @@ namespace ScheduleOne.NPCs
 
 		protected float defaultAggression;
 
+		private global::ScheduleOne.Weather.WeatherConditions _weatherTolerence;
+
+		protected global::ScheduleOne.Weather.WeatherConditions _currentWeatherConditionsForEntity;
+
+		protected global::ScheduleOne.Equipping.Framework.NetworkedEquipper _networkedEquipper;
+
 		private global::UnityEngine.Coroutine lerpScaleRoutine;
+
+		public global::FishNet.Object.Synchronizing.SyncVar<bool> syncVar____003CHasUmbrella_003Ek__BackingField;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002ENPCs_002ENPCAssembly_002DCSharp_002Edll_Excuted;
+
+		public bool IsLocalPlayer => false;
+
+		public global::FishNet.Object.NetworkBehaviour NetworkBehaviour => null;
+
+		public global::ScheduleOne.Core.Equipping.Framework.IThirdPersonReferencesProvider ThirdPersonReferences => null;
 
 		public string fullName => null;
 
@@ -131,6 +157,8 @@ namespace ScheduleOne.NPCs
 		public global::ScheduleOne.Doors.StaticDoor LastEnteredDoor { get; set; }
 
 		public global::ScheduleOne.Messaging.MSGConversation MSGConversation { get; protected set; }
+
+		public float WalkInRainMaxSpeedMultiplier => 0f;
 
 		public string SaveFolderName => null;
 
@@ -168,9 +196,50 @@ namespace ScheduleOne.NPCs
 
 		public bool isUnsettled { get; protected set; }
 
-		public bool IsPanicked => false;
+		public bool IsPanicked { get; private set; }
 
 		public float TimeSincePanicked { get; protected set; }
+
+		public bool HasUmbrella
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return false;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			private set
+			{
+			}
+		}
+
+		global::UnityEngine.Transform global::ScheduleOne.Weather.IWeatherEntity.Transform => null;
+
+		string global::ScheduleOne.Weather.IWeatherEntity.WeatherVolume
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			get
+			{
+				return null;
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			set
+			{
+			}
+		}
+
+		public bool IsUnderCover { get; set; }
+
+		public bool SyncAccessor__003CHasUmbrella_003Ek__BackingField
+		{
+			get
+			{
+				return false;
+			}
+			set
+			{
+			}
+		}
 
 		global::FishNet.Object.NetworkObject global::ScheduleOne.Combat.ICombatTargetable.NetworkObject => null;
 
@@ -242,6 +311,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		public override void OnStartServer()
+		{
+		}
+
 		[global::FishNet.Object.ObserversRpc]
 		private void SetTransform(global::FishNet.Connection.NetworkConnection conn, global::UnityEngine.Vector3 position, global::UnityEngine.Quaternion rotation)
 		{
@@ -308,6 +381,10 @@ namespace ScheduleOne.NPCs
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		public virtual void ReceiveImpact(global::ScheduleOne.Combat.Impact impact)
+		{
+		}
+
+		protected virtual void HitByLightning()
 		{
 		}
 
@@ -414,6 +491,34 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler Equip(global::ScheduleOne.Core.Equipping.Framework.EquippableData equippable)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler Equip(global::ScheduleOne.Core.Items.Framework.BaseItemInstance item)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler EquipLocal(global::ScheduleOne.Core.Equipping.Framework.EquippableData equippable)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler EquipLocal(global::ScheduleOne.Core.Items.Framework.BaseItemInstance item)
+		{
+			return null;
+		}
+
+		public void Unequip(global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler equippedItem)
+		{
+		}
+
+		public void UnequipAll()
+		{
+		}
+
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SendAnimationTrigger(string trigger)
 		{
@@ -463,16 +568,16 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void SetPanicked()
+		public void SetPanicked_Server()
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc]
-		private void ReceivePanicked()
+		private void SetPanicked_Client()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void RemovePanicked()
 		{
 		}
@@ -516,12 +621,30 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		private void RandomizeUseUmbrella()
+		{
+		}
+
 		public void ShowOutline(global::UnityEngine.Color color)
 		{
 		}
 
 		public void HideOutline()
 		{
+		}
+
+		public void OnWeatherChange(global::ScheduleOne.Weather.WeatherConditions newConditions)
+		{
+		}
+
+		public global::ScheduleOne.Weather.WeatherConditions GetWeatherTolerence()
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Weather.WeatherConditions GetCurrentWeatherConditionsForEnitty()
+		{
+			return null;
 		}
 
 		public virtual bool ShouldSave()
@@ -917,27 +1040,27 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Server_SetPanicked_2166136261()
+		private void RpcWriter___Server_SetPanicked_Server_2166136261()
 		{
 		}
 
-		public void RpcLogic___SetPanicked_2166136261()
+		public void RpcLogic___SetPanicked_Server_2166136261()
 		{
 		}
 
-		private void RpcReader___Server_SetPanicked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SetPanicked_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_ReceivePanicked_2166136261()
+		private void RpcWriter___Observers_SetPanicked_Client_2166136261()
 		{
 		}
 
-		private void RpcLogic___ReceivePanicked_2166136261()
+		private void RpcLogic___SetPanicked_Client_2166136261()
 		{
 		}
 
-		private void RpcReader___Observers_ReceivePanicked_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetPanicked_Client_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 
@@ -1023,6 +1146,11 @@ namespace ScheduleOne.NPCs
 
 		private void RpcReader___Observers_SetRelationship_431000436(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
+		}
+
+		public virtual bool ReadSyncVar___ScheduleOne_002ENPCs_002ENPC(global::FishNet.Serializing.PooledReader PooledReader0, uint UInt321, bool Boolean2)
+		{
+			return false;
 		}
 
 		protected virtual void Awake_UserLogic_ScheduleOne_002ENPCs_002ENPC_Assembly_002DCSharp_002Edll()

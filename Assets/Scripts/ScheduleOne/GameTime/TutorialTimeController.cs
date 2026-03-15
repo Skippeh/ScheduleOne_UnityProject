@@ -38,7 +38,7 @@ namespace ScheduleOne.GameTime
 			return 0;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void IncrementKeyframe()
 		{
 		}

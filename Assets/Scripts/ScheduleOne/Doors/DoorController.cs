@@ -60,9 +60,13 @@ namespace ScheduleOne.Doors
 
 		public bool openedByNPC { get; protected set; }
 
+		public int detectedNPCCount { get; protected set; }
+
 		public float timeSinceNPCSensed { get; protected set; }
 
 		public bool playerDetectedSinceOpened { get; protected set; }
+
+		public int detectedPlayerCount { get; protected set; }
 
 		public float timeSincePlayerSensed { get; protected set; }
 
@@ -111,11 +115,19 @@ namespace ScheduleOne.Doors
 			return false;
 		}
 
-		public virtual void NPCVicinityDetected(global::ScheduleOne.Doors.EDoorSide side)
+		public virtual void NPCVicinityEnter(global::ScheduleOne.Doors.EDoorSide side)
 		{
 		}
 
-		public virtual void PlayerVicinityDetected(global::ScheduleOne.Doors.EDoorSide side)
+		public virtual void NPCVicinityExit(global::ScheduleOne.Doors.EDoorSide side)
+		{
+		}
+
+		public virtual void PlayerVicinityEnter(global::ScheduleOne.Doors.EDoorSide side)
+		{
+		}
+
+		public virtual void PlayerVicinityExit(global::ScheduleOne.Doors.EDoorSide side)
 		{
 		}
 

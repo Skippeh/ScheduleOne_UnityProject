@@ -110,7 +110,7 @@ namespace ScheduleOne.Casino
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void VerifyCardSprites()
 		{
 		}

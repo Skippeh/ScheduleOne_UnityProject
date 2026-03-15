@@ -2,44 +2,46 @@ namespace ScheduleOne.Audio
 {
 	public class SFXManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Audio.SFXManager>
 	{
-		[global::System.Serializable]
-		public class ImpactType
-		{
-			public global::ScheduleOne.Audio.ImpactSoundEntity.EMaterial Material;
+		private static float ImpactSoundMaxRangeSquared;
 
-			public float MinVolume;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> _soundPool;
 
-			public float MaxVolume;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> _soundsInUse;
 
-			public float MinPitch;
+		private global::ScheduleOne.Audio.SFXConfiguration _configuration;
 
-			public float MaxPitch;
-
-			public global::UnityEngine.AudioClip[] Clips;
-		}
-
-		public const float MAX_PLAYER_DISTANCE = 40f;
-
-		public const float SQR_MAX_PLAYER_DISTANCE = 1600f;
-
-		public global::System.Collections.Generic.List<global::ScheduleOne.Audio.SFXManager.ImpactType> ImpactTypes;
-
-		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> soundPool;
-
-		private global::System.Collections.Generic.List<global::ScheduleOne.Audio.AudioSourceController> soundsInUse;
-
-		public void PlayImpactSound(global::ScheduleOne.Audio.ImpactSoundEntity.EMaterial material, global::UnityEngine.Vector3 position, float momentum)
+		protected override void Awake()
 		{
 		}
 
-		private void FixedUpdate()
+		protected override void OnDestroy()
 		{
 		}
 
-		private global::ScheduleOne.Audio.AudioSourceController GetSource()
+		private void Update()
 		{
-			return null;
+		}
+
+		public void PlayImpactSound(global::ScheduleOne.Core.Audio.EImpactSound material, global::UnityEngine.Vector3 position, float momentum)
+		{
+		}
+
+		public void PlayFootstepSound(global::ScheduleOne.Core.EMaterialType materialType, float volume, global::UnityEngine.Vector3 position)
+		{
+		}
+
+		public void SetConfiguration(global::ScheduleOne.Configuration.BaseConfiguration baseConfiguration)
+		{
+		}
+
+		private void SetupSoundPool()
+		{
+		}
+
+		private bool TryPullAudioSource(out global::ScheduleOne.Audio.AudioSourceController source)
+		{
+			source = null;
+			return false;
 		}
 	}
 }

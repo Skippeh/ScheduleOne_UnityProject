@@ -10,7 +10,7 @@ namespace ScheduleOne.Cutscenes
 
 		private global::ScheduleOne.Cutscenes.Cutscene playingCutscene;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void RunCutscene()
 		{
 		}

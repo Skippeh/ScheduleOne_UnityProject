@@ -1,6 +1,6 @@
 namespace ScheduleOne.PlayerScripts
 {
-	public class Player : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable
+	public class Player : global::FishNet.Object.NetworkBehaviour, global::ScheduleOne.Persistence.ISaveable, global::ScheduleOne.Combat.ICombatTargetable, global::ScheduleOne.Combat.IDamageable, global::ScheduleOne.Vision.ISightable, global::ScheduleOne.Equipping.Framework.INetworkedEquippableUser, global::ScheduleOne.Core.Equipping.Framework.IEquippableUser, global::ScheduleOne.Core.Equipping.Framework.IEquippablePlayerUser
 	{
 		public delegate void VehicleEvent(global::ScheduleOne.Vehicles.LandVehicle vehicle);
 
@@ -9,6 +9,8 @@ namespace ScheduleOne.PlayerScripts
 		public const string OWNER_PLAYER_CODE = "Local";
 
 		public const float CapColDefaultHeight = 2f;
+
+		private const int LightningStrikeBoostDuration = 60;
 
 		public global::System.Collections.Generic.List<global::FishNet.Object.NetworkObject> objectsTemporarilyOwnedByPlayer;
 
@@ -49,8 +51,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::ScheduleOne.AvatarFramework.Animation.AvatarFootstepDetector FootstepDetector;
 
-		public global::ScheduleOne.PlayerScripts.LocalPlayerFootstepGenerator LocalFootstepDetector;
-
 		public global::UnityEngine.CharacterController CharacterController;
 
 		public global::ScheduleOne.Audio.AudioSourceController PunchSound;
@@ -69,6 +69,10 @@ namespace ScheduleOne.PlayerScripts
 		public float AvatarOffset_Standing;
 
 		public float AvatarOffset_Crouched;
+
+		[global::UnityEngine.ColorUsage(true, true)]
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.Color _lightningColorTint;
 
 		[global::UnityEngine.Header("Movement mapping")]
 		public global::UnityEngine.AnimationCurve WalkingMapCurve;
@@ -110,6 +114,8 @@ namespace ScheduleOne.PlayerScripts
 
 		public global::UnityEngine.Events.UnityEvent onPassOutRecovery;
 
+		public global::UnityEngine.Events.UnityEvent onStruckByLightning;
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Variables.BaseVariable> PlayerVariables;
 
 		public global::System.Collections.Generic.Dictionary<string, global::ScheduleOne.Variables.BaseVariable> VariableDict;
@@ -127,6 +133,8 @@ namespace ScheduleOne.PlayerScripts
 		private global::System.Collections.Generic.List<global::UnityEngine.Quaternion> seizureRotations;
 
 		private global::System.Collections.Generic.List<int> equippableMessageIDHistory;
+
+		private global::ScheduleOne.Equipping.Framework.NetworkedEquipper _networkedEquipper;
 
 		private global::UnityEngine.Coroutine lerpScaleRoutine;
 
@@ -149,6 +157,10 @@ namespace ScheduleOne.PlayerScripts
 		private bool NetworkInitialize__LateScheduleOne_002EPlayerScripts_002EPlayerAssembly_002DCSharp_002Edll_Excuted;
 
 		public bool IsLocalPlayer => false;
+
+		public global::ScheduleOne.Core.Equipping.Framework.IThirdPersonReferencesProvider ThirdPersonReferences => null;
+
+		public global::ScheduleOne.Core.Equipping.Framework.IFirstPersonReferencesProvider FirstPersonReferences => null;
 
 		public global::UnityEngine.Transform CenterPointTransform => null;
 
@@ -205,6 +217,10 @@ namespace ScheduleOne.PlayerScripts
 			{
 			}
 		}
+
+		public global::FishNet.Object.NetworkBehaviour NetworkBehaviour => null;
+
+		public bool ThirdPersonMeshesVisibleToLocalPlayer { get; private set; }
 
 		public bool IsInVehicle => false;
 
@@ -341,6 +357,8 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool Schizophrenic { get; set; }
 
+		public bool StruckByLightning { get; set; }
+
 		public string SyncAccessor__003CPlayerName_003Ek__BackingField
 		{
 			get
@@ -424,6 +442,18 @@ namespace ScheduleOne.PlayerScripts
 
 		global::FishNet.Object.NetworkObject global::ScheduleOne.Vision.ISightable.NetworkObject => null;
 
+		public event global::System.Action<bool> OnThirdPersonMeshesVisibilityChanged
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
+
 		public void RecordLastKnownPosition(bool resetTimeSinceLastSeen)
 		{
 		}
@@ -438,7 +468,7 @@ namespace ScheduleOne.PlayerScripts
 			return false;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void LoadDebugAvatarSettings()
 		{
 		}
@@ -454,6 +484,11 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public static global::ScheduleOne.PlayerScripts.Player GetPlayer(string playerCode)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.PlayerScripts.Player GetPlayerByName(string playerName)
 		{
 			return null;
 		}
@@ -788,6 +823,14 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
+		private void HitByLightning()
+		{
+		}
+
+		private void ResetHitByLightning()
+		{
+		}
+
 		public virtual void OnDied()
 		{
 		}
@@ -863,6 +906,38 @@ namespace ScheduleOne.PlayerScripts
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void ReceiveEquippableMessage_Networked_Vector(string message, int receipt, global::UnityEngine.Vector3 data)
+		{
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler Equip(global::ScheduleOne.Core.Equipping.Framework.EquippableData equippable)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler Equip(global::ScheduleOne.Core.Items.Framework.BaseItemInstance item)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler EquipLocal(global::ScheduleOne.Core.Equipping.Framework.EquippableData equippable)
+		{
+			return null;
+		}
+
+		public global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler EquipLocal(global::ScheduleOne.Core.Items.Framework.BaseItemInstance item)
+		{
+			return null;
+		}
+
+		public void Unequip(global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler equippedItem)
+		{
+		}
+
+		public void UnequipAll()
+		{
+		}
+
+		public void SetThirdPersonMeshesVisibility(bool visible)
 		{
 		}
 

@@ -38,6 +38,8 @@ namespace ScheduleOne.Persistence
 
 		public global::UnityEngine.Events.UnityEvent onPreSceneChange;
 
+		public global::System.Action<string> OnLocalSaveLoadStart;
+
 		public global::UnityEngine.Events.UnityEvent onPreLoad;
 
 		public global::UnityEngine.Events.UnityEvent onLoadComplete;
@@ -47,6 +49,8 @@ namespace ScheduleOne.Persistence
 		private global::System.Collections.Generic.List<global::ScheduleOne.Networking.IStaggeredReplicator> staggeredReplicators;
 
 		public string DefaultTutorialSaveFolder => null;
+
+		public bool IsInGameScene => false;
 
 		public bool IsGameLoaded { get; protected set; }
 
@@ -63,6 +67,18 @@ namespace ScheduleOne.Persistence
 		public global::ScheduleOne.Persistence.SaveInfo ActiveSaveInfo { get; private set; }
 
 		public global::ScheduleOne.Persistence.SaveInfo StoredSaveInfo { get; private set; }
+
+		public static event global::System.Action onLoadConfigurations
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
 
 		protected override void Awake()
 		{

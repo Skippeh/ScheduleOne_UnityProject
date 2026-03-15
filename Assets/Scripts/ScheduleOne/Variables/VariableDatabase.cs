@@ -93,7 +93,7 @@ namespace ScheduleOne.Variables
 			return default(T);
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void PrintAllVariables()
 		{
 		}

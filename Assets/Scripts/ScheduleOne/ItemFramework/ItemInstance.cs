@@ -1,52 +1,14 @@
 namespace ScheduleOne.ItemFramework
 {
 	[global::System.Serializable]
-	public abstract class ItemInstance
+	public abstract class ItemInstance : global::ScheduleOne.Core.Items.Framework.BaseItemInstance
 	{
-		public const int APPROXIMATE_BYTE_SIZE = 80;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		protected global::ScheduleOne.ItemFramework.ItemDefinition definition;
-
-		public int Quantity;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::System.Action onDataChanged;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public global::System.Action requestClearSlot;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public global::ScheduleOne.ItemFramework.ItemDefinition Definition => null;
 
-		public string ID { get; protected set; }
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual string Name => null;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual string Description => null;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::UnityEngine.Sprite Icon => null;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::ScheduleOne.ItemFramework.EItemCategory Category => default(global::ScheduleOne.ItemFramework.EItemCategory);
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual int StackLimit => 0;
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
-		public virtual global::UnityEngine.Color LabelDisplayColor => default(global::UnityEngine.Color);
-
-		[global::FishNet.Serializing.Helping.CodegenExclude]
 		public virtual global::ScheduleOne.Equipping.Equippable Equippable => null;
 
-		public ItemInstance()
-		{
-		}
-
 		public ItemInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+			: base(null, 0)
 		{
 		}
 
@@ -55,49 +17,24 @@ namespace ScheduleOne.ItemFramework
 			return false;
 		}
 
-		public virtual global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1)
-		{
-			return null;
-		}
-
-		public virtual bool IsValidInstance()
-		{
-			return false;
-		}
-
-		protected void InvokeDataChange()
-		{
-		}
-
-		public void SetQuantity(int quantity)
-		{
-		}
-
-		public void ChangeQuantity(int change)
-		{
-		}
+		public abstract global::ScheduleOne.ItemFramework.ItemInstance GetCopy(int overrideQuantity = -1);
 
 		public virtual global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
 		{
 			return null;
 		}
 
-		public virtual float GetMonetaryValue()
-		{
-			return 0f;
-		}
-
-		public void RequestClearSlot()
+		public virtual void Write(global::FishNet.Serializing.Writer writer)
 		{
 		}
 
-		public virtual int GetTotalAmount()
+		public virtual void Read(global::FishNet.Serializing.Reader reader)
 		{
-			return 0;
 		}
 
-		public void SetID(string id)
+		public static global::ScheduleOne.ItemFramework.ItemInstance CreateInstanceAndRead(global::FishNet.Serializing.Reader reader)
 		{
+			return null;
 		}
 	}
 }

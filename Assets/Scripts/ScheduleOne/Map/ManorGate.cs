@@ -37,7 +37,7 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ActivateIntercom()
 		{
 		}

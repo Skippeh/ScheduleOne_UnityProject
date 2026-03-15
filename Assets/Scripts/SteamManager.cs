@@ -7,6 +7,8 @@ public class SteamManager : global::UnityEngine.MonoBehaviour
 
 	protected bool m_bInitialized;
 
+	public static global::System.Action OnSteamInitialized;
+
 	protected global::Steamworks.SteamAPIWarningMessageHook_t m_SteamAPIWarningMessageHook;
 
 	protected static SteamManager Instance => null;

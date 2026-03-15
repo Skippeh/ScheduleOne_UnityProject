@@ -125,7 +125,7 @@ namespace ScheduleOne.Quests
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void PrintQuestStates()
 		{
 		}

@@ -6,8 +6,6 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public const float EyeContractRange = 10f;
 
-		public const float AimIKRange = 20f;
-
 		public static global::UnityEngine.Transform TempContainer;
 
 		public bool DEBUG;

@@ -298,7 +298,7 @@ namespace ScheduleOne.Economy
 			return 0;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private global::System.Collections.Generic.List<global::System.Tuple<global::ScheduleOne.Product.ProductDefinition, global::ScheduleOne.ItemFramework.EQuality, int>> GetAvailableProducts()
 		{
 			return null;

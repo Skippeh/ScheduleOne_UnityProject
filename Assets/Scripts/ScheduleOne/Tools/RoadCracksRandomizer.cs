@@ -8,7 +8,7 @@ namespace ScheduleOne.Tools
 
 		public int MaxCount;
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		private void Randomize()
 		{
 		}

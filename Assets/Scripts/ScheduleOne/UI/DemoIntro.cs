@@ -40,7 +40,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Play()
 		{
 		}

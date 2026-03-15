@@ -3,7 +3,7 @@ namespace ScheduleOne.UI
 	public class FeedbackForm : global::AeLa.EasyFeedback.FeedbackForm
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CScreenshotAndOpenForm_003Ed__18 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CScreenshotAndOpenForm_003Ed__17 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CScreenshotAndOpenForm_003Ed__18(int _003C_003E1__state)
+			public _003CScreenshotAndOpenForm_003Ed__17(int _003C_003E1__state)
 			{
 			}
 
@@ -55,8 +55,6 @@ namespace ScheduleOne.UI
 			{
 			}
 		}
-
-		private global::UnityEngine.Coroutine ssCoroutine;
 
 		public global::UnityEngine.CanvasGroup CanvasGroup;
 
@@ -113,7 +111,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.FeedbackForm._003CScreenshotAndOpenForm_003Ed__18))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.FeedbackForm._003CScreenshotAndOpenForm_003Ed__17))]
 		private global::System.Collections.IEnumerator ScreenshotAndOpenForm()
 		{
 			return null;

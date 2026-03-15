@@ -5,17 +5,11 @@ namespace ScheduleOne.UI.Shop
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.UI.Shop.ShopInterface Shop;
 
-		public global::UnityEngine.UI.Image CartIcon;
-
-		public global::TMPro.TextMeshProUGUI ViewCartText;
-
 		public global::UnityEngine.RectTransform CartEntryContainer;
 
 		public global::TMPro.TextMeshProUGUI ProblemText;
 
 		public global::TMPro.TextMeshProUGUI WarningText;
-
-		public global::UnityEngine.UI.Button BuyButton;
 
 		public global::UnityEngine.RectTransform CartContainer;
 
@@ -30,15 +24,20 @@ namespace ScheduleOne.UI.Shop
 
 		public global::System.Collections.Generic.Dictionary<global::ScheduleOne.UI.Shop.ShopListing, int> cartDictionary;
 
-		private global::UnityEngine.Coroutine cartIconBop;
-
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Shop.CartEntry> cartEntries;
 
-		protected virtual void Start()
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.UIContentPanel cartPanel;
+
+		[global::UnityEngine.SerializeField]
+		private global::ScheduleOne.UITrigger buyUITrigger;
+
+		protected virtual void Update()
 		{
 		}
 
-		protected virtual void Update()
+		public void SetItemQuantity(global::ScheduleOne.UI.Shop.ShopListing listing, int quantity)
 		{
 		}
 
@@ -57,10 +56,6 @@ namespace ScheduleOne.UI.Shop
 		public int GetCartCount(global::ScheduleOne.UI.Shop.ShopListing listing)
 		{
 			return 0;
-		}
-
-		public void BopCartIcon()
-		{
 		}
 
 		public bool CanPlayerAffordCart()
@@ -94,10 +89,6 @@ namespace ScheduleOne.UI.Shop
 		{
 			warning = null;
 			return false;
-		}
-
-		private void UpdateViewCartText()
-		{
 		}
 
 		private void UpdateLoadVehicleToggle()

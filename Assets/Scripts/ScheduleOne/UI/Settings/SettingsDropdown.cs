@@ -4,9 +4,20 @@ namespace ScheduleOne.UI.Settings
 	{
 		public string[] DefaultOptions;
 
-		protected global::TMPro.TMP_Dropdown dropdown;
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIPopupSelector _popupSelector;
+
+		private global::TMPro.TMP_Dropdown _dropdown;
 
 		protected virtual void Awake()
+		{
+		}
+
+		protected void SetValueWithoutNotify(int value)
+		{
+		}
+
+		protected virtual void Start()
 		{
 		}
 
@@ -15,6 +26,14 @@ namespace ScheduleOne.UI.Settings
 		}
 
 		protected void AddOption(string option)
+		{
+		}
+
+		protected void AddOptions(global::System.Collections.Generic.List<string> options)
+		{
+		}
+
+		protected void ClearOptions()
 		{
 		}
 	}

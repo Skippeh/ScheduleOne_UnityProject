@@ -14,10 +14,6 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		private void OnValidate()
-		{
-		}
-
 		private void Clicked()
 		{
 		}

@@ -4,7 +4,14 @@ namespace ScheduleOne.UI.Settings
 	{
 		protected global::UnityEngine.UI.Toggle toggle;
 
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIToggle uiToggle;
+
 		protected virtual void Awake()
+		{
+		}
+
+		protected void SetIsOnWithoutNotify(bool value)
 		{
 		}
 

@@ -27,6 +27,13 @@ namespace ScheduleOne.UI.Phone.Map
 
 		public float LabelScrollMax;
 
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen uiScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIMapPanel uiPanel;
+
 		[global::UnityEngine.HideInInspector]
 		public bool SkipFocusPlayer;
 
@@ -47,6 +54,14 @@ namespace ScheduleOne.UI.Phone.Map
 		}
 
 		public void FocusPosition(global::UnityEngine.Vector2 anchoredPosition)
+		{
+		}
+
+		public void SetupMapItem(global::UnityEngine.GameObject gameObject)
+		{
+		}
+
+		public void TeardownMapItem(global::UnityEngine.GameObject gameObject)
 		{
 		}
 	}

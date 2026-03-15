@@ -2,13 +2,16 @@ namespace ScheduleOne.GamePhysics
 {
 	public class PhysicsManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.GamePhysics.PhysicsManager>
 	{
-		public const bool AUTO_SYNC_TRANSFORMS = true;
+		public const bool AutoSyncTransforms = true;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EGamePhysics_002EPhysicsManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		private bool NetworkInitialize__LateScheduleOne_002EGamePhysics_002EPhysicsManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		public float GravityMultiplier { get; private set; }
+
+		[field: global::UnityEngine.SerializeField]
+		public global::UnityEngine.LayerMask GroundDetectionLayerMask { get; private set; }
 
 		public override void Awake()
 		{

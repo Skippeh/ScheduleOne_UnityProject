@@ -3,63 +3,7 @@ namespace ScheduleOne.PlayerScripts
 	public class PlayerMovement : global::ScheduleOne.DevUtilities.PlayerSingleton<global::ScheduleOne.PlayerScripts.PlayerMovement>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CJump_003Ed__143 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
-		{
-			private int _003C_003E1__state;
-
-			private object _003C_003E2__current;
-
-			public global::ScheduleOne.PlayerScripts.PlayerMovement _003C_003E4__this;
-
-			private float _003CsavedSlopeLimit_003E5__2;
-
-			object global::System.Collections.Generic.IEnumerator<object>.Current
-			{
-				[global::System.Diagnostics.DebuggerHidden]
-				get
-				{
-					return null;
-				}
-			}
-
-			object global::System.Collections.IEnumerator.Current
-			{
-				[global::System.Diagnostics.DebuggerHidden]
-				get
-				{
-					return null;
-				}
-			}
-
-			[global::System.Diagnostics.DebuggerHidden]
-			public _003CJump_003Ed__143(int _003C_003E1__state)
-			{
-			}
-
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.IDisposable.Dispose()
-			{
-			}
-
-			private bool MoveNext()
-			{
-				return false;
-			}
-
-			bool global::System.Collections.IEnumerator.MoveNext()
-			{
-				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-				return this.MoveNext();
-			}
-
-			[global::System.Diagnostics.DebuggerHidden]
-			void global::System.Collections.IEnumerator.Reset()
-			{
-			}
-		}
-
-		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CLerpPlayerRotation_Process_003Ed__151 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CLerpPlayerRotation_Process_003Ed__150 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -94,7 +38,7 @@ namespace ScheduleOne.PlayerScripts
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CLerpPlayerRotation_Process_003Ed__151(int _003C_003E1__state)
+			public _003CLerpPlayerRotation_Process_003Ed__150(int _003C_003E1__state)
 			{
 			}
 
@@ -197,6 +141,8 @@ namespace ScheduleOne.PlayerScripts
 		[global::UnityEngine.Serialization.FormerlySerializedAs("groundDetectionMask")]
 		public global::UnityEngine.LayerMask GroundDetectionMask;
 
+		public readonly global::ScheduleOne.Tools.FloatStack MoveSpeedMultiplierStack;
+
 		public global::System.Action<float> onStaminaReserveChanged;
 
 		public global::System.Action onJump;
@@ -251,8 +197,6 @@ namespace ScheduleOne.PlayerScripts
 
 		public bool CanJump { get; set; }
 
-		public float MoveSpeedMultiplier { get; set; }
-
 		public global::UnityEngine.Vector3 Movement => default(global::UnityEngine.Vector3);
 
 		public bool IsJumping { get; private set; }
@@ -282,6 +226,8 @@ namespace ScheduleOne.PlayerScripts
 		public global::ScheduleOne.Map.Ladder CurrentLadder { get; set; }
 
 		public bool IsOnLadder => false;
+
+		public float MoveSpeedMultiplier => 0f;
 
 		protected override void Awake()
 		{
@@ -341,10 +287,8 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CJump_003Ed__143))]
-		private global::System.Collections.IEnumerator Jump()
+		public void Jump()
 		{
-			return null;
 		}
 
 		public void SetCrouched(bool c)
@@ -372,7 +316,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CLerpPlayerRotation_Process_003Ed__151))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.PlayerScripts.PlayerMovement._003CLerpPlayerRotation_Process_003Ed__150))]
 		private global::System.Collections.IEnumerator LerpPlayerRotation_Process(global::UnityEngine.Quaternion endRotation, float lerpTime)
 		{
 			return null;

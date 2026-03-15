@@ -39,13 +39,13 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		public void Open()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		[global::FishNet.Object.ObserversRpc]
 		public void Close()
 		{

@@ -81,7 +81,7 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void EndTutorial(bool natural)
 		{
 		}

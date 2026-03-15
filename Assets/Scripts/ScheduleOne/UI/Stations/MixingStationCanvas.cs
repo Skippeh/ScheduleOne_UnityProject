@@ -10,6 +10,8 @@ namespace ScheduleOne.UI.Stations
 
 		public global::UnityEngine.RectTransform Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::ScheduleOne.UI.ItemSlotUI ProductSlotUI;
 
 		public global::TMPro.TextMeshProUGUI ProductPropertiesLabel;

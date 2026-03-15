@@ -43,7 +43,7 @@ namespace ScheduleOne.Delivery
 
 		public bool IsDestroyed { get; set; }
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}

@@ -16,7 +16,19 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void Update()
+		private void OnDestroy()
+		{
+		}
+
+		private void OnStartOperation(global::ScheduleOne.Property.LaunderingOperation operation)
+		{
+		}
+
+		private void OnFinishOperation(global::ScheduleOne.Property.LaunderingOperation operation)
+		{
+		}
+
+		private void UpdateCashCounter()
 		{
 		}
 

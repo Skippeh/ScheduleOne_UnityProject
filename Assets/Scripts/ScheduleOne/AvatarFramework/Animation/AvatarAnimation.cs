@@ -57,6 +57,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		public global::ScheduleOne.AvatarFramework.Animation.AvatarIKController IKController;
 
+		public global::ScheduleOne.AvatarFramework.Animation.AvatarFootstepDetector FootstepDetector;
+
 		[global::UnityEngine.Header("Settings")]
 		public global::UnityEngine.LayerMask GroundingMask;
 
@@ -135,6 +137,10 @@ namespace ScheduleOne.AvatarFramework.Animation
 		}
 
 		public void SetAnimationEnabled(bool enabled)
+		{
+		}
+
+		public void ResetAnimatorState()
 		{
 		}
 

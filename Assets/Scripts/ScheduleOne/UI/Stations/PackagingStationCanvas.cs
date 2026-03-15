@@ -15,6 +15,8 @@ namespace ScheduleOne.UI.Stations
 
 		public global::UnityEngine.GameObject Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::ScheduleOne.UI.ItemSlotUI PackagingSlotUI;
 
 		public global::ScheduleOne.UI.ItemSlotUI ProductSlotUI;

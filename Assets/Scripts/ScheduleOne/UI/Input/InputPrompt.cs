@@ -1,6 +1,5 @@
 namespace ScheduleOne.UI.Input
 {
-	[global::UnityEngine.ExecuteInEditMode]
 	public class InputPrompt : global::UnityEngine.MonoBehaviour
 	{
 		public enum EInputPromptAlignment
@@ -47,10 +46,6 @@ namespace ScheduleOne.UI.Input
 		}
 
 		private void OnDisable()
-		{
-		}
-
-		private void Update()
 		{
 		}
 

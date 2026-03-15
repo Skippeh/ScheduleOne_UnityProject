@@ -12,6 +12,170 @@ namespace ScheduleOne.UI.Phone.Messages
 			public global::UnityEngine.Color Color;
 		}
 
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CDelaySelect_003Ed__56 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.Phone.Messages.MessagesApp _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CDelaySelect_003Ed__56(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CDelaySelectCurrentSelectedSelectable_003Ed__55 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.Phone.Messages.MessagesApp _003C_003E4__this;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CDelaySelectCurrentSelectedSelectable_003Ed__55(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
+		[global::System.Runtime.CompilerServices.CompilerGenerated]
+		private sealed class _003CDelaySelectDialogueUIPanel_003Ed__58 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		{
+			private int _003C_003E1__state;
+
+			private object _003C_003E2__current;
+
+			public global::ScheduleOne.UI.Phone.Messages.MessagesApp _003C_003E4__this;
+
+			public global::ScheduleOne.UIPanel uIPanel;
+
+			object global::System.Collections.Generic.IEnumerator<object>.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			object global::System.Collections.IEnumerator.Current
+			{
+				[global::System.Diagnostics.DebuggerHidden]
+				get
+				{
+					return null;
+				}
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			public _003CDelaySelectDialogueUIPanel_003Ed__58(int _003C_003E1__state)
+			{
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.IDisposable.Dispose()
+			{
+			}
+
+			private bool MoveNext()
+			{
+				return false;
+			}
+
+			bool global::System.Collections.IEnumerator.MoveNext()
+			{
+				//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+				return this.MoveNext();
+			}
+
+			[global::System.Diagnostics.DebuggerHidden]
+			void global::System.Collections.IEnumerator.Reset()
+			{
+			}
+		}
+
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> Conversations;
 
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> ActiveConversations;
@@ -80,6 +244,13 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Messaging.MSGConversation> unreadConversations;
 
+		[global::UnityEngine.Header("Custom UI")]
+		public global::ScheduleOne.UIScreen mainMessagesUIScreen;
+
+		public global::ScheduleOne.UIPanel mainMessagesUIPanel;
+
+		public global::ScheduleOne.UIScreen dialogueMainUIScreen;
+
 		public global::ScheduleOne.Messaging.MSGConversation currentConversation { get; private set; }
 
 		protected override void Start()
@@ -135,6 +306,40 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public void ClearFilter()
 		{
+		}
+
+		public override void SetOpen(bool open)
+		{
+		}
+
+		protected override void OnPhoneOpened()
+		{
+		}
+
+		private void SelectMessageSelectable()
+		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Messages.MessagesApp._003CDelaySelectCurrentSelectedSelectable_003Ed__55))]
+		private global::System.Collections.IEnumerator DelaySelectCurrentSelectedSelectable()
+		{
+			return null;
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Messages.MessagesApp._003CDelaySelect_003Ed__56))]
+		private global::System.Collections.IEnumerator DelaySelect()
+		{
+			return null;
+		}
+
+		public void SelectDialogueUIPanel(global::ScheduleOne.UIPanel uIPanel)
+		{
+		}
+
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Phone.Messages.MessagesApp._003CDelaySelectDialogueUIPanel_003Ed__58))]
+		private global::System.Collections.IEnumerator DelaySelectDialogueUIPanel(global::ScheduleOne.UIPanel uIPanel)
+		{
+			return null;
 		}
 	}
 }

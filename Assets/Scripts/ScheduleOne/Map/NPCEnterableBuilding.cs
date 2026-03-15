@@ -30,15 +30,15 @@ namespace ScheduleOne.Map
 		{
 		}
 
-		public virtual void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void NPCEnteredBuilding(global::ScheduleOne.NPCs.NPC npc, global::ScheduleOne.Doors.StaticDoor door)
 		{
 		}
 
-		public virtual void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc)
+		public virtual void NPCExitedBuilding(global::ScheduleOne.NPCs.NPC npc, global::ScheduleOne.Doors.StaticDoor door)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void GetDoors()
 		{
 		}

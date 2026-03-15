@@ -30,5 +30,10 @@ namespace ScheduleOne.DevUtilities
 		{
 			return null;
 		}
+
+		private static uint GetDenominatorSafe(global::UnityEngine.RefreshRate refreshRate)
+		{
+			return 0u;
+		}
 	}
 }

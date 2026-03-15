@@ -8,6 +8,21 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
+		public static global::ScheduleOne.Vehicles.Modification.EVehicleColor Read___ScheduleOne_002EVehicles_002EModification_002EEVehicleColorFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Vehicles.Modification.EVehicleColor);
+		}
+
+		public static global::ScheduleOne.Vehicles.ParkData Read___ScheduleOne_002EVehicles_002EParkDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.Vehicles.EParkingAlignment Read___ScheduleOne_002EVehicles_002EEParkingAlignmentFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Vehicles.EParkingAlignment);
+		}
+
 		public static global::ScheduleOne.Temperature.AirConditioner.EMode Read___ScheduleOne_002ETemperature_002EAirConditioner_002FEModeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.Temperature.AirConditioner.EMode);
@@ -233,6 +248,11 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Combat.EImpactType);
 		}
 
+		public static global::ScheduleOne.Combat.EExplosionType Read___ScheduleOne_002ECombat_002EEExplosionTypeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Combat.EExplosionType);
+		}
+
 		public static global::ScheduleOne.ItemFramework.SlotFilter Read___ScheduleOne_002EItemFramework_002ESlotFilterFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -333,6 +353,11 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Doors.EDoorSide);
 		}
 
+		public static global::ScheduleOne.Delivery.DeliveryInstance Read___ScheduleOne_002EDelivery_002EDeliveryInstanceFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
 		public static global::ScheduleOne.DevUtilities.StringIntPair Read___ScheduleOne_002EDevUtilities_002EStringIntPairFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -343,29 +368,14 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
-		public static global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation Read___ScheduleOne_002ELaw_002ECheckpointManager_002FECheckpointLocationFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation);
-		}
-
-		public static global::ScheduleOne.Persistence.Datas.GameData Read___ScheduleOne_002EPersistence_002EDatas_002EGameDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
-		public static global::ScheduleOne.DevUtilities.GameSettings Read___ScheduleOne_002EDevUtilities_002EGameSettingsFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
-		public static global::ScheduleOne.Delivery.DeliveryInstance Read___ScheduleOne_002EDelivery_002EDeliveryInstanceFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
 		public static global::ScheduleOne.Delivery.EDeliveryStatus Read___ScheduleOne_002EDelivery_002EEDeliveryStatusFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.Delivery.EDeliveryStatus);
+		}
+
+		public static global::ScheduleOne.Delivery.DeliveryReceipt Read___ScheduleOne_002EDelivery_002EDeliveryReceiptFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
 		}
 
 		public static global::ScheduleOne.Combat.ExplosionData Read___ScheduleOne_002ECombat_002EExplosionDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
@@ -403,6 +413,11 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
+		public static global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation Read___ScheduleOne_002ELaw_002ECheckpointManager_002FECheckpointLocationFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Law.CheckpointManager.ECheckpointLocation);
+		}
+
 		public static ECartelStatus Read___ECartelStatusFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(ECartelStatus);
@@ -423,21 +438,6 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Cartel.CartelDealInfo.EStatus);
 		}
 
-		public static global::ScheduleOne.Vehicles.Modification.EVehicleColor Read___ScheduleOne_002EVehicles_002EModification_002EEVehicleColorFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Vehicles.Modification.EVehicleColor);
-		}
-
-		public static global::ScheduleOne.Vehicles.ParkData Read___ScheduleOne_002EVehicles_002EParkDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
-		public static global::ScheduleOne.Vehicles.EParkingAlignment Read___ScheduleOne_002EVehicles_002EEParkingAlignmentFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Vehicles.EParkingAlignment);
-		}
-
 		public static global::ScheduleOne.Persistence.TrashContentData Read___ScheduleOne_002EPersistence_002ETrashContentDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
@@ -449,11 +449,6 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static int[] Read___System_002EInt32_005B_005DFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return null;
-		}
-
-		public static global::ScheduleOne.Tiles.Coordinate Read___ScheduleOne_002ETiles_002ECoordinateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
 		}
@@ -493,9 +488,9 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
-		public static global::ScheduleOne.ObjectScripts.Recycler.EState Read___ScheduleOne_002EObjectScripts_002ERecycler_002FEStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		public static global::ScheduleOne.Equipping.EquippedItemHandler Read___ScheduleOne_002EEquipping_002EEquippedItemHandlerFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
-			return default(global::ScheduleOne.ObjectScripts.Recycler.EState);
+			return null;
 		}
 
 		public static global::ScheduleOne.ObjectScripts.Jukebox.JukeboxState Read___ScheduleOne_002EObjectScripts_002EJukebox_002FJukeboxStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
@@ -533,7 +528,32 @@ namespace FishNet.Serializing.Generated
 			return default(global::ScheduleOne.Tiles.CoordinateProceduralTilePair);
 		}
 
+		public static global::ScheduleOne.Tiles.Coordinate Read___ScheduleOne_002ETiles_002ECoordinateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
 		public static global::System.Collections.Generic.List<global::ScheduleOne.Tiles.CoordinateProceduralTilePair> Read___System_002ECollections_002EGeneric_002EList_00601_003CScheduleOne_002ETiles_002ECoordinateProceduralTilePair_003EFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.ObjectScripts.Recycler.EState Read___ScheduleOne_002EObjectScripts_002ERecycler_002FEStateFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.ObjectScripts.Recycler.EState);
+		}
+
+		public static global::ScheduleOne.Persistence.Datas.GameData Read___ScheduleOne_002EPersistence_002EDatas_002EGameDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.DevUtilities.GameSettings Read___ScheduleOne_002EDevUtilities_002EGameSettingsFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return null;
+		}
+
+		public static global::ScheduleOne.Weather.WeatherVolume Read___ScheduleOne_002EWeather_002EWeatherVolumeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
 		}

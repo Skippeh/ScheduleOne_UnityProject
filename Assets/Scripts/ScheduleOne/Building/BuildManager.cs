@@ -1,6 +1,6 @@
 namespace ScheduleOne.Building
 {
-	public class BuildManager : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.Building.BuildManager>
+	public class BuildManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.Building.BuildManager>
 	{
 		[global::System.Serializable]
 		public class BuildSound
@@ -12,33 +12,18 @@ namespace ScheduleOne.Building
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Building.BuildManager.BuildSound> PlaceSounds;
 
-		[global::UnityEngine.Header("References")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Transform tempContainer;
-
-		public global::FishNet.Object.NetworkObject networkObject;
-
-		[global::UnityEngine.Header("Prefabs")]
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject storedItemBuildHandler;
-
-		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.GameObject cashBuildHandler;
-
 		[global::UnityEngine.Header("Materials")]
 		public global::UnityEngine.Material ghostMaterial_White;
 
 		public global::UnityEngine.Material ghostMaterial_Red;
 
-		public global::UnityEngine.Transform _tempContainer => null;
+		private bool NetworkInitialize___EarlyScheduleOne_002EBuilding_002EBuildManagerAssembly_002DCSharp_002Edll_Excuted;
+
+		private bool NetworkInitialize__LateScheduleOne_002EBuilding_002EBuildManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		public bool isBuilding { get; protected set; }
 
 		public global::UnityEngine.GameObject currentBuildHandler { get; protected set; }
-
-		protected override void Awake()
-		{
-		}
 
 		public void StartBuilding(global::ScheduleOne.ItemFramework.ItemInstance item)
 		{
@@ -93,6 +78,22 @@ namespace ScheduleOne.Building
 		public global::ScheduleOne.EntityFramework.SurfaceItem CreateSurfaceItem(global::ScheduleOne.ItemFramework.ItemInstance item, global::ScheduleOne.Building.Surface parentSurface, global::UnityEngine.Vector3 relativePosition, global::UnityEngine.Quaternion relativeRotation, string guid = "")
 		{
 			return null;
+		}
+
+		public override void NetworkInitialize___Early()
+		{
+		}
+
+		public override void NetworkInitialize__Late()
+		{
+		}
+
+		public override void NetworkInitializeIfDisabled()
+		{
+		}
+
+		public override void Awake()
+		{
 		}
 	}
 }

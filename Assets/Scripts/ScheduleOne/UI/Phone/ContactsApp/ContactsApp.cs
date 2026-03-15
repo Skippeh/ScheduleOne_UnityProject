@@ -70,6 +70,13 @@ namespace ScheduleOne.UI.Phone.ContactsApp
 		[global::UnityEngine.Header("Prefabs")]
 		public global::UnityEngine.GameObject ConnectionPrefab;
 
+		[global::UnityEngine.Header("Custom UI")]
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIScreen uiScreen;
+
+		[global::UnityEngine.SerializeField]
+		protected global::ScheduleOne.UIMapPanel uiPanel;
+
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Relations.RelationCircle> RelationCircles;
 
 		private global::UnityEngine.Coroutine contentMoveRoutine;

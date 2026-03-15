@@ -101,7 +101,7 @@ namespace ScheduleOne.TV
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void CreateTiles()
 		{
 		}

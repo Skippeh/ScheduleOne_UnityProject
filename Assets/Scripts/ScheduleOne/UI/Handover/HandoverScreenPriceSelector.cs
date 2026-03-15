@@ -27,5 +27,17 @@ namespace ScheduleOne.UI.Handover
 		public void ChangeAmount(float change)
 		{
 		}
+
+		public void ShowOSK()
+		{
+		}
+
+		private void KBSubmit(string newPrice)
+		{
+		}
+
+		private void KBCancel()
+		{
+		}
 	}
 }

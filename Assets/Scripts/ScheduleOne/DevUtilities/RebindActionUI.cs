@@ -148,6 +148,11 @@ namespace ScheduleOne.DevUtilities
 			return false;
 		}
 
+		public bool IsRebinding()
+		{
+			return false;
+		}
+
 		public void UpdateBindingDisplay()
 		{
 		}

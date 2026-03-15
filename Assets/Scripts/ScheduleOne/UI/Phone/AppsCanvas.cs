@@ -96,9 +96,5 @@ namespace ScheduleOne.UI.Phone
 		private void SetCanvasActive(bool a)
 		{
 		}
-
-		protected override void Start()
-		{
-		}
 	}
 }

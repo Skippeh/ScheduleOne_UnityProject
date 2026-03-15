@@ -17,6 +17,11 @@ namespace ScheduleOne.UI.Phone.Messages
 
 		public global::UnityEngine.RectTransform HoverIndicator;
 
+		[global::UnityEngine.Header("Custom UI")]
+		public global::ScheduleOne.UISelectable uiSelectable;
+
+		public global::UnityEngine.EventSystems.EventTrigger trigger;
+
 		private global::UnityEngine.Coroutine hoverRoutine;
 
 		private void Awake()

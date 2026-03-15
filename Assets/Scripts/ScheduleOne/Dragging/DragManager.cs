@@ -94,7 +94,7 @@ namespace ScheduleOne.Dragging
 			return default(global::UnityEngine.Vector3);
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void EnsureAllDraggableGUIDsAreValid()
 		{
 		}

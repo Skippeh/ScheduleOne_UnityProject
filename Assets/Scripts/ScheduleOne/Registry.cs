@@ -3,24 +3,12 @@ namespace ScheduleOne
 	public class Registry : global::ScheduleOne.DevUtilities.PersistentSingleton<global::ScheduleOne.Registry>
 	{
 		[global::System.Serializable]
-		public class ObjectRegister
-		{
-			public string ID;
-
-			public string AssetPath;
-
-			public global::FishNet.Object.NetworkObject Prefab;
-		}
-
-		[global::System.Serializable]
 		public class ItemRegister
 		{
 			[global::UnityEngine.HideInInspector]
 			public string name;
 
 			public string ID;
-
-			public string AssetPath;
 
 			public global::ScheduleOne.ItemFramework.ItemDefinition Definition;
 		}
@@ -102,7 +90,7 @@ namespace ScheduleOne
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void LogOrderedUnlocks()
 		{
 		}

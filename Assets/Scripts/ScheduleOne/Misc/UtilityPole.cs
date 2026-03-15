@@ -29,30 +29,12 @@ namespace ScheduleOne.Misc
 
 		public global::UnityEngine.Transform Cable2Container;
 
-		private global::UnityEngine.Vector3 cableStart;
-
-		private global::UnityEngine.Vector3 cableEnd;
-
-		private global::UnityEngine.Vector3 cableMid;
-
-		private void Awake()
-		{
-		}
-
-		private void Start()
-		{
-		}
-
-		private void UpdateCulling()
-		{
-		}
-
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Orient()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void DrawLines()
 		{
 		}

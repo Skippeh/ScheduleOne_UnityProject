@@ -41,6 +41,10 @@ namespace ScheduleOne.Messaging
 
 		protected global::ScheduleOne.UI.Phone.Messages.MessageSenderInterface senderInterface;
 
+		protected global::ScheduleOne.UISelectable uiSelectable;
+
+		protected global::ScheduleOne.UIPanel dialogueScreenUIPanel;
+
 		private bool uiCreated;
 
 		public global::System.Action onMessageRendered;
@@ -66,6 +70,8 @@ namespace ScheduleOne.Messaging
 		public bool rollingOut { get; protected set; }
 
 		public bool EntryVisible { get; protected set; }
+
+		public global::ScheduleOne.UISelectable UISelectable => null;
 
 		public bool AreResponsesActive => false;
 
@@ -193,10 +199,6 @@ namespace ScheduleOne.Messaging
 		}
 
 		protected void CreateResponseUI(global::ScheduleOne.Messaging.Response r)
-		{
-		}
-
-		private void RefreshResponseContainer()
 		{
 		}
 

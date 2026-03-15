@@ -63,7 +63,7 @@ namespace ScheduleOne.Tiles
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void RegenerateGUID()
 		{
 		}
@@ -87,12 +87,12 @@ namespace ScheduleOne.Tiles
 			return null;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetVisible()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetInvisible()
 		{
 		}

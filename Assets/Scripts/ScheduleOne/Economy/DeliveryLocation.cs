@@ -10,8 +10,6 @@ namespace ScheduleOne.Economy
 
 		public global::UnityEngine.Transform TeleportPoint;
 
-		public global::ScheduleOne.Map.POI PoI;
-
 		public string StaticGUID;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Quests.Contract> ScheduledContracts;

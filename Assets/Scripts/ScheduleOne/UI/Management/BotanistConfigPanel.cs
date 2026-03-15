@@ -9,7 +9,7 @@ namespace ScheduleOne.UI.Management
 
 		public global::ScheduleOne.UI.Management.ObjectListFieldUI PotsUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		protected override void BindInternal(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
 		{
 		}
 	}

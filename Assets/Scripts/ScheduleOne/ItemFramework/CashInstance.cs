@@ -7,11 +7,8 @@ namespace ScheduleOne.ItemFramework
 
 		public float Balance { get; protected set; }
 
-		public CashInstance()
-		{
-		}
-
 		public CashInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity)
+			: base(null, 0)
 		{
 		}
 
@@ -36,6 +33,14 @@ namespace ScheduleOne.ItemFramework
 		public override float GetMonetaryValue()
 		{
 			return 0f;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

@@ -7,6 +7,8 @@ namespace ScheduleOne.UI.Stations
 
 		public global::UnityEngine.RectTransform Container;
 
+		public global::ScheduleOne.UIScreen UIScreen;
+
 		public global::ScheduleOne.UI.ItemSlotUI[] ProductSlotUIs;
 
 		public global::ScheduleOne.UI.ItemSlotUI OutputSlotUI;

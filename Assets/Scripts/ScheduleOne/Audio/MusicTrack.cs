@@ -5,23 +5,43 @@ namespace ScheduleOne.Audio
 	{
 		public bool Enabled;
 
-		public string TrackName;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("TrackName")]
+		private string _trackName;
 
-		public int Priority;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("Priority")]
+		private int _priority;
 
-		public float FadeInTime;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("VolumeMultiplier")]
+		protected float _volumeMultiplier;
 
-		public float FadeOutTime;
+		[global::UnityEngine.Serialization.FormerlySerializedAs("FadeInTime")]
+		[global::UnityEngine.SerializeField]
+		protected float _fadeInTime;
 
-		public global::ScheduleOne.Audio.AudioSourceController Controller;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("FadeOutTime")]
+		protected float _fadeOutTime;
 
-		public float VolumeMultiplier;
+		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Serialization.FormerlySerializedAs("AutoFadeOut")]
+		protected bool _autoFadeOut;
 
-		public bool AutoFadeOut;
+		protected global::ScheduleOne.Audio.AudioSourceController _audioSource;
 
-		protected float volumeMultiplier;
+		protected float _fadeVolumeMultiplier;
 
 		public bool IsPlaying { get; private set; }
+
+		public string TrackName => null;
+
+		public int Priority => 0;
+
+		protected virtual void Awake()
+		{
+		}
 
 		private void OnValidate()
 		{
@@ -35,19 +55,15 @@ namespace ScheduleOne.Audio
 		{
 		}
 
-		protected virtual void Awake()
-		{
-		}
-
-		public virtual void Update()
-		{
-		}
-
 		public virtual void Play()
 		{
 		}
 
 		public virtual void Stop()
+		{
+		}
+
+		protected virtual void Update()
 		{
 		}
 	}

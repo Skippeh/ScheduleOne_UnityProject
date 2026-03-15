@@ -2,7 +2,7 @@ namespace ScheduleOne.Tools
 {
 	public class CleanNodeLinks : global::UnityEngine.MonoBehaviour
 	{
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Clean()
 		{
 		}

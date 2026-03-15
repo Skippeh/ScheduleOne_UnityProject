@@ -37,6 +37,9 @@ namespace ScheduleOne.UI.Relations
 
 		public global::UnityEngine.EventSystems.EventTrigger Trigger;
 
+		[global::UnityEngine.Header("Custom UI")]
+		public global::ScheduleOne.UIMapItem uiMapItem;
+
 		private void Awake()
 		{
 		}
@@ -69,17 +72,17 @@ namespace ScheduleOne.UI.Relations
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetLocked()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void SetUnlocked(global::ScheduleOne.NPCs.Relation.NPCRelationData.EUnlockType unlockType, bool notify = true)
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void LoadNPCData()
 		{
 		}

@@ -4,15 +4,14 @@ namespace ScheduleOne.Delivery
 	{
 		public global::System.Collections.Generic.List<global::ScheduleOne.Delivery.DeliveryInstance> Deliveries;
 
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCreated;
-
-		public global::UnityEngine.Events.UnityEvent<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCompleted;
-
 		private global::ScheduleOne.Persistence.Loaders.DeliveriesLoader loader;
 
 		private global::System.Collections.Generic.List<string> writtenVehicles;
 
-		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Delivery.DeliveryInstance, int> minsSinceVehicleEmpty;
+		[global::FishNet.Object.Synchronizing.SyncObject]
+		private readonly global::FishNet.Object.Synchronizing.SyncList<global::ScheduleOne.Delivery.DeliveryReceipt> _deliveryHistory;
+
+		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Delivery.DeliveryInstance, int> _minsSinceVehicleEmpty;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDelivery_002EDeliveryManagerAssembly_002DCSharp_002Edll_Excuted;
 
@@ -33,6 +32,30 @@ namespace ScheduleOne.Delivery
 		public bool HasChanged { get; set; }
 
 		public int LoadOrder { get; }
+
+		public event global::System.Action<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCreated
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
+
+		public event global::System.Action<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCompleted
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
 
 		public override void Awake()
 		{
@@ -61,6 +84,11 @@ namespace ScheduleOne.Delivery
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
 		public void SendDelivery(global::ScheduleOne.Delivery.DeliveryInstance delivery)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		public void RecordDeliveryReceipt_Server(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
 		{
 		}
 
@@ -121,6 +149,18 @@ namespace ScheduleOne.Delivery
 		}
 
 		private void RpcReader___Server_SendDelivery_2813439055(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_RecordDeliveryReceipt_Server_4268613646(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		{
+		}
+
+		public void RpcLogic___RecordDeliveryReceipt_Server_4268613646(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		{
+		}
+
+		private void RpcReader___Server_RecordDeliveryReceipt_Server_4268613646(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

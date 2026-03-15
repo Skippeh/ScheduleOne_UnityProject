@@ -9,11 +9,8 @@ namespace ScheduleOne.ItemFramework
 
 		public global::ScheduleOne.ItemFramework.WaterContainerDefinition WaterContainerDefinition => null;
 
-		public WaterContainerInstance()
-		{
-		}
-
 		public WaterContainerInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, float fillAmount)
+			: base(null, 0)
 		{
 		}
 
@@ -37,6 +34,14 @@ namespace ScheduleOne.ItemFramework
 		public override global::ScheduleOne.Persistence.Datas.ItemData GetItemData()
 		{
 			return null;
+		}
+
+		public override void Write(global::FishNet.Serializing.Writer writer)
+		{
+		}
+
+		public override void Read(global::FishNet.Serializing.Reader reader)
+		{
 		}
 	}
 }

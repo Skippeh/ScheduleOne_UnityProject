@@ -5,7 +5,7 @@ namespace ScheduleOne.UI.Management
 		[global::UnityEngine.Header("References")]
 		public global::ScheduleOne.UI.Management.ObjectFieldUI DestinationUI;
 
-		public override void Bind(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
+		protected override void BindInternal(global::System.Collections.Generic.List<global::ScheduleOne.Management.EntityConfiguration> configs)
 		{
 		}
 	}

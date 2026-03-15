@@ -100,21 +100,17 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
-		private void ApplyVolume()
-		{
-		}
-
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void TogglePlay()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Back()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void Next()
 		{
 		}
@@ -129,17 +125,17 @@ namespace ScheduleOne.ObjectScripts
 			return 0;
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ToggleShuffle()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ToggleRepeatMode()
 		{
 		}
 
-		[global::EasyButtons.Button]
+		[global::ScheduleOne.Core.Button]
 		public void ToggleSync()
 		{
 		}
