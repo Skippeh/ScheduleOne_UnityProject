@@ -15,6 +15,8 @@ namespace ScheduleOne.Weather
 		[global::UnityEngine.SerializeField]
 		private global::ScheduleOne.Weather.WeatherConditions _conditions;
 
+		public string Id => null;
+
 		public global::ScheduleOne.Weather.WeatherVolume WeatherVolumePrefab => null;
 
 		public global::ScheduleOne.Weather.SkySettings SkySettings => null;

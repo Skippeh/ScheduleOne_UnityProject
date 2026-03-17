@@ -25,6 +25,10 @@ namespace ScheduleOne.Weather
 		private string _id;
 
 		[global::UnityEngine.SerializeField]
+		[global::UnityEngine.Range(0f, 1f)]
+		private float _chanceToOccur;
+
+		[global::UnityEngine.SerializeField]
 		private int _startTime;
 
 		[global::UnityEngine.SerializeField]

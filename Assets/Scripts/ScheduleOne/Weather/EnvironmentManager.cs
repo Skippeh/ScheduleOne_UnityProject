@@ -25,7 +25,7 @@ namespace ScheduleOne.Weather
 		private global::System.Collections.Generic.List<global::ScheduleOne.Weather.WeatherSequence> _weatherSequences;
 
 		[global::UnityEngine.SerializeField]
-		private global::System.Collections.Generic.List<global::ScheduleOne.Weather.WeatherSequence> _dailyWeatherSequences;
+		private global::System.Collections.Generic.List<global::ScheduleOne.Weather.WeightedWeatherSequence> _dailyWeatherSequences;
 
 		[global::UnityEngine.Header("Weather Settings")]
 		[global::UnityEngine.SerializeField]

@@ -6,6 +6,8 @@ namespace ScheduleOne.Equipping
 
 		public global::UnityEngine.SkinnedMeshRenderer[] CanopySkinnedMeshes;
 
+		private global::System.Random _random;
+
 		public override void Equip(global::ScheduleOne.Core.Equipping.Framework.IEquippedItemHandler handler)
 		{
 		}

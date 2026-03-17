@@ -30,10 +30,6 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		public override void BehaviourUpdate()
-		{
-		}
-
 		private void SetCowering(bool cowering)
 		{
 		}

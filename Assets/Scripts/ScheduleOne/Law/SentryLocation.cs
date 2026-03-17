@@ -2,10 +2,17 @@ namespace ScheduleOne.Law
 {
 	public class SentryLocation : global::UnityEngine.MonoBehaviour
 	{
-		[global::UnityEngine.Header("References")]
-		public global::System.Collections.Generic.List<global::UnityEngine.Transform> StandPoints;
+		[global::System.Serializable]
+		public class SentryRoute
+		{
+			public global::UnityEngine.Transform[] RoutePoints;
 
-		[global::UnityEngine.Header("Info")]
-		public global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> AssignedOfficers;
+			public int MinutesPerPoint;
+		}
+
+		[global::UnityEngine.Header("References")]
+		public global::System.Collections.Generic.List<global::ScheduleOne.Law.SentryLocation.SentryRoute> Routes;
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Police.PoliceOfficer> AssignedOfficers { get; private set; }
 	}
 }

@@ -116,6 +116,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		protected virtual void OnUncappedMinutePass()
+		{
+		}
+
 		public void SortBehaviourStack()
 		{
 		}

@@ -4,6 +4,8 @@ namespace ScheduleOne.Persistence.Loaders
 	{
 		public virtual string ItemType => null;
 
+		public virtual int LoadOrder => 0;
+
 		public override void Load(string mainPath)
 		{
 		}

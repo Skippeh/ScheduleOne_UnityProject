@@ -9,10 +9,10 @@ namespace ScheduleOne.Weather
 		[global::UnityEngine.SerializeField]
 		private global::UnityEngine.Vector3 _size;
 
+		[global::UnityEngine.Header("Blend Zone Settings")]
 		[global::UnityEngine.SerializeField]
 		private bool _isBlendZone;
 
-		[global::UnityEngine.Header("Debug")]
 		[global::UnityEngine.SerializeField]
 		private float _backRadius;
 
@@ -20,7 +20,17 @@ namespace ScheduleOne.Weather
 		private float _frontRadius;
 
 		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.AnimationCurve _blendCurve;
+
+		[global::UnityEngine.Header("Debug")]
+		[global::UnityEngine.SerializeField]
 		private bool _debugMode;
+
+		[global::UnityEngine.SerializeField]
+		private bool _debugShowFrontAndBackSeparately;
+
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.GameObject _debugObject;
 
 		private global::UnityEngine.Vector3 _debugClosestPoint;
 
@@ -34,9 +44,15 @@ namespace ScheduleOne.Weather
 
 		public global::UnityEngine.Vector3 EndPoint => default(global::UnityEngine.Vector3);
 
-		public global::UnityEngine.Vector3 Size => default(global::UnityEngine.Vector3);
-
 		public bool IsBlendZone => false;
+
+		private void Awake()
+		{
+		}
+
+		private void Update()
+		{
+		}
 
 		public bool WithinEnclosure(global::UnityEngine.Vector3 targetPosition)
 		{
@@ -54,6 +70,16 @@ namespace ScheduleOne.Weather
 		}
 
 		public global::UnityEngine.Vector3 GetOppositeFacePoint(global::UnityEngine.Vector3 surfacePoint)
+		{
+			return default(global::UnityEngine.Vector3);
+		}
+
+		protected global::UnityEngine.Vector3 GetSize()
+		{
+			return default(global::UnityEngine.Vector3);
+		}
+
+		protected global::UnityEngine.Vector3 GetCenter()
 		{
 			return default(global::UnityEngine.Vector3);
 		}

@@ -124,6 +124,12 @@ namespace ScheduleOne.NPCs
 
 		protected global::ScheduleOne.Weather.WeatherConditions _currentWeatherConditionsForEntity;
 
+		private float _wetness;
+
+		private const float NPC_WET_RATE = 0.1f;
+
+		private const float NPC_DRY_RATE = 0.05f;
+
 		protected global::ScheduleOne.Equipping.Framework.NetworkedEquipper _networkedEquipper;
 
 		private global::UnityEngine.Coroutine lerpScaleRoutine;
@@ -645,6 +651,14 @@ namespace ScheduleOne.NPCs
 		public global::ScheduleOne.Weather.WeatherConditions GetCurrentWeatherConditionsForEnitty()
 		{
 			return null;
+		}
+
+		public void OnUpdateWeatherEntity()
+		{
+		}
+
+		public void UpdateWetness()
+		{
 		}
 
 		public virtual bool ShouldSave()

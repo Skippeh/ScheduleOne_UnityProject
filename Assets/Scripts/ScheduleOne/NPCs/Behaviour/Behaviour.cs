@@ -123,6 +123,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		public virtual void OnActiveUncappedMinutePass()
+		{
+		}
+
 		protected void SetDestination(global::ScheduleOne.Management.ITransitEntity transitEntity, bool teleportIfFail = true)
 		{
 		}

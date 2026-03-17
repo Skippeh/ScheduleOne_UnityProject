@@ -7,6 +7,7 @@ namespace ScheduleOne.Audio
 		FX = 2,
 		UI = 3,
 		Music = 4,
-		Voice = 5
+		Voice = 5,
+		Weather = 6
 	}
 }

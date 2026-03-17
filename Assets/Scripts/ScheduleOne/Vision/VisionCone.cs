@@ -43,6 +43,10 @@ namespace ScheduleOne.Vision
 
 		public const float MinVisionDelta = 0.075f;
 
+		private const float ExclamationSoundCooldown = 1f;
+
+		private static float TimeOnLastExclamationSound;
+
 		public static float UniversalAttentivenessScale;
 
 		public static float UniversalMemoryScale;

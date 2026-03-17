@@ -17,10 +17,6 @@ namespace ScheduleOne.UI.Items
 
 		public global::UnityEngine.RectTransform ItemQuantityPrompt;
 
-		public global::UnityEngine.Animation CashSlotHintAnim;
-
-		public global::UnityEngine.CanvasGroup CashSlotHintAnimCanvasGroup;
-
 		public global::ScheduleOne.UI.Items.FilterConfigPanel FilterConfigPanel;
 
 		[global::UnityEngine.Header("Prefabs")]

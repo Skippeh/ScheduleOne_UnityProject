@@ -699,6 +699,10 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		public void OnUpdateWeatherEntity()
+		{
+		}
+
 		public virtual void NetworkInitialize___Early()
 		{
 		}

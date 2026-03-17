@@ -3,7 +3,7 @@ namespace ScheduleOne.Weather
 	public class MaskController : global::UnityEngine.MonoBehaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003C_003Ec__DisplayClass31_0
+		private sealed class _003C_003Ec__DisplayClass32_0
 		{
 			public global::UnityEngine.Rendering.AsyncGPUReadbackRequest request;
 
@@ -14,7 +14,7 @@ namespace ScheduleOne.Weather
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDoHeightConversionRoutine_003Ed__31 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CDoHeightConversionRoutine_003Ed__32 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -22,7 +22,7 @@ namespace ScheduleOne.Weather
 
 			public global::ScheduleOne.Weather.MaskController _003C_003E4__this;
 
-			private global::ScheduleOne.Weather.MaskController._003C_003Ec__DisplayClass31_0 _003C_003E8__1;
+			private global::ScheduleOne.Weather.MaskController._003C_003Ec__DisplayClass32_0 _003C_003E8__1;
 
 			private global::UnityEngine.ComputeBuffer _003CheightBuffer_003E5__2;
 
@@ -45,7 +45,7 @@ namespace ScheduleOne.Weather
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CDoHeightConversionRoutine_003Ed__31(int _003C_003E1__state)
+			public _003CDoHeightConversionRoutine_003Ed__32(int _003C_003E1__state)
 			{
 			}
 
@@ -98,6 +98,9 @@ namespace ScheduleOne.Weather
 		[global::UnityEngine.SerializeField]
 		private float _sunEvapMultiplier;
 
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.AnimationCurve _wetnessGrowthCurve;
+
 		[global::UnityEngine.Header("Height Settings")]
 		[global::UnityEngine.SerializeField]
 		private global::UnityEngine.Texture2D _heightMask;
@@ -148,7 +151,7 @@ namespace ScheduleOne.Weather
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Weather.MaskController._003CDoHeightConversionRoutine_003Ed__31))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Weather.MaskController._003CDoHeightConversionRoutine_003Ed__32))]
 		private global::System.Collections.IEnumerator DoHeightConversionRoutine()
 		{
 			return null;

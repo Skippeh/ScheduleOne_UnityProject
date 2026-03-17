@@ -275,7 +275,7 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		public void WarpToNavMesh()
+		public void WarpToNavMesh(bool clearVelocity = false)
 		{
 		}
 

@@ -3,7 +3,7 @@ namespace ScheduleOne.GameTime
 	public class TimeManager : global::ScheduleOne.DevUtilities.NetworkSingleton<global::ScheduleOne.GameTime.TimeManager>, global::ScheduleOne.Persistence.IBaseSaveable, global::ScheduleOne.Persistence.ISaveable
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTickLoop_003Ed__106 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CTickLoop_003Ed__104 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -36,7 +36,7 @@ namespace ScheduleOne.GameTime
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CTickLoop_003Ed__106(int _003C_003E1__state)
+			public _003CTickLoop_003Ed__104(int _003C_003E1__state)
 			{
 			}
 
@@ -63,7 +63,7 @@ namespace ScheduleOne.GameTime
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CTimeLoop_003Ed__107 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CTimeLoop_003Ed__105 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -96,7 +96,7 @@ namespace ScheduleOne.GameTime
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CTimeLoop_003Ed__107(int _003C_003E1__state)
+			public _003CTimeLoop_003Ed__105(int _003C_003E1__state)
 			{
 			}
 
@@ -174,8 +174,6 @@ namespace ScheduleOne.GameTime
 		private bool NetworkInitialize__LateScheduleOne_002EGameTime_002ETimeManagerAssembly_002DCSharp_002Edll_Excuted;
 
 		public static float MinuteDuration => 0f;
-
-		public static float TicksPerMinute => 0f;
 
 		[field: global::UnityEngine.SerializeField]
 		public int DefaultTime { get; private set; }
@@ -266,13 +264,13 @@ namespace ScheduleOne.GameTime
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTickLoop_003Ed__106))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTickLoop_003Ed__104))]
 		private global::System.Collections.IEnumerator TickLoop()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTimeLoop_003Ed__107))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.GameTime.TimeManager._003CTimeLoop_003Ed__105))]
 		private global::System.Collections.IEnumerator TimeLoop()
 		{
 			return null;

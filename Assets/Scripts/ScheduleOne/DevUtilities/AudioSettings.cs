@@ -16,5 +16,7 @@ namespace ScheduleOne.DevUtilities
 		public float DialogueVolume;
 
 		public float FootstepsVolume;
+
+		public float WeatherVolume;
 	}
 }

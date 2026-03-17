@@ -9,5 +9,7 @@ namespace ScheduleOne.Weather
 		bool IsUnderCover { get; set; }
 
 		void OnWeatherChange(global::ScheduleOne.Weather.WeatherConditions newConditions);
+
+		void OnUpdateWeatherEntity();
 	}
 }

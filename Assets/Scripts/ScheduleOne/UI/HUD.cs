@@ -3,7 +3,7 @@ namespace ScheduleOne.UI
 	public class HUD : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.HUD>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFadeBlackOverlay_003Ed__44 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFadeBlackOverlay_003Ed__46 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -40,7 +40,7 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFadeBlackOverlay_003Ed__44(int _003C_003E1__state)
+			public _003CFadeBlackOverlay_003Ed__46(int _003C_003E1__state)
 			{
 			}
 
@@ -132,6 +132,10 @@ namespace ScheduleOne.UI
 
 		public global::UnityEngine.CanvasGroup NotificationsCanvasGroup;
 
+		public global::UnityEngine.Animation CashSlotHintAnim;
+
+		public global::UnityEngine.CanvasGroup CashSlotHintAnimCanvasGroup;
+
 		[global::UnityEngine.Header("Settings")]
 		public global::UnityEngine.Gradient RedGreenGradient;
 
@@ -182,7 +186,7 @@ namespace ScheduleOne.UI
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.HUD._003CFadeBlackOverlay_003Ed__44))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.HUD._003CFadeBlackOverlay_003Ed__46))]
 		protected global::System.Collections.IEnumerator FadeBlackOverlay(bool visible, float fadeTime)
 		{
 			return null;

@@ -4,7 +4,7 @@ namespace ScheduleOne.Weather
 	{
 		private const float SunShadowStrength = 0.95f;
 
-		private const float MoonShadowStrength = 0.95f;
+		private const float MoonShadowStrength = 0.8f;
 
 		[global::UnityEngine.Header("Components")]
 		[global::UnityEngine.SerializeField]

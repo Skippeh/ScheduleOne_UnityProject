@@ -27,13 +27,13 @@ namespace ScheduleOne.FX
 
 		[global::UnityEngine.Header("Volumetric Fog")]
 		[global::UnityEngine.SerializeField]
-		protected global::UnityEngine.Gradient VolumetricFogColor;
-
-		[global::UnityEngine.SerializeField]
 		protected global::UnityEngine.AnimationCurve VolumetricFogIntensityCurve;
 
 		[global::UnityEngine.SerializeField]
 		protected float VolumetricFogIntensityMultiplier;
+
+		[global::UnityEngine.SerializeField]
+		protected float VolumetricFogSaturationMultiplier;
 
 		[global::UnityEngine.Header("Fog")]
 		[global::UnityEngine.SerializeField]

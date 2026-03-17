@@ -17,9 +17,15 @@ namespace ScheduleOne.Tools
 
 		private float _timeOnLastStep;
 
+		private static global::UnityEngine.LayerMask _groundDetectionLayerMask;
+
 		public float VolumeMultiplier { get; set; }
 
 		private void Awake()
+		{
+		}
+
+		protected virtual void Start()
 		{
 		}
 

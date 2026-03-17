@@ -64,6 +64,11 @@ namespace ScheduleOne
 		{
 		}
 
+		protected virtual bool DeselectOnPointerExit()
+		{
+			return false;
+		}
+
 		public override void OnPointerClick(global::UnityEngine.EventSystems.PointerEventData eventData)
 		{
 		}

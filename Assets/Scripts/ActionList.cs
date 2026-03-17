@@ -2,6 +2,14 @@ public class ActionList
 {
 	private readonly global::System.Collections.Generic.List<global::System.Action> list;
 
+	private bool _shuffleCallbackList;
+
+	private bool _shuffleBeforeNextInvoke;
+
+	public ActionList(bool shuffleCallbackList = false)
+	{
+	}
+
 	public global::System.Collections.Generic.List<global::System.Action> GetInvocationList()
 	{
 		return null;

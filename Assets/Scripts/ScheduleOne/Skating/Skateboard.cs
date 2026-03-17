@@ -348,6 +348,10 @@ namespace ScheduleOne.Skating
 		{
 		}
 
+		public void OnUpdateWeatherEntity()
+		{
+		}
+
 		private void OnDestroy()
 		{
 		}

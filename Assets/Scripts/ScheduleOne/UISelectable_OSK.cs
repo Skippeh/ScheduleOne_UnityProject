@@ -14,6 +14,11 @@ namespace ScheduleOne
 		{
 		}
 
+		protected override bool DeselectOnPointerExit()
+		{
+			return false;
+		}
+
 		private void OnCancel()
 		{
 		}

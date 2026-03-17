@@ -30,6 +30,8 @@ namespace ScheduleOne.Audio
 
 		private float _voiceVolume;
 
+		private float _weatherVolume;
+
 		private float _currentMainMixerVolume;
 
 		public float MasterVolume => 0f;

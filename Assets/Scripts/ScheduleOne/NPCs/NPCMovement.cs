@@ -25,7 +25,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFaceDirection_Process_003Ed__154 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFaceDirection_Process_003Ed__156 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -60,7 +60,7 @@ namespace ScheduleOne.NPCs
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFaceDirection_Process_003Ed__154(int _003C_003E1__state)
+			public _003CFaceDirection_Process_003Ed__156(int _003C_003E1__state)
 			{
 			}
 
@@ -201,6 +201,8 @@ namespace ScheduleOne.NPCs
 		private global::UnityEngine.Vector3[] agentCurrentPathCorners;
 
 		private global::UnityEngine.Coroutine ladderClimbRoutine;
+
+		private float _defaultAngularSpeed;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002ENPCMovementAssembly_002DCSharp_002Edll_Excuted;
 
@@ -351,6 +353,10 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
+		public void SetAngularSpeedMultiplier(float multiplier)
+		{
+		}
+
 		public void SetRagdollDraggable(bool draggable)
 		{
 		}
@@ -426,7 +432,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__154))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__156))]
 		protected global::System.Collections.IEnumerator FaceDirection_Process(global::UnityEngine.Vector3 forward, float lerpTime)
 		{
 			return null;

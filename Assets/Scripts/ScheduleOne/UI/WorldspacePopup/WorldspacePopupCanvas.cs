@@ -4,6 +4,10 @@ namespace ScheduleOne.UI.WorldspacePopup
 	{
 		public const float WORLDSPACE_ICON_SCALE_MULTIPLIER = 0.4f;
 
+		private const float HUDIconMaxOpacityAngle = 50f;
+
+		private const float HUDIconMinOpacityAngle = 30f;
+
 		[global::UnityEngine.Header("References")]
 		public global::UnityEngine.RectTransform WorldspaceContainer;
 
