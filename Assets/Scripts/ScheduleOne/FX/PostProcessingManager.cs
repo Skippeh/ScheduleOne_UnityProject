@@ -22,6 +22,9 @@ namespace ScheduleOne.FX
 
 		public float PostExposureMultiplier;
 
+		[global::UnityEngine.Header("Bloom")]
+		public global::UnityEngine.AnimationCurve BloomIntensityCurve;
+
 		[global::UnityEngine.Header("Smoothers")]
 		public global::ScheduleOne.Tools.FloatSmoother ChromaticAberrationController;
 

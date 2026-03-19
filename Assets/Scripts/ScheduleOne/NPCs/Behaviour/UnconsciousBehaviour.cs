@@ -4,11 +4,15 @@ namespace ScheduleOne.NPCs.Behaviour
 	{
 		public const float SnoreInterval = 6f;
 
+		private const float SnoreChance = 0.5f;
+
 		public global::UnityEngine.ParticleSystem Particles;
 
 		public bool PlaySnoreSounds;
 
 		private float timeOnLastSnore;
+
+		private bool _shouldPlaySnoreSounds;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EUnconsciousBehaviourAssembly_002DCSharp_002Edll_Excuted;
 

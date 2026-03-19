@@ -67,6 +67,8 @@ namespace ScheduleOne
 
 		public static global::UnityEngine.Vector2 CameraAxis;
 
+		public static bool TogglePauseInputUsed;
+
 		private static global::UnityEngine.InputSystem.Mouse systemMouse;
 
 		public static float MouseWheelAxis;

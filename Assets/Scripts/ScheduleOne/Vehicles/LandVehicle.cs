@@ -15,6 +15,10 @@ namespace ScheduleOne.Vehicles
 
 		public const float SPEED_DISPLAY_MULTIPLIER = 1.4f;
 
+		public const float MaxImpactDamage = 120f;
+
+		public const float MaxImpactDamageSpeed = 100f;
+
 		public bool DEBUG;
 
 		[global::UnityEngine.Header("Settings")]

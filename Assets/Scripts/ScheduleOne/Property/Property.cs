@@ -68,7 +68,7 @@ namespace ScheduleOne.Property
 		public global::ScheduleOne.Delivery.LoadingDock[] LoadingDocks;
 
 		[global::UnityEngine.HideInInspector]
-		public global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> BuildableItems;
+		protected global::System.Collections.Generic.List<global::ScheduleOne.EntityFramework.BuildableItem> BuildableItems;
 
 		public global::System.Collections.Generic.List<global::ScheduleOne.Management.IConfigurable> Configurables;
 
@@ -220,6 +220,14 @@ namespace ScheduleOne.Property
 		[global::FishNet.Object.ObserversRpc]
 		[global::FishNet.Object.TargetRpc]
 		public void SetToggleableState(global::FishNet.Connection.NetworkConnection conn, int index, bool state)
+		{
+		}
+
+		public void AddBuildableItem(global::ScheduleOne.EntityFramework.BuildableItem item)
+		{
+		}
+
+		public void RemoveBuildableItem(global::ScheduleOne.EntityFramework.BuildableItem item)
 		{
 		}
 

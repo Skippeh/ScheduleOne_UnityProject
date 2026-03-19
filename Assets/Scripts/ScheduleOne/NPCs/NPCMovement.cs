@@ -25,7 +25,7 @@ namespace ScheduleOne.NPCs
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CFaceDirection_Process_003Ed__156 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CFaceDirection_Process_003Ed__161 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -60,7 +60,7 @@ namespace ScheduleOne.NPCs
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CFaceDirection_Process_003Ed__156(int _003C_003E1__state)
+			public _003CFaceDirection_Process_003Ed__161(int _003C_003E1__state)
 			{
 			}
 
@@ -86,9 +86,17 @@ namespace ScheduleOne.NPCs
 			}
 		}
 
-		public const float VEHICLE_RUNOVER_THRESHOLD = 10f;
+		private const float VehicleRunoverSpeed = 10f;
 
-		public const float SKATEBOARD_RUNOVER_THRESHOLD = 10f;
+		private const float VehicleRunoverRelativeVelocityThreshold_Sqr = 7.71605f;
+
+		private const float VehicleImpactCooldown = 0.25f;
+
+		private const float VehicleImpactForceMultiplier = 5f;
+
+		private const float SkateboardRunoverSpeed = 10f;
+
+		private const float SkateboardImpactForceMultiplier = 4f;
 
 		public const float LIGHT_FLINCH_THRESHOLD = 50f;
 
@@ -311,7 +319,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void CheckHit(global::UnityEngine.Collider other, global::UnityEngine.Collider thisCollider, bool isCollision, global::UnityEngine.Vector3 hitPoint)
+		private void CheckHit(global::UnityEngine.Collider other, global::UnityEngine.Collider thisCollider, bool isCollision, global::UnityEngine.Vector3 hitPoint, global::UnityEngine.Collision collision = null)
 		{
 		}
 
@@ -361,8 +369,12 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void ActivateRagdoll_Server()
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		public void ActivateRagdoll_Server(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
@@ -432,7 +444,7 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__156))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.NPCs.NPCMovement._003CFaceDirection_Process_003Ed__161))]
 		protected global::System.Collections.IEnumerator FaceDirection_Process(global::UnityEngine.Vector3 forward, float lerpTime)
 		{
 			return null;
@@ -510,15 +522,15 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		private void RpcWriter___Server_ActivateRagdoll_Server_2166136261()
+		private void RpcWriter___Server_ActivateRagdoll_Server_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		public void RpcLogic___ActivateRagdoll_Server_2166136261()
+		public void RpcLogic___ActivateRagdoll_Server_2690242654(global::UnityEngine.Vector3 forcePoint, global::UnityEngine.Vector3 forceDir, float forceMagnitude)
 		{
 		}
 
-		private void RpcReader___Server_ActivateRagdoll_Server_2166136261(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ActivateRagdoll_Server_2690242654(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

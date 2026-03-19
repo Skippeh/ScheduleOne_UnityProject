@@ -31,6 +31,9 @@ namespace ScheduleOne.Weather
 
 		[global::UnityEngine.Header("Debugging & Development")]
 		[global::UnityEngine.SerializeField]
+		private float _debugRotationSpeed;
+
+		[global::UnityEngine.SerializeField]
 		private float _debugTimeSpeed;
 
 		[global::UnityEngine.SerializeField]
@@ -107,7 +110,11 @@ namespace ScheduleOne.Weather
 		{
 		}
 
-		public void OnTick(float normalisedTime)
+		public void UpdateTime(float normalisedTime)
+		{
+		}
+
+		public void OnTick()
 		{
 		}
 

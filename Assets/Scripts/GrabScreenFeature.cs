@@ -5,6 +5,8 @@ public class GrabScreenFeature : global::UnityEngine.Rendering.Universal.Scripta
 	{
 		public string TextureName;
 
+		public global::UnityEngine.Rendering.Universal.RenderPassEvent RenderPassEvent;
+
 		public global::UnityEngine.LayerMask LayerMask;
 	}
 

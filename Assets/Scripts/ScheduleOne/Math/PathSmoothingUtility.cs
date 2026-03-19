@@ -19,7 +19,7 @@ namespace ScheduleOne.Math
 
 		private static global::FluffyUnderware.Curvy.CurvySpline _spline;
 
-		private static void EnsureSplineInitialized()
+		public static void EnsureSplineInitialized()
 		{
 		}
 

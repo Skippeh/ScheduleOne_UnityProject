@@ -158,7 +158,7 @@ namespace ScheduleOne.UI.Shop
 
 		private global::ScheduleOne.UI.Shop.ListingUI selectedListing;
 
-		private bool dropdownMouseUp;
+		private bool amountSelectorMouseUp;
 
 		private global::ScheduleOne.Persistence.Loaders.ShopLoader loader;
 

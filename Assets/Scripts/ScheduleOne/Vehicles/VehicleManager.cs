@@ -35,6 +35,10 @@ namespace ScheduleOne.Vehicles
 		{
 		}
 
+		protected override void Start()
+		{
+		}
+
 		public virtual void InitializeSaveable()
 		{
 		}

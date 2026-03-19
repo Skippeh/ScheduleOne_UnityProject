@@ -10,7 +10,7 @@ namespace ScheduleOne
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSmoothScrollContent_003Ed__77 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSmoothScrollContent_003Ed__78 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -47,7 +47,7 @@ namespace ScheduleOne
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSmoothScrollContent_003Ed__77(int _003C_003E1__state)
+			public _003CSmoothScrollContent_003Ed__78(int _003C_003E1__state)
 			{
 			}
 
@@ -252,6 +252,10 @@ namespace ScheduleOne
 		{
 		}
 
+		public void DeselectSelectable()
+		{
+		}
+
 		public void ClearAllSelectables()
 		{
 		}
@@ -286,7 +290,7 @@ namespace ScheduleOne
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UIPanel._003CSmoothScrollContent_003Ed__77))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UIPanel._003CSmoothScrollContent_003Ed__78))]
 		private global::System.Collections.IEnumerator SmoothScrollContent(global::UnityEngine.Vector3 targetLocalPosition, float duration)
 		{
 			return null;

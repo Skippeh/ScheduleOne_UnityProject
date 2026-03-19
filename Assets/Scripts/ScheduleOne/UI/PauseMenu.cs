@@ -3,7 +3,7 @@ namespace ScheduleOne.UI
 	public class PauseMenu : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.PauseMenu>
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CDelayPanelSelect_003Ed__24 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CDelayPanelSelect_003Ed__27 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -30,7 +30,7 @@ namespace ScheduleOne.UI
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CDelayPanelSelect_003Ed__24(int _003C_003E1__state)
+			public _003CDelayPanelSelect_003Ed__27(int _003C_003E1__state)
 			{
 			}
 
@@ -85,6 +85,10 @@ namespace ScheduleOne.UI
 
 		public global::System.Action onResume;
 
+		private bool _togglePausePressed;
+
+		private bool _backWasTriggeredThisFrame;
+
 		public bool IsPaused { get; protected set; }
 
 		protected override void Awake()
@@ -107,11 +111,15 @@ namespace ScheduleOne.UI
 		{
 		}
 
+		private void CheckTogglePause()
+		{
+		}
+
 		public void Pause()
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.PauseMenu._003CDelayPanelSelect_003Ed__24))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.PauseMenu._003CDelayPanelSelect_003Ed__27))]
 		private global::System.Collections.IEnumerator DelayPanelSelect()
 		{
 			return null;
