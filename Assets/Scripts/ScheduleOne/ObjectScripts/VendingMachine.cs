@@ -12,7 +12,7 @@ namespace ScheduleOne.ObjectScripts
 
 		public const float IMPACT_THRESHOLD_FREE_ITEM_CHANCE = 0.33f;
 
-		public const float IMPACT_THRESHOLD_BREAK = 165f;
+		public const float IMPACT_THRESHOLD_BREAK = 150f;
 
 		public const int MIN_CASH_DROP = 1;
 

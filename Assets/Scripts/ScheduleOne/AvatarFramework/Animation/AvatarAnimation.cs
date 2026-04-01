@@ -84,6 +84,8 @@ namespace ScheduleOne.AvatarFramework.Animation
 
 		private bool animationEnabled;
 
+		private global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] _lastFrameBoneTransforms;
+
 		public bool IsCrouched { get; protected set; }
 
 		public bool IsSeated => false;
@@ -105,6 +107,10 @@ namespace ScheduleOne.AvatarFramework.Animation
 		}
 
 		private void Update()
+		{
+		}
+
+		private void LateUpdate()
 		{
 		}
 
@@ -170,6 +176,10 @@ namespace ScheduleOne.AvatarFramework.Animation
 		}
 
 		private void PopulateAnimationStartBoneTransforms(string clipName, global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)
+		{
+		}
+
+		private void ApplyBoneTransforms(global::ScheduleOne.AvatarFramework.Animation.BoneTransform[] boneTransforms)
 		{
 		}
 

@@ -109,5 +109,9 @@ namespace ScheduleOne.PlayerTasks
 		protected void EnableMultiDragging(global::UnityEngine.Transform projectionPlane, float radius = 0.08f)
 		{
 		}
+
+		protected void DisableMultiDragging()
+		{
+		}
 	}
 }

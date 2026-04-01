@@ -5,6 +5,8 @@ namespace ScheduleOne.Effects
 	{
 		public const float SPEED_MULTIPLIER = 1.15f;
 
+		public const float WorkSpeedMultiplier = 1.15f;
+
 		public override void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
 		{
 		}
@@ -18,6 +20,14 @@ namespace ScheduleOne.Effects
 		}
 
 		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		{
+		}
+
+		protected override void ApplyToEmployee(global::ScheduleOne.Employees.Employee employee)
+		{
+		}
+
+		protected override void ClearFromEmployee(global::ScheduleOne.Employees.Employee employee)
 		{
 		}
 	}

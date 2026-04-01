@@ -30,6 +30,11 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		public bool IsAtIdleLocation()
+		{
+			return false;
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}

@@ -7,6 +7,8 @@ namespace ScheduleOne.Effects
 
 		public const float NPC_SPEED_MULTIPLIER = 1.8f;
 
+		public const float WorkSpeedMultiplier = 1.05f;
+
 		[global::UnityEngine.ColorUsage(true, true)]
 		[global::UnityEngine.SerializeField]
 		public global::UnityEngine.Color TintColor;
@@ -24,6 +26,14 @@ namespace ScheduleOne.Effects
 		}
 
 		public override void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player)
+		{
+		}
+
+		protected override void ApplyToEmployee(global::ScheduleOne.Employees.Employee employee)
+		{
+		}
+
+		protected override void ClearFromEmployee(global::ScheduleOne.Employees.Employee employee)
 		{
 		}
 	}

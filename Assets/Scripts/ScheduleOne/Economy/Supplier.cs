@@ -51,6 +51,8 @@ namespace ScheduleOne.Economy
 
 		private int minsSinceLastMeetingEnd;
 
+		private float playerSpendSinceMeetingStart;
+
 		private global::ScheduleOne.Economy.SupplierLocation currentLocation;
 
 		private global::ScheduleOne.Dialogue.DialogueController dialogueController;
@@ -249,6 +251,10 @@ namespace ScheduleOne.Economy
 		}
 
 		public override void Load(global::ScheduleOne.Persistence.Datas.DynamicSaveData dynamicData, global::ScheduleOne.Persistence.Datas.NPCData npcData)
+		{
+		}
+
+		private void MeetupOrderCompleted(float spend)
 		{
 		}
 

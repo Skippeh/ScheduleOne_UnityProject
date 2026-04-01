@@ -133,6 +133,11 @@ namespace ScheduleOne.NPCs
 			return null;
 		}
 
+		public global::System.Collections.Generic.List<global::ScheduleOne.ItemFramework.ItemSlot> GetSlots(global::System.Func<global::ScheduleOne.ItemFramework.ItemSlot, bool> predicate)
+		{
+			return null;
+		}
+
 		protected virtual void InventoryContentsChanged()
 		{
 		}

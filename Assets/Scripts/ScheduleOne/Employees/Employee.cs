@@ -22,6 +22,8 @@ namespace ScheduleOne.Employees
 		[global::UnityEngine.SerializeField]
 		protected global::ScheduleOne.Employees.EEmployeeType Type;
 
+		public global::ScheduleOne.Tools.FloatStack WorkSpeedController;
+
 		[global::UnityEngine.Header("Payment")]
 		public float SigningFee;
 
@@ -84,6 +86,8 @@ namespace ScheduleOne.Employees
 		protected int AppearanceIndex { get; private set; }
 
 		public global::ScheduleOne.Employees.EEmployeeType EmployeeType => default(global::ScheduleOne.Employees.EEmployeeType);
+
+		public float CurrentWorkSpeed => 0f;
 
 		public int TicksSinceLastWork { get; private set; }
 
@@ -177,6 +181,16 @@ namespace ScheduleOne.Employees
 			return false;
 		}
 
+		protected virtual bool CanConsumeProduct()
+		{
+			return false;
+		}
+
+		protected global::ScheduleOne.ItemFramework.ItemSlot GetFirstInventorySlotContainingProduct()
+		{
+			return null;
+		}
+
 		protected override void OnDestroy()
 		{
 		}
@@ -185,8 +199,17 @@ namespace ScheduleOne.Employees
 		{
 		}
 
+		private void UpdateConsumeProduct()
+		{
+		}
+
 		protected void MarkIsWorking()
 		{
+		}
+
+		protected virtual bool IsAnyWorkInProgress()
+		{
+			return false;
 		}
 
 		private void SetWaitOutside(bool wait)

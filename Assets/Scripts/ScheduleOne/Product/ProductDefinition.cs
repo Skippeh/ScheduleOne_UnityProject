@@ -15,7 +15,9 @@ namespace ScheduleOne.Product
 
 		public global::ScheduleOne.Product.FunctionalProduct FunctionalProduct;
 
-		public int EffectsDuration;
+		public int NPCEffectDuration;
+
+		public int PlayerEffectDuration;
 
 		[global::UnityEngine.Range(0f, 1f)]
 		public float BaseAddictiveness;

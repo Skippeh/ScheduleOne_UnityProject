@@ -22,7 +22,7 @@ namespace ScheduleOne.PlayerScripts
 
 		public const float LABEL_FADE_TIME = 0.5f;
 
-		public const float DISCARD_TIME = 1.5f;
+		public const float DISCARD_TIME = 1.25f;
 
 		public const int INVENTORY_SLOT_COUNT = 8;
 

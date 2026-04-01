@@ -34,13 +34,25 @@ namespace ScheduleOne.Effects
 
 		public float MixMagnitude;
 
-		public abstract void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc);
+		public virtual void ApplyToNPC(global::ScheduleOne.NPCs.NPC npc)
+		{
+		}
 
-		public abstract void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc);
+		public virtual void ClearFromNPC(global::ScheduleOne.NPCs.NPC npc)
+		{
+		}
 
 		public abstract void ApplyToPlayer(global::ScheduleOne.PlayerScripts.Player player);
 
 		public abstract void ClearFromPlayer(global::ScheduleOne.PlayerScripts.Player player);
+
+		protected virtual void ApplyToEmployee(global::ScheduleOne.Employees.Employee employee)
+		{
+		}
+
+		protected virtual void ClearFromEmployee(global::ScheduleOne.Employees.Employee employee)
+		{
+		}
 
 		public void OnValidate()
 		{

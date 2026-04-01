@@ -28,6 +28,10 @@ namespace ScheduleOne.Growing
 
 		public string HarvestTarget;
 
+		public float MinColliderScale;
+
+		public float ColliderScaleThreshold;
+
 		[global::UnityEngine.Header("Trash")]
 		public global::ScheduleOne.Trash.TrashItem PlantScrapPrefab;
 
@@ -95,6 +99,10 @@ namespace ScheduleOne.Growing
 		}
 
 		public void SetVisible(bool vis)
+		{
+		}
+
+		private void ResizeCollider()
 		{
 		}
 

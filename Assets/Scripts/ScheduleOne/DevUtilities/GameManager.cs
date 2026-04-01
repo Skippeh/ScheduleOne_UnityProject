@@ -55,10 +55,6 @@ namespace ScheduleOne.DevUtilities
 		{
 		}
 
-		protected override void Start()
-		{
-		}
-
 		public override void OnSpawnServer(global::FishNet.Connection.NetworkConnection connection)
 		{
 		}

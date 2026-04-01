@@ -30,6 +30,18 @@ namespace ScheduleOne.Tools
 
 		public float Value { get; private set; }
 
+		public event global::System.Action<float> OnValueChanged
+		{
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			add
+			{
+			}
+			[global::System.Runtime.CompilerServices.CompilerGenerated]
+			remove
+			{
+			}
+		}
+
 		public FloatStack(float defaultValue)
 		{
 		}

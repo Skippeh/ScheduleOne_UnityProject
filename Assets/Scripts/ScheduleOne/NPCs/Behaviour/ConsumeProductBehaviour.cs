@@ -22,10 +22,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public global::UnityEngine.ParticleSystem SmokeExhaleParticles;
 
-		[global::UnityEngine.Header("Debug")]
-		public global::ScheduleOne.Product.ProductDefinition TestProduct;
-
 		public global::UnityEngine.Events.UnityEvent onConsumeDone;
+
+		private global::ScheduleOne.GameTime.TimedCallback _effectsCooldownTimer;
+
+		private bool _removeFromInventoryOnConsume;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002ENPCs_002EBehaviour_002EConsumeProductBehaviourAssembly_002DCSharp_002Edll_Excuted;
 
@@ -38,12 +39,12 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
-		public void SendProduct(global::ScheduleOne.Product.ProductItemInstance _product)
+		public void SendProduct(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
 		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		private void SetProduct(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void SetProduct(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
@@ -88,7 +89,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void ApplyEffects()
 		{
 		}
@@ -98,6 +99,10 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		private void DayPass()
+		{
+		}
+
+		private void ConsumeDone()
 		{
 		}
 
@@ -113,27 +118,27 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcWriter___Server_SendProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void RpcWriter___Server_SendProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
-		public void RpcLogic___SendProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
+		public void RpcLogic___SendProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
-		private void RpcReader___Server_SendProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_SendProduct_3964170259(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 
-		private void RpcWriter___Observers_SetProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void RpcWriter___Observers_SetProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
-		private void RpcLogic___SetProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance _product)
+		private void RpcLogic___SetProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance _product, bool removeFromInventory)
 		{
 		}
 
-		private void RpcReader___Observers_SetProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
+		private void RpcReader___Observers_SetProduct_3964170259(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

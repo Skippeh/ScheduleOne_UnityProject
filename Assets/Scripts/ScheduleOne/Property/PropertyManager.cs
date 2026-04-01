@@ -50,5 +50,10 @@ namespace ScheduleOne.Property
 		{
 			return null;
 		}
+
+		public global::ScheduleOne.Property.Property GetNearestProperty(global::UnityEngine.Vector3 point, bool includeOwned = true, bool includeUnowned = true, bool includeBusinesses = true)
+		{
+			return null;
+		}
 	}
 }

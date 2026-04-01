@@ -3,6 +3,8 @@ namespace ScheduleOne.Delivery
 	[global::System.Serializable]
 	public class DeliveryReceipt
 	{
+		public string DeliveryID;
+
 		public string StoreName;
 
 		public string DestinationCode;
@@ -11,7 +13,7 @@ namespace ScheduleOne.Delivery
 
 		public global::ScheduleOne.DevUtilities.StringIntPair[] Items;
 
-		public DeliveryReceipt(string storeName, string destinationCode, int loadingDockIndex, global::ScheduleOne.DevUtilities.StringIntPair[] items)
+		public DeliveryReceipt(string deliveryID, string storeName, string destinationCode, int loadingDockIndex, global::ScheduleOne.DevUtilities.StringIntPair[] items)
 		{
 		}
 

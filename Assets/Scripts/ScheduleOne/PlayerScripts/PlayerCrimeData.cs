@@ -80,7 +80,6 @@ namespace ScheduleOne.PlayerScripts
 				return default(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel);
 			}
 			[global::System.Runtime.CompilerServices.CompilerGenerated]
-			[global::FishNet.Object.ServerRpc(RunLocally = true)]
 			protected set
 			{
 			}
@@ -157,6 +156,11 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		public void SetPursuitLevel(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel level)
+		{
+		}
+
+		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
+		private void SetPursuitLevel_Server(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel level)
 		{
 		}
 
@@ -252,19 +256,6 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		private void RpcWriter___Server_set_CurrentPursuitLevel_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel value)
-		{
-		}
-
-		[global::System.Runtime.CompilerServices.SpecialName]
-		protected void RpcLogic___set_CurrentPursuitLevel_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel value)
-		{
-		}
-
-		private void RpcReader___Server_set_CurrentPursuitLevel_2979171596(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
 		private void RpcWriter___Server_set_LastKnownPosition_4276783012(global::UnityEngine.Vector3 value)
 		{
 		}
@@ -275,6 +266,18 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		private void RpcReader___Server_set_LastKnownPosition_4276783012(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		{
+		}
+
+		private void RpcWriter___Server_SetPursuitLevel_Server_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel level)
+		{
+		}
+
+		private void RpcLogic___SetPursuitLevel_Server_2979171596(global::ScheduleOne.PlayerScripts.PlayerCrimeData.EPursuitLevel level)
+		{
+		}
+
+		private void RpcReader___Server_SetPursuitLevel_Server_2979171596(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

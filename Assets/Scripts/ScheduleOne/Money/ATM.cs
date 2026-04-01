@@ -6,7 +6,7 @@ namespace ScheduleOne.Money
 
 		public const float WEEKLY_DEPOSIT_LIMIT = 10000f;
 
-		public const float IMPACT_THRESHOLD_BREAK = 165f;
+		public const float IMPACT_THRESHOLD_BREAK = 150f;
 
 		public const int REPAIR_TIME_DAYS = 0;
 

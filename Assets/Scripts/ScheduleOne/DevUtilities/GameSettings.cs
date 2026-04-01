@@ -4,5 +4,7 @@ namespace ScheduleOne.DevUtilities
 	public class GameSettings
 	{
 		public bool ConsoleEnabled;
+
+		public bool UseRandomizedMixMaps;
 	}
 }

@@ -129,6 +129,11 @@ namespace ScheduleOne.Employees
 		{
 		}
 
+		protected override bool IsAnyWorkInProgress()
+		{
+			return false;
+		}
+
 		protected override void UpdateBehaviour()
 		{
 		}

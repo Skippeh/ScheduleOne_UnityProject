@@ -368,6 +368,10 @@ namespace ScheduleOne.Product
 			return 0f;
 		}
 
+		public static void CheckDiscovery(global::ScheduleOne.ItemFramework.ItemInstance item)
+		{
+		}
+
 		public virtual string GetSaveString()
 		{
 			return null;

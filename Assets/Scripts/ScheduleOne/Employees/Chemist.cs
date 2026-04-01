@@ -113,7 +113,7 @@ namespace ScheduleOne.Employees
 		{
 		}
 
-		private bool AnyWorkInProgress()
+		protected override bool IsAnyWorkInProgress()
 		{
 			return false;
 		}

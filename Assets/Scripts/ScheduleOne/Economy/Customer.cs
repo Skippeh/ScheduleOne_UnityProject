@@ -719,6 +719,11 @@ namespace ScheduleOne.Economy
 			return 0f;
 		}
 
+		public float GetProductEnjoyment(global::ScheduleOne.Product.ProductDefinition product)
+		{
+			return 0f;
+		}
+
 		public global::System.Collections.Generic.List<global::ScheduleOne.Product.EDrugType> GetOrderedDrugTypes()
 		{
 			return null;

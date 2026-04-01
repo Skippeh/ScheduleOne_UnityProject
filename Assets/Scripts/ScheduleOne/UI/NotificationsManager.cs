@@ -16,10 +16,6 @@ namespace ScheduleOne.UI
 
 		private global::System.Collections.Generic.List<global::UnityEngine.RectTransform> entries;
 
-		private void Update()
-		{
-		}
-
 		public void SendNotification(string title, string subtitle, global::UnityEngine.Sprite icon, float duration = 5f, bool playSound = true)
 		{
 		}

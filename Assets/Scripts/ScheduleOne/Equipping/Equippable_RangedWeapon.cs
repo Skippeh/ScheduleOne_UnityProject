@@ -15,7 +15,9 @@ namespace ScheduleOne.Equipping
 		[global::UnityEngine.Header("Aim Settings")]
 		public float AimDuration;
 
-		public float AimFOVReduction;
+		public float MinAimFOVReduction;
+
+		public float MaxAimFOVReduction;
 
 		[global::UnityEngine.Header("Firing")]
 		public global::ScheduleOne.Audio.AudioSourceController FireSound;
@@ -27,6 +29,8 @@ namespace ScheduleOne.Equipping
 		public string[] FireAnimTriggers;
 
 		public float AccuracyChangeDuration;
+
+		public float AccuracyDropPerShot;
 
 		[global::UnityEngine.Header("Raycasting")]
 		public float Range;
@@ -42,6 +46,8 @@ namespace ScheduleOne.Equipping
 		public float Damage;
 
 		public float ImpactForce;
+
+		public float HeadshotMultiplier;
 
 		[global::UnityEngine.Header("Reloading")]
 		public bool CanReload;
@@ -90,7 +96,7 @@ namespace ScheduleOne.Equipping
 
 		protected global::ScheduleOne.ItemFramework.IntegerItemInstance weaponItem;
 
-		private bool fovOverridden;
+		private bool aimStarted;
 
 		private float aimVelocity;
 
@@ -103,6 +109,8 @@ namespace ScheduleOne.Equipping
 		private float timeSincePrimaryClick;
 
 		private float timeSinceReloadStart;
+
+		private float timeSinceAimStart;
 
 		private bool interruptReload;
 
@@ -120,7 +128,7 @@ namespace ScheduleOne.Equipping
 
 		public int Ammo => 0;
 
-		private float aimFov => 0f;
+		private float fov => 0f;
 
 		public override void Equip(global::ScheduleOne.ItemFramework.ItemInstance item)
 		{

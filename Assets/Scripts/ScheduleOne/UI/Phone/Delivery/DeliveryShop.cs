@@ -3,11 +3,7 @@ namespace ScheduleOne.UI.Phone.Delivery
 	public class DeliveryShop : global::UnityEngine.MonoBehaviour
 	{
 		[global::UnityEngine.Header("References")]
-		public global::UnityEngine.UI.Image HeaderImage;
-
-		public global::UnityEngine.UI.Button HeaderButton;
-
-		public global::UnityEngine.RectTransform ContentsContainer;
+		public global::UnityEngine.UI.Button BackButton;
 
 		public global::UnityEngine.RectTransform ListingContainer;
 
@@ -16,6 +12,8 @@ namespace ScheduleOne.UI.Phone.Delivery
 		public global::UnityEngine.UI.Text ItemTotalLabel;
 
 		public global::UnityEngine.UI.Text OrderTotalLabel;
+
+		public global::UnityEngine.UI.Text DeliveryTimeLabel;
 
 		public global::UnityEngine.UI.Button OrderButton;
 
@@ -28,15 +26,11 @@ namespace ScheduleOne.UI.Phone.Delivery
 		[global::UnityEngine.Header("Settings")]
 		public string MatchingShopInterfaceName;
 
+		public global::UnityEngine.Color ShopColor;
+
 		public bool AvailableByDefault;
 
 		public global::ScheduleOne.UI.Phone.Delivery.ListingEntry ListingEntryPrefab;
-
-		public global::UnityEngine.Sprite HeaderImage_Hidden;
-
-		public global::UnityEngine.Sprite HeaderImage_Expanded;
-
-		public global::UnityEngine.RectTransform HeaderArrow;
 
 		private global::System.Collections.Generic.List<global::ScheduleOne.UI.Phone.Delivery.ListingEntry> listingEntries;
 
@@ -44,13 +38,24 @@ namespace ScheduleOne.UI.Phone.Delivery
 
 		private int loadingDockIndex;
 
+		private global::System.Action<global::ScheduleOne.UI.Phone.Delivery.DeliveryShop> _onSelect;
+
 		public global::ScheduleOne.UI.Shop.ShopInterface MatchingShop { get; private set; }
 
-		public bool IsExpanded { get; private set; }
+		public bool IsOpen { get; private set; }
 
-		public bool IsAvailable { get; private set; }
+		public global::System.Action<global::ScheduleOne.UI.Phone.Delivery.DeliveryShop> OnSelect
+		{
+			get
+			{
+				return null;
+			}
+			set
+			{
+			}
+		}
 
-		private void Start()
+		public void Initialize()
 		{
 		}
 
@@ -58,16 +63,36 @@ namespace ScheduleOne.UI.Phone.Delivery
 		{
 		}
 
-		public void SetIsExpanded(bool expanded)
+		public void Open()
 		{
 		}
 
-		public void SetIsAvailable()
+		public void Close()
 		{
 		}
 
-		public void OrderPressed()
+		public void SubmitOrder(string originalDeliveryID)
 		{
+		}
+
+		private int GetDeliveryTime(int itemCount)
+		{
+			return 0;
+		}
+
+		public void Reorder(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		{
+		}
+
+		public bool CanReorder(global::ScheduleOne.Delivery.DeliveryReceipt receipt, out string reason)
+		{
+			reason = null;
+			return false;
+		}
+
+		public float GetDeliveryCost(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		{
+			return 0f;
 		}
 
 		public void RefreshShop()
@@ -128,7 +153,7 @@ namespace ScheduleOne.UI.Phone.Delivery
 			return 0f;
 		}
 
-		private float GetOrderTotal()
+		private float GetDeliveryFee()
 		{
 			return 0f;
 		}

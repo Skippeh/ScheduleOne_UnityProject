@@ -3,6 +3,8 @@ namespace ScheduleOne.Product
 	[global::System.Serializable]
 	public class CocaineInstance : global::ScheduleOne.Product.ProductItemInstance
 	{
+		private const float WorkSpeedMultiplier = 1.2f;
+
 		public CocaineInstance(global::ScheduleOne.ItemFramework.ItemDefinition definition, int quantity, global::ScheduleOne.ItemFramework.EQuality quality, global::ScheduleOne.Product.Packaging.PackagingDefinition packaging = null)
 			: base(null, 0, default(global::ScheduleOne.ItemFramework.EQuality))
 		{

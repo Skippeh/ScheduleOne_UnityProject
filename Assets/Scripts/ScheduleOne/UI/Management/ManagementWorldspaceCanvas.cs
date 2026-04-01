@@ -2,7 +2,7 @@ namespace ScheduleOne.UI.Management
 {
 	public class ManagementWorldspaceCanvas : global::ScheduleOne.DevUtilities.Singleton<global::ScheduleOne.UI.Management.ManagementWorldspaceCanvas>
 	{
-		public const float VISIBILITY_RANGE = 5f;
+		public const float VISIBILITY_RANGE = 6f;
 
 		public const float PROPERTY_CANVAS_RANGE = 50f;
 

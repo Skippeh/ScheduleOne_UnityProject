@@ -573,12 +573,12 @@ namespace ScheduleOne.NPCs
 		{
 		}
 
-		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
+		[global::FishNet.Object.ServerRpc(RequireOwnership = false, RunLocally = true)]
 		public void SetPanicked_Server()
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc]
+		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
 		private void SetPanicked_Client()
 		{
 		}

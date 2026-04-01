@@ -304,10 +304,6 @@ namespace FishNet.Serializing.Generated
 		{
 		}
 
-		public static void Write___ScheduleOne_002ECombat_002EExplosionDataFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Combat.ExplosionData value)
-		{
-		}
-
 		public static void Write___ScheduleOne_002ECasino_002EPlayingCard_002FECardSuitFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Casino.PlayingCard.ECardSuit value)
 		{
 		}
@@ -445,6 +441,10 @@ namespace FishNet.Serializing.Generated
 		}
 
 		public static void Write___ScheduleOne_002EWeather_002EWeatherVolumeFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Weather.WeatherVolume value)
+		{
+		}
+
+		public static void Write___ScheduleOne_002ECombat_002EExplosionDataFishNet_002ESerializing_002EGenerated(this global::FishNet.Serializing.Writer writer, global::ScheduleOne.Combat.ExplosionData value)
 		{
 		}
 	}

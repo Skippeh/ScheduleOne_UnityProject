@@ -11,7 +11,7 @@ namespace ScheduleOne.UI.Shop
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRefreshShownItemsNextFrame_003Ed__86 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CRefreshShownItemsNextFrame_003Ed__88 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -38,7 +38,7 @@ namespace ScheduleOne.UI.Shop
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CRefreshShownItemsNextFrame_003Ed__86(int _003C_003E1__state)
+			public _003CRefreshShownItemsNextFrame_003Ed__88(int _003C_003E1__state)
 			{
 			}
 
@@ -72,6 +72,8 @@ namespace ScheduleOne.UI.Shop
 		public string ShopName;
 
 		public string ShopCode;
+
+		public string ShopDescription;
 
 		public global::ScheduleOne.UI.Shop.ShopInterface.EPaymentType PaymentType;
 
@@ -114,6 +116,8 @@ namespace ScheduleOne.UI.Shop
 		public global::ScheduleOne.UI.Shop.ListingUI ListingUIPrefab;
 
 		public global::UnityEngine.Events.UnityEvent onOrderCompleted;
+
+		public global::System.Action<float> onOrderCompletedWithSpend;
 
 		[global::UnityEngine.Header("Custom UI")]
 		[global::UnityEngine.SerializeField]
@@ -259,7 +263,7 @@ namespace ScheduleOne.UI.Shop
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Shop.ShopInterface._003CRefreshShownItemsNextFrame_003Ed__86))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.UI.Shop.ShopInterface._003CRefreshShownItemsNextFrame_003Ed__88))]
 		private global::System.Collections.IEnumerator RefreshShownItemsNextFrame()
 		{
 			return null;

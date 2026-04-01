@@ -3,7 +3,7 @@ namespace ScheduleOne.Combat
 	public class CombatBehaviour : global::ScheduleOne.NPCs.Behaviour.Behaviour
 	{
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003C_003Ec__DisplayClass79_0
+		private sealed class _003C_003Ec__DisplayClass81_0
 		{
 			public global::ScheduleOne.Combat.CombatBehaviour _003C_003E4__this;
 
@@ -19,7 +19,7 @@ namespace ScheduleOne.Combat
 
 		[global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Auto)]
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private struct _003C_003Ec__DisplayClass79_1
+		private struct _003C_003Ec__DisplayClass81_1
 		{
 			public global::ScheduleOne.Combat.ERangedWeaponAction action;
 
@@ -27,7 +27,7 @@ namespace ScheduleOne.Combat
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRangedWeaponRoutine_003Ed__79 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CRangedWeaponRoutine_003Ed__81 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -35,9 +35,9 @@ namespace ScheduleOne.Combat
 
 			public global::ScheduleOne.Combat.CombatBehaviour _003C_003E4__this;
 
-			private global::ScheduleOne.Combat.CombatBehaviour._003C_003Ec__DisplayClass79_0 _003C_003E8__1;
+			private global::ScheduleOne.Combat.CombatBehaviour._003C_003Ec__DisplayClass81_0 _003C_003E8__1;
 
-			private global::ScheduleOne.Combat.CombatBehaviour._003C_003Ec__DisplayClass79_1 _003C_003E8__2;
+			private global::ScheduleOne.Combat.CombatBehaviour._003C_003Ec__DisplayClass81_1 _003C_003E8__2;
 
 			private bool _003CforceReposition_003E5__2;
 
@@ -60,7 +60,7 @@ namespace ScheduleOne.Combat
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CRangedWeaponRoutine_003Ed__79(int _003C_003E1__state)
+			public _003CRangedWeaponRoutine_003Ed__81(int _003C_003E1__state)
 			{
 			}
 
@@ -87,7 +87,7 @@ namespace ScheduleOne.Combat
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CRepositionToRangedWeaponRange_003Ed__80 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CRepositionToRangedWeaponRange_003Ed__82 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -114,7 +114,7 @@ namespace ScheduleOne.Combat
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CRepositionToRangedWeaponRange_003Ed__80(int _003C_003E1__state)
+			public _003CRepositionToRangedWeaponRange_003Ed__82(int _003C_003E1__state)
 			{
 			}
 
@@ -141,7 +141,7 @@ namespace ScheduleOne.Combat
 		}
 
 		[global::System.Runtime.CompilerServices.CompilerGenerated]
-		private sealed class _003CSearchRoutine_003Ed__93 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
+		private sealed class _003CSearchRoutine_003Ed__95 : global::System.Collections.Generic.IEnumerator<object>, global::System.Collections.IEnumerator, global::System.IDisposable
 		{
 			private int _003C_003E1__state;
 
@@ -168,7 +168,7 @@ namespace ScheduleOne.Combat
 			}
 
 			[global::System.Diagnostics.DebuggerHidden]
-			public _003CSearchRoutine_003Ed__93(int _003C_003E1__state)
+			public _003CSearchRoutine_003Ed__95(int _003C_003E1__state)
 			{
 			}
 
@@ -208,6 +208,8 @@ namespace ScheduleOne.Combat
 
 		public const float REACHED_DESTINATION_DISTANCE = 2f;
 
+		public const float DelayBeforeFirstAttack = 0.25f;
+
 		public bool DEBUG;
 
 		[global::UnityEngine.Header("General Setttings")]
@@ -246,6 +248,8 @@ namespace ScheduleOne.Combat
 		private float timeWithinAttackRange;
 
 		private bool visionEventReceived;
+
+		private float _timeOnCombatStart;
 
 		protected global::ScheduleOne.AvatarFramework.Equipping.AvatarWeapon currentWeapon;
 
@@ -396,13 +400,13 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CRangedWeaponRoutine_003Ed__79))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CRangedWeaponRoutine_003Ed__81))]
 		private global::System.Collections.IEnumerator RangedWeaponRoutine()
 		{
 			return null;
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CRepositionToRangedWeaponRange_003Ed__80))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CRepositionToRangedWeaponRange_003Ed__82))]
 		private global::System.Collections.IEnumerator RepositionToRangedWeaponRange()
 		{
 			return null;
@@ -461,7 +465,7 @@ namespace ScheduleOne.Combat
 		{
 		}
 
-		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CSearchRoutine_003Ed__93))]
+		[global::System.Runtime.CompilerServices.IteratorStateMachine(typeof(global::ScheduleOne.Combat.CombatBehaviour._003CSearchRoutine_003Ed__95))]
 		private global::System.Collections.IEnumerator SearchRoutine()
 		{
 			return null;

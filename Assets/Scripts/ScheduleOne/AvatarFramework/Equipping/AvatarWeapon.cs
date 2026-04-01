@@ -15,7 +15,11 @@ namespace ScheduleOne.AvatarFramework.Equipping
 
 		public global::ScheduleOne.Audio.AudioSourceController EquipSound;
 
+		public float EquipDuration;
+
 		public global::UnityEngine.Events.UnityEvent onSuccessfulHit;
+
+		private float _timeOnEquip;
 
 		public float LastUseTime { get; private set; }
 

@@ -18,6 +18,14 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
+		public override void Activate()
+		{
+		}
+
+		public override void Deactivate()
+		{
+		}
+
 		public void Flinch()
 		{
 		}

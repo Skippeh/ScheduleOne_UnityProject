@@ -703,11 +703,6 @@ namespace ScheduleOne.PlayerScripts
 		{
 		}
 
-		[global::FishNet.Object.ObserversRpc(RunLocally = true)]
-		public void SetPlayerCode(string code)
-		{
-		}
-
 		[global::FishNet.Object.ServerRpc]
 		public void SendPunch()
 		{
@@ -1403,18 +1398,6 @@ namespace ScheduleOne.PlayerScripts
 		}
 
 		private void RpcReader___Server_SetReadyToSleep_1140765316(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
-		{
-		}
-
-		private void RpcWriter___Observers_SetPlayerCode_3615296227(string code)
-		{
-		}
-
-		public void RpcLogic___SetPlayerCode_3615296227(string code)
-		{
-		}
-
-		private void RpcReader___Observers_SetPlayerCode_3615296227(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel)
 		{
 		}
 

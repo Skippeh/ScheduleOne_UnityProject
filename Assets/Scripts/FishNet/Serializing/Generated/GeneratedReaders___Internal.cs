@@ -378,11 +378,6 @@ namespace FishNet.Serializing.Generated
 			return null;
 		}
 
-		public static global::ScheduleOne.Combat.ExplosionData Read___ScheduleOne_002ECombat_002EExplosionDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
-		{
-			return default(global::ScheduleOne.Combat.ExplosionData);
-		}
-
 		public static global::ScheduleOne.Casino.PlayingCard.ECardSuit Read___ScheduleOne_002ECasino_002EPlayingCard_002FECardSuitFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return default(global::ScheduleOne.Casino.PlayingCard.ECardSuit);
@@ -556,6 +551,11 @@ namespace FishNet.Serializing.Generated
 		public static global::ScheduleOne.Weather.WeatherVolume Read___ScheduleOne_002EWeather_002EWeatherVolumeFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
 		{
 			return null;
+		}
+
+		public static global::ScheduleOne.Combat.ExplosionData Read___ScheduleOne_002ECombat_002EExplosionDataFishNet_002ESerializing_002EGenerateds(global::FishNet.Serializing.Reader reader)
+		{
+			return default(global::ScheduleOne.Combat.ExplosionData);
 		}
 	}
 }

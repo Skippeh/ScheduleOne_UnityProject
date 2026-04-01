@@ -56,6 +56,10 @@ namespace ScheduleOne.Economy
 
 		public global::System.Action onChanged;
 
+		private void OnValidate()
+		{
+		}
+
 		public static float GetQualityScalar(global::ScheduleOne.ItemFramework.EQuality quality)
 		{
 			return 0f;

@@ -4,6 +4,8 @@ namespace ScheduleOne.UI.Settings
 	{
 		public global::ScheduleOne.UIToggle ConsoleToggle;
 
+		public global::ScheduleOne.UIToggle RandomMixMapsToggle;
+
 		public global::UnityEngine.GameObject Blocker;
 
 		public global::ScheduleOne.UIPanel uiPanel;
@@ -21,6 +23,10 @@ namespace ScheduleOne.UI.Settings
 		}
 
 		private void ConsoleToggled(bool value)
+		{
+		}
+
+		private void RandomMixMapsToggled(bool value)
 		{
 		}
 	}

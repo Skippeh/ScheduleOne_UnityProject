@@ -78,7 +78,7 @@ namespace ScheduleOne.NPCs.Behaviour
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void ConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product)
+		public void ConsumeProduct(global::ScheduleOne.Product.ProductItemInstance product, bool removeFromInventory = false)
 		{
 		}
 
@@ -227,15 +227,15 @@ namespace ScheduleOne.NPCs.Behaviour
 		{
 		}
 
-		private void RpcWriter___Server_ConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		private void RpcWriter___Server_ConsumeProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance product, bool removeFromInventory = false)
 		{
 		}
 
-		public void RpcLogic___ConsumeProduct_2622925554(global::ScheduleOne.Product.ProductItemInstance product)
+		public void RpcLogic___ConsumeProduct_3964170259(global::ScheduleOne.Product.ProductItemInstance product, bool removeFromInventory = false)
 		{
 		}
 
-		private void RpcReader___Server_ConsumeProduct_2622925554(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_ConsumeProduct_3964170259(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

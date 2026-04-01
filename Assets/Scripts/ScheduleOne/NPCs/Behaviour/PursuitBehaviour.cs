@@ -18,9 +18,11 @@ namespace ScheduleOne.NPCs.Behaviour
 
 		public const float MOVE_SPEED_INVESTIGATING = 0.35f;
 
-		public const float MOVE_SPEED_ARRESTING = 0.65f;
+		public const float MOVE_SPEED_ARRESTING = 0.7f;
 
 		public const float MOVE_SPEED_CHASE = 0.9f;
+
+		public const float CHASE_SPEED_DISTANCE_THRESHOLD = 6f;
 
 		public const float ARREST_MAX_DISTANCE = 15f;
 

@@ -16,6 +16,12 @@ namespace ScheduleOne.ObjectScripts
 
 		public float ParticleStopDelay;
 
+		public float Cooldown;
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Tiles.Coordinate> TilesToWater;
+
+		public int MinTilesToWater;
+
 		public global::UnityEngine.Events.UnityEvent onSprinklerStart;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EObjectScripts_002ESprinklerAssembly_002DCSharp_002Edll_Excuted;

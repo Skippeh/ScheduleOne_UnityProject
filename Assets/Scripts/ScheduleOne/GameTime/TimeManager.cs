@@ -374,6 +374,11 @@ namespace ScheduleOne.GameTime
 			return 0;
 		}
 
+		public static string GetMinutesToDisplayTime(int minutes)
+		{
+			return null;
+		}
+
 		public static int AddMinutesTo24HourTime(int time, int minsToAdd)
 		{
 			return 0;

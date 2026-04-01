@@ -11,6 +11,9 @@ namespace ScheduleOne.Delivery
 		[global::FishNet.Object.Synchronizing.SyncObject]
 		private readonly global::FishNet.Object.Synchronizing.SyncList<global::ScheduleOne.Delivery.DeliveryReceipt> _deliveryHistory;
 
+		[global::FishNet.Object.Synchronizing.SyncObject]
+		private readonly global::FishNet.Object.Synchronizing.SyncList<global::ScheduleOne.Delivery.DeliveryReceipt> _displayedDeliveryHistory;
+
 		private global::System.Collections.Generic.Dictionary<global::ScheduleOne.Delivery.DeliveryInstance, int> _minsSinceVehicleEmpty;
 
 		private bool NetworkInitialize___EarlyScheduleOne_002EDelivery_002EDeliveryManagerAssembly_002DCSharp_002Edll_Excuted;
@@ -32,6 +35,8 @@ namespace ScheduleOne.Delivery
 		public bool HasChanged { get; set; }
 
 		public int LoadOrder { get; }
+
+		public global::System.Collections.Generic.List<global::ScheduleOne.Delivery.DeliveryReceipt> DisplayedDeliveryHistory => null;
 
 		public event global::System.Action<global::ScheduleOne.Delivery.DeliveryInstance> onDeliveryCreated
 		{
@@ -88,7 +93,7 @@ namespace ScheduleOne.Delivery
 		}
 
 		[global::FishNet.Object.ServerRpc(RequireOwnership = false)]
-		public void RecordDeliveryReceipt_Server(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		public void RecordDeliveryReceipt_Server(global::ScheduleOne.Delivery.DeliveryReceipt receipt, string originalOrderID = "")
 		{
 		}
 
@@ -128,6 +133,10 @@ namespace ScheduleOne.Delivery
 			return null;
 		}
 
+		public void Load(global::ScheduleOne.Persistence.Datas.DeliveriesData data)
+		{
+		}
+
 		public override void NetworkInitialize___Early()
 		{
 		}
@@ -152,15 +161,15 @@ namespace ScheduleOne.Delivery
 		{
 		}
 
-		private void RpcWriter___Server_RecordDeliveryReceipt_Server_4268613646(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		private void RpcWriter___Server_RecordDeliveryReceipt_Server_2582461062(global::ScheduleOne.Delivery.DeliveryReceipt receipt, string originalOrderID = "")
 		{
 		}
 
-		public void RpcLogic___RecordDeliveryReceipt_Server_4268613646(global::ScheduleOne.Delivery.DeliveryReceipt receipt)
+		public void RpcLogic___RecordDeliveryReceipt_Server_2582461062(global::ScheduleOne.Delivery.DeliveryReceipt receipt, string originalOrderID = "")
 		{
 		}
 
-		private void RpcReader___Server_RecordDeliveryReceipt_Server_4268613646(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
+		private void RpcReader___Server_RecordDeliveryReceipt_Server_2582461062(global::FishNet.Serializing.PooledReader PooledReader0, global::FishNet.Transporting.Channel channel, global::FishNet.Connection.NetworkConnection conn)
 		{
 		}
 

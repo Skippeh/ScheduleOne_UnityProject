@@ -25,6 +25,8 @@ namespace ScheduleOne.ObjectScripts
 
 		public global::ScheduleOne.ObjectScripts.BrickPressContainer Container2;
 
+		public global::UnityEngine.Transform ItemContainer;
+
 		public global::UnityEngine.Transform ContainerSpawnPoint;
 
 		public global::ScheduleOne.Product.Packaging.PackagingDefinition BrickPackaging;

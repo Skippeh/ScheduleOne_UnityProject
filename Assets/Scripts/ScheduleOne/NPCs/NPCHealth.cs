@@ -1,6 +1,5 @@
 namespace ScheduleOne.NPCs
 {
-	[global::UnityEngine.RequireComponent(typeof(global::ScheduleOne.NPCs.NPCHealth))]
 	[global::UnityEngine.DisallowMultipleComponent]
 	public class NPCHealth : global::FishNet.Object.NetworkBehaviour
 	{

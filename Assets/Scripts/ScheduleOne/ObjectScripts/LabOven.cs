@@ -409,6 +409,10 @@ namespace ScheduleOne.ObjectScripts
 		{
 		}
 
+		private void OutputSlotChanged()
+		{
+		}
+
 		[global::FishNet.Object.ServerRpc(RunLocally = true, RequireOwnership = false)]
 		public void SetStoredInstance(global::FishNet.Connection.NetworkConnection conn, int itemSlotIndex, global::ScheduleOne.ItemFramework.ItemInstance instance)
 		{

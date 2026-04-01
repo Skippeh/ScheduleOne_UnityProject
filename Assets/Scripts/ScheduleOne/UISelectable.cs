@@ -27,6 +27,10 @@ namespace ScheduleOne
 		[global::UnityEngine.Tooltip("Set to true if you want this to be not selectable when UGUI interactable is set to false")]
 		private bool blockSelectionOnInteractableFalse;
 
+		[global::UnityEngine.Header("Components")]
+		[global::UnityEngine.SerializeField]
+		private global::UnityEngine.UI.Text _label;
+
 		public global::UnityEngine.Events.UnityEvent OnSelected;
 
 		public global::UnityEngine.Events.UnityEvent OnDeselected;
@@ -34,6 +38,8 @@ namespace ScheduleOne
 		public global::UnityEngine.RectTransform RectTransform { get; private set; }
 
 		public global::ScheduleOne.UIPanel ParentPanel { get; private set; }
+
+		public global::UnityEngine.UI.Text Label => null;
 
 		public bool AllowTriggerSubmitWithInputDescriptors => false;
 
